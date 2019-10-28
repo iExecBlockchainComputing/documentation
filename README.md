@@ -6,7 +6,7 @@ description: Test
 
 ## Getting Super Powers
 
-Becoming a super hero is a fairly straight forward process:
+Becoming a super hero is a fairly straight forward process: all you need is some RLC tokens!
 
 ```
 $ give me super-powers
