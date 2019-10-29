@@ -12,3 +12,7 @@
 
 * [Current Version](release-and-support/untitled.md)
 
+## Get Help
+
+* [Quick Start](get-help/quick-start.md)
+
