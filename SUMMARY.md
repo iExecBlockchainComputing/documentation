@@ -15,4 +15,5 @@
 ## Get Help
 
 * [Quick Start](get-help/quick-start.md)
+* [Wallet Management](get-help/wallet-management.md)
 
