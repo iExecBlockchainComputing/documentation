@@ -182,7 +182,7 @@ iexec deal show <dealid> # show the detail of the deal you concludes
 
 #### SDK CLI for Requesters
 
-First go through [Init project]()
+First go through Init project
 
 **Top up your iExec account to buy compution**
 
@@ -242,7 +242,7 @@ iexec result decrypt [encryptedResultsFilePath] # decrypt the result with the pr
 
 #### SDK CLI for workers
 
-First go through [Init project]()
+First go through Init project
 
 **Top up your iExec account to buy compution**
 
@@ -260,25 +260,25 @@ iexec account withdraw 1000 # withdraw RLC from your account to your wallet
 
 ## iExec SDK CLI API
 
-* [Help & Info]()
-* [Global options]()
-  * [Wallet options]()
-  * [Transactions options]()
+* Help & Info
+* Global options
+  * Wallet options
+  * Transactions options
 * CLI commands
-  * [init]()
-  * [wallet]()
-  * [account]()
-  * [app]()
-  * [dataset]()
-  * [workerpool]()
-  * [order]()
-  * [orderbook]()
-  * [deal]()
-  * [task]()
-  * [result]()
-  * [category]()
-  * [registry]()
-* [CLI files and folders]()
+  * init
+  * wallet
+  * account
+  * app
+  * dataset
+  * workerpool
+  * order
+  * orderbook
+  * deal
+  * task
+  * result
+  * category
+  * registry
+* CLI files and folders
 
 ### Help & Info
 
@@ -485,16 +485,16 @@ iexec registry validate <'app'|'dataset'|'workerpool'> # validate an object befo
 
 ### CLI files and folders
 
-* [iexec.json]()
-* [chain.json]()
-* [orders.json]()
-* [deployed.json]()
-* [.secrets/]()
-  * [.secrets/datasets/]()
-  * [.secrets/beneficary/]()
-* [datasets/]()
-  * [datasets/original/]()
-  * [datasets/encrypted/]()
+* iexec.json
+* chain.json
+* orders.json
+* deployed.json
+* .secrets/
+  * .secrets/datasets/
+  * .secrets/beneficary/
+* datasets/
+  * datasets/original/
+  * datasets/encrypted/
 
 #### iexec.json
 
@@ -739,11 +739,11 @@ iExec SDK can be imported in your project as a library/module, and it's compatib
 
 ### How to use ?
 
-1. [Install the dependency in your JS project]()
-2. [Instanciate the iExec SDK]()
-3. [Use iexec sdk]()
-4. [Types]()
-5. [Errors]()
+1. Install the dependency in your JS project
+2. Instanciate the iExec SDK
+3. Use iexec sdk
+4. Types
+5. Errors
 
 #### Install the dependency in your JS project
 
@@ -797,15 +797,15 @@ const getIExec = async () => {
 
 #### Use iexec sdk
 
-* [wallet](): manage your wallet, send RLC...
-* [account](): manage your account, deposit, withdraw...
-* [orderbook](): explore the iexec Marketplace
-* [order](): manage any type of order, make deals to start offchain computation
-* [deal](): find your deals
-* [task](): follow the computation, download results or claim failled executions
-* [app](): deploy a new app, show an existing one
-* [dataset](): deploy a new dataset, show an existing one
-* [workerpool](): deploy a new workerpool, show an existing one
+* **wallet:** manage your wallet, send RLC...
+* **account:** manage your account, deposit, withdraw...
+* **orderbook:** explore the iexec Marketplace
+* **order:** manage any type of order, make deals to start offchain computation
+* **deal:** find your deals
+* **task:** follow the computation, download results or claim failled executions
+* **app:** deploy a new app, show an existing one
+* **dataset:** deploy a new dataset, show an existing one
+* **workerpool:** deploy a new workerpool, show an existing one
 
 #### iexec.wallet
 
