@@ -10,6 +10,5 @@
 
 ## Release & Support
 
-* [Untitled](release-and-support/untitled.md)
-* [Untitled](release-and-support/untitled-1.md)
+* [Current Version](release-and-support/untitled.md)
 
