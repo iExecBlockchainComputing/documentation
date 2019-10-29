@@ -74,10 +74,15 @@ Crypto:
 
 **The SDK stores the encrypted wallet in '~/ethereum/keystore' directory.**
 
-> **Note**
->
-> * You can manage multiple wallets with **--wallet-file** and **--wallet-address** options. Example : iexec wallet show --wallet-file user\_wallet
-> * You can import an existing wallet with "**iexec wallet import**" command
+
+
+{% hint style="info" %}
+You can manage multiple wallets with **--wallet-file** and **--wallet-address** options.
+
+Example : iexec wallet show --wallet-file user\_wallet
+
+You can import an existing wallet with "**iexec wallet import**" command
+{% endhint %}
 
 #### Check your wallet balance with
 
@@ -103,10 +108,12 @@ a small amount of ether cryptocurrency \(ETH\) is necessary to interact with the
 iexec wallet getETH
 ```
 
-> **Note**
->
-> **Alternative method**  
-> Post your your public ethereum address in [https://gitter.im/kovan-testnet/faucet](https://gitter.im/kovan-testnet/faucet) \| You will receive a small amount of ETH in few minutes.
+
+
+{% hint style="info" %}
+**Alternative method**  
+Post your your public ethereum address in [https://gitter.im/kovan-testnet/faucet](https://gitter.im/kovan-testnet/faucet) \| You will receive a small amount of ETH in few minutes.
+{% endhint %}
 
 ### Get RLC
 
