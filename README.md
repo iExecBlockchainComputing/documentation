@@ -1,27 +1,11 @@
 ---
-description: Test
+description: >-
+  iExec is building the future of the Internet infrastructure by decentralizing
+  the cloud computing market. It is the first blockchain-based cloud computing
+  marketplace.
 ---
 
-# iExec Documentation
+# About iExec
 
-## Getting Super Powers
-
-Becoming a super hero is a fairly straight forward process: all you need is some RLC tokens!
-
-```
-$ give me super-powers
-```
-
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
-
-Once you're strong enough, save the world:
-
-```
-// Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-
-
+The iExec network connects cloud resource sellers with cloud resource buyers, encouraging an ecosystem of decentralized and autonomous, privacy-preserving applications. This network aims at providing companies with scalable, secure and easy access to the services, datasets and computing resources they need. iExec’s technology relies on Ethereum smart contracts and allows for a virtual cloud infrastructure that provides high-performance computing services on-demand. At iExec, we believe in a future of decentralized infrastructure and market network, where big data and HPC applications, highly valued datasets, and computing resources \(storage, CPU, GPU\) will be monetized on the blockchain with the highest level of transparency, resiliency, and security.
 
