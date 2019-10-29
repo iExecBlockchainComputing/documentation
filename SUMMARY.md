@@ -17,4 +17,8 @@
 * [Quick Start](get-help/quick-start.md)
 * [Wallet Management](get-help/wallet-management.md)
 * [Worker](get-help/worker.md)
+* [Workerpool manager](get-help/workerpool-manager.md)
+* [Requester](get-help/requester.md)
+* [Application provider](get-help/application-provider.md)
+* [Dataset provider](get-help/dataset-provider.md)
 
