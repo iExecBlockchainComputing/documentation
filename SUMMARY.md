@@ -29,4 +29,6 @@
 * [Proof Of Contribution](technical-documentation/proof-of-contribution.md)
 * [Secure computing](technical-documentation/secure-computing.md)
 * [Consortium Deployment](technical-documentation/consortium-deployment.md)
+* [iExec dOracle: a flexible and secure Oracle solution](technical-documentation/iexec-doracle-a-flexible-and-secure-oracle-solution.md)
+* [Technical Reports](technical-documentation/technical-reports.md)
 

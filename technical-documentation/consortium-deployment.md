@@ -114,10 +114,12 @@ You must see all your nodes starting with no errors and each node connected to 4
 
 Note
 
+{% hint style="info" %}
 In this generated config, you may need to edit manually some files according to your network in docker-compose.yml:
 
 > * changing ports to avoid conflicts
 > * adding command start option like –force-sealing –logging levels
+{% endhint %}
 
 ### PoA Bridges
 
