@@ -1,6 +1,6 @@
 # Table of contents
 
-* [About iExec](README.md)
+* [iExec Documentation](README.md)
 
 ## Cloud Resources Marketplace
 
@@ -15,6 +15,7 @@
 ## Get Help
 
 * [Quick Start](get-help/quick-start.md)
+* [iExec SDK V3](get-help/iexec-sdk-v3.md)
 * [Wallet Management](get-help/wallet-management.md)
 * [Worker](get-help/worker.md)
 * [Workerpool manager](get-help/workerpool-manager.md)

@@ -161,7 +161,7 @@ When available, click on the “Join Worker Pool” button on the top left of th
 
 * Linux
 
-### Wallet restriction
+## Wallet restriction
 
 An exclusive wallet must be associated to your worker. You need N wallets if you want N workers.
 

@@ -4,12 +4,6 @@ description: 'The latest stable version for iExec stack: 3.0.1'
 
 # Current Version
 
-## Current Version
-
-The latest stable version for iExec stack:
-
-**3.0.1**
-
 | Module | Version | Link |
 | :--- | :--- | :--- |
 | Core | **3.2.0** | [https://github.com/iExecBlockchainComputing/iexec-core/releases](https://github.com/iExecBlockchainComputing/iexec-core/releases) |

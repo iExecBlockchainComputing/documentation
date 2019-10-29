@@ -9,13 +9,18 @@ description: >-
 
 The iexec-core software will take care of handling tasks comming from blockchain events and will distribute it to alive workers.
 
+## Prerequisites
+
+Workers are deployed with **docker** containers.  
+Follow instructions on [the docker website](https://docs.docker.com/install/) for installation.
+
 ## Docker compose file
 
 > Since all the services used by iExec run in docker, we will use docker-compose to start the scheduler and its related service. You can follow the instructions on the [the docker compose website](https://docs.docker.com/compose/) to install it.
 
 In the docker compose file, you will find the following components:
 
-**Database service**
+### **Database service**
 
 A database is required for running the scheduler.
 
@@ -41,7 +46,7 @@ mongo_ui:
   restart: unless-stopped
 ```
 
-**IPFS service**
+### **IPFS service**
 
 An IPFS node is required for running the scheduler.
 
@@ -59,7 +64,7 @@ ipfs:
   restart: unless-stopped
 ```
 
-**Scheduler service**
+### **Scheduler service**
 
 The main component is the scheduler service. In the docker compose file, it is defined as follow:
 
