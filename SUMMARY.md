@@ -22,8 +22,8 @@
 * [Requester](get-help/requester.md)
 * [Application provider](get-help/application-provider.md)
 * [Dataset provider](get-help/dataset-provider.md)
-* [TEE End-to-end encryption \(Intel SGX\)](get-help/tee-end-to-end-encryption-intel-sgx/README.md)
-  * [Build an SGX-enabled application](get-help/tee-end-to-end-encryption-intel-sgx/build-an-sgx-enabled-application.md)
+* [TEE End-to-end encryption \(Intel SGX\)](get-help/tee-end-to-end-encryption-intel-sgx.md)
+* [Build an SGX-enabled application](get-help/build-an-sgx-enabled-application.md)
 
 ## Technical Documentation
 

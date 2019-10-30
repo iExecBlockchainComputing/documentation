@@ -12,7 +12,7 @@ The TEE computation must run on a TEE compatible worker, the requester needs to 
 
 You can find on the marketplace all the available TEE computing resources using the checkbox.
 
-![](../../.gitbook/assets/teecheckbox.png)
+![](../.gitbook/assets/teecheckbox.png)
 
 ### Encrypt and register the dataset
 
