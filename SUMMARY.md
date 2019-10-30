@@ -6,15 +6,15 @@
 
 * [For Computing Resource Providers](cloud-resources-marketplace/for-computing-resource-providers.md)
 * [For Cloud Resource Requesters](cloud-resources-marketplace/for-cloud-resource-requesters.md)
-* [The iExec Solution Stack](cloud-resources-marketplace/untitled-1.md)
+* [The iExec Solution Stack](cloud-resources-marketplace/the-iexec-solution-stack.md)
 
 ## Release & Support
 
-* [Current Version](release-and-support/untitled.md)
+* [Current Version](release-and-support/current-version.md)
 
 ## Get Help
 
-* [Quick Start](get-help/quick-start.md)
+* [Quick Start](get-help/quick-start-iexec.md)
 * [iExec SDK V3](get-help/iexec-sdk-v3.md)
 * [Wallet Management](get-help/wallet-management.md)
 * [Worker](get-help/worker.md)
