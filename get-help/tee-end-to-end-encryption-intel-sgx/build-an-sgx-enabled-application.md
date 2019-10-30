@@ -212,7 +212,7 @@ If your order is matched with the required components \(app, dataset, worker\), 
 
 You can also use the iExec marketplace’s web interface. Likewise, you need to fill the address of the dataset and app you want to use. Don’t forget to check the “TEE” checkbox.
 
-![](../.gitbook/assets/buycomputation.png)
+![](../../.gitbook/assets/buycomputation.png)
 
 ### **Step 3: Download and decrypt your results**
 
