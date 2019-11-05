@@ -4,7 +4,7 @@ description: >-
   data over iExec infrastructure.
 ---
 
-# Dataset provider
+# Dataset provider \(DEPRECATED\)
 
 In the **task-as-a-service** model, each time a task is launched through the iExec network,The dataset providers set the price of their datasets. Requesters pay on a pay-per-task basis.And you can then withdraw your funds at anytime to your own wallet.
 
@@ -138,5 +138,6 @@ As a dataset provider, you might want to protect your dataset with encryption in
 
 Check out [http://explorer.iex.ec](http://explorer.iex.ec/)
 
-Go to the [Quick start](https://docs.iex.ec/quickstart.html) section to learn how to test a dapp .
+Go to the [Quick start](https://docs.iex.ec/quickstart.html) section to learn how to test a dapp .  
+
 

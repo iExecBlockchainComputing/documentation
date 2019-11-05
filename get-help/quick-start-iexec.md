@@ -1,19 +1,27 @@
+---
+description: >-
+  iExec, being blockchain-based, allows you to manage your computing
+  transactions in a secure and decentralized environment.
+---
+
 # Quick Start
 
-iExec, being blockchain-based, allows you to manage your computing transactions in a secure and decentralized environment. In order to transact between multiple parties within iExec, an Ethereum wallet is required. First, you will need to create your Ethereum wallet and credit it with Ethereum tokens \(ETH\), before running the application. While iExec is in its development phase, we allow transactions on Ethereum’s Kovan Network. Sometimes referred to as test network, it uses Kovan ETH tokens that hold no real value and are used solely for testing purposes.
+In order to transact between multiple parties within iExec, an Ethereum wallet is required. First, you will need to create your Ethereum wallet and credit it with Ethereum tokens \(ETH\), before running the application. While iExec is in its development phase, we allow transactions on Ethereum’s Kovan Network. Sometimes referred to as test network, it uses Kovan ETH tokens that hold no real value and are used solely for testing purposes.
 
-## SDK Installation
+### SDK Installation
 
 Prerequisites:
 
 * npm
 * zip
 
-`sudo npm -g -i install iexec`
+```text
+sudo npm -g -i install iexec
+```
 
 * Now you need to create configuration files
 
-```bash
+```text
 iexec init
 
 ℹ Here is your main config "iexec.json":
@@ -72,19 +80,14 @@ Crypto:
 ✔ iExec project is ready
 ```
 
-**The SDK stores the encrypted wallet in '~/ethereum/keystore' directory.**
+The SDK stores the encrypted wallet in ‘~/ethereum/keystore’ directory.
 
+Note
 
+* You can manage multiple wallets with **–wallet-file** and **–wallet-address** options. Example : iexec wallet show –wallet-file user\_wallet
+* You can import an existing wallet with “**iexec wallet import**” command
 
-{% hint style="info" %}
-You can manage multiple wallets with **--wallet-file** and **--wallet-address** options.
-
-Example : iexec wallet show --wallet-file user\_wallet
-
-You can import an existing wallet with "**iexec wallet import**" command
-{% endhint %}
-
-#### Check your wallet balance with
+Check your wallet balance with
 
 ```text
 iexec wallet show
@@ -100,24 +103,20 @@ ETH:  0
 nRLC: 0
 ```
 
-### Get ETH
+* Get ETH:
 
-a small amount of ether cryptocurrency \(ETH\) is necessary to interact with the ethereum blockchain.
+> a small amount of ether cryptocurrency \(ETH\) is necessary to interact with the ethereum blockchain.
 
 ```text
 iexec wallet getETH
 ```
 
+Note**Alternative method**  
+Post your your public ethereum address in [https://gitter.im/kovan-testnet/faucet](https://gitter.im/kovan-testnet/faucet)You will receive a small amount of ETH in few minutes.
 
+* Get RLC:
 
-{% hint style="info" %}
-**Alternative method**  
-Post your your public ethereum address in [https://gitter.im/kovan-testnet/faucet](https://gitter.im/kovan-testnet/faucet) \| You will receive a small amount of ETH in few minutes.
-{% endhint %}
-
-### Get RLC
-
-RLC can be used to reward the computing resources.
+> RLC can be used to reward the computing resources.
 
 ```text
 iexec wallet getRLC
@@ -130,7 +129,7 @@ ok:      true
 message: Successfully requested 200 nRLC. Your position in the waiting list is 1/10
 ```
 
-**Check the wallet is now charged with ETH and RLC**
+Check the wallet is now charged with ETH and RLC
 
 ```text
 iexec wallet show
@@ -151,7 +150,7 @@ nRLC: 200
 
 We are introducing a new method for pricing and we have defined several task categories that describe the execution boundaries.We’ll setup a test infrastructure so that application developers can evaluate the category of their submissions. Conversely, worker pools will be able to benchmark their infrastructures against the reference machine.
 
-In the future, we’ll refine the categories, and provide more advanced tools for helping developers to maximize the usage of the infrastructure.
+In the future, we’ll refine the categories, and provide more advanced tools for helping developers to maximize the usage of the infrastructure
 
 **Categories Description**
 
@@ -167,7 +166,7 @@ In the future, we’ll refine the categories, and provide more advanced tools fo
 
 Let’s execute the vanitygen application, a command-line vanity ethereum address generator starting with a given pattern. The address can be found in [https://explorer.iex.ec/kovan](https://explorer.iex.ec/kovan) application deployed tab.
 
-* **Deposit RLC on your account**
+* Deposit RLC on your account
 
 Now you have to charge your account. Your wallet, for security purpose, is never directly connected to the market, you have to charge your account to allow deal’s smart contract to lock fund engaged to pay the task.
 
@@ -243,7 +242,7 @@ workerpool orders details:
 
 Select your order and copy the related orderHash
 
-* **Create a task template**
+* Create a task template
 
 ```text
 iexec order init --request
@@ -291,7 +290,7 @@ Limitation price exists also for dataset and app but the current example use fre
 }
 ```
 
-* **Create the request order**
+* Create the request order
 
 ```text
 iexec order sign --request
@@ -317,7 +316,7 @@ salt:               0x7dfe93a03528fad9707cea738da11ae36d64ee3244b85bf00f3fd7d218
 sign:               0x83b6d9cd4e1e6e7279c599852e26b821d0c8b0210f595dc14e699c432bceab6d719645b1ead98e851585187a7b6e234514008e3271b049261a61b7f71239ad081b
 ```
 
-**Now the request order is created and it can be submitted**
+Now the request order is created and it can be submitted
 
 ```text
 iexec order fill --workerpool 0xf0fd940264500d16260ef42f33a914232c1362f8dee54c2f8fb87926d57655ab --app 0xe48ac12eefdfab06486e80ab2dfdd2caef6c293de80262b8a5845d653785a396
@@ -329,10 +328,10 @@ Please enter your password to unlock your wallet [hidden]
 ✔ 1 task successfully purchased with dealid 0xccb19c6792b6e9da0ea9d5af46a221e6836da93cce57cdfd8014c900b695b691
 ```
 
-**The command returns the dealid address.Let’s retrieve the task id**
+The command returns the dealid address.Let’s retrieve the task id
 
 ```text
-iexec deal show 0xccb19c6792b6e9da0ea9d5af46a221e6836da93cce57cdfd8014c900b695b691 --tasks 0
+iexec deal show 0xccb19c6792b6e9da0ea9d5af46a221e6836da93cce57cdfd8014c900b695b691
 ℹ using chain [kovan]
 ✔ Deal 0xccb19c6792b6e9da0ea9d5af46a221e6836da93cce57cdfd8014c900b695b691 details:
 app:
@@ -366,7 +365,7 @@ Tasks:
   taskid: 0x0e617507e446658383918f2dbe14f2e65e161ac47b131eab46ecba50dfe26ae5
 ```
 
-* **Monitor your work**
+* Monitor your work
 
 ```text
  iexec task show 0x8374e2d96305a4a9b3f84e531b67e350f008b31d
@@ -399,7 +398,7 @@ until it is completed
 m_statusName:          COMPLETED
 ```
 
-* **Download the result and check your result**
+* Download the result and check your result
 
 ```text
 iexec task show  0xafaa1b9c1ae6b46a0d462d288d0147f84bd011a07ddd93908d37d32256804216 --watch --download
@@ -436,7 +435,7 @@ inflating: stdout.txt
 cat stdout
 ```
 
-#### **Result encryption**
+**Result encryption**
 
 You can choose to get an encrypted result depending on the privacy of your task result.
 
@@ -445,13 +444,13 @@ You can choose to get an encrypted result depending on the privacy of your task 
 
 \# How run a task with an encrypted result
 
-**Generate your beneficiary keys**
+1. Generate your beneficiary keys
 
 ```text
 iexec tee generate-beneficiary-keys
 ```
 
-**Push your keys to the SMS**
+1. Push your keys to the SMS
 
 Please check your ‘chain.json’ file contains an entry ‘“sms”: “[https://kovan-pool.iex.ec:443](https://kovan-pool.iex.ec/)”’
 
@@ -459,20 +458,19 @@ Please check your ‘chain.json’ file contains an entry ‘“sms”: “[http
 iexec tee push-secret
 ```
 
-**Buy computation with your beneficiary address**
+1. Buy computation with your beneficiary address
 
 market.iex.ec: Advanced parameters &gt; Beneficiary &gt; Private SDK: iexec.json &gt; requestorder &gt; beneficiary &gt; 0xyourAddress
 
-**Download the result and decrypt it**
+1. Download the result and decrypt it
 
 ```text
 iexec task show <0xtask> --download
 iexec tee decrypt-results <encryptedResultsPath>
 ```
 
+For technical support, contact us:
 
-
-
-
-
+* mail [support@iex.ec](mailto:support%40iex.ec)
+* slack iexec-team.slack.com
 

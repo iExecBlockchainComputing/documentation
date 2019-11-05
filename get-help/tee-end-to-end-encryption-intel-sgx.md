@@ -4,7 +4,7 @@ description: >-
   end-to-end data encryption using the iExec stack.
 ---
 
-# TEE End-to-end encryption \(Intel SGX\)
+# TEE End-to-end encryption \(Intel SGX\) DEPRECATED
 
 This additional feature needs extra step, all embedded in the SDK, to prepare the application, dataset and the computation request.
 
