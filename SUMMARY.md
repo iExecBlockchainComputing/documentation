@@ -1,6 +1,6 @@
 # Table of contents
 
-* [iExec Documentation](README.md)
+* [iExec Technical documentation](README.md)
 
 ## Cloud Resources Marketplace
 
@@ -20,10 +20,10 @@
 * [Worker](get-help/worker.md)
 * [Workerpool manager](get-help/workerpool-manager.md)
 * [Requester](get-help/requester.md)
-* [Application](get-help/application-provider.md)
-* [Dataset provider \(DEPRECATED\)](get-help/dataset-provider.md)
-* [TEE End-to-end encryption \(Intel SGX\) DEPRECATED](get-help/tee-end-to-end-encryption-intel-sgx.md)
-* [SGX-enabled application](get-help/build-an-sgx-enabled-application.md)
+* [Application](get-help/application.md)
+* [Dataset provider \(DEPRECATED\)](get-help/dataset-provider-deprecated.md)
+* [TEE End-to-end encryption \(Intel SGX\) DEPRECATED](get-help/tee-end-to-end-encryption-intel-sgx-deprecated.md)
+* [SGX-enabled application](get-help/sgx-enabled-application.md)
 
 ## Technical Documentation
 
