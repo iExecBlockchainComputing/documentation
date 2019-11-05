@@ -6,7 +6,7 @@ description: The iExec stack provides adapted tools to manage task execution.
 
 ## Using the iExec SDK
 
-The [iExec SDK](https://github.com/iExecBlockchainComputing/iexec-sdk/) is a CLI \(Command Line Interface\) tool providing all the commands to interact with the iExec network. As an introduction, go to the [Quick start](/quickstart.html) section to learn how to manage a task execution. For more details, go to [iExec SDK github page](https://github.com/iExecBlockchainComputing/iexec-sdk/) to read its full documentation.
+The [iExec SDK](https://github.com/iExecBlockchainComputing/iexec-sdk/) is a CLI \(Command Line Interface\) tool providing all the commands to interact with the iExec network. As an introduction, go to the [Quick start](quick-start-iexec.md) section to learn how to manage a task execution. For more details, go to [iExec SDK github page](https://github.com/iExecBlockchainComputing/iexec-sdk/) to read its full documentation.
 
 ## Using the Marketplace and the Dapp Store
 

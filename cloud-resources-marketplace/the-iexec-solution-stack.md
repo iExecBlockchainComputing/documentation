@@ -16,7 +16,7 @@ The Dapp Store allows users to browse decentralized applications and . Users are
 
 Anyone can launch its own Dapp Store and curate applications the way they see fit.
 
-Go to the [Provide your application](/appprovider.html) section.
+Go to the [Provide your application](../get-help/application.md) section.
 
 ## Data store
 
@@ -26,7 +26,7 @@ The data store is a catalog of ready to use datasets.
 
 The Data Store can be seen as a collection of dataset available as inputs for applications. Users are able to browse through the listed datasets and use their favorites.
 
-Go to the [Provide your dataset](/datasetprovider.html) section.
+Go to the [Provide your dataset](../get-help/dataset-provider-deprecated.md) section.
 
 ## The Marketplace
 
@@ -63,7 +63,7 @@ Visit the iExec Explorer [https://explorer.iex.ec/](https://explorer.iex.ec/)
 
 The iExec SDK and API provide a set of tools that allows all users to easily interact with iExec decentralized marketplace.
 
-Check [iExec SDK documentation](https://github.com/iExecBlockchainComputing/iexec-sdk/) for more details.
+Check [iExec SDK documentation](../get-help/iexec-sdk-v3.md) for more details.
 
-Go to the [Quick start](/quickstart.html) section to learn how to use the SDK.
+Go to the [Quick start](../get-help/quick-start-iexec.md) section to learn how to use the SDK.
 

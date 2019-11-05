@@ -390,7 +390,7 @@ struct RequestOrder
 * `category` tasks category required.
 * `trust` Minimum trust level required by the requester.
 * `beneficiary` Address of the beneficiary of the computation. Used to require output data encryption.
-* `callback` Address to callback with the results \(following EIP1154 interface\). Let empty \(null\) if no callback is required. Learn more about the [callback mechanism](https://docs.iex.ec/poco-else.html#callback).
+* `callback` Address to callback with the results \(following EIP1154 interface\). Let empty \(null\) if no callback is required. Learn more about the callback mechanism.
 * `params` Parameters of the application \(application specific\).
 * `salt` A random value to ensure order uniqueness.
 * `sign` cryptographic signature of the order, the smart contract is securely linked to requester.
@@ -478,7 +478,7 @@ Orders compatibility required:
 
 **\[Requester\] How do I enable PoCo’s consolidation of results?**
 
-A requester can enable the trust layer of the PoCo by setting the trust value in tue requestorder. As described [here](https://docs.iex.ec/poco-trust.html), the trust is defined with the required confidence level. If the requester wants à 99.99% confidence level on the results, it must set the `trust` field to `10000`
+A requester can enable the trust layer of the PoCo by setting the trust value in tue requestorder. As described here, the trust is defined with the required confidence level. If the requester wants à 99.99% confidence level on the results, it must set the `trust` field to `10000`
 
 **\[Requester\] How do I run a non deterministic application despite requiring determinism?**
 
@@ -521,7 +521,7 @@ A scheduler could therefore emit two kinds of workerpoolorder:
 
 ### Other technical choices
 
-#### Callback
+### Callback
 
 Some requester might want an onchain callback with the result of the execution. The callback mechanism is based on [\[EIP1154\]](https://docs.iex.ec/pocosrc/poco-else.html#eip1154). The result is a `bytes` value that is set during the `finalize`. The `IexecHub` implements both side of the [\[EIP1154\]](https://docs.iex.ec/pocosrc/poco-else.html#eip1154).
 
@@ -535,7 +535,7 @@ Some requester might want an onchain callback with the result of the execution. 
 >
 > In order to protect the scheduler and the workers, any error raised during this callback will be disregarded and will not prevent the finalization from happening. The same mechanism goes for the callback running out of gas.
 
-#### Consensus & Reveal duration
+### Consensus & Reveal duration
 
 When orders match, IexecClerk records the deal which details the parameters of the task. If a consensus on a result is achieved before the countdown, the task is successful.After the countdown, as no consensus is reached, the execution is failed. The duration of the consensus timer is a balance between the quality of service offered to the requester \(short timer\) and the margin available for the scheduler and the worker to achieve consensus \(and go through the reveal process\).
 
@@ -547,13 +547,13 @@ In case of failure, the requester can claim the refund.
 
 In the v3-alpha version, this timer lasts for 10 category runtime, for all category.The reveal timer starts whenever a consensus is reached and determines the time frame the workers have to reveal their contributions.This should be long enough for worker to have time to reveal while not being to long so that the requesters waits to long for its result or the consensus fails because the scheduler cannot finalize in time. In the v3-alpha version, this timer lasts for 2 runtime whatever the category runtime. This leaves a gap of at least 1 time the category runtime for the scheduler to finalize the task.
 
-#### Reward kitty
+### Reward kitty
 
 When a consensus fails, the requester gets a refund and the scheduler loses its stake. In order to remove an attack vector, the requester does not get any of the seized stake.If this was a feature, anyone could build a flawed application that would not reach consensus to drain money from the scheduler.This would force the scheduler to whitelist all applications thus reducing the usability of the platform.Seized stake from the scheduler goes into a specific account called the _reward kitty_. No one controls this account, nor can withdraw from it.However, the tokens are not burned. Whenever a task is finalized, the scheduler that organized the execution of this task is rewarded by the requester and also gets a small part of the reward kitty.
 
-As described in the [protocol parameters](https://docs.iex.ec/poco-protocol.html#parameters) section, this reward is `reward = kitty.percentage(KITTY_RATIO).max(KITTY_MIN).min(kitty)`.
+As described in the protocol parameters section, this reward is `reward = kitty.percentage(KITTY_RATIO).max(KITTY_MIN).min(kitty)`.
 
-#### References
+### References
 
 | \[EIP1154\] | _\(_[_1_](https://docs.iex.ec/poco.html#id8)_,_ [_2_](https://docs.iex.ec/poco.html#id9)_,_ [_3_](https://docs.iex.ec/poco.html#id10)_\)_ [EIP 1154: Oracle Interface](https://eips.ethereum.org/EIPS/eip-1154) |
 | :--- | :--- |
