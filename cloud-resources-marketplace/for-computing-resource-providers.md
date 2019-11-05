@@ -28,7 +28,7 @@ Data is the new gold! Data providers can monetize datasets usage and open up new
 
 Application providers can monetize their applications and algorithms by setting a fixed-fee for each single usage of their software \(pay-per-task model\). As a developer of decentralized applications, you may use iExec to overcome blockchain limitations \(few kilobytes of storage, very inefficient virtual machines and very high latency protocol\) by executing your computations “off-chain” on the iExec decentralized infrastructure. Developers also benefit from being free from adjusting resource allocation. By not having to maintain any servers, developers deploy applications that can rapidly upscale/downscale based on user-demand.
 
-Go to the [Application provider](/appprovider.html) section to learn how to build dapp for the community.
+Go to the [Application provider](../get-help/application.md) section to learn how to build dapp for the community.
 
 ### Dataset providers
 
