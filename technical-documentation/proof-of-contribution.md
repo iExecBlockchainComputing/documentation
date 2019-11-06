@@ -1,5 +1,7 @@
 ---
-description: 'This documentation is related to the V3 version of iExec, released mid 2019'
+description: >-
+  PoCo is a protocol designed to provide trust in an open and decentralized
+  environment of untrusted machines.
 ---
 
 # Proof Of Contribution
