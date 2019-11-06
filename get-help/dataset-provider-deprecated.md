@@ -138,6 +138,6 @@ As a dataset provider, you might want to protect your dataset with encryption in
 
 Check out [http://explorer.iex.ec](http://explorer.iex.ec/)
 
-Go to the [Quick start](https://docs.iex.ec/quickstart.html) section to learn how to test a dapp .  
+Go to the [Quick start](quick-start-iexec.md) section to learn how to test a dapp .  
 
 

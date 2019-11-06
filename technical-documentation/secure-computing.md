@@ -1,6 +1,6 @@
 # Secure computing
 
-### Overview
+## Overview
 
 An essential feature of the v3 of iExec is the ability to monetize all the aspects of a computation: not only the hardware resources \(Workers\), but also the code and the data used in the computation \(owned respectively by the dApp developer and the Data Owner\).
 
@@ -8,7 +8,7 @@ In this setting, the iExec software stack must guarantee the security of the cod
 
 Given the decentralized nature of the iExec platform, where computation can be performed by any anonymous user on unknown machines, the only way to fulfill these requirements is to take advantage of the recent developments in hardware-enforced secure execution. Consequently iExec v3 makes use of the Intel SGX technology to create a hardware-protected Trusted Execution Environment \(TEE\), where the code and data are out of reach and invisible even for a user with physical access to the execution machine.
 
-### Challenges\|Requirements\|Threat model
+## Challenges\|Requirements\|Threat model
 
 Data security is an important concern and a challenging problem even in the traditional, private and centralized computing environment. In an open and decentralized computing model like the iExec platform, these challenges are compounded several times. In addition to security against a traditional attack \(eg a remote attacker exploiting a software/OS vulnerability to breach into a server and leak data\), iExec must solve the following technical challenges:
 
@@ -20,9 +20,13 @@ Data security is an important concern and a challenging problem even in the trad
 
 * Firstly, the iExec software supports the execution of tasks inside a trusted execution environment, using Intel SGX enclave technology. The code inside the enclave is guaranteed to behave as intended. It is responsible for retrieving the data and loading the right application to process. The code and the data inside an enclave are completely out-of-reach from code outside of the enclave - even for simple read access.
 
+![](../.gitbook/assets/sgx.jpg)
+
+
+
 * Second we provide an auditable \(open source\) [Secret Management Service](https://github.com/iExecBlockchainComputing/SMS) \(SMS\) software, whose purpose is to securely store the keys for the different actors involved \(dataset owner, computation beneficiary\). This solves the problem of delegating access rights: in essence the user delegates managing access to his data to the SMS. Of course the SMS has the same security challenges as the Worker \(we must ensure it runs as expected, doesn’t spill the secrets, and is not spoofed by the owner of the machine on which it runs\) hence **it must also run inside an SGX enclave**. As of now there is only one SMS running on iExec's servers, but we intend to open-source the code in the near future, so that anyone will be able to run its own SMS. Data owners will then be able to choose the SMS they trust the most. The address of the chosen SMS is parametrizable in the iExec SDK.
 
-### Security guarantees
+## Security guarantees
 
 1. Valuable code and data will be symmetrically encrypted whenever publicly available \(IPFS, public repository\). Decryption will only take place inside an attested SGX enclave, whose code has been authorized by the data owner.
 2. Valuable code and data will be encrypted client-side, on the machine of their owner, then pushed on a public data repository. The corresponding keys will only be communicated over TLS channels established with auditable programs, running in attested enclave.
@@ -43,7 +47,7 @@ The Secret Management Service is an independent service, hosted either by the da
 
 The Worker and the SMS both run in an SGX enclave; they are managed by an instance of the Palaemon software running in its own enclave. The Palaemont software is responsible for creating the enclave, initializing it with the iExec software and attesting it locally.
 
-### Protocol
+## Protocol
 
 Here are the steps of an end-to-end encrypted execution:
 
@@ -56,7 +60,7 @@ Here are the steps of an end-to-end encrypted execution:
 7. The enclave Worker then requests the data key to the SMS. The request is signed with the enclave private key; the request also contains the enclave certificate delivered by Palaemon \(which links the public key corresponding to the enclave private key to the MREnclave of the enclave Worker\). When receiving this request, the SMS retrieves the MREnclave vetted by the data owner \(by reading it on the blockchain\).
 8. The SMS then verifies the certificate, and compare the MREnclave of the certificate with the one on the blockchain corresponding to the Dataset address. If the comparison is positive, it sends the data key \(over the TLS channel\)
 
-### Analysis
+## Analysis
 
 Since the data is encrypted by the data owner, their confidentiality and integrity depends on two conditions:
 

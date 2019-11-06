@@ -44,19 +44,3 @@ Staking is a mechanism in PoCo that involves a certain amount of Workers’ RLC 
 **Intel SGX:**  
 Intel SGX is used by iExec to secure computations and data running on untrusted machines over the distributed and decentralized network.
 
-## Links
-
-* The iExec Dapp Store: [https://dapps.iex.ec](https://dapps.iex.ec)
-* The iExec Marketplace: [https://market.iex.ec](https://market.iex.ec)
-* The iExec Explorer: [https://explorer.iex.ec](https://explorer.iex.ec)
-* The iExec Pools registry: [https://pools.iex.ec](https://pools.iex.ec)
-* The RLC faucet: [https://faucet.iex.ec](https://faucet.iex.ec), to get RLC for testing purpose and access to limited computing resources.
-* iExec main documentation: [https://docs.iex.ec](https://docs.iex.ec)
-* [https://github.com/iExecBlockchainComputing](https://github.com/iExecBlockchainComputing) : source code, SDK, dapps registry to apply for Dapp Store listing.
-
-## Contact us
-
-* Slack: [https://slack.iex.ec](https://slack.iex.ec)
-* Gitter : [https://gitter.im/iExecBlockchainComputing/Lobby](https://gitter.im/iExecBlockchainComputing/Lobby)
-* Email : [support@iex.ec](mailto:support@iex.ec)
-

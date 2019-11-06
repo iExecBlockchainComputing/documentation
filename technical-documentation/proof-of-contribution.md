@@ -22,7 +22,7 @@ A major quality of PoCo lies in the fact that it is a modular protocol. It comes
 
 ### **Result consolidation**
 
-> PoCo relies on replication to achieve result consolidation. This is a purely software solution that enforces a confidence level on the result. [This confidence level can be customized by the requester](https://docs.iex.ec/pocosrc/poco-trust.html).
+> PoCo relies on replication to achieve result consolidation. This is a purely software solution that enforces a confidence level on the result. [This confidence level can be customized by the requester.](proof-of-contribution.md#replication-and-trust)
 >
 > This layer also supports the onchain consolidation of execution results carried out in Trusted Execution Environments \(TEE\) such as Intel SGX.
 
@@ -49,13 +49,13 @@ PoCo describes the succession of contributions that are required to achieve cons
 * [PoCo series \#1: Initial PoCo description](https://medium.com/iex-ec/about-trust-and-agents-incentives-4651c138974c)
 * [PoCo series \#3: Updated PoCo description](https://medium.com/iex-ec/poco-series-3-poco-protocole-update-a2c8f8f30126)
 
-The [nominal workflow](https://github.com/iExecBlockchainComputing/iexec-doc/raw/master/techreport/nominalworkflow-ODB.png) is also available in the [technical report section](https://docs.iex.ec/resources.html)
+The [nominal workflow](https://github.com/iExecBlockchainComputing/iexec-doc/raw/master/techreport/nominalworkflow-ODB.png) is also available in the [technical report section](technical-reports.md)
 
 Below are the details of the implementations:
 
 0. **Deal**
 
-> [A deal is sealed by the Clerk](https://docs.iex.ec/pocosrc/poco-brokering.html). This marks the beginning of the execution. An event is created to notify the worker pool’s scheduler.
+> [A deal is sealed by the Clerk. ](proof-of-contribution.md#brokering)This marks the beginning of the execution. An event is created to notify the worker pool’s scheduler.
 >
 > The consensus timer starts when the deal is signed. The corresponding task must be completed before the end of this countdown. Otherwise, the scheduler gets punished by a loss of stake and reputation, and the user reimbursed.
 
@@ -214,15 +214,15 @@ Lets consider a worker pool with the policies `workerStakeRatioPolicy = 35%` and
 
 ### How to achieve trust ?
 
-The PoCo offers a consensus mechanism that can certify the likelihood of a result to be valid.This consensus relies on the scoring of workers and the replication of a task’s execution to combine the score of the workers that come up with the same result.This consensus is largely based on Sarmenta’s work [\[Sarmenta2002\]](https://docs.iex.ec/pocosrc/poco-trust.html#sarmenta2002) with specific tuning of the scoring function [\[Trust2018\]](https://docs.iex.ec/pocosrc/poco-trust.html#trust2018).
+The PoCo offers a consensus mechanism that can certify the likelihood of a result to be valid.This consensus relies on the scoring of workers and the replication of a task’s execution to combine the score of the workers that come up with the same result.This consensus is largely based on Sarmenta’s work [\[Sarmenta2002\]](proof-of-contribution.md#requiring-a-trust-level) with specific tuning of the scoring function [\[Trust2018\]](proof-of-contribution.md#contribution-credibility).
 
 ### Contribution credibility
 
-Each worker’s contribution has an associated credibility. This credibility derives from the worker’s history score.As described in [\[Trust2018\]](https://docs.iex.ec/pocosrc/poco-trust.html#trust2018), a worker score is a positive integer that is incremented for each valid and verified contribution.In case of bad contribution, a worker loses one third of it’s score.This credibility can be expressed as a likelihood percentage but also as a weight value that can be used to detect consensus without resorting to floating point arithmetics,more details in [\[Trust2018\]](https://docs.iex.ec/pocosrc/poco-trust.html#trust2018).
+Each worker’s contribution has an associated credibility. This credibility derives from the worker’s history score.As described in [\[Trust2018\]](proof-of-contribution.md#requiring-a-trust-level), a worker score is a positive integer that is incremented for each valid and verified contribution.In case of bad contribution, a worker loses one third of it’s score.This credibility can be expressed as a likelihood percentage but also as a weight value that can be used to detect consensus without resorting to floating point arithmetics,more details in [\[Trust2018\]](proof-of-contribution.md#requiring-a-trust-level).
 
 ### Requiring a trust level
 
-Based on [\[Sarmenta2002\]](https://docs.iex.ec/pocosrc/poco-trust.html#sarmenta2002) describing the way to combine worker’s contribution and to evaluate a result’s likelihood, a requester can ask for the level of trust as a input for the PoCo processing, to impose a certain quality of service.The trust level corresponds to a minimum correctness likelihood that a result must achieve to be valid. For example, a trust level of 0 means any contribution would be accepted, regardless of the score of the worker proposing it. On the other hand a trust level of 99.99% means a result will only be accepted if the contribution towards it result shows a correctness probability higher than 99.99%.
+Based on [\[Sarmenta2002\]](proof-of-contribution.md#requiring-a-trust-level) describing the way to combine worker’s contribution and to evaluate a result’s likelihood, a requester can ask for the level of trust as a input for the PoCo processing, to impose a certain quality of service.The trust level corresponds to a minimum correctness likelihood that a result must achieve to be valid. For example, a trust level of 0 means any contribution would be accepted, regardless of the score of the worker proposing it. On the other hand a trust level of 99.99% means a result will only be accepted if the contribution towards it result shows a correctness probability higher than 99.99%.
 
 The trust level is expressed, on-chain, by a integer `trust` such that `threshold = 1 - 1 / trust`.
 
@@ -241,11 +241,11 @@ This consensus mechanism requires replicable applications.Non deterministic appl
 
 #### References
 
-| \[Sarmenta2002\] | _\(_[_1_](https://docs.iex.ec/poco.html#id1)_,_ [_2_](https://docs.iex.ec/poco.html#id5)_\)_ Luis F.G.Sarmenta. Sabotage-tolerance mechanisms for volunteer computing systems. 2002. Future Generation Computer Systems, 18\(4\), 561–572 [Sarmenta2002 PDF](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.67.2962&rep=rep1&type=pdf) |
+| \[Sarmenta2002\] | _\(1, 2\)_ Luis F.G.Sarmenta. Sabotage-tolerance mechanisms for volunteer computing systems. 2002. Future Generation Computer Systems, 18\(4\), 561–572 [Sarmenta2002 PDF](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.67.2962&rep=rep1&type=pdf) |
 | :--- | :--- |
 
 
-| \[Trust2018\] | _\(_[_1_](https://docs.iex.ec/poco.html#id2)_,_ [_2_](https://docs.iex.ec/poco.html#id3)_,_ [_3_](https://docs.iex.ec/poco.html#id4)_\)_ Trust management in the Proof of Contribution protocol. 2018. Technical report. [Trust2018 PDF](https://github.com/iExecBlockchainComputing/iexec-doc/raw/master/techreport/iExec_PoCo_and_trustmanagement_v1.pdf) |
+| \[Trust2018\] | _\(1, 2, 3\)_ Trust management in the Proof of Contribution protocol. 2018. Technical report. [Trust2018 PDF](https://github.com/iExecBlockchainComputing/iexec-doc/raw/master/techreport/iExec_PoCo_and_trustmanagement_v1.pdf) |
 | :--- | :--- |
 
 
@@ -397,7 +397,7 @@ struct RequestOrder
 * `salt` A random value to ensure order uniqueness.
 * `sign` cryptographic signature of the order, the smart contract is securely linked to requester.
 
-### Tag
+## Tag
 
 The tag specifies the need or the availability of features that go beyond the specifications of the category. The tag is a requirement when it is part of an app order, a dataset order or a requester order. On the other hand, the tag in the workerpoolorder express the availability of the corresponding features.
 
@@ -415,7 +415,7 @@ In V3, tags are 32 bytes \(256 bits\) long array where each bit corresponds to a
 
 For orders matching, the worker pool order must enable all bits that are enables in any of the app order, dataset order and requester order. Meaning that if the app order tag is `0x12 = 0x10 | 0x02`, the dataset order is `0x81 = 0x80 | 0x01` and the requester order is `0x03 = 0x02 | 0x01`, then the worker pool order must, at least, have a tag `0x93 = 0x80 | 0x10 | 0x02 | 0x01`.
 
-## Matching Conditions
+### Matching Conditions
 
 In order to trigger an execution, a deal must be registered by the iExec Clerk. Deals are produced when orders are succesfuly matched by the clerk. A matching requires 3 or 4 orders depending on the requester requirements, the dataset order is optional.
 
@@ -521,7 +521,7 @@ A scheduler could therefore emit two kinds of workerpoolorder:
 * A workerpoolorder offering execution with the PoCo’s trust layer disabled \(`trust = 0`\) and accepting all applications \(`apprestrict = 0`\)
 * A workerpoolorder offering secure exection of whitelisted tasks. The application whitelist would use the `GroupInterface` to be verifyed by the iExec Clerk. This group could either be managed by the scheduler or by a certification authority that would check applications determinism.
 
-### Other technical choices
+## Other technical choices
 
 ### Callback
 
@@ -561,7 +561,7 @@ As described in the protocol parameters section, this reward is `reward = kitty.
 | :--- | :--- |
 
 
-| [\[\*\]](https://docs.iex.ec/poco.html#id11) | value susceptible to change. |
+| [\[\*\]](proof-of-contribution.md#other-technical-choices) | value susceptible to change. |
 | :--- | :--- |
 
 

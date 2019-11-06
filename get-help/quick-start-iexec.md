@@ -471,8 +471,9 @@ iexec task show <0xtask> --download
 iexec tee decrypt-results <encryptedResultsPath>
 ```
 
-For technical support, contact us:
 
-* mail [support@iex.ec](mailto:support%40iex.ec)
-* slack iexec-team.slack.com
+
+**For technical support, contact us:**
+
+{% page-ref page="../technical-documentation/contact-us.md" %}
 

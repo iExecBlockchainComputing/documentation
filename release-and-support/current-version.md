@@ -84,19 +84,9 @@ Build an oracle with iExec
 
 [https://github.com/iExecBlockchainComputing/price-feed-doracle](https://github.com/iExecBlockchainComputing/price-feed-doracle)
 
-### Useful Links
+{% page-ref page="../technical-documentation/contact-us.md" %}
 
-* The iExec Dapp Store: [https://dapps.iex.ec](https://dapps.iex.ec)
-* The iExec Marketplace: [https://market.iex.ec](https://market.iex.ec)
-* The iExec Explorer: [https://explorer.iex.ec](https://explorer.iex.ec)
-* The iExec Pools registry: [https://pools.iex.ec](https://pools.iex.ec)
-* The RLC faucet: [https://faucet.iex.ec](https://faucet.iex.ec)
-* iExec main documentation: [https://docs.iex.ec](https://docs.iex.ec)
-* [https://github.com/iExecBlockchainComputing](https://github.com/iExecBlockchainComputing) : source code, SDK, dapps registry to apply for Dapp Store listing.
 
-### Contact us
 
-* Slack: [https://slack.iex.ec](https://slack.iex.ec)
-* Gitter : [https://gitter.im/iExecBlockchainComputing/Lobby](https://gitter.im/iExecBlockchainComputing/Lobby)
-* Email : [support@iex.ec](mailto:support@iex.ec)
+
 

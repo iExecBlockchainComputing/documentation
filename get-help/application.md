@@ -376,7 +376,7 @@ Now the dataset is available.
 
 As a dataset provider, you might want to protect your dataset with encryption in order to monetize it. Any encrypted dataset will be decrypted on worker resources with a dataset secret key retrieved from the Secret Management Service. This dataset secret key need to be created and push by the dataset owner. At this point, the decrypted dataset will be ready to be used by the app.
 
-See the [SDK tutorial](https://github.com/iExecBlockchainComputing/iexec-sdk/) for more info.
+See the SDK tutorial for more info.
 
 First, initialize the folder structure
 
@@ -431,5 +431,5 @@ Push the secret in the Secret Management Service \(sms\)
 iexec dataset push-secret
 ```
 
-Go to the [Quick start](https://docs.iex.ec/quickstart.html) section to learn how to test a dapp .
+Go to the [Quick start](quick-start-iexec.md) section to learn how to test a dapp .
 

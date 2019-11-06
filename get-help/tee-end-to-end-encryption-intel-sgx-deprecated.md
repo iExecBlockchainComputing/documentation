@@ -134,5 +134,5 @@ $ iexec order sign --dataset
 $ iexec order publish --dataset
 ```
 
-Go to the [Build an SGX-enabled application](https://docs.iex.ec/buildsgxapp.html) section to learn how to build the app running on TEE and process securely the dataset.
+Go to the [Build an SGX-enabled application](sgx-enabled-application.md) section to learn how to build the app running on TEE and process securely the dataset.
 

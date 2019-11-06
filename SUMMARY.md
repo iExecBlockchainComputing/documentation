@@ -32,4 +32,5 @@
 * [Consortium Deployment](technical-documentation/consortium-deployment.md)
 * [iExec dOracle: a flexible and secure Oracle solution](technical-documentation/iexec-doracle-a-flexible-and-secure-oracle-solution.md)
 * [Technical Reports](technical-documentation/technical-reports.md)
+* [Contact Us](technical-documentation/contact-us.md)
 
