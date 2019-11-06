@@ -16,14 +16,14 @@
 
 * [Quick Start](get-help/quick-start-iexec.md)
 * [iExec SDK V3](get-help/iexec-sdk-v3.md)
+* [Application](get-help/application.md)
+* [SGX-enabled application](get-help/sgx-enabled-application.md)
+* [Requester](get-help/requester.md)
 * [Wallet Management](get-help/wallet-management.md)
 * [Worker](get-help/worker.md)
 * [Workerpool manager](get-help/workerpool-manager.md)
-* [Requester](get-help/requester.md)
-* [Application](get-help/application.md)
 * [Dataset provider \(DEPRECATED\)](get-help/dataset-provider-deprecated.md)
 * [TEE End-to-end encryption \(Intel SGX\) DEPRECATED](get-help/tee-end-to-end-encryption-intel-sgx-deprecated.md)
-* [SGX-enabled application](get-help/sgx-enabled-application.md)
 
 ## Technical Documentation
 

@@ -111,8 +111,10 @@ nRLC: 0
 iexec wallet getETH
 ```
 
-Note**Alternative method**  
+{% hint style="info" %}
+**Alternative method**  
 Post your your public ethereum address in [https://gitter.im/kovan-testnet/faucet](https://gitter.im/kovan-testnet/faucet)You will receive a small amount of ETH in few minutes.
+{% endhint %}
 
 * Get RLC:
 
@@ -442,27 +444,27 @@ You can choose to get an encrypted result depending on the privacy of your task 
 * If the beneficiary of the task is set, the result will be pushed to the iExec Result Repository: - If the key of the beneficiary has been pushed to the Secret Management Service, the result will be encrypted before being pushed to the Result Repository. The beneficiary of the task will be the only one able to access and decrypt the result. - If the key of the beneficiary is missing in the Secret Management Service, the result will be pushed to the Result Repository without encryption. The beneficiary of the task will be the only one able to access the result.
 * If the beneficiary of the task is unset, the result will be pushed to IPFS without encryption.
 
-\# How run a task with an encrypted result
+### How run a task with an encrypted result
 
-1. Generate your beneficiary keys
+**Generate your beneficiary keys**
 
 ```text
 iexec tee generate-beneficiary-keys
 ```
 
-1. Push your keys to the SMS
+ **Push your keys to the SMS**
 
-Please check your ‘chain.json’ file contains an entry ‘“sms”: “[https://kovan-pool.iex.ec:443](https://kovan-pool.iex.ec/)”’
+Please check your ‘chain.json’ file contains an entry "sms": "[https://kovan-pool.iex.ec:443](https://kovan-pool.iex.ec/)"
 
 ```text
 iexec tee push-secret
 ```
 
-1. Buy computation with your beneficiary address
+**Buy computation with your beneficiary address**
 
 market.iex.ec: Advanced parameters &gt; Beneficiary &gt; Private SDK: iexec.json &gt; requestorder &gt; beneficiary &gt; 0xyourAddress
 
-1. Download the result and decrypt it
+**Download the result and decrypt it**
 
 ```text
 iexec task show <0xtask> --download

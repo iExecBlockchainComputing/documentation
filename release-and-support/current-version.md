@@ -13,8 +13,8 @@ description: 'The latest stable version for iExec stack: 3.0.1'
 
 | Module | Current docker image version |
 | :--- | :--- |
-| Core | **iexechub/iexec-core:3.0.1** |
-| Worker | **iexechub/iexec-worker:3.0.1** |
+| Core | **iexechub/iexec-core:3.2.0** |
+| Worker | **iexechub/iexec-worker:3.2.0** |
 
 ## Report an issue
 
@@ -78,7 +78,11 @@ The iExec v2.3 labelled “Gold Lancer” \(金槍手\) sees the addition of an 
 
 Find a here a complete tutorial to monetize an application and a dataset.
 
+[https://github.com/iExecBlockchainComputing/iexec-tutorials/tree/master/CloudCoinAnalysis](https://github.com/iExecBlockchainComputing/iexec-tutorials/tree/master/CloudCoinAnalysis)
+
 Build an oracle with iExec
+
+[https://github.com/iExecBlockchainComputing/price-feed-doracle](https://github.com/iExecBlockchainComputing/price-feed-doracle)
 
 ### Useful Links
 

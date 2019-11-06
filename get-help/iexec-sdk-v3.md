@@ -22,7 +22,7 @@ description: >-
 * The RLC faucet: [https://faucet.iex.ec](https://faucet.iex.ec)
 * iExec main documentation: [https://docs.iex.ec](https://docs.iex.ec)
 * [iExec dapps registry](https://github.com/iExecBlockchainComputing/iexec-dapps-registry), to apply for Dapp Store listing
-* [iExec data registry](https://github.com/iExecBlockchainComputing/iexec-data-registry), to apply for Data Store listing
+* [iExec data registry](https://github.com/iExecBlockchainComputing/iexec-datasets-registry), to apply for Data Store listing
 
 ### Install
 

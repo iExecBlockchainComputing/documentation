@@ -48,7 +48,7 @@ For testing purpose and access to limited computing resources:
 
 Once you’ve unlocked your Metamask, you can login on the iExec marketplace [https://market.iex.ec](https://market.iex.ec) with embedded wallet management. In the **Account**, both Balance and Allowance are displayed, and values are expressed in nRLC \(nano RLC\). When a computing deal is closed, a dedicated smart contract is created, an allowance step is mandatory to give authority to this new smart contract to proceed to the payment when the computing task is successfully ended.
 
-{% hint style="warning" %}
+{% hint style="info" %}
 When your worker joins a worker pool, you must deposit and keep **a minimal of 5 RLC** on your account.  
 This amount is enough to be candidate for any deals.  
 After the job completion, the reward goes into your account.
