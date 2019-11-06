@@ -22,8 +22,6 @@
 * [Wallet Management](get-help/wallet-management.md)
 * [Worker](get-help/worker.md)
 * [Workerpool manager](get-help/workerpool-manager.md)
-* [Dataset provider \(DEPRECATED\)](get-help/dataset-provider-deprecated.md)
-* [TEE End-to-end encryption \(Intel SGX\) DEPRECATED](get-help/tee-end-to-end-encryption-intel-sgx-deprecated.md)
 
 ## Technical Documentation
 

@@ -26,7 +26,7 @@ The data store is a catalog of ready to use datasets.
 
 The Data Store can be seen as a collection of dataset available as inputs for applications. Users are able to browse through the listed datasets and use their favorites.
 
-Go to the [Provide your dataset](../get-help/dataset-provider-deprecated.md) section.
+Go to the [Provide your dataset]() section.
 
 ## The Marketplace
 
