@@ -1,6 +1,6 @@
 # Table of contents
 
-* [iExec Technical documentation](README.md)
+* [iExec Technical Documentation](README.md)
 
 ## Cloud Resources Marketplace
 
@@ -15,9 +15,9 @@
 ## Get Help
 
 * [Quick Start](get-help/quick-start-iexec.md)
-* [iExec SDK V3](get-help/iexec-sdk-v3.md)
 * [Application](get-help/application.md)
 * [SGX-enabled application](get-help/sgx-enabled-application.md)
+* [iExec SDK V3](get-help/iexec-sdk-v3.md)
 * [Requester](get-help/requester.md)
 * [Wallet Management](get-help/wallet-management.md)
 * [Worker](get-help/worker.md)
