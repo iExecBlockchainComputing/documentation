@@ -84,7 +84,7 @@ Build an oracle with iExec
 
 [https://github.com/iExecBlockchainComputing/price-feed-doracle](https://github.com/iExecBlockchainComputing/price-feed-doracle)
 
-{% page-ref page="../technical-documentation/contact-us.md" %}
+{% page-ref page="technical-documentation/contact-us.md" %}
 
 
 

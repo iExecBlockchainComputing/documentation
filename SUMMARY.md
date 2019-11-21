@@ -1,7 +1,6 @@
 # Table of contents
 
 * [iExec Technical Documentation](README.md)
-* [Requester \(DEPRECATED\)](requester.md)
 
 ## For Developers
 
@@ -10,7 +9,6 @@
 * [How set up your app](for-developers/application.md)
 * [iExec SDK V3](for-developers/iexec-sdk-v3.md)
 * [Confidential Application \(TEE\)](for-developers/sgx-enabled-application.md)
-* [Current Version for iExec Stack](for-developers/current-version.md)
 
 ## For Worker <a id="for-workers"></a>
 
@@ -19,6 +17,7 @@
 
 ## iExec Products
 
+* [Current Version for iExec Stack](current-version.md)
 * [Wallet Management](wallet-management.md)
 * [Data Store](data-store.md)
 * [Dapp Store](dapp-store.md)
