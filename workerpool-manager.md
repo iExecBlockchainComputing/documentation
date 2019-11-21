@@ -5,7 +5,7 @@ description: >-
   requesters.
 ---
 
-# Quick Start for Workerpool Managers
+# Build your Pool for Worker \(Workerpool\)
 
 The iexec-core software will take care of handling tasks comming from blockchain events and will distribute it to alive workers.
 

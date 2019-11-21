@@ -475,5 +475,5 @@ iexec tee decrypt-results <encryptedResultsPath>
 
 **For technical support, contact us:**
 
-{% page-ref page="../technical-documentation/contact-us.md" %}
+{% page-ref page="../../technical-documentation/contact-us.md" %}
 

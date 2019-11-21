@@ -1,25 +1,21 @@
 # Table of contents
 
 * [iExec Technical Documentation](README.md)
-* [For Cloud Resource Requesters \(DEPRECATED\)](for-cloud-resource-requesters.md)
-* [For Computing Resource Providers \(DEPRECATED\)](for-computing-resource-providers.md)
 * [Requester \(DEPRECATED\)](requester.md)
 
 ## For Developers
 
-* [Quick Start for Developers](for-developers/quick-start-for-developers.md)
+* [Quick Start for Developers](for-developers/quick-start-for-developers/README.md)
+  * [Who are my clients](for-developers/quick-start-for-developers/for-cloud-resource-requesters.md)
 * [How set up your app](for-developers/application.md)
 * [iExec SDK V3](for-developers/iexec-sdk-v3.md)
-* [SGX-Enabled Application](for-developers/sgx-enabled-application.md)
+* [Confidential Application \(TEE\)](for-developers/sgx-enabled-application.md)
 * [Current Version for iExec Stack](for-developers/current-version.md)
 
 ## For Worker <a id="for-workers"></a>
 
 * [Quick Start for Workers](worker.md)
-
-## For Workerpools
-
-* [Quick Start for Workerpool Managers](for-workerpools/workerpool-manager.md)
+* [Build your Pool for Worker \(Workerpool\)](workerpool-manager.md)
 
 ## iExec Products
 

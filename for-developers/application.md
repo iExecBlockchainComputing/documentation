@@ -431,5 +431,5 @@ Push the secret in the Secret Management Service \(sms\)
 iexec dataset push-secret
 ```
 
-Go to the [Quick start](quick-start-for-developers.md) section to learn how to test a dapp .
+Go to the [Quick start](quick-start-for-developers/) section to learn how to test a dapp .
 

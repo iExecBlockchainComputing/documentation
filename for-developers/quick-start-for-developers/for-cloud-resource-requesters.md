@@ -1,8 +1,10 @@
-# For Cloud Resource Requesters \(DEPRECATED\)
+---
+description: >-
+  'Requester' is the name given to an individual or enterprise requesting the
+  use of cloud resources through iExec.
+---
 
-### Buying applications, computing power and datasets
-
-'Requester' is the name given to an individual or enterprise requesting the use of cloud resources through iExec.
+# Who are my clients
 
 iExec allows requesters \(individuals and enterprises\) to access affordable, secure and scalable cloud resources.
 
@@ -25,14 +27,6 @@ iExec allows requesters \(individuals and enterprises\) to access affordable, se
 > Requesters browses available cloud resources and triggers an execution in just a few clicks.
 >
 > They can then monitor and audit all the orders they have triggered since each activity log is recorded on the blockchain.
-
-### Secure and privacy-preserving cloud computing
-
-> iExec offers optional full end-to-end trusted and private execution on the decentralized cloud.
->
-> End-to-end protection means full protection of the application data, user data, embedded data as well as application output data.
->
-> Results can never be inspected by anyone else but their requester, answering the needs of highly-confidential applications and sensitive datasets.
 
 
 
