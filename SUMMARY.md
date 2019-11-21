@@ -30,11 +30,14 @@
 
 * [iExec D'Oracle: a flexible and secure Oracle Solution](use-cases/iexec-doracle-a-flexible-and-secure-oracle-solution.md)
 
-## Technical Documentation
+## Key Concepts
 
-* [Proof Of Contribution](technical-documentation/proof-of-contribution.md)
-* [Secure computing](technical-documentation/secure-computing.md)
-* [Consortium Deployment](technical-documentation/consortium-deployment.md)
-* [Technical Reports](technical-documentation/technical-reports.md)
-* [Contact Us](technical-documentation/contact-us.md)
+* [Proof Of Contribution](key-concepts/proof-of-contribution.md)
+* [Secure computing](key-concepts/secure-computing.md)
+* [Consortium Deployment](key-concepts/consortium-deployment.md)
+* [Glossary](key-concepts/technical-reports.md)
+
+## Help
+
+* [Contact Us](help/contact-us.md)
 

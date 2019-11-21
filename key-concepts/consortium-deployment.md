@@ -154,7 +154,7 @@ You can see a full deployment script for the poa-network bridge stack on PoA cha
 
 We are planning to merge soon a new feature that will allow adding a whitelisting feature as described here.
 
-{% page-ref page="contact-us.md" %}
+{% page-ref page="../help/contact-us.md" %}
 
 
 

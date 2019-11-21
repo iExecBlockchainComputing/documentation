@@ -1,9 +1,4 @@
-# Technical Reports
-
-* Trust management in the Proof of Contribution protocol in V3 [PDF](https://github.com/iExecBlockchainComputing/iexec-doc/raw/master/techreport/iExec_PoCo_and_trustmanagement_v1.pdf)
-* Nominal workflow. [PNG](https://github.com/iExecBlockchainComputing/iexec-doc/raw/master/techreport/nominalworkflow-ODB.png)
-
-## Glossary
+# Glossary
 
 **Ethereum:**  
 Ethereum is an open-source, public, blockchain-based distributed computing platform and operating system featuring smart contract functionality.
