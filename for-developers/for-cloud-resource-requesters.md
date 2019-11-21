@@ -28,7 +28,3 @@ iExec allows requesters \(individuals and enterprises\) to access affordable, se
 >
 > They can then monitor and audit all the orders they have triggered since each activity log is recorded on the blockchain.
 
-
-
-
-
