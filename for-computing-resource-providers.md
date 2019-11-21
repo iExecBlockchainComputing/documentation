@@ -4,7 +4,7 @@ description: >-
   standardized access to computing resources, regardless of their provider.
 ---
 
-# For Computing Resource Providers
+# For Computing Resource Providers \(DEPRECATED\)
 
 iExec strengthens applications running on Ethereum smart contracts, allowing for off-chain computation services and datasets on-demand. This is made possible by the iExec Proof-of-Contribution or PoCo consensus protocol that validates off-chain computations.
 
@@ -28,7 +28,7 @@ Data is the new gold! Data providers can monetize datasets usage and open up new
 
 Application providers can monetize their applications and algorithms by setting a fixed-fee for each single usage of their software \(pay-per-task model\). As a developer of decentralized applications, you may use iExec to overcome blockchain limitations \(few kilobytes of storage, very inefficient virtual machines and very high latency protocol\) by executing your computations “off-chain” on the iExec decentralized infrastructure. Developers also benefit from being free from adjusting resource allocation. By not having to maintain any servers, developers deploy applications that can rapidly upscale/downscale based on user-demand.
 
-Go to the [Application provider](../get-help/application.md) section to learn how to build dapp for the community.
+Go to the [Application provider](for-developers/application.md) section to learn how to build dapp for the community.
 
 ### Dataset providers
 
@@ -42,7 +42,7 @@ Within the iExec network, providers of computing power are called ‘Workers’.
 
 Your machine executes computational tasks in exchange for a reward in RLC tokens. Workers can be individuals or companies. Anyone owning computing resources can make them available by joining a “worker pool” and renting computing power to the network. Any machine, from an individual laptop to a large-scale data center, can join a worker pool.
 
-Head to the [How to become a worker](../get-help/worker.md#start-a-worker) section to learn how to deploy your worker software.
+Head to the [How to become a worker](worker.md#start-a-worker) section to learn how to deploy your worker software.
 
 Worker pools are made up of multiple individual machines. They are led by a Pool manager, a lead entity that organizes the workload and signals how many tasks it is able to process and at which price.
 
@@ -50,7 +50,7 @@ Worker pools are made up of multiple individual machines. They are led by a Pool
 
 Pool manager, while not doing the actual computation, receive a fee for the management of the worker pool. Pool manager compete to attract workers to their worker pool by providing efficient management and guaranteeing earnings for workers.
 
-Head to the [How to Become a pool manager](../get-help/workerpool-manager.md) section to learn how to deploy your worker pool service.
+Head to the [How to Become a pool manager](for-workerpools/workerpool-manager.md) section to learn how to deploy your worker pool service.
 
 You may also check out the list of worker pool currently available on the iExec Marketplace in the [Pools Catalog](https://pools.iex.ec).
 

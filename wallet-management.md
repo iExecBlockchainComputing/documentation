@@ -22,7 +22,7 @@ If you haven’t already, you will need to create an Ethereum wallet:
 Remember your password. You will need it later. ****Back up your wallet properly.
 {% endhint %}
 
-![](../.gitbook/assets/mew_createwallet.png)
+![](.gitbook/assets/mew_createwallet.png)
 
 * Download your Keystore file, **keep it safe and secret**.
 * To Import the wallet using the Keystore file, you will need to open the downloaded wallet file with any text editor and copy its content.

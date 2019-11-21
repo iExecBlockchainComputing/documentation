@@ -2,7 +2,7 @@
 description: 'The latest stable version for iExec stack: 3.0.1'
 ---
 
-# Current Version
+# Current Version for iExec Stack
 
 | Module | Version | Link |
 | :--- | :--- | :--- |

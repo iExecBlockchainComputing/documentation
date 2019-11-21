@@ -1,4 +1,4 @@
-# For Cloud Resource Requesters
+# For Cloud Resource Requesters \(DEPRECATED\)
 
 ### Buying applications, computing power and datasets
 

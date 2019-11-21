@@ -4,11 +4,11 @@ description: >-
   iExec infrastructure.
 ---
 
-# Application
+# How set up your app
 
 In the **task as a service** model, each time a task is launched through the iExec network, Developers set the price of their app. Requesters pay on a pay-per-task basis.And you can then withdraw your funds at anytime to your own wallet.
 
-### Set up you app
+### Set up your app
 
 #### Why using Docker containers?
 
@@ -431,5 +431,5 @@ Push the secret in the Secret Management Service \(sms\)
 iexec dataset push-secret
 ```
 
-Go to the [Quick start](quick-start-iexec.md) section to learn how to test a dapp .
+Go to the [Quick start](quick-start-for-developers.md) section to learn how to test a dapp .
 
