@@ -31,6 +31,7 @@
 ## Use Cases
 
 * [iExec D'Oracle](use-cases/iexec-doracle-a-flexible-and-secure-oracle-solution.md)
+* [Websensors \(Exemple\)](use-cases/websensors-exemple.md)
 
 ## Key Concepts
 
