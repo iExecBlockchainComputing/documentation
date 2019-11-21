@@ -4,7 +4,7 @@ description: >-
   are called ‘Workers’.
 ---
 
-# Worker pools
+# Workerpool Store
 
 Workers are organized in worker pools, where participating computing powers are called ‘Workers’. As a worker provider, you can connect your machine to the network and provide computing power. A scheduler manages the work distribution. There are two types of worker pools:
 

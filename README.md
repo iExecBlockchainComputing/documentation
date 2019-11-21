@@ -33,7 +33,7 @@ Data is the new gold! Data providers can monetize datasets usage and open up new
 
 Application providers can monetize their applications and algorithms by setting a fixed-fee for each single usage of their software \(pay-per-task model\). As a developer of decentralized applications, you may use iExec to overcome blockchain limitations \(few kilobytes of storage, very inefficient virtual machines and very high latency protocol\) by executing your computations “off-chain” on the iExec decentralized infrastructure. Developers also benefit from being free from adjusting resource allocation. By not having to maintain any servers, developers deploy applications that can rapidly upscale/downscale based on user-demand.
 
-Go to the [Application provider](for-developers/application.md) section to learn how to build dapp for the community.
+Go to the [Application provider](for-developers/your-first-app.md) section to learn how to build dapp for the community.
 
 ### Dataset providers
 
@@ -47,7 +47,7 @@ Within the iExec network, providers of computing power are called ‘Workers’.
 
 Your machine executes computational tasks in exchange for a reward in RLC tokens. Workers can be individuals or companies. Anyone owning computing resources can make them available by joining a “worker pool” and renting computing power to the network. Any machine, from an individual laptop to a large-scale data center, can join a worker pool.
 
-Head to the [How to become a worker](worker.md#start-a-worker) section to learn how to deploy your worker software.
+Head to the [How to become a worker](quick-start-for-workers.md#start-a-worker) section to learn how to deploy your worker software.
 
 Worker pools are made up of multiple individual machines. They are led by a Pool manager, a lead entity that organizes the workload and signals how many tasks it is able to process and at which price.
 
@@ -65,5 +65,5 @@ Data providers that own valuable datasets can make them available for use by app
 
 iExec pay per task model empowers Intel SGX and IBM Datashield to offer new opportunities of creating highly-secure applications that respect data privacy and ownership.
 
-{% page-ref page="for-developers/quick-start-for-developers/" %}
+{% page-ref page="for-developers/quick-start-for-developers.md" %}
 

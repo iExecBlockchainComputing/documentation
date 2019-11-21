@@ -16,7 +16,7 @@ Anyone can launch its own Dapp Store and curate applications the way they see fi
 
 **Go to the Provide your application section.**
 
-{% page-ref page="for-developers/application.md" %}
+{% page-ref page="for-developers/your-first-app.md" %}
 
 
 

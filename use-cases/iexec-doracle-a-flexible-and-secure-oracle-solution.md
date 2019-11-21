@@ -1,4 +1,8 @@
-# iExec D'Oracle: a flexible and secure Oracle Solution
+---
+description: A flexible and secure Oracle Solution
+---
+
+# iExec D'Oracle
 
 ## Why do we need Oracles?
 

@@ -4,7 +4,7 @@ description: >-
   environment of untrusted machines.
 ---
 
-# Proof Of Contribution
+# Proof of Contribution
 
 The iExec platform provides a network where application provider, workers, and users can gather and work together. The fully decentralized nature of iExec implies that no single agent is trusted by default, and that those agents require incentives to contribute correctly.
 

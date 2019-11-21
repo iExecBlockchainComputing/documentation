@@ -1,4 +1,4 @@
-# Task Explorer
+# Explorer
 
 The iExec Explorer is a web application that can explore all relevant information about transactions, applications deployed and worker pools deployed.
 
