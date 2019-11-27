@@ -34,5 +34,3 @@
 * [Youtube Channel](https://www.youtube.com/channel/UCwWxZWvKVHn3CXnmDooLWtA)
 * [Medium](https://medium.com/iex-ec)
 
-### 
-

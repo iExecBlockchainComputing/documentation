@@ -1,2 +1,0 @@
-# Wallet with UI
-

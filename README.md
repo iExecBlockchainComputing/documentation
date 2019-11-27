@@ -39,8 +39,6 @@ Go to the [Application provider](for-developers/your-first-app.md) section to le
 
 Dataset provider can monetize their datas by setting a fixed-fee for each single usage of their software \(pay-per-task model\). Dataset can be seen as a wide concept to protect, iExec allows with multiple levels of security to monetize any data: data means dataset or more advanced valuable models as AI trained model,
 
-Go to the [Dataset provider]() section to learn how to propose a dataset.
-
 ### Computing Providers
 
 Within the iExec network, providers of computing power are called ‘Workers’. As a worker, you can connect your machine to the network and provide computing power.
