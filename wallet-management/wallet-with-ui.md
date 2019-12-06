@@ -70,7 +70,10 @@ Use **Withdraw RLC** to withdraw the RLC from your iExec Account to your wallet.
 
 ### Get ETH with Moonpay
 
-Sum expectantes. Ego hodie expectantes. Expectantes, et misit unum de pueris Gus interficere. Et suus vos. Nescio quis, qui est bonus usus liberi ad Isai? Qui nosti ... Quis dimisit filios ad necem ... hmm? Gus! Est, ante me factus singulis decem gradibus. Et nunc ad aliud opus mihi tandem tollendum est puer ille consensus et nunc fugit. Ipse suus obtinuit eam. Non solum autem illa, sed te tractantur in se trahens felis.
+MoonPay is a fintech company that enables web and mobile developers to let their users purchase virtual currencies using their everyday credit card. MoonPay integrates with banks and online crypto exchanges to fulfil the entire purchase process.
+
+  
+So iExec choose this company..................
 
 ![](../.gitbook/assets/moonpay.png)
 
