@@ -2,7 +2,5 @@
 
 
 
-{% page-ref page="./" %}
-
 
 
