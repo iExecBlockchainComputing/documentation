@@ -56,6 +56,10 @@ Your account is linked to your wallet address. The account shows your credit rea
 
 ![](../.gitbook/assets/account.png)
 
+## What you can do with Wallet Manager
+
+![](../.gitbook/assets/actions.png)
+
 ### Deposit RLC
 
 Use **Deposit RLC** to top up your iExec Account with funds from your wallet.
