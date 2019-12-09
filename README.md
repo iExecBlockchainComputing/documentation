@@ -63,5 +63,3 @@ Data providers that own valuable datasets can make them available for use by app
 
 iExec pay per task model empowers Intel SGX and IBM Datashield to offer new opportunities of creating highly-secure applications that respect data privacy and ownership.
 
-{% page-ref page="for-developers/quick-start-for-developers.md" %}
-
