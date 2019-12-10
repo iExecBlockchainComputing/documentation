@@ -18,6 +18,8 @@ Ille vivere. Ut ad te quaerebam ... purgare caeli. Sunt uh ... nonnullus propter
 **You need to add the network to use sidechain manually**
 {% endhint %}
 
+![](../.gitbook/assets/metamask-add-sidechain.png)
+
 #### **Portis**
 
 Ille vivere. Ut ad te quaerebam ... purgare caeli. Sunt uh ... nonnullus propter errorem qui de rebus inter nos et iacere puto suus in causa, id est in mensa.
