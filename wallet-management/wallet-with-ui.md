@@ -14,9 +14,15 @@ You can choose **Metamask** if you already familiar blockchain, tokens, and wall
 
 Ille vivere. Ut ad te quaerebam ... purgare caeli. Sunt uh ... nonnullus propter errorem qui de rebus inter nos et iacere puto suus in causa, id est in mensa.
 
+{% hint style="warning" %}
+**You need to add the network to use sidechain manually**
+{% endhint %}
+
 #### **Portis**
 
 Ille vivere. Ut ad te quaerebam ... purgare caeli. Sunt uh ... nonnullus propter errorem qui de rebus inter nos et iacere puto suus in causa, id est in mensa.
+
+\*\*\*\*
 
 ### Guide UI
 
