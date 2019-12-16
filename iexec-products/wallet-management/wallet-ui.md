@@ -32,8 +32,6 @@ MetaMask is a bridge that allows you to visit the distributed web of tomorrow in
 
 **Block explorer:** https://blockscout-bellecour.iex.ec
 
-
-
 ### **Portis**
 
 To make the onboarding process even more simple, iExec is now also compatible with the Portis wallet. All you need is an email address and password to explore the iExec marketplace. The goal of all these initiatives is to make the on-boarding process as simple as any other non-blockchain web application.  
