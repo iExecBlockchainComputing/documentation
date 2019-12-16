@@ -108,28 +108,31 @@ MoonPay is a fiat currency on-ramp solution for accessing blockchain tokens usin
 
 ![](../../.gitbook/assets/moonpay.png)
 
-### Get RLC \(
+### Get RLC \(Using UniSwap\) 
 
-You will need RLC tokens to use the iExec platform  
-Click Get RLC to refill your wallet with RLC. 
+You will need RLC tokens to use the iExec platform. One option is to use [UniSwap](https://uniswap.exchange/swap) to instantly swap your \(ETH\) Ethereum tokens with RLC tokens. UniSwap is a protocol for automated token exchange on Ethereum.   
+  
+Click **Get RLC** to refill your wallet with RLC. Remember that you will need to transfer this into your iExec Account before being able to use it with iExec services.   
 
-How use the sidechain
 
-You will need some RLC tokens to use the iExec platform on Ethereum Mainnet.
+![](../../.gitbook/assets/get-rlc-uniswap.png)
+
+## Using the iExec Sidechain
+
+To use the iExec Sidechain, you will need to transfer some RLC tokens from mainnet to the sidechain.
 
 Click Send to iExec Sidechain to transfer some RLC from your wallet to iExec Sidechain.
 
 {% hint style="warning" %}
 **Remember**:
 
-**1 xRLC on iExec Sidechain has the same value than 1 RLC on Ethereum Mainnet.  
-You can then transfer xRLC from iExec Sidechain back to Ethereum Mainnet.**
+**1 xRLC on iExec Sidechain has the same value than 1 RLC on Ethereum Mainnet.**
 {% endhint %}
 
 ### Sidechain to Ethereum Mainnet
 
-Use **Send to Ethereum Mainnet** to transfer some xRLC from your wallet to Ethereum Mainnet.Remember:
+Use **Send to Ethereum Mainnet** to transfer some xRLC from your wallet to Ethereum Mainnet. Remember:
 
-* 1 RLC on Ethereum Mainnet has the same value than 1 xRLC on iExec Sidechain.
+* **1 RLC** on Ethereum Mainnet has the same value than **1 xRLC** on iExec Sidechain.
 * You can then transfer RLC from Ethereum Mainnet back to iExec Sidechain.
 
