@@ -17,7 +17,7 @@
 ## iExec Products
 
 * [Wallet Management](iexec-products/wallet-management/README.md)
-  * [Wallet UI](iexec-products/wallet-management/wallet-ui.md)
+  * [Wallet with UI](iexec-products/wallet-management/wallet-ui.md)
   * [Wallet with SDK](iexec-products/wallet-management/wallet-with-sdk.md)
 * [Dapp Store](iexec-products/dapp-store.md)
 * [Data Store](iexec-products/data-store.md)

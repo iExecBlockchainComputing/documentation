@@ -2,7 +2,7 @@
 description: Welcome to your Wallet Manager UI
 ---
 
-# Wallet UI
+# Wallet with UI
 
 ## Wallet Manager
 
