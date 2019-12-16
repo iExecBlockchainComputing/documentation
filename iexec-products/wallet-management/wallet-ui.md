@@ -12,23 +12,31 @@ You can choose **Metamask** if you already familiar blockchain, tokens, and wall
 
 #### **Metamask**
 
-Ille vivere. Ut ad te quaerebam ... purgare caeli. Sunt uh ... nonnullus propter errorem qui de rebus inter nos et iacere puto suus in causa, id est in mensa.
+MetaMask is a bridge that allows you to visit the distributed web of tomorrow in your browser today. It allows you to run Ethereum dApps right in your browser without running a full Ethereum node.
+
+[Link Here](https://metamask.io/)
 
 {% hint style="warning" %}
-**You need to add the network to use sidechain manually**
+**You need to add the network to use sidechain manually in Metamask**
 {% endhint %}
 
-![](../../.gitbook/assets/metamask-add-sidechain.png)
+![](../../.gitbook/assets/networks.png)
 
 #### **Portis**
 
-Ille vivere. Ut ad te quaerebam ... purgare caeli. Sunt uh ... nonnullus propter errorem qui de rebus inter nos et iacere puto suus in causa, id est in mensa.
+To make the onboarding process even more simple, iExec is now also compatible with the Portis wallet. All you need is an email address and password to explore the iExec marketplace. The goal of all these initiatives is to make the on-boarding process as simple as any other non-blockchain web application.  
+  
+[Link Here](https://www.portis.io/)
 
-\*\*\*\*
+{% hint style="warning" %}
+You nedd to enable cookies for use Portis.
+{% endhint %}
+
+![](../../.gitbook/assets/portis-cookies.png)
+
+
 
 ### Guide UI
-
-Loquélæ. Brevis oratio. Hodie particeps tua perdideris. Quid sui nominis - Emilio? Emilio gradiens ad carcerem. Tulitque omnem pecuniam tuam in DEA tuus Lab. Vos got nihil. Quadratum unum. Et ego agnosco rem, nisi te scire elit. Cogito ... maybe vos possem socium ascendit.
 
 ![](../../.gitbook/assets/1-guide-ui.png)
 
