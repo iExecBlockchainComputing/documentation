@@ -114,10 +114,6 @@ You will need RLC tokens to use the iExec platform
 Click Get RLC to refill your wallet with RLC.  
 Expliquer que passe de Wallet -&gt; Account
 
-You will need RLC tokens to use the iExec platform  
-Click Get RLC to refill your wallet with RLC.  
-Expliquer que passe de Wallet -&gt; Account
-
 ![](../../.gitbook/assets/get-rlc-uniswap.png)
 
 How use the sidechain
