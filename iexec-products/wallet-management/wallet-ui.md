@@ -6,18 +6,20 @@ description: Welcome to your Wallet Manager UI
 
 ## Wallet Manager
 
-### Choose a Wallet for connect
+### Choose a Wallet to connect to iExec 
 
-You can choose **Metamask** if you already familiar blockchain, tokens, and wallets, or **Portis** if you never used blockchain wallet.
+You will need a wallet to be able to connect and access iExec services**.**
+
+If you already familiar blockchain, tokens, and wallets, you can connect with **Metamask**, or if you are less experienced with blockchain wallets, then you can connect with **Portis** \(log in with just an email and password\)**.**
+
+To help you decide, more details on each of these wallets can be found below.
 
 ### **Metamask**
 
-MetaMask is a bridge that allows you to visit the distributed web of tomorrow in your browser today. It allows you to run Ethereum dApps right in your browser without running a full Ethereum node.
-
-[Link Here](https://metamask.io/)
+[MetaMask](https://metamask.io/) is a bridge that allows you to interact with decentralized services directly from your browser, using a plugin. 
 
 {% hint style="warning" %}
-**You need to add the network to use sidechain manually in Metamask**
+**If you want to use the sidechain,  you will need to manually add the network within Metamask**
 {% endhint %}
 
 ![](../../.gitbook/assets/networks.png)
@@ -34,48 +36,54 @@ MetaMask is a bridge that allows you to visit the distributed web of tomorrow in
 
 ### **Portis**
 
-To make the onboarding process even more simple, iExec is now also compatible with the Portis wallet. All you need is an email address and password to explore the iExec marketplace. The goal of all these initiatives is to make the on-boarding process as simple as any other non-blockchain web application.  
+iExec is now also compatible with the[ **Portis** ](https://www.portis.io/)wallet. With Portis wallet, instead of dealing with your own private key, you can log in with just an email address and password.  
   
-[Link Here](https://www.portis.io/)
+
 
 {% hint style="warning" %}
-**You nedd enable cookies for use Portis.**
+**You will need enable cookies for use Portis.**
 {% endhint %}
 
 ![](../../.gitbook/assets/portis-cookies.png)
 
-## Guide UI
+## User Interface Guide
+
+To help you understand how to use interface and features of the iExec Wallet Manager, we've integrated an interactive guide that walks you through the user interface.
 
 ![](../../.gitbook/assets/1-guide-ui.png)
 
-**Wallet address**
+**Wallet Address**
 
-This wallet address is your public identity on the blockchain.
+Your wallet address is unique to your own wallet and is your public identity on the blockchain.
 
 **Chain selector**
 
-You can switch from one network to another
+Using the chain selector, you can select which network you would like to connect to.
 
 * **Testnet** provides a training environment with **free** test crypto-currencies.
-* Both **Ethereum Mainnet** and **iExec Sidechain**  use real cryptocurrencies.
+* Both **Ethereum Mainnet** and **iExec Sidechain** use real cryptocurrencies.
 
-Remember
+Remember: 
 
-* **Ethereum Mainnet** network is great to build **decentralized** apps.
+* **Ethereum Mainnet** network is great for building **decentralized** apps.
 * **iExec Sidechain** is **cheap** and **fast** but is more centralized.
 * The **iExec Sidechain** is linked to **Ethereum Mainnet**. RLC tokens can be transferred between them.
 
 **Here is your Wallet**
 
-Your crypto-currencies can be found here. When connected to Ethereum Mainnet, all transactions require a small amount of ETH for transaction fees. Ensure you have enough ETH in your wallet to pay these.
+Your crypto-currencies can be found here. When connected to Ethereum Mainnet, all transactions require a small amount of ETH to be used for transaction fees. These transactions fees are sometimes referred to as 'gas' fees. Ensure you have enough ETH in your wallet to pay these.
 
 ![](../../.gitbook/assets/your-address.png)
 
 **Here is your iExec Account**
 
-Your account is linked to your wallet address. The account shows your credit ready to spend on the iExec platform.
+Your iExec account is linked to your wallet address. The account shows your credit ready to spend on the iExec platform. 
 
-* When buying resources, you spend RLC from your iExec Account
+{% hint style="warning" %}
+Funds must be transferred from your wallet to your iExec account. The iExec account is a smart contract linked to your wallet - iExec can no control over the funds in your account.
+{% endhint %}
+
+* When buying resources, you spend the RLC from your iExec Account
 * When selling resources, the RLC earned can be found in your iExec Account
 
 ![](../../.gitbook/assets/account.png)
@@ -92,23 +100,25 @@ Use **Deposit RLC** to top up your iExec Account with funds from your wallet.
 
 Use **Withdraw RLC** to withdraw the RLC from your iExec Account to your wallet.
 
-### Get ETH with Moonpay
+### Get ETH \(Access Ethereum Tokens with Moonpay\)
 
-MoonPay is a fintech company that enables web and mobile developers to let their users purchase virtual currencies using their everyday credit card. MoonPay integrates with banks and online crypto exchanges to fulfil the entire purchase process.
-
-Thanks to MoonPay integration, it makes the iExec platform onboarding much smoother.
+MoonPay is a fiat currency on-ramp solution for accessing blockchain tokens using an everyday bank card. MoonPay can be used to purchase Ethereum tokens directly from within the iExec Wallet Manager.  
 
 
 
 ![](../../.gitbook/assets/moonpay.png)
 
-### Get RLC
+### Get RLC \(
 
 You will need RLC tokens to use the iExec platform  
 Click Get RLC to refill your wallet with RLC.  
 Expliquer que passe de Wallet -&gt; Account
 
-### Mainnet to iExec Sidechain
+You will need RLC tokens to use the iExec platform  
+Click Get RLC to refill your wallet with RLC.  
+Expliquer que passe de Wallet -&gt; Account
+
+![](../../.gitbook/assets/get-rlc-uniswap.png)
 
 How use the sidechain
 
