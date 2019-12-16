@@ -111,10 +111,7 @@ MoonPay is a fiat currency on-ramp solution for accessing blockchain tokens usin
 ### Get RLC \(
 
 You will need RLC tokens to use the iExec platform  
-Click Get RLC to refill your wallet with RLC.  
-Expliquer que passe de Wallet -&gt; Account
-
-![](../../.gitbook/assets/get-rlc-uniswap.png)
+Click Get RLC to refill your wallet with RLC. 
 
 How use the sidechain
 
