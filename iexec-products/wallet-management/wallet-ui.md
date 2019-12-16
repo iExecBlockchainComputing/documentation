@@ -10,7 +10,7 @@ description: Welcome to your Wallet Manager UI
 
 You can choose **Metamask** if you already familiar blockchain, tokens, and wallets, or **Portis** if you never used blockchain wallet.
 
-#### **Metamask**
+### **Metamask**
 
 MetaMask is a bridge that allows you to visit the distributed web of tomorrow in your browser today. It allows you to run Ethereum dApps right in your browser without running a full Ethereum node.
 
@@ -22,7 +22,19 @@ MetaMask is a bridge that allows you to visit the distributed web of tomorrow in
 
 ![](../../.gitbook/assets/networks.png)
 
-#### **Portis**
+**Network Name:** iExec Sidechain
+
+**RPC URLC:** https://bellecour.iex.ec
+
+**ChainID:** 134
+
+**Symbol:** xRLC
+
+**Block explorer:** https://blockscout-bellecour.iex.ec
+
+
+
+### **Portis**
 
 To make the onboarding process even more simple, iExec is now also compatible with the Portis wallet. All you need is an email address and password to explore the iExec marketplace. The goal of all these initiatives is to make the on-boarding process as simple as any other non-blockchain web application.  
   
@@ -36,7 +48,7 @@ To make the onboarding process even more simple, iExec is now also compatible wi
 
 
 
-### Guide UI
+## Guide UI
 
 ![](../../.gitbook/assets/1-guide-ui.png)
 
