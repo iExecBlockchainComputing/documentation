@@ -44,8 +44,6 @@ To make the onboarding process even more simple, iExec is now also compatible wi
 
 ![](../../.gitbook/assets/portis-cookies.png)
 
-
-
 ## Guide UI
 
 ![](../../.gitbook/assets/1-guide-ui.png)
