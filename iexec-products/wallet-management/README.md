@@ -12,7 +12,7 @@ Nous avons deux façon d'utiliser un wallet.
 
 Si vous êtes worker il faut utiliser la page Wallet with SDK
 
-{% page-ref page="wallet-with-sdk.md" %}
+{% page-ref page="wallet-with-sdk/" %}
 
 
 
