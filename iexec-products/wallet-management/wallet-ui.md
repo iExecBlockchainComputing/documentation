@@ -29,7 +29,7 @@ To make the onboarding process even more simple, iExec is now also compatible wi
 [Link Here](https://www.portis.io/)
 
 {% hint style="warning" %}
-You nedd to enable cookies for use Portis.
+**You nedd enable cookies for use Portis.**
 {% endhint %}
 
 ![](../../.gitbook/assets/portis-cookies.png)
@@ -100,7 +100,7 @@ You will need RLC tokens to use the iExec platform
 Click Get RLC to refill your wallet with RLC.  
 Expliquer que passe de Wallet -&gt; Account
 
-### Send to iExec Sidechain
+### Mainnet to iExec Sidechain
 
 How use the sidechain
 
@@ -116,7 +116,7 @@ Click Send to iExec Sidechain to transfer some RLC from your wallet to iExec Sid
 You can then transfer xRLC from iExec Sidechain back to Ethereum Mainnet.
 {% endhint %}
 
-### Send to Ethereum Mainnet
+### Sidechain to Ethereum Mainnet
 
 Use **Send to Ethereum Mainnet** to transfer some xRLC from your wallet to Ethereum Mainnet.Remember:
 
