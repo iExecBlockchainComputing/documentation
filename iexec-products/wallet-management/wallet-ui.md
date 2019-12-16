@@ -111,9 +111,8 @@ Click Send to iExec Sidechain to transfer some RLC from your wallet to iExec Sid
 {% hint style="warning" %}
 **Remember**:
 
-1 xRLC on iExec Sidechain has the same value than 1 RLC on Ethereum Mainnet.
-
-You can then transfer xRLC from iExec Sidechain back to Ethereum Mainnet.
+**1 xRLC on iExec Sidechain has the same value than 1 RLC on Ethereum Mainnet.  
+You can then transfer xRLC from iExec Sidechain back to Ethereum Mainnet.**
 {% endhint %}
 
 ### Sidechain to Ethereum Mainnet
