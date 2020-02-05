@@ -42,7 +42,7 @@ Create a new Wallet file
 iexec wallet create
 ```
 
-You will be asked to choose a password to protect your wallet, don't forget it there is no way to recover it. The SDK creates a wallet file that contains a random generated private key encrypted by the chosen password and the derived public address. Make sure to backup the wallet file in a safe place and write down your address.
+You will be asked to choose a password to protect your wallet, don't forget it there is no way to recover it. The SDK creates this encrypted file that contains a random generated private key encrypted by the chosen password and the derived public address. Make sure to backup the wallet file in a safe place and write down your address.
 
 {% hint style="success" %}
 Your wallet is stored in the ethereum keystore, the location depends on your OS:
@@ -51,7 +51,7 @@ Your wallet is stored in the ethereum keystore, the location depends on your OS:
 * On Mac : ~/Library/Ethereum/keystore
 * On Windows: ~/AppData/Roaming/Ethereum/keystore
 
-Wallet file name follow the pattern `UTC--CREATION_DATE--ADDRESS`
+Wallet file name follows the pattern `UTC--CREATION_DATE--ADDRESS`
 {% endhint %}
 
 {% hint style="info" %}
@@ -113,6 +113,7 @@ iexec app init
 ```
 
 The iExec SDK writes the minimum app configuration in `iexec.json`
+then fill information for the registation: app name, app repo, …
 
 | **key** | **description** |
 | :--- | :--- |
@@ -196,7 +197,7 @@ Publish the apporder on iExec marketplace to share it with others
 iexec order publish --app --chain goerli
 ```
 
-Your application is now available for everyone on iExec marketplace on the conditions defined in apporder.
+Your application is now publicly available on iExec marketplace on the conditions defined in apporder.
 
 You can check the published apporders for your app
 
@@ -282,7 +283,7 @@ Close the iExec Wallet Manager. Fill the **Fill Market Order** form as follow:
 
 | **field** | **description** |
 | :--- | :--- |
-| Order Hash | best workerpoolorder \(prefilled\) |
+| Order Hash | workerpoolorder \(prefilled with the cheapest available order\) |
 | Dapp Address | paste here your app address \(the apporder will be automatically fetched\) |
 | Work Param | here are the input params for the app \(see [iexechub/vanityeth](https://hub.docker.com/r/iexechub/vanityeth)\) |
 
