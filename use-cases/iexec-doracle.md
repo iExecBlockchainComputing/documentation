@@ -115,7 +115,7 @@ function _iexecDoracleUpdateSettings(
 internal
 ```
 
-The update function, that takes in input a task id, and reads the `Task` object data from the `IexecProxy` smart contract to perform the required checks: that the execution is complete and that the authorized app, dataset, workerpool, trust level and tags are valid. The `IexecProxy` already checked that the hash of the `resultsCallback` is equal to the `resultDigest` \(over which the consensus was reached\). If the task passes the checks then it returns the `results` field of the `Task` object, i.e. the result of the dOracle dApp computation.
+The update function, that takes in input a task id, and reads the `Task` object data from the `IexecProxy` smart contract to perform the required checks (the execution must be completed; the app, the dataset, and the workerpool must be authorized; the trust level and tags mus be valid). The `IexecProxy` already checked that the hash of the `resultsCallback` is equal to the `resultDigest` \(over which the consensus was reached\). If the task passes the checks then it returns the `results` field of the `Task` object, i.e. the result of the dOracle dApp computation.
 
 ```text
 function _iexecDoracleGetVerifiedResult(bytes32 _doracleCallId)
