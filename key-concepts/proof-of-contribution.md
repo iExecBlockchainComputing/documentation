@@ -81,7 +81,7 @@ Below are the details of the implementations:
 
   Both the `digest`, the `hash` and the `seal` are automatically computed based on the output of the application. If the output is not entierly deterministic, then the application can specify a deterministic file that should be used for building consensus. In order to do so, the application just has to provide the path to the deterministic file using a specific entry `deterministic-output-path` in `${IEXEC_OUT}/computed.json`.
 
-  Alternativelly, if the application is used in a doracle contex (the results are designed to be processed on-chain by receiver smart-contracts), then the value of this callback must be specified in `${IEXEC_OUT}/computed.json` under the entry `callback-data`.
+  Alternativelly, if the application is used in a doracle context (the results are designed to be processed on-chain by receiver smart-contracts), then the value of this callback must be specified in `${IEXEC_OUT}/computed.json` under the entry `callback-data`.
 
   If a TEE was used to produce the result, the post-processing enclave will automatically produce an `enclave-signature` entry that contains the enclave signature \(of the resultHash and resultSeal\). TEE certification of results is transparent to the application developper.
 
