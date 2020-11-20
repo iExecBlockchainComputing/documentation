@@ -219,7 +219,7 @@ iexec wallet show --chain goerli
 Your application is deployed, you have some RLC in your iExec Account, everything is now ready to run your application!
 
 ```text
-iexec app run --args <your-name-here> --watch --chain goerli
+iexec app run --args <your-name-here> --workerpool iexec-main-pool.workerpools.v5.iexec.eth --watch --chain goerli
 ```
 
 {% hint style="info" %}
@@ -229,6 +229,7 @@ Useful options:
 
 * `--args <args>`  specify the app execution arguments
 * `--watch`  watch execution status changes
+* `--workerpool <address>` specify the workerpool to use (`iexec-main-pool.workerpools.v5.iexec.eth` is iExec's official workerpool)
 
 Discover more option with `iexec app run --help`
 {% endhint %}
