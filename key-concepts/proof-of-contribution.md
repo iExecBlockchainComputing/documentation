@@ -55,62 +55,66 @@ Below are the details of the implementations:
 
 1. **Deal**
 
-   [A deal is sealed by the Clerk. ](proof-of-contribution.md#brokering)This marks the beginning of the execution. An event is created to notify the worker pool’s scheduler.
+  [A deal is sealed by the Clerk. ](proof-of-contribution.md#brokering)This marks the beginning of the execution. An event is created to notify the worker pool’s scheduler.
 
-   The consensus timer starts when the deal is signed. The corresponding task must be completed before the end of this countdown. Otherwise, the scheduler gets punished by a loss of stake and reputation, and the user reimbursed.
+  The consensus timer starts when the deal is signed. The corresponding task must be completed before the end of this countdown. Otherwise, the scheduler gets punished by a loss of stake and reputation, and the user reimbursed.
 
 2. **Initialization**
 
-   The scheduler calls the `initialize` method. Given a deal id and a position in the request order \(within the deal window\), this function initializes the corresponding task and returns the _taskid_.`bytes32 taskid = keccak256(abi.encodePacked(_dealid, idx));`
+  The scheduler calls the `initialize` method. Given a deal id and a position in the request order \(within the deal window\), this function initializes the corresponding task and returns the _taskid_.`bytes32 taskid = keccak256(abi.encodePacked(_dealid, idx));`
 
 3. **Authorization signature**
 
-   The scheduler designates workers that participate to this task. The scheduler’s Ethereum wallet signs a message containing the worker’s Ethereum address, the taskid, and \(optional\) the Ethereum address of the workers enclave. If the worker doesn’t use an enclave, this field must be filled with `address(0)`.
+  The scheduler designates workers that participate to this task. The scheduler’s Ethereum wallet signs a message containing the worker’s Ethereum address, the taskid, and \(optional\) the Ethereum address of the workers enclave. If the worker doesn’t use an enclave, this field must be filled with `address(0)`.
 
-   This Ethereum signature \(authorization\) is sent to the worker through an off-chain channel implemented by the middleware.
+  This Ethereum signature \(authorization\) is sent to the worker through an off-chain channel implemented by the middleware.
 
 4. **Task computation**
 
-   Once the authorization is received and verified, the worker computes the requested tasks. Results from this execution are placed in the `/iexec_out` folder. The following values are then computed:
+  Once the authorization is received and verified, the worker computes the requested tasks. Results from this execution are placed in the `/iexec_out` folder. The following values are then computed:
 
-   * _bytes32 digest_: a digest \(sha256\) of the result folder.
-   * _bytes32 hash_: the hash of the _digest_, used to produce a consensus
-   * _bytes32 seal_: the salted hash of the _digest_, used to prove a worker’s knew the _digest_ value before it is published.`resultHash == keccak256(abi.encodePacked( taskid, resultDigest))` `resultSeal == keccak256(abi.encodePacked(worker, taskid, resultDigest))`
+  * _bytes32 digest_: a digest \(sha256\) of the result folder.
+  * _bytes32 hash_: the hash of the _digest_, used to produce a consensus
+  * _bytes32 seal_: the salted hash of the _digest_, used to prove a worker’s knew the _digest_ value before it is published.`resultHash == keccak256(abi.encodePacked( taskid, resultDigest))` `resultSeal == keccak256(abi.encodePacked(worker, taskid, resultDigest))`
 
-   In computer science, a deterministic algorithm is an algorithm which, given a particular input, will always produce the same output. An application can override the computation of the result digest \(usually the hash of the result archive\) by providing a specific file `/iexec_out/determinism.iexec`. This is necessary to achieve consensus on non-deterministic applications.
+  In computer science, a deterministic algorithm is an algorithm which, given a particular input, will always produce the same output.
 
-   If a TEE was used to produce the result, the enclave should produce a `/iexec_out/enclaveSig.iexec` that contains the enclave signature \(of the resultHash and resultSeal\). Finally, if the requester asked for a callback, the value of this callback must be specified in `/iexec_out/callback.iexec`. Otherwize, the digest will be sent through the callback.
+  Both the `digest`, the `hash` and the `seal` are automatically computed based on the output of the application. If the output is not entierly deterministic, then the application can specify a deterministic file that should be used for building consensus. In order to do so, the application just has to provide the path to the deterministic file using a specific entry `deterministic-output-path` in `${IEXEC_OUT}/computed.json`.
+
+  Alternativelly, if the application is used in a doracle context (the results are designed to be processed on-chain by receiver smart-contracts), then the value of this callback must be specified in `${IEXEC_OUT}/computed.json` under the entry `callback-data`.
+
+  If a TEE was used to produce the result, the post-processing enclave will automatically produce an `enclave-signature` entry that contains the enclave signature \(of the resultHash and resultSeal\). TEE certification of results is transparent to the application developper.
 
 5. **Contribution**
 
-   Once the execution has been performed, the worker pushes its contribution using the `contribute` method. The contribution contains:
+  Once the execution has been performed, the worker pushes its contribution using the `contribute` method. The contribution contains:
 
-   * _bytes32 taskid_
-   * _bytes32 resultHash_
-   * _bytes32 resultSeal_
-   * _address enclaveChallenge_
+  * _bytes32 taskid_
+  * _bytes32 resultHash_
+  * _bytes32 resultSeal_
+  * _address enclaveChallenge_
 
-   The address of the enclave \(specified in the scheduler’s authorization\). If no enclave is specified, this parameter should be set to `address(0)`
+  The address of the enclave \(specified in the scheduler’s authorization\). If no enclave is specified, this parameter should be set to `address(0)`
 
-   * _bytes enclaveSign_
+  * _bytes enclaveSign_
 
-   The enclave signature coming from `/iexec_out/enclaveSig.iexec`. This is required if the `enclaveChallenge` is not `address(0)`. Otherwise it should be set to the empty byte string `0x`
+  The enclave signature. This is required if the `enclaveChallenge` is not `address(0)`. Otherwise it should be set to the empty byte string `0x`
 
-   * _bytes workerpoolSign_
+  * _bytes workerpoolSign_
 
-   The signature computed by the scheduler at step 2.
+  The signature computed by the scheduler at step 2.
 
 6. **Consensus**
 
-   During the contribution, the consensus is updated and verified. Contributions are possible until the consensus is reached, at which point the contributions are closed. We then enter a 2h reveal phase.
+  During the contribution, the consensus is updated and verified. Contributions are possible until the consensus is reached, at which point the contributions are closed. We then enter a 2h reveal phase.
 
 7. **Reveal**
 
-   During the reveal phase, workers that have contributed to the consensus must call the `reveal` method with the `resultDigest`. This verifies that the `resultHash` and `resultSeal` they provided are valid. Failure to reveal is equivalent to a bad contribution, and results in a loss of stake and reputation.
+  During the reveal phase, workers that have contributed to the consensus must call the `reveal` method with the `resultDigest`. This verifies that the `resultHash` and `resultSeal` they provided are valid. Failure to reveal is equivalent to a bad contribution, and results in a loss of stake and reputation.
 
 8. **Finalize**
 
-   Once all contributions have been revealed, or at the end of the reveal period if some \(but not all\) reveals are missing, the scheduler must call the `finalize` method. This finalizes the task, rewards good contribution and punishes bad ones. This must be called before the end of the consensus timer.
+  Once all contributions have been revealed, or at the end of the reveal period if some \(but not all\) reveals are missing, the scheduler must call the `finalize` method. This finalizes the task, rewards good contribution and punishes bad ones. This must be called before the end of the consensus timer.
 
 ### Staking and Payment
 
@@ -231,7 +235,7 @@ The trust level is expressed, on-chain, by a integer `trust` such that `threshol
 
 ### Limitation
 
-This consensus mechanism requires replicable applications.Non deterministic applications, long running jobs such as webservers, do not meet this requirement out of the box.When it is possible, the application developer must provide a deterministic result in the `/iexec_out/determinism.iexec` file.Otherwise, the user can still run its application on the iExec platform but would have to disable the PoCo’s consensus layer.Hardware security as TEE is an option to overpass this limitation.
+This consensus mechanism requires replicable applications. Non deterministic applications, long running jobs such as webservers, do not meet this requirement out of the box. When it is possible, the application developer must provide a deterministic result using the `deterministic-output-path` entry of the `${IEXEC_OUT}/computed.json` file. Otherwise, the user can still run its application on the iExec platform but would have to disable the PoCo’s consensus layer. Hardware security as TEE is an option to overpass this limitation.
 
 #### References
 
@@ -270,15 +274,15 @@ As discussed earlier, iExec introduces the offchain signature of orders as a new
 ```text
 struct AppOrder
 {
-    address app;
-    uint256 appprice;
-    uint256 volume;
-    uint256 tag;
-    address datasetrestrict;
-    address workerpoolrestrict;
-    address requesterrestrict;
-    bytes32 salt;
-    bytes   sign;
+  address app;
+  uint256 appprice;
+  uint256 volume;
+  uint256 tag;
+  address datasetrestrict;
+  address workerpoolrestrict;
+  address requesterrestrict;
+  bytes32 salt;
+  bytes   sign;
 }
 ```
 
@@ -297,15 +301,15 @@ struct AppOrder
 ```text
 struct DatasetOrder
 {
-    address dataset;
-    uint256 datasetprice;
-    uint256 volume;
-    uint256 tag;
-    address apprestrict;
-    address workerpoolrestrict;
-    address requesterrestrict;
-    bytes32 salt;
-    bytes   sign;
+  address dataset;
+  uint256 datasetprice;
+  uint256 volume;
+  uint256 tag;
+  address apprestrict;
+  address workerpoolrestrict;
+  address requesterrestrict;
+  bytes32 salt;
+  bytes   sign;
 }
 ```
 
@@ -324,17 +328,17 @@ struct DatasetOrder
 ```text
 struct WorkerpoolOrder
 {
-    address workerpool;
-    uint256 workerpoolprice;
-    uint256 volume;
-    uint256 tag;
-    uint256 category;
-    uint256 trust;
-    address apprestrict;
-    address datasetrestrict;
-    address requesterrestrict;
-    bytes32 salt;
-    bytes   sign;
+  address workerpool;
+  uint256 workerpoolprice;
+  uint256 volume;
+  uint256 tag;
+  uint256 category;
+  uint256 trust;
+  address apprestrict;
+  address datasetrestrict;
+  address requesterrestrict;
+  bytes32 salt;
+  bytes   sign;
 }
 ```
 
@@ -355,22 +359,22 @@ struct WorkerpoolOrder
 ```text
 struct RequestOrder
 {
-    address app;
-    uint256 appmaxprice;
-    address dataset;
-    uint256 datasetmaxprice;
-    address workerpool;
-    uint256 workerpoolmaxprice;
-    address requester;
-    uint256 volume;
-    uint256 tag;
-    uint256 category;
-    uint256 trust;
-    address beneficiary;
-    address callback;
-    string  params;
-    bytes32 salt;
-    bytes   sign;
+  address app;
+  uint256 appmaxprice;
+  address dataset;
+  uint256 datasetmaxprice;
+  address workerpool;
+  uint256 workerpoolmaxprice;
+  address requester;
+  uint256 volume;
+  uint256 tag;
+  uint256 category;
+  uint256 trust;
+  address beneficiary;
+  address callback;
+  string  params;
+  bytes32 salt;
+  bytes   sign;
 }
 ```
 
@@ -417,58 +421,75 @@ Orders compatibility required:
 
 1. The worker pool’s category and the requester’s category must be equal.
 
-   `require(_requestorder.category == _workerpoolorder.category);`
+  `require(_requestorder.category == _workerpoolorder.category);`
 
 2. The worker pool’s trust must be greater or equal to the requester’s trust.
 
-   `require(_requestorder.trust == _workerpoolorder.trust);`
+  `require(_requestorder.trust == _workerpoolorder.trust);`
 
 3. The app’s, dataset’s and worker pool’s prices must be less or equal to the requester’s appmaxprice, datasetmaxprice and workerpoolmaxprice.
 
-   `require(_requestorder.appmaxprice >= _apporder.appprice);` `require(_requestorder.datasetmaxprice >= _datasetorder.datasetprice);` `require(_requestorder.workerpoolmaxprice >= _workerpoolorder.workerpoolprice);`
+  `require(_requestorder.appmaxprice >= _apporder.appprice);`
+  `require(_requestorder.datasetmaxprice >= _datasetorder.datasetprice);`
+  `require(_requestorder.workerpoolmaxprice >= _workerpoolorder.workerpoolprice);`
 
 4. The worker pool’s tag must enable all the features required by the app’s tag, the dataset’s tag and the worker pool’s tag.
 
-   `require((_apporder.tag | _datasetorder.tag | _requestorder.tag) & ~_workerpoolorder.tag == 0x0);`
+  `require(tag & ~_workerpoolorder.tag == 0x0);`
+  `require(tag & ~_workerpoolorder.tag == 0x0);`
 
-5. The app provided by the apporder must match the one required by the requester.
+5. If TEE tag is requiered, then application must be TEE compatible.
 
-   `require(_requestorder.app == _apporder.app);`
+  `require((tag ^ _apporder.tag)[31] & 0x01 == 0x0);`
 
-6. The dataset provided by the datasetorder must match the one required by the requester.
+6. The app provided by the apporder must match the one required by the requester.
 
-   `require(_requestorder.dataset == _datasetorder.dataset);`
+  `require(_requestorder.app == _apporder.app);`
 
-7. If the requester specified a worker pool restriction, the worker pool must match this value or be part of the corresponding group.
+7. The dataset provided by the datasetorder must match the one required by the requester.
 
-   `require(checkRestriction(_requestorder.workerpool, _workerpoolorder.workerpool, 0x01));`
+  `require(_requestorder.dataset == _datasetorder.dataset);`
+
+8. If the requester specified a worker pool restriction, the worker pool must match this value or be part of the corresponding group.
+
+  `require(_checkIdentity(_requestorder.workerpool, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));`
 
 8. The application must fit the dataset’s and the worker pool’s application restrictions \(if any\).
 
-   `require(checkRestriction(_datasetorder.apprestrict, _apporder.app, 0x01));` `require(checkRestriction(_workerpoolorder.apprestrict, _apporder.app, 0x01));`
+  `require(_checkIdentity(_datasetorder.apprestrict, _apporder.app, GROUPMEMBER_PURPOSE));`
+  `require(_checkIdentity(_workerpoolorder.apprestrict, _apporder.app, GROUPMEMBER_PURPOSE));`
 
 9. The dataset must fit the application’s and the worker pool’s restrictions \(if any\).
 
-   `require(checkRestriction(_apporder.datasetrestrict, _datasetorder.dataset, 0x01));` `require(checkRestriction(_workerpoolorder.datasetrestrict, _datasetorder.dataset, 0x01));`
+  `require(_checkIdentity(_apporder.datasetrestrict, _datasetorder.dataset, GROUPMEMBER_PURPOSE));`
+  `require(_checkIdentity(_workerpoolorder.datasetrestrict, _datasetorder.dataset, GROUPMEMBER_PURPOSE));`
 
 10. The worker pool must fit the application’s and the dataset’s restrictions \(if any\).
 
-    `require(checkRestriction(_apporder.workerpoolrestrict, _workerpoolorder.workerpool, 0x01));` `require(checkRestriction(_datasetorder.workerpoolrestrict, _workerpoolorder.workerpool, 0x01));`
+  `require(_checkIdentity(_apporder.workerpoolrestrict, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));`
+  `require(_checkIdentity(_datasetorder.workerpoolrestrict, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));`
 
 11. The requester must fit the application’s, the dataset’s and the worker pool’s restrictions \(if any\).
 
-    `require(checkRestriction(_apporder.requesterrestrict, _requestorder.requester, 0x01));` `require(checkRestriction(_datasetorder.requesterrestrict, _requestorder.requester, 0x01));` `require(checkRestriction(_workerpoolorder.requesterrestrict, _requestorder.requester, 0x01));`
+  `require(_checkIdentity(_apporder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));`
+  `require(_checkIdentity(_datasetorder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));`
+  `require(_checkIdentity(_workerpoolorder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));`
 
-12. The application, dataset and worker pool must be registered in the iExecHub.
+13. All ressources must be registered in the corresponding registries.
 
-    `require(iexechub.checkResources(_apporder.app, _datasetorder.dataset, _workerpoolorder.workerpool));`
+  `require(m_appregistry.isRegistered(_apporder.app));``
+  `require(m_datasetregistry.isRegistered(_datasetorder.dataset));``
+  `require(m_workerpoolregistry.isRegistered(_workerpoolorder.workerpool));``
 
-13. All orders must be signed or presigned.
+14. All orders must be signed or presigned.
 
-    `require(verify(App(_apporder.app).m_owner(), _apporder.hash(), _apporder.sign));` `require(verify(Dataset(_datasetorder.dataset).m_owner(), _datasetorder.hash(), _datasetorder.sign));` `require(verify(Workerpool(_workerpoolorder.workerpool).m_owner(), _workerpoolorder.hash(), _workerpoolorder.sign));` `require(verify(_requestorder.requester, _requestorder.hash(), _requestorder.sign));`
+  `require(_checkPresignatureOrSignature(App(_apporder.app).m_owner(), _apporder.hash(), _apporder.sign));`
+  `require(_checkPresignatureOrSignature(Dataset(_datasetorder.dataset).m_owner(), _datasetorder.hash(), _datasetorder.sign));`
+  `require(_checkPresignatureOrSignature(Workerpool(_workerpoolorder.workerpool).m_owner(), _workerpoolorder.hash(), _workerpoolorder.sign));`
+  `require(_checkPresignatureOrSignature(_requestorder.requester, _requestorder.hash(), _requestorder.sign));`
 
-14. The deal produced must contain at least one task.
-15. Requester and worker pool must be able to stake.
+15. The deal produced must contain at least one task.
+16. Requester and worker pool must be able to stake.
 
 ### FAQ : How to write an order ?
 
@@ -519,7 +540,7 @@ A scheduler could therefore emit two kinds of workerpoolorder:
 
 ### Callback
 
-Some requester might want an onchain callback with the result of the execution. The callback mechanism is based on [\[EIP1154\]](https://docs.iex.ec/pocosrc/poco-else.html#eip1154). The result is a `bytes` value that is set during the `finalize`. The `IexecHub` implements both side of the [\[EIP1154\]](https://docs.iex.ec/pocosrc/poco-else.html#eip1154).
+Some requester might want an onchain callback with the result of the execution. The callback mechanism is based on [\[EIP1154\]](https://docs.iex.ec/pocosrc/poco-else.html#eip1154). The result is a `bytes` value that is set during the `finalize`. The `IexecProxy` implements both side of the [\[EIP1154\]](https://docs.iex.ec/pocosrc/poco-else.html#eip1154).
 
 **Pull**
 
@@ -557,5 +578,3 @@ As described in the protocol parameters section, this reward is `reward = kitty.
 
 | [\[\*\]](proof-of-contribution.md#other-technical-choices) | value susceptible to change. |
 | :--- | :--- |
-
-
