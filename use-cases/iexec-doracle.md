@@ -71,7 +71,7 @@ For example, given the parameters `"BTC USD 9 2019-04-11T13:08:32.605Z"` the pri
 * Retrieve the price of BTC in USD at 2019-04-11T13:08:32.605Z
 * Multiply this value by `10e9` \(to capture the price value more accurately as it will be represented by an integer onchain\)
 * Encode the date, the description \(`"btc-usd-9"`\) and the value using `abi.encode`
-* Store this result in `${IEXEC_OUT}/computed.json` under the `callback-data` name
+* Store this result in `${IEXEC_OUT}/computed.json` under the `callback-data` key
 
 iExec will then achieve PoCo consensus on the hash of the `callback-data` value, and will then submit `callback-data` values on-chain, in the `Task` object on the `IexecProxy` smart contract.
 
