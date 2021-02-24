@@ -14,6 +14,7 @@
 * [Advanced](for-developers/advanced/README.md)
   * [Manage your apporders](for-developers/advanced/manage-your-apporders.md)
   * [Manage your datasetorders](for-developers/advanced/manage-your-datasetorders.md)
+  * [Integrate iExec in your webapp](for-developers/advanced/webapp-integration.md)
 
 ## For Workers
 
