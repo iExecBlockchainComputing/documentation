@@ -34,8 +34,8 @@ iExec dOracle allows you to create your own Oracle, with custom logic, while ben
 
 The iExec architecture is two-sided: the on-chain part is a set of smart contracts that implement the PoCo, handle the incentive and adjudication systems; and the off-chain part is made of workers, that provide computing resources to execute the tasks, and schedulers, that dispatch the tasks to execute between the workers of the worker-pool they manage. Each side of the iExec platform \(worker-pool, computation requester\) create and sign orders that describe the kind of transaction they are willing to enter \(type of hardware, minimum price, etc…\). When several orders of different types are compatible they are matched together on the blockchain, to create a deal. Once a deal is made, the scheduler that is part of the deal will choose a set of workers in his workerpool to execute the task. Each worker will download the dApp \(a docker container\) and run it. Upon execution of the task, each worker sends back two values on the blockchain:
 
-* a hash of the result that is written by the dApp in a `determinism.iexec` file. A consensus is made over this value for each replication, and the value resulting from the consensus is stored in the `resultHash` field of the `Task` object.
-* an additional `iexec.callback` value that will be stored on the blockchain in the deal data. In a normal run it contains a url to download the results; for a dOracle this is where the result of the oracle is encoded to be stored on the blockchain. It is stored in the results field of the `Task` object.
+* a hash of the result.
+* after consensus is reached, the corresponding result.
 
 A normal execution ends when the deal is finalized; all the stakeholders are paid, and the computation requester is free to download the data pointed to by the results field of the `Deal` object on the blockchain.
 
@@ -45,7 +45,14 @@ An iExec dOracle can be seen as an “on-chain API”: fundamentally it is a sim
 
 **Off-chain component**
 
-The off-chain part of a dOracle is a classical iExec dApp, that will be executed on the iExec platform and be replicated on several workers as part of an iExec computation deal. It contains the oracle logic, for example to query a web API and process the result. Whenever an operator wishes to update the dOracle, it requests a computation like in a normal iExec deal, specifying the dOracle app as dApp, and the parameters if applicable. The dOracle result is written in the `/iexec_out/callback.iexec` file by the dApp. When the computation ends the worker will send both the `callback.iexec` \(containing the oracle result\) and the `determinism.iexec` \(containing a hash of the result\) on the blockchain. The `determinism.iexec` is used by the PoCo smart contract to achieve a consensus on the resulting output of the different worker/replications of the deal. The `callback.iexec` value is stored in the `results` field of the `Task` object in the `IexecHub` smart contract.
+The off-chain part of a dOracle is a classical iExec dApp, that will be executed on the iExec platform and be replicated on several workers as part of an iExec computation deal. It contains the oracle logic, for example to query a web API and process the result. Whenever an operator wishes to update the dOracle, it requests a computation like in a normal iExec deal, specifying the dOracle app as dApp, and the parameters if applicable. The dOracle result is written in the `${IEXEC_OUT}/computed.json` file by the dApp, under the `callback_data` key.
+
+```
+$ cat ${IEXEC_OUT}/computed.json
+{ 'callback-data': '0x48656c6c6f2c20776f726c6421'}
+```
+
+When the computation ends the worker will send both this `callback-data` \(containing the oracle result\) on the blockchain. The `callback-data` value is stored in the `resultsCallback` field of the `Task` object in the `IexecProxy` smart contract.
 
 **On-chain component**
 
@@ -57,17 +64,16 @@ A simple example of dOracle is available on Github. The following section goes t
 
 ### The PriceFeed dApp
 
-The PriceFeed dApp is a simple Node.js script, available at [PriceFeedSource](https://github.com/iExecBlockchainComputing/iexec-apps/tree/master/PriceFeed). Given a set of parameters, the application encodes its result so that it can be interpreted by the corresponding dOracle smart contract, stores it in `/iexec_out/callback.iexec`, and stores the hash of this encoded value to perform the consensus. The Worker will then send these values on-chain as part of the task finalization, where they will be accessible by the dOracle smart contract.
+The PriceFeed dApp is a simple Node.js script, available at [Kaiko PriceFeed Source](https://github.com/iExecBlockchainComputing/iexec-apps/blob/master/offchain-computing/offchain-tee-kaiko-pricefeed/src/app.py). Given a set of parameters, the application encodes its result so that it can be interpreted by the corresponding dOracle smart contract, stores it in `${IEXEC_OUT}/computed.json`, and stores the hash of this encoded value to perform the consensus. The Worker will then send these values on-chain as part of the task finalization, where they will be accessible by the dOracle smart contract.
 
 For example, given the parameters `"BTC USD 9 2019-04-11T13:08:32.605Z"` the price-oracle application will:
 
 * Retrieve the price of BTC in USD at 2019-04-11T13:08:32.605Z
 * Multiply this value by `10e9` \(to capture the price value more accurately as it will be represented by an integer onchain\)
 * Encode the date, the description \(`"btc-usd-9"`\) and the value using `abi.encode`
-* Store this result in `/iexec_out/callback.iexec`
-* Hash the result and store it in `/iexec_out/determinism.iexec`
+* Store this result in `${IEXEC_OUT}/computed.json` under the `callback-data` key
 
-iExec will then achieve PoCo consensus on the `/iexec_out/determinism.iexec` value, and will store both the `/iexec_out/determinism.iexec` and the `/iexec_out/callback.iexec` values on-chain, in the `Task` object on the `IexecHub` smart contract.
+iExec will then achieve PoCo consensus on the hash of the `callback-data` value, and will then submit `callback-data` values on-chain, in the `Task` object on the `IexecProxy` smart contract.
 
 Once your oracle dApp is written, you can build it into a Docker image and make it available on the iExec platform as explained here.
 
@@ -78,13 +84,12 @@ Every dOracle must inherit from the `IexecDoracle` contract \(source available o
 This contract stores the following fields:
 
 ```text
-IexecHub   public m_iexecHub;
-IexecClerk public m_iexecClerk;
-address    public m_authorizedApp;
-address    public m_authorizedDataset;
-address    public m_authorizedWorkerpool;
-bytes32    public m_requiredtag;
-uint256    public m_requiredtrust;
+IexecInterfaceToken public iexecproxy;
+address             public m_authorizedApp;
+address             public m_authorizedDataset;
+address             public m_authorizedWorkerpool;
+bytes32             public m_requiredtag;
+uint256             public m_requiredtrust;
 ```
 
 In particular, the `m_authorizedApp` must be the address of the smart contract of the dOracle dApp, and the `m_requiredtag` describes the parameters of the iExec `Task` necessary to validate the dOracle update.
@@ -94,7 +99,7 @@ The dOracle exposes mainly three internal functions, that may be used by the con
 A constructor:
 
 ```text
-constructor(address _iexecHubAddr) public
+constructor(address _iexecproxy) public
 ```
 
 A function to initialize/update the settings:
@@ -110,7 +115,7 @@ function _iexecDoracleUpdateSettings(
 internal
 ```
 
-The update function, that takes in input a task id, and reads the `Task` object data from the `IexecHub` smart contract to perform the required checks: that the authorized app, dataset, workerpool, trust level and tags are valid, and that the hash of `results` is equal to the `hashResult` field of the `Task` object \(over which the consensus was reached\). If the task passes the checks then it returns the `results` field of the `Task` object, i.e. the result of the dOracle dApp computation.
+The update function, that takes in input a task id, and reads the `Task` object data from the `IexecProxy` smart contract to perform the required checks (the execution must be completed; the app, the dataset, and the workerpool must be authorized; the trust level and tags mus be valid). The `IexecProxy` already checked that the hash of the `resultsCallback` is equal to the `resultDigest` \(over which the consensus was reached\). If the task passes the checks then it returns the `results` field of the `Task` object, i.e. the result of the dOracle dApp computation.
 
 ```text
 function _iexecDoracleGetVerifiedResult(bytes32 _doracleCallId)
@@ -185,4 +190,3 @@ public onlyOwner
 ```
 
 [Next ](https://docs.iex.ec/resources.html)[ Previous](https://docs.iex.ec/consortiumdeployment.html)
-
