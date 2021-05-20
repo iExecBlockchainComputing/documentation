@@ -5,7 +5,7 @@
 
 * [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
 * [Nodejs](https://nodejs.org) 10.12.0 or higher.
-* [iExec SDK](https://www.npmjs.com/package/iexec) 5.0.0 or higher.
+* [iExec SDK](https://www.npmjs.com/package/iexec) 6.0.0 or higher.
 * Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
 {% endhint %}
 
@@ -53,59 +53,51 @@ This command will create the folders `datasets/encrypted`, `datasets/original` a
 ...
 ```
 
-First, create your dataset folder:
+We will create a dummy file that has `"Hello, world!"` as content inside `datasets/original`. Alternatively, you can put your own dataset file.
 
 ```bash
-mkdir datasets/original/my-first-dataset
-```
-
-We will create a dummy file that has `"Hello, world!"` as content inside `datasets/original/my-first-dataset`. Alternatively, you can put your own dataset file.
-
-```bash
-echo "Hello, world!" > datasets/original/my-first-dataset/dataset.txt
+echo "Hello, world!" > datasets/original/my-first-dataset.txt
 ```
 
 ```bash
 datasets
 ├── encrypted
 └── original
-    └── my-first-dataset
-        └── dataset.txt
+    └── my-first-dataset.txt
 ```
 
 Now run the following command to encrypt the file:
 
 ```bash
-iexec dataset encrypt --algorithm scone
+iexec dataset encrypt
 ```
 
 ```bash
 datasets
 ├── encrypted
-│   └── my-first-dataset.zip
+│   └── my-first-dataset.txt.enc
 └── original
-    └── my-first-dataset
-        └── dataset.txt
+    └── my-first-dataset.txt
 ```
 
-As you can see, the command generated the file `datasets/encrypted/my-first-dataset.zip`. That file is the encrypted version of your dataset, you should push it somewhere accessible because the worker will download it during the execution process. You will enter this file's URI in the `iexec.json`file \(`multiaddr` attribute\) when you will deploy your dataset. Make sure that the URI is a **DIRECT** download link \(not a link to a web page for example\).
+As you can see, the command generated the file `datasets/encrypted/my-first-dataset.txt.enc`. That file is the encrypted version of your dataset, you should push it somewhere accessible because the worker will download it during the execution process. You will enter this file's URI in the `iexec.json`file \(`multiaddr` attribute\) when you will deploy your dataset. Make sure that the URI is a **DIRECT** download link \(not a link to a web page for example\).
 
 {% hint style="info" %}
 You can use Github for example to publish the file but you should add **/raw/** to the URI like this: [https://github.com/&lt;username&gt;/&lt;repo&gt;/raw/master/my-first-dataset.zip](https://github.com/<username>/<repo>/raw/master/my-first-dataset.zip)
 {% endhint %}
 
-The file `.secrets/datasets/my-first-dataset.scone.secret` is the encryption key, make sure to back it up securely. The file `.secrets/datasets/dataset.secret` is just an "alias" in the sense that it is the key of the last encrypted dataset.
+The file `.secrets/datasets/my-first-dataset.txt.key` is the encryption key, make sure to back it up securely. The file `.secrets/datasets/dataset.key` is just an "alias" in the sense that it is the key of the last encrypted dataset.
 
 ```bash
 .secrets
 └── datasets
-    ├── dataset.secret
-    └── my-first-dataset.scone.secret
+    ├── dataset.key
+    └── my-first-dataset.txt.key
 ```
 
 ## Deploy the dataset
 
-Fill in the fields of the `iexec.json` file. Choose a `name` for your dataset, put the encrypted file's URI in `multiaddr`\(the URI you got after publishing the file\), and add the `checksum` \(you can get it by running `sha256sum datasets/encrypted/my-first-dataset.zip`\)
+Fill in the fields of the `iexec.json` file. Choose a `name` for your dataset, put the encrypted file's URI in `multiaddr`\(the URI you got after publishing the file\), and add the `checksum` \(you can get it by running `sha256sum datasets/encrypted/my-first-dataset.txt.enc`\)
 
 ```bash
 $ cat iexec.json
@@ -141,7 +133,7 @@ Check it by doing:
 iexec dataset check-secret <0x-your-dataset-address> --chain goerli
 ```
 
-We saw in this section how to encrypt a dataset with [SCONE](intel-sgx-technology.md#scone-framework) and deploy it on iExec. In addition, we learned how to push the encryption secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms). Now we need to build the application that is going to consume this dataset.
+We saw in this section how to encrypt a dataset and deploy it on iExec. In addition, we learned how to push the encryption secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms). Now we need to build the application that is going to consume this dataset.
 
 ## Prepare your application:
 
@@ -171,11 +163,12 @@ const figlet = require('figlet');
   try {
     const iexecOut = process.env.IEXEC_OUT;
     const iexecIn = process.env.IEXEC_IN;
+    const datasetFileName = process.env.IEXEC_DATASET_FILE_NAME;
 
     // Use some confidential assets
     let text = '';
     try {
-      const confidentialFile = await fsPromises.readFile(`${iexecIn}/confidential-asset.txt`);
+      const confidentialFile = await fsPromises.readFile(`${iexecIn}/${datasetFileName}`);
       text = figlet.textSync(confidentialFile);
     } catch (e) {
       console.warn('confidential file does not exists');
@@ -210,12 +203,13 @@ from pyfiglet import Figlet
 
 iexec_out = os.environ['IEXEC_OUT']
 iexec_in = os.environ['IEXEC_IN']
+iexec_dataset_file_name = os.environ['IEXEC_DATASET_FILE_NAME']
 
 text = ""
 
 # Use some confidential assets
-if os.path.exists(iexec_in + '/confidential-asset.txt'):
-    with open(iexec_in + '/confidential-asset.txt', 'r') as f:
+if os.path.exists(iexec_in + '/' + iexec_dataset_file_name):
+    with open(iexec_in + '/' + iexec_dataset_file_name, 'r') as f:
         text = Figlet().renderText(f.read())
 
 # Append some results
@@ -358,9 +352,9 @@ Your application fingerprint (mrenclave) is ready:
 #####################################################################
 iexec.json:
 
-"app": { 
- "owner" : ... 
- "name": ... 
+"app": {
+ "owner" : ...
+ "name": ...
   ...
  "mrenclave": "8a2e59370e47425ebaad0ba72ab06beb49ddf53aa1575c0de9a32dc82687d20c|695e1fd6bb78cc6745786d9941dda921|a8e434c81b82012c19d028ab3e7ef3adecb7786c10e5739422a7f7444e2d323c|node /app/app.js"
 }
