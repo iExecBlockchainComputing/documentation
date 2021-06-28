@@ -80,13 +80,22 @@ The runtime variables are environment variables set by the iExec worker and avai
 
 #### Input files variables
 
-Use these variables if your app deals with input files
+Use these variables if your app deals with input files.
 
 | Name                     | Type            | Content                                                     |
 | :----------------------- | :-------------- | :---------------------------------------------------------- |
 | IEXEC_INPUT_FILES_FOLDER | path            | Absolute path of iexec input folder \(`/iexec_in/`\)        |
 | IEXEC_INPUT_FILES_NUMBER | int &gt;= 0     | Total number of input files                                 |
 | IEXEC_INPUT_FILE_NAME_x  | string or unset | Name of the input file indexed by x \(`x` starts with `1`\) |
+
+#### Task variables
+
+To achieve some use cases, you may want to access some information from the task.
+
+| Name | Type | Content |
+| :--- | :--- | :--- |
+| IEXEC_TASK_ID | bytes32 | taskid of the running task |
+| IEXEC_DATASET_ADDRESS | address | ethereum address of the dataset used (or address zero) |
 
 #### Bag of Tasks variables
 
