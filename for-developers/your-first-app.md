@@ -11,10 +11,10 @@ description: >-
 
 * [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
 * [Dockerhub](https://hub.docker.com/) account.
-* [Nodejs](https://nodejs.org) 10.12.0 or higher.
+* [Nodejs](https://nodejs.org) 12.0.0 or higher.
 * [iExec SDK](https://www.npmjs.com/package/iexec) 6.0.0 or higher.
 * [Quickstart](quick-start-for-developers.md) tutorial completed
-* Ethereum wallet charged with Goerli ETH an RLC
+* Ethereum wallet charged with Viviani ETH an RLC
 {% endhint %}
 
 In this guide, we will prepare an iExec app based on an existing docker image and we will run it on iExec decentralized infrastructure.
@@ -35,7 +35,7 @@ iExec leverage [Docker](https://www.docker.com/why-docker) containers to ensure 
 
 ### Why using Docker containers?
 
-* Docker Engine is the most **widely used** container engine. 
+* Docker Engine is the most **widely used** container engine.
 * A Docker container image is a **standard** unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. This allows for computations to be **run on any worker** connected to the decentralized infrastructure.
 * Docker also enables the creation of new layers on top of existing images. This allows for any iExec **apps to be easily built on top of existing docker images**.
 
@@ -85,7 +85,7 @@ Use these variables if your app deals with input files
 | Name                     | Type            | Content                                                     |
 | :----------------------- | :-------------- | :---------------------------------------------------------- |
 | IEXEC_INPUT_FILES_FOLDER | path            | Absolute path of iexec input folder \(`/iexec_in/`\)        |
-| IEXEC_NB_INPUT_FILES     | int &gt;= 0     | Total number of input files                                 |
+| IEXEC_INPUT_FILES_NUMBER | int &gt;= 0     | Total number of input files                                 |
 | IEXEC_INPUT_FILE_NAME_x  | string or unset | Name of the input file indexed by x \(`x` starts with `1`\) |
 
 #### Bag of Tasks variables
@@ -286,7 +286,7 @@ For each input file:
 * Copy it in the local volume bound to `/iexec_in` .
 * Add `-e IEXEC_INPUT_FILE_NAME_x=NAME` to docker run options \(`x` is the index of the file starting by 1 and `NAME` is the name of the file\)
 
-Add `-e IEXEC_NB_INPUT_FILES=n` to docker run options \(`n` is the total number of input files\).
+Add `-e IEXEC_INPUT_FILES_NUMBER=n` to docker run options \(`n` is the total number of input files\).
 
 Example with two inputs files:
 
@@ -300,7 +300,7 @@ docker run \
     -e IEXEC_OUT=/iexec_out \
     -e IEXEC_INPUT_FILE_NAME_1=file1 \
     -e IEXEC_INPUT_FILE_NAME_2=file2 \
-    -e IEXEC_NB_INPUT_FILES=2 \
+    -e IEXEC_INPUT_FILES_NUMBER=2 \
     my-hello-world \
     arg1 arg2 arg3
 ```
@@ -360,27 +360,27 @@ docker pull <dockerusername>/my-hello-world:1.0.0 | grep "Digest: sha256:" | sed
 Deploy your app on iExec
 
 ```text
-iexec app deploy --chain goerli
+iexec app deploy --chain viviani
 ```
 
 Verify the deployed app \(name, multiaddr, checksum, owner\)
 
 ```text
-iexec app show --chain goerli
+iexec app show --chain viviani
 ```
 
 ### Run your app on iExec
 
-Before requesting an execution make sure your account stake is charged with Goerli RLC
+Before requesting an execution make sure your account stake is charged with Viviani RLC
 
 ```text
-iexec account show --chain goerli
+iexec account show --chain viviani
 ```
 
 Run your application on iExec
 
 ```text
-iexec app run --watch --chain goerli
+iexec app run --watch --chain viviani
 ```
 
 {% hint style="info" %}
@@ -403,7 +403,7 @@ With `--input-files https://example.com/file-A.txt,https://example.com/file-B.zi
 Once the run is completed copy the taskid from `iexec app run` output to download and check the result
 
 ```text
-iexec task show <taskid> --download my-app-result --chain goerli  \
+iexec task show <taskid> --download my-app-result --chain viviani  \
     && unzip my-app-result.zip -d my-app-result
 ```
 
@@ -412,7 +412,7 @@ Congratulation your app successfully ran on iExec!
 ## Publish your app on iExec marketplace
 
 ```text
-iexec app publish --chain goerli
+iexec app publish --chain viviani
 ```
 
 **Congratulation your application is now available on iExec!**
@@ -435,4 +435,3 @@ Continue with these articles:
 
 * [Confidential app](confidential-computing/)
 * [Learn how to manage your apporders](advanced/manage-your-apporders.md)
-
