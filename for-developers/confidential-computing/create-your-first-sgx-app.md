@@ -15,6 +15,11 @@ Please make sure you have already checked the [quickstart](../your-first-app.md)
 
 After understanding the fundamentals of Confidential Computing and explaining the technologies behind it, it is time to roll up our sleeves and get hands-on with [enclaves](intel-sgx-technology.md#enclave). In this guide, we will focus on protecting an application - that is already compatible with the iExec platform - using SGX, and without changing the source code. That means we will use the same code we [previously](../your-first-app.md#build-your-app) deployed for a basic iExec application.
 
+
+**How would the enclave verify the integrity of the code?**
+
+The short answer is: the application is protected by taking a snapshot of the file system's state. The TEE image will use the [fspf](intel-sgx-technology.md#fspf-file-system-protection-file) feature of SCONE to authenticate the file system directories that would be used by the application \(/bin, /lib...\) as well as the code itself. It takes a snapshot of their state that will be later shared with the worker \(via the Blockchain\) to make sure everything is under control. If we change one bit of one of the authenticated files, the file system's state changes completely and the enclave will refuse to boot since it considers it as a possible attack.
+
 ## Prepare your application:
 
 Create a directory tree for your application in `~/iexec-projects/`.
@@ -24,188 +29,186 @@ cd ~/iexec-projects
 mkdir my-tee-hello-world-app && cd my-tee-hello-world-app
 mkdir src
 touch Dockerfile
-touch protect-fs.sh
+touch sconify.sh
 ```
 
-In the folder `src/` create the file `app.js` \(or `app.py` if you want to use Python\) then copy [this](../your-first-app.md#write-the-app-shell-script-example) code inside.
+In the folder `src/` create the file `app.js` then copy [this](../your-first-app#write-the-app-javascript-script-example) code inside.
 
-As we mentioned earlier, the advantage of using **SCONE** is the ability to make the application **Intel® SGX-enabled** without changing the source code. The only thing we are going to modify is the `Dockerfile`. First, we need to change the base image from the official `node` \(or `python`\) to the one provided by SCONE: `sconecuratedimages/public-apps:node-10-alpine-scone3.0`or `sconecuratedimages/public-apps:python-3.7.3-alpine3.10-scone3.0`. Those base docker images contain a `node` / `python` interpreters that run inside enclaves.
+As we mentioned earlier, the advantage of using **SCONE** is the ability to make the application **Intel® SGX-enabled** without changing the source code. The only thing we are going to do is rebuilding the app using the Trusted-Execution-Environment currated image provided by **SCONE**.
+
+{% hint style="info" %}
+SCONE provides currated base images for a bunch of languages, the currated image will be used to replace the base image and get rid of any non TEE compliant operations.
+{% endhint %}
+
+Copy the Dockerfile of the non-TEE app:
 
 {% tabs %}
 {% tab title="Javascript" %}
 {% code title="Dockerfile" %}
 ```bash
-FROM sconecuratedimages/public-apps:node-10-alpine-scone3.0
+# Starting from a base image supported by SCONE  
+FROM node:14-alpine3.11
 
-### install dependencies you need
-RUN apk add bash nodejs-npm
-RUN SCONE_MODE=sim npm install figlet@1.x
+# install your dependencies
+RUN mkdir /app && cd /app && npm install figlet@1.x
 
 COPY ./src /app
-
-###  protect file system with Scone
-COPY ./protect-fs.sh ./Dockerfile /build/
-RUN sh /build/protect-fs.sh /app
 
 ENTRYPOINT [ "node", "/app/app.js"]
 ```
 {% endcode %}
 {% endtab %}
-
-{% tab title="Python" %}
-{% code title="Dockefile" %}
-```bash
-FROM sconecuratedimages/public-apps:python-3.7.3-alpine3.10-scone3.0
-
-### install python3 dependencies you need
-RUN SCONE_MODE=sim pip3 install pyfiglet
-
-COPY ./src /app
-
-###  protect file system with Scone
-COPY ./protect-fs.sh ./Dockerfile /build/
-RUN sh /build/protect-fs.sh /app
-
-ENTRYPOINT ["python", "/app/app.py"]
-```
-{% endcode %}
-{% endtab %}
 {% endtabs %}
 
-**How would the enclave verify the integrity of the code?**
+## Build the TEE docker image:
 
-The short answer is: the application is protected by taking a snapshot of the file system's state. The script `protect-fs.sh` uses the [fspf](intel-sgx-technology.md#fspf-file-system-protection-file) feature of SCONE to authenticate the file system directories that would be used by the application \(/bin, /lib...\) as well as the code itself. It takes a snapshot of their state that will be later shared with the worker \(via the Blockchain\) to make sure everything is under control. If we change one bit of one of the authenticated files, the file system's state changes completely and the enclave will refuse to boot since it considers it as a possible attack.
+You will need to register a [free SCONE Account](https://scontain.com) to access the SCONE build tools and currated images from the [SCONE registry](https://gitlab.scontain.com/).
 
-The contents of `protect-fs.sh` should look like this:
+```sh
+# once registered run `docker login` to connect the SCONE registry
+docker login registry.scontain.com:5050
+```
 
-{% code title="protect-fs.sh" %}
+We will use the following script to wrap the sconification process, copy the `sconify.sh` script in the current directory:
+
+{% code title="sconify.sh" %}
 ```bash
-#!/bin/sh
+#!/bin/bash
 
-cd $(dirname $0)
+# declare the app entrypoint
+ENTRYPOINT="node /app/app.js"
+# declare an image name
+IMG_NAME=nodejs-hello-world
 
-if [ ! -e Dockerfile ]
-then
-    printf "\nFailed to parse Dockerfile ENTRYPOINT\n"
-    printf "Did you forget to add your Dockerfile in your build?\n"
-    printf "COPY ./tee/Dockerfile /build/\n\n"
-    exit 1
-fi
+IMG_FROM=${IMG_NAME}:temp-non-tee
+IMG_TO=${IMG_NAME}:tee-debug
 
-ENTRYPOINT_ARSG=$(grep ENTRYPOINT ./Dockerfile | tail -1 |  grep -o '"[^"]\+"' | tr -d '"')
-echo $ENTRYPOINT_ARSG > ./entrypoint
+# build the regular non-TEE image
+docker build . -t ${IMG_FROM}
 
-if [ -z "$ENTRYPOINT_ARSG" ]
-then
-    printf "\nFailed to parse Dockerfile ENTRYPOINT\n"
-    printf "Did you forget to add an ENTRYPOINT to your Dockerfile?\n"
-    printf "ENTRYPOINT [\"executable\", \"param1\", \"param2\"]\n\n"
-    exit 1
-fi
+# pull the SCONE currated image corresponding to our base image
+docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
 
-INTERPRETER=$(awk '{print $1}' ./entrypoint) # node or python
-ENTRYPOINT=$(cat ./entrypoint) # `node /app/app.js` or `python /app/app.py`
-
-export SCONE_MODE=sim
-export SCONE_HEAP=1G
-
-APP_FOLDER=$1
-
-printf "\n### Starting file system protection ...\n\n"
-
-scone fspf create /fspf.pb
-scone fspf addr /fspf.pb /          --not-protected --kernel /
-scone fspf addr /fspf.pb /usr       --authenticated --kernel /usr
-scone fspf addf /fspf.pb /usr       /usr
-scone fspf addr /fspf.pb /bin       --authenticated --kernel /bin
-scone fspf addf /fspf.pb /bin       /bin
-scone fspf addr /fspf.pb /lib       --authenticated --kernel /lib
-scone fspf addf /fspf.pb /lib       /lib
-scone fspf addr /fspf.pb /etc/ssl   --authenticated --kernel /etc/ssl
-scone fspf addf /fspf.pb /etc/ssl   /etc/ssl
-scone fspf addr /fspf.pb /sbin      --authenticated --kernel /sbin
-scone fspf addf /fspf.pb /sbin      /sbin
-printf "\n### Protecting code found in folder \"$APP_FOLDER\"\n\n"
-scone fspf addr /fspf.pb $APP_FOLDER --authenticated --kernel $APP_FOLDER
-scone fspf addf /fspf.pb $APP_FOLDER $APP_FOLDER
-
-scone fspf encrypt /fspf.pb > ./keytag
-
-MRENCLAVE="$(SCONE_HASH=1 $INTERPRETER)"
-FSPF_TAG=$(cat ./keytag | awk '{print $9}')
-FSPF_KEY=$(cat ./keytag | awk '{print $11}')
-FINGERPRINT="$FSPF_KEY|$FSPF_TAG|$MRENCLAVE|$ENTRYPOINT"
-echo $FINGERPRINT > ./fingerprint
-
-printf "\n\n"
-printf "Your application fingerprint (mrenclave) is ready:\n"
-printf "#####################################################################\n"
-printf "iexec.json:\n\n"
-printf "%s\n" "\"app\": { " " \"owner\" : ... " " \"name\": ... " "  ..." " \"mrenclave\": \"$FINGERPRINT\"" "}"
-printf "#####################################################################\n"
-printf "Hint: Replace 'mrenclave' before doing 'iexec app deploy' step.\n"
-printf "\n\n"
+# run the sconifier to build the TEE image based on the non-TEE image
+docker run -it --rm \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.7 \
+            sconify_iexec \
+            --name=hello-world \
+            --from=${IMG_FROM} \
+            --to=${IMG_TO} \
+            --binary-fs \
+            --fs-dir=/app \
+            --host-path=/etc/hosts \
+            --host-path=/etc/resolv.conf \
+            --binary=/usr/local/bin/node \
+            --heap=1G \
+            --dlopen=2 \
+            --no-color \
+            --verbose \
+            --command=${ENTRYPOINT} \
+            && echo && echo "successfully built TEE docker image => ${IMG_TO}"
 ```
 {% endcode %}
 
+
+```sh
+# make the script executable
+chmod +x sconify.sh
+# run the sconify script
+./sconify.sh
+```
+
+Congratulation you just built your first TEE application.
+
 {% hint style="info" %}
-All dependencies and files must be added to the image before invoking the **protect-fs.sh** script \(see below\).
+
+You may have noticed the `tee-debug` flag in the image name, the built image is actually in TEE debug mode, this allows you to have some debug features while developping the app.
+Once you are happy with the debug app, contact-us to go to production!
+
 {% endhint %}
-
-{% hint style="warning" %}
-It is important to carefully choose files to authenticate. It can be tricky to consider including enough files to protect the application without being more general than we should. For instance, if we authenticate the entire **/etc** directory the enclave will fail to boot because the content of /etc/hosts is modified at runtime by Docker.
-{% endhint %}
-
-{% hint style="warning" %}
-That's why we do not simply authenticate "/" for example!
-{% endhint %}
-
-In the end, your folder's structure should be like this:
-
-```bash
-.
-├── Dockerfile
-├── protect-fs.sh
-└── src
-    └── app.js
-```
-
-## Build the docker image:
-
-Once everything is ready we proceed to build the image. Make sure you are inside the right directory and run the following command in your terminal \(replace all occurrences of `<dockerusername>` with your Dockerhub username\):
-
-```bash
-docker image build . --tag my-tee-hello-world
-```
-
-At the end of the build's output, you should see this message \(with different a hash of course\):
-
-```bash
-Your application fingerprint (mrenclave) is ready:
-#####################################################################
-iexec.json:
-
-"app": { 
- "owner" : ... 
- "name": ... 
-  ...
- "mrenclave": "8a2e59370e47425ebaad0ba72ab06beb49ddf53aa1575c0de9a32dc82687d20c|695e1fd6bb78cc6745786d9941dda921|a8e434c81b82012c19d028ab3e7ef3adecb7786c10e5739422a7f7444e2d323c|node /app/app.js"
-}
-#####################################################################
-Hint: Replace 'mrenclave' before doing 'iexec app deploy' step.
-```
-
-That alphanumeric string is the [fingerprint](intel-sgx-technology.md#applications-fingerprint) of your application. It allows the verification of its integrity.
 
 ## Test your app on iExec
 
 At this stage, your application is ready to be tested on iExec. The process is similar to testing any type of application on the platform, with these minor exceptions:
 
-* When you tag your Docker image, use `my-tee-hello-world` instead of `my-hello-world`.
-* Do not forget the put the application's fingerprint inside `iexec.json` \(`"mrenclave"` attribute\).
-* Add the option `--tag tee` to the command `iexec app run`.
+### Push the newly built TEE image to dockerhub
 
-Please go ahead and follow [these steps](../your-first-app.md#test-your-app-on-iexec) to run your first enclave-protected application on iExec.
+When you tag your Docker image, use `my-tee-hello-world` instead of `my-hello-world`.
+
+### Deploy the TEE app on iExec:
+
+TEE applications require some additional information to be filled in during deployment.
+
+```sh
+# prepare the TEE application template
+iexec app init --tee
+```
+
+Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
+
+```json
+{
+  ...
+  "app": {
+    "owner": "0xF048eF3d7E3B33A465E0599E641BB29421f7Df92", // your address
+    "name": "tee-hello-world", // application name
+    "type": "DOCKER",
+    "multiaddr": "docker.io/username/my-tee-hello-world:1.0.0", // app image
+    "checksum": "0x15bed530c76f1f3b05b2db8d44c417128b8934899bc85804a655a01b441bfa78", // image digest
+    "mrenclave": {
+      "provider": "SCONE", // TEE provider (keep default value)
+      "version": "v5", // protocol version (keep default value)
+      "entrypoint": "node /app/app.js", // your app image entrypoint
+      "heapSize": 1073741824, // heap size in bytes (1Gb)
+      "fingerprint": "eca3ace86f1e8a5c47123c8fd271319e9eb25356803d36666dc620f30365c0c1" // fspf fingerprint see below
+    }
+  },
+  ...
+}
+```
+
+{% hint style="info" %}
+Run your TEE image with `SCONE_HASH=1` to get the fspf fingerprint:
+```sh
+docker run -it --rm -e SCONE_HASH=1 tee-nodejs-hello-world:tee-debug
+```
+{% endhint %}
+
+Deploy the app with the standard command:
+```sh
+iexec app deploy --chain viviani
+```
+
+### Run the TEE app
+
+Specify the tag `--tag tee` in `iexec app run` command to run a tee app.
+
+
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the Viviani debug workerpool `0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe` (see deployed workerpools on https://v6.pools.iex.ec).
+
+The debug workerpool is connected to a debug Secret Management System (this is fine for debuging but do not use to store production secrets), we will need to init the storage token on this SMS.
+
+These commands will do the trick:
+
+```sh
+# set a custom viviani SMS in chain.json
+sed -i 's|"viviani": {},|"viviani": { "sms": "https://v6.sms.debug-tee-services.viviani.iex.ec" },|g' chain.json
+```
+```sh
+# initialize the storage
+iexec storage init --chain viviani
+```
+```sh
+# restore the default configuration in chain.json
+sed -i 's|"viviani": { "sms": "https://v6.sms.debug-tee-services.viviani.iex.ec" },|"viviani": {},|g' chain.json
+```
+
+You are now ready to run the app
+
+```
+iexec app run --tag tee --workerpool 0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe --watch --chain viviani
+```
 
 ## Next step?
 
