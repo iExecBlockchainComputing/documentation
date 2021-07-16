@@ -186,7 +186,7 @@ Specify the tag `--tag tee` in `iexec app run` command to run a tee app.
 In order to run a **TEE-debug** app you will also need to select a debug workerpool, use the Viviani debug workerpool `0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe` (see deployed workerpools on https://v6.pools.iex.ec)
 
 ```
-iexec app run <address> --tag tee --workerpool 0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe --watch --chain viviani
+iexec app run --tag tee --workerpool 0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe --watch --chain viviani
 ```
 
 ## Next step?
