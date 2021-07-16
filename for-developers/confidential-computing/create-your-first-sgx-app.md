@@ -183,7 +183,28 @@ iexec app deploy --chain viviani
 ### Run the TEE app
 
 Specify the tag `--tag tee` in `iexec app run` command to run a tee app.
-In order to run a **TEE-debug** app you will also need to select a debug workerpool, use the Viviani debug workerpool `0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe` (see deployed workerpools on https://v6.pools.iex.ec)
+
+
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the Viviani debug workerpool `0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe` (see deployed workerpools on https://v6.pools.iex.ec).
+
+The debug workerpool is connected to a debug Secret Management System (this is fine for debuging but do not use to store production secrets), we will need to init the storage token on this SMS.
+
+These commands will do the trick:
+
+```sh
+# set a custom viviani SMS in chain.json
+sed -i 's|"viviani": {},|"viviani": { "sms": "https://v6.sms.debug-tee-services.viviani.iex.ec" },|g' chain.json
+```
+```sh
+# initialize the storage
+iexec storage init --chain viviani
+```
+```sh
+# restore the default configuration in chain.json
+sed -i 's|"viviani": { "sms": "https://v6.sms.debug-tee-services.viviani.iex.ec" },|"viviani": {},|g' chain.json
+```
+
+You are now ready to run the app
 
 ```
 iexec app run --tag tee --workerpool 0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe --watch --chain viviani
