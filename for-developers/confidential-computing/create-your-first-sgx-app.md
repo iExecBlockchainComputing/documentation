@@ -94,7 +94,7 @@ docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
             registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.7 \
             sconify_iexec \
-            --name=hello-world \
+            --name=${IMG_NAME} \
             --from=${IMG_FROM} \
             --to=${IMG_TO} \
             --binary-fs \
