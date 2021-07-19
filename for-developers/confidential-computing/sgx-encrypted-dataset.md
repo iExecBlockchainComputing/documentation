@@ -4,7 +4,7 @@
 **Prerequisites**
 
 * [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
-* [Nodejs](https://nodejs.org) 10.12.0 or higher.
+* [Nodejs](https://nodejs.org) 12.0.0 or higher.
 * [iExec SDK](https://www.npmjs.com/package/iexec) 6.0.0 or higher.
 * Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
 {% endhint %}
@@ -56,7 +56,7 @@ This command will create the folders `datasets/encrypted`, `datasets/original` a
 We will create a dummy file that has `"Hello, world!"` as content inside `datasets/original`. Alternatively, you can put your own dataset file.
 
 ```bash
-echo "Hello, world!" > datasets/original/my-first-dataset.txt
+echo "Hello, confidential world!" > datasets/original/my-first-dataset.txt
 ```
 
 ```bash
@@ -71,6 +71,10 @@ Now run the following command to encrypt the file:
 ```bash
 iexec dataset encrypt
 ```
+
+{% hint style="info" %}
+`iexec dataset encrypt` will output a checksum, keep this value for a later use.
+{% endhint %}
 
 ```bash
 datasets
@@ -118,19 +122,28 @@ $ cat iexec.json
 To deploy your dataset run:
 
 ```bash
-iexec dataset deploy --chain goerli
+iexec dataset deploy --chain viviani
 ```
 
 You will get a hexadecimal address for your deployed dataset. Use that address to push the encryption key to the [SMS](intel-sgx-technology.md#secret-management-service-sms) so it is available for authorized applications.
 
-```bash
-iexec dataset push-secret <0x-your-dataset-address> --chain goerli
+For simplicity, we will use the dataset with a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management System so we will send the dataset's encryption key to this SMS (this is fine for debuging but do not use to store production secrets).
+
+These `sed` commands will do the trick:
+
+```sh
+# set a custom viviani SMS in chain.json
+sed -i 's|"viviani": {},|"viviani": { "sms": "https://v6.sms.debug-tee-services.viviani.iex.ec" },|g' chain.json
 ```
-
-Check it by doing:
-
-```bash
-iexec dataset check-secret <0x-your-dataset-address> --chain goerli
+```sh
+# push the dataset secret to the SMS
+iexec dataset push-secret --chain viviani
+# check the secret is available on the SMS
+iexec dataset check-secret --chain viviani
+```
+```sh
+# restore the default configuration in chain.json
+sed -i 's|"viviani": { "sms": "https://v6.sms.debug-tee-services.viviani.iex.ec" },|"viviani": {},|g' chain.json
 ```
 
 We saw in this section how to encrypt a dataset and deploy it on iExec. In addition, we learned how to push the encryption secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms). Now we need to build the application that is going to consume this dataset.
@@ -142,15 +155,16 @@ Let's create a directory tree for this app in `~/iexec-projects/`.
 ```bash
 cd ~/iexec-projects
 mkdir my-tee-dataset-app && cd my-tee-dataset-app
+iexec init --skip-wallet
 mkdir src
-touch src/app.js # or app.py
+touch src/app.js
 touch Dockerfile
-touch protect-fs.sh
+touch sconify.sh
 ```
 
-In the folder `src/` create the file `app.js` \(or `app.py` if you want to use Python\) then copy this code inside:
+In the folder `src/` create the file `app.js` then copy this code inside:
 
-In `app.js` \(or `app.py`\), we read the content of the dataset and write it in the result's folder \(in an artistic way using **Figlet\)**:
+In `app.js`, we read the content of the dataset and write it in the result's folder \(in an artistic way using **Figlet\)**:
 
 {% tabs %}
 {% tab title="Javascript" %}
@@ -169,7 +183,7 @@ const figlet = require('figlet');
     let text = '';
     try {
       const confidentialFile = await fsPromises.readFile(`${iexecIn}/${datasetFileName}`);
-      text = figlet.textSync(confidentialFile);
+      text = figlet.textSync(confidentialFile.toString());
     } catch (e) {
       console.warn('confidential file does not exists');
     }
@@ -192,188 +206,131 @@ const figlet = require('figlet');
 ```
 {% endcode %}
 {% endtab %}
-
-{% tab title="Python" %}
-{% code title="src/app.py" %}
-```python
-import os
-import sys
-import json
-from pyfiglet import Figlet
-
-iexec_out = os.environ['IEXEC_OUT']
-iexec_in = os.environ['IEXEC_IN']
-iexec_dataset_file_name = os.environ['IEXEC_DATASET_FILE_NAME']
-
-text = ""
-
-# Use some confidential assets
-if os.path.exists(iexec_in + '/' + iexec_dataset_file_name):
-    with open(iexec_in + '/' + iexec_dataset_file_name, 'r') as f:
-        text = Figlet().renderText(f.read())
-
-# Append some results
-with open(iexec_out + '/result.txt', 'w+') as f:
-    f.write(text)
-
-# Declare everything is computed
-with open(iexec_out + '/computed.json', 'w+') as f:
-    json.dump({ "deterministic-output-path" : iexec_out + '/result.txt' }, f)
-```
-{% endcode %}
-{% endtab %}
 {% endtabs %}
 
-The Dockerfile is the same as the one we saw [previously](create-your-first-sgx-app.md#build-the-docker-image) for a trusted application:
+## Build the TEE docker image:
+
+The Dockerfile and the build scripts are the same as the ones we saw [previously](create-your-first-sgx-app.md) for a trusted application:
 
 {% tabs %}
 {% tab title="Javascript" %}
 {% code title="Dockerfile" %}
 ```bash
-FROM sconecuratedimages/public-apps:node-10-alpine-scone3.0
+# Starting from a base image supported by SCONE  
+FROM node:14-alpine3.11
 
-### install dependencies you need
-RUN apk add bash nodejs-npm
-RUN SCONE_MODE=sim npm install figlet
+# install your dependencies
+RUN mkdir /app && cd /app && npm install figlet@1.x
 
 COPY ./src /app
-
-###  protect file system with Scone
-COPY ./protect-fs.sh ./Dockerfile /build/
-RUN sh /build/protect-fs.sh /app
 
 ENTRYPOINT [ "node", "/app/app.js"]
 ```
 {% endcode %}
 {% endtab %}
-
-{% tab title="Python" %}
-```bash
-FROM sconecuratedimages/public-apps:python-3.7.3-alpine3.10-scone3.0
-
-### install python3 dependencies you need
-RUN SCONE_MODE=sim pip3 install pyfiglet
-
-COPY ./src /app
-
-###  protect file system with Scone
-COPY ./protect-fs.sh ./Dockerfile /build/
-RUN sh /build/protect-fs.sh /app
-
-ENTRYPOINT ["python", "/app/app.py"]
-```
-{% endtab %}
 {% endtabs %}
 
-And the last thing to add is the file `protect-fs.sh` :
 
-{% code title="protect-fs.sh" %}
+{% code title="sconify.sh" %}
 ```bash
-#!/bin/sh
+#!/bin/bash
 
-cd $(dirname $0)
+# declare the app entrypoint
+ENTRYPOINT="node /app/app.js"
+# declare an image name
+IMG_NAME=nodejs-dataset-app
 
-if [ ! -e Dockerfile ]
-then
-    printf "\nFailed to parse Dockerfile ENTRYPOINT\n"
-    printf "Did you forget to add your Dockerfile in your build?\n"
-    printf "COPY ./tee/Dockerfile /build/\n\n"
-    exit 1
-fi
+IMG_FROM=${IMG_NAME}:temp-non-tee
+IMG_TO=${IMG_NAME}:tee-debug
 
-ENTRYPOINT_ARSG=$(grep ENTRYPOINT ./Dockerfile | tail -1 |  grep -o '"[^"]\+"' | tr -d '"')
-echo $ENTRYPOINT_ARSG > ./entrypoint
+# build the regular non-TEE image
+docker build . -t ${IMG_FROM}
 
-if [ -z "$ENTRYPOINT_ARSG" ]
-then
-    printf "\nFailed to parse Dockerfile ENTRYPOINT\n"
-    printf "Did you forget to add an ENTRYPOINT to your Dockerfile?\n"
-    printf "ENTRYPOINT [\"executable\", \"param1\", \"param2\"]\n\n"
-    exit 1
-fi
+# pull the SCONE currated image corresponding to our base image
+docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
 
-INTERPRETER=$(awk '{print $1}' ./entrypoint) # node or python
-ENTRYPOINT=$(cat ./entrypoint) # `node /app/app.js` or `python /app/app.py`
-
-export SCONE_MODE=sim
-export SCONE_HEAP=1G
-
-APP_FOLDER=$1
-
-printf "\n### Starting file system protection ...\n\n"
-
-scone fspf create /fspf.pb
-scone fspf addr /fspf.pb /          --not-protected --kernel /
-scone fspf addr /fspf.pb /usr       --authenticated --kernel /usr
-scone fspf addf /fspf.pb /usr       /usr
-scone fspf addr /fspf.pb /bin       --authenticated --kernel /bin
-scone fspf addf /fspf.pb /bin       /bin
-scone fspf addr /fspf.pb /lib       --authenticated --kernel /lib
-scone fspf addf /fspf.pb /lib       /lib
-scone fspf addr /fspf.pb /etc/ssl   --authenticated --kernel /etc/ssl
-scone fspf addf /fspf.pb /etc/ssl   /etc/ssl
-scone fspf addr /fspf.pb /sbin      --authenticated --kernel /sbin
-scone fspf addf /fspf.pb /sbin      /sbin
-printf "\n### Protecting code found in folder \"$APP_FOLDER\"\n\n"
-scone fspf addr /fspf.pb $APP_FOLDER --authenticated --kernel $APP_FOLDER
-scone fspf addf /fspf.pb $APP_FOLDER $APP_FOLDER
-
-scone fspf encrypt /fspf.pb > ./keytag
-
-MRENCLAVE="$(SCONE_HASH=1 $INTERPRETER)"
-FSPF_TAG=$(cat ./keytag | awk '{print $9}')
-FSPF_KEY=$(cat ./keytag | awk '{print $11}')
-FINGERPRINT="$FSPF_KEY|$FSPF_TAG|$MRENCLAVE|$ENTRYPOINT"
-echo $FINGERPRINT > ./fingerprint
-
-printf "\n\n"
-printf "Your application fingerprint (mrenclave) is ready:\n"
-printf "#####################################################################\n"
-printf "iexec.json:\n\n"
-printf "%s\n" "\"app\": { " " \"owner\" : ... " " \"name\": ... " "  ..." " \"mrenclave\": \"$FINGERPRINT\"" "}"
-printf "#####################################################################\n"
-printf "Hint: Replace 'mrenclave' before doing 'iexec app deploy' step.\n"
-printf "\n\n"
+# run the sconifier to build the TEE image based on the non-TEE image
+docker run -it --rm \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.7 \
+            sconify_iexec \
+            --name=${IMG_NAME} \
+            --from=${IMG_FROM} \
+            --to=${IMG_TO} \
+            --binary-fs \
+            --fs-dir=/app \
+            --host-path=/etc/hosts \
+            --host-path=/etc/resolv.conf \
+            --binary=/usr/local/bin/node \
+            --heap=1G \
+            --dlopen=2 \
+            --no-color \
+            --verbose \
+            --command=${ENTRYPOINT} \
+            && echo -e "\n------------------\n" \
+            && echo "successfully built TEE docker image => ${IMG_TO}" \
+            && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
 {% endcode %}
 
-## Build the docker image:
-
-Once everything is ready we proceed to build the image. Make sure you are inside the right directory and run the following command in your terminal:
-
-```bash
-docker image build . --tag my-tee-dataset
-```
-
-At the end of the build's output, you should see this message \(with different a hash of course\):
-
-```bash
-Your application fingerprint (mrenclave) is ready:
-#####################################################################
-iexec.json:
-
-"app": {
- "owner" : ...
- "name": ...
-  ...
- "mrenclave": "8a2e59370e47425ebaad0ba72ab06beb49ddf53aa1575c0de9a32dc82687d20c|695e1fd6bb78cc6745786d9941dda921|a8e434c81b82012c19d028ab3e7ef3adecb7786c10e5739422a7f7444e2d323c|node /app/app.js"
-}
-#####################################################################
-Hint: Replace 'mrenclave' before doing 'iexec app deploy' step.
-```
-
-That alphanumeric string is the [fingerprint](intel-sgx-technology.md#applications-fingerprint) of your application. It allows the verification of its integrity.
+Run the `sconify.sh` script to build the TEE-debug app.
 
 ## Test your app on iExec
 
 At this stage, your application is ready to be tested on iExec. The process is similar to testing any type of application on the platform, with these minor exceptions:
 
-* When you tag your Docker image, use `my-tee-dataset` instead of `my-hello-world`.
-* Do not forget the put the application's fingerprint inside `iexec.json` \(`"mrenclave"` attribute\).
-* Add the option `--tag tee` to the command `iexec app run`.
-* Finally, specify the address of your deployed dataset `--dataset <0x-your-dataset-address>`.
+### Push the newly built TEE image to dockerhub
 
-Please go ahead and follow [these steps](../your-first-app.md#test-your-app-on-iexec) to run your application on iExec.
+When you tag your Docker image, use `my-tee-dataset-app` instead of `my-hello-world`.
+
+### Deploy the TEE app on iExec:
+
+TEE applications require some additional information to be filled in during deployment.
+
+```sh
+# prepare the TEE application template
+iexec app init --tee
+```
+
+Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
+
+```json
+{
+  ...
+  "app": {
+    "owner": "0xF048eF3d7E3B33A465E0599E641BB29421f7Df92", // your address
+    "name": "tee-dataset-app", // application name
+    "type": "DOCKER",
+    "multiaddr": "docker.io/username/my-tee-dataset-app:1.0.0", // app image
+    "checksum": "0x15bed530c76f1f3b05b2db8d44c417128b8934899bc85804a655a01b441bfa78", // image digest
+    "mrenclave": {
+      "provider": "SCONE", // TEE provider (keep default value)
+      "version": "v5", // Scone version (keep default value)
+      "entrypoint": "node /app/app.js", // your app image entrypoint
+      "heapSize": 1073741824, // heap size in bytes (1GB)
+      "fingerprint": "eca3ace86f1e8a5c47123c8fd271319e9eb25356803d36666dc620f30365c0c1" // fingerprint of the enclave code (mrenclave), see how to retrieve it below
+    }
+  },
+  ...
+}
+```
+
+Deploy the app with the standard command:
+```sh
+iexec app deploy --chain viviani
+```
+
+### Run the TEE app
+
+Specify the tag `--tag tee` and the dataset to use `--dataset <datasetAddress>` in `iexec app run` command to run a tee app with a dataset.
+
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the Viviani debug workerpool `0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe` (see deployed workerpools on https://v6.pools.iex.ec).
+
+You are now ready to run the app
+
+```
+iexec app run <appAddress> --tag tee --dataset <datasetAddress> --workerpool 0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe --watch --chain viviani
+```
 
 ## Next step?
 
