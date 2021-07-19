@@ -27,6 +27,7 @@ Create a directory tree for your application in `~/iexec-projects/`.
 ```bash
 cd ~/iexec-projects
 mkdir my-tee-hello-world-app && cd my-tee-hello-world-app
+iexec init --skip-wallet
 mkdir src
 touch Dockerfile
 touch sconify.sh
@@ -171,7 +172,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 {% hint style="info" %}
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
 ```sh
-docker run -it --rm -e SCONE_HASH=1 tee-nodejs-hello-world:tee-debug
+docker run -it --rm -e SCONE_HASH=1 nodejs-hello-world-with-dataset:tee-debug
 ```
 {% endhint %}
 
