@@ -33,7 +33,7 @@ touch Dockerfile
 touch sconify.sh
 ```
 
-In the folder `src/` create the file `app.js` then copy [this](../your-first-app#write-the-app-javascript-script-example) code inside.
+In the folder `src/` create the file `app.js` then copy [this](your-first-app#write-the-app-javascript-script-example) code inside.
 
 As we mentioned earlier, the advantage of using **SCONE** is the ability to make the application **Intel® SGX-enabled** without changing the source code. The only thing we are going to do is rebuilding the app using the Trusted-Execution-Environment tooling provided by **SCONE**.
 
