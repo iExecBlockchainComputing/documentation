@@ -158,7 +158,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
     "checksum": "0x15bed530c76f1f3b05b2db8d44c417128b8934899bc85804a655a01b441bfa78", // image digest
     "mrenclave": {
       "provider": "SCONE", // TEE provider (keep default value)
-      "version": "v5", // protocol version (keep default value)
+      "version": "v5", // Scone version (keep default value)
       "entrypoint": "node /app/app.js", // your app image entrypoint
       "heapSize": 1073741824, // heap size in bytes (1GB)
       "fingerprint": "eca3ace86f1e8a5c47123c8fd271319e9eb25356803d36666dc620f30365c0c1" // fspf fingerprint see below
