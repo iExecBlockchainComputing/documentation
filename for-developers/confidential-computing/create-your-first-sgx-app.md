@@ -189,7 +189,7 @@ One last thing, in order to run a **TEE-debug** app you will also need to select
 
 The debug workerpool is connected to a debug Secret Management System (this is fine for debuging but do not use to store production secrets), we will need to init the storage token on this SMS.
 
-These commands will do the trick:
+These `sed` commands will do the trick:
 
 ```sh
 # set a custom viviani SMS in chain.json
