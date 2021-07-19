@@ -190,7 +190,7 @@ Specify the tag `--tag tee` in `iexec app run` command to run a tee app.
 
 One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the Viviani debug workerpool `0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe` (see deployed workerpools on https://v6.pools.iex.ec).
 
-The debug workerpool is connected to a debug Secret Management System (this is fine for debuging but do not use to store production secrets), we will need to init the storage token on this SMS.
+The debug workerpool is connected to a debug Secret Management Service (this is fine for debugging but do not use to store production secrets), we will need to init the storage token on this SMS.
 
 These `sed` commands will do the trick:
 
