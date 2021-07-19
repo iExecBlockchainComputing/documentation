@@ -108,7 +108,9 @@ docker run -it --rm \
             --no-color \
             --verbose \
             --command=${ENTRYPOINT} \
-            && echo && echo "successfully built TEE docker image => ${IMG_TO}"
+            && echo -e "\n------------------\n" \
+            && echo "successfully built TEE docker image => ${IMG_TO}" \
+            && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
 {% endcode %}
 
