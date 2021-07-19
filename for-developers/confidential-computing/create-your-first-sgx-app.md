@@ -160,7 +160,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
       "provider": "SCONE", // TEE provider (keep default value)
       "version": "v5", // protocol version (keep default value)
       "entrypoint": "node /app/app.js", // your app image entrypoint
-      "heapSize": 1073741824, // heap size in bytes (1Gb)
+      "heapSize": 1073741824, // heap size in bytes (1GB)
       "fingerprint": "eca3ace86f1e8a5c47123c8fd271319e9eb25356803d36666dc620f30365c0c1" // fspf fingerprint see below
     }
   },
@@ -213,4 +213,3 @@ iexec app run --tag tee --workerpool 0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe 
 ## Next step?
 
 In this tutorial, you learned how to leverage your application with the power of Trusted Execution Environments using iExec. But according to your use case, you may need to use some confidential data to get the full potential of the **Confidential Computing** paradigm. Check out the next chapter to see how.
-
