@@ -11,10 +11,10 @@ description: >-
 
 * [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
 * [Dockerhub](https://hub.docker.com/) account.
-* [Nodejs](https://nodejs.org) 10.12.0 or higher.
-* [iExec SDK](https://www.npmjs.com/package/iexec) 5.0.0 or higher.
+* [Nodejs](https://nodejs.org) 12.0.0 or higher.
+* [iExec SDK](https://www.npmjs.com/package/iexec) 6.0.0 or higher.
 * [Quickstart](quick-start-for-developers.md) tutorial completed
-* Ethereum wallet charged with Goerli ETH an RLC
+* Ethereum wallet charged with Viviani ETH an RLC
 {% endhint %}
 
 In this guide, we will prepare an iExec app based on an existing docker image and we will run it on iExec decentralized infrastructure.
@@ -35,7 +35,7 @@ iExec leverage [Docker](https://www.docker.com/why-docker) containers to ensure 
 
 ### Why using Docker containers?
 
-* Docker Engine is the most **widely used** container engine. 
+* Docker Engine is the most **widely used** container engine.
 * A Docker container image is a **standard** unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. This allows for computations to be **run on any worker** connected to the decentralized infrastructure.
 * Docker also enables the creation of new layers on top of existing images. This allows for any iExec **apps to be easily built on top of existing docker images**.
 
@@ -53,7 +53,8 @@ The requester may specify the arguments to use with an application in the reques
 
 ### Application input files
 
-Your app may use input files, all the input files specified by the requester will be downloaded in the container directory `/iexec_in` before running your application.
+Your app may use input files, all the input files specified by the requester will be downloaded in the container's iExec input directory before running your application.
+iExec input directory's path is available for the app by reading the variable `IEXEC_IN`.
 
 #### Input files \(public\):
 
@@ -61,11 +62,15 @@ Input files contain non-sensitive data publicly available on the Internet. The r
 
 For each input file, the variable `IEXEC_INPUT_FILE_NAME_x` is set to the file name \(`x` is the index of the file starting with `1`\). The total number of input files is stored in the variable.
 
-Use these variables in your application to find input files to process. \(first input file path is `/iexec_in/$IEXEC_INPUT_FILE_NAME_1`\)
+Use these variables in your application to find input files to process. \(first input file path is `"$IEXEC_IN/$IEXEC_INPUT_FILE_NAME_1"`\)
 
 #### Confidential input files \(datasets\):
 
-Confidential datasets are encrypted files available only in a Trusted Execution Environment \(TEE\). You will learn how to deal with datasets in the next tutorial.
+Confidential datasets are encrypted files available only in a Trusted Execution Environment \(TEE\).
+When an app is running in TEE with a dataset, the variable `IEXEC_DATASET_FILE_NAME` will be set to the dataset file name.
+
+Use `$IEXEC_IN/$IEXEC_DATASET_FILE_NAME` to find the dataset file to process.
+You will learn how to build a TEE app in the next tutorial.
 
 A single dataset file is currently supported.
 
@@ -75,23 +80,32 @@ The runtime variables are environment variables set by the iExec worker and avai
 
 #### Input files variables
 
-Use these variables if your app deals with input files
+Use these variables if your app deals with input files.
+
+| Name                     | Type            | Content                                                     |
+| :----------------------- | :-------------- | :---------------------------------------------------------- |
+| IEXEC_INPUT_FILES_FOLDER | path            | Absolute path of iexec input folder \(`/iexec_in/`\)        |
+| IEXEC_INPUT_FILES_NUMBER | int &gt;= 0     | Total number of input files                                 |
+| IEXEC_INPUT_FILE_NAME_x  | string or unset | Name of the input file indexed by x \(`x` starts with `1`\) |
+
+#### Task variables
+
+To achieve some use cases, you may want to access some information from the task.
 
 | Name | Type | Content |
 | :--- | :--- | :--- |
-| IEXEC\_INPUT\_FILES\_FOLDER | path | Absolute path of iexec input folder \(`/iexec_in/`\) |
-| IEXEC\_NB\_INPUT\_FILES | int &gt;= 0 | Total number of input files |
-| IEXEC\_INPUT\_FILE\_NAME\_x | string or unset | Name of the input file indexed by x \(`x` starts with `1`\) |
+| IEXEC_TASK_ID | bytes32 | taskid of the running task |
+| IEXEC_DATASET_ADDRESS | address | ethereum address of the dataset used (or address zero) |
 
 #### Bag of Tasks variables
 
 The requester may request multiple tasks in a single transaction \(Bag of Tasks\), each task of the bag is given a unique index. If you intend to support running Bag of Tasks in your app, you can use the following variables to index tasks in parallelization use cases.
 
-| Name | Type | Content |
-| :--- | :--- | :--- |
-| IEXEC\_BOT\_TASK\_INDEX | int &gt;= 0 | Index of the current task |
-| IEXEC\_BOT\_FIRST\_INDEX | int &gt;= 0 | Index of the first task in the current Deal \(Bag of task subset\) |
-| IEXEC\_BOT\_SIZE | int &gt;= 1 | Total number of parallelized tasks in a Bag of Tasks |
+| Name                  | Type        | Content                                                            |
+| :-------------------- | :---------- | :----------------------------------------------------------------- |
+| IEXEC_BOT_TASK_INDEX  | int &gt;= 0 | Index of the current task                                          |
+| IEXEC_BOT_FIRST_INDEX | int &gt;= 0 | Index of the first task in the current Deal \(Bag of task subset\) |
+| IEXEC_BOT_SIZE        | int &gt;= 1 | Total number of parallelized tasks in a Bag of Tasks               |
 
 ### Application outputs
 
@@ -105,15 +119,19 @@ result.zip
 
 `stdout.txt` contains the logs of your application. This file is automatically generated by the iExec worker.
 
-`iexec_out` is a copy at the final state of your app container directory `/iexec_out/` final state, your application must create the following files in `/iexec_out/` :
+`iexec_out` is a copy at the final state of the container's iExec output directory.
 
-* `/iexec_out/computed.json` file should be created when your computing is over. It contains at least a field `deterministic-output-path` which is the path of the deterministic portion of your results. It should be either a file or a non-empty folder. It is required for the proof of execution \(given the same inputs this file should always be the same\).
-* If your app produces output files, you must copy them in `/iexec_out/` .
+iExec output directory's path is available for the app by reading the variable `IEXEC_OUT`.
+
+Your application must create the following files in the iExec output directory :
+
+* `$IEXEC_OUT/computed.json` file should be created when your computing is over. It contains at least a field `deterministic-output-path` which is the path of the deterministic portion of your results. It should be either a file or a non-empty folder. It is required for the proof of execution \(given the same inputs this file should always be the same\).
+* If your app produces output files, you must copy them in the iExec output directory.
 
 {% hint style="warning" %}
-Your application must always create a `computed.json` file in `/iexec_out` as a proof of execution which could look like `{ "deterministic-output-path" : "/iexec_out/result.txt" }`
+Your application must always create a `computed.json` file in the iExec output directory as a proof of execution which could look like `{ "deterministic-output-path" : "/iexec_out/result.txt" }`
 
-The `computed.json`file is compared across replicated tasks in the [Proof of Contribution protocol](../key-concepts/proof-of-contribution.md) to achieve a consensus on workers.
+The `computed.json` file is compared across replicated tasks in the [Proof of Contribution protocol](../key-concepts/proof-of-contribution.md) to achieve a consensus on workers.
 {% endhint %}
 
 ## Build your app
@@ -176,7 +194,6 @@ import sys
 import json
 from pyfiglet import Figlet
 
-iexec_in = os.environ['IEXEC_IN']
 iexec_out = os.environ['IEXEC_OUT']
 
 # Do whatever you want (let's write hello world here)
@@ -204,7 +221,7 @@ with open(iexec_out + '/computed.json', 'w+') as f:
 {% tab title="JavaScript" %}
 {% code title="Dockerfile" %}
 ```bash
-FROM node:10
+FROM node:14
 ### install your dependencies if you have some
 RUN mkdir /app && cd /app && npm install figlet@1.x
 COPY ./src /app
@@ -264,7 +281,7 @@ Use `[COMMAND]` and `[ARGS...]` to simulate the requester arguments
 
 **useful options for iExec:**
 
-`-v` : Bind mount a volume. Use it to bind `/iexec_in` and `/iexec_out`
+`-v` : Bind mount a volume. Use it to bind input and output directories (`/iexec_in` and `/iexec_out`)
 
 `-e`: Set environnement variable. Use it to simulate iExec Runtime variables
 {% endhint %}
@@ -278,7 +295,7 @@ For each input file:
 * Copy it in the local volume bound to `/iexec_in` .
 * Add `-e IEXEC_INPUT_FILE_NAME_x=NAME` to docker run options \(`x` is the index of the file starting by 1 and `NAME` is the name of the file\)
 
-Add `-e IEXEC_NB_INPUT_FILES=n` to docker run options \(`n` is the total number of input files\).
+Add `-e IEXEC_INPUT_FILES_NUMBER=n` to docker run options \(`n` is the total number of input files\).
 
 Example with two inputs files:
 
@@ -292,7 +309,7 @@ docker run \
     -e IEXEC_OUT=/iexec_out \
     -e IEXEC_INPUT_FILE_NAME_1=file1 \
     -e IEXEC_INPUT_FILE_NAME_2=file2 \
-    -e IEXEC_NB_INPUT_FILES=2 \
+    -e IEXEC_INPUT_FILES_NUMBER=2 \
     my-hello-world \
     arg1 arg2 arg3
 ```
@@ -352,27 +369,27 @@ docker pull <dockerusername>/my-hello-world:1.0.0 | grep "Digest: sha256:" | sed
 Deploy your app on iExec
 
 ```text
-iexec app deploy --chain goerli
+iexec app deploy --chain viviani
 ```
 
 Verify the deployed app \(name, multiaddr, checksum, owner\)
 
 ```text
-iexec app show --chain goerli
+iexec app show --chain viviani
 ```
 
 ### Run your app on iExec
 
-Before requesting an execution make sure your account stake is charged with Goerli RLC
+Before requesting an execution make sure your account stake is charged with Viviani RLC
 
 ```text
-iexec account show --chain goerli
+iexec account show --chain viviani
 ```
 
 Run your application on iExec
 
 ```text
-iexec app run --watch --chain goerli
+iexec app run --watch --chain viviani
 ```
 
 {% hint style="info" %}
@@ -395,7 +412,7 @@ With `--input-files https://example.com/file-A.txt,https://example.com/file-B.zi
 Once the run is completed copy the taskid from `iexec app run` output to download and check the result
 
 ```text
-iexec task show <taskid> --download my-app-result --chain goerli  \
+iexec task show <taskid> --download my-app-result --chain viviani  \
     && unzip my-app-result.zip -d my-app-result
 ```
 
@@ -404,7 +421,7 @@ Congratulation your app successfully ran on iExec!
 ## Publish your app on iExec marketplace
 
 ```text
-iexec app publish --chain goerli
+iexec app publish --chain viviani
 ```
 
 **Congratulation your application is now available on iExec!**
@@ -427,4 +444,3 @@ Continue with these articles:
 
 * [Confidential app](confidential-computing/)
 * [Learn how to manage your apporders](advanced/manage-your-apporders.md)
-

@@ -9,7 +9,7 @@ description: >-
 {% hint style="success" %}
 **Prerequisite**
 
-* [Nodejs](https://nodejs.org) 10.12.0 or higher
+* [Nodejs](https://nodejs.org) 12.0.0 or higher
 {% endhint %}
 
 iExec enables decentralized docker app deployment and monetization on the blockchain.
@@ -77,31 +77,26 @@ The iExec SDK creates the minimum configuration files:
 * we use `--skip-wallet` to skip wallet creation as we already created it
 {% endhint %}
 
-You can now connect to the blockchain. In the following steps we will use the **Goerli testnet**. Goerli is an Ethereum blockchain operated for testing purposes.
-
-You can now check your wallet content and funds on Goerli:
-
-```text
-iexec wallet show --chain goerli
-```
-
-For now your wallet is empty.
-
-### Get some test ETH
-
-Go to [Goerli Faucet](https://goerli-faucet.slock.it/) and paste your wallet address to ask some test ETH.
-
-Check your wallet to see if you received the Goerli ETH funds in your wallet:
-
-```text
-iexec wallet show --chain goerli
-```
+You can now connect to the blockchain. In the following steps we will use the **iExec sidechain testnet (also called Viviani)**.
 
 {% hint style="info" %}
-The ETH in your wallet will allow you to pay for Ethereum blockchain transaction fees. Every time you write on the blockchain \(ie: you make a transaction\) a small amount of ETH is taken from your wallet to reward the people operating the blockchain, this mechanism protects public blockchain against spam.
 
-[Read more about transaction fees](https://bitfalls.com/2017/12/05/ethereum-gas-and-transaction-fees-explained/)
+**Viviani** is an Ethereum blockchain run by iExec for testing purposes. Unlike the Ethereum mainnet or public testnets, transactions on Viviani do not require the payment of transaction fees ([Read more about transaction fees](https://bitfalls.com/2017/12/05/ethereum-gas-and-transaction-fees-explained/)).
+
+iExec is deployed on 4 networks, once you are comfortable with the iExec protocol, feel free to choose the one that best suits your needs:
+
+| | Production<br/>(use real assets) | Staging<br/>(use free test assets) |
+|---|---|---|
+| **Sidechain**<br/>+ no transaction fees<br/>+ enhanced throughput | **bellecour**<br/>(iExec sidechain) | **viviani**<br/>(iExec sidechain testnet) |
+| **Public chain**<br/>+ access the whole ecosystem | **mainnet**<br/>(ethereum mainnet) | **goerli**<br/>(goerli public testnet) |
+
 {% endhint %}
+
+You can now check your wallet content on Viviani:
+
+```text
+iexec wallet show --chain viviani
+```
 
 ### Initialize your remote storage
 
@@ -110,7 +105,7 @@ iExec enables running apps producing output files, you will need a place for sto
 Initialize your default remote storage:
 
 ```text
-iexec storage init --chain goerli
+iexec storage init --chain viviani
 ```
 
 {% hint style="info" %}
@@ -153,19 +148,17 @@ You can deploy this application on iExec, it will run out of the box. Where you 
 You will now deploy your app on iExec, this will be your first transaction on the blockchain:
 
 ```text
-iexec app deploy --chain goerli
+iexec app deploy --chain viviani
 ```
 
 {% hint style="success" %}
-While running `iexec app deploy --chain goerli` you sent your first transaction on the goerli blockchain.
-
-You spent a small amount of ETH from your wallet to pay for this transaction, you can check you new wallet ballance with `iexec wallet show --chain goerli`
+While running `iexec app deploy --chain viviani` you sent your first transaction on the viviani blockchain.
 {% endhint %}
 
 You can check your deployed apps with their index, let's check your last deployed app:
 
 ```text
-iexec app show --chain goerli
+iexec app show --chain viviani
 ```
 
 ## Run your app on iExec
@@ -175,7 +168,7 @@ iExec allows you to run applications on a decentralized infrastructure with paym
 Let's get some test RLC to run your app
 
 ```text
-iexec wallet getRLC --chain goerli
+iexec wallet get-RLC --chain viviani
 ```
 
 After a few moments, your wallet will be credited with test RLC.
@@ -183,10 +176,10 @@ After a few moments, your wallet will be credited with test RLC.
 You can check your wallet content
 
 ```text
-iexec wallet show --chain goerli
+iexec wallet show --chain viviani
 ```
 
-Congratulation you own RLC on Goerli testnet!
+Congratulation you own RLC on Viviani testnet!
 
 Next step is to top up your **iExec Account** and use your credit to run your application.
 
@@ -204,7 +197,7 @@ At any time you can:
 Top up your iExec Account
 
 ```text
-iexec account deposit 200 --chain goerli
+iexec account deposit 200 --chain viviani
 ```
 
 You moved 200 nRLC from your wallet to your account.
@@ -212,14 +205,14 @@ You moved 200 nRLC from your wallet to your account.
 You can now check it with the following commands
 
 ```text
-iexec account show --chain goerli
-iexec wallet show --chain goerli
+iexec account show --chain viviani
+iexec wallet show --chain viviani
 ```
 
 Your application is deployed, you have some RLC in your iExec Account, everything is now ready to run your application!
 
 ```text
-iexec app run --args <your-name-here> --workerpool iexec-main-pool.workerpools.v5.iexec.eth --watch --chain goerli
+iexec app run --args <your-name-here> --watch --chain viviani
 ```
 
 {% hint style="info" %}
@@ -229,7 +222,7 @@ Useful options:
 
 * `--args <args>`  specify the app execution arguments
 * `--watch`  watch execution status changes
-* `--workerpool <address>` specify the workerpool to use (`iexec-main-pool.workerpools.v5.iexec.eth` is iExec's official workerpool)
+* `--workerpool <address>` specify the workerpool to use
 
 Discover more option with `iexec app run --help`
 {% endhint %}
@@ -240,12 +233,12 @@ Congratulation you requested the execution of [iexechub/python-hello-world](http
 This will generate an ASCII art greeting with your name.
 {% endhint %}
 
-Once the task is completed copy the taskid from `iexec app run` output \(taskid is a 32Bytes hexadecimal string\) while running, once finished you will find the deal id.
+Once the task is completed copy the taskid from `iexec app run` output \(taskid is a 32Bytes hexadecimal string\).
 
 Download the result of your task
 
 ```text
-iexec task show <taskid> --download my-result --chain goerli
+iexec task show <taskid> --download my-result --chain viviani
 ```
 You can get your taskid with the command:
 
@@ -283,7 +276,7 @@ The conditions to use an app are defined in the **apporder**.
 Publish a new apporder for your application.
 
 ```text
-iexec app publish --chain goerli
+iexec app publish --chain viviani
 ```
 
 {% hint style="info" %}
@@ -297,12 +290,12 @@ Your application is now available for everyone on iExec marketplace on the condi
 You can check the published apporders for your app
 
 ```text
-iexec orderbook app <your app address> --chain goerli
+iexec orderbook app <your app address> --chain viviani
 ```
 
 Congratulation you just created a decentralized application! Anyone can now trigger an execution of your application on the iExec decentralized infrastructure.
 
-* With the iexec SDK CLI `iexec app run <app address> --chain goerli`
+* With the iexec SDK CLI `iexec app run <app address> --chain viviani`
 * On iExec marketplace
 
 ## What's next?
@@ -319,4 +312,3 @@ Continue with these guides:
 
 * [Learn how to build your first application running on iExec](your-first-app.md)
 * [Learn how to manage your apporders](advanced/manage-your-apporders.md)
-
