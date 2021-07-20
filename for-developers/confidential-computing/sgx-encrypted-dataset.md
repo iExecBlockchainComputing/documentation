@@ -127,7 +127,7 @@ iexec dataset deploy --chain viviani
 
 You will get a hexadecimal address for your deployed dataset. Use that address to push the encryption key to the [SMS](intel-sgx-technology.md#secret-management-service-sms) so it is available for authorized applications.
 
-For simplicity, we will use the dataset with a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management System so we will send the dataset's encryption key to this SMS (this is fine for debuging but do not use to store production secrets).
+For simplicity, we will use the dataset with a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the dataset encryption key to this SMS (this is fine for debuging but do not use to store production secrets).
 
 These `sed` commands will do the trick:
 
