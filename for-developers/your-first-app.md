@@ -67,9 +67,9 @@ Use these variables in your application to find input files to process. \(first 
 #### Confidential input files \(datasets\):
 
 Confidential datasets are encrypted files available only in a Trusted Execution Environment \(TEE\).
-When an app is running in TEE with a dataset, the variable `IEXEC_DATASET_FILE_NAME` will be set to the dataset file name.
+When an app is running in TEE with a dataset, the variable `IEXEC_DATASET_FILENAME` will be set to the dataset file name.
 
-Use `$IEXEC_IN/$IEXEC_DATASET_FILE_NAME` to find the dataset file to process.
+Use `$IEXEC_IN/$IEXEC_DATASET_FILENAME` to find the dataset file to process.
 You will learn how to build a TEE app in the next tutorial.
 
 A single dataset file is currently supported.

@@ -177,7 +177,7 @@ const figlet = require('figlet');
   try {
     const iexecOut = process.env.IEXEC_OUT;
     const iexecIn = process.env.IEXEC_IN;
-    const datasetFileName = process.env.IEXEC_DATASET_FILE_NAME;
+    const datasetFileName = process.env.IEXEC_DATASET_FILENAME;
 
     // Use some confidential assets
     let text = '';
