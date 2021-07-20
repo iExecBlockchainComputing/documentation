@@ -185,7 +185,7 @@ const figlet = require('figlet');
       const confidentialFile = await fsPromises.readFile(`${iexecIn}/${datasetFileName}`);
       text = figlet.textSync(confidentialFile.toString());
     } catch (e) {
-      console.warn('confidential file does not exists');
+      console.log('confidential file does not exists');
     }
     // Append some results
     await fsPromises.writeFile(`${iexecOut}/result.txt`, text);
@@ -199,7 +199,7 @@ const figlet = require('figlet');
       JSON.stringify(computedJsonObj),
     );
   } catch (e) {
-    console.error(e);
+    console.log(e);
     process.exit(1);
   }
 })();

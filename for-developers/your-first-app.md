@@ -178,7 +178,7 @@ const figlet = require('figlet');
       JSON.stringify(computedJsonObj),
     );
   } catch (e) {
-    console.error(e);
+    console.log(e);
     process.exit(1);
   }
 })();
