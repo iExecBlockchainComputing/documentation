@@ -135,10 +135,6 @@ Once you are happy with the debug app, contact us to go to production!
 
 At this stage, your application is ready to be tested on iExec. The process is similar to testing any type of application on the platform, with these minor exceptions:
 
-### Push the newly built TEE image to dockerhub
-
-When you tag your Docker image, use `my-tee-hello-world` instead of `my-hello-world`.
-
 ### Deploy the TEE app on iExec:
 
 TEE applications require some additional information to be filled in during deployment.

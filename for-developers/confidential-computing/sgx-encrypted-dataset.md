@@ -279,10 +279,6 @@ Run the `sconify.sh` script to build the TEE-debug app.
 
 At this stage, your application is ready to be tested on iExec. The process is similar to testing any type of application on the platform, with these minor exceptions:
 
-### Push the newly built TEE image to dockerhub
-
-When you tag your Docker image, use `my-tee-dataset-app` instead of `my-hello-world`.
-
 ### Deploy the TEE app on iExec:
 
 TEE applications require some additional information to be filled in during deployment.
