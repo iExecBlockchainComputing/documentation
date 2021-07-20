@@ -174,7 +174,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 {% hint style="info" %}
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
 ```sh
-docker run -it --rm -e SCONE_HASH=1 nodejs-hello-world-with-dataset:tee-debug
+docker run -it --rm -e SCONE_HASH=1 nodejs-hello-world:tee-debug
 ```
 {% endhint %}
 
