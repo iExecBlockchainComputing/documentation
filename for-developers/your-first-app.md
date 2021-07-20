@@ -26,7 +26,7 @@ In this guide, we will prepare an iExec app based on an existing docker image an
 * [Build your app](your-first-app.md#build-your-app)
 * [Test your app locally](your-first-app.md#test-your-app-locally)
 * [Test your app on iExec](your-first-app.md#test-your-app-on-iexec)
-* [Publish your app on iExec marketplace](your-first-app.md#publish-your-app-on-iexec-marketplace)
+* [Publish your app on iExec marketplace](your-first-app.md#publish-your-app-on-the-iexec-marketplace)
 * [What's next?](your-first-app.md#whats-next)
 
 ## Understand what is an iExec decentralized application?
@@ -67,9 +67,9 @@ Use these variables in your application to find input files to process. \(first 
 #### Confidential input files \(datasets\):
 
 Confidential datasets are encrypted files available only in a Trusted Execution Environment \(TEE\).
-When an app is running in TEE with a dataset, the variable `IEXEC_DATASET_FILE_NAME` will be set to the dataset file name.
+When an app is running in TEE with a dataset, the variable `IEXEC_DATASET_FILENAME` will be set to the dataset file name.
 
-Use `$IEXEC_IN/$IEXEC_DATASET_FILE_NAME` to find the dataset file to process.
+Use `$IEXEC_IN/$IEXEC_DATASET_FILENAME` to find the dataset file to process.
 You will learn how to build a TEE app in the next tutorial.
 
 A single dataset file is currently supported.
@@ -178,7 +178,7 @@ const figlet = require('figlet');
       JSON.stringify(computedJsonObj),
     );
   } catch (e) {
-    console.error(e);
+    console.log(e);
     process.exit(1);
   }
 })();
@@ -418,7 +418,7 @@ iexec task show <taskid> --download my-app-result --chain viviani  \
 
 Congratulation your app successfully ran on iExec!
 
-## Publish your app on iExec marketplace
+## Publish your app on the iExec marketplace
 
 ```text
 iexec app publish --chain viviani

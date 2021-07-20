@@ -22,7 +22,7 @@ In this guide, we will use the iExec SDK command-line interface to deploy an iEx
 * [Initialize your iExec project](quick-start-for-developers.md#initialize-your-iexec-project)
 * [Deploy your app on iExec](quick-start-for-developers.md#deploy-your-app-on-iexec)
 * [Run your app on iExec](quick-start-for-developers.md#run-your-app-on-iexec)
-* [Publish your app on iExec marketplace](quick-start-for-developers.md#publish-your-app-on-iexec-marketplace)
+* [Publish your app on iExec marketplace](quick-start-for-developers.md#publish-your-app-on-the-iexec-marketplace)
 * [What's next?](quick-start-for-developers.md#whats-next)
 
 ## Create your identity on the blockchain
