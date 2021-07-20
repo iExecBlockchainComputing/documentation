@@ -221,7 +221,7 @@ with open(iexec_out + '/computed.json', 'w+') as f:
 {% tab title="JavaScript" %}
 {% code title="Dockerfile" %}
 ```bash
-FROM node:10
+FROM node:14
 ### install your dependencies if you have some
 RUN mkdir /app && cd /app && npm install figlet@1.x
 COPY ./src /app
