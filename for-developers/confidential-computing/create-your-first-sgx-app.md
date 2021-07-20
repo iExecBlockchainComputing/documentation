@@ -63,7 +63,7 @@ ENTRYPOINT [ "node", "/app/app.js"]
 
 ## Build the TEE docker image:
 
-You will need to register a [free SCONE Account](https://scontain.com) to access the SCONE build tools and curated images from the [SCONE registry](https://gitlab.scontain.com/).
+You will need to register a [free SCONE Account](https://scontain.com) to access SCONE build tools and curated images from the [SCONE registry](https://gitlab.scontain.com/).
 
 ```sh
 # once registered run `docker login` to connect the SCONE registry
