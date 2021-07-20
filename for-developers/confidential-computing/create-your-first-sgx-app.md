@@ -127,7 +127,7 @@ Congratulation you just built your first TEE application.
 {% hint style="info" %}
 
 You may have noticed the `tee-debug` flag in the image name, the built image is actually in TEE debug mode, this allows you to have some debug features while developping the app.
-Once you are happy with the debug app, contact-us to go to production!
+Once you are happy with the debug app, contact us to go to production!
 
 {% endhint %}
 
