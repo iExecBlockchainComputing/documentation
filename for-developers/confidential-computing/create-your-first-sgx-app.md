@@ -63,7 +63,7 @@ ENTRYPOINT [ "node", "/app/app.js"]
 
 ## Build the TEE docker image:
 
-You will need to register a [free SCONE Account](https://scontain.com) to access the SCONE build tools and curated images from the [SCONE registry](https://gitlab.scontain.com/).
+You will need to register a [free SCONE Account](https://scontain.com) to access SCONE build tools and curated images from the [SCONE registry](https://gitlab.scontain.com/).
 
 ```sh
 # once registered run `docker login` to connect the SCONE registry
@@ -87,7 +87,7 @@ IMG_TO=${IMG_NAME}:tee-debug
 # build the regular non-TEE image
 docker build . -t ${IMG_FROM}
 
-# pull the SCONE currated image corresponding to our base image
+# pull the SCONE curated image corresponding to our base image
 docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
 
 # run the sconifier to build the TEE image based on the non-TEE image
@@ -127,17 +127,13 @@ Congratulation you just built your first TEE application.
 {% hint style="info" %}
 
 You may have noticed the `tee-debug` flag in the image name, the built image is actually in TEE debug mode, this allows you to have some debug features while developping the app.
-Once you are happy with the debug app, contact-us to go to production!
+Once you are happy with the debug app, contact us to go to production!
 
 {% endhint %}
 
 ## Test your app on iExec
 
 At this stage, your application is ready to be tested on iExec. The process is similar to testing any type of application on the platform, with these minor exceptions:
-
-### Push the newly built TEE image to dockerhub
-
-When you tag your Docker image, use `my-tee-hello-world` instead of `my-hello-world`.
 
 ### Deploy the TEE app on iExec:
 
@@ -174,7 +170,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 {% hint style="info" %}
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
 ```sh
-docker run -it --rm -e SCONE_HASH=1 nodejs-hello-world-with-dataset:tee-debug
+docker run -it --rm -e SCONE_HASH=1 nodejs-hello-world:tee-debug
 ```
 {% endhint %}
 

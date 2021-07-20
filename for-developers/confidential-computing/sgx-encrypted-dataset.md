@@ -127,7 +127,7 @@ iexec dataset deploy --chain viviani
 
 You will get a hexadecimal address for your deployed dataset. Use that address to push the encryption key to the [SMS](intel-sgx-technology.md#secret-management-service-sms) so it is available for authorized applications.
 
-For simplicity, we will use the dataset with a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management System so we will send the dataset's encryption key to this SMS (this is fine for debuging but do not use to store production secrets).
+For simplicity, we will use the dataset with a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the dataset encryption key to this SMS (this is fine for debuging but do not use to store production secrets).
 
 These `sed` commands will do the trick:
 
@@ -246,7 +246,7 @@ IMG_TO=${IMG_NAME}:tee-debug
 # build the regular non-TEE image
 docker build . -t ${IMG_FROM}
 
-# pull the SCONE currated image corresponding to our base image
+# pull the SCONE curated image corresponding to our base image
 docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
 
 # run the sconifier to build the TEE image based on the non-TEE image
@@ -278,10 +278,6 @@ Run the `sconify.sh` script to build the TEE-debug app.
 ## Test your app on iExec
 
 At this stage, your application is ready to be tested on iExec. The process is similar to testing any type of application on the platform, with these minor exceptions:
-
-### Push the newly built TEE image to dockerhub
-
-When you tag your Docker image, use `my-tee-dataset-app` instead of `my-hello-world`.
 
 ### Deploy the TEE app on iExec:
 
