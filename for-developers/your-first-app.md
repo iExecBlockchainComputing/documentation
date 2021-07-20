@@ -26,7 +26,7 @@ In this guide, we will prepare an iExec app based on an existing docker image an
 * [Build your app](your-first-app.md#build-your-app)
 * [Test your app locally](your-first-app.md#test-your-app-locally)
 * [Test your app on iExec](your-first-app.md#test-your-app-on-iexec)
-* [Publish your app on iExec marketplace](your-first-app.md#publish-your-app-on-iexec-marketplace)
+* [Publish your app on iExec marketplace](your-first-app.md#publish-your-app-on-the-iexec-marketplace)
 * [What's next?](your-first-app.md#whats-next)
 
 ## Understand what is an iExec decentralized application?
@@ -418,7 +418,7 @@ iexec task show <taskid> --download my-app-result --chain viviani  \
 
 Congratulation your app successfully ran on iExec!
 
-## Publish your app on iExec marketplace
+## Publish your app on the iExec marketplace
 
 ```text
 iexec app publish --chain viviani
