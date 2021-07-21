@@ -60,7 +60,7 @@ iExec input directory's path is available for the app by reading the variable `I
 
 Input files contain non-sensitive data publicly available on the Internet. The requester may specify any number of input files in the requestorder.
 
-For each input file, the variable `IEXEC_INPUT_FILE_NAME_x` is set to the file name \(`x` is the index of the file starting with `1`\). The total number of input files is stored in the variable.
+For each input file, the variable `IEXEC_INPUT_FILE_NAME_x` is set to the file name \(`x` is the index of the file starting with `1`\). The total number of input files is stored in the variable `IEXEC_INPUT_FILES_NUMBER`.
 
 Use these variables in your application to find input files to process. \(first input file path is `"$IEXEC_IN/$IEXEC_INPUT_FILE_NAME_1"`\)
 
@@ -253,7 +253,7 @@ docker build . --tag my-hello-world
 `docker build` produce an image id, using `--tag <name>` option is a convenient way to name the image to reuse it in the next steps.
 {% endhint %}
 
-Congratulation you built your first docker image for iExec!
+**Congratulations you built your first docker image for iExec!**
 
 ## Test your app locally
 
@@ -340,7 +340,7 @@ Push the image to Dockerhub.
 docker push <dockerusername>/my-hello-world:1.0.0
 ```
 
-**Congratulation, you app is ready to be deployed on iExec!**
+**Congratulations, your app is ready to be deployed on iExec!**
 
 ### Deploy your app on iExec
 
@@ -416,7 +416,7 @@ iexec task show <taskid> --download my-app-result --chain viviani  \
     && unzip my-app-result.zip -d my-app-result
 ```
 
-Congratulation your app successfully ran on iExec!
+**Congratulations your app successfully ran on iExec!**
 
 ## Publish your app on the iExec marketplace
 
@@ -424,7 +424,7 @@ Congratulation your app successfully ran on iExec!
 iexec app publish --chain viviani
 ```
 
-**Congratulation your application is now available on iExec!**
+**Congratulations your application is now available on iExec!**
 
 ## What's next?
 
