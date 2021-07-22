@@ -22,7 +22,7 @@ Datasets are only decrypted inside authorized [enclaves](intel-sgx-technology.md
 {% endhint %}
 
 {% hint style="info" %}
-Your secrets are securely transferred with the SDK from your machine to the SMS over a TLS channel. Internally, your secrets are encrypted with standard AES encryption before being written to disk. Next releases will feature a, SMS running entirely inside a trusted enclave.
+Your secrets are securely transferred with the SDK from your machine to the SMS over a TLS channel. Internally, your secrets are encrypted with standard AES encryption before being written to disk. Next releases will feature an SMS running entirely inside a trusted enclave.
 {% endhint %}
 
 Let's see how to do all of that!
