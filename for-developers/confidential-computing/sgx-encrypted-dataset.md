@@ -273,7 +273,13 @@ docker run -it --rm \
 ```
 {% endcode %}
 
-Run the `sconify.sh` script to build the TEE-debug app.
+As you already did for your first TEE app, make `sconify.sh` executable and run it:
+```sh
+# make the script executable
+chmod +x sconify.sh
+# run the sconify script
+./sconify.sh
+```
 
 ## Test your app on iExec
 

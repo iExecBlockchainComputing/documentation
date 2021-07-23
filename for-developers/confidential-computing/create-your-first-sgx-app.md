@@ -116,7 +116,7 @@ docker run -it --rm \
 ```
 {% endcode %}
 
-
+Now you can make `sconify.sh` executable and run it:
 ```sh
 # make the script executable
 chmod +x sconify.sh
