@@ -96,7 +96,7 @@ unzip results.zip -d my-decrypted-result
 And you can see the content of your result file:
 
 ```bash
-$ cat my-decrypted-result/my-result.txt
+$ cat my-decrypted-result/result.txt
 Hello, world!
 ```
 
