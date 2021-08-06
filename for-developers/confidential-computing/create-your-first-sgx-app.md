@@ -152,9 +152,6 @@ IMG_TO=${IMG_NAME}:tee-debug
 # build the regular non-TEE image
 docker build . -t ${IMG_FROM}
 
-# pull the SCONE curated image corresponding to our base image
-docker pull registry.scontain.com:5050/sconecuratedimages/apps:python-3.7.3-alpine3.10-scone5
-
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
             -v /var/run/docker.sock:/var/run/docker.sock \
