@@ -59,6 +59,23 @@ ENTRYPOINT [ "node", "/app/app.js"]
 ```
 {% endcode %}
 {% endtab %}
+
+{% tab title="Python" %}
+{% code title="Dockerfile" %}
+```bash
+# Starting from a base image supported by SCONE  
+FROM python:3.7-alpine3.10
+
+# install your dependencies
+RUN apk add gcc musl-dev
+RUN pip3 install eth_abi
+
+COPY src /app
+
+ENTRYPOINT ["python3", "/app/app.py"]
+```
+{% endcode %}
+{% endtab %}
 {% endtabs %}
 
 ## Build the TEE docker image:
@@ -74,6 +91,8 @@ docker login registry.scontain.com:5050
 
 We will use the following script to wrap the sconification process, copy the `sconify.sh` script in the current directory:
 
+{% tabs %}
+{% tab title="Javascript" %}
 {% code title="sconify.sh" %}
 ```bash
 #!/bin/bash
@@ -115,7 +134,52 @@ docker run -it --rm \
             && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
 {% endcode %}
+{% endtab %}
 
+{% tab title="Python" %}
+{% code title="Dockerfile" %}
+```bash
+#!/bin/bash
+
+# declare the app entrypoint
+ENTRYPOINT="python /app/app.py"
+# declare an image name
+IMG_NAME=python-hello-world
+
+IMG_FROM=${IMG_NAME}:temp-non-tee
+IMG_TO=${IMG_NAME}:tee-debug
+
+# build the regular non-TEE image
+docker build . -t ${IMG_FROM}
+
+# pull the SCONE curated image corresponding to our base image
+docker pull registry.scontain.com:5050/sconecuratedimages/apps:python-3.7.3-alpine3.10-scone5
+
+# run the sconifier to build the TEE image based on the non-TEE image
+docker run -it \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.7 \
+            sconify_iexec \
+            --name=${IMG_NAME} \
+            --from=${IMG_FROM} \
+            --to=${IMG_TO} \
+            --binary-fs \
+            --fs-dir=/app \
+            --host-path=/etc/hosts \
+            --host-path=/etc/resolv.conf \
+            --binary=/usr/local/bin/python3.7 \
+            --heap=1G \
+            --dlopen=2 \
+            --no-color \
+            --verbose \
+            --command=${ENTRYPOINT} \
+            && echo -e "\n------------------\n" \
+            && echo "successfully built TEE docker image => ${IMG_TO}" \
+            && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 ```sh
 # make the script executable
