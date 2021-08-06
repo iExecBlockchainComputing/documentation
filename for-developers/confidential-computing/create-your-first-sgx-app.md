@@ -137,7 +137,7 @@ docker run -it --rm \
 {% endtab %}
 
 {% tab title="Python" %}
-{% code title="Dockerfile" %}
+{% code title="sconify.sh" %}
 ```bash
 #!/bin/bash
 
