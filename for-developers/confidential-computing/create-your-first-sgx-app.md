@@ -63,16 +63,14 @@ ENTRYPOINT [ "node", "/app/app.js"]
 {% tab title="Python" %}
 {% code title="Dockerfile" %}
 ```bash
-# Starting from a base image supported by SCONE  
-FROM python:3.7-alpine3.10
+FROM python:3.7.3-alpine3.10
 
-# install your dependencies
-RUN apk add gcc musl-dev
-RUN pip3 install eth_abi
+### install python dependencies if you have some
+RUN pip3 install pyfiglet
 
-COPY src /app
+COPY ./src /app
 
-ENTRYPOINT ["python3", "/app/app.py"]
+ENTRYPOINT ["python", "/app/app.py"]
 ```
 {% endcode %}
 {% endtab %}
