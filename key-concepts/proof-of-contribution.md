@@ -6,7 +6,7 @@ description: >-
 
 # Proof of Contribution
 
-The iExec platform provides a network where application provider, workers, and users can gather and work together. The fully decentralized nature of iExec implies that no single agent is trusted by default, and that those agents require incentives to contribute correctly.
+The iExec platform provides a network where application providers, workers, and users can gather and work together. The fully decentralized nature of iExec implies that no single agent is trusted by default, and that those agents require incentives to contribute correctly.
 
 In this context, Proof-of-Contribution \(PoCo\) is the protocol used by iExec for consensus over off-chain computing.
 
@@ -65,7 +65,7 @@ Below are the details of the implementations:
 
 3. **Authorization signature**
 
-  The scheduler designates workers that participate to this task. The scheduler’s Ethereum wallet signs a message containing the worker’s Ethereum address, the taskid, and \(optional\) the Ethereum address of the workers enclave. If the worker doesn’t use an enclave, this field must be filled with `address(0)`.
+  The scheduler designates workers that participate to this task. The scheduler’s Ethereum wallet signs a message containing the worker’s Ethereum address, the taskid, and \(optionally\) the Ethereum address of the workers enclave. If the worker doesn’t use an enclave, this field must be filled with `address(0)`.
 
   This Ethereum signature \(authorization\) is sent to the worker through an off-chain channel implemented by the middleware.
 
@@ -75,11 +75,11 @@ Below are the details of the implementations:
 
   * _bytes32 digest_: a digest \(sha256\) of the result folder.
   * _bytes32 hash_: the hash of the _digest_, used to produce a consensus
-  * _bytes32 seal_: the salted hash of the _digest_, used to prove a worker’s knew the _digest_ value before it is published.`resultHash == keccak256(abi.encodePacked( taskid, resultDigest))` `resultSeal == keccak256(abi.encodePacked(worker, taskid, resultDigest))`
+  * _bytes32 seal_: the salted hash of the _digest_, used to prove a worker’s knew the _digest_ value before it is published. `resultHash == keccak256(abi.encodePacked( taskid, resultDigest))` `resultSeal == keccak256(abi.encodePacked(worker, taskid, resultDigest))`
 
   In computer science, a deterministic algorithm is an algorithm which, given a particular input, will always produce the same output.
 
-  Both the `digest`, the `hash` and the `seal` are automatically computed based on the output of the application. If the output is not entierly deterministic, then the application can specify a deterministic file that should be used for building consensus. In order to do so, the application just has to provide the path to the deterministic file using a specific entry `deterministic-output-path` in `${IEXEC_OUT}/computed.json`.
+  Both the `digest`, the `hash` and the `seal` are automatically computed based on the output of the application. If the output is not entirely deterministic, then the application can specify a deterministic file that should be used for building consensus. In order to do so, the application just has to provide the path to the deterministic file using a specific entry `deterministic-output-path` in `${IEXEC_OUT}/computed.json`.
 
   Alternativelly, if the application is used in a doracle context (the results are designed to be processed on-chain by receiver smart-contracts), then the value of this callback must be specified in `${IEXEC_OUT}/computed.json` under the entry `callback-data`.
 
@@ -118,9 +118,9 @@ Below are the details of the implementations:
 
 ### Staking and Payment
 
-Among the objectives of PoCo, we want to ensure a worker that contributes correctly is rewarded and, at the same time, that a requester won’t be changed unless a consensus is achieved. This is achieved by locking the requester’s funds for the duration of the consensus, and unlocking them depending on the outcome.
+Among the objectives of PoCo, we want to ensure a worker that contributes correctly is rewarded and, at the same time, that a requester won’t be charged unless a consensus is achieved. This is achieved by locking the requester’s funds for the duration of the consensus, and unlocking them depending on the outcome.
 
-Staking in use to prevent bad behaviour and encourage good contributions.
+Staking is used to prevent bad behaviour and encourage good contributions.
 
 Your account, managed by the `Escrow` part of the `IexecClerk`, separates between `balance.stake` \(available, can be withdrawn\) and `balanced.locked` \(unavailable, frozen by a running task\). The `Escrow` exposes the following mechanism:
 
@@ -162,7 +162,7 @@ Parameters of the consensus timer. They express the number of reference timers \
 * `CONTRIBUTION_DEADLINE_RATIO` This describes the duration of the contribution period. The consensus can finalize before that, but no contribution will be allowed after the timer to ensure enough time is left for the reveal and finalize steps.
 * `REVEAL_DEADLINE_RATIO` This describes the duration of the reveal period. Whenever a contribution triggers a consensus, a reveal period of this duration is reserved for the workers to reveal their contribution. Note that this period will necessarily start before the end of the contribution phase.
 
-Lets consider a task of category GigaPlus, which reference duration is 1 hour. If the task was submitted at 9:27AM, the contributions must be sent before 4:27PM \(16:27\). Whenever a contribution triggers a consensus, a 2 hours long reveal period will start. Whatever happens, the consensus has to been achieved by 7:27PM \(19:27\).
+Let's consider a task of category GigaPlus, which reference duration is 1 hour. If the task was submitted at 9:27AM, the contributions must be sent before 4:27PM \(16:27\). Whenever a contribution triggers a consensus, a 2 hours long reveal period will start. Whatever happens, the consensus has to be achieved by 7:27PM \(19:27\).
 
 `WORKERPOOL_STAKE_RATIO = 30`
 
@@ -188,18 +188,18 @@ Minimum reward on successful execution \(up to the reward kitty value\).
 
 Lets consider a worker pool with the policies `workerStakeRatioPolicy = 35%` and `workerStakeRatioPolicy = 5%`.
 
-* A requester offers `20 RLC` to run a task. The task is free but it uses a dataset that cost `1 RLC`. The requester locks `21 RLC` and the scheduler `30% * 20 = 6 RLC`. The trust objective is `99%` \(`trust = 100`\)
+* A requester offers `20 RLC` to run a task. The task is free but it uses a dataset that costs `1 RLC`. The requester locks `21 RLC` and the scheduler `30% * 20 = 6 RLC`. The trust objective is `99%` \(`trust = 100`\)
 * 3 workers contribute:
-  * The first one \(`score = 12 → power = 3`\) contributes `17`. He has to lock `7 RLC` \(35% of the `20 RLC` awarded to the worker pool\).
-  * The second worker \(`score = 100 → power = 32`\) contributes `42`. He also locks `7 RLC`.
-  * The third worker \(`score = 300 → power = 99`\) contributes `42`. He also locks `7 RLC`.
+  * The first one \(`score = 12 → power = 3`\) contributes `17`. It has to lock `7 RLC` \(35% of the `20 RLC` awarded to the worker pool\).
+  * The second worker \(`score = 100 → power = 32`\) contributes `42`. It also locks `7 RLC`.
+  * The third worker \(`score = 300 → power = 99`\) contributes `42`. It also locks `7 RLC`.
 * After the third contribution, the value `42` has reached a `99.87%` likelihood. Consensus is achieved and the two workers who contributed toward `42` have to reveal.
 * After both workers reveal, the scheduler finalizes the task:
   * The requester locked value of `21 RLC` is seized.
   * The dataset owner gets `1 RLC` for the use of its dataset.
   * Stake from the scheduler is unlocked.
   * Stakes from workers 2 and 3 are also unlocked.
-  * The first workers stake is seized and he loses a third of its score. The correspond `7 RLC` are added to the `totalReward`
+  * The first worker stake is seized and it loses a third of its score. The corresponding `7 RLC` are added to the `totalReward`.
   * We now have `totalReward = 27 RLC`:
     * We save 5% for the scheduler, `workersReward = 95% * 27 = 25.65 RLC`
     * Worker 2 has weight `log2(32) = 5` and worker 3 has a weight `log2(99) = 6`. Total weight is `5+6=11`
@@ -212,15 +212,15 @@ Lets consider a worker pool with the policies `workerStakeRatioPolicy = 35%` and
 
 ### How to achieve trust ?
 
-The PoCo offers a consensus mechanism that can certify the likelihood of a result to be valid.This consensus relies on the scoring of workers and the replication of a task’s execution to combine the score of the workers that come up with the same result.This consensus is largely based on Sarmenta’s work [\[Sarmenta2002\]](proof-of-contribution.md#requiring-a-trust-level) with specific tuning of the scoring function [\[Trust2018\]](proof-of-contribution.md#contribution-credibility).
+The PoCo offers a consensus mechanism that can certify the likelihood of a result to be valid. This consensus relies on the scoring of workers and the replication of a task’s execution to combine the score of the workers that come up with the same result. This consensus is largely based on Sarmenta’s work [\[Sarmenta2002\]](proof-of-contribution.md#requiring-a-trust-level) with specific tuning of the scoring function [\[Trust2018\]](proof-of-contribution.md#contribution-credibility).
 
 ### Contribution credibility
 
-Each worker’s contribution has an associated credibility. This credibility derives from the worker’s history score.As described in [\[Trust2018\]](proof-of-contribution.md#requiring-a-trust-level), a worker score is a positive integer that is incremented for each valid and verified contribution.In case of bad contribution, a worker loses one third of it’s score.This credibility can be expressed as a likelihood percentage but also as a weight value that can be used to detect consensus without resorting to floating point arithmetics,more details in [\[Trust2018\]](proof-of-contribution.md#requiring-a-trust-level).
+Each worker’s contribution has an associated credibility. This credibility derives from the worker’s history score. As described in [\[Trust2018\]](proof-of-contribution.md#requiring-a-trust-level), a worker score is a positive integer that is incremented for each valid and verified contribution. In case of bad contribution, a worker loses one third of it’s score. This credibility can be expressed as a likelihood percentage but also as a weight value that can be used to detect consensus without resorting to floating point arithmetics, more details in [\[Trust2018\]](proof-of-contribution.md#requiring-a-trust-level).
 
 ### Requiring a trust level
 
-Based on [\[Sarmenta2002\]](proof-of-contribution.md#requiring-a-trust-level) describing the way to combine worker’s contribution and to evaluate a result’s likelihood, a requester can ask for the level of trust as a input for the PoCo processing, to impose a certain quality of service.The trust level corresponds to a minimum correctness likelihood that a result must achieve to be valid. For example, a trust level of 0 means any contribution would be accepted, regardless of the score of the worker proposing it. On the other hand a trust level of 99.99% means a result will only be accepted if the contribution towards it result shows a correctness probability higher than 99.99%.
+Based on [\[Sarmenta2002\]](proof-of-contribution.md#requiring-a-trust-level) describing the way to combine worker’s contribution and to evaluate a result’s likelihood, a requester can ask for the level of trust as an input for the PoCo processing, to impose a certain quality of service. The trust level corresponds to a minimum correctness likelihood that a result must achieve to be valid. For example, a trust level of 0 means any contribution would be accepted, regardless of the score of the worker proposing it. On the other hand a trust level of 99.99% means a result will only be accepted if the contribution towards it result shows a correctness probability higher than 99.99%.
 
 The trust level is expressed, on-chain, by a integer `trust` such that `threshold = 1 - 1 / trust`.
 
@@ -235,7 +235,7 @@ The trust level is expressed, on-chain, by a integer `trust` such that `threshol
 
 ### Limitation
 
-This consensus mechanism requires replicable applications. Non deterministic applications, long running jobs such as webservers, do not meet this requirement out of the box. When it is possible, the application developer must provide a deterministic result using the `deterministic-output-path` entry of the `${IEXEC_OUT}/computed.json` file. Otherwise, the user can still run its application on the iExec platform but would have to disable the PoCo’s consensus layer. Hardware security as TEE is an option to overpass this limitation.
+This consensus mechanism requires replicable applications. Non-deterministic applications, long-running jobs such as webservers, do not meet this requirement out of the box. When it is possible, the application developer must provide a deterministic result using the `deterministic-output-path` entry of the `${IEXEC_OUT}/computed.json` file. Otherwise, the user can still run its application on the iExec platform but would have to disable the PoCo’s consensus layer. Hardware security as TEE is an option to overpass this limitation.
 
 #### References
 
@@ -248,8 +248,6 @@ This consensus mechanism requires replicable applications. Non deterministic app
 
 
 ## Brokering
-
-The blockering will be released in june 2019, with the version 3 of the platform
 
 ### Overview
 
@@ -291,7 +289,7 @@ struct AppOrder
 * `volume` Number of run authorized \(by this order\).
 * `tag` Special requirements for the application \(see [tag](https://docs.iex.ec/poco.html#tag)\).
 * `datasetrestrict` Matching restrictions. Dataset or group of datasets that can be matched. Let null value to disable.
-* `workerpoolrestrict` Matching restrictions. Worke rpool or group of worker pools that can be matched. Let null value to disable.
+* `workerpoolrestrict` Matching restrictions. Workerpool or group of worker pools that can be matched. Let null value to disable.
 * `requesterrestrict` Matching restrictions. Requester or group of requesters that can be matched. Let null value to disable.
 * `salt` A random value to ensure order uniqueness.
 * `sign` cryptographic signature of the order, the smart contract is securely linked to application owner.
@@ -393,7 +391,7 @@ struct RequestOrder
 * `callback` Address to callback with the results \(following EIP1154 interface\). Let empty \(null\) if no callback is required. Learn more about the callback mechanism.
 * `params` Parameters of the application \(application specific\).
 * `salt` A random value to ensure order uniqueness.
-* `sign` cryptographic signature of the order, the smart contract is securely linked to requester.
+* `sign` Cryptographic signature of the order, the smart contract is securely linked to requester.
 
 ## Tag
 
@@ -411,11 +409,11 @@ In V3, tags are 32 bytes \(256 bits\) long array where each bit corresponds to a
 | … | … |
 | `0x8000000000000000000000000000000000000000000000000000000000000000` | — |
 
-For orders matching, the worker pool order must enable all bits that are enables in any of the app order, dataset order and requester order. Meaning that if the app order tag is `0x12 = 0x10 | 0x02`, the dataset order is `0x81 = 0x80 | 0x01` and the requester order is `0x03 = 0x02 | 0x01`, then the worker pool order must, at least, have a tag `0x93 = 0x80 | 0x10 | 0x02 | 0x01`.
+For orders matching, the worker pool order must enable all bits that are enabled in any of the app order, dataset order and requester order. Meaning that if the app order tag is `0x12 = 0x10 | 0x02`, the dataset order is `0x81 = 0x80 | 0x01` and the requester order is `0x03 = 0x02 | 0x01`, then the worker pool order must, at least, have a tag `0x93 = 0x80 | 0x10 | 0x02 | 0x01`.
 
 ### Matching Conditions
 
-In order to trigger an execution, a deal must be registered by the iExec Clerk. Deals are produced when orders are succesfuly matched by the clerk. A matching requires 3 or 4 orders depending on the requester requirements, the dataset order is optional.
+In order to trigger an execution, a deal must be registered by the iExec Clerk. Deals are produced when orders are successfully matched by the clerk. A matching requires 3 or 4 orders depending on the requester requirements, the dataset order is optional.
 
 Orders compatibility required:
 
@@ -438,7 +436,7 @@ Orders compatibility required:
   `require(tag & ~_workerpoolorder.tag == 0x0);`
   `require(tag & ~_workerpoolorder.tag == 0x0);`
 
-5. If TEE tag is requiered, then application must be TEE compatible.
+5. If TEE tag is required, then application must be TEE compatible.
 
   `require((tag ^ _apporder.tag)[31] & 0x01 == 0x0);`
 
@@ -477,9 +475,9 @@ Orders compatibility required:
 
 13. All ressources must be registered in the corresponding registries.
 
-  `require(m_appregistry.isRegistered(_apporder.app));``
-  `require(m_datasetregistry.isRegistered(_datasetorder.dataset));``
-  `require(m_workerpoolregistry.isRegistered(_workerpoolorder.workerpool));``
+  `require(m_appregistry.isRegistered(_apporder.app));`
+  `require(m_datasetregistry.isRegistered(_datasetorder.dataset));`
+  `require(m_workerpoolregistry.isRegistered(_workerpoolorder.workerpool));`
 
 14. All orders must be signed or presigned.
 
@@ -495,7 +493,7 @@ Orders compatibility required:
 
 **\[Requester\] How do I enable PoCo’s consolidation of results?**
 
-A requester can enable the trust layer of the PoCo by setting the trust value in tue requestorder. As described here, the trust is defined with the required confidence level. If the requester wants à 99.99% confidence level on the results, it must set the `trust` field to `10000`
+A requester can enable the trust layer of the PoCo by setting the trust value in the requestorder. As described here, the trust is defined with the required confidence level. If the requester wants à 99.99% confidence level on the results, it must set the `trust` field to `10000`.
 
 **\[Requester\] How do I run a non deterministic application despite requiring determinism?**
 
@@ -523,18 +521,18 @@ The encryption key must be stored in a SMS and the address of the corresponding 
 
 Before a worker runs this application, the worker must first prove that its access is legitimate by providing the scheduler authorization. The SMS will verify that this authorization’s signature is valid and that the corresponding task is registered onchain. This means that any deal signed in the iExec Clerk will grant access to the dataset’s encryption key.
 
-Therefore in order to restrict the dataset’s usage, the dataset owner should et up restriction before signing a brokering order. This is done through the `apprestrict` field of the datasetorder. The dataset owner can deploy a `SimpleGroup` smart contract, have the `apprestrict` field point to it, and then whitelisting the applications that will have access to the dataset’s encryption key.
+Therefore in order to restrict the dataset’s usage, the dataset owner should set up restriction before signing a brokering order. This is done through the `apprestrict` field of the datasetorder. The dataset owner can deploy a `SimpleGroup` smart contract, have the `apprestrict` field point to it, and then whitelisting the applications that will have access to the dataset’s encryption key.
 
 **\[Scheduler\] How do I protect myself from non deterministic applications?**
 
 When a scheduler publishes an order, it makes a commitment to achieve consensus on any task that is part of a deal made. While everything is done to ensure an application cannot hurt a worker pool’s machines, not reaching the consensus would cause a loss of stake for the scheduler. The scheduler must therefore take action to prevent this.
 
-Whenever the scheduler proposes to certify a result using the PoCo’s trust layer, it should make sure the application’s developper took the actions required to avec it compatible with the PoCo. On the other hand, any application could be executed with the PoCo’s trust layer disabled.
+Whenever the scheduler proposes to certify a result using the PoCo’s trust layer, it should make sure the application’s developer took the actions required to make it compatible with the PoCo. On the other hand, any application could be executed with the PoCo’s trust layer disabled.
 
 A scheduler could therefore emit two kinds of workerpoolorder:
 
 * A workerpoolorder offering execution with the PoCo’s trust layer disabled \(`trust = 0`\) and accepting all applications \(`apprestrict = 0`\)
-* A workerpoolorder offering secure exection of whitelisted tasks. The application whitelist would use the `GroupInterface` to be verifyed by the iExec Clerk. This group could either be managed by the scheduler or by a certification authority that would check applications determinism.
+* A workerpoolorder offering secure execution of whitelisted tasks. The application whitelist would use the `GroupInterface` to be verified by the iExec Clerk. This group could either be managed by the scheduler or by a certification authority that would check applications determinism.
 
 ## Other technical choices
 
@@ -548,25 +546,25 @@ Results are identified by their `taskid` and can be pulled through the `resultFo
 
 **Push**
 
-In order to use the push approach, the requester can use the `callback` field to specify the address of a smart contract that implement the `receiveResult` method specified in [\[EIP1154\]](https://docs.iex.ec/pocosrc/poco-else.html#eip1154). This method will be called during the finalization with at minimum of 100000 nanoRLC gas to proceed [\[\*\]](https://docs.iex.ec/poco.html#id13).
+In order to use the push approach, the requester can use the `callback` field to specify the address of a smart contract that implements the `receiveResult` method specified in [\[EIP1154\]](https://docs.iex.ec/pocosrc/poco-else.html#eip1154). This method will be called during the finalization with a minimum of 100000 nanoRLC gas to proceed [\[\*\]](https://docs.iex.ec/poco.html#id13).
 
 In order to protect the scheduler and the workers, any error raised during this callback will be disregarded and will not prevent the finalization from happening. The same mechanism goes for the callback running out of gas.
 
 ### Consensus & Reveal duration
 
-When orders match, IexecClerk records the deal which details the parameters of the task. If a consensus on a result is achieved before the countdown, the task is successful.After the countdown, as no consensus is reached, the execution is failed. The duration of the consensus timer is a balance between the quality of service offered to the requester \(short timer\) and the margin available for the scheduler and the worker to achieve consensus \(and go through the reveal process\).
+When orders match, IexecClerk records the deal which details the parameters of the task. If a consensus on a result is achieved before the countdown, the task is successful. After the countdown, as no consensus is reached, the execution is failed. The duration of the consensus timer is a balance between the quality of service offered to the requester \(short timer\) and the margin available for the scheduler and the worker to achieve consensus \(and go through the reveal process\).
 
-The maximum duration of a task is governed by the category the task fits in. While the consensus duration can obviously not be shorter than the task runtime a significant margin is required for the scheduler to do its job correctly. Multiple workers are likely to contribute and extra time must be planed for the revealing and finalization steps.
+The maximum duration of a task is governed by the category the task fits in. While the consensus duration can obviously not be shorter than the task runtime, a significant margin is required for the scheduler to do its job correctly. Multiple workers are likely to contribute and extra time must be planed for the revealing and finalization steps.
 
 The consensus timer starts when the deal is recorded by the IexecClerk.
 
 In case of failure, the requester can claim the refund.
 
-In the v3-alpha version, this timer lasts for 10 category runtime, for all category.The reveal timer starts whenever a consensus is reached and determines the time frame the workers have to reveal their contributions.This should be long enough for worker to have time to reveal while not being to long so that the requesters waits to long for its result or the consensus fails because the scheduler cannot finalize in time. In the v3-alpha version, this timer lasts for 2 runtime whatever the category runtime. This leaves a gap of at least 1 time the category runtime for the scheduler to finalize the task.
+In the v3-alpha version, this timer lasts for 10 category runtime, for all category. The reveal timer starts whenever a consensus is reached and determines the time frame the workers have to reveal their contributions. This should be long enough for worker to have time to reveal while not being too long so that the requester waits too long for its result or the consensus fails because the scheduler cannot finalize in time. In the v3-alpha version, this timer lasts for 2 runtime whatever the category runtime. This leaves a gap of at least 1 time the category runtime for the scheduler to finalize the task.
 
 ### Reward kitty
 
-When a consensus fails, the requester gets a refund and the scheduler loses its stake. In order to remove an attack vector, the requester does not get any of the seized stake.If this was a feature, anyone could build a flawed application that would not reach consensus to drain money from the scheduler.This would force the scheduler to whitelist all applications thus reducing the usability of the platform.Seized stake from the scheduler goes into a specific account called the _reward kitty_. No one controls this account, nor can withdraw from it.However, the tokens are not burned. Whenever a task is finalized, the scheduler that organized the execution of this task is rewarded by the requester and also gets a small part of the reward kitty.
+When a consensus fails, the requester gets a refund and the scheduler loses its stake. In order to remove an attack vector, the requester does not get any of the seized stake. If this was a feature, anyone could build a flawed application that would not reach consensus to drain money from the scheduler. This would force the scheduler to whitelist all applications thus reducing the usability of the platform. Seized stake from the scheduler goes into a specific account called the _reward kitty_. No one controls this account, nor can withdraw from it. However, the tokens are not burned. Whenever a task is finalized, the scheduler that organized the execution of this task is rewarded by the requester and also gets a small part of the reward kitty.
 
 As described in the protocol parameters section, this reward is `reward = kitty.percentage(KITTY_RATIO).max(KITTY_MIN).min(kitty)`.
 
