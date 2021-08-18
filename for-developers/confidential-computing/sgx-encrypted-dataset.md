@@ -232,7 +232,6 @@ const figlet = require('figlet');
 ```python
 import json
 import os
-import functools
 
 from pyfiglet import Figlet
 
@@ -245,10 +244,13 @@ text = ''
 # Check the confidential file exists and open it
 try:
     dataset_file = open(iexec_in + '/' + dataset_filename, 'r')
-    dataset = functools.reduce(lambda acc, line: acc + line, dataset_file.readlines(), '')
+    dataset_lines = dataset_file.readlines()
+    dataset = ''
+    for line in dataset_lines:
+        dataset += line
     text = Figlet().renderText(dataset)
 except OSError:
-    print('confidential file does not exist')
+    print('confidential file does not exists')
     exit(1)
 
 print(text)
