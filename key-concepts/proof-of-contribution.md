@@ -22,7 +22,7 @@ A major quality of PoCo lies in the fact that it is a modular protocol. It comes
 
 ### **Result consolidation**
 
-PoCo relies on replication to achieve result consolidation. This is a purely software solution that enforces a confidence level on the result. [This confidence level can be customized by the requester.](proof-of-contribution.md#replication-and-trust)
+PoCo relies on replication to achieve result consolidation. This is purely a software solution that enforces a confidence level on the result. [This confidence level can be customized by the requester.](proof-of-contribution.md#replication-and-trust)
 
 This layer also supports the onchain consolidation of execution results carried out in Trusted Execution Environments \(TEE\) such as Intel SGX.
 
@@ -65,7 +65,7 @@ Below are the details of the implementations:
 
 3. **Authorization signature**
 
-  The scheduler designates workers that participate to this task. The scheduler’s Ethereum wallet signs a message containing the worker’s Ethereum address, the taskid, and \(optionally\) the Ethereum address of the workers enclave. If the worker doesn’t use an enclave, this field must be filled with `address(0)`.
+  The scheduler designates workers that participate in this task. The scheduler’s Ethereum wallet signs a message containing the worker’s Ethereum address, the taskid, and \(optionally\) the Ethereum address of the worker's enclave. If the worker doesn't use an enclave, this field must be filled with `address(0)`.
 
   This Ethereum signature \(authorization\) is sent to the worker through an off-chain channel implemented by the middleware.
 
@@ -81,9 +81,9 @@ Below are the details of the implementations:
 
   Both the `digest`, the `hash` and the `seal` are automatically computed based on the output of the application. If the output is not entirely deterministic, then the application can specify a deterministic file that should be used for building consensus. In order to do so, the application just has to provide the path to the deterministic file using a specific entry `deterministic-output-path` in `${IEXEC_OUT}/computed.json`.
 
-  Alternativelly, if the application is used in a doracle context (the results are designed to be processed on-chain by receiver smart-contracts), then the value of this callback must be specified in `${IEXEC_OUT}/computed.json` under the entry `callback-data`.
+  Alternatively, if the application is used in a doracle context (the results are designed to be processed on-chain by receiver smart-contracts), then the value of this callback must be specified in `${IEXEC_OUT}/computed.json` under the entry `callback-data`.
 
-  If a TEE was used to produce the result, the post-processing enclave will automatically produce an `enclave-signature` entry that contains the enclave signature \(of the resultHash and resultSeal\). TEE certification of results is transparent to the application developper.
+  If a TEE was used to produce the result, the post-processing enclave will automatically produce an `enclave-signature` entry that contains the enclave signature \(of the resultHash and resultSeal\). TEE certification of results is transparent to the application developer.
 
 5. **Contribution**
 
@@ -98,7 +98,7 @@ Below are the details of the implementations:
 
   * _bytes enclaveSign_
 
-  The enclave signature. This is required if the `enclaveChallenge` is not `address(0)`. Otherwise it should be set to the empty byte string `0x`
+  The enclave signature. This is required if the `enclaveChallenge` is not `address(0)`. Otherwise, it should be set to the empty byte string `0x`
 
   * _bytes workerpoolSign_
 
@@ -156,7 +156,7 @@ The remaining reward is then divided between the successful workers proportional
 
 `FINAL_DEADLINE_RATIO = 10`, `CONTRIBUTION_DEADLINE_RATIO = 7`, `REVEAL_DEADLINE_RATIO = 2`
 
-Parameters of the consensus timer. They express the number of reference timers \(category duration\) that are dedicated to each phase. These settings corresponds to a 70%-20%-10% distribution between the contribution phase, the reveal phase and the finalize phase.
+Parameters of the consensus timer. They express the number of reference timers \(category duration\) that are dedicated to each phase. These settings correspond to a 70%-20%-10% distribution between the contribution phase, the reveal phase and the finalize phase.
 
 * `FINAL_DEADLINE_RATIO` This describes the total duration of the consensus. At the end of this timer the consensus must be finalized. If it is not, the user can make a claim to get a refund.
 * `CONTRIBUTION_DEADLINE_RATIO` This describes the duration of the contribution period. The consensus can finalize before that, but no contribution will be allowed after the timer to ensure enough time is left for the reveal and finalize steps.
@@ -186,9 +186,9 @@ Minimum reward on successful execution \(up to the reward kitty value\).
 
 #### Example
 
-Lets consider a worker pool with the policies `workerStakeRatioPolicy = 35%` and `workerStakeRatioPolicy = 5%`.
+Let's consider a worker pool with the policies `workerStakeRatioPolicy = 35%` and `workerStakeRatioPolicy = 5%`.
 
-* A requester offers `20 RLC` to run a task. The task is free but it uses a dataset that costs `1 RLC`. The requester locks `21 RLC` and the scheduler `30% * 20 = 6 RLC`. The trust objective is `99%` \(`trust = 100`\)
+* A requester offers `20 RLC` to run a task. The task is free, but it uses a dataset that costs `1 RLC`. The requester locks `21 RLC` and the scheduler `30% * 20 = 6 RLC`. The trust objective is `99%` \(`trust = 100`\)
 * 3 workers contribute:
   * The first one \(`score = 12 → power = 3`\) contributes `17`. It has to lock `7 RLC` \(35% of the `20 RLC` awarded to the worker pool\).
   * The second worker \(`score = 100 → power = 32`\) contributes `42`. It also locks `7 RLC`.
@@ -199,7 +199,7 @@ Lets consider a worker pool with the policies `workerStakeRatioPolicy = 35%` and
   * The dataset owner gets `1 RLC` for the use of its dataset.
   * Stake from the scheduler is unlocked.
   * Stakes from workers 2 and 3 are also unlocked.
-  * The first worker stake is seized and it loses a third of its score. The corresponding `7 RLC` are added to the `totalReward`.
+  * The first worker stake is seized, and it loses a third of its score. The corresponding `7 RLC` are added to the `totalReward`.
   * We now have `totalReward = 27 RLC`:
     * We save 5% for the scheduler, `workersReward = 95% * 27 = 25.65 RLC`
     * Worker 2 has weight `log2(32) = 5` and worker 3 has a weight `log2(99) = 6`. Total weight is `5+6=11`
@@ -222,7 +222,7 @@ Each worker’s contribution has an associated credibility. This credibility der
 
 Based on [\[Sarmenta2002\]](proof-of-contribution.md#requiring-a-trust-level) describing the way to combine worker’s contribution and to evaluate a result’s likelihood, a requester can ask for the level of trust as an input for the PoCo processing, to impose a certain quality of service. The trust level corresponds to a minimum correctness likelihood that a result must achieve to be valid. For example, a trust level of 0 means any contribution would be accepted, regardless of the score of the worker proposing it. On the other hand a trust level of 99.99% means a result will only be accepted if the contribution towards it result shows a correctness probability higher than 99.99%.
 
-The trust level is expressed, on-chain, by a integer `trust` such that `threshold = 1 - 1 / trust`.
+The trust level is expressed, on-chain, by an integer `trust` such that `threshold = 1 - 1 / trust`.
 
 | **Trust** | **PoCo enforced confidence threshold** |
 | :--- | :--- |
@@ -287,7 +287,7 @@ struct AppOrder
 * `app` Address of the smartcontract describing the application. Must be registered in the AppRegistry.
 * `appprice` Price of a run of the application.
 * `volume` Number of run authorized \(by this order\).
-* `tag` Special requirements for the application \(see [tag](https://docs.iex.ec/poco.html#tag)\).
+* `tag` Special requirements for the application \(see [tag](https://docs.iex.ec/poco.html#tag)\)).
 * `datasetrestrict` Matching restrictions. Dataset or group of datasets that can be matched. Let null value to disable.
 * `workerpoolrestrict` Matching restrictions. Workerpool or group of worker pools that can be matched. Let null value to disable.
 * `requesterrestrict` Matching restrictions. Requester or group of requesters that can be matched. Let null value to disable.
@@ -314,7 +314,7 @@ struct DatasetOrder
 * `dataset` Address of the smartcontract describing the dataset. Must be registered in the DatasetRegistry.
 * `datasetprice` Price of a use of the dataset.
 * `volume` Number of authorized uses \(by this order\).
-* `tag` Special requirements of the dataset \(see [tag](https://docs.iex.ec/poco.html#tag)\).
+* `tag` Special requirements of the dataset \(see [tag](https://docs.iex.ec/poco.html#tag)\)).
 * `apprestrict` Matching restrictions. App or group of apps that can be matched. Let null value to disable.
 * `workerpoolrestrict` Matching restrictions. Workerpool or group of workerpools that can be matched. Let null value to disable.
 * `requesterrestrict` Matching restrictions. Requester or group of requesters that can be matched. Let null value to disable.
@@ -343,7 +343,7 @@ struct WorkerpoolOrder
 * `workerpool` Address of the smartcontract describing the worker pool. Must be registered in the WorkerpoolRegistry.
 * `workerpoolprice` Price of an execution on the worker pool.
 * `volume` Number of executions proposed \(by this order\).
-* `tag` Special features proposed by the worke rpool \(see [tag](https://docs.iex.ec/poco.html#tag)\).
+* `tag` Special features proposed by the workerpool \(see [tag](https://docs.iex.ec/poco.html#tag)\)).
 * `category` Order category.
 * `trust` Trust level used to consolidated results.
 * `apprestrict` Matching restrictions. App or group of apps that can be matched. Let null value to disable.
@@ -384,7 +384,7 @@ struct RequestOrder
 * `workerpoolmaxprice` Maximum price allowed by the requester for the payment of the execution \(scheduler + workers\).
 * `requester` Address of the requester \(paying for the executions\).
 * `volume` Number of tasks that are part of this order \(size of the Bag Of Task\).
-* `tag` Special features required by the requester \(see [tag](https://docs.iex.ec/poco.html#tag)\).
+* `tag` Special features required by the requester \(see [tag](https://docs.iex.ec/poco.html#tag)\)).
 * `category` tasks category required.
 * `trust` Minimum trust level required by the requester.
 * `beneficiary` Address of the beneficiary of the computation. Used to require output data encryption.
@@ -413,7 +413,7 @@ For orders matching, the worker pool order must enable all bits that are enabled
 
 ### Matching Conditions
 
-In order to trigger an execution, a deal must be registered by the iExec Clerk. Deals are produced when orders are successfully matched by the clerk. A matching requires 3 or 4 orders depending on the requester requirements, the dataset order is optional.
+In order to trigger an execution, a deal must be registered by the iExec Clerk. Deals are produced when orders are successfully matched by the clerk. A match requires 3 or 4 orders depending on the requester requirements, the dataset order is optional.
 
 Orders compatibility required:
 
@@ -473,7 +473,7 @@ Orders compatibility required:
   `require(_checkIdentity(_datasetorder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));`
   `require(_checkIdentity(_workerpoolorder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));`
 
-13. All ressources must be registered in the corresponding registries.
+13. All resources must be registered in the corresponding registries.
 
   `require(m_appregistry.isRegistered(_apporder.app));`
   `require(m_datasetregistry.isRegistered(_datasetorder.dataset));`
@@ -505,11 +505,11 @@ In order to obtain a result, the requester must prevent replication by asking a 
 
 The result of an execution can be valuable to the end user, and the requester might want to protect this result from leaking with encryption.
 
-Anyone can set up an encryption key in a SMS \(Secret Management Service\) of its choice and set up the SMS address in the directory.
+Anyone can set up an encryption key in an SMS \(Secret Management Service\) of its choice and set up the SMS address in the directory.
 
 Once a user set an encryption key \(see TODO\), any computation result can be encrypted with, you have to set up the beneficiary address in the RequesterOrder.
 
-An application can only perform result encryption inside an enclave. No encryption key will be provided by the SMS to an application that doesn’t run outside an enclave.
+An application can only perform result encryption inside an enclave. No encryption key will be provided by the SMS to an application that doesn't run outside an enclave.
 
 \(TODO: potential issue, key leaking to malicious application with the requester attacking a beneficiary\)
 
@@ -517,13 +517,13 @@ An application can only perform result encryption inside an enclave. No encrypti
 
 iExec’s Data wallet and Data store is a complete solution to monetize valuable datasets preserving privacy. Before uploading a dataset you should encrypt it using the iExec SDK. Through this process, the encryption key becomes the valuable data that has to be protected.
 
-The encryption key must be stored in a SMS and the address of the corresponding SMS recorded in the directory. The SMS stores this encryption key and will only communicate it to an application running in an enclave.
+The encryption key must be stored in an SMS and the address of the corresponding SMS recorded in the directory. The SMS stores this encryption key and will only communicate it to an application running in an enclave.
 
 Before a worker runs this application, the worker must first prove that its access is legitimate by providing the scheduler authorization. The SMS will verify that this authorization’s signature is valid and that the corresponding task is registered onchain. This means that any deal signed in the iExec Clerk will grant access to the dataset’s encryption key.
 
-Therefore in order to restrict the dataset’s usage, the dataset owner should set up restriction before signing a brokering order. This is done through the `apprestrict` field of the datasetorder. The dataset owner can deploy a `SimpleGroup` smart contract, have the `apprestrict` field point to it, and then whitelisting the applications that will have access to the dataset’s encryption key.
+Therefore, in order to restrict the dataset’s usage, the dataset owner should set up restriction before signing a brokering order. This is done through the `apprestrict` field of the datasetorder. The dataset owner can deploy a `SimpleGroup` smart contract, have the `apprestrict` field point to it, and then whitelisting the applications that will have access to the dataset’s encryption key.
 
-**\[Scheduler\] How do I protect myself from non deterministic applications?**
+**\[Scheduler\] How do I protect myself from non-deterministic applications?**
 
 When a scheduler publishes an order, it makes a commitment to achieve consensus on any task that is part of a deal made. While everything is done to ensure an application cannot hurt a worker pool’s machines, not reaching the consensus would cause a loss of stake for the scheduler. The scheduler must therefore take action to prevent this.
 
@@ -532,7 +532,7 @@ Whenever the scheduler proposes to certify a result using the PoCo’s trust lay
 A scheduler could therefore emit two kinds of workerpoolorder:
 
 * A workerpoolorder offering execution with the PoCo’s trust layer disabled \(`trust = 0`\) and accepting all applications \(`apprestrict = 0`\)
-* A workerpoolorder offering secure execution of whitelisted tasks. The application whitelist would use the `GroupInterface` to be verified by the iExec Clerk. This group could either be managed by the scheduler or by a certification authority that would check applications determinism.
+* A workerpoolorder offering secure execution of whitelisted tasks. The application whitelist would use the `GroupInterface` to be verified by the iExec Clerk. This group could either be managed by the scheduler or by a certification authority that would check application's determinism.
 
 ## Other technical choices
 
