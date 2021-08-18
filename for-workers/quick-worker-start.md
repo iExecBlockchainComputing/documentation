@@ -6,6 +6,10 @@ description: >-
 
 # Quick start
 
+⚠️ _**Unfortunately, it is not currently possible to join a public worker pool as an individual worker. The iExec team aims top change this soon, with plans to get individuals to connect their machines (specifically Intel® SGX enabled machines) to earn RLC tokens.**_
+
+_**Keep an eye on the iExec communication channels to be the first to know when public worker pools are made available. Thanks for your patience!** _⚠️
+
 A worker will be rewarded with RLCs for every properly computed tasks.
 
 Please note that:
