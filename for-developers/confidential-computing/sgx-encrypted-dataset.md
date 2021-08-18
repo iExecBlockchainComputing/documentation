@@ -205,7 +205,7 @@ const figlet = require('figlet');
       const confidentialFile = await fsPromises.readFile(`${iexecIn}/${datasetFileName}`);
       text = figlet.textSync(confidentialFile.toString());
     } catch (e) {
-      console.log('confidential file does not exists');
+      console.log('confidential file does not exist');
     }
     // Append some results
     await fsPromises.writeFile(`${iexecOut}/result.txt`, text);
@@ -228,7 +228,7 @@ const figlet = require('figlet');
 {% endtab %}
 
 {% tab title="Python" %}
-{% code title="src/app.pi" %}
+{% code title="src/app.py" %}
 ```python
 import json
 import os
@@ -248,7 +248,7 @@ try:
     dataset = functools.reduce(lambda acc, line: acc + line, dataset_file.readlines(), '')
     text = Figlet().renderText(dataset)
 except OSError:
-    print('confidential file does not exists')
+    print('confidential file does not exist')
     exit(1)
 
 print(text)
@@ -430,7 +430,7 @@ Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave
 docker run -it --rm -e SCONE_HASH=1 nodejs-hello-world:tee-debug
 
 # Python:
-docker run -it iirm -e SCONE_HASH=1 python-dataset-app:tee-debug
+docker run -it --rm -e SCONE_HASH=1 python-dataset-app:tee-debug
 ```
 {% endhint %}
 
