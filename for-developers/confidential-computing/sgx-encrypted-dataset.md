@@ -244,10 +244,7 @@ text = ''
 # Check the confidential file exists and open it
 try:
     dataset_file = open(iexec_in + '/' + dataset_filename, 'r')
-    dataset_lines = dataset_file.readlines()
-    dataset = ''
-    for line in dataset_lines:
-        dataset += line
+    dataset = dataset_file.read()
     text = Figlet().renderText(dataset)
 except OSError:
     print('confidential file does not exists')
