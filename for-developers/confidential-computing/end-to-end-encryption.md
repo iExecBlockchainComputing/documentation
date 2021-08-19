@@ -37,6 +37,8 @@ This generates two files in `.secrets/beneficiary/`. Make sure to back up the pr
 ...
 ```
 
+Make sure you use the debug Secret Management Service (see [Build trusted applications > Deploy the dataset](sgx-encrypted-dataset.md#deploy-the-dataset)). Default SMS is production so make sure you use the right one.
+
 Now, push the public key to the SMS:
 
 ```bash
