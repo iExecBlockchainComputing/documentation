@@ -22,7 +22,7 @@ Datasets are only decrypted inside authorized [enclaves](intel-sgx-technology.md
 {% endhint %}
 
 {% hint style="info" %}
-Your secrets are securely transferred with the SDK from your machine to the SMS over a TLS channel. Internally, your secrets are encrypted with standard AES encryption before being written to disk. Next releases will feature a, SMS running entirely inside a trusted enclave.
+Your secrets are securely transferred with the SDK from your machine to the SMS over a TLS channel. Internally, your secrets are encrypted with standard AES encryption before being written to disk. Next releases will feature an SMS running entirely inside a trusted enclave.
 {% endhint %}
 
 Let's see how to do all of that!
@@ -152,6 +152,9 @@ We saw in this section how to encrypt a dataset and deploy it on iExec. In addit
 
 Let's create a directory tree for this app in `~/iexec-projects/`.
 
+{% tabs %}
+{% tab title="Javascript" %}
+{% code %}
 ```bash
 cd ~/iexec-projects
 mkdir my-tee-dataset-app && cd my-tee-dataset-app
@@ -161,10 +164,27 @@ touch src/app.js
 touch Dockerfile
 touch sconify.sh
 ```
+{% endcode %}
+{% endtab %}
 
-In the folder `src/` create the file `app.js` then copy this code inside:
+{% tab title="Python" %}
+{% code %}
+```bash
+cd ~/iexec-projects
+mkdir my-tee-dataset-app && cd my-tee-dataset-app
+iexec init --skip-wallet
+mkdir src
+touch src/app.py
+touch Dockerfile
+touch sconify.sh
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
-In `app.js`, we read the content of the dataset and write it in the result's folder \(in an artistic way using **Figlet\)**:
+In the folder `src/` create the file `app.js` or `app.py` then copy this code inside:
+
+The application reads the content of the dataset and writes it into the result's folder \(in an artistic way using **Figlet\)**:
 
 {% tabs %}
 {% tab title="Javascript" %}
@@ -185,7 +205,7 @@ const figlet = require('figlet');
       const confidentialFile = await fsPromises.readFile(`${iexecIn}/${datasetFileName}`);
       text = figlet.textSync(confidentialFile.toString());
     } catch (e) {
-      console.log('confidential file does not exists');
+      console.log('confidential file does not exist');
     }
     // Append some results
     await fsPromises.writeFile(`${iexecOut}/result.txt`, text);
@@ -203,6 +223,42 @@ const figlet = require('figlet');
     process.exit(1);
   }
 })();
+```
+{% endcode %}
+{% endtab %}
+
+{% tab title="Python" %}
+{% code title="src/app.py" %}
+```python
+import json
+import os
+
+from pyfiglet import Figlet
+
+iexec_out = os.environ['IEXEC_OUT']
+iexec_in = os.environ['IEXEC_IN']
+dataset_filename = os.environ['IEXEC_DATASET_FILENAME']
+
+text = ''
+
+# Check the confidential file exists and open it
+try:
+    dataset_file = open(iexec_in + '/' + dataset_filename, 'r')
+    dataset = dataset_file.read()
+    text = Figlet().renderText(dataset)
+except OSError:
+    print('confidential file does not exists')
+    exit(1)
+
+print(text)
+
+# Append some results in /iexec_out/
+with open(iexec_out + '/result.txt', 'w+') as fout:
+    fout.write(text)
+
+# Declare everything is computed
+with open(iexec_out + '/computed.json', 'w+') as f:
+    json.dump({"deterministic-output-path": iexec_out + '/result.txt'}, f)
 ```
 {% endcode %}
 {% endtab %}
@@ -228,9 +284,22 @@ ENTRYPOINT [ "node", "/app/app.js"]
 ```
 {% endcode %}
 {% endtab %}
+
+{% tab title="Python" %}
+{% code title="Dockerfile" %}
+```bash
+FROM python:3.7.3-alpine3.10
+### install python dependencies if you have some
+RUN pip3 install pyfiglet
+COPY ./src /app
+ENTRYPOINT ["python3", "/app/app.py"]
+```
+{% endcode %}
+{% endtab %}
 {% endtabs %}
 
-
+{% tabs %}
+{% tab title="Javascript" %}
 {% code title="sconify.sh" %}
 ```bash
 #!/bin/bash
@@ -272,6 +341,48 @@ docker run -it --rm \
             && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
 {% endcode %}
+{% endtab %}
+
+{% tab title="Python" %}
+```bash
+#!/bin/bash
+
+# declare the app entrypoint
+ENTRYPOINT="python /app/app.py"
+# declare an image name
+IMG_NAME=python-dataset-app
+
+IMG_FROM=${IMG_NAME}:temp-non-tee
+IMG_TO=${IMG_NAME}:tee-debug
+
+# build the regular non-TEE image
+docker build . -t ${IMG_FROM}
+
+# run the sconifier to build the TEE image based on the non-TEE image
+docker run -it \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.7 \
+            sconify_iexec \
+            --name=${IMG_NAME} \
+            --from=${IMG_FROM} \
+            --to=${IMG_TO} \
+            --binary-fs \
+            --fs-dir=/app \
+            --host-path=/etc/hosts \
+            --host-path=/etc/resolv.conf \
+            --binary=/usr/local/bin/python3.7 \
+            --heap=1G \
+            --dlopen=2 \
+            --no-color \
+            --verbose \
+            --command=${ENTRYPOINT} \
+            && echo -e "\n------------------\n" \
+            && echo "successfully built TEE docker image => ${IMG_TO}" \
+            && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 Run the `sconify.sh` script to build the TEE-debug app.
 
@@ -302,7 +413,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
     "mrenclave": {
       "provider": "SCONE", // TEE provider (keep default value)
       "version": "v5", // Scone version (keep default value)
-      "entrypoint": "node /app/app.js", // your app image entrypoint
+      "entrypoint": "node /app/app.js" OR "python /app/app.py", // your app image entrypoint
       "heapSize": 1073741824, // heap size in bytes (1GB)
       "fingerprint": "eca3ace86f1e8a5c47123c8fd271319e9eb25356803d36666dc620f30365c0c1" // fingerprint of the enclave code (mrenclave), see how to retrieve it below
     }
@@ -310,6 +421,17 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
   ...
 }
 ```
+
+{% hint style="info" %}
+Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
+```sh
+# JavaScript:
+docker run -it --rm -e SCONE_HASH=1 nodejs-hello-world:tee-debug
+
+# Python:
+docker run -it --rm -e SCONE_HASH=1 python-dataset-app:tee-debug
+```
+{% endhint %}
 
 Deploy the app with the standard command:
 ```sh

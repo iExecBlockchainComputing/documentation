@@ -37,23 +37,25 @@ This generates two files in `.secrets/beneficiary/`. Make sure to back up the pr
 ...
 ```
 
+Make sure you use the debug Secret Management Service (see [Build trusted applications > Deploy the dataset](sgx-encrypted-dataset.md#deploy-the-dataset)). Default SMS is production so make sure you use the right one.
+
 Now, push the public key to the SMS:
 
 ```bash
-iexec result push-encryption-key --chain goerli
+iexec result push-encryption-key --chain viviani
 ```
 
 And check it using:
 
 ```bash
-iexec result check-encryption-key --chain goerli
+iexec result check-encryption-key --chain viviani
 ```
 
 Now to see that in action, you'd need to trigger a task and specify yourself as the beneficiary in the command:
 
 ```bash
 iexec app run <0x-your-app-address> \
-    --chain goerli                  \
+    --chain viviani                  \
     --tag tee                       \
     --encrypt-result \
     --watch
@@ -62,7 +64,7 @@ iexec app run <0x-your-app-address> \
 Wait for the task to be `COMPLETED` and download the result:
 
 ```bash
-iexec task show <0x-your-task-id> --download --chain goerli
+iexec task show <0x-your-task-id> --download --chain viviani
 ```
 
 If you extract the obtained zip and try to read the content of the file `iexec_out/result.zip.aes` you will find it encrypted:
@@ -96,7 +98,7 @@ unzip results.zip -d my-decrypted-result
 And you can see the content of your result file:
 
 ```bash
-$ cat my-decrypted-result/my-result.txt
+$ cat my-decrypted-result/result.txt
 Hello, world!
 ```
 
