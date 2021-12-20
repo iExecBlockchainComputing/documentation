@@ -14,7 +14,6 @@
 * [Advanced](for-developers/advanced/README.md)
   * [Manage your apporders](for-developers/advanced/manage-your-apporders.md)
   * [Manage your datasetorders](for-developers/advanced/manage-your-datasetorders.md)
-* [v6 to v7 migration](for-developers/v6-to-v7-migration.md)
 
 ## For Workers
 
@@ -32,7 +31,7 @@
 
 ## Help
 
+* [v6 to v7 migration](help/migration.md)
 * [Glossary](help/glossary.md)
 * [Assets](help/assets.md)
 * [Contact Us](help/contact-us.md)
-
