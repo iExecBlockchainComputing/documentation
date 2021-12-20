@@ -31,7 +31,7 @@
 
 ## Help
 
+* [v6 to v7 migration](help/migration.md)
 * [Glossary](help/glossary.md)
 * [Assets](help/assets.md)
 * [Contact Us](help/contact-us.md)
-

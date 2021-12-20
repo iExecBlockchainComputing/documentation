@@ -5,7 +5,7 @@
 
 * [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
 * [Nodejs](https://nodejs.org) 12.0.0 or higher.
-* [iExec SDK](https://www.npmjs.com/package/iexec) 6.0.0 or higher.
+* [iExec SDK](https://www.npmjs.com/package/iexec) 7.0.0 or higher.
 * Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
 {% endhint %}
 
@@ -133,7 +133,7 @@ These `sed` commands will do the trick:
 
 ```sh
 # set a custom viviani SMS in chain.json
-sed -i 's|"viviani": {},|"viviani": { "sms": "https://v6.sms.debug-tee-services.viviani.iex.ec" },|g' chain.json
+sed -i 's|"viviani": {},|"viviani": { "sms": "https://v7.sms.debug-tee-services.viviani.iex.ec" },|g' chain.json
 ```
 ```sh
 # push the dataset secret to the SMS
@@ -143,7 +143,7 @@ iexec dataset check-secret --chain viviani
 ```
 ```sh
 # restore the default configuration in chain.json
-sed -i 's|"viviani": { "sms": "https://v6.sms.debug-tee-services.viviani.iex.ec" },|"viviani": {},|g' chain.json
+sed -i 's|"viviani": { "sms": "https://v7.sms.debug-tee-services.viviani.iex.ec" },|"viviani": {},|g' chain.json
 ```
 
 We saw in this section how to encrypt a dataset and deploy it on iExec. In addition, we learned how to push the encryption secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms). Now we need to build the application that is going to consume this dataset.
@@ -442,7 +442,7 @@ iexec app deploy --chain viviani
 
 Specify the tag `--tag tee` and the dataset to use `--dataset <datasetAddress>` in `iexec app run` command to run a tee app with a dataset.
 
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the Viviani debug workerpool `0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe` (see deployed workerpools on https://v6.pools.iex.ec).
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the Viviani debug workerpool `0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe` (see deployed workerpools on https://v7.pools.iex.ec).
 
 You are now ready to run the app
 
