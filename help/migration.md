@@ -12,7 +12,7 @@ iExec v7 comes with some breaking changes, follow this guide to migrate from v6 
 
 ### Application migration
 
-Application developers needs to publish their application sell order to the v7 marketplace in order to makes it availlable for requesters.
+Application developers needs to publish their application sell order to the v7 marketplace in order to make it availlable for requesters.
 
 Upgrade iExec SDK CLI to v7:
 
@@ -31,7 +31,7 @@ iexec app publish <app-address> [options]
 
 ### Dataset migration
 
-Dataset developers needs to push their dataset secret to the v7 SMS and publish their dataset sell order to the v7 marketplace in order to makes it availlable for requesters.
+Dataset developers needs to push their dataset secret to the v7 SMS and publish their dataset sell order to the v7 marketplace in order to make it availlable for requesters.
 
 Upgrade iExec SDK CLI to v7:
 
@@ -56,7 +56,7 @@ iexec dataset publish <dataset-address> [options]
 
 ### Requester migration
 
-Requesters needs to login to the Result proxy v7 to store theire results and must push their encryption public key to the v7 SMS to use results encryption feature.
+Requesters need to login to the Result proxy v7 to store their results and must push their encryption public key to the v7 SMS to use result encryption feature.
 
 Upgrade iExec SDK CLI to v7:
 
