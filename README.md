@@ -37,7 +37,7 @@ Go to the [Application provider](for-developers/your-first-app.md) section to le
 
 ### Dataset providers
 
-Dataset provider can monetize their datas by setting a fixed-fee for each single usage of their software \(pay-per-task model\). Dataset can be seen as a wide concept to protect, iExec allows with multiple levels of security to monetize any data: data means dataset or more advanced valuable models as AI trained model,
+Dataset providers can monetize their datas by setting a fixed-fee for each single usage of their software \(pay-per-task model\). Dataset can be seen as a wide concept to protect, iExec allows with multiple levels of security to monetize any data: data means dataset or more advanced valuable models as AI trained model,
 
 ### Computing Providers
 
@@ -51,11 +51,11 @@ Worker pools are made up of multiple individual machines. They are led by a Pool
 
 **The Pool Manager freely determines the pricing to execute computational task for its workers.**
 
-Pool manager, while not doing the actual computation, receive a fee for the management of the worker pool. Pool manager compete to attract workers to their worker pool by providing efficient management and guaranteeing earnings for workers.
+Pool manager, while not doing the actual computation, receives a fee for the management of the worker pool. Pool managers compete to attract workers to their worker pool by providing efficient management and guaranteeing earnings for workers.
 
 Head to the [How to Become a pool manager](for-workers/manage-a-pool-of-workers.md) section to learn how to deploy your worker pool service.
 
-You may also check out the list of worker pool currently available on the iExec Marketplace in the [Pools Catalog](https://pools.iex.ec).
+You may also check out the list of worker pools currently available on the iExec Marketplace in the [Pools Catalog](https://pools.iex.ec).
 
 ### Data providers
 
