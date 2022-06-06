@@ -23,27 +23,27 @@ This concept is called Trusted Computing. These guarantees are critical for a de
 
 See” Trusted Execution Environments ('TEE')” for more information
 
-#D
+# D
 ## Decentralized Application (DApp)
 An application built on a decentralized network that combines a smart contract and a frontend user interface. A DApp has its backend code running on a decentralized peer-to-peer network. Contrast this with a traditional application where the backend code is running in fully controlled environments.
 
 See “Application” for more information.
 
-##DApp Provider 
+## DApp Provider 
 Writes, configures, and deploys applications on the iExec platform. Those applications can be DApps or legacy (traditional) applications. Providers can make their applications available for free or ask for a fixed fee for each use of their application.
 
-##Dataset
+## Dataset
 A dataset is a collection of related sets of information that is composed of separate elements, such as numbers, semantic-data or variables, that can be manipulated by a computer for practical application. For example, data within the medical industry can be use by healthcare professionals, care providers, insurers, and government agencies. 
 
-##Dataset Provider
+## Dataset Provider
 Owns datasets that can be monetized in the iExec marketplace.
 
-##Deal 
+## Deal 
 An agreement between all parties (requester and providers) in the iExec network. A deal is created when requester and providers’ orders are matched in the marketplace and recorded in the PoCo smart contract.
 
-#E
+# E
 
-##Ethereum 
+## Ethereum 
 A decentralized, open-source blockchain with smart contract functionality. Ethereum proposes using blockchain technology to maintain a decentralized payment network and to store computer code that can be used to power decentralized applications.
 
 ## EVM (Ethereum Virtual Machine)
@@ -66,7 +66,7 @@ Exec’s content aggregator where people can find content related to the project
 ## ICO (Initial Coin Offering)
 A fundraising mechanism where a blockchain-based startup mints its own native crypto asset in exchange for other cryptocurrencies. The goal is to raise funds and, in turn, create a community of incentivized users who want the project to succeed so that the presale tokens gain in value. 
 
-#M
+# M
 
 ## Mainnet 
 An independent blockchain running its own peer-to-peer network with its own technology and protocol (e.g. Bitcoin and Ethereum). It is a live blockchain where its own cryptocurrencies or tokens have value (when compared against a testnet network).
@@ -105,15 +105,15 @@ Data feeds that connect the off-chain world to blockchain products. Oracles act 
 ## Oracle Factory
 The iExec developer interface which allows users to create custom oracles. This interface permits users to create oracles for any type of data, without requiring coding experience, in a few minutes directly from their browser.
 
-#P
+# P
 ## PoCo (Proof of Contribution)
 
 The protocol used by iExec for consensus over off-chain computing.
 
 The iExec platform provides a network where application providers, workers, and users can gather and work together. The fully decentralized nature of iExec implies that no single agent is trusted by default, and that those agents require incentives to contribute correctly. PoCo is a protocol designed to provides trust in an open and decentralized environment of untrusted machines. It also orchestrates the different contributions to the iExec network, ensuring payments are always fair and timely.
 
-#R
-##Requester 
+# R
+## Requester 
 A person who buys the execution of a task in the iExec marketplace.
 
 ## RLC (Run on lots of computers)
@@ -121,12 +121,12 @@ An Ethereum (ERC20) token launched during the iExec ICO in 2017. This utility to
 Roadmap 
 Describes business and technical developments towards the adoption of the iExec protocol. The timeline for this roadmap is organized by quarter for an overview on ongoing projects and the future work. It is available here https://trello.com/b/oSCT5z09/iexec-adoption-roadmap
 
-#S
-##Scheduler
+# S
+## Scheduler
 
 Organizes the work distribution for workers in a worker pool.
 
-##SDK  (Software Development Kit)
+## SDK  (Software Development Kit)
 A set of tools for interaction with smart contracts and the iExec’s marketplace. It is available as a CLI and JS library. Access SDK here: https://github.com/iExecBlockchainComputing/iexec-sdk
 
 ## SGX (Secure Guard Extension by Intel)
@@ -134,16 +134,16 @@ Is a confidential computing technology developed by Intel.
 
 See “Confidential Computing” for more information.
 
-##Sidechain 
+## Sidechain 
 A controlled blockchain deployed over a data center and linked to Ethereum Mainnet with a bridge permitting to transfer assets between the two. iExec’s sidechain “Bellecour” is iExec’s mainnet bridged to ethereum mainnet.
 
-##sRLC
+## sRLC
 
 S in sRLC stands for Staked RLC.
 
 The sRLC balance of an account reflects the amount of RLC deposited by the account on the iExec PoCo smart contract. The sRLC balance of an account is managed by the PoCo smart contracts to ensure payments across the platform users. At any time, sRLC can be converted to RLC in the wallet by a withdrawal operation.
 
-##Smart Contracts
+## Smart Contracts
 The fundamental building blocks of Ethereum applications. They are computer programs stored on the blockchain that allows us to convert traditional contracts into digital parallels. Smart contracts are very logical - following an if this then that structure. This means they behave exactly as programmed and cannot be changed.
 
 Nick Szabo used the term "smart contract" in 1994, when he wrote “an introduction to the concept” and, in 1996, “an exploration of what smart contracts could do”.
@@ -156,37 +156,37 @@ A mechanism in PoCo that involves a certain amount of Workers’ RLC being ‘lo
 
 See “PoCo” for more information.
 
-#T
-##Task 
+# T
+## Task 
 A task within iExec is an instance where computing power is required.
 
-##Testnet
+## Testnet
 Used by programmers and developers to test and troubleshoot the aspects and features of a blockchain network to ensure it is ready for mainnet launch.
 
-##Trusted Execution Environment (TEE) 
+## Trusted Execution Environment (TEE) 
 A hardware secure area used to guarantee the confidentiality, integrity, and ownership of code and data.
 
 See” Confidential Computing ” for more information
 
-#W
-##Whitepaper
+# W
+## Whitepaper
 Explain the purpose and technology behind a project. Producing a whitepaper is a key step for a crypto startup to help investors understand technical information about its concept; whitepapers usually include a roadmap for how the project plans to grow and succeed. iExec’s whitepaper is available here https://iex.ec/wp-content/uploads/pdf/iExec-WPv3.0-English.pdf
 
-##Workers
+## Workers
 Individuals or companies who own computing resources and are willing to make them available for the computation of tasks against payments in RLC. Similarly to blockchain miners, workers want a simple solution that will make their computer part of a large infrastructure that will take care of the details for them.
 
-##Worker Pools
+## Worker Pools
 Organize the contributions of Workers. A worker pool is a group of machines, often with similar characteristics, that is led by a Pool Manager.
 
-##Worker Pool Manager
+## Worker Pool Manager
 In charge of proposing available computing resources (workers) to task requesters.
 
-#X
-##xRLC
+# X
+## xRLC
 
 X in xRLC stands for eXternal.
 
-A xRLC is the native token of iExec sidechains (it means it is used as ETH on ethereum mainnet). A xRLC is a RLC bridged on an external sidechain and only the bridge can mint* xRLC.
+A xRLC is the native token of iExec sidechains (it means it is used as ETH on ethereum mainnet). A xRLC is a RLC bridged on an external sidechain and only the bridge can mint\* xRLC.
 
 The bridge helps maintain the parity between the main chain and the external chain. For example, one xRLC on the sidechain has the same value as 1 RLC on the mainchain.
 
