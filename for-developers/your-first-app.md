@@ -47,32 +47,19 @@ Today you can run any application as a task. This means services are not support
 
 This is an overview of an iExec application inputs and expected outputs. You probably don't have to deeply understand every part of this section to build your app, just pick what you need.
 
-### Application args
+### Application Inputs
 
-The requester may specify the arguments to use with an application in the requestorder, these arguments are forwarded as they are, straight to the application.
+The different kind of input are listed bellow
 
-### Application input files
+| name | type | confidentiality | basic  use case | provisionning process | consuming in the app |
+|---|---|---|---|---|---|
+| args | string | public | passing non-sensitive arguments | defined by requester via `requestorder` `params.iexec_args` | **args** are forwarded as they are, straight to the application.  |
+| input files | files | public | processing non-sensitive files | defined by requester via `requestorder` `params.iexec_input_files` specifies an array of download urls | each **input file** is downloaded in the `IEXEC_IN` directory and get it's name exposed via `IEXEC_INPUT_FILE_NAME_x` (where `x` is the index of the file starting with `1`)</br>input files count is exposed via `IEXEC_INPUT_FILES_NUMBER`  |
+| app secret | string | secret\* | using a developer defined secret without compromising it (ex: api key) | pushed by application developer in the SMS (once set a secret cannot be updated) | **app secret** is exposed to the application in `IEXEC_APP_SECRET_0` |
+| dataset | file | secret\* | using a thid party secret file without compromising it | data provider creates a `dataset` and define the governance in `datasetorder`s </br>requeter specifies a `dataset` address to use via requestorder `dataset` | the **dataset** is downloaded and unencrypted in the `IEXEC_IN` directory and get it's name exposed via `IEXEC_DATASET_FILENAME`</br>the dataset address is also exposed via `IEXEC_DATASET_ADDRESS` |
+| requester secret | strings | secret\* | using requester secrets without compromising them | requester push named secrets in the SMS</br>requester maps the names of the secrets to use onto secret number via `requestorder` `params.iexec_secrets` </br>example: `{ "0": "my-login", "1": "my-password" }` | **requester secrets** are exposed to the application in `IEXEC_REQUESTER_SECRET_x` where `x` is the secret number set by the requester |
 
-Your app may use input files, all the input files specified by the requester will be downloaded in the container's iExec input directory before running your application.
-iExec input directory's path is available for the app by reading the variable `IEXEC_IN`.
-
-#### Input files \(public\):
-
-Input files contain non-sensitive data publicly available on the Internet. The requester may specify any number of input files in the requestorder.
-
-For each input file, the variable `IEXEC_INPUT_FILE_NAME_x` is set to the file name \(`x` is the index of the file starting with `1`\). The total number of input files is stored in the variable `IEXEC_INPUT_FILES_NUMBER`.
-
-Use these variables in your application to find input files to process. \(first input file path is `"$IEXEC_IN/$IEXEC_INPUT_FILE_NAME_1"`\)
-
-#### Confidential input files \(datasets\):
-
-Confidential datasets are encrypted files available only in a Trusted Execution Environment \(TEE\).
-When an app is running in TEE with a dataset, the variable `IEXEC_DATASET_FILENAME` will be set to the dataset file name.
-
-Use `$IEXEC_IN/$IEXEC_DATASET_FILENAME` to find the dataset file to process.
-You will learn how to build a TEE app in the next tutorial.
-
-A single dataset file is currently supported.
+\* secret inputs are protected by the TEE technology they are not exposed to non TEE tasks
 
 ### Runtime variables
 
