@@ -51,48 +51,167 @@ This is an overview of an iExec application inputs and expected outputs. You pro
 
 The different kind of input are listed bellow
 
-| name | type | confidentiality | basic  use case | provisionning process | consuming in the app |
-|---|---|---|---|---|---|
-| args | string | public | passing non-sensitive arguments | defined by requester via `requestorder` `params.iexec_args` | **args** are forwarded as they are, straight to the application.  |
-| input files | files | public | processing non-sensitive files | defined by requester via `requestorder` `params.iexec_input_files` specifies an array of download urls | each **input file** is downloaded in the `IEXEC_IN` directory and get it's name exposed via `IEXEC_INPUT_FILE_NAME_x` (where `x` is the index of the file starting with `1`)</br>input files count is exposed via `IEXEC_INPUT_FILES_NUMBER`  |
-| app secret | string | secret\* | using a developer defined secret without compromising it (ex: api key) | pushed by application developer in the SMS (once set a secret cannot be updated) | **app secret** is exposed to the application in `IEXEC_APP_SECRET_0` |
-| dataset | file | secret\* | using a thid party secret file without compromising it | data provider creates a `dataset` and define the governance in `datasetorder`s </br>requeter specifies a `dataset` address to use via requestorder `dataset` | the **dataset** is downloaded and unencrypted in the `IEXEC_IN` directory and get it's name exposed via `IEXEC_DATASET_FILENAME`</br>the dataset address is also exposed via `IEXEC_DATASET_ADDRESS` |
-| requester secret | strings | secret\* | using requester secrets without compromising them | requester push named secrets in the SMS</br>requester maps the names of the secrets to use onto secret number via `requestorder` `params.iexec_secrets` </br>example: `{ "0": "my-login", "1": "my-password" }` | **requester secrets** are exposed to the application in `IEXEC_REQUESTER_SECRET_x` where `x` is the secret number set by the requester |
+| name | type | confidentiality | provider |
+|---|---|---|---|
+| [args](#args) | string | public | requester |
+| [input files](#input-files) | files | public | requester |
+| [requester secrets](#requester-secrets) | strings | secret\* | requester |
+| [dataset](#dataset) | file | secret\* | requester/third party |
+| [app developer secret](#app-developer-secret) | string | secret\* | app developer |
 
 \* secret inputs are protected by the TEE technology they are not exposed to non TEE tasks
+
+#### Args
+
+The requester use **args** to pass non-sensitive arguments to the app.
+
+##### Provisioning args
+
+**args** are defined by the requester via `requestorder` `params.iexec_args`.
+
+{% code title="requestorder" %}
+```json
+{
+  ...
+  "params": {
+    ...
+    "iexec_args": "do something"
+    ...
+  }
+  ...
+}
+```
+
+##### Consuming args
+
+**args** are forwarded as they are, straight to the application.
+
+#### Input files
+
+The requester use **input files** to pass non-sensitive files to process.
+
+##### Provisioning input files
+
+**input files** are defined by the requester via a list of download urls in `requestorder` `params.iexec_input_files`.
+
+{% code title="requestorder" %}
+```json
+{
+  ...
+  "params": {
+    ...
+    "iexec_input_files": [
+      "https://example.com/file.txt",
+      "https://example.com/image.jpeg"
+      ]
+    ...
+  }
+  ...
+}
+```
+
+##### Consuming input files
+
+Each **input file** is downloaded in the `IEXEC_INPUT_FILES_FOLDER` directory and get it's name exposed to the application via `IEXEC_INPUT_FILE_NAME_x` (where `x` is the index of the file starting with `1`).
+
+input files count is exposed via `IEXEC_INPUT_FILES_NUMBER`
+
+#### Requester secrets
+
+The requester use **requester secrets** to securely pass secrets to the application.
+
+##### Provisioning requester secrets
+
+The requester push named secrets to the SMS.
+
+The requester defines a maping of secrets names onto secret number via `requestorder` `params.iexec_secrets` (secrets numbers must be strictly positive).
+
+{% code title="requestorder" %}
+```json
+{
+  ...
+  "params": {
+    ...
+    "iexec_secrets": {
+      "1": "my-login",
+      "2": "my-password"
+    }
+    ...
+  }
+  ...
+}
+```
+
+##### Consuming requester secrets
+
+Each **requester secret** is exposed to the application in `IEXEC_REQUESTER_SECRET_x` where `x` is the secret number set by the requester.
+
+#### Dataset
+
+The requester use a **dataset** to use a third party confidential data in the application.
+
+##### Provisioning a dataset
+
+The dataset provider creates a **dataset** and define the governance in `datasetorder`s.
+
+The requeter specifies the **dataset** to use via `requestorder` `dataset`.
+
+{% code title="requestorder" %}
+```json
+{
+  ...
+  "dataset": "0x915F00E3A45e7A78aa21401D0398109f795D8bcA",
+  "datasetmaxprice": "0"
+  ...
+}
+```
+
+##### Consuming a dataset
+
+The **dataset** is downloaded and unencrypted in the `IEXEC_INPUT_FILES_FOLDER` directory and get it's name exposed to the application via `IEXEC_DATASET_FILENAME`.
+
+The **dataset** address is also exposed via `IEXEC_DATASET_ADDRESS`.
+
+#### App developer secret
+
+The developer use an **app developer secret** to inject an immutable secret into the application.
+
+##### Provisioning an app developer secret
+
+The app developer push an **app developer secret** to the Secret Management Service.
+
+Once pushed, an **app developer secret** cannot be modified.
+
+##### Consuming an app developer secret
+
+The **app developer secret** is exposed to the application in `IEXEC_APP_SECRET`
 
 ### Runtime variables
 
 The runtime variables are environment variables set by the iExec worker and available for your application.
 
-#### Input files variables
-
-Use these variables if your app deals with input files.
-
-| Name                     | Type            | Content                                                     |
-| :----------------------- | :-------------- | :---------------------------------------------------------- |
-| IEXEC_INPUT_FILES_FOLDER | path            | Absolute path of iexec input folder \(`/iexec_in/`\)        |
-| IEXEC_INPUT_FILES_NUMBER | int &gt;= 0     | Total number of input files                                 |
-| IEXEC_INPUT_FILE_NAME_x  | string or unset | Name of the input file indexed by x \(`x` starts with `1`\) |
-
-#### Task variables
-
-To achieve some use cases, you may want to access some information from the task.
+#### Input variables
 
 | Name | Type | Content |
-| :--- | :--- | :--- |
-| IEXEC_TASK_ID | bytes32 | taskid of the running task |
+|---|---|---|
+| IEXEC_INPUT_FILES_FOLDER | path | Absolute path of iexec input folder \(`/iexec_in/`\) |
+| IEXEC_INPUT_FILES_NUMBER | int &gt;= 0 | Total number of input files |
+| IEXEC_INPUT_FILE_NAME_x | string or unset | Name of the input file indexed by x \(`x` starts with `1`\) |
+| IEXEC_REQUESTER_SECRET_x | string or unset | requester secret number x \(`x` starts with `1`\) |
+| IEXEC_DATASET_FILENAME | string or unset | Name of the dataset file |
 | IEXEC_DATASET_ADDRESS | address | ethereum address of the dataset used (or address zero) |
+| IEXEC_APP_DEVELOPER_SECRET | string or unset | app developer secret |
 
 #### Bag of Tasks variables
 
 The requester may request multiple tasks in a single transaction \(Bag of Tasks\), each task of the bag is given a unique index. If you intend to support running Bag of Tasks in your app, you can use the following variables to index tasks in parallelization use cases.
 
-| Name                  | Type        | Content                                                            |
-| :-------------------- | :---------- | :----------------------------------------------------------------- |
-| IEXEC_BOT_TASK_INDEX  | int &gt;= 0 | Index of the current task                                          |
+| Name | Type | Content |
+|---|---|---|
+| IEXEC_TASK_ID | bytes32 | taskid of the running task |
+| IEXEC_BOT_TASK_INDEX  | int &gt;= 0 | Index of the current task in the Bag of Tasks |
 | IEXEC_BOT_FIRST_INDEX | int &gt;= 0 | Index of the first task in the current Deal \(Bag of task subset\) |
-| IEXEC_BOT_SIZE        | int &gt;= 1 | Total number of parallelized tasks in a Bag of Tasks               |
+| IEXEC_BOT_SIZE | int &gt;= 1 | Total number of parallelized tasks in a Bag of Tasks |
 
 ### Application outputs
 
