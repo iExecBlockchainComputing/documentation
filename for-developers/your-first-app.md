@@ -49,21 +49,21 @@ This is an overview of an iExec application inputs and expected outputs. You pro
 
 ### Application Inputs
 
-The different kind of input are listed bellow
+The different kinds of input are listed below.
 
 | name | type | confidentiality | provider |
 |---|---|---|---|
 | [args](#args) | string | public | requester |
 | [input files](#input-files) | files | public | requester |
 | [requester secrets](#requester-secrets) | strings | secret\* | requester |
-| [dataset](#dataset) | file | secret\* | requester/<br/>third party |
+| [dataset](#dataset) | file | secret\* | requester/<br/>third-party |
 | [app developer secret](#app-developer-secret) | string | secret\* | app developer |
 
 \* secret inputs are protected by the TEE technology they are not exposed to non TEE tasks
 
 #### Args
 
-The requester use **args** to pass non-sensitive arguments to the app.
+The requester uses **args** to pass non-sensitive arguments to the app.
 
 ##### Provisioning args
 
@@ -89,11 +89,11 @@ The requester use **args** to pass non-sensitive arguments to the app.
 
 #### Input files
 
-The requester use **input files** to pass non-sensitive files to process.
+The requester uses **input files** to pass non-sensitive files to process.
 
 ##### Provisioning input files
 
-**input files** are defined by the requester via a list of download urls in `requestorder` `params.iexec_input_files`.
+**input files** are defined by the requester via a list of download URLs in `requestorder` `params.iexec_input_files`.
 
 {% code title="requestorder" %}
 ```json
@@ -114,19 +114,19 @@ The requester use **input files** to pass non-sensitive files to process.
 
 ##### Consuming input files
 
-Each **input file** is downloaded in the `IEXEC_IN` directory and get it's name exposed to the application via `IEXEC_INPUT_FILE_NAME_x` (where `x` is the index of the file starting with `1`).
+Each **input file** is downloaded in the `IEXEC_IN` directory and gets its name exposed to the application via `IEXEC_INPUT_FILE_NAME_x` (where `x` is the index of the file starting with `1`).
 
 input files count is exposed via `IEXEC_INPUT_FILES_NUMBER`
 
 #### Requester secrets
 
-The requester use **requester secrets** to securely pass secrets to the application.
+The requester uses **requester secrets** to securely pass secrets to the application.
 
 ##### Provisioning requester secrets
 
-The requester push named secrets to the SMS.
+The requester pushes named secrets to the SMS.
 
-The requester defines a maping of secrets names onto secret number via `requestorder` `params.iexec_secrets` (secrets numbers must be strictly positive).
+The requester defines a mapping of secret names onto secret numbers via `requestorder` `params.iexec_secrets` (secrets numbers must be strictly positive).
 
 {% code title="requestorder" %}
 ```json
@@ -151,13 +151,13 @@ Each **requester secret** is exposed to the application in `IEXEC_REQUESTER_SECR
 
 #### Dataset
 
-The requester use a **dataset** to use a third party confidential data in the application.
+The requester uses a **dataset** to use third-party confidential data in the application.
 
 ##### Provisioning a dataset
 
-The dataset provider creates a **dataset** and define the governance in `datasetorder`s.
+The dataset provider creates a **dataset** and defines the governance in `datasetorder`s.
 
-The requeter specifies the **dataset** to use via `requestorder` `dataset`.
+The requester specifies the **dataset** to use via `requestorder` `dataset`.
 
 {% code title="requestorder" %}
 ```json
@@ -172,17 +172,17 @@ The requeter specifies the **dataset** to use via `requestorder` `dataset`.
 
 ##### Consuming a dataset
 
-The **dataset** is downloaded and unencrypted in the `IEXEC_IN` directory and get it's name exposed to the application via `IEXEC_DATASET_FILENAME`.
+The **dataset** file is downloaded and unencrypted in the `IEXEC_IN` directory and gets its name exposed to the application via `IEXEC_DATASET_FILENAME`.
 
 The **dataset** address is also exposed via `IEXEC_DATASET_ADDRESS`.
 
 #### App developer secret
 
-The developer use an **app developer secret** to inject an immutable secret into the application.
+The developer uses an **app developer secret** to inject an immutable secret into the application.
 
 ##### Provisioning an app developer secret
 
-The app developer push an **app developer secret** to the Secret Management Service.
+The app developer pushes an **app developer secret** to the Secret Management Service.
 
 Once pushed, an **app developer secret** cannot be modified.
 
