@@ -81,6 +81,7 @@ The requester use **args** to pass non-sensitive arguments to the app.
   ...
 }
 ```
+{% endcode %}
 
 ##### Consuming args
 
@@ -109,6 +110,7 @@ The requester use **input files** to pass non-sensitive files to process.
   ...
 }
 ```
+{% endcode %}
 
 ##### Consuming input files
 
@@ -141,6 +143,7 @@ The requester defines a maping of secrets names onto secret number via `requesto
   ...
 }
 ```
+{% endcode %}
 
 ##### Consuming requester secrets
 
@@ -165,6 +168,7 @@ The requeter specifies the **dataset** to use via `requestorder` `dataset`.
   ...
 }
 ```
+{% endcode %}
 
 ##### Consuming a dataset
 
