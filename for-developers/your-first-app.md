@@ -56,7 +56,7 @@ The different kind of input are listed bellow
 | [args](#args) | string | public | requester |
 | [input files](#input-files) | files | public | requester |
 | [requester secrets](#requester-secrets) | strings | secret\* | requester |
-| [dataset](#dataset) | file | secret\* | requester/third party |
+| [dataset](#dataset) | file | secret\* | requester/<br/>third party |
 | [app developer secret](#app-developer-secret) | string | secret\* | app developer |
 
 \* secret inputs are protected by the TEE technology they are not exposed to non TEE tasks
