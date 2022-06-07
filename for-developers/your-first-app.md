@@ -112,7 +112,7 @@ The requester use **input files** to pass non-sensitive files to process.
 
 ##### Consuming input files
 
-Each **input file** is downloaded in the `IEXEC_INPUT_FILES_FOLDER` directory and get it's name exposed to the application via `IEXEC_INPUT_FILE_NAME_x` (where `x` is the index of the file starting with `1`).
+Each **input file** is downloaded in the `IEXEC_IN` directory and get it's name exposed to the application via `IEXEC_INPUT_FILE_NAME_x` (where `x` is the index of the file starting with `1`).
 
 input files count is exposed via `IEXEC_INPUT_FILES_NUMBER`
 
@@ -168,7 +168,7 @@ The requeter specifies the **dataset** to use via `requestorder` `dataset`.
 
 ##### Consuming a dataset
 
-The **dataset** is downloaded and unencrypted in the `IEXEC_INPUT_FILES_FOLDER` directory and get it's name exposed to the application via `IEXEC_DATASET_FILENAME`.
+The **dataset** is downloaded and unencrypted in the `IEXEC_IN` directory and get it's name exposed to the application via `IEXEC_DATASET_FILENAME`.
 
 The **dataset** address is also exposed via `IEXEC_DATASET_ADDRESS`.
 
@@ -194,7 +194,7 @@ The runtime variables are environment variables set by the iExec worker and avai
 
 | Name | Type | Content |
 |---|---|---|
-| IEXEC_INPUT_FILES_FOLDER | path | Absolute path of iexec input folder \(`/iexec_in/`\) |
+| IEXEC_IN | path | Absolute path of iexec input folder \(`/iexec_in/`\) |
 | IEXEC_INPUT_FILES_NUMBER | int &gt;= 0 | Total number of input files |
 | IEXEC_INPUT_FILE_NAME_x | string or unset | Name of the input file indexed by x \(`x` starts with `1`\) |
 | IEXEC_REQUESTER_SECRET_x | string or unset | requester secret number x \(`x` starts with `1`\) |
@@ -509,7 +509,7 @@ With `--args "dostuff --with-option"` the app will receive `["dostuff", "--with-
 
 You can pass input files to the app using `--input-files <list of URL>` option.
 
-With `--input-files https://example.com/file-A.txt,https://example.com/file-B.zip` the iExec worker will download the files before running the app in `IEXEC_INPUT_FILES_FOLDER`, and let the app access them throug variables:
+With `--input-files https://example.com/file-A.txt,https://example.com/file-B.zip` the iExec worker will download the files before running the app in `IEXEC_IN`, and let the app access them throug variables:
 
 * `file-A.txt` as`IEXEC_INPUT_FILE_NAME_1`
 * `file-B.zip` as`IEXEC_INPUT_FILE_NAME_2`
