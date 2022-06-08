@@ -198,7 +198,7 @@ The runtime variables are environment variables set by the iExec worker and avai
 
 | Name | Type | Content |
 |---|---|---|
-| IEXEC_IN | path | Absolute path of iexec input folder \(`/iexec_in/`\) |
+| IEXEC_IN | path | Absolute path of iexec input folder |
 | IEXEC_INPUT_FILES_NUMBER | int &gt;= 0 | Total number of input files |
 | IEXEC_INPUT_FILE_NAME_x | string or unset | Name of the input file indexed by x \(`x` starts with `1`\) |
 | IEXEC_REQUESTER_SECRET_x | string or unset | requester secret number x \(`x` starts with `1`\) |
@@ -206,16 +206,17 @@ The runtime variables are environment variables set by the iExec worker and avai
 | IEXEC_DATASET_ADDRESS | address | ethereum address of the dataset used (or address zero) |
 | IEXEC_APP_DEVELOPER_SECRET | string or unset | app developer secret |
 
-#### Bag of Tasks variables
-
-The requester may request multiple tasks in a single transaction \(Bag of Tasks\), each task of the bag is given a unique index. If you intend to support running Bag of Tasks in your app, you can use the following variables to index tasks in parallelization use cases.
+#### Other variables
 
 | Name | Type | Content |
 |---|---|---|
+| IEXEC_OUT | path | Absolute path of iexec output folder |
 | IEXEC_TASK_ID | bytes32 | taskid of the running task |
-| IEXEC_BOT_TASK_INDEX  | int &gt;= 0 | Index of the current task in the Bag of Tasks |
-| IEXEC_BOT_FIRST_INDEX | int &gt;= 0 | Index of the first task in the current Deal \(Bag of task subset\) |
-| IEXEC_BOT_SIZE | int &gt;= 1 | Total number of parallelized tasks in a Bag of Tasks |
+| IEXEC_BOT_TASK_INDEX  | int &gt;= 0 | Index of the current task in the Bag of Tasks* |
+| IEXEC_BOT_FIRST_INDEX | int &gt;= 0 | Index of the first task in the current Deal \(Bag of task* subset\) |
+| IEXEC_BOT_SIZE | int &gt;= 1 | Total number of parallelized tasks in a Bag of Tasks* |
+
+\* The requester may request multiple tasks in a single requestorder \(Bag of Tasks\), each task of the bag is given a unique index.
 
 ### Application outputs
 
