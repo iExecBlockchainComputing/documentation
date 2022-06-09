@@ -1,4 +1,4 @@
-# Use a developer secret
+# Use requester secrets
 
 {% hint style="success" %}
 **Prerequisites**
@@ -10,7 +10,7 @@
 {% endhint %}
 
 {% hint style="warning" %}
-Please make sure you have already checked the [Quickstart](../your-first-app.md), [Your first application](../your-first-app.md) and [Build trusted applications](create-your-first-sgx-app.md) tutorials before learning how to use a developer secret.
+Please make sure you have already checked the [Quickstart](../your-first-app.md), [Your first application](../your-first-app.md) and [Build trusted applications](create-your-first-sgx-app.md) tutorials before learning how to use requester secrets.
 {% endhint %}
 
 Trusted Execution Environments offer a huge advantage from a security perspective. They guarantee that the behavior of execution does not change even when launched on an untrusted remote machine. The data inside this type of environment is also protected, which allows its monetization while preventing leakage.
@@ -18,7 +18,7 @@ Trusted Execution Environments offer a huge advantage from a security perspectiv
 With iExec, it is possible to securely to associate an application developer secret to the runtime of an application.
 
 {% hint style="warning" %}
-The app developer secret is only exposed to your app inside authorized [enclaves](intel-sgx-technology.md#enclave) and never leave them.
+The requester secrets are only exposed to authorized apps inside [enclaves](intel-sgx-technology.md#enclave) and never leave them.
 {% endhint %}
 
 {% hint style="info" %}
@@ -32,7 +32,7 @@ Let's see how to do all of that!
 {% hint style="info" %}
 We will use the API [countapi.xyz](https://countapi.xyz/).
 This service keeps a count of hit on any couple of `namespace/key` (ex: <https://api.countapi.xyz/hit/foo/bar>).
-In this example, we will use an app developer secrets to set `namespace/key`.
+In this example, we will use requester secrets to set `namespace/key`.
 {% endhint %}
 
 Let's create a directory tree for this app in `~/iexec-projects/`.
@@ -42,7 +42,7 @@ Let's create a directory tree for this app in `~/iexec-projects/`.
 {% code %}
 ```bash
 cd ~/iexec-projects
-mkdir my-tee-dev-secret-app && cd my-tee-dev-secret-app
+mkdir my-tee-requester-secrets-app && cd my-tee-requester-secrets-app
 iexec init --skip-wallet
 mkdir src
 touch src/app.js
@@ -55,7 +55,7 @@ touch sconify.sh
 
 In the folder `src/` create the file `app.js` then copy this code inside:
 
-The application use the developer secret to make a call to a secret endpoint of [countapi.xyz](https://countapi.xyz/) and writes the result in a file:
+The application use the requester secrets to make a call to a secret endpoint of [countapi.xyz](https://countapi.xyz/) and writes the result in a file:
 
 {% tabs %}
 {% tab title="Javascript" %}
@@ -67,14 +67,19 @@ const axios = require('axios');
 (async () => {
   try {
     const iexecOut = process.env.IEXEC_OUT;
-    // get the secret endpoint from app developer secret
-    const secret = process.env.IEXEC_APP_DEVELOPER_SECRET;
-    if (!secret) {
-        console.log('missing IEXEC_APP_DEVELOPER_SECRET');
+    // get the secret endpoint from requester secrets
+    const secretNamespace = process.env.IEXEC_REQUESTER_SECRET_1;
+    const secretKey = process.env.IEXEC_REQUESTER_SECRET_2;
+    if (!secretNamespace) {
+        console.log('missing requester secret 1 (namespace)');
+        process.exit(1);
+    }
+    if (!secretKey) {
+        console.log('missing requester secret 2 (key)');
         process.exit(1);
     }
     // get the hit count from countapi
-    const hitCount = await axios.get(`https://api.countapi.xyz/hit/iexec/${secret}`)
+    const hitCount = await axios.get(`https://api.countapi.xyz/hit/${secretNamespace}/${secretKey}`)
         .then(({data}) => data.value);
 
     const result = `endpoint hit ${hitCount} times`;
@@ -90,7 +95,7 @@ const axios = require('axios');
       JSON.stringify(computedJsonObj),
     );
   } catch (e) {
-    // do not log anything that could reveal the app developer secret!
+    // do not log anything that could reveal the requester secrets!
     console.log('something went wrong');
     process.exit(1);
   }
@@ -132,7 +137,7 @@ ENTRYPOINT [ "node", "/app/app.js"]
 # declare the app entrypoint
 ENTRYPOINT="node /app/app.js"
 # declare an image name
-IMG_NAME=nodejs-developer-secret-app
+IMG_NAME=nodejs-requester-secrets-app
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -191,16 +196,16 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
   ...
   "app": {
     "owner": "0xF048eF3d7E3B33A465E0599E641BB29421f7Df92", // your address
-    "name": "tee-developer-secret-app", // application name
+    "name": "tee-requester-secrets-app", // application name
     "type": "DOCKER",
-    "multiaddr": "docker.io/username/nodejs-tee-developer-secret-app:1.0.0", // app image
-    "checksum": "0xf997788fcb5c9a47d8fa2653098da3c58343d400a82ca13d014d711d60560cac", // image digest
+    "multiaddr": "docker.io/username/nodejs-tee-requester-secrets-app:1.0.0", // app image
+    "checksum": "0xa562ff90fd989ca618f2bb17f87b00b4b0486f46d3dae868350f9a27c424ed94", // image digest
     "mrenclave": {
       "provider": "SCONE", // TEE provider (keep default value)
       "version": "v5", // Scone version (keep default value)
       "entrypoint": "node /app/app.js", // your app image entrypoint
       "heapSize": 1073741824, // heap size in bytes (1GB)
-      "fingerprint": "7d264f09de532fb1d55d25c4eb345a26454f4c21a1379e3813570538124a158e" // fingerprint of the enclave code (mrenclave), see how to retrieve it below
+      "fingerprint": "253e7253d201ce25327becf1a3351f8945770e9624570fecd7db7d836b7ea192" // fingerprint of the enclave code (mrenclave), see how to retrieve it below
     }
   },
   ...
@@ -230,10 +235,12 @@ These `sed` commands will do the trick:
 sed -i 's|"viviani": {},|"viviani": { "sms": "https://v7.sms.debug-tee-services.viviani.iex.ec" },|g' chain.json
 ```
 ```sh
-# push the app developer secret to the SMS
-iexec app push-secret --chain viviani
+# push some requester secrets to the SMS
+iexec requester push-secret my-namespace --chain viviani
+iexec requester push-secret my-key --chain viviani
 # check the secret is available on the SMS
-iexec app check-secret --chain viviani
+iexec requester check-secret my-namespace --chain viviani
+iexec requester check-secret my-key --chain viviani
 ```
 ```sh
 # restore the default configuration in chain.json
@@ -246,12 +253,21 @@ Specify the tag `--tag tee` in `iexec app run` command to run a tee app with an 
 
 One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the Viviani debug workerpool `0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe` (see deployed workerpools on https://v7.pools.iex.ec).
 
-You are now ready to run the app
+You are now ready to run the app with requester secrets.
+
 
 ```sh
-iexec app run <appAddress> --tag tee --workerpool 0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe --watch --chain viviani
+iexec app run <appAddress> --tag tee --workerpool 0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe --secrets my-namespace,my-key --watch --chain viviani
 ```
+
+{% hint style="info" %}
+The option `--secrets foo,bar,baz` allow the requester to provision secrets fo the app.
+in this example:
+- the secret named `foo` will be available in `IEXEC_REQUESTER_SECRET_1`
+- the secret named `bar` will be available in `IEXEC_REQUESTER_SECRET_2`
+- the secret named `baz` will be available in `IEXEC_REQUESTER_SECRET_3`
+{% endhint %}
 
 ## Next step?
 
-Thanks to the explained confidential computing workflow, it is possible to use an app developer secret with a trusted application.
+Thanks to the explained confidential computing workflow, it is possible to use consume requester secrets with a trusted application.
