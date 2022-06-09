@@ -29,6 +29,12 @@ Let's see how to do all of that!
 
 ## Prepare your application:
 
+{% hint style="info" %}
+We will use the API [countapi.xyz](https://countapi.xyz/).
+This service keeps a count of hit on any couple of `namespace/key` (ex: <https://api.countapi.xyz/hit/foo/bar>).
+In this example, we will use an app developer secrets to set `namespace/key`.
+{% endhint %}
+
 Let's create a directory tree for this app in `~/iexec-projects/`.
 
 {% tabs %}
