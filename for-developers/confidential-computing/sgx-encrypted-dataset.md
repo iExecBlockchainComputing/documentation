@@ -386,7 +386,9 @@ docker run -it \
 
 Run the `sconify.sh` script to build the TEE-debug app.
 
-
+{% hint style="info" %}
+The `sconify.sh` script prints the generated docker image name, retag this image and push it on dockerhub.
+{% endhint %}
 
 ## Test your app on iExec
 
