@@ -446,12 +446,12 @@ iexec app deploy --chain viviani
 
 Specify the tag `--tag tee` and the dataset to use `--dataset <datasetAddress>` in `iexec app run` command to run a tee app with a dataset.
 
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the Viviani debug workerpool `0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe` (see deployed workerpools on https://v7.pools.iex.ec).
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v7-debug.main.pools.iexec.eth`.
 
 You are now ready to run the app
 
 ```
-iexec app run <appAddress> --tag tee --dataset <datasetAddress> --workerpool 0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe --watch --chain viviani
+iexec app run <appAddress> --tag tee --dataset <datasetAddress> --workerpool v7-debug.main.pools.iexec.eth --watch --chain viviani
 ```
 
 ## Next step?

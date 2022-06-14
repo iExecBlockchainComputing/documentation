@@ -255,13 +255,13 @@ sed -i 's|"viviani": { "sms": "https://v7.sms.debug-tee-services.viviani.iex.ec"
 
 Specify the tag `--tag tee` in `iexec app run` command to run a tee app with an app developer secret.
 
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the Viviani debug workerpool `0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe` (see deployed workerpools on https://v7.pools.iex.ec).
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v7-debug.main.pools.iexec.eth`.
 
 You are now ready to run the app with requester secrets.
 
 
 ```sh
-iexec app run <appAddress> --tag tee --workerpool 0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe --secrets my-namespace,my-key --watch --chain viviani
+iexec app run <appAddress> --tag tee --workerpool v7-debug.main.pools.iexec.eth --secrets my-namespace,my-key --watch --chain viviani
 ```
 
 {% hint style="info" %}
