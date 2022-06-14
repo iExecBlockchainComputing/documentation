@@ -132,7 +132,7 @@ ENTRYPOINT [ "node", "/app/app.js"]
 # declare the app entrypoint
 ENTRYPOINT="node /app/app.js"
 # declare an image name
-IMG_NAME=nodejs-developer-secret-app
+IMG_NAME=nodejs-tee-developer-secret-app
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug

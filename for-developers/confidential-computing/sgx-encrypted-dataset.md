@@ -307,7 +307,7 @@ ENTRYPOINT ["python3", "/app/app.py"]
 # declare the app entrypoint
 ENTRYPOINT="node /app/app.js"
 # declare an image name
-IMG_NAME=nodejs-dataset-app
+IMG_NAME=nodejs-tee-dataset-app
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -350,7 +350,7 @@ docker run -it --rm \
 # declare the app entrypoint
 ENTRYPOINT="python /app/app.py"
 # declare an image name
-IMG_NAME=python-dataset-app
+IMG_NAME=python-tee-dataset-app
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -385,6 +385,8 @@ docker run -it \
 {% endtabs %}
 
 Run the `sconify.sh` script to build the TEE-debug app.
+
+
 
 ## Test your app on iExec
 

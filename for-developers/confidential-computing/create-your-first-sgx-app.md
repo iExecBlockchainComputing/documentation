@@ -98,7 +98,7 @@ We will use the following script to wrap the sconification process, copy the `sc
 # declare the app entrypoint
 ENTRYPOINT="node /app/app.js"
 # declare an image name
-IMG_NAME=nodejs-hello-world
+IMG_NAME=nodejs-tee-hello-world
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -142,7 +142,7 @@ docker run -it --rm \
 # declare the app entrypoint
 ENTRYPOINT="python /app/app.py"
 # declare an image name
-IMG_NAME=python-hello-world
+IMG_NAME=python-tee-hello-world
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
