@@ -11,7 +11,7 @@ description: >-
 
 * [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
 * [Dockerhub](https://hub.docker.com/) account.
-* [Nodejs](https://nodejs.org) 12.0.0 or higher.
+* [Nodejs](https://nodejs.org) 14.0.0 or higher.
 * [iExec SDK](https://www.npmjs.com/package/iexec) 7.0.0 or higher.
 * [Quickstart](quick-start-for-developers.md) tutorial completed
 * Ethereum wallet charged with Viviani ETH an RLC

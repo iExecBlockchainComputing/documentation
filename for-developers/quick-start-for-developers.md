@@ -9,7 +9,7 @@ description: >-
 {% hint style="success" %}
 **Prerequisite**
 
-* [Nodejs](https://nodejs.org) 12.0.0 or higher
+* [Nodejs](https://nodejs.org) 14.0.0 or higher
 {% endhint %}
 
 iExec enables decentralized docker app deployment and monetization on the blockchain.
