@@ -249,7 +249,7 @@ The `computed.json` file is compared across replicated tasks in the [Proof of Co
 
 Create the folder tree for your application in `~/iexec-projects/`.
 
-```text
+```bash
 cd ~/iexec-projects
 mkdir my-hello-world-app
 cd my-hello-world-app
@@ -356,7 +356,7 @@ ENTRYPOINT ["python", "/app/app.py"]
 
 Build the docker image.
 
-```text
+```bash
 docker build . --tag my-hello-world
 ```
 
@@ -410,7 +410,7 @@ Add `-e IEXEC_INPUT_FILES_NUMBER=n` to docker run options \(`n` is the total num
 
 Example with two inputs files:
 
-```text
+```bash
 touch /tmp/iexec_in/file1 && \
 touch /tmp/iexec_in/file2 && \
 docker run \
@@ -431,13 +431,13 @@ docker run \
 
 Login to your Dockerhub account.
 
-```text
+```bash
 docker login
 ```
 
 Tag your application image to push it to your dockerhub public repository.
 
-```text
+```bash
 docker tag my-hello-world <dockerusername>/my-hello-world:1.0.0
 ```
 
@@ -447,7 +447,7 @@ replace `<dockerusername>` with your docker user name
 
 Push the image to Dockerhub.
 
-```text
+```bash
 docker push <dockerusername>/my-hello-world:1.0.0
 ```
 
@@ -459,7 +459,7 @@ You already learned how to deploy the default app on iExec in the [previous tuto
 
 Go back to the `iexec-project` folder.
 
-```text
+```bash
 cd ~/iexec-projects/
 ```
 
@@ -472,20 +472,20 @@ You will need a few configurations in `iexec.json` to deploy your app:
 {% hint style="info" %}
 The checksum of your app is the sha256 digest of the docker image prefixed with `0x` , you can use the following command to get it.
 
-```text
+```bash
 docker pull <dockerusername>/my-hello-world:1.0.0 | grep "Digest: sha256:" | sed 's/.*sha256:/0x/'
 ```
 {% endhint %}
 
 Deploy your app on iExec
 
-```text
+```bash
 iexec app deploy --chain viviani
 ```
 
 Verify the deployed app \(name, multiaddr, checksum, owner\)
 
-```text
+```bash
 iexec app show --chain viviani
 ```
 
@@ -493,13 +493,13 @@ iexec app show --chain viviani
 
 Before requesting an execution make sure your account stake is charged with Viviani RLC
 
-```text
+```bash
 iexec account show --chain viviani
 ```
 
 Run your application on iExec
 
-```text
+```bash
 iexec app run --watch --chain viviani
 ```
 
@@ -522,16 +522,35 @@ With `--input-files https://example.com/file-A.txt,https://example.com/file-B.zi
 
 Once the run is completed copy the taskid from `iexec app run` output to download and check the result
 
-```text
+```bash
 iexec task show <taskid> --download my-app-result --chain viviani  \
     && unzip my-app-result.zip -d my-app-result
 ```
 
 **Congratulations your app successfully ran on iExec!**
 
+### Debug your app on iExec
+
+Sometimes things don't work out right the first time and you may want to debug your application.
+
+Get debug information of task
+```bash
+iexec task debug <taskid> --logs
+```
+
+{% hint style="info" %}
+`iexec task debug <taskid>` allows anyone to know the **onchain** and **offchain** statuses of the task.
+
+`--logs` option allows the requester to retrieve the worker's application logs.
+
+For security reasons, application logs are only accessible to the requester.
+
+As a developer, make it a rule to never log sensitive information in your application.
+{% endhint %}
+
 ## Publish your app on the iExec marketplace
 
-```text
+```bash
 iexec app publish --chain viviani
 ```
 
