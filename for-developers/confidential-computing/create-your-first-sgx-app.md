@@ -98,7 +98,7 @@ We will use the following script to wrap the sconification process, copy the `sc
 # declare the app entrypoint
 ENTRYPOINT="node /app/app.js"
 # declare an image name
-IMG_NAME=nodejs-hello-world
+IMG_NAME=nodejs-tee-hello-world
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -142,7 +142,7 @@ docker run -it --rm \
 # declare the app entrypoint
 ENTRYPOINT="python /app/app.py"
 # declare an image name
-IMG_NAME=python-hello-world
+IMG_NAME=python-tee-hello-world
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -184,6 +184,10 @@ chmod +x sconify.sh
 ```
 
 Congratulation you just built your first TEE application.
+
+{% hint style="info" %}
+The `sconify.sh` script prints the generated docker image name, retag this image and push it on dockerhub.
+{% endhint %}
 
 {% hint style="info" %}
 
@@ -245,7 +249,7 @@ iexec app deploy --chain viviani
 Specify the tag `--tag tee` in `iexec app run` command to run a tee app.
 
 
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the Viviani debug workerpool `0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe` (see deployed workerpools on https://v7.pools.iex.ec).
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v7-debug.main.pools.iexec.eth`.
 
 The debug workerpool is connected to a debug Secret Management Service (this is fine for debugging but do not use to store production secrets), we will need to init the storage token on this SMS.
 
@@ -267,8 +271,13 @@ sed -i 's|"viviani": { "sms": "https://v7.sms.debug-tee-services.viviani.iex.ec"
 You are now ready to run the app
 
 ```
-iexec app run --tag tee --workerpool 0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe --watch --chain viviani
+iexec app run --tag tee --workerpool v7-debug.main.pools.iexec.eth --watch --chain viviani
 ```
+
+{% hint style="info" %}
+You noticed we used `v7-debug.main.pools.iexec.eth` instead of an ethereum address, this is an ENS name.
+The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables associating decentralized naming to ethereum addresses.
+{% endhint %}
 
 ## Next step?
 

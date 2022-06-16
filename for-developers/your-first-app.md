@@ -47,65 +47,176 @@ Today you can run any application as a task. This means services are not support
 
 This is an overview of an iExec application inputs and expected outputs. You probably don't have to deeply understand every part of this section to build your app, just pick what you need.
 
-### Application args
+### Application Inputs
 
-The requester may specify the arguments to use with an application in the requestorder, these arguments are forwarded as they are, straight to the application.
+The different kinds of input are listed below.
 
-### Application input files
+| name | type | confidentiality | provider |
+|---|---|---|---|
+| [args](#args) | string | public | requester |
+| [input files](#input-files) | files | public | requester |
+| [requester secrets](#requester-secrets) | strings | secret\* | requester |
+| [dataset](#dataset) | file | secret\* | requester/<br/>third-party |
+| [app developer secret](#app-developer-secret) | string | secret\* | app developer |
 
-Your app may use input files, all the input files specified by the requester will be downloaded in the container's iExec input directory before running your application.
-iExec input directory's path is available for the app by reading the variable `IEXEC_IN`.
+\* secret inputs are protected by the TEE technology they are not exposed to non TEE tasks
 
-#### Input files \(public\):
+#### Args
 
-Input files contain non-sensitive data publicly available on the Internet. The requester may specify any number of input files in the requestorder.
+The requester uses **args** to pass non-sensitive arguments to the app.
 
-For each input file, the variable `IEXEC_INPUT_FILE_NAME_x` is set to the file name \(`x` is the index of the file starting with `1`\). The total number of input files is stored in the variable `IEXEC_INPUT_FILES_NUMBER`.
+##### Provisioning args
 
-Use these variables in your application to find input files to process. \(first input file path is `"$IEXEC_IN/$IEXEC_INPUT_FILE_NAME_1"`\)
+**args** are defined by the requester via `requestorder` `params.iexec_args`.
 
-#### Confidential input files \(datasets\):
+{% code title="requestorder" %}
+```json
+{
+  ...
+  "params": {
+    ...
+    "iexec_args": "do something"
+    ...
+  }
+  ...
+}
+```
+{% endcode %}
 
-Confidential datasets are encrypted files available only in a Trusted Execution Environment \(TEE\).
-When an app is running in TEE with a dataset, the variable `IEXEC_DATASET_FILENAME` will be set to the dataset file name.
+##### Consuming args
 
-Use `$IEXEC_IN/$IEXEC_DATASET_FILENAME` to find the dataset file to process.
-You will learn how to build a TEE app in the next tutorial.
+**args** are forwarded as they are, straight to the application.
 
-A single dataset file is currently supported.
+#### Input files
+
+The requester uses **input files** to pass non-sensitive files to process.
+
+##### Provisioning input files
+
+**input files** are defined by the requester via a list of download URLs in `requestorder` `params.iexec_input_files`.
+
+{% code title="requestorder" %}
+```json
+{
+  ...
+  "params": {
+    ...
+    "iexec_input_files": [
+      "https://example.com/file.txt",
+      "https://example.com/image.jpeg"
+      ]
+    ...
+  }
+  ...
+}
+```
+{% endcode %}
+
+##### Consuming input files
+
+Each **input file** is downloaded in the `IEXEC_IN` directory and gets its name exposed to the application via `IEXEC_INPUT_FILE_NAME_x` (where `x` is the index of the file starting with `1`).
+
+input files count is exposed via `IEXEC_INPUT_FILES_NUMBER`
+
+#### Requester secrets
+
+The requester uses **requester secrets** to securely pass secrets to the application.
+
+##### Provisioning requester secrets
+
+The requester pushes named secrets to the SMS.
+
+The requester defines a mapping of secret names onto secret numbers via `requestorder` `params.iexec_secrets` (secrets numbers must be strictly positive).
+
+{% code title="requestorder" %}
+```json
+{
+  ...
+  "params": {
+    ...
+    "iexec_secrets": {
+      "1": "my-login",
+      "2": "my-password"
+    }
+    ...
+  }
+  ...
+}
+```
+{% endcode %}
+
+##### Consuming requester secrets
+
+Each **requester secret** is exposed to the application in `IEXEC_REQUESTER_SECRET_x` where `x` is the secret number set by the requester.
+
+#### Dataset
+
+The requester uses a **dataset** to use third-party confidential data in the application.
+
+##### Provisioning a dataset
+
+The dataset provider creates a **dataset** and defines the governance in `datasetorder`s.
+
+The requester specifies the **dataset** to use via `requestorder` `dataset`.
+
+{% code title="requestorder" %}
+```json
+{
+  ...
+  "dataset": "0x915F00E3A45e7A78aa21401D0398109f795D8bcA",
+  "datasetmaxprice": "0"
+  ...
+}
+```
+{% endcode %}
+
+##### Consuming a dataset
+
+The **dataset** file is downloaded and unencrypted in the `IEXEC_IN` directory and gets its name exposed to the application via `IEXEC_DATASET_FILENAME`.
+
+The **dataset** address is also exposed via `IEXEC_DATASET_ADDRESS`.
+
+#### App developer secret
+
+The developer uses an **app developer secret** to inject an immutable secret into the application.
+
+##### Provisioning an app developer secret
+
+The app developer pushes an **app developer secret** to the Secret Management Service.
+
+Once pushed, an **app developer secret** cannot be modified.
+
+##### Consuming an app developer secret
+
+The **app developer secret** is exposed to the application in `IEXEC_APP_SECRET`
 
 ### Runtime variables
 
 The runtime variables are environment variables set by the iExec worker and available for your application.
 
-#### Input files variables
-
-Use these variables if your app deals with input files.
-
-| Name                     | Type            | Content                                                     |
-| :----------------------- | :-------------- | :---------------------------------------------------------- |
-| IEXEC_INPUT_FILES_FOLDER | path            | Absolute path of iexec input folder \(`/iexec_in/`\)        |
-| IEXEC_INPUT_FILES_NUMBER | int &gt;= 0     | Total number of input files                                 |
-| IEXEC_INPUT_FILE_NAME_x  | string or unset | Name of the input file indexed by x \(`x` starts with `1`\) |
-
-#### Task variables
-
-To achieve some use cases, you may want to access some information from the task.
+#### Input variables
 
 | Name | Type | Content |
-| :--- | :--- | :--- |
-| IEXEC_TASK_ID | bytes32 | taskid of the running task |
+|---|---|---|
+| IEXEC_IN | path | Absolute path of iexec input folder |
+| IEXEC_INPUT_FILES_NUMBER | int &gt;= 0 | Total number of input files |
+| IEXEC_INPUT_FILE_NAME_x | string or unset | Name of the input file indexed by x \(`x` starts with `1`\) |
+| IEXEC_REQUESTER_SECRET_x | string or unset | requester secret number x \(`x` starts with `1`\) |
+| IEXEC_DATASET_FILENAME | string or unset | Name of the dataset file |
 | IEXEC_DATASET_ADDRESS | address | ethereum address of the dataset used (or address zero) |
+| IEXEC_APP_DEVELOPER_SECRET | string or unset | app developer secret |
 
-#### Bag of Tasks variables
+#### Other variables
 
-The requester may request multiple tasks in a single transaction \(Bag of Tasks\), each task of the bag is given a unique index. If you intend to support running Bag of Tasks in your app, you can use the following variables to index tasks in parallelization use cases.
+| Name | Type | Content |
+|---|---|---|
+| IEXEC_OUT | path | Absolute path of iexec output folder |
+| IEXEC_TASK_ID | bytes32 | taskid of the running task |
+| IEXEC_BOT_TASK_INDEX  | int &gt;= 0 | Index of the current task in the Bag of Tasks* |
+| IEXEC_BOT_FIRST_INDEX | int &gt;= 0 | Index of the first task in the current Deal \(Bag of task* subset\) |
+| IEXEC_BOT_SIZE | int &gt;= 1 | Total number of parallelized tasks in a Bag of Tasks* |
 
-| Name                  | Type        | Content                                                            |
-| :-------------------- | :---------- | :----------------------------------------------------------------- |
-| IEXEC_BOT_TASK_INDEX  | int &gt;= 0 | Index of the current task                                          |
-| IEXEC_BOT_FIRST_INDEX | int &gt;= 0 | Index of the first task in the current Deal \(Bag of task subset\) |
-| IEXEC_BOT_SIZE        | int &gt;= 1 | Total number of parallelized tasks in a Bag of Tasks               |
+\* The requester may request multiple tasks in a single requestorder \(Bag of Tasks\), each task of the bag is given a unique index.
 
 ### Application outputs
 
@@ -403,7 +514,7 @@ With `--args "dostuff --with-option"` the app will receive `["dostuff", "--with-
 
 You can pass input files to the app using `--input-files <list of URL>` option.
 
-With `--input-files https://example.com/file-A.txt,https://example.com/file-B.zip` the iExec worker will download the files before running the app in `IEXEC_INPUT_FILES_FOLDER`, and let the app access them throug variables:
+With `--input-files https://example.com/file-A.txt,https://example.com/file-B.zip` the iExec worker will download the files before running the app in `IEXEC_IN`, and let the app access them throug variables:
 
 * `file-A.txt` as`IEXEC_INPUT_FILE_NAME_1`
 * `file-B.zip` as`IEXEC_INPUT_FILE_NAME_2`

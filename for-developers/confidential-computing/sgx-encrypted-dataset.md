@@ -307,7 +307,7 @@ ENTRYPOINT ["python3", "/app/app.py"]
 # declare the app entrypoint
 ENTRYPOINT="node /app/app.js"
 # declare an image name
-IMG_NAME=nodejs-dataset-app
+IMG_NAME=nodejs-tee-dataset-app
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -321,7 +321,7 @@ docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.7 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
@@ -350,7 +350,7 @@ docker run -it --rm \
 # declare the app entrypoint
 ENTRYPOINT="python /app/app.py"
 # declare an image name
-IMG_NAME=python-dataset-app
+IMG_NAME=python-tee-dataset-app
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -361,7 +361,7 @@ docker build . -t ${IMG_FROM}
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.7 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
@@ -385,6 +385,10 @@ docker run -it \
 {% endtabs %}
 
 Run the `sconify.sh` script to build the TEE-debug app.
+
+{% hint style="info" %}
+The `sconify.sh` script prints the generated docker image name, retag this image and push it on dockerhub.
+{% endhint %}
 
 ## Test your app on iExec
 
@@ -442,12 +446,12 @@ iexec app deploy --chain viviani
 
 Specify the tag `--tag tee` and the dataset to use `--dataset <datasetAddress>` in `iexec app run` command to run a tee app with a dataset.
 
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the Viviani debug workerpool `0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe` (see deployed workerpools on https://v7.pools.iex.ec).
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v7-debug.main.pools.iexec.eth`.
 
 You are now ready to run the app
 
 ```
-iexec app run <appAddress> --tag tee --dataset <datasetAddress> --workerpool 0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe --watch --chain viviani
+iexec app run <appAddress> --tag tee --dataset <datasetAddress> --workerpool v7-debug.main.pools.iexec.eth --watch --chain viviani
 ```
 
 ## Next step?
