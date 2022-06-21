@@ -265,9 +265,7 @@ iexec app run <appAddress> --tag tee --workerpool v7-debug.main.pools.iexec.eth 
 ```
 
 {% hint style="info" %}
-The option `--secret <secretMapping...>` allow the requester to provision secrets fo the app.
-
-This option allow to map any number of secrets with the mapping syntax `<key>=<name>`.
+The option `--secret <secretMapping...>` allow the requester to provision any number of secrets with the mapping syntax `<key>=<name>`.
 
 example:
 
