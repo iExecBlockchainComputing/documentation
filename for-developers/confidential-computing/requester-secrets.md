@@ -261,7 +261,13 @@ One last thing, in order to run a **TEE-debug** app you will also need to select
 You are now ready to run the app with requester secrets.
 
 ```sh
-iexec app run <appAddress> --tag tee --workerpool v7-debug.main.pools.iexec.eth --secret 1=my-namespace --secret 2=my-key --watch --chain viviani
+iexec app run <appAddress> \
+  --tag tee \
+  --workerpool v7-debug.main.pools.iexec.eth \
+  --secret 1=my-namespace \
+  --secret 2=my-key \
+  --watch \
+  --chain viviani
 ```
 
 {% hint style="info" %}
