@@ -122,7 +122,7 @@ $ cat iexec.json
 To deploy your dataset run:
 
 ```bash
-iexec dataset deploy --chain viviani
+iexec dataset deploy --chain bellecour
 ```
 
 You will get a hexadecimal address for your deployed dataset. Use that address to push the encryption key to the [SMS](intel-sgx-technology.md#secret-management-service-sms) so it is available for authorized applications.
@@ -132,18 +132,18 @@ For simplicity, we will use the dataset with a TEE-debug app on a debug workerpo
 These `sed` commands will do the trick:
 
 ```sh
-# set a custom viviani SMS in chain.json
-sed -i 's|"viviani": {},|"viviani": { "sms": "https://v7.sms.debug-tee-services.viviani.iex.ec" },|g' chain.json
+# set a custom bellecour SMS in chain.json
+sed -i 's|"bellecour": {},|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|g' chain.json
 ```
 ```sh
 # push the dataset secret to the SMS
-iexec dataset push-secret --chain viviani
+iexec dataset push-secret --chain bellecour
 # check the secret is available on the SMS
-iexec dataset check-secret --chain viviani
+iexec dataset check-secret --chain bellecour
 ```
 ```sh
 # restore the default configuration in chain.json
-sed -i 's|"viviani": { "sms": "https://v7.sms.debug-tee-services.viviani.iex.ec" },|"viviani": {},|g' chain.json
+sed -i 's|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|"bellecour": {},|g' chain.json
 ```
 
 We saw in this section how to encrypt a dataset and deploy it on iExec. In addition, we learned how to push the encryption secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms). Now we need to build the application that is going to consume this dataset.
@@ -439,7 +439,7 @@ docker run -it --rm -e SCONE_HASH=1 python-dataset-app:tee-debug
 
 Deploy the app with the standard command:
 ```sh
-iexec app deploy --chain viviani
+iexec app deploy --chain bellecour
 ```
 
 ### Run the TEE app
@@ -451,7 +451,7 @@ One last thing, in order to run a **TEE-debug** app you will also need to select
 You are now ready to run the app
 
 ```
-iexec app run <appAddress> --tag tee --dataset <datasetAddress> --workerpool v7-debug.main.pools.iexec.eth --watch --chain viviani
+iexec app run <appAddress> --tag tee --dataset <datasetAddress> --workerpool v7-debug.main.pools.iexec.eth --watch --chain bellecour
 ```
 
 ## Next step?

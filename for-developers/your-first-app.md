@@ -14,7 +14,6 @@ description: >-
 * [Nodejs](https://nodejs.org) 14.0.0 or higher.
 * [iExec SDK](https://www.npmjs.com/package/iexec) 7.2.0 or higher.
 * [Quickstart](quick-start-for-developers.md) tutorial completed
-* Ethereum wallet charged with Viviani ETH an RLC
 {% endhint %}
 
 In this guide, we will prepare an iExec app based on an existing docker image and we will run it on iExec decentralized infrastructure.
@@ -479,27 +478,19 @@ docker pull <dockerusername>/my-hello-world:1.0.0 | grep "Digest: sha256:" | sed
 Deploy your app on iExec
 
 ```bash
-iexec app deploy --chain viviani
+iexec app deploy --chain bellecour
 ```
 
 Verify the deployed app \(name, multiaddr, checksum, owner\)
 
 ```bash
-iexec app show --chain viviani
+iexec app show --chain bellecour
 ```
 
 ### Run your app on iExec
 
-Before requesting an execution make sure your account stake is charged with Viviani RLC
-
 ```bash
-iexec account show --chain viviani
-```
-
-Run your application on iExec
-
-```bash
-iexec app run --watch --chain viviani
+iexec app run --watch --chain bellecour
 ```
 
 {% hint style="info" %}
@@ -522,7 +513,7 @@ With `--input-files https://example.com/file-A.txt,https://example.com/file-B.zi
 Once the run is completed copy the taskid from `iexec app run` output to download and check the result
 
 ```bash
-iexec task show <taskid> --download my-app-result --chain viviani  \
+iexec task show <taskid> --download my-app-result --chain bellecour  \
     && unzip my-app-result.zip -d my-app-result
 ```
 
@@ -550,7 +541,7 @@ As a developer, make it a rule to never log sensitive information in your applic
 ## Publish your app on the iExec marketplace
 
 ```bash
-iexec app publish --chain viviani
+iexec app publish --chain bellecour
 ```
 
 **Congratulations your application is now available on iExec!**

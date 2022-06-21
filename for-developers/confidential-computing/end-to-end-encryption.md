@@ -42,20 +42,20 @@ Make sure you use the debug Secret Management Service (see [Build trusted applic
 Now, push the public key to the SMS:
 
 ```bash
-iexec result push-encryption-key --chain viviani
+iexec result push-encryption-key --chain bellecour
 ```
 
 And check it using:
 
 ```bash
-iexec result check-encryption-key --chain viviani
+iexec result check-encryption-key --chain bellecour
 ```
 
 Now to see that in action, you'd need to trigger a task and specify yourself as the beneficiary in the command:
 
 ```bash
 iexec app run <0x-your-app-address> \
-    --chain viviani                  \
+    --chain bellecour                  \
     --tag tee                       \
     --encrypt-result \
     --watch
@@ -64,7 +64,7 @@ iexec app run <0x-your-app-address> \
 Wait for the task to be `COMPLETED` and download the result:
 
 ```bash
-iexec task show <0x-your-task-id> --download --chain viviani
+iexec task show <0x-your-task-id> --download --chain bellecour
 ```
 
 If you extract the obtained zip and try to read the content of the file `iexec_out/result.zip.aes` you will find it encrypted:

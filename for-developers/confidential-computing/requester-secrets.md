@@ -224,7 +224,7 @@ docker run -it --rm -e SCONE_HASH=1 nodejs-tee-developer-secret-app
 
 Deploy the app with the standard command:
 ```sh
-iexec app deploy --chain viviani
+iexec app deploy --chain bellecour
 ```
 
 You will get a hexadecimal address for your deployed app. Use that address to push the app developer secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms).
@@ -234,22 +234,22 @@ For simplicity, we will use the secret in a TEE-debug app on a debug workerpool.
 These `sed` commands will do the trick:
 
 ```sh
-# set a custom viviani SMS in chain.json
-sed -i 's|"viviani": {},|"viviani": { "sms": "https://v7.sms.debug-tee-services.viviani.iex.ec" },|g' chain.json
+# set a custom bellecour SMS in chain.json
+sed -i 's|"bellecour": {},|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|g' chain.json
 ```
 
 ```sh
 # push some requester secrets to the SMS
-iexec requester push-secret my-namespace --chain viviani
-iexec requester push-secret my-key --chain viviani
+iexec requester push-secret my-namespace --chain bellecour
+iexec requester push-secret my-key --chain bellecour
 # check the secret is available on the SMS
-iexec requester check-secret my-namespace --chain viviani
-iexec requester check-secret my-key --chain viviani
+iexec requester check-secret my-namespace --chain bellecour
+iexec requester check-secret my-key --chain bellecour
 ```
 
 ```sh
 # restore the default configuration in chain.json
-sed -i 's|"viviani": { "sms": "https://v7.sms.debug-tee-services.viviani.iex.ec" },|"viviani": {},|g' chain.json
+sed -i 's|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|"bellecour": {},|g' chain.json
 ```
 
 ### Run the TEE app
@@ -267,7 +267,7 @@ iexec app run <appAddress> \
   --secret 1=my-namespace \
   --secret 2=my-key \
   --watch \
-  --chain viviani
+  --chain bellecour
 ```
 
 {% hint style="info" %}

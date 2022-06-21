@@ -241,7 +241,7 @@ docker run -it --rm -e SCONE_HASH=1 nodejs-hello-world:tee-debug
 
 Deploy the app with the standard command:
 ```sh
-iexec app deploy --chain viviani
+iexec app deploy --chain bellecour
 ```
 
 ### Run the TEE app
@@ -256,22 +256,22 @@ The debug workerpool is connected to a debug Secret Management Service (this is 
 These `sed` commands will do the trick:
 
 ```sh
-# set a custom viviani SMS in chain.json
-sed -i 's|"viviani": {},|"viviani": { "sms": "https://v7.sms.debug-tee-services.viviani.iex.ec" },|g' chain.json
+# set a custom bellecour SMS in chain.json
+sed -i 's|"bellecour": {},|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|g' chain.json
 ```
 ```sh
 # initialize the storage
-iexec storage init --chain viviani
+iexec storage init --chain bellecour
 ```
 ```sh
 # restore the default configuration in chain.json
-sed -i 's|"viviani": { "sms": "https://v7.sms.debug-tee-services.viviani.iex.ec" },|"viviani": {},|g' chain.json
+sed -i 's|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|"bellecour": {},|g' chain.json
 ```
 
 You are now ready to run the app
 
 ```
-iexec app run --tag tee --workerpool v7-debug.main.pools.iexec.eth --watch --chain viviani
+iexec app run --tag tee --workerpool v7-debug.main.pools.iexec.eth --watch --chain bellecour
 ```
 
 {% hint style="info" %}
