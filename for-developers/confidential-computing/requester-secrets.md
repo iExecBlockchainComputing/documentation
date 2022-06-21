@@ -109,7 +109,6 @@ const axios = require('axios');
 
 The Dockerfile and the build scripts are similar to the ones we saw [previously](create-your-first-sgx-app.md) for a trusted application, we changed a dependency to add `axios`:
 
-
 {% tabs %}
 {% tab title="Javascript" %}
 {% code title="Dockerfile" %}
@@ -238,6 +237,7 @@ These `sed` commands will do the trick:
 # set a custom viviani SMS in chain.json
 sed -i 's|"viviani": {},|"viviani": { "sms": "https://v7.sms.debug-tee-services.viviani.iex.ec" },|g' chain.json
 ```
+
 ```sh
 # push some requester secrets to the SMS
 iexec requester push-secret my-namespace --chain viviani
@@ -246,6 +246,7 @@ iexec requester push-secret my-key --chain viviani
 iexec requester check-secret my-namespace --chain viviani
 iexec requester check-secret my-key --chain viviani
 ```
+
 ```sh
 # restore the default configuration in chain.json
 sed -i 's|"viviani": { "sms": "https://v7.sms.debug-tee-services.viviani.iex.ec" },|"viviani": {},|g' chain.json
@@ -259,17 +260,24 @@ One last thing, in order to run a **TEE-debug** app you will also need to select
 
 You are now ready to run the app with requester secrets.
 
-
 ```sh
-iexec app run <appAddress> --tag tee --workerpool v7-debug.main.pools.iexec.eth --secrets my-namespace,my-key --watch --chain viviani
+iexec app run <appAddress> --tag tee --workerpool v7-debug.main.pools.iexec.eth --secret 1=my-namespace --secret 2=my-key --watch --chain viviani
 ```
 
 {% hint style="info" %}
-The option `--secrets foo,bar,baz` allow the requester to provision secrets fo the app.
-in this example:
-- the secret named `foo` will be available in `IEXEC_REQUESTER_SECRET_1`
-- the secret named `bar` will be available in `IEXEC_REQUESTER_SECRET_2`
-- the secret named `baz` will be available in `IEXEC_REQUESTER_SECRET_3`
+The option `--secret <secretMapping...>` allow the requester to provision secrets fo the app.
+
+This option allow to map any number of secrets with the mapping syntax `<key>=<name>`.
+
+example:
+
+```sh
+--secret 1=foo 3=bar
+```
+
+* the secret named `foo` will be available in `IEXEC_REQUESTER_SECRET_1`
+* the secret named `bar` will be available in `IEXEC_REQUESTER_SECRET_3`
+* `IEXEC_REQUESTER_SECRET_2` will be skipped
 {% endhint %}
 
 ## Next step?
