@@ -258,7 +258,7 @@ chmod +x sconify.sh
 Congratulation you just built your first TEE application.
 
 {% hint style="info" %}
-The `sconify.sh` script prints the generated docker image name, retag this image and push it on dockerhub.
+The `sconify.sh` script prints the generated docker image name, you must retag this image and push it on dockerhub.
 {% endhint %}
 
 {% hint style="info" %}
