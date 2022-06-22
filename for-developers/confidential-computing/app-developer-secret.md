@@ -148,7 +148,7 @@ except Exception:
 
 ## Build the TEE docker image:
 
-The Dockerfile and the build scripts are similar to the ones we saw [previously](create-your-first-sgx-app.md) for a trusted application, we changed a dependency to add `axios`:
+The Dockerfile and the build scripts are similar to the ones we saw [previously](create-your-first-sgx-app.md) for a trusted application:
 
 {% tabs %}
 {% tab title="Javascript" %}
