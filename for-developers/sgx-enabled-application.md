@@ -320,7 +320,7 @@ In the case of an SGX execution there are however two differences:
 "tag": "0x0000000000000000000000000000000000000000000000000000000000000001",
 "beneficiary": "0xC08C3def622Af1476f2Db0E3CC8CcaeAd07BE3bB",
 "callback": "0x0000000000000000000000000000000000000000",
-"params": "python app/app.py",
+"params": "python3 app/app.py",
 "requester": "0xC08C3def622Af1476f2Db0E3CC8CcaeAd07BE3bB"
 }
 ```

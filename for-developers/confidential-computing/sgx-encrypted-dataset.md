@@ -365,7 +365,7 @@ docker run -it --rm \
 #!/bin/bash
 
 # declare the app entrypoint
-ENTRYPOINT="python /app/app.py"
+ENTRYPOINT="python3 /app/app.py"
 # declare an image name
 IMG_NAME=tee-dataset-app
 
@@ -435,7 +435,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
     "mrenclave": {
       "provider": "SCONE", // TEE provider (keep default value)
       "version": "v5", // Scone version (keep default value)
-      "entrypoint": "node /app/app.js" OR "python /app/app.py", // your app image entrypoint
+      "entrypoint": "node /app/app.js" OR "python3 /app/app.py", // your app image entrypoint
       "heapSize": 1073741824, // heap size in bytes (1GB)
       "fingerprint": "eca3ace86f1e8a5c47123c8fd271319e9eb25356803d36666dc620f30365c0c1" // fingerprint of the enclave code (mrenclave), see how to retrieve it below
     }

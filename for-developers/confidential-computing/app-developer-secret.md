@@ -179,7 +179,7 @@ RUN pip3 install requests
 
 COPY ./src /app
 
-ENTRYPOINT ["python", "/app/app.py"]
+ENTRYPOINT ["python3", "/app/app.py"]
 ```
 
 {% endcode %}
@@ -240,7 +240,7 @@ docker run -it --rm \
 #!/bin/bash
 
 # declare the app entrypoint
-ENTRYPOINT="python /app/app.py"
+ENTRYPOINT="python3 /app/app.py"
 # declare an image name
 IMG_NAME=tee-developer-secret-app
 
@@ -311,7 +311,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
     "mrenclave": {
       "provider": "SCONE", // TEE provider (keep default value)
       "version": "v5", // Scone version (keep default value)
-      "entrypoint": "node /app/app.js", // your app image entrypoint
+      "entrypoint": "node /app/app.js" OR "python3 /app/app.py", // your app image entrypoint
       "heapSize": 1073741824, // heap size in bytes (1GB)
       "fingerprint": "7d264f09de532fb1d55d25c4eb345a26454f4c21a1379e3813570538124a158e" // fingerprint of the enclave code (mrenclave), see how to retrieve it below
     }
