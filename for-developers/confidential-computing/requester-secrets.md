@@ -27,7 +27,7 @@ Your secrets are securely transferred with the SDK from your machine to the SMS 
 
 Let's see how to do all of that!
 
-## Prepare your application:
+## Prepare your application
 
 {% hint style="info" %}
 We will use the API [countapi.xyz](https://countapi.xyz/).
@@ -332,7 +332,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
 
 ```sh
-docker run -it --rm -e SCONE_HASH=1 nodejs-tee-developer-secret-app
+docker run -it --rm -e SCONE_HASH=1 nodejs-tee-developer-secret-app:tee-debug
 ```
 
 {% endhint %}

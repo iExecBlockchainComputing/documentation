@@ -27,7 +27,7 @@ Your secrets are securely transferred with the SDK from your machine to the SMS 
 
 Let's see how to do all of that!
 
-## Prepare your application:
+## Prepare your application
 
 {% hint style="info" %}
 We will use the API [countapi.xyz](https://countapi.xyz/).
@@ -146,7 +146,7 @@ except Exception:
 {% endtab %}
 {% endtabs %}
 
-## Build the TEE docker image:
+## Build the TEE docker image
 
 The Dockerfile and the build scripts are similar to the ones we saw [previously](create-your-first-sgx-app.md) for a trusted application:
 
@@ -320,12 +320,15 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 
 {% hint style="info" %}
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
+
 ```sh
-docker run -it --rm -e SCONE_HASH=1 tee-developer-secret-app
+docker run -it --rm -e SCONE_HASH=1 tee-developer-secret-app:tee-debug
 ```
+
 {% endhint %}
 
 Deploy the app with the standard command:
+
 ```sh
 iexec app deploy --chain bellecour
 ```
@@ -340,12 +343,14 @@ These `sed` commands will do the trick:
 # set a custom bellecour SMS in chain.json
 sed -i 's|"bellecour": {},|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|g' chain.json
 ```
+
 ```sh
 # push the app developer secret to the SMS
 iexec app push-secret --chain bellecour
 # check the secret is available on the SMS
 iexec app check-secret --chain bellecour
 ```
+
 ```sh
 # restore the default configuration in chain.json
 sed -i 's|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|"bellecour": {},|g' chain.json

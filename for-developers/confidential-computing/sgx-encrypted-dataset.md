@@ -135,12 +135,14 @@ These `sed` commands will do the trick:
 # set a custom bellecour SMS in chain.json
 sed -i 's|"bellecour": {},|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|g' chain.json
 ```
+
 ```sh
 # push the dataset secret to the SMS
 iexec dataset push-secret --chain bellecour
 # check the secret is available on the SMS
 iexec dataset check-secret --chain bellecour
 ```
+
 ```sh
 # restore the default configuration in chain.json
 sed -i 's|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|"bellecour": {},|g' chain.json
@@ -148,13 +150,14 @@ sed -i 's|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex
 
 We saw in this section how to encrypt a dataset and deploy it on iExec. In addition, we learned how to push the encryption secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms). Now we need to build the application that is going to consume this dataset.
 
-## Prepare your application:
+## Prepare your application
 
 Let's create a directory tree for this app in `~/iexec-projects/`.
 
 {% tabs %}
 {% tab title="Javascript" %}
 {% code %}
+
 ```bash
 cd ~/iexec-projects
 mkdir my-tee-dataset-app && cd my-tee-dataset-app
@@ -164,11 +167,13 @@ touch src/app.js
 touch Dockerfile
 touch sconify.sh
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Python" %}
 {% code %}
+
 ```bash
 cd ~/iexec-projects
 mkdir my-tee-dataset-app && cd my-tee-dataset-app
@@ -178,6 +183,7 @@ touch src/app.py
 touch Dockerfile
 touch sconify.sh
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -189,6 +195,7 @@ The application reads the content of the dataset and writes it into the result's
 {% tabs %}
 {% tab title="Javascript" %}
 {% code title="src/app.js" %}
+
 ```javascript
 const fsPromises = require('fs').promises;
 const figlet = require('figlet');
@@ -224,11 +231,13 @@ const figlet = require('figlet');
   }
 })();
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Python" %}
 {% code title="src/app.py" %}
+
 ```python
 import json
 import os
@@ -260,17 +269,19 @@ with open(iexec_out + '/result.txt', 'w+') as fout:
 with open(iexec_out + '/computed.json', 'w+') as f:
     json.dump({"deterministic-output-path": iexec_out + '/result.txt'}, f)
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## Build the TEE docker image:
+## Build the TEE docker image
 
 The Dockerfile and the build scripts are the same as the ones we saw [previously](create-your-first-sgx-app.md) for a trusted application:
 
 {% tabs %}
 {% tab title="Javascript" %}
 {% code title="Dockerfile" %}
+
 ```bash
 # Starting from a base image supported by SCONE  
 FROM node:14-alpine3.11
@@ -282,11 +293,13 @@ COPY ./src /app
 
 ENTRYPOINT [ "node", "/app/app.js"]
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Python" %}
 {% code title="Dockerfile" %}
+
 ```bash
 FROM python:3.7.3-alpine3.10
 ### install python dependencies if you have some
@@ -294,6 +307,7 @@ RUN pip3 install pyfiglet
 COPY ./src /app
 ENTRYPOINT ["python3", "/app/app.py"]
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -301,13 +315,14 @@ ENTRYPOINT ["python3", "/app/app.py"]
 {% tabs %}
 {% tab title="Javascript" %}
 {% code title="sconify.sh" %}
+
 ```bash
 #!/bin/bash
 
 # declare the app entrypoint
 ENTRYPOINT="node /app/app.js"
 # declare an image name
-IMG_NAME=nodejs-tee-dataset-app
+IMG_NAME=tee-dataset-app
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -340,17 +355,19 @@ docker run -it --rm \
             && echo "successfully built TEE docker image => ${IMG_TO}" \
             && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Python" %}
+
 ```bash
 #!/bin/bash
 
 # declare the app entrypoint
 ENTRYPOINT="python /app/app.py"
 # declare an image name
-IMG_NAME=python-tee-dataset-app
+IMG_NAME=tee-dataset-app
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -380,6 +397,7 @@ docker run -it \
             && echo "successfully built TEE docker image => ${IMG_TO}" \
             && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -394,7 +412,7 @@ The `sconify.sh` script prints the generated docker image name, retag this image
 
 At this stage, your application is ready to be tested on iExec. The process is similar to testing any type of application on the platform, with these minor exceptions:
 
-### Deploy the TEE app on iExec:
+### Deploy the TEE app on iExec
 
 TEE applications require some additional information to be filled in during deployment.
 
@@ -412,7 +430,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
     "owner": "0xF048eF3d7E3B33A465E0599E641BB29421f7Df92", // your address
     "name": "tee-dataset-app", // application name
     "type": "DOCKER",
-    "multiaddr": "docker.io/username/my-tee-dataset-app:1.0.0", // app image
+    "multiaddr": "docker.io/username/tee-dataset-app:1.0.0", // app image
     "checksum": "0x15bed530c76f1f3b05b2db8d44c417128b8934899bc85804a655a01b441bfa78", // image digest
     "mrenclave": {
       "provider": "SCONE", // TEE provider (keep default value)
@@ -428,16 +446,15 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 
 {% hint style="info" %}
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
-```sh
-# JavaScript:
-docker run -it --rm -e SCONE_HASH=1 nodejs-hello-world:tee-debug
 
-# Python:
-docker run -it --rm -e SCONE_HASH=1 python-dataset-app:tee-debug
+```sh
+docker run -it --rm -e SCONE_HASH=1 tee-dataset-app:tee-debug
 ```
+
 {% endhint %}
 
 Deploy the app with the standard command:
+
 ```sh
 iexec app deploy --chain bellecour
 ```
@@ -450,11 +467,10 @@ One last thing, in order to run a **TEE-debug** app you will also need to select
 
 You are now ready to run the app
 
-```
+```sh
 iexec app run <appAddress> --tag tee --dataset <datasetAddress> --workerpool v7-debug.main.pools.iexec.eth --watch --chain bellecour
 ```
 
 ## Next step?
 
 Thanks to the explained confidential computing workflow, it is possible to use an encrypted dataset with a trusted application. We can go another step further and protect the result too. See in the next chapter how to make your execution result encrypted so that you are the only one who can read it.
-
