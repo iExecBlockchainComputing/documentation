@@ -185,6 +185,8 @@ ENTRYPOINT [ "node", "/app/app.js"]
 ```bash
 FROM python:3.7.3-alpine3.10
 
+RUN pip3 install requests
+
 COPY ./src /app
 
 ENTRYPOINT ["python", "/app/app.py"]
