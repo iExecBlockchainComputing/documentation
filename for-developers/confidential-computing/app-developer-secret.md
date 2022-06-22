@@ -40,26 +40,28 @@ Let's create a directory tree for this app in `~/iexec-projects/`.
 {% tabs %}
 {% tab title="Javascript" %}
 {% code %}
+
 ```bash
 cd ~/iexec-projects
-mkdir my-tee-dev-secret-app && cd my-tee-dev-secret-app
+mkdir tee-developer-secret-app && cd tee-developer-secret-app
 iexec init --skip-wallet
 mkdir src
-touch src/app.js
 touch Dockerfile
 touch sconify.sh
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-In the folder `src/` create the file `app.js` then copy this code inside:
-
 The application use the developer secret to make a call to a secret endpoint of [countapi.xyz](https://countapi.xyz/) and writes the result in a file:
+
+**Copy the following content** in `src/` .
 
 {% tabs %}
 {% tab title="Javascript" %}
 {% code title="src/app.js" %}
+
 ```javascript
 const fsPromises = require('fs').promises;
 const axios = require('axios');
@@ -96,6 +98,50 @@ const axios = require('axios');
   }
 })();
 ```
+
+{% endcode %}
+{% endtab %}
+
+{% tab title="Python" %}
+{% code title="src/app.py" %}
+
+```python
+import os
+import json
+import requests
+
+try:
+    iexec_out = os.environ["IEXEC_OUT"]
+
+    # get the secret endpoint from app developer secret
+    try:
+        secret = os.environ["IEXEC_APP_DEVELOPER_SECRET"]
+    except Exception:
+        print("missing IEXEC_APP_DEVELOPER_SECRET")
+        exit(1)
+
+    # get the hit count from countapi
+    response = requests.request("GET", "https://api.countapi.xyz/hit/iexec/" + secret)
+    json_response = response.json()
+    hit_count = json_response["value"]
+
+    result = "endpoint hit " + str(hit_count) + " times"
+    print(result)
+
+    # write the result
+    with open(iexec_out + "/result.txt", "w+") as fout:
+        fout.write(result)
+
+    # declare everything is computed
+    with open(iexec_out + "/computed.json", "w+") as f:
+        json.dump({ "deterministic-output-path" : iexec_out + "/result.txt" }, f)
+
+except Exception:
+    # do not log anything that could reveal the app developer secret!
+    print("something went wrong")
+    exit(1)
+```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -104,10 +150,10 @@ const axios = require('axios');
 
 The Dockerfile and the build scripts are similar to the ones we saw [previously](create-your-first-sgx-app.md) for a trusted application, we changed a dependency to add `axios`:
 
-
 {% tabs %}
 {% tab title="Javascript" %}
 {% code title="Dockerfile" %}
+
 ```bash
 # Starting from a base image supported by SCONE  
 FROM node:14-alpine3.11
@@ -119,6 +165,21 @@ COPY ./src /app
 
 ENTRYPOINT [ "node", "/app/app.js"]
 ```
+
+{% endcode %}
+{% endtab %}
+
+{% tab title="Python" %}
+{% code title="Dockerfile" %}
+
+```bash
+FROM python:3.7.3-alpine3.10
+
+COPY ./src /app
+
+ENTRYPOINT ["python", "/app/app.py"]
+```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -126,13 +187,14 @@ ENTRYPOINT [ "node", "/app/app.js"]
 {% tabs %}
 {% tab title="Javascript" %}
 {% code title="sconify.sh" %}
+
 ```bash
 #!/bin/bash
 
 # declare the app entrypoint
 ENTRYPOINT="node /app/app.js"
 # declare an image name
-IMG_NAME=nodejs-tee-developer-secret-app
+IMG_NAME=tee-developer-secret-app
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -165,8 +227,53 @@ docker run -it --rm \
             && echo "successfully built TEE docker image => ${IMG_TO}" \
             && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
+
 {% endcode %}
 {% endtab %}
+
+{% tab title="Python" %}
+{% code title="sconify.sh" %}
+
+```bash
+#!/bin/bash
+
+# declare the app entrypoint
+ENTRYPOINT="python /app/app.py"
+# declare an image name
+IMG_NAME=tee-developer-secret-app
+
+IMG_FROM=${IMG_NAME}:temp-non-tee
+IMG_TO=${IMG_NAME}:tee-debug
+
+# build the regular non-TEE image
+docker build . -t ${IMG_FROM}
+
+# run the sconifier to build the TEE image based on the non-TEE image
+docker run -it \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15 \
+            sconify_iexec \
+            --name=${IMG_NAME} \
+            --from=${IMG_FROM} \
+            --to=${IMG_TO} \
+            --binary-fs \
+            --fs-dir=/app \
+            --host-path=/etc/hosts \
+            --host-path=/etc/resolv.conf \
+            --binary=/usr/local/bin/python3.7 \
+            --heap=1G \
+            --dlopen=2 \
+            --no-color \
+            --verbose \
+            --command=${ENTRYPOINT} \
+            && echo -e "\n------------------\n" \
+            && echo "successfully built TEE docker image => ${IMG_TO}" \
+            && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
+```
+
+{% endcode %}
+{% endtab %}
+
 {% endtabs %}
 
 Run the `sconify.sh` script to build the TEE-debug app.
@@ -197,7 +304,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
     "owner": "0xF048eF3d7E3B33A465E0599E641BB29421f7Df92", // your address
     "name": "tee-developer-secret-app", // application name
     "type": "DOCKER",
-    "multiaddr": "docker.io/username/nodejs-tee-developer-secret-app:1.0.0", // app image
+    "multiaddr": "docker.io/username/tee-developer-secret-app:1.0.0", // app image
     "checksum": "0xf997788fcb5c9a47d8fa2653098da3c58343d400a82ca13d014d711d60560cac", // image digest
     "mrenclave": {
       "provider": "SCONE", // TEE provider (keep default value)
@@ -214,7 +321,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 {% hint style="info" %}
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
 ```sh
-docker run -it --rm -e SCONE_HASH=1 nodejs-tee-developer-secret-app
+docker run -it --rm -e SCONE_HASH=1 tee-developer-secret-app
 ```
 {% endhint %}
 

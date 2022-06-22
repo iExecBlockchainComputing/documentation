@@ -25,7 +25,7 @@ Create a directory tree for your application in `~/iexec-projects/`.
 
 ```bash
 cd ~/iexec-projects
-mkdir my-tee-hello-world-app && cd my-tee-hello-world-app
+mkdir tee-hello-world-app && cd tee-hello-world-app
 iexec init --skip-wallet
 mkdir src
 touch Dockerfile
@@ -167,7 +167,7 @@ We will use the following script to wrap the sconification process, copy the `sc
 # declare the app entrypoint
 ENTRYPOINT="node /app/app.js"
 # declare an image name
-IMG_NAME=nodejs-tee-hello-world
+IMG_NAME=tee-hello-world
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -213,7 +213,7 @@ docker run -it --rm \
 # declare the app entrypoint
 ENTRYPOINT="python /app/app.py"
 # declare an image name
-IMG_NAME=python-tee-hello-world
+IMG_NAME=tee-hello-world
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -290,7 +290,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
     "owner": "0xF048eF3d7E3B33A465E0599E641BB29421f7Df92", // your address
     "name": "tee-hello-world", // application name
     "type": "DOCKER",
-    "multiaddr": "docker.io/username/my-tee-hello-world:1.0.0", // app image
+    "multiaddr": "docker.io/username/tee-hello-world:1.0.0", // app image
     "checksum": "0x15bed530c76f1f3b05b2db8d44c417128b8934899bc85804a655a01b441bfa78", // image digest
     "mrenclave": {
       "provider": "SCONE", // TEE provider (keep default value)
