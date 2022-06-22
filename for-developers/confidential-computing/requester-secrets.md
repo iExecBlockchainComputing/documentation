@@ -316,7 +316,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
     "owner": "0xF048eF3d7E3B33A465E0599E641BB29421f7Df92", // your address
     "name": "tee-requester-secrets-app", // application name
     "type": "DOCKER",
-    "multiaddr": "docker.io/username/nodejs-tee-requester-secrets-app:1.0.0", // app image
+    "multiaddr": "docker.io/username/tee-requester-secrets-app:1.0.0", // app image
     "checksum": "0xa562ff90fd989ca618f2bb17f87b00b4b0486f46d3dae868350f9a27c424ed94", // image digest
     "mrenclave": {
       "provider": "SCONE", // TEE provider (keep default value)
@@ -334,7 +334,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
 
 ```sh
-docker run -it --rm -e SCONE_HASH=1 nodejs-tee-developer-secret-app:tee-debug
+docker run -it --rm -e SCONE_HASH=1 tee-developer-secret-app:tee-debug
 ```
 
 {% endhint %}
