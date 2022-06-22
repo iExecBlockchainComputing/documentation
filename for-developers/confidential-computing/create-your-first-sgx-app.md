@@ -15,12 +15,11 @@ Please make sure you have already checked the [quickstart](../your-first-app.md)
 
 After understanding the fundamentals of Confidential Computing and explaining the technologies behind it, it is time to roll up our sleeves and get hands-on with [enclaves](intel-sgx-technology.md#enclave). In this guide, we will focus on protecting an application - that is already compatible with the iExec platform - using SGX, and without changing the source code. That means we will use the same code we [previously](../your-first-app.md#build-your-app) deployed for a basic iExec application.
 
-
 **How would the enclave verify the integrity of the code?**
 
 The short answer is: the application is protected by taking a snapshot of the file system's state. The TEE image will use the [fspf](intel-sgx-technology.md#fspf-file-system-protection-file) feature of SCONE to authenticate the file system directories that would be used by the application \(/bin, /lib...\) as well as the code itself. It takes a snapshot of their state that will be later shared with the worker \(via the Blockchain\) to make sure everything is under control. If we change one bit of one of the authenticated files, the file system's state changes completely and the enclave will refuse to boot since it considers it as a possible attack.
 
-## Prepare your application:
+## Prepare your application
 
 Create a directory tree for your application in `~/iexec-projects/`.
 
@@ -111,6 +110,7 @@ Copy the Dockerfile of the non-TEE app:
 {% tabs %}
 {% tab title="Javascript" %}
 {% code title="Dockerfile" %}
+
 ```bash
 # Starting from a base image supported by SCONE  
 FROM node:14-alpine3.11
@@ -122,11 +122,13 @@ COPY ./src /app
 
 ENTRYPOINT [ "node", "/app/app.js"]
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Python" %}
 {% code title="Dockerfile" %}
+
 ```bash
 FROM python:3.7.3-alpine3.10
 
@@ -137,11 +139,12 @@ COPY ./src /app
 
 ENTRYPOINT ["python", "/app/app.py"]
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## Build the TEE docker image:
+## Build the TEE docker image
 
 You will need to register a [free SCONE Account](https://scontain.com) to access SCONE build tools and curated images from the [SCONE registry](https://gitlab.scontain.com/).
 
@@ -157,6 +160,7 @@ We will use the following script to wrap the sconification process, copy the `sc
 {% tabs %}
 {% tab title="Javascript" %}
 {% code title="sconify.sh" %}
+
 ```bash
 #!/bin/bash
 
@@ -196,11 +200,13 @@ docker run -it --rm \
             && echo "successfully built TEE docker image => ${IMG_TO}" \
             && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Python" %}
 {% code title="sconify.sh" %}
+
 ```bash
 #!/bin/bash
 
@@ -237,6 +243,7 @@ docker run -it \
             && echo "successfully built TEE docker image => ${IMG_TO}" \
             && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -265,7 +272,7 @@ Once you are happy with the debug app, contact us to go to production!
 
 At this stage, your application is ready to be tested on iExec. The process is similar to testing any type of application on the platform, with these minor exceptions:
 
-### Deploy the TEE app on iExec:
+### Deploy the TEE app on iExec
 
 TEE applications require some additional information to be filled in during deployment.
 
@@ -299,12 +306,15 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 
 {% hint style="info" %}
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
+
 ```sh
 docker run -it --rm -e SCONE_HASH=1 nodejs-hello-world:tee-debug
 ```
+
 {% endhint %}
 
 Deploy the app with the standard command:
+
 ```sh
 iexec app deploy --chain bellecour
 ```
@@ -312,7 +322,6 @@ iexec app deploy --chain bellecour
 ### Run the TEE app
 
 Specify the tag `--tag tee` in `iexec app run` command to run a tee app.
-
 
 One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v7-debug.main.pools.iexec.eth`.
 
@@ -324,10 +333,12 @@ These `sed` commands will do the trick:
 # set a custom bellecour SMS in chain.json
 sed -i 's|"bellecour": {},|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|g' chain.json
 ```
+
 ```sh
 # initialize the storage
 iexec storage init --chain bellecour
 ```
+
 ```sh
 # restore the default configuration in chain.json
 sed -i 's|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|"bellecour": {},|g' chain.json
@@ -335,7 +346,7 @@ sed -i 's|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex
 
 You are now ready to run the app
 
-```
+```sh
 iexec app run --tag tee --workerpool v7-debug.main.pools.iexec.eth --watch --chain bellecour
 ```
 

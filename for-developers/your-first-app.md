@@ -69,6 +69,7 @@ The requester uses **args** to pass non-sensitive arguments to the app.
 **args** are defined by the requester via `requestorder` `params.iexec_args`.
 
 {% code title="requestorder" %}
+
 ```json
 {
   ...
@@ -80,6 +81,7 @@ The requester uses **args** to pass non-sensitive arguments to the app.
   ...
 }
 ```
+
 {% endcode %}
 
 ##### Consuming args
@@ -95,6 +97,7 @@ The requester uses **input files** to pass non-sensitive files to process.
 **input files** are defined by the requester via a list of download URLs in `requestorder` `params.iexec_input_files`.
 
 {% code title="requestorder" %}
+
 ```json
 {
   ...
@@ -109,6 +112,7 @@ The requester uses **input files** to pass non-sensitive files to process.
   ...
 }
 ```
+
 {% endcode %}
 
 ##### Consuming input files
@@ -128,6 +132,7 @@ The requester pushes named secrets to the SMS.
 The requester defines a mapping of secret names onto secret numbers via `requestorder` `params.iexec_secrets` (secrets numbers must be strictly positive).
 
 {% code title="requestorder" %}
+
 ```json
 {
   ...
@@ -142,6 +147,7 @@ The requester defines a mapping of secret names onto secret numbers via `request
   ...
 }
 ```
+
 {% endcode %}
 
 ##### Consuming requester secrets
@@ -159,6 +165,7 @@ The dataset provider creates a **dataset** and defines the governance in `datase
 The requester specifies the **dataset** to use via `requestorder` `dataset`.
 
 {% code title="requestorder" %}
+
 ```json
 {
   ...
@@ -167,6 +174,7 @@ The requester specifies the **dataset** to use via `requestorder` `dataset`.
   ...
 }
 ```
+
 {% endcode %}
 
 ##### Consuming a dataset
@@ -255,7 +263,7 @@ mkdir src
 touch Dockerfile
 ```
 
-### Write the app \(JavaScript script example\)
+### Write the app
 
 The following examples only feature Javascript and Python use cases for simplicity concerns but remember that you can run on iExec anything which is Dockerizable.
 
@@ -264,6 +272,7 @@ The following examples only feature Javascript and Python use cases for simplici
 {% tabs %}
 {% tab title="JavaScript" %}
 {% code title="src/app.js" %}
+
 ```javascript
 const fsPromises = require('fs').promises;
 const figlet = require('figlet');
@@ -292,11 +301,13 @@ const figlet = require('figlet');
   }
 })();
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Python" %}
 {% code title="src/app.py" %}
+
 ```python
 import os
 import sys
@@ -318,6 +329,7 @@ with open(iexec_out + '/result.txt', 'w+') as fout:
 with open(iexec_out + '/computed.json', 'w+') as f:
     json.dump({ "deterministic-output-path" : iexec_out + '/result.txt' }, f)
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -329,6 +341,7 @@ with open(iexec_out + '/computed.json', 'w+') as f:
 {% tabs %}
 {% tab title="JavaScript" %}
 {% code title="Dockerfile" %}
+
 ```bash
 FROM node:14
 ### install your dependencies if you have some
@@ -336,11 +349,13 @@ RUN mkdir /app && cd /app && npm install figlet@1.x
 COPY ./src /app
 ENTRYPOINT [ "node", "/app/app.js"]
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Python" %}
 {% code title="Dockerfile" %}
+
 ```bash
 FROM python:3.7.3-alpine3.10
 ### install python dependencies if you have some
@@ -348,6 +363,7 @@ RUN pip3 install pyfiglet
 COPY ./src /app
 ENTRYPOINT ["python", "/app/app.py"]
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -473,6 +489,7 @@ The checksum of your app is the sha256 digest of the docker image prefixed with 
 ```bash
 docker pull <dockerusername>/my-hello-world:1.0.0 | grep "Digest: sha256:" | sed 's/.*sha256:/0x/'
 ```
+
 {% endhint %}
 
 Deploy your app on iExec
@@ -524,6 +541,7 @@ iexec task show <taskid> --download my-app-result --chain bellecour  \
 Sometimes things don't work out right the first time and you may want to debug your application.
 
 Get debug information of task
+
 ```bash
 iexec task debug <taskid> --logs
 ```
