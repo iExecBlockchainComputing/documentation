@@ -384,6 +384,13 @@ docker build . --tag my-hello-world
 
 ### Basic test
 
+Create local volumes to simulate input and output directories.
+
+```bash
+mkdir /tmp/iexec_in
+mkdir /tmp/iexec_out
+```
+
 Run your application locally \(container volumes bound with local volumes\).
 
 ```bash
