@@ -550,7 +550,7 @@ Sometimes things don't work out right the first time and you may want to debug y
 Get debug information of task
 
 ```bash
-iexec task debug <taskid> --logs
+iexec task debug <taskid> --logs --chain bellecour
 ```
 
 {% hint style="info" %}
