@@ -18,7 +18,7 @@ Trusted Execution Environments offer a huge advantage from a security perspectiv
 With iExec, it is possible to securely associate an application developer secret to the runtime of an application.
 
 {% hint style="warning" %}
-The app developer secret is only exposed to your app inside authorized [enclaves](intel-sgx-technology.md#enclave) and never leave them.
+The app developer secret is only exposed to your app inside authorized [enclaves](intel-sgx-technology.md#enclave) and never leaves them.
 {% endhint %}
 
 {% hint style="info" %}
