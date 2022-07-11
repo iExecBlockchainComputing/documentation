@@ -15,7 +15,7 @@ Please make sure you have already checked the [Quickstart](../quick-start-for-de
 
 Trusted Execution Environments offer a huge advantage from a security perspective. They guarantee that the behavior of execution does not change even when launched on an untrusted remote machine. The data inside this type of environment is also protected, which allows its monetization while preventing leakage.
 
-With iExec, it is possible to securely to associate an application developer secret to the runtime of an application.
+With iExec, it is possible to securely associate an application developer secret to the runtime of an application.
 
 {% hint style="warning" %}
 The app developer secret is only exposed to your app inside authorized [enclaves](intel-sgx-technology.md#enclave) and never leave them.
