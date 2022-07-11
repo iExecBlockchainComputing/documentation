@@ -404,4 +404,4 @@ example:
 
 ## Next step?
 
-Thanks to the explained confidential computing workflow, it is possible to use consume requester secrets with a trusted application.
+Thanks to the explained confidential computing workflow, it is possible to consume requester secrets with a trusted application.
