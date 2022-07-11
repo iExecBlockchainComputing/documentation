@@ -195,7 +195,7 @@ Once pushed, an **app developer secret** cannot be modified.
 
 ##### Consuming an app developer secret
 
-The **app developer secret** is exposed to the application in `IEXEC_APP_SECRET`
+The **app developer secret** is exposed to the application in `IEXEC_APP_DEVELOPER_SECRET`
 
 ### Runtime variables
 
