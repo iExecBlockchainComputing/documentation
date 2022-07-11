@@ -54,7 +54,7 @@ touch sconify.sh
 {% endtab %}
 {% endtabs %}
 
-The application use the developer secret to make a call to a secret endpoint of [countapi.xyz](https://countapi.xyz/) and writes the result in a file:
+The application uses the developer secret to make a call to a secret endpoint of [countapi.xyz](https://countapi.xyz/) and writes the result in a file:
 
 **Copy the following content** in `src/` .
 
