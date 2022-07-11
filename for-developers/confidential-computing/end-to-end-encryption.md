@@ -10,7 +10,7 @@
 {% endhint %}
 
 {% hint style="warning" %}
-Please make sure you have already checked the [Quickstart](../your-first-app.md), [Your first application](../your-first-app.md) and [Build trusted applications](create-your-first-sgx-app.md) tutorials before learning how to protect the result of your task.
+Please make sure you have already checked the [Quickstart](../quick-start-for-developers.md), [Your first application](../your-first-app.md) and [Build trusted applications](create-your-first-sgx-app.md) tutorials before learning how to protect the result of your task.
 {% endhint %}
 
 In previous tutorials, we saw how to build trusted applications that run securely inside [enclaves](intel-sgx-technology.md#enclave) and combine them with confidential datasets to get the most out of confidential computing advantages. In this chapter, we will push things further to protect the workflow in an end to end mode. That means the next step would be encrypting results.
