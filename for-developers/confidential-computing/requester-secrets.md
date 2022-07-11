@@ -43,7 +43,7 @@ Let's create a directory tree for this app in `~/iexec-projects/`.
 
 ```bash
 cd ~/iexec-projects
-mkdir my-tee-requester-secrets-app && cd my-tee-requester-secrets-app
+mkdir tee-requester-secrets-app && cd tee-requester-secrets-app
 iexec init --skip-wallet
 mkdir src
 touch Dockerfile
