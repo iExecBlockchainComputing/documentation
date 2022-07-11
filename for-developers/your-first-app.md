@@ -237,7 +237,7 @@ result.zip
   └── ...
 ```
 
-* The iExec worker automaticaly creates `stdout.txt` and `stdout.txt` containing the logs of your application.
+* The iExec worker automaticaly creates `stdout.txt` and `stderr.txt` containing the logs of your application.
 * Your application **must** create the `computed.json` file in `IEXEC_OUT` when the computing is over.
 * Any file placed in `IEXEC_OUT` will also be added to the result archive.
 
