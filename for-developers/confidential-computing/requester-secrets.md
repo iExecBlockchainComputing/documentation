@@ -37,10 +37,6 @@ In this example, we will use requester secrets to set `namespace/key`.
 
 Let's create a directory tree for this app in `~/iexec-projects/`.
 
-{% tabs %}
-{% tab title="Javascript" %}
-{% code %}
-
 ```bash
 cd ~/iexec-projects
 mkdir tee-requester-secrets-app && cd tee-requester-secrets-app
@@ -49,10 +45,6 @@ mkdir src
 touch Dockerfile
 touch sconify.sh
 ```
-
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 The application use the requester secrets to make a call to a secret endpoint of [countapi.xyz](https://countapi.xyz/) and writes the result in a file:
 

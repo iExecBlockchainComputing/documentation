@@ -154,39 +154,14 @@ We saw in this section how to encrypt a dataset and deploy it on iExec. In addit
 
 Let's create a directory tree for this app in `~/iexec-projects/`.
 
-{% tabs %}
-{% tab title="Javascript" %}
-{% code %}
-
 ```bash
 cd ~/iexec-projects
 mkdir my-tee-dataset-app && cd my-tee-dataset-app
 iexec init --skip-wallet
 mkdir src
-touch src/app.js
 touch Dockerfile
 touch sconify.sh
 ```
-
-{% endcode %}
-{% endtab %}
-
-{% tab title="Python" %}
-{% code %}
-
-```bash
-cd ~/iexec-projects
-mkdir my-tee-dataset-app && cd my-tee-dataset-app
-iexec init --skip-wallet
-mkdir src
-touch src/app.py
-touch Dockerfile
-touch sconify.sh
-```
-
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 In the folder `src/` create the file `app.js` or `app.py` then copy this code inside:
 
