@@ -156,7 +156,7 @@ Let's create a directory tree for this app in `~/iexec-projects/`.
 
 ```bash
 cd ~/iexec-projects
-mkdir my-tee-dataset-app && cd my-tee-dataset-app
+mkdir tee-dataset-app && cd tee-dataset-app
 iexec init --skip-wallet
 mkdir src
 touch Dockerfile
