@@ -11,10 +11,9 @@ description: >-
 
 * [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
 * [Dockerhub](https://hub.docker.com/) account.
-* [Nodejs](https://nodejs.org) 12.0.0 or higher.
-* [iExec SDK](https://www.npmjs.com/package/iexec) 7.0.0 or higher.
+* [Nodejs](https://nodejs.org) 14.0.0 or higher.
+* [iExec SDK](https://www.npmjs.com/package/iexec) 7.2.0 or higher.
 * [Quickstart](quick-start-for-developers.md) tutorial completed
-* Ethereum wallet charged with Viviani ETH an RLC
 {% endhint %}
 
 In this guide, we will prepare an iExec app based on an existing docker image and we will run it on iExec decentralized infrastructure.
@@ -47,89 +46,207 @@ Today you can run any application as a task. This means services are not support
 
 This is an overview of an iExec application inputs and expected outputs. You probably don't have to deeply understand every part of this section to build your app, just pick what you need.
 
-### Application args
+### Application Inputs
 
-The requester may specify the arguments to use with an application in the requestorder, these arguments are forwarded as they are, straight to the application.
+The different kinds of input are listed below.
 
-### Application input files
+| name | type | confidentiality | provider |
+|---|---|---|---|
+| [args](#args) | string | public | requester |
+| [input files](#input-files) | files | public | requester |
+| [requester secrets](#requester-secrets) | strings | secret\* | requester |
+| [dataset](#dataset) | file | secret\* | requester/<br/>third-party |
+| [app developer secret](#app-developer-secret) | string | secret\* | app developer |
 
-Your app may use input files, all the input files specified by the requester will be downloaded in the container's iExec input directory before running your application.
-iExec input directory's path is available for the app by reading the variable `IEXEC_IN`.
+\* secret inputs are protected by the TEE technology they are not exposed to non TEE tasks
 
-#### Input files \(public\):
+#### Args
 
-Input files contain non-sensitive data publicly available on the Internet. The requester may specify any number of input files in the requestorder.
+The requester uses **args** to pass non-sensitive arguments to the app.
 
-For each input file, the variable `IEXEC_INPUT_FILE_NAME_x` is set to the file name \(`x` is the index of the file starting with `1`\). The total number of input files is stored in the variable `IEXEC_INPUT_FILES_NUMBER`.
+##### Provisioning args
 
-Use these variables in your application to find input files to process. \(first input file path is `"$IEXEC_IN/$IEXEC_INPUT_FILE_NAME_1"`\)
+**args** are defined by the requester via `requestorder` `params.iexec_args`.
 
-#### Confidential input files \(datasets\):
+{% code title="requestorder" %}
 
-Confidential datasets are encrypted files available only in a Trusted Execution Environment \(TEE\).
-When an app is running in TEE with a dataset, the variable `IEXEC_DATASET_FILENAME` will be set to the dataset file name.
+```json
+{
+  ...
+  "params": {
+    ...
+    "iexec_args": "do something"
+    ...
+  }
+  ...
+}
+```
 
-Use `$IEXEC_IN/$IEXEC_DATASET_FILENAME` to find the dataset file to process.
-You will learn how to build a TEE app in the next tutorial.
+{% endcode %}
 
-A single dataset file is currently supported.
+##### Consuming args
+
+**args** are forwarded as they are, straight to the application.
+
+#### Input files
+
+The requester uses **input files** to pass non-sensitive files to process.
+
+##### Provisioning input files
+
+**input files** are defined by the requester via a list of download URLs in `requestorder` `params.iexec_input_files`.
+
+{% code title="requestorder" %}
+
+```json
+{
+  ...
+  "params": {
+    ...
+    "iexec_input_files": [
+      "https://example.com/file.txt",
+      "https://example.com/image.jpeg"
+      ]
+    ...
+  }
+  ...
+}
+```
+
+{% endcode %}
+
+##### Consuming input files
+
+Each **input file** is downloaded in the `IEXEC_IN` directory and gets its name exposed to the application via `IEXEC_INPUT_FILE_NAME_x` (where `x` is the index of the file starting with `1`).
+
+input files count is exposed via `IEXEC_INPUT_FILES_NUMBER`
+
+#### Requester secrets
+
+The requester uses **requester secrets** to securely pass secrets to the application.
+
+##### Provisioning requester secrets
+
+The requester pushes named secrets to the SMS.
+
+The requester defines a mapping of secret names onto secret numbers via `requestorder` `params.iexec_secrets` (secrets numbers must be strictly positive).
+
+{% code title="requestorder" %}
+
+```json
+{
+  ...
+  "params": {
+    ...
+    "iexec_secrets": {
+      "1": "my-login",
+      "2": "my-password"
+    }
+    ...
+  }
+  ...
+}
+```
+
+{% endcode %}
+
+##### Consuming requester secrets
+
+Each **requester secret** is exposed to the application in `IEXEC_REQUESTER_SECRET_x` where `x` is the secret number set by the requester.
+
+#### Dataset
+
+The requester uses a **dataset** to use third-party confidential data in the application.
+
+##### Provisioning a dataset
+
+The dataset provider creates a **dataset** and defines the governance in `datasetorder`s.
+
+The requester specifies the **dataset** to use via `requestorder` `dataset`.
+
+{% code title="requestorder" %}
+
+```json
+{
+  ...
+  "dataset": "0x915F00E3A45e7A78aa21401D0398109f795D8bcA",
+  "datasetmaxprice": "0"
+  ...
+}
+```
+
+{% endcode %}
+
+##### Consuming a dataset
+
+The **dataset** file is downloaded and unencrypted in the `IEXEC_IN` directory and gets its name exposed to the application via `IEXEC_DATASET_FILENAME`.
+
+The **dataset** address is also exposed via `IEXEC_DATASET_ADDRESS`.
+
+#### App developer secret
+
+The developer uses an **app developer secret** to inject an immutable secret into the application.
+
+##### Provisioning an app developer secret
+
+The app developer pushes an **app developer secret** to the Secret Management Service.
+
+Once pushed, an **app developer secret** cannot be modified.
+
+##### Consuming an app developer secret
+
+The **app developer secret** is exposed to the application in `IEXEC_APP_DEVELOPER_SECRET`
 
 ### Runtime variables
 
 The runtime variables are environment variables set by the iExec worker and available for your application.
 
-#### Input files variables
-
-Use these variables if your app deals with input files.
-
-| Name                     | Type            | Content                                                     |
-| :----------------------- | :-------------- | :---------------------------------------------------------- |
-| IEXEC_INPUT_FILES_FOLDER | path            | Absolute path of iexec input folder \(`/iexec_in/`\)        |
-| IEXEC_INPUT_FILES_NUMBER | int &gt;= 0     | Total number of input files                                 |
-| IEXEC_INPUT_FILE_NAME_x  | string or unset | Name of the input file indexed by x \(`x` starts with `1`\) |
-
-#### Task variables
-
-To achieve some use cases, you may want to access some information from the task.
+#### Input variables
 
 | Name | Type | Content |
-| :--- | :--- | :--- |
-| IEXEC_TASK_ID | bytes32 | taskid of the running task |
+|---|---|---|
+| IEXEC_IN | path | Absolute path of iexec input folder |
+| IEXEC_INPUT_FILES_NUMBER | int &gt;= 0 | Total number of input files |
+| IEXEC_INPUT_FILE_NAME_x | string or unset | Name of the input file indexed by x \(`x` starts with `1`\) |
+| IEXEC_REQUESTER_SECRET_x | string or unset | requester secret number x \(`x` starts with `1`\) |
+| IEXEC_DATASET_FILENAME | string or unset | Name of the dataset file |
 | IEXEC_DATASET_ADDRESS | address | ethereum address of the dataset used (or address zero) |
+| IEXEC_APP_DEVELOPER_SECRET | string or unset | app developer secret |
 
-#### Bag of Tasks variables
+#### Other variables
 
-The requester may request multiple tasks in a single transaction \(Bag of Tasks\), each task of the bag is given a unique index. If you intend to support running Bag of Tasks in your app, you can use the following variables to index tasks in parallelization use cases.
+| Name | Type | Content |
+|---|---|---|
+| IEXEC_OUT | path | Absolute path of iexec output folder |
+| IEXEC_TASK_ID | bytes32 | taskid of the running task |
+| IEXEC_BOT_TASK_INDEX  | int &gt;= 0 | Index of the current task in the Bag of Tasks* |
+| IEXEC_BOT_FIRST_INDEX | int &gt;= 0 | Index of the first task in the current Deal \(Bag of task* subset\) |
+| IEXEC_BOT_SIZE | int &gt;= 1 | Total number of parallelized tasks in a Bag of Tasks* |
 
-| Name                  | Type        | Content                                                            |
-| :-------------------- | :---------- | :----------------------------------------------------------------- |
-| IEXEC_BOT_TASK_INDEX  | int &gt;= 0 | Index of the current task                                          |
-| IEXEC_BOT_FIRST_INDEX | int &gt;= 0 | Index of the first task in the current Deal \(Bag of task subset\) |
-| IEXEC_BOT_SIZE        | int &gt;= 1 | Total number of parallelized tasks in a Bag of Tasks               |
+\* The requester may request multiple tasks in a single requestorder \(Bag of Tasks\), each task of the bag is given a unique index.
 
 ### Application outputs
 
-An iExec app produces a `result.zip` file for the requester with the following tree:
+An iExec app produces a result archive (`zip` file) for the requester with the following tree:
 
 ```text
 result.zip
-  ├── iexec_out/
-  └── stdout.txt
+  ├── stdout.txt
+  ├── stderr.txt
+  ├── computed.json
+  └── ...
 ```
 
-`stdout.txt` contains the logs of your application. This file is automatically generated by the iExec worker.
-
-`iexec_out` is a copy at the final state of the container's iExec output directory.
-
-iExec output directory's path is available for the app by reading the variable `IEXEC_OUT`.
-
-Your application must create the following files in the iExec output directory :
-
-* `$IEXEC_OUT/computed.json` file should be created when your computing is over. It contains at least a field `deterministic-output-path` which is the path of the deterministic portion of your results. It should be either a file or a non-empty folder. It is required for the proof of execution \(given the same inputs this file should always be the same\).
-* If your app produces output files, you must copy them in the iExec output directory.
+* The iExec worker automaticaly creates `stdout.txt` and `stderr.txt` containing the logs of your application.
+* Your application **must** create the `computed.json` file in `IEXEC_OUT` when the computing is over.
+* Any file placed in `IEXEC_OUT` will also be added to the result archive.
 
 {% hint style="warning" %}
-Your application must always create a `computed.json` file in the iExec output directory as a proof of execution which could look like `{ "deterministic-output-path" : "/iexec_out/result.txt" }`
+Your application must always create a `computed.json` file in the iExec output directory as a proof of execution.
+
+It contains at least a field `deterministic-output-path` which is the path of the deterministic portion of your results (file or a non-empty folder) and is required for the proof of execution \(given the same inputs this file should always be the same\).
+
+`computed.json` could look like `{ "deterministic-output-path" : "/iexec_out/result.txt" }`
 
 The `computed.json` file is compared across replicated tasks in the [Proof of Contribution protocol](../key-concepts/proof-of-contribution.md) to achieve a consensus on workers.
 {% endhint %}
@@ -138,7 +255,7 @@ The `computed.json` file is compared across replicated tasks in the [Proof of Co
 
 Create the folder tree for your application in `~/iexec-projects/`.
 
-```text
+```bash
 cd ~/iexec-projects
 mkdir my-hello-world-app
 cd my-hello-world-app
@@ -146,7 +263,7 @@ mkdir src
 touch Dockerfile
 ```
 
-### Write the app \(JavaScript script example\)
+### Write the app
 
 The following examples only feature Javascript and Python use cases for simplicity concerns but remember that you can run on iExec anything which is Dockerizable.
 
@@ -155,6 +272,7 @@ The following examples only feature Javascript and Python use cases for simplici
 {% tabs %}
 {% tab title="JavaScript" %}
 {% code title="src/app.js" %}
+
 ```javascript
 const fsPromises = require('fs').promises;
 const figlet = require('figlet');
@@ -183,11 +301,13 @@ const figlet = require('figlet');
   }
 })();
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Python" %}
 {% code title="src/app.py" %}
+
 ```python
 import os
 import sys
@@ -209,6 +329,7 @@ with open(iexec_out + '/result.txt', 'w+') as fout:
 with open(iexec_out + '/computed.json', 'w+') as f:
     json.dump({ "deterministic-output-path" : iexec_out + '/result.txt' }, f)
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -220,6 +341,7 @@ with open(iexec_out + '/computed.json', 'w+') as f:
 {% tabs %}
 {% tab title="JavaScript" %}
 {% code title="Dockerfile" %}
+
 ```bash
 FROM node:14
 ### install your dependencies if you have some
@@ -227,25 +349,28 @@ RUN mkdir /app && cd /app && npm install figlet@1.x
 COPY ./src /app
 ENTRYPOINT [ "node", "/app/app.js"]
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Python" %}
 {% code title="Dockerfile" %}
+
 ```bash
 FROM python:3.7.3-alpine3.10
 ### install python dependencies if you have some
 RUN pip3 install pyfiglet
 COPY ./src /app
-ENTRYPOINT ["python", "/app/app.py"]
+ENTRYPOINT ["python3", "/app/app.py"]
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
 Build the docker image.
 
-```text
+```bash
 docker build . --tag my-hello-world
 ```
 
@@ -258,6 +383,13 @@ docker build . --tag my-hello-world
 ## Test your app locally
 
 ### Basic test
+
+Create local volumes to simulate input and output directories.
+
+```bash
+mkdir /tmp/iexec_in
+mkdir /tmp/iexec_out
+```
 
 Run your application locally \(container volumes bound with local volumes\).
 
@@ -299,7 +431,7 @@ Add `-e IEXEC_INPUT_FILES_NUMBER=n` to docker run options \(`n` is the total num
 
 Example with two inputs files:
 
-```text
+```bash
 touch /tmp/iexec_in/file1 && \
 touch /tmp/iexec_in/file2 && \
 docker run \
@@ -320,13 +452,13 @@ docker run \
 
 Login to your Dockerhub account.
 
-```text
+```bash
 docker login
 ```
 
 Tag your application image to push it to your dockerhub public repository.
 
-```text
+```bash
 docker tag my-hello-world <dockerusername>/my-hello-world:1.0.0
 ```
 
@@ -336,7 +468,7 @@ replace `<dockerusername>` with your docker user name
 
 Push the image to Dockerhub.
 
-```text
+```bash
 docker push <dockerusername>/my-hello-world:1.0.0
 ```
 
@@ -348,7 +480,7 @@ You already learned how to deploy the default app on iExec in the [previous tuto
 
 Go back to the `iexec-project` folder.
 
-```text
+```bash
 cd ~/iexec-projects/
 ```
 
@@ -361,35 +493,28 @@ You will need a few configurations in `iexec.json` to deploy your app:
 {% hint style="info" %}
 The checksum of your app is the sha256 digest of the docker image prefixed with `0x` , you can use the following command to get it.
 
-```text
+```bash
 docker pull <dockerusername>/my-hello-world:1.0.0 | grep "Digest: sha256:" | sed 's/.*sha256:/0x/'
 ```
+
 {% endhint %}
 
 Deploy your app on iExec
 
-```text
-iexec app deploy --chain viviani
+```bash
+iexec app deploy --chain bellecour
 ```
 
 Verify the deployed app \(name, multiaddr, checksum, owner\)
 
-```text
-iexec app show --chain viviani
+```bash
+iexec app show --chain bellecour
 ```
 
 ### Run your app on iExec
 
-Before requesting an execution make sure your account stake is charged with Viviani RLC
-
-```text
-iexec account show --chain viviani
-```
-
-Run your application on iExec
-
-```text
-iexec app run --watch --chain viviani
+```bash
+iexec app run --watch --chain bellecour
 ```
 
 {% hint style="info" %}
@@ -403,7 +528,7 @@ With `--args "dostuff --with-option"` the app will receive `["dostuff", "--with-
 
 You can pass input files to the app using `--input-files <list of URL>` option.
 
-With `--input-files https://example.com/file-A.txt,https://example.com/file-B.zip` the iExec worker will download the files before running the app in `IEXEC_INPUT_FILES_FOLDER`, and let the app access them throug variables:
+With `--input-files https://example.com/file-A.txt,https://example.com/file-B.zip` the iExec worker will download the files before running the app in `IEXEC_IN`, and let the app access them throug variables:
 
 * `file-A.txt` as`IEXEC_INPUT_FILE_NAME_1`
 * `file-B.zip` as`IEXEC_INPUT_FILE_NAME_2`
@@ -411,17 +536,37 @@ With `--input-files https://example.com/file-A.txt,https://example.com/file-B.zi
 
 Once the run is completed copy the taskid from `iexec app run` output to download and check the result
 
-```text
-iexec task show <taskid> --download my-app-result --chain viviani  \
+```bash
+iexec task show <taskid> --download my-app-result --chain bellecour  \
     && unzip my-app-result.zip -d my-app-result
 ```
 
 **Congratulations your app successfully ran on iExec!**
 
+### Debug your app on iExec
+
+Sometimes things don't work out right the first time and you may want to debug your application.
+
+Get debug information of task
+
+```bash
+iexec task debug <taskid> --logs --chain bellecour
+```
+
+{% hint style="info" %}
+`iexec task debug <taskid>` allows anyone to know the **onchain** and **offchain** statuses of the task.
+
+`--logs` option allows the requester to retrieve the worker's application logs.
+
+For security reasons, application logs are only accessible to the requester.
+
+As a developer, make it a rule to never log sensitive information in your application.
+{% endhint %}
+
 ## Publish your app on the iExec marketplace
 
-```text
-iexec app publish --chain viviani
+```bash
+iexec app publish --chain bellecour
 ```
 
 **Congratulations your application is now available on iExec!**

@@ -9,7 +9,7 @@ description: >-
 {% hint style="success" %}
 **Prerequisite**
 
-* [Nodejs](https://nodejs.org) 12.0.0 or higher
+* [Nodejs](https://nodejs.org) 14.0.0 or higher
 {% endhint %}
 
 iExec enables decentralized docker app deployment and monetization on the blockchain.
@@ -77,25 +77,18 @@ The iExec SDK creates the minimum configuration files:
 * we use `--skip-wallet` to skip wallet creation as we already created it
 {% endhint %}
 
-You can now connect to the blockchain. In the following steps we will use the **iExec sidechain testnet (also called Viviani)**.
+You can now connect to the blockchain. In the following steps we will use the **iExec sidechain (also called Bellecour)**.
 
 {% hint style="info" %}
 
-**Viviani** is an Ethereum blockchain run by iExec for testing purposes. Unlike the Ethereum mainnet or public testnets, transactions on Viviani do not require the payment of transaction fees ([Read more about transaction fees](https://bitfalls.com/2017/12/05/ethereum-gas-and-transaction-fees-explained/)).
-
-iExec is deployed on 4 networks, once you are comfortable with the iExec protocol, feel free to choose the one that best suits your needs:
-
-| | Production<br/>(use real assets) | Staging<br/>(use free test assets) |
-|---|---|---|
-| **Sidechain**<br/>+ no transaction fees<br/>+ enhanced throughput | **bellecour**<br/>(iExec sidechain) | **viviani**<br/>(iExec sidechain testnet) |
-| **Public chain**<br/>+ access the whole ecosystem | **mainnet**<br/>(ethereum mainnet) | **goerli**<br/>(goerli public testnet) |
+**Bellecour** is an Ethereum blockchain run by iExec. Unlike the Ethereum mainnet or public testnets, transactions on Bellecour do not require the payment of transaction fees ([Read more about transaction fees](https://bitfalls.com/2017/12/05/ethereum-gas-and-transaction-fees-explained/)).
 
 {% endhint %}
 
-You can now check your wallet content on Viviani:
+You can now check your wallet content on Bellecour:
 
 ```text
-iexec wallet show --chain viviani
+iexec wallet show --chain bellecour
 ```
 
 ### Initialize your remote storage
@@ -105,7 +98,7 @@ iExec enables running apps producing output files, you will need a place for sto
 Initialize your default remote storage:
 
 ```text
-iexec storage init --chain viviani
+iexec storage init --chain bellecour
 ```
 
 {% hint style="info" %}
@@ -148,71 +141,51 @@ You can deploy this application on iExec, it will run out of the box. Where you 
 You will now deploy your app on iExec, this will be your first transaction on the blockchain:
 
 ```text
-iexec app deploy --chain viviani
+iexec app deploy --chain bellecour
 ```
 
 {% hint style="success" %}
-While running `iexec app deploy --chain viviani` you sent your first transaction on the viviani blockchain.
+While running `iexec app deploy --chain bellecour` you sent your first transaction on the bellecour blockchain.
 {% endhint %}
 
 You can check your deployed apps with their index, let's check your last deployed app:
 
 ```text
-iexec app show --chain viviani
+iexec app show --chain bellecour
 ```
 
 ## Run your app on iExec
 
 iExec allows you to run applications on a decentralized infrastructure with payment in **RLC** tokens \(the native cryptocurrency of iExec\).
 
-Let's get some test RLC to run your app
-
-```text
-iexec wallet get-RLC --chain viviani
-```
-
-After a few moments, your wallet will be credited with test RLC.
-
-You can check your wallet content
-
-```text
-iexec wallet show --chain viviani
-```
-
-Congratulation you own RLC on Viviani testnet!
-
-Next step is to top up your **iExec Account** and use your credit to run your application.
-
 {% hint style="info" %}
-Your iExec account is your credit ready to use to pay for computation, it is managed by smart contracts \(and not owned by iExec\).
+To run an application you must have enough RLC staked on your iExec account to pay for the computing resources.
 
-When you request an execution the price for the task is locked from your account's stake then transferred to the workers contributing to the task \(read more about [Proof of Contribution](../key-concepts/proof-of-contribution.md) protocol\).
+Your iExec account is managed by smart contracts \(and not owned by iExec\).
+
+When you request an execution the price for the task is locked from your account's stake then transferred to accounts of the workers contributing to the task \(read more about [Proof of Contribution](../key-concepts/proof-of-contribution.md) protocol\).
 
 At any time you can:
-
+* view your balance 
+```sh
+iexec account show
+```
 * deposit RLC from your wallet to your iExec Account
+```sh
+iexec account deposit <amount>
+```
 * withdraw RLC from your iExec account to your wallet \(only stake can be withdrawn\)
+```sh
+iexec account withdraw <amount>
+```
 {% endhint %}
 
-Top up your iExec Account
+Currently, iExec sponsors applications running on Bellecour, and you won't have to pay for the computation.
+
+Everything is ready to run your application!
 
 ```text
-iexec account deposit 200 --chain viviani
-```
-
-You moved 200 nRLC from your wallet to your account.
-
-You can now check it with the following commands
-
-```text
-iexec account show --chain viviani
-iexec wallet show --chain viviani
-```
-
-Your application is deployed, you have some RLC in your iExec Account, everything is now ready to run your application!
-
-```text
-iexec app run --args <your-name-here> --watch --chain viviani
+iexec app run --args <your-name-here> --watch --chain bellecour
 ```
 
 {% hint style="info" %}
@@ -238,7 +211,7 @@ Once the task is completed copy the taskid from `iexec app run` output \(taskid 
 Download the result of your task
 
 ```text
-iexec task show <taskid> --download my-result --chain viviani
+iexec task show <taskid> --download my-result --chain bellecour
 ```
 You can get your taskid with the command:
 
@@ -276,7 +249,7 @@ The conditions to use an app are defined in the **apporder**.
 Publish a new apporder for your application.
 
 ```text
-iexec app publish --chain viviani
+iexec app publish --chain bellecour
 ```
 
 {% hint style="info" %}
@@ -290,12 +263,12 @@ Your application is now available for everyone on iExec marketplace on the condi
 You can check the published apporders for your app
 
 ```text
-iexec orderbook app <your app address> --chain viviani
+iexec orderbook app <your app address> --chain bellecour
 ```
 
 Congratulation you just created a decentralized application! Anyone can now trigger an execution of your application on the iExec decentralized infrastructure.
 
-* With the iexec SDK CLI `iexec app run <app address> --chain viviani`
+* With the iexec SDK CLI `iexec app run <app address> --chain bellecour`
 * On iExec marketplace
 
 ## What's next?

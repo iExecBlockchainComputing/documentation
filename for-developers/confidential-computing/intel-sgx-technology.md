@@ -22,7 +22,7 @@ As explained by [Intel](https://software.intel.com/en-us/sgx/attestation-service
 
 ## Confidential Computing with iExec
 
-At iExec we do not develop Intel® SGX frameworks, but rather we integrate state of the art solutions developed by other specialists. Currently, the SCONE framework has been integrated into our platform. We are actively working on supporting [Graphene](https://grapheneproject.io/).
+At iExec we do not develop Intel® SGX frameworks, but rather we integrate state of the art solutions developed by other specialists. Currently, the SCONE framework has been integrated into our platform. We are actively working on supporting [Gramine](https://gramineproject.io/).
 
 ### SCONE Framework
 
@@ -65,4 +65,3 @@ We explain the process of how to make your trusted application using iExec in de
 **Trusted application:** First things first, choose a base docker image for your use case. We provide a template Dockerfile so you would, just, add your specific requirements and dependencies, then build your image. Push your docker image somewhere accessible and deploy your application on the blockchain with the correct image URI and fingerprint.
 
 **Confidential dataset:** To make your dataset available on iExec, you should first encrypt it using the SDK, before making the encrypted file publicly available. Deploy your dataset on the blockchain, then, push the encryption key into the SMS where it is securely saved \(protected by an enclave, which means even we, the root-privilege user, cannot access it\). Only applications you have authorized can get this key.
-
