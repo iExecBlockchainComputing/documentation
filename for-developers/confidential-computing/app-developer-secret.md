@@ -6,7 +6,7 @@
 * [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
 * [Nodejs](https://nodejs.org) 14.0.0 or higher.
 * [iExec SDK](https://www.npmjs.com/package/iexec) 7.2.0 or higher.
-* Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
+* Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-software-guard-extension-intel-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
 {% endhint %}
 
 {% hint style="warning" %}
