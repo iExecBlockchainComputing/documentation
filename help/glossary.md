@@ -167,12 +167,6 @@ See “Confidential Computing” for more information.
 
 A controlled blockchain deployed over a data center and linked to Ethereum Mainnet with a bridge permitting to transfer assets between the two. iExec’s sidechain “Bellecour” is iExec’s mainnet bridged to ethereum mainnet.
 
-## sRLC
-
-S in sRLC stands for Staked RLC.
-
-The sRLC balance of an account reflects the amount of RLC deposited by the account on the iExec PoCo smart contract. The sRLC balance of an account is managed by the PoCo smart contracts to ensure payments across the platform users. At any time, sRLC can be converted to RLC in the wallet by a withdrawal operation.
-
 ## Smart Contracts
 
 The fundamental building blocks of Ethereum applications. They are computer programs stored on the blockchain that allows us to convert traditional contracts into digital parallels. Smart contracts are very logical - following an if this then that structure. This means they behave exactly as programmed and cannot be changed.
@@ -182,6 +176,12 @@ Nick Szabo used the term "smart contract" in 1994, when he wrote “an introduct
 ## SMS (Secret Management Service)
 
 An encrypted database where users' secrets are stored.
+
+## sRLC
+
+S in sRLC stands for Staked RLC.
+
+The sRLC balance of an account reflects the amount of RLC deposited by the account on the iExec PoCo smart contract. The sRLC balance of an account is managed by the PoCo smart contracts to ensure payments across the platform users. At any time, sRLC can be converted to RLC in the wallet by a withdrawal operation.
 
 ## Staking (of RLC)
 
