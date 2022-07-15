@@ -12,7 +12,7 @@
 * [Website iExec](https://iex.ec/)
 * [Whitepaper](https://iex.ec/wp-content/uploads/pdf/iExec-WPv3.0-English.pdf)
 * [iExec Technical Documentation](../)
-* [SDK](contact-us.md)
+* [SDK](https://github.com/iExecBlockchainComputing/iexec-sdk/blob/master/README.md)
 * [Github iExec](https://github.com/iExecBlockchainComputing)
 
 ### Product Links
@@ -33,4 +33,3 @@
 * [Linkedin](https://www.linkedin.com/company/iex.ec/)
 * [Youtube Channel](https://www.youtube.com/channel/UCwWxZWvKVHn3CXnmDooLWtA)
 * [Medium](https://medium.com/iex-ec)
-
