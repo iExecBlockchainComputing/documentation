@@ -74,7 +74,7 @@ A standard for non-fungible tokens. This property makes each token unique and ca
 
 ## iExec Academy
 
-Exec’s content aggregator where people can find content related to the project, including articles, demos, documentation, and tutorials.
+iExec’s content aggregator where people can find content related to the project, including articles, demos, documentation, and tutorials.
 
 # I
 
