@@ -179,7 +179,7 @@ The requester specifies the **dataset** to use via `requestorder` `dataset`.
 
 ##### Consuming a dataset
 
-The **dataset** file is downloaded and unencrypted in the `IEXEC_IN` directory and gets its name exposed to the application via `IEXEC_DATASET_FILENAME`.
+The **dataset** file is downloaded and unencrypted on the fly in the `IEXEC_IN` directory and gets its name exposed to the application via `IEXEC_DATASET_FILENAME`.
 
 The **dataset** address is also exposed via `IEXEC_DATASET_ADDRESS`.
 
