@@ -4,13 +4,13 @@
 **Prerequisites**
 
 * [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
-* [Nodejs](https://nodejs.org) 12.0.0 or higher.
-* [iExec SDK](https://www.npmjs.com/package/iexec) 7.0.0 or higher.
+* [Nodejs](https://nodejs.org) 14.0.0 or higher.
+* [iExec SDK](https://www.npmjs.com/package/iexec) 7.2.0 or higher.
 * Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
 {% endhint %}
 
 {% hint style="warning" %}
-Please make sure you have already checked the [Quickstart](../your-first-app.md), [Your first application](../your-first-app.md) and [Build trusted applications](create-your-first-sgx-app.md) tutorials before learning how to protect the result of your task.
+Please make sure you have already checked the [Quickstart](../quick-start-for-developers.md), [Your first application](../your-first-app.md) and [Build trusted applications](create-your-first-sgx-app.md) tutorials before learning how to protect the result of your task.
 {% endhint %}
 
 In previous tutorials, we saw how to build trusted applications that run securely inside [enclaves](intel-sgx-technology.md#enclave) and combine them with confidential datasets to get the most out of confidential computing advantages. In this chapter, we will push things further to protect the workflow in an end to end mode. That means the next step would be encrypting results.
@@ -42,20 +42,20 @@ Make sure you use the debug Secret Management Service (see [Build trusted applic
 Now, push the public key to the SMS:
 
 ```bash
-iexec result push-encryption-key --chain viviani
+iexec result push-encryption-key --chain bellecour
 ```
 
 And check it using:
 
 ```bash
-iexec result check-encryption-key --chain viviani
+iexec result check-encryption-key --chain bellecour
 ```
 
 Now to see that in action, you'd need to trigger a task and specify yourself as the beneficiary in the command:
 
 ```bash
 iexec app run <0x-your-app-address> \
-    --chain viviani                  \
+    --chain bellecour                  \
     --tag tee                       \
     --encrypt-result \
     --watch
@@ -64,7 +64,7 @@ iexec app run <0x-your-app-address> \
 Wait for the task to be `COMPLETED` and download the result:
 
 ```bash
-iexec task show <0x-your-task-id> --download --chain viviani
+iexec task show <0x-your-task-id> --download --chain bellecour
 ```
 
 If you extract the obtained zip and try to read the content of the file `iexec_out/result.zip.aes` you will find it encrypted:

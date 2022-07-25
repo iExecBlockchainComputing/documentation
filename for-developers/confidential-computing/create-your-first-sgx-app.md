@@ -4,8 +4,8 @@
 **Prerequisites**
 
 * [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
-* [Nodejs](https://nodejs.org) 12.0.0 or higher.
-* [iExec SDK](https://www.npmjs.com/package/iexec) 7.0.0 or higher.
+* [Nodejs](https://nodejs.org) 14.0.0 or higher.
+* [iExec SDK](https://www.npmjs.com/package/iexec) 7.2.0 or higher.
 * Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
 {% endhint %}
 
@@ -15,25 +15,89 @@ Please make sure you have already checked the [quickstart](../your-first-app.md)
 
 After understanding the fundamentals of Confidential Computing and explaining the technologies behind it, it is time to roll up our sleeves and get hands-on with [enclaves](intel-sgx-technology.md#enclave). In this guide, we will focus on protecting an application - that is already compatible with the iExec platform - using SGX, and without changing the source code. That means we will use the same code we [previously](../your-first-app.md#build-your-app) deployed for a basic iExec application.
 
-
 **How would the enclave verify the integrity of the code?**
 
 The short answer is: the application is protected by taking a snapshot of the file system's state. The TEE image will use the [fspf](intel-sgx-technology.md#fspf-file-system-protection-file) feature of SCONE to authenticate the file system directories that would be used by the application \(/bin, /lib...\) as well as the code itself. It takes a snapshot of their state that will be later shared with the worker \(via the Blockchain\) to make sure everything is under control. If we change one bit of one of the authenticated files, the file system's state changes completely and the enclave will refuse to boot since it considers it as a possible attack.
 
-## Prepare your application:
+## Prepare your application
 
 Create a directory tree for your application in `~/iexec-projects/`.
 
 ```bash
 cd ~/iexec-projects
-mkdir my-tee-hello-world-app && cd my-tee-hello-world-app
+mkdir tee-hello-world-app && cd tee-hello-world-app
 iexec init --skip-wallet
 mkdir src
 touch Dockerfile
 touch sconify.sh
 ```
 
-In the folder `src/` create the file `app.js` then copy [this](../your-first-app.md#write-the-app-javascript-script-example) code inside.
+**Copy the following content** in `src/` .
+
+{% tabs %}
+{% tab title="JavaScript" %}
+{% code title="src/app.js" %}
+
+```javascript
+const fsPromises = require('fs').promises;
+const figlet = require('figlet');
+
+(async () => {
+  try {
+    const iexecOut = process.env.IEXEC_OUT;
+    // Do whatever you want (let's write hello world here)
+    const message = process.argv.length > 2 ? process.argv[2] : 'World';
+
+    const text = figlet.textSync(`Hello, ${message}!`); // Let's add some art for e.g.
+    console.log(text);
+    // Append some results in /iexec_out/
+    await fsPromises.writeFile(`${iexecOut}/result.txt`, text);
+    // Declare everything is computed
+    const computedJsonObj = {
+      'deterministic-output-path': `${iexecOut}/result.txt`,
+    };
+    await fsPromises.writeFile(
+      `${iexecOut}/computed.json`,
+      JSON.stringify(computedJsonObj),
+    );
+  } catch (e) {
+    console.log(e);
+    process.exit(1);
+  }
+})();
+```
+
+{% endcode %}
+{% endtab %}
+
+{% tab title="Python" %}
+{% code title="src/app.py" %}
+
+```python
+import os
+import sys
+import json
+from pyfiglet import Figlet
+
+iexec_out = os.environ['IEXEC_OUT']
+
+# Do whatever you want (let's write hello world here)
+text = 'Hello, {}!'.format(sys.argv[1] if len(sys.argv) > 1 else "World")
+text = Figlet().renderText(text) # Let's add some art for e.g.
+print(text)
+
+# Append some results in /iexec_out/
+with open(iexec_out + '/result.txt', 'w+') as fout:
+    fout.write(text)
+
+# Declare everything is computed
+with open(iexec_out + '/computed.json', 'w+') as f:
+    json.dump({ "deterministic-output-path" : iexec_out + '/result.txt' }, f)
+```
+
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 As we mentioned earlier, the advantage of using **SCONE** is the ability to make the application **Intel® SGX-enabled** without changing the source code. The only thing we are going to do is rebuilding the app using the Trusted-Execution-Environment tooling provided by **SCONE**.
 
@@ -46,6 +110,7 @@ Copy the Dockerfile of the non-TEE app:
 {% tabs %}
 {% tab title="Javascript" %}
 {% code title="Dockerfile" %}
+
 ```bash
 # Starting from a base image supported by SCONE  
 FROM node:14-alpine3.11
@@ -57,11 +122,13 @@ COPY ./src /app
 
 ENTRYPOINT [ "node", "/app/app.js"]
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Python" %}
 {% code title="Dockerfile" %}
+
 ```bash
 FROM python:3.7.3-alpine3.10
 
@@ -70,13 +137,14 @@ RUN pip3 install pyfiglet
 
 COPY ./src /app
 
-ENTRYPOINT ["python", "/app/app.py"]
+ENTRYPOINT ["python3", "/app/app.py"]
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
 
-## Build the TEE docker image:
+## Build the TEE docker image
 
 You will need to register a [free SCONE Account](https://scontain.com) to access SCONE build tools and curated images from the [SCONE registry](https://gitlab.scontain.com/).
 
@@ -92,13 +160,14 @@ We will use the following script to wrap the sconification process, copy the `sc
 {% tabs %}
 {% tab title="Javascript" %}
 {% code title="sconify.sh" %}
+
 ```bash
 #!/bin/bash
 
 # declare the app entrypoint
 ENTRYPOINT="node /app/app.js"
 # declare an image name
-IMG_NAME=nodejs-hello-world
+IMG_NAME=tee-hello-world
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -131,18 +200,20 @@ docker run -it --rm \
             && echo "successfully built TEE docker image => ${IMG_TO}" \
             && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
+
 {% endcode %}
 {% endtab %}
 
 {% tab title="Python" %}
 {% code title="sconify.sh" %}
+
 ```bash
 #!/bin/bash
 
 # declare the app entrypoint
-ENTRYPOINT="python /app/app.py"
+ENTRYPOINT="python3 /app/app.py"
 # declare an image name
-IMG_NAME=python-hello-world
+IMG_NAME=tee-hello-world
 
 IMG_FROM=${IMG_NAME}:temp-non-tee
 IMG_TO=${IMG_NAME}:tee-debug
@@ -153,7 +224,7 @@ docker build . -t ${IMG_FROM}
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.9 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
@@ -172,6 +243,7 @@ docker run -it \
             && echo "successfully built TEE docker image => ${IMG_TO}" \
             && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
+
 {% endcode %}
 {% endtab %}
 {% endtabs %}
@@ -186,6 +258,10 @@ chmod +x sconify.sh
 Congratulation you just built your first TEE application.
 
 {% hint style="info" %}
+The `sconify.sh` script prints the generated docker image name, you must retag this image and push it on dockerhub.
+{% endhint %}
+
+{% hint style="info" %}
 
 You may have noticed the `tee-debug` flag in the image name, the built image is actually in TEE debug mode, this allows you to have some debug features while developping the app.
 Once you are happy with the debug app, contact us to go to production!
@@ -196,7 +272,7 @@ Once you are happy with the debug app, contact us to go to production!
 
 At this stage, your application is ready to be tested on iExec. The process is similar to testing any type of application on the platform, with these minor exceptions:
 
-### Deploy the TEE app on iExec:
+### Deploy the TEE app on iExec
 
 TEE applications require some additional information to be filled in during deployment.
 
@@ -214,12 +290,12 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
     "owner": "0xF048eF3d7E3B33A465E0599E641BB29421f7Df92", // your address
     "name": "tee-hello-world", // application name
     "type": "DOCKER",
-    "multiaddr": "docker.io/username/my-tee-hello-world:1.0.0", // app image
+    "multiaddr": "docker.io/username/tee-hello-world:1.0.0", // app image
     "checksum": "0x15bed530c76f1f3b05b2db8d44c417128b8934899bc85804a655a01b441bfa78", // image digest
     "mrenclave": {
       "provider": "SCONE", // TEE provider (keep default value)
       "version": "v5", // Scone version (keep default value)
-      "entrypoint": "node /app/app.js", // your app image entrypoint
+      "entrypoint": "node /app/app.js" OR "python3 /app/app.py", // your app image entrypoint
       "heapSize": 1073741824, // heap size in bytes (1GB)
       "fingerprint": "eca3ace86f1e8a5c47123c8fd271319e9eb25356803d36666dc620f30365c0c1" // fingerprint of the enclave code (mrenclave), see how to retrieve it below
     }
@@ -230,45 +306,54 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 
 {% hint style="info" %}
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
+
 ```sh
-docker run -it --rm -e SCONE_HASH=1 nodejs-hello-world:tee-debug
+docker run -it --rm -e SCONE_HASH=1 tee-hello-world:tee-debug
 ```
+
 {% endhint %}
 
 Deploy the app with the standard command:
+
 ```sh
-iexec app deploy --chain viviani
+iexec app deploy --chain bellecour
 ```
 
 ### Run the TEE app
 
 Specify the tag `--tag tee` in `iexec app run` command to run a tee app.
 
-
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the Viviani debug workerpool `0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe` (see deployed workerpools on https://v7.pools.iex.ec).
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v7-debug.main.pools.iexec.eth`.
 
 The debug workerpool is connected to a debug Secret Management Service (this is fine for debugging but do not use to store production secrets), we will need to init the storage token on this SMS.
 
 These `sed` commands will do the trick:
 
 ```sh
-# set a custom viviani SMS in chain.json
-sed -i 's|"viviani": {},|"viviani": { "sms": "https://v7.sms.debug-tee-services.viviani.iex.ec" },|g' chain.json
+# set a custom bellecour SMS in chain.json
+sed -i 's|"bellecour": {},|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|g' chain.json
 ```
+
 ```sh
 # initialize the storage
-iexec storage init --chain viviani
+iexec storage init --chain bellecour
 ```
+
 ```sh
 # restore the default configuration in chain.json
-sed -i 's|"viviani": { "sms": "https://v7.sms.debug-tee-services.viviani.iex.ec" },|"viviani": {},|g' chain.json
+sed -i 's|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|"bellecour": {},|g' chain.json
 ```
 
 You are now ready to run the app
 
+```sh
+iexec app run --tag tee --workerpool v7-debug.main.pools.iexec.eth --watch --chain bellecour
 ```
-iexec app run --tag tee --workerpool 0xe6806E69BA8650AF23264702ddD43C4DCe35CcCe --watch --chain viviani
-```
+
+{% hint style="info" %}
+You noticed we used `v7-debug.main.pools.iexec.eth` instead of an ethereum address, this is an ENS name.
+The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables associating decentralized naming to ethereum addresses.
+{% endhint %}
 
 ## Next step?
 

@@ -2,11 +2,11 @@
 
 iExec v7 comes with some breaking changes, follow this guide to migrate from v6 to v7.
 
-* [CLI users](migration#cli-users)
-  * [Application migration](migration#application-migration)
-  * [Dataset migration](migration#dataset-migration)
-  * [Requester migration](migration#requester-migration)
-* [JS library](migration#js-library)
+* [CLI users](#cli-users)
+  * [Application migration](#application-migration)
+  * [Dataset migration](#dataset-migration)
+  * [Requester migration](#requester-migration)
+* [JS library](#js-library)
 
 ## CLI users
 
