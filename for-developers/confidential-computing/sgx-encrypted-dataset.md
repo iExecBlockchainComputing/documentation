@@ -3,11 +3,11 @@
 {% hint style="success" %}
 **Prerequisites**
 
-* [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
-* [Nodejs](https://nodejs.org) 14.0.0 or higher.
-* [iExec SDK](https://www.npmjs.com/package/iexec) 7.2.0 or higher.
-* Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
-{% endhint %}
+- [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
+- [Nodejs](https://nodejs.org) 14.0.0 or higher.
+- [iExec SDK](https://www.npmjs.com/package/iexec) 7.2.0 or higher.
+- Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
+  {% endhint %}
 
 {% hint style="warning" %}
 Please make sure you have already checked the [Quickstart](../quick-start-for-developers.md), [Your first application](../your-first-app.md) and [Build trusted applications](create-your-first-sgx-app.md) tutorials before learning how to manage confidential datasets.
@@ -172,8 +172,8 @@ The application reads the content of the dataset and writes it into the result's
 {% code title="src/app.js" %}
 
 ```javascript
-const fsPromises = require('fs').promises;
-const figlet = require('figlet');
+const fsPromises = require("fs").promises;
+const figlet = require("figlet");
 
 (async () => {
   try {
@@ -182,23 +182,25 @@ const figlet = require('figlet');
     const datasetFileName = process.env.IEXEC_DATASET_FILENAME;
 
     // Use some confidential assets
-    let text = '';
+    let text = "";
     try {
-      const confidentialFile = await fsPromises.readFile(`${iexecIn}/${datasetFileName}`);
+      const confidentialFile = await fsPromises.readFile(
+        `${iexecIn}/${datasetFileName}`
+      );
       text = figlet.textSync(confidentialFile.toString());
     } catch (e) {
-      console.log('confidential file does not exist');
+      console.log("confidential file does not exist");
     }
     // Append some results
     await fsPromises.writeFile(`${iexecOut}/result.txt`, text);
     console.log(text);
     // Declare everything is computed
     const computedJsonObj = {
-      'deterministic-output-path': `${iexecOut}/result.txt`,
+      "deterministic-output-path": `${iexecOut}/result.txt`,
     };
     await fsPromises.writeFile(
       `${iexecOut}/computed.json`,
-      JSON.stringify(computedJsonObj),
+      JSON.stringify(computedJsonObj)
     );
   } catch (e) {
     console.log(e);
@@ -258,7 +260,7 @@ The Dockerfile and the build scripts are the same as the ones we saw [previously
 {% code title="Dockerfile" %}
 
 ```bash
-# Starting from a base image supported by SCONE  
+# Starting from a base image supported by SCONE
 FROM node:14-alpine3.11
 
 # install your dependencies
@@ -311,7 +313,7 @@ docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15-v4 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
@@ -353,7 +355,7 @@ docker build . -t ${IMG_FROM}
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15-v4 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
