@@ -3,11 +3,11 @@
 {% hint style="success" %}
 **Prerequisites**
 
-* [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
-* [Nodejs](https://nodejs.org) 14.0.0 or higher.
-* [iExec SDK](https://www.npmjs.com/package/iexec) 7.2.0 or higher.
-* Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
-{% endhint %}
+- [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
+- [Nodejs](https://nodejs.org) 14.0.0 or higher.
+- [iExec SDK](https://www.npmjs.com/package/iexec) 7.2.0 or higher.
+- Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
+  {% endhint %}
 
 {% hint style="warning" %}
 Please make sure you have already checked the [Quickstart](../quick-start-for-developers.md), [Your first application](../your-first-app.md) and [Build trusted applications](create-your-first-sgx-app.md) tutorials before learning how to use requester secrets.
@@ -55,8 +55,8 @@ The application use the requester secrets to make a call to a secret endpoint of
 {% code title="src/app.js" %}
 
 ```javascript
-const fsPromises = require('fs').promises;
-const axios = require('axios');
+const fsPromises = require("fs").promises;
+const axios = require("axios");
 
 (async () => {
   try {
@@ -65,16 +65,17 @@ const axios = require('axios');
     const secretNamespace = process.env.IEXEC_REQUESTER_SECRET_1;
     const secretKey = process.env.IEXEC_REQUESTER_SECRET_2;
     if (!secretNamespace) {
-        console.log('missing requester secret 1 (namespace)');
-        process.exit(1);
+      console.log("missing requester secret 1 (namespace)");
+      process.exit(1);
     }
     if (!secretKey) {
-        console.log('missing requester secret 2 (key)');
-        process.exit(1);
+      console.log("missing requester secret 2 (key)");
+      process.exit(1);
     }
     // get the hit count from countapi
-    const hitCount = await axios.get(`https://api.countapi.xyz/hit/${secretNamespace}/${secretKey}`)
-        .then(({data}) => data.value);
+    const hitCount = await axios
+      .get(`https://api.countapi.xyz/hit/${secretNamespace}/${secretKey}`)
+      .then(({ data }) => data.value);
 
     const result = `endpoint hit ${hitCount} times`;
     console.log(result);
@@ -82,15 +83,15 @@ const axios = require('axios');
     await fsPromises.writeFile(`${iexecOut}/result.txt`, result);
     // declare everything is computed
     const computedJsonObj = {
-        'deterministic-output-path': `${iexecOut}/result.txt`,
+      "deterministic-output-path": `${iexecOut}/result.txt`,
     };
     await fsPromises.writeFile(
-        `${iexecOut}/computed.json`,
-      JSON.stringify(computedJsonObj),
+      `${iexecOut}/computed.json`,
+      JSON.stringify(computedJsonObj)
     );
   } catch (e) {
     // do not log anything that could reveal the requester secrets!
-    console.log('something went wrong');
+    console.log("something went wrong");
     process.exit(1);
   }
 })();
@@ -157,7 +158,7 @@ The Dockerfile and the build scripts are similar to the ones we saw [previously]
 {% code title="Dockerfile" %}
 
 ```bash
-# Starting from a base image supported by SCONE  
+# Starting from a base image supported by SCONE
 FROM node:14-alpine3.11
 
 # install your dependencies
@@ -212,7 +213,7 @@ docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.4-v4 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
@@ -255,7 +256,7 @@ docker build . -t ${IMG_FROM}
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.4-v4 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
@@ -389,10 +390,10 @@ example:
 --secret 1=foo 3=bar
 ```
 
-* the secret named `foo` will be available in `IEXEC_REQUESTER_SECRET_1`
-* the secret named `bar` will be available in `IEXEC_REQUESTER_SECRET_3`
-* `IEXEC_REQUESTER_SECRET_2` will be skipped
-{% endhint %}
+- the secret named `foo` will be available in `IEXEC_REQUESTER_SECRET_1`
+- the secret named `bar` will be available in `IEXEC_REQUESTER_SECRET_3`
+- `IEXEC_REQUESTER_SECRET_2` will be skipped
+  {% endhint %}
 
 ## Next step?
 
