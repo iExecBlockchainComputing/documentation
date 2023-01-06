@@ -3,11 +3,11 @@
 {% hint style="success" %}
 **Prerequisites**
 
-* [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
-* [Nodejs](https://nodejs.org) 14.0.0 or higher.
-* [iExec SDK](https://www.npmjs.com/package/iexec) 7.2.0 or higher.
-* Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
-{% endhint %}
+- [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
+- [Nodejs](https://nodejs.org) 14.0.0 or higher.
+- [iExec SDK](https://www.npmjs.com/package/iexec) 7.2.0 or higher.
+- Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
+  {% endhint %}
 
 {% hint style="warning" %}
 Please make sure you have already checked the [quickstart](../your-first-app.md) and [Your first application](../your-first-app.md) tutorials before building your trusted application on iExec.
@@ -39,14 +39,14 @@ touch sconify.sh
 {% code title="src/app.js" %}
 
 ```javascript
-const fsPromises = require('fs').promises;
-const figlet = require('figlet');
+const fsPromises = require("fs").promises;
+const figlet = require("figlet");
 
 (async () => {
   try {
     const iexecOut = process.env.IEXEC_OUT;
     // Do whatever you want (let's write hello world here)
-    const message = process.argv.length > 2 ? process.argv[2] : 'World';
+    const message = process.argv.length > 2 ? process.argv[2] : "World";
 
     const text = figlet.textSync(`Hello, ${message}!`); // Let's add some art for e.g.
     console.log(text);
@@ -54,11 +54,11 @@ const figlet = require('figlet');
     await fsPromises.writeFile(`${iexecOut}/result.txt`, text);
     // Declare everything is computed
     const computedJsonObj = {
-      'deterministic-output-path': `${iexecOut}/result.txt`,
+      "deterministic-output-path": `${iexecOut}/result.txt`,
     };
     await fsPromises.writeFile(
       `${iexecOut}/computed.json`,
-      JSON.stringify(computedJsonObj),
+      JSON.stringify(computedJsonObj)
     );
   } catch (e) {
     console.log(e);
@@ -112,7 +112,7 @@ Copy the Dockerfile of the non-TEE app:
 {% code title="Dockerfile" %}
 
 ```bash
-# Starting from a base image supported by SCONE  
+# Starting from a base image supported by SCONE
 FROM node:14-alpine3.11
 
 # install your dependencies
@@ -181,7 +181,7 @@ docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15-v4 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
@@ -224,7 +224,7 @@ docker build . -t ${IMG_FROM}
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15-v4 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
