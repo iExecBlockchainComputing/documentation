@@ -11,7 +11,7 @@
   * [Overview](for-developers/confidential-computing/intel-sgx-technology.md)
   * [Choose your TEE framework and build](for-developers/confidential-computing/choose-your-tee-framework.md)
     * [Build a Scone TEE app](for-developers/confidential-computing/create-your-first-sgx-app.md)
-    * [Build a Gramine TEE app](for-developers/confidential-computing/gramine/create-your-first-gramine-app.md)
+    * [Build a Gramine TEE app](for-developers/confidential-computing/create-your-first-gramine-app.md)
   * [Access confidential assets from your app](for-developers/confidential-computing/access-confidential-assets.md)
     * [Attach a secret to your app](for-developers/confidential-computing/app-developer-secret.md)
     * [Access requester secrets from your app](for-developers/confidential-computing/requester-secrets.md)
