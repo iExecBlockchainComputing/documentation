@@ -203,7 +203,7 @@ docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.4-v4 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
@@ -214,7 +214,7 @@ docker run -it --rm \
             --host-path=/etc/resolv.conf \
             --binary=/usr/local/bin/node \
             --heap=1G \
-            --dlopen=2 \
+            --dlopen=1 \
             --no-color \
             --verbose \
             --command=${ENTRYPOINT} \
@@ -246,7 +246,7 @@ docker build . -t ${IMG_FROM}
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.4-v4 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
@@ -257,7 +257,7 @@ docker run -it \
             --host-path=/etc/resolv.conf \
             --binary=/usr/local/bin/python3.7 \
             --heap=1G \
-            --dlopen=2 \
+            --dlopen=1 \
             --no-color \
             --verbose \
             --command=${ENTRYPOINT} \
