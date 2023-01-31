@@ -346,7 +346,7 @@ These `sed` commands will do the trick:
 
 ```sh
 # set a custom bellecour SMS in chain.json
-sed -i 's|"bellecour": {},|"bellecour": { "sms": "https://v8.sms.debug-tee-services.bellecour.iex.ec" },|g' chain.json
+sed -i 's|"bellecour": {},|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|g' chain.json
 ```
 
 ```sh
@@ -360,7 +360,7 @@ iexec requester check-secret my-key --chain bellecour
 
 ```sh
 # restore the default configuration in chain.json
-sed -i 's|"bellecour": { "sms": "https://v8.sms.debug-tee-services.bellecour.iex.ec" },|"bellecour": {},|g' chain.json
+sed -i 's|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|"bellecour": {},|g' chain.json
 ```
 
 ### Run the TEE app
