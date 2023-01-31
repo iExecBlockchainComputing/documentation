@@ -438,14 +438,14 @@ iexec app deploy --chain bellecour
 
 ### Run the TEE app
 
-Specify the tag `--tag tee` and the dataset to use `--dataset <datasetAddress>` in `iexec app run` command to run a tee app with a dataset.
+Specify the tag `--tag tee,scone` and the dataset to use `--dataset <datasetAddress>` in `iexec app run` command to run a tee app with a dataset.
 
 One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v8-debug.main.pools.iexec.eth`.
 
 You are now ready to run the app
 
 ```sh
-iexec app run <appAddress> --tag tee --dataset <datasetAddress> --workerpool v8-debug.main.pools.iexec.eth --watch --chain bellecour
+iexec app run <appAddress> --tag tee,scone --dataset <datasetAddress> --workerpool v8-debug.main.pools.iexec.eth --watch --chain bellecour
 ```
 
 ## Next step?

@@ -365,7 +365,7 @@ sed -i 's|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.be
 
 ### Run the TEE app
 
-Specify the tag `--tag tee` in `iexec app run` command to run a tee app with an app developer secret.
+Specify the tag `--tag tee,scone` in `iexec app run` command to run a tee app with an app developer secret.
 
 One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v8-debug.main.pools.iexec.eth`.
 
@@ -373,7 +373,7 @@ You are now ready to run the app with requester secrets.
 
 ```sh
 iexec app run <appAddress> \
-  --tag tee \
+  --tag tee,scone \
   --workerpool v8-debug.main.pools.iexec.eth \
   --secret 1=my-namespace \
   --secret 2=my-key \

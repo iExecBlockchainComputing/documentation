@@ -55,8 +55,8 @@ Now to see that in action, you'd need to trigger a task and specify yourself as 
 
 ```bash
 iexec app run <0x-your-app-address> \
-    --chain bellecour                  \
-    --tag tee                       \
+    --chain bellecour \
+    --tag tee,scone \
     --encrypt-result \
     --watch
 ```
