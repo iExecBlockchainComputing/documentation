@@ -24,6 +24,9 @@ As explained by [Intel](https://software.intel.com/en-us/sgx/attestation-service
 
 At iExec we do not develop Intel® SGX frameworks, but rather we integrate state of the art solutions developed by other specialists. Currently, the SCONE framework has been integrated into our platform. We are actively working on supporting [Gramine](https://gramineproject.io/).
 
+* [Build Scone app](create-your-first-sgx-app.md)
+* [Build Gramine app](gramine/create-your-first-gramine-app.md)
+
 ### SCONE Framework
 
 Kernel services and system calls are not available from an Intel® SGX enclave as the OS is not a part of the trusted computing base \(TCB\) in Intel® SGX. This can be limiting as your application will not be able to use sockets or the file system directly from code running inside the enclave. To resolve this, and reduce the burden of porting your application to Intel® SGX, we can use use the [SCONE](https://scontain.com/) framework.
