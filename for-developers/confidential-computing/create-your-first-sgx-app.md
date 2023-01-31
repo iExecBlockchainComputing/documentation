@@ -323,7 +323,7 @@ iexec app deploy --chain bellecour
 
 Specify the tag `--tag tee` in `iexec app run` command to run a tee app.
 
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v7-debug.main.pools.iexec.eth`.
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v8-debug.main.pools.iexec.eth`.
 
 The debug workerpool is connected to a debug Secret Management Service (this is fine for debugging but do not use to store production secrets), we will need to init the storage token on this SMS.
 
@@ -331,7 +331,7 @@ These `sed` commands will do the trick:
 
 ```sh
 # set a custom bellecour SMS in chain.json
-sed -i 's|"bellecour": {},|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|g' chain.json
+sed -i 's|"bellecour": {},|"bellecour": { "sms": "https://v8.sms.debug-tee-services.bellecour.iex.ec" },|g' chain.json
 ```
 
 ```sh
@@ -341,17 +341,17 @@ iexec storage init --chain bellecour
 
 ```sh
 # restore the default configuration in chain.json
-sed -i 's|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|"bellecour": {},|g' chain.json
+sed -i 's|"bellecour": { "sms": "https://v8.sms.debug-tee-services.bellecour.iex.ec" },|"bellecour": {},|g' chain.json
 ```
 
 You are now ready to run the app
 
 ```sh
-iexec app run --tag tee --workerpool v7-debug.main.pools.iexec.eth --watch --chain bellecour
+iexec app run --tag tee --workerpool v8-debug.main.pools.iexec.eth --watch --chain bellecour
 ```
 
 {% hint style="info" %}
-You noticed we used `v7-debug.main.pools.iexec.eth` instead of an ethereum address, this is an ENS name.
+You noticed we used `v8-debug.main.pools.iexec.eth` instead of an ethereum address, this is an ENS name.
 The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables associating decentralized naming to ethereum addresses.
 {% endhint %}
 

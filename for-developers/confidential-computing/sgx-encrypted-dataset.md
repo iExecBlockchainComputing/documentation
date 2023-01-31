@@ -133,7 +133,7 @@ These `sed` commands will do the trick:
 
 ```sh
 # set a custom bellecour SMS in chain.json
-sed -i 's|"bellecour": {},|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|g' chain.json
+sed -i 's|"bellecour": {},|"bellecour": { "sms": "https://v8.sms.debug-tee-services.bellecour.iex.ec" },|g' chain.json
 ```
 
 ```sh
@@ -145,7 +145,7 @@ iexec dataset check-secret --chain bellecour
 
 ```sh
 # restore the default configuration in chain.json
-sed -i 's|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|"bellecour": {},|g' chain.json
+sed -i 's|"bellecour": { "sms": "https://v8.sms.debug-tee-services.bellecour.iex.ec" },|"bellecour": {},|g' chain.json
 ```
 
 We saw in this section how to encrypt a dataset and deploy it on iExec. In addition, we learned how to push the encryption secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms). Now we need to build the application that is going to consume this dataset.
@@ -440,12 +440,12 @@ iexec app deploy --chain bellecour
 
 Specify the tag `--tag tee` and the dataset to use `--dataset <datasetAddress>` in `iexec app run` command to run a tee app with a dataset.
 
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v7-debug.main.pools.iexec.eth`.
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v8-debug.main.pools.iexec.eth`.
 
 You are now ready to run the app
 
 ```sh
-iexec app run <appAddress> --tag tee --dataset <datasetAddress> --workerpool v7-debug.main.pools.iexec.eth --watch --chain bellecour
+iexec app run <appAddress> --tag tee --dataset <datasetAddress> --workerpool v8-debug.main.pools.iexec.eth --watch --chain bellecour
 ```
 
 ## Next step?

@@ -336,7 +336,7 @@ These `sed` commands will do the trick:
 
 ```sh
 # set a custom bellecour SMS in chain.json
-sed -i 's|"bellecour": {},|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|g' chain.json
+sed -i 's|"bellecour": {},|"bellecour": { "sms": "https://v8.sms.debug-tee-services.bellecour.iex.ec" },|g' chain.json
 ```
 
 ```sh
@@ -348,19 +348,19 @@ iexec app check-secret --chain bellecour
 
 ```sh
 # restore the default configuration in chain.json
-sed -i 's|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|"bellecour": {},|g' chain.json
+sed -i 's|"bellecour": { "sms": "https://v8.sms.debug-tee-services.bellecour.iex.ec" },|"bellecour": {},|g' chain.json
 ```
 
 ### Run the TEE app
 
 Specify the tag `--tag tee` in `iexec app run` command to run a tee app with an app developer secret.
 
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v7-debug.main.pools.iexec.eth`.
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v8-debug.main.pools.iexec.eth`.
 
 You are now ready to run the app
 
 ```sh
-iexec app run <appAddress> --tag tee --workerpool v7-debug.main.pools.iexec.eth --watch --chain bellecour
+iexec app run <appAddress> --tag tee --workerpool v8-debug.main.pools.iexec.eth --watch --chain bellecour
 ```
 
 ## Next step?
