@@ -336,7 +336,7 @@ sed -i 's|"bellecour": {},|"bellecour": { "sms": { "scone": "https://v8.sms.debu
 
 ```sh
 # initialize the storage
-iexec storage init --chain bellecour
+iexec storage init --chain bellecour --tee-framework scone
 ```
 
 ```sh
