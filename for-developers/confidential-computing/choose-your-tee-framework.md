@@ -6,6 +6,11 @@ Please make sure you have already checked the [quickstart](../your-first-app.md)
 
 After understanding the fundamentals of Confidential Computing and explaining the technologies behind it, it is time to roll up our sleeves and get hands-on with [enclaves](intel-sgx-technology.md#enclave). In this guide, we will focus on protecting an application - that is already compatible with the iExec platform - using SGX, and without changing the source code. That means we will use the same code we [previously](../your-first-app.md#build-your-app) deployed for a basic iExec application.
 
+Two TEE frameworks are supported on the iExec platform:
+
+- Scone
+- Gramine
+
 ## Scone
 
 Scone protects the confidentiality and integrity of the data and the code without needing to modify or recompile the application.
