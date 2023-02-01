@@ -21,7 +21,7 @@ mkdir src
 touch Dockerfile
 ```
 
-Copy from previous steps your [Javascript or Python sources](../your-first-app#write-the-app) in `src/` .
+Copy from previous steps your [Javascript or Python sources](../your-first-app.md#build-your-app) in `src/` .
 When your sources are copied, your are ready to dockerize your application:
 
 {% tabs %}
