@@ -1,6 +1,27 @@
 # Build a Gramine application
 
+{% hint style="success" %}
+**Prerequisites**
+
+- [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
+- [Nodejs](https://nodejs.org) 14.0.0 or higher.
+- [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
+- Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [Gramine](choose-your-tee-framework#gramine) framework.
+{% endhint %}
+
 ## Prepare your application
+
+Create a directory tree for your application in `~/iexec-projects/`.
+
+```bash
+cd ~/iexec-projects
+mkdir tee-hello-world-app && cd tee-hello-world-app
+iexec init --skip-wallet
+mkdir src
+touch Dockerfile
+```
+
+Copy from previous steps your [Javascript or Python sources](your-first-app#write-the-app) in `src/` .
 
 {% tabs %}
 {% tab title="Javascript" %}
