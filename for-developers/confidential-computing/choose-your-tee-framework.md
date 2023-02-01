@@ -1,10 +1,16 @@
 # Choose your TEE framework
 
 ## Scone
-Scone is lorem ipsum
+
+Scone protects the confidentiality and integrity of the data and the code without needing to modify or recompile the application.
+
+For a deeper understanding, you can have a look to the official [Scone documentation](https://sconedocs.github.io/).
 
 ## Gramine
-Gramine is lorem ipsum
+
+Gramine is able to run unmodified applications inside SGX enclaves, without the toll of manually porting the application to the SGX environment.
+
+For a deeper understanding, you can have a look to the official [Gramine documentation](https://gramine.readthedocs.io/).
 
 ## Let's build
 
