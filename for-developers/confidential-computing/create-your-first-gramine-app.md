@@ -85,7 +85,7 @@ Push your image on DockerHub:
 docker.io/<username>/tee-hello-world:1.0.0
 ```
 
-Congratulations you just built your Gramine TEE application.
+Congratulations, you just built your Gramine TEE application.
 
 ## Test your app on iExec
 
