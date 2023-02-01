@@ -48,11 +48,11 @@ Using the chain selector, you can select which network you would like to connect
 
 Remember:
 
-* **Testnet** provides a training environment with **free** test crypto-currencies.
-* Both **Ethereum Mainnet** and **iExec Sidechain** use real cryptocurrencies.
-* **Ethereum Mainnet** network is great for building **decentralized** apps.
-* **iExec Sidechain** is **cheap** and **fast** but is more centralized.
-* The **iExec Sidechain** is linked to **Ethereum Mainnet**. RLC tokens can be transferred between them.
+- **Testnet** provides a training environment with **free** test crypto-currencies.
+- Both **Ethereum Mainnet** and **iExec Sidechain** use real cryptocurrencies.
+- **Ethereum Mainnet** network is great for building **decentralized** apps.
+- **iExec Sidechain** is **cheap** and **fast** but is more centralized.
+- The **iExec Sidechain** is linked to **Ethereum Mainnet**. RLC tokens can be transferred between them.
 
 **Your Wallet**
 
@@ -68,8 +68,8 @@ Your iExec account is linked to your wallet address. The account shows your cred
 Funds must be transferred from your wallet to your iExec account. The iExec account is a smart contract linked to your wallet - iExec can no control over the funds in your account.
 {% endhint %}
 
-* When buying resources, you spend the RLC from your iExec Account
-* When selling resources, the RLC earned can be found in your iExec Account
+- When buying resources, you spend the RLC from your iExec Account
+- When selling resources, the RLC earned can be found in your iExec Account
 
 ![](../../.gitbook/assets/account.png)
 
@@ -159,4 +159,3 @@ Use **Send to Ethereum Mainnet** to transfer some xRLC from your wallet to Ether
 {% hint style="warning" %}
 **Remember**: **1 RLC on Ethereum Mainnet has the same value than 1 xRLC on iExec Sidechain.**
 {% endhint %}
-

@@ -14,15 +14,15 @@ iexec order init --dataset
 
 Edit the datasetorder part in `iexec.json` to set the conditions to use your dataset
 
-| key | description |
-| :--- | :--- |
-| dataset | dataset address |
-| datasetprice | price to charge the requester for each use of the dataset \(in nRLC\) |
-| volume | number of order created, each usage decrease this number |
-| tag | restrict usage to specific runtime such "tee" or "gpu" |
-| apprestrict | restrict to use the dataset with a specific app \(1\) |
-| workerpoolrestrict | restrict to use the dataset on a specific workerpool \(1\) |
-| requesterrestrict | restrict the dataset usage to a specific requester \(1\) |
+| key                | description                                                           |
+| :----------------- | :-------------------------------------------------------------------- |
+| dataset            | dataset address                                                       |
+| datasetprice       | price to charge the requester for each use of the dataset \(in nRLC\) |
+| volume             | number of order created, each usage decrease this number              |
+| tag                | restrict usage to specific runtime such "tee" or "gpu"                |
+| apprestrict        | restrict to use the dataset with a specific app \(1\)                 |
+| workerpoolrestrict | restrict to use the dataset on a specific workerpool \(1\)            |
+| requesterrestrict  | restrict the dataset usage to a specific requester \(1\)              |
 
 1. the restriction is disabled by default with 0x0000000000000000000000000000000000000000
 
@@ -53,4 +53,3 @@ An unpublished order is still valid on the blockchain, to invalidate it use the 
 ```text
 iexec order cancel --dataset <orderHash>
 ```
-

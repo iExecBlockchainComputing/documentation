@@ -24,9 +24,9 @@ iExec dOracle builds on top of the decentralized cloud computing platform develo
 
 iExec dOracle allows you to create your own Oracle, with custom logic, while benefiting from the security guarantees of the whole iExec platform.
 
-* It is secure. You can set the desired level of trust for your dOracle execution. The conjunction of random sampling and iExec’s built-in incentive and reputation systems makes your dOracle highly secured.
-* It is easy-to-use. It relies on 2 years of research and development to make the iExec platform simple and developer friendly. Creating your own personalized Decentralized Oracle only takes a simple dockerized application and a few lines of Solidity!
-* It is cheap. It does not rely on bribing or incentivizing honest behavior, only on random sampling and a powerful reputation system to make attack impractical.
+- It is secure. You can set the desired level of trust for your dOracle execution. The conjunction of random sampling and iExec’s built-in incentive and reputation systems makes your dOracle highly secured.
+- It is easy-to-use. It relies on 2 years of research and development to make the iExec platform simple and developer friendly. Creating your own personalized Decentralized Oracle only takes a simple dockerized application and a few lines of Solidity!
+- It is cheap. It does not rely on bribing or incentivizing honest behavior, only on random sampling and a powerful reputation system to make attack impractical.
 
 ## How does it work?
 
@@ -34,8 +34,8 @@ iExec dOracle allows you to create your own Oracle, with custom logic, while ben
 
 The iExec architecture is two-sided: the on-chain part is a set of smart contracts that implement the PoCo, handle the incentive and adjudication systems; and the off-chain part is made of workers, that provide computing resources to execute the tasks, and schedulers, that dispatch the tasks to execute between the workers of the worker-pool they manage. Each side of the iExec platform \(worker-pool, computation requester\) create and sign orders that describe the kind of transaction they are willing to enter \(type of hardware, minimum price, etc…\). When several orders of different types are compatible they are matched together on the blockchain, to create a deal. Once a deal is made, the scheduler that is part of the deal will choose a set of workers in his workerpool to execute the task. Each worker will download the dApp \(a docker container\) and run it. Upon execution of the task, each worker sends back two values on the blockchain:
 
-* a hash of the result.
-* after consensus is reached, the corresponding result.
+- a hash of the result.
+- after consensus is reached, the corresponding result.
 
 A normal execution ends when the deal is finalized; all the stakeholders are paid, and the computation requester is free to download the data pointed to by the results field of the `Deal` object on the blockchain.
 
@@ -68,10 +68,10 @@ The PriceFeed dApp is a simple Node.js script, available at [Kaiko PriceFeed Sou
 
 For example, given the parameters `"BTC USD 9 2019-04-11T13:08:32.605Z"` the price-oracle application will:
 
-* Retrieve the price of BTC in USD at 2019-04-11T13:08:32.605Z
-* Multiply this value by `10e9` \(to capture the price value more accurately as it will be represented by an integer onchain\)
-* Encode the date, the description \(`"btc-usd-9"`\) and the value using `abi.encode`
-* Store this result in `${IEXEC_OUT}/computed.json` under the `callback-data` key
+- Retrieve the price of BTC in USD at 2019-04-11T13:08:32.605Z
+- Multiply this value by `10e9` \(to capture the price value more accurately as it will be represented by an integer onchain\)
+- Encode the date, the description \(`"btc-usd-9"`\) and the value using `abi.encode`
+- Store this result in `${IEXEC_OUT}/computed.json` under the `callback-data` key
 
 iExec will then achieve PoCo consensus on the hash of the `callback-data` value, and will then submit `callback-data` values on-chain, in the `Task` object on the `IexecProxy` smart contract.
 
@@ -124,14 +124,14 @@ internal view returns (bytes memory)
 
 A dOracle smart contract should inherit from the generic `IexecDOracle` contract, and expose two main functionalities:
 
-* An update function, that will call the internal \(and inherited\) `_iexecDoracleGetVerifiedResult` function and process its result to update the dOracle contract internal state.
-* One or several accessor functions, that allows other smart contract to access the oracle value\(s\).
+- An update function, that will call the internal \(and inherited\) `_iexecDoracleGetVerifiedResult` function and process its result to update the dOracle contract internal state.
+- One or several accessor functions, that allows other smart contract to access the oracle value\(s\).
 
 ### The PriceOracle dOracle contract
 
 In the PriceFeed example, the [PriceOracle](https://github.com/iExecBlockchainComputing/iexec-doracle-base/blob/bb4c04dc77c822d16d7ca8baed99f5626e44d7be/contracts/example/PriceOracle.sol) smart contract is made of three parts:
 
-* Its internal state description: a `TimedValue` struct storing the oracle data for a given value, and a `values` field that maps an index of the form `“BTC-USD-9”` to the corresponding `TimedValue` struct value.
+- Its internal state description: a `TimedValue` struct storing the oracle data for a given value, and a `values` field that maps an index of the form `“BTC-USD-9”` to the corresponding `TimedValue` struct value.
 
 ```text
 struct TimedValue
@@ -147,7 +147,7 @@ mapping(bytes32 => TimedValue) public values;
 
 This also allows to read the resulting prices. For example, to get the most recent price of BTC in USD with 9 place precision \(as described above\), query `values(keccak256(bytes("BTC-USD-9")))` from the dOracle contract and this will return a structure containing the value, the associated date, and the details of the request.
 
-* The update function `processResult`, that takes the task id of an execution of the dOracle dApp, calls the internal `_iexecDoracleGetVerifiedResult` and processes the result to update the `values` map.
+- The update function `processResult`, that takes the task id of an execution of the dOracle dApp, calls the internal `_iexecDoracleGetVerifiedResult` and processes the result to update the `values` map.
 
 ```text
 function processResult(bytes32 _oracleCallID)
@@ -173,7 +173,7 @@ public
 
 The PriceFeed dOracle also declares an event `ValueChange`, that is fired whenever an update is made.
 
-* An `updateEnv` function, that can be used by the owner of the dOracle to update its parameters. It simply calls the `_iexecDoracleUpdateSettings` function of its parent `IexecDoracle` contract.
+- An `updateEnv` function, that can be used by the owner of the dOracle to update its parameters. It simply calls the `_iexecDoracleUpdateSettings` function of its parent `IexecDoracle` contract.
 
 ```text
 function updateEnv(

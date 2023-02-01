@@ -41,16 +41,16 @@ For more information about SCONE, please refer to their documentation at [https:
 The [MrEnclave](https://sconedocs.github.io/MrEnclave/) is a hash value that identifies every enclave. It is obtained from the content of memory pages and access rights. After you build your SCONE app, you will get its fingerprint, the MrEnclave is the last part of that fingerprint.
 
 {% hint style="info" %}
-Please note that some of SCONE's [environment variables](https://sconedocs.github.io/SCONE_ENV/) such as **SCONE\_HEAP** can affect the value of the MrEnclave.
+Please note that some of SCONE's [environment variables](https://sconedocs.github.io/SCONE_ENV/) such as **SCONE_HEAP** can affect the value of the MrEnclave.
 {% endhint %}
 
 #### FSPF \(File System Protection File\)
 
-In addition to identifying the code, SCONE, also, takes a snapshot of the file system state. This guarantees that we cannot alter the enclave by modifying its files' state. To do this, scone uses two parameters the [FSPF\_KEY](https://sconedocs.github.io/SCONE_Fileshield/#file-system-protection-file) and [FSPF\_TAG](https://sconedocs.github.io/SCONE_Fileshield/#file-system-protection-file).
+In addition to identifying the code, SCONE, also, takes a snapshot of the file system state. This guarantees that we cannot alter the enclave by modifying its files' state. To do this, scone uses two parameters the [FSPF_KEY](https://sconedocs.github.io/SCONE_Fileshield/#file-system-protection-file) and [FSPF_TAG](https://sconedocs.github.io/SCONE_Fileshield/#file-system-protection-file).
 
 #### Application's fingerprint
 
-It is the concatenation of the MrEncalve, the FSPF\_KEY and the FSPF\_TAG separated by a "\|". You should use this when deploying your application on the Blockchain. The SMS uses this as a reference to evaluate the state of client enclaves and whether they should get secrets or not.
+It is the concatenation of the MrEncalve, the FSPF_KEY and the FSPF_TAG separated by a "\|". You should use this when deploying your application on the Blockchain. The SMS uses this as a reference to evaluate the state of client enclaves and whether they should get secrets or not.
 
 ### Secret Management Service \(SMS\)
 

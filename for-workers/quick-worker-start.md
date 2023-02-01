@@ -8,14 +8,14 @@ description: >-
 
 ⚠️ _**Unfortunately, it is not currently possible to join a public worker pool as an individual worker. The iExec team aims top change this soon, with plans to get individuals to connect their machines (specifically Intel® SGX enabled machines) to earn RLC tokens.**_
 
-_**Keep an eye on the iExec communication channels to be the first to know when public worker pools are made available. Thanks for your patience!** _⚠️
+***Keep an eye on the iExec communication channels to be the first to know when public worker pools are made available. Thanks for your patience!** *⚠️
 
 A worker will be rewarded with RLCs for every properly computed tasks.
 
 Please note that:
 
-* your wallet must be loaded with ETH and RLC must be deposited to your iExec account in order to stake for incoming tasks.
-* your computer needs at least 2 CPUs.
+- your wallet must be loaded with ETH and RLC must be deposited to your iExec account in order to stake for incoming tasks.
+- your computer needs at least 2 CPUs.
 
 ## Start a worker
 
@@ -25,9 +25,9 @@ After having loaded some ETH and deposited some RLC to your iExec account, you c
 
 You have different ways to join a workerpool:
 
-* with a Virtual Machine
-* with Docker
-* with Join-Workerpool scripts
+- with a Virtual Machine
+- with Docker
+- with Join-Workerpool scripts
 
 For security reason, it is **highly recommended to use the virtual machine**.
 
@@ -78,9 +78,9 @@ If you want to properly shutdown your worker, you can click on the “Stop Worke
 
 **Supported OS**
 
-* Linux
-* MacOS
-* Windows
+- Linux
+- MacOS
+- Windows
 
 {% hint style="info" %}
 Change keyboard settings, this is qwerty mode by default. [https://websiteforstudents.com/configure-ubuntu-18-04-lts-beta-keyboard-layout-for-native-languages/](https://websiteforstudents.com/configure-ubuntu-18-04-lts-beta-keyboard-layout-for-native-languages/)
@@ -114,7 +114,7 @@ When available, click on the “Join Worker Pool” button on the top left of th
 
 **Supported OS**
 
-* Linux
+- Linux
 
 ## Wallet restriction
 
@@ -124,13 +124,13 @@ An exclusive wallet must be associated to your worker. You need N wallets if you
 
 Gas price on the Ethereum network is constantly changing. A high traffic could potentially increase average gas price since some people might want to get their transactions mined very fast. By taking a look at [https://ethgasstation.info/](https://ethgasstation.info/), you will see a Median Gas Price \(gwei\) which will be different in few hours.
 
-* IEXEC\_GAS\_PRICE\_MULTIPLIER
+- IEXEC_GAS_PRICE_MULTIPLIER
 
-For each transaction, the worker will look at the current gas price and will multiply it by a K factor in order to send \[cheap & slow\] or \[expensive & fast\] transactions. You can tune that in the config of your worker. This K factor is called IEXEC\_GAS\_PRICE\_MULTIPLIER and it default value is 1.3 \(which means a little faster than some other guys\).
+For each transaction, the worker will look at the current gas price and will multiply it by a K factor in order to send \[cheap & slow\] or \[expensive & fast\] transactions. You can tune that in the config of your worker. This K factor is called IEXEC_GAS_PRICE_MULTIPLIER and it default value is 1.3 \(which means a little faster than some other guys\).
 
-* IEXEC\_GAS\_PRICE\_CAP
+- IEXEC_GAS_PRICE_CAP
 
-To avoid sending super expensive transactions, you can cap the value NETWORK\_GAS\_PRICE \* IEXEC\_GAS\_PRICE\_MULTIPLIER. This cap value is called IEXEC\_GAS\_PRICE\_CAP and the default value is 22Gwei \(you can change it too\). \(edited\)
+To avoid sending super expensive transactions, you can cap the value NETWORK_GAS_PRICE \* IEXEC_GAS_PRICE_MULTIPLIER. This cap value is called IEXEC_GAS_PRICE_CAP and the default value is 22Gwei \(you can change it too\). \(edited\)
 
 ## Statuses of Replicates
 
@@ -138,42 +138,42 @@ One Task bought by a requester will result in one to many Replicates depending o
 
 Here are the different possible statuses for a replicate:
 
-* **CREATED**: A new replicate is assigned to your worker just after it asked for new one
-* **RUNNING**: Your worker confirms is going to work on this replicate
-* **APP\_DOWNLOADING**: Your worker is downloaing the application
-* **APP\_DOWNLOADED**: The download of the application is completed
-* **APP\_DOWNLOAD\_FAILED**: The download of the application failed
-* **DATA\_DOWNLOADING**: Your worker is downloaing the dataset
-* **DATA\_DOWNLOADED**: The download of the dataset is completed
-* **DATA\_DOWNLOAD\_FAILED**: The download of the dataset failed
-* **COMPUTING**: Your worker is computing the task
-* **COMPUTED**: The computation is completed
-* **COMPUTE\_FAILED**: The computation failed
-* **CAN\_CONTRIBUTE**: Your worker can contribute the fingerprint of the computed result on chain
-* **CANT\_CONTRIBUTE\_SINCE\_STAKE\_TOO\_LOW**: Your worker hasn’t enought RLC in its account to contribute \(30% of the task in RLC by default\)
-* **CANT\_CONTRIBUTE\_SINCE\_TASK\_NOT\_ACTIVE**: The task is not active on chain. This status usually happens when different workers have contributed on the same task but the consensus has been reached before your contribution.
-* **CANT\_CONTRIBUTE\_SINCE\_AFTER\_DEADLINE**: The deadline for the contribution is reached
-* **CANT\_CONTRIBUTE\_SINCE\_CONTRIBUTION\_ALREADY\_SET**: Your worker already contributed for this task
-* **CONTRIBUTING**: Your worker sent the “contribute\(..\)” transaction \(fingerprint of the result\) on chain
-* **CONTRIBUTE\_FAILED**: The contribute transaction failed
-* **CONTRIBUTED**: Your worker has contributed on chain
-* **CANT\_REVEAL**: Your worker cant reveal the proof that it is the owner of the fingerprint of the computed result
-* **REVEALING**: Your worker sent the “reveal\(..\)” transactions \(proof that he is the owner of the fingerprint of the result\)
-* **REVEALED**: Your worker has revealed the proof on chain
-* **REVEAL\_FAILED**: The reveal transaction failed
-* **RESULT\_UPLOAD\_REQUESTED**: Your worker has been called for uploading the result to a remote filesystem
-* **RESULT\_UPLOAD\_REQUEST\_FAILED**: Your worker did not accept to be called for uploading the result
-* **RESULT\_UPLOADING**: Your worker is uploading the result
-* **RESULT\_UPLOADED**: The result is uploaded \(to an iExec Result Repository or to IPFS\)
-* **RESULT\_UPLOAD\_FAILED**: The upload of the result failed
-* **COMPLETED**: The whole task is completed meaning the task is finalized. You have been rewarded if you are part of the consensus
-* **REVEAL\_TIMEOUT**: Your worker took too long to reveal its proof \(more than 2 period after the consensus\)
-* **WORKER\_LOST**: Your worker didn’t ping the iexec-core scheduler for a while. It is considered as out for this task
-* **ABORTED\_ON\_CONSENSUS\_REACHED**: The consensus is reached but you are not part of it
-* **ABORTED\_ON\_CONTRIBUTION\_TIMEOUT**: Your worker took too long to contribute \(7 periods after the purchase of the task\)
-* **FAILED**: Your worker failed to participate to the task
-* **OUT\_OF\_GAS**: Your worker needs some ETH, please refill its wallet
-* **RECOVERING**: Your worker has been stop, it is starting back from where it stop
+- **CREATED**: A new replicate is assigned to your worker just after it asked for new one
+- **RUNNING**: Your worker confirms is going to work on this replicate
+- **APP_DOWNLOADING**: Your worker is downloaing the application
+- **APP_DOWNLOADED**: The download of the application is completed
+- **APP_DOWNLOAD_FAILED**: The download of the application failed
+- **DATA_DOWNLOADING**: Your worker is downloaing the dataset
+- **DATA_DOWNLOADED**: The download of the dataset is completed
+- **DATA_DOWNLOAD_FAILED**: The download of the dataset failed
+- **COMPUTING**: Your worker is computing the task
+- **COMPUTED**: The computation is completed
+- **COMPUTE_FAILED**: The computation failed
+- **CAN_CONTRIBUTE**: Your worker can contribute the fingerprint of the computed result on chain
+- **CANT_CONTRIBUTE_SINCE_STAKE_TOO_LOW**: Your worker hasn’t enought RLC in its account to contribute \(30% of the task in RLC by default\)
+- **CANT_CONTRIBUTE_SINCE_TASK_NOT_ACTIVE**: The task is not active on chain. This status usually happens when different workers have contributed on the same task but the consensus has been reached before your contribution.
+- **CANT_CONTRIBUTE_SINCE_AFTER_DEADLINE**: The deadline for the contribution is reached
+- **CANT_CONTRIBUTE_SINCE_CONTRIBUTION_ALREADY_SET**: Your worker already contributed for this task
+- **CONTRIBUTING**: Your worker sent the “contribute\(..\)” transaction \(fingerprint of the result\) on chain
+- **CONTRIBUTE_FAILED**: The contribute transaction failed
+- **CONTRIBUTED**: Your worker has contributed on chain
+- **CANT_REVEAL**: Your worker cant reveal the proof that it is the owner of the fingerprint of the computed result
+- **REVEALING**: Your worker sent the “reveal\(..\)” transactions \(proof that he is the owner of the fingerprint of the result\)
+- **REVEALED**: Your worker has revealed the proof on chain
+- **REVEAL_FAILED**: The reveal transaction failed
+- **RESULT_UPLOAD_REQUESTED**: Your worker has been called for uploading the result to a remote filesystem
+- **RESULT_UPLOAD_REQUEST_FAILED**: Your worker did not accept to be called for uploading the result
+- **RESULT_UPLOADING**: Your worker is uploading the result
+- **RESULT_UPLOADED**: The result is uploaded \(to an iExec Result Repository or to IPFS\)
+- **RESULT_UPLOAD_FAILED**: The upload of the result failed
+- **COMPLETED**: The whole task is completed meaning the task is finalized. You have been rewarded if you are part of the consensus
+- **REVEAL_TIMEOUT**: Your worker took too long to reveal its proof \(more than 2 period after the consensus\)
+- **WORKER_LOST**: Your worker didn’t ping the iexec-core scheduler for a while. It is considered as out for this task
+- **ABORTED_ON_CONSENSUS_REACHED**: The consensus is reached but you are not part of it
+- **ABORTED_ON_CONTRIBUTION_TIMEOUT**: Your worker took too long to contribute \(7 periods after the purchase of the task\)
+- **FAILED**: Your worker failed to participate to the task
+- **OUT_OF_GAS**: Your worker needs some ETH, please refill its wallet
+- **RECOVERING**: Your worker has been stop, it is starting back from where it stop
 
 ## SGX worker setup
 
@@ -190,4 +190,3 @@ The next step is to install the drivers from Intel for the SGX extension. This c
 ```
 
 That’s it! Now you can register at your scheduler as an SGX compatible worker, and you’ll soon receive requests for SGX jobs.
-

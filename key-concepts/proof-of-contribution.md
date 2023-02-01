@@ -46,8 +46,8 @@ The secure payment layer can be disabled for a private blockchain, or it can als
 
 PoCo describes the succession of contributions that are required to achieve consensus on a given result. Its logic is detailed in two blog articles:
 
-* [PoCo series \#1: Initial PoCo description](https://medium.com/iex-ec/about-trust-and-agents-incentives-4651c138974c)
-* [PoCo series \#3: Updated PoCo description](https://medium.com/iex-ec/poco-series-3-poco-protocole-update-a2c8f8f30126)
+- [PoCo series \#1: Initial PoCo description](https://medium.com/iex-ec/about-trust-and-agents-incentives-4651c138974c)
+- [PoCo series \#3: Updated PoCo description](https://medium.com/iex-ec/poco-series-3-poco-protocole-update-a2c8f8f30126)
 
 The [nominal workflow](https://github.com/iExecBlockchainComputing/iexec-doc/raw/master/techreport/nominalworkflow-ODB.png) is also available in the [technical report section](../help/glossary.md)
 
@@ -55,66 +55,66 @@ Below are the details of the implementations:
 
 1. **Deal**
 
-  [A deal is sealed by the Clerk. ](proof-of-contribution.md#brokering)This marks the beginning of the execution. An event is created to notify the worker pool’s scheduler.
+[A deal is sealed by the Clerk. ](proof-of-contribution.md#brokering)This marks the beginning of the execution. An event is created to notify the worker pool’s scheduler.
 
-  The consensus timer starts when the deal is signed. The corresponding task must be completed before the end of this countdown. Otherwise, the scheduler gets punished by a loss of stake and reputation, and the user reimbursed.
+The consensus timer starts when the deal is signed. The corresponding task must be completed before the end of this countdown. Otherwise, the scheduler gets punished by a loss of stake and reputation, and the user reimbursed.
 
 2. **Initialization**
 
-  The scheduler calls the `initialize` method. Given a deal id and a position in the request order \(within the deal window\), this function initializes the corresponding task and returns the _taskid_.`bytes32 taskid = keccak256(abi.encodePacked(_dealid, idx));`
+The scheduler calls the `initialize` method. Given a deal id and a position in the request order \(within the deal window\), this function initializes the corresponding task and returns the _taskid_.`bytes32 taskid = keccak256(abi.encodePacked(_dealid, idx));`
 
 3. **Authorization signature**
 
-  The scheduler designates workers that participate in this task. The scheduler’s Ethereum wallet signs a message containing the worker’s Ethereum address, the taskid, and \(optionally\) the Ethereum address of the worker's enclave. If the worker doesn't use an enclave, this field must be filled with `address(0)`.
+The scheduler designates workers that participate in this task. The scheduler’s Ethereum wallet signs a message containing the worker’s Ethereum address, the taskid, and \(optionally\) the Ethereum address of the worker's enclave. If the worker doesn't use an enclave, this field must be filled with `address(0)`.
 
-  This Ethereum signature \(authorization\) is sent to the worker through an off-chain channel implemented by the middleware.
+This Ethereum signature \(authorization\) is sent to the worker through an off-chain channel implemented by the middleware.
 
 4. **Task computation**
 
-  Once the authorization is received and verified, the worker computes the requested tasks. Results from this execution are placed in the `/iexec_out` folder. The following values are then computed:
+Once the authorization is received and verified, the worker computes the requested tasks. Results from this execution are placed in the `/iexec_out` folder. The following values are then computed:
 
-  * _bytes32 digest_: a digest \(sha256\) of the result folder.
-  * _bytes32 hash_: the hash of the _digest_, used to produce a consensus
-  * _bytes32 seal_: the salted hash of the _digest_, used to prove a worker’s knew the _digest_ value before it is published. `resultHash == keccak256(abi.encodePacked( taskid, resultDigest))` `resultSeal == keccak256(abi.encodePacked(worker, taskid, resultDigest))`
+- _bytes32 digest_: a digest \(sha256\) of the result folder.
+- _bytes32 hash_: the hash of the _digest_, used to produce a consensus
+- _bytes32 seal_: the salted hash of the _digest_, used to prove a worker’s knew the _digest_ value before it is published. `resultHash == keccak256(abi.encodePacked( taskid, resultDigest))` `resultSeal == keccak256(abi.encodePacked(worker, taskid, resultDigest))`
 
-  In computer science, a deterministic algorithm is an algorithm which, given a particular input, will always produce the same output.
+In computer science, a deterministic algorithm is an algorithm which, given a particular input, will always produce the same output.
 
-  Both the `digest`, the `hash` and the `seal` are automatically computed based on the output of the application. If the output is not entirely deterministic, then the application can specify a deterministic file that should be used for building consensus. In order to do so, the application just has to provide the path to the deterministic file using a specific entry `deterministic-output-path` in `${IEXEC_OUT}/computed.json`.
+Both the `digest`, the `hash` and the `seal` are automatically computed based on the output of the application. If the output is not entirely deterministic, then the application can specify a deterministic file that should be used for building consensus. In order to do so, the application just has to provide the path to the deterministic file using a specific entry `deterministic-output-path` in `${IEXEC_OUT}/computed.json`.
 
-  Alternatively, if the application is used in a doracle context (the results are designed to be processed on-chain by receiver smart-contracts), then the value of this callback must be specified in `${IEXEC_OUT}/computed.json` under the entry `callback-data`.
+Alternatively, if the application is used in a doracle context (the results are designed to be processed on-chain by receiver smart-contracts), then the value of this callback must be specified in `${IEXEC_OUT}/computed.json` under the entry `callback-data`.
 
-  If a TEE was used to produce the result, the post-processing enclave will automatically produce an `enclave-signature` entry that contains the enclave signature \(of the resultHash and resultSeal\). TEE certification of results is transparent to the application developer.
+If a TEE was used to produce the result, the post-processing enclave will automatically produce an `enclave-signature` entry that contains the enclave signature \(of the resultHash and resultSeal\). TEE certification of results is transparent to the application developer.
 
 5. **Contribution**
 
-  Once the execution has been performed, the worker pushes its contribution using the `contribute` method. The contribution contains:
+Once the execution has been performed, the worker pushes its contribution using the `contribute` method. The contribution contains:
 
-  * _bytes32 taskid_
-  * _bytes32 resultHash_
-  * _bytes32 resultSeal_
-  * _address enclaveChallenge_
+- _bytes32 taskid_
+- _bytes32 resultHash_
+- _bytes32 resultSeal_
+- _address enclaveChallenge_
 
-  The address of the enclave \(specified in the scheduler’s authorization\). If no enclave is specified, this parameter should be set to `address(0)`
+The address of the enclave \(specified in the scheduler’s authorization\). If no enclave is specified, this parameter should be set to `address(0)`
 
-  * _bytes enclaveSign_
+- _bytes enclaveSign_
 
-  The enclave signature. This is required if the `enclaveChallenge` is not `address(0)`. Otherwise, it should be set to the empty byte string `0x`
+The enclave signature. This is required if the `enclaveChallenge` is not `address(0)`. Otherwise, it should be set to the empty byte string `0x`
 
-  * _bytes workerpoolSign_
+- _bytes workerpoolSign_
 
-  The signature computed by the scheduler at step 2.
+The signature computed by the scheduler at step 2.
 
 6. **Consensus**
 
-  During the contribution, the consensus is updated and verified. Contributions are possible until the consensus is reached, at which point the contributions are closed. We then enter a 2h reveal phase.
+During the contribution, the consensus is updated and verified. Contributions are possible until the consensus is reached, at which point the contributions are closed. We then enter a 2h reveal phase.
 
 7. **Reveal**
 
-  During the reveal phase, workers that have contributed to the consensus must call the `reveal` method with the `resultDigest`. This verifies that the `resultHash` and `resultSeal` they provided are valid. Failure to reveal is equivalent to a bad contribution, and results in a loss of stake and reputation.
+During the reveal phase, workers that have contributed to the consensus must call the `reveal` method with the `resultDigest`. This verifies that the `resultHash` and `resultSeal` they provided are valid. Failure to reveal is equivalent to a bad contribution, and results in a loss of stake and reputation.
 
 8. **Finalize**
 
-  Once all contributions have been revealed, or at the end of the reveal period if some \(but not all\) reveals are missing, the scheduler must call the `finalize` method. This finalizes the task, rewards good contribution and punishes bad ones. This must be called before the end of the consensus timer.
+Once all contributions have been revealed, or at the end of the reveal period if some \(but not all\) reveals are missing, the scheduler must call the `finalize` method. This finalizes the task, rewards good contribution and punishes bad ones. This must be called before the end of the consensus timer.
 
 ### Staking and Payment
 
@@ -126,27 +126,27 @@ Your account, managed by the `Escrow` part of the `IexecClerk`, separates betwee
 
 `lock`: Moves value from the `balance.stake` to `balance.lock`
 
-* Locks the requester stake for payment
-* Locks the scheduler stake to protect against failed consensus
-* Locks the worker stake when making a contribution
+- Locks the requester stake for payment
+- Locks the scheduler stake to protect against failed consensus
+- Locks the worker stake when making a contribution
 
 `unlock`: Moves value from the `balance.lock` back to the `balance.stake`
 
-* Unlock the requester stake when consensus fails
-* Unlock the scheduler stake when consensus is achieved
-* Unlock the worker stake when they contributed to a successful consensus
+- Unlock the requester stake when consensus fails
+- Unlock the scheduler stake when consensus is achieved
+- Unlock the worker stake when they contributed to a successful consensus
 
 `seize`: Confiscate value from `balance.lock`
 
-* Seize the requester stake when the consensus is achieved \(payment\)
-* Seize the scheduler stake when consensus fails \(send to the reward kitty\)
-* Seize the worker stake when a contribution fails \(redistributed to the other workers in the task\)
+- Seize the requester stake when the consensus is achieved \(payment\)
+- Seize the scheduler stake when consensus fails \(send to the reward kitty\)
+- Seize the worker stake when a contribution fails \(redistributed to the other workers in the task\)
 
 `reward`: Award value to the `balance.stake`
 
-* Reward the scheduler when consensus is achieved
-* Reward the worker when they contributed to a successful consensus
-* Reward the app and dataset owner
+- Reward the scheduler when consensus is achieved
+- Reward the worker when they contributed to a successful consensus
+- Reward the app and dataset owner
 
 The requester payment is composed of 3 parts, one for the worker pool, one for the application and one for the dataset. When a consensus is finalized, the payment is seized from the requester and the application and dataset owners are rewarded accordingly. The worker pool part is put inside the `totalReward`. Stake from the losing workers is also added to the `totalReward`. The scheduler takes a fixed portion of the `totalReward` as defined in the worker pool smart contract \(`schedulerRewardRatioPolicy`\).
 
@@ -158,9 +158,9 @@ The remaining reward is then divided between the successful workers proportional
 
 Parameters of the consensus timer. They express the number of reference timers \(category duration\) that are dedicated to each phase. These settings correspond to a 70%-20%-10% distribution between the contribution phase, the reveal phase and the finalize phase.
 
-* `FINAL_DEADLINE_RATIO` This describes the total duration of the consensus. At the end of this timer the consensus must be finalized. If it is not, the user can make a claim to get a refund.
-* `CONTRIBUTION_DEADLINE_RATIO` This describes the duration of the contribution period. The consensus can finalize before that, but no contribution will be allowed after the timer to ensure enough time is left for the reveal and finalize steps.
-* `REVEAL_DEADLINE_RATIO` This describes the duration of the reveal period. Whenever a contribution triggers a consensus, a reveal period of this duration is reserved for the workers to reveal their contribution. Note that this period will necessarily start before the end of the contribution phase.
+- `FINAL_DEADLINE_RATIO` This describes the total duration of the consensus. At the end of this timer the consensus must be finalized. If it is not, the user can make a claim to get a refund.
+- `CONTRIBUTION_DEADLINE_RATIO` This describes the duration of the contribution period. The consensus can finalize before that, but no contribution will be allowed after the timer to ensure enough time is left for the reveal and finalize steps.
+- `REVEAL_DEADLINE_RATIO` This describes the duration of the reveal period. Whenever a contribution triggers a consensus, a reveal period of this duration is reserved for the workers to reveal their contribution. Note that this period will necessarily start before the end of the contribution phase.
 
 Let's consider a task of category GigaPlus, which reference duration is 1 hour. If the task was submitted at 9:27AM, the contributions must be sent before 4:27PM \(16:27\). Whenever a contribution triggers a consensus, a 2 hours long reveal period will start. Whatever happens, the consensus has to be achieved by 7:27PM \(19:27\).
 
@@ -178,9 +178,9 @@ Percentage of the reward kitty for the scheduler per successful execution. If th
 
 Minimum reward on successful execution \(up to the reward kitty value\).
 
-* If the reward kitty contains 42.0 RLC, the reward is 4.2
-* If the reward kitty contains 5.0 RLC, the reward should be 0.5 but gets raised to 1.0
-* If the reward kitty contains 0.7 RLC, the reward should be 0.07 but gets raised to 0.7 \(the whole kitty\)
+- If the reward kitty contains 42.0 RLC, the reward is 4.2
+- If the reward kitty contains 5.0 RLC, the reward should be 0.5 but gets raised to 1.0
+- If the reward kitty contains 0.7 RLC, the reward should be 0.07 but gets raised to 0.7 \(the whole kitty\)
 
 `reward = kitty.percentage(KITTY_RATIO).max(KITTY_MIN).min(kitty)`
 
@@ -188,25 +188,25 @@ Minimum reward on successful execution \(up to the reward kitty value\).
 
 Let's consider a worker pool with the policies `workerStakeRatioPolicy = 35%` and `workerStakeRatioPolicy = 5%`.
 
-* A requester offers `20 RLC` to run a task. The task is free, but it uses a dataset that costs `1 RLC`. The requester locks `21 RLC` and the scheduler `30% * 20 = 6 RLC`. The trust objective is `99%` \(`trust = 100`\)
-* 3 workers contribute:
-  * The first one \(`score = 12 → power = 3`\) contributes `17`. It has to lock `7 RLC` \(35% of the `20 RLC` awarded to the worker pool\).
-  * The second worker \(`score = 100 → power = 32`\) contributes `42`. It also locks `7 RLC`.
-  * The third worker \(`score = 300 → power = 99`\) contributes `42`. It also locks `7 RLC`.
-* After the third contribution, the value `42` has reached a `99.87%` likelihood. Consensus is achieved and the two workers who contributed toward `42` have to reveal.
-* After both workers reveal, the scheduler finalizes the task:
-  * The requester locked value of `21 RLC` is seized.
-  * The dataset owner gets `1 RLC` for the use of its dataset.
-  * Stake from the scheduler is unlocked.
-  * Stakes from workers 2 and 3 are also unlocked.
-  * The first worker stake is seized, and it loses a third of its score. The corresponding `7 RLC` are added to the `totalReward`.
-  * We now have `totalReward = 27 RLC`:
-    * We save 5% for the scheduler, `workersReward = 95% * 27 = 25.65 RLC`
-    * Worker 2 has weight `log2(32) = 5` and worker 3 has a weight `log2(99) = 6`. Total weight is `5+6=11`
-    * Worker 2 takes `25.65 * 5/11 = 11.659090909 RLC`
-    * Worker 3 takes `25.65 * 6/11 = 13.990909090 RLC`
-    * Scheduler takes the remaining `1.350000001 RLC`
-  * If the reward kitty is not empty, the scheduler also takes a part of it.
+- A requester offers `20 RLC` to run a task. The task is free, but it uses a dataset that costs `1 RLC`. The requester locks `21 RLC` and the scheduler `30% * 20 = 6 RLC`. The trust objective is `99%` \(`trust = 100`\)
+- 3 workers contribute:
+  - The first one \(`score = 12 → power = 3`\) contributes `17`. It has to lock `7 RLC` \(35% of the `20 RLC` awarded to the worker pool\).
+  - The second worker \(`score = 100 → power = 32`\) contributes `42`. It also locks `7 RLC`.
+  - The third worker \(`score = 300 → power = 99`\) contributes `42`. It also locks `7 RLC`.
+- After the third contribution, the value `42` has reached a `99.87%` likelihood. Consensus is achieved and the two workers who contributed toward `42` have to reveal.
+- After both workers reveal, the scheduler finalizes the task:
+  - The requester locked value of `21 RLC` is seized.
+  - The dataset owner gets `1 RLC` for the use of its dataset.
+  - Stake from the scheduler is unlocked.
+  - Stakes from workers 2 and 3 are also unlocked.
+  - The first worker stake is seized, and it loses a third of its score. The corresponding `7 RLC` are added to the `totalReward`.
+  - We now have `totalReward = 27 RLC`:
+    - We save 5% for the scheduler, `workersReward = 95% * 27 = 25.65 RLC`
+    - Worker 2 has weight `log2(32) = 5` and worker 3 has a weight `log2(99) = 6`. Total weight is `5+6=11`
+    - Worker 2 takes `25.65 * 5/11 = 11.659090909 RLC`
+    - Worker 3 takes `25.65 * 6/11 = 13.990909090 RLC`
+    - Scheduler takes the remaining `1.350000001 RLC`
+  - If the reward kitty is not empty, the scheduler also takes a part of it.
 
 ## Replication & Trust
 
@@ -225,13 +225,13 @@ Based on [\[Sarmenta2002\]](proof-of-contribution.md#requiring-a-trust-level) de
 The trust level is expressed, on-chain, by an integer `trust` such that `threshold = 1 - 1 / trust`.
 
 | **Trust** | **PoCo enforced confidence threshold** |
-| :--- | :--- |
-| 0 | 0% |
-| 1 | 0% |
-| 2 | 50% |
-| 100 | 99% |
-| 10000 | 99.99% |
-| 1000000 | 99.9999% |
+| :-------- | :------------------------------------- |
+| 0         | 0%                                     |
+| 1         | 0%                                     |
+| 2         | 50%                                    |
+| 100       | 99%                                    |
+| 10000     | 99.99%                                 |
+| 1000000   | 99.9999%                               |
 
 ### Limitation
 
@@ -240,12 +240,10 @@ This consensus mechanism requires replicable applications. Non-deterministic app
 #### References
 
 | \[Sarmenta2002\] | _\(1, 2\)_ Luis F.G.Sarmenta. Sabotage-tolerance mechanisms for volunteer computing systems. 2002. Future Generation Computer Systems, 18\(4\), 561–572 [Sarmenta2002 PDF](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.67.2962&rep=rep1&type=pdf) |
-| :--- | :--- |
-
+| :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 | \[Trust2018\] | _\(1, 2, 3\)_ Trust management in the Proof of Contribution protocol. 2018. Technical report. [Trust2018 PDF](https://github.com/iExecBlockchainComputing/iexec-doc/raw/master/techreport/iExec_PoCo_and_trustmanagement_v1.pdf) |
-| :--- | :--- |
-
+| :------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ## Brokering
 
@@ -259,7 +257,7 @@ This option relies on the use of cryptographic signatures for order authenticati
 
 An overview of the iExecODB \(Open Decentralized Brokering\) is available in this blog article:
 
-* [PoCo series \#5: Open decentralized brokering on the iExec platform](https://medium.com/iex-ec/poco-series-5-open-decentralized-brokering-on-the-iexec-platform-67b266e330d8)
+- [PoCo series \#5: Open decentralized brokering on the iExec platform](https://medium.com/iex-ec/poco-series-5-open-decentralized-brokering-on-the-iexec-platform-67b266e330d8)
 
 ### Orders structure
 
@@ -284,15 +282,15 @@ struct AppOrder
 }
 ```
 
-* `app` Address of the smartcontract describing the application. Must be registered in the AppRegistry.
-* `appprice` Price of a run of the application.
-* `volume` Number of run authorized \(by this order\).
-* `tag` Special requirements for the application \(see [tag](https://docs.iex.ec/poco.html#tag)\)).
-* `datasetrestrict` Matching restrictions. Dataset or group of datasets that can be matched. Let null value to disable.
-* `workerpoolrestrict` Matching restrictions. Workerpool or group of worker pools that can be matched. Let null value to disable.
-* `requesterrestrict` Matching restrictions. Requester or group of requesters that can be matched. Let null value to disable.
-* `salt` A random value to ensure order uniqueness.
-* `sign` cryptographic signature of the order, the smart contract is securely linked to application owner.
+- `app` Address of the smartcontract describing the application. Must be registered in the AppRegistry.
+- `appprice` Price of a run of the application.
+- `volume` Number of run authorized \(by this order\).
+- `tag` Special requirements for the application \(see [tag](https://docs.iex.ec/poco.html#tag)\)).
+- `datasetrestrict` Matching restrictions. Dataset or group of datasets that can be matched. Let null value to disable.
+- `workerpoolrestrict` Matching restrictions. Workerpool or group of worker pools that can be matched. Let null value to disable.
+- `requesterrestrict` Matching restrictions. Requester or group of requesters that can be matched. Let null value to disable.
+- `salt` A random value to ensure order uniqueness.
+- `sign` cryptographic signature of the order, the smart contract is securely linked to application owner.
 
 ### **DatasetOrder**
 
@@ -311,15 +309,15 @@ struct DatasetOrder
 }
 ```
 
-* `dataset` Address of the smartcontract describing the dataset. Must be registered in the DatasetRegistry.
-* `datasetprice` Price of a use of the dataset.
-* `volume` Number of authorized uses \(by this order\).
-* `tag` Special requirements of the dataset \(see [tag](https://docs.iex.ec/poco.html#tag)\)).
-* `apprestrict` Matching restrictions. App or group of apps that can be matched. Let null value to disable.
-* `workerpoolrestrict` Matching restrictions. Workerpool or group of workerpools that can be matched. Let null value to disable.
-* `requesterrestrict` Matching restrictions. Requester or group of requesters that can be matched. Let null value to disable.
-* `salt` A random value to ensure order uniqueness.
-* `sign` cryptographic signature of the order, the smart contract is securely linked to dataset owner.
+- `dataset` Address of the smartcontract describing the dataset. Must be registered in the DatasetRegistry.
+- `datasetprice` Price of a use of the dataset.
+- `volume` Number of authorized uses \(by this order\).
+- `tag` Special requirements of the dataset \(see [tag](https://docs.iex.ec/poco.html#tag)\)).
+- `apprestrict` Matching restrictions. App or group of apps that can be matched. Let null value to disable.
+- `workerpoolrestrict` Matching restrictions. Workerpool or group of workerpools that can be matched. Let null value to disable.
+- `requesterrestrict` Matching restrictions. Requester or group of requesters that can be matched. Let null value to disable.
+- `salt` A random value to ensure order uniqueness.
+- `sign` cryptographic signature of the order, the smart contract is securely linked to dataset owner.
 
 ### **WorkerpoolOrder**
 
@@ -340,17 +338,17 @@ struct WorkerpoolOrder
 }
 ```
 
-* `workerpool` Address of the smartcontract describing the worker pool. Must be registered in the WorkerpoolRegistry.
-* `workerpoolprice` Price of an execution on the worker pool.
-* `volume` Number of executions proposed \(by this order\).
-* `tag` Special features proposed by the workerpool \(see [tag](https://docs.iex.ec/poco.html#tag)\)).
-* `category` Order category.
-* `trust` Trust level used to consolidated results.
-* `apprestrict` Matching restrictions. App or group of apps that can be matched. Let null value to disable.
-* `datasetrestrict` Matching restrictions. Dataset or group of datasets that can be matched. Let null value to disable.
-* `requesterrestrict` Matching restrictions. Requester or group of requesters that can be matched. Let null value to disable.
-* `salt` A random value to ensure order uniqueness.
-* `sign` cryptographic signature of the order, the smart contract is securely linked to worker pool manager.
+- `workerpool` Address of the smartcontract describing the worker pool. Must be registered in the WorkerpoolRegistry.
+- `workerpoolprice` Price of an execution on the worker pool.
+- `volume` Number of executions proposed \(by this order\).
+- `tag` Special features proposed by the workerpool \(see [tag](https://docs.iex.ec/poco.html#tag)\)).
+- `category` Order category.
+- `trust` Trust level used to consolidated results.
+- `apprestrict` Matching restrictions. App or group of apps that can be matched. Let null value to disable.
+- `datasetrestrict` Matching restrictions. Dataset or group of datasets that can be matched. Let null value to disable.
+- `requesterrestrict` Matching restrictions. Requester or group of requesters that can be matched. Let null value to disable.
+- `salt` A random value to ensure order uniqueness.
+- `sign` cryptographic signature of the order, the smart contract is securely linked to worker pool manager.
 
 ### **RequesterOrder**
 
@@ -376,22 +374,22 @@ struct RequestOrder
 }
 ```
 
-* `app` Address of the smartcontract describing the application. Must be registered in the AppRegistry.
-* `appmaxprice` Maximum price allowed by the requester for the payment of the application.
-* `dataset` Address of the smartcontract describing the dataset. Must be registered in the DatasetRegistry. Null if no dataset is required.
-* `datasetmaxprice` Maximum price allowed by the requester for the payment of the dataset \(if any\).
-* `workerpool` Matching restrictions. Worker pool or group of worker pools that are allowed to run tasks from this order. Leave null value to disable check.
-* `workerpoolmaxprice` Maximum price allowed by the requester for the payment of the execution \(scheduler + workers\).
-* `requester` Address of the requester \(paying for the executions\).
-* `volume` Number of tasks that are part of this order \(size of the Bag Of Task\).
-* `tag` Special features required by the requester \(see [tag](https://docs.iex.ec/poco.html#tag)\)).
-* `category` tasks category required.
-* `trust` Minimum trust level required by the requester.
-* `beneficiary` Address of the beneficiary of the computation. Used to require output data encryption.
-* `callback` Address to callback with the results \(following EIP1154 interface\). Let empty \(null\) if no callback is required. Learn more about the callback mechanism.
-* `params` Parameters of the application \(application specific\).
-* `salt` A random value to ensure order uniqueness.
-* `sign` Cryptographic signature of the order, the smart contract is securely linked to requester.
+- `app` Address of the smartcontract describing the application. Must be registered in the AppRegistry.
+- `appmaxprice` Maximum price allowed by the requester for the payment of the application.
+- `dataset` Address of the smartcontract describing the dataset. Must be registered in the DatasetRegistry. Null if no dataset is required.
+- `datasetmaxprice` Maximum price allowed by the requester for the payment of the dataset \(if any\).
+- `workerpool` Matching restrictions. Worker pool or group of worker pools that are allowed to run tasks from this order. Leave null value to disable check.
+- `workerpoolmaxprice` Maximum price allowed by the requester for the payment of the execution \(scheduler + workers\).
+- `requester` Address of the requester \(paying for the executions\).
+- `volume` Number of tasks that are part of this order \(size of the Bag Of Task\).
+- `tag` Special features required by the requester \(see [tag](https://docs.iex.ec/poco.html#tag)\)).
+- `category` tasks category required.
+- `trust` Minimum trust level required by the requester.
+- `beneficiary` Address of the beneficiary of the computation. Used to require output data encryption.
+- `callback` Address to callback with the results \(following EIP1154 interface\). Let empty \(null\) if no callback is required. Learn more about the callback mechanism.
+- `params` Parameters of the application \(application specific\).
+- `salt` A random value to ensure order uniqueness.
+- `sign` Cryptographic signature of the order, the smart contract is securely linked to requester.
 
 ## Tag
 
@@ -399,15 +397,15 @@ The tag specifies the need or the availability of features that go beyond the sp
 
 In V3, tags are 32 bytes \(256 bits\) long array where each bit corresponds to a feature.
 
-| **Value** | **Description** |
-| :--- | :--- |
+| **Value**                                                            | **Description**          |
+| :------------------------------------------------------------------- | :----------------------- |
 | `0x0000000000000000000000000000000000000000000000000000000000000001` | TEE \(physical enclave\) |
-| `0x0000000000000000000000000000000000000000000000000000000000000002` | — |
-| `0x0000000000000000000000000000000000000000000000000000000000000004` | — |
-| `0x0000000000000000000000000000000000000000000000000000000000000008` | — |
-| `0x0000000000000000000000000000000000000000000000000000000000000010` | — |
-| … | … |
-| `0x8000000000000000000000000000000000000000000000000000000000000000` | — |
+| `0x0000000000000000000000000000000000000000000000000000000000000002` | —                        |
+| `0x0000000000000000000000000000000000000000000000000000000000000004` | —                        |
+| `0x0000000000000000000000000000000000000000000000000000000000000008` | —                        |
+| `0x0000000000000000000000000000000000000000000000000000000000000010` | —                        |
+| …                                                                    | …                        |
+| `0x8000000000000000000000000000000000000000000000000000000000000000` | —                        |
 
 For orders matching, the worker pool order must enable all bits that are enabled in any of the app order, dataset order and requester order. Meaning that if the app order tag is `0x12 = 0x10 | 0x02`, the dataset order is `0x81 = 0x80 | 0x01` and the requester order is `0x03 = 0x02 | 0x01`, then the worker pool order must, at least, have a tag `0x93 = 0x80 | 0x10 | 0x02 | 0x01`.
 
@@ -419,72 +417,72 @@ Orders compatibility required:
 
 1. The worker pool’s category and the requester’s category must be equal.
 
-  `require(_requestorder.category == _workerpoolorder.category);`
+`require(_requestorder.category == _workerpoolorder.category);`
 
 2. The worker pool’s trust must be greater or equal to the requester’s trust.
 
-  `require(_requestorder.trust == _workerpoolorder.trust);`
+`require(_requestorder.trust == _workerpoolorder.trust);`
 
 3. The app’s, dataset’s and worker pool’s prices must be less or equal to the requester’s appmaxprice, datasetmaxprice and workerpoolmaxprice.
 
-  `require(_requestorder.appmaxprice >= _apporder.appprice);`
-  `require(_requestorder.datasetmaxprice >= _datasetorder.datasetprice);`
-  `require(_requestorder.workerpoolmaxprice >= _workerpoolorder.workerpoolprice);`
+`require(_requestorder.appmaxprice >= _apporder.appprice);`
+`require(_requestorder.datasetmaxprice >= _datasetorder.datasetprice);`
+`require(_requestorder.workerpoolmaxprice >= _workerpoolorder.workerpoolprice);`
 
 4. The worker pool’s tag must enable all the features required by the app’s tag, the dataset’s tag and the worker pool’s tag.
 
-  `require(tag & ~_workerpoolorder.tag == 0x0);`
-  `require(tag & ~_workerpoolorder.tag == 0x0);`
+`require(tag & ~_workerpoolorder.tag == 0x0);`
+`require(tag & ~_workerpoolorder.tag == 0x0);`
 
 5. If TEE tag is required, then application must be TEE compatible.
 
-  `require((tag ^ _apporder.tag)[31] & 0x01 == 0x0);`
+`require((tag ^ _apporder.tag)[31] & 0x01 == 0x0);`
 
 6. The app provided by the apporder must match the one required by the requester.
 
-  `require(_requestorder.app == _apporder.app);`
+`require(_requestorder.app == _apporder.app);`
 
 7. The dataset provided by the datasetorder must match the one required by the requester.
 
-  `require(_requestorder.dataset == _datasetorder.dataset);`
+`require(_requestorder.dataset == _datasetorder.dataset);`
 
 8. If the requester specified a worker pool restriction, the worker pool must match this value or be part of the corresponding group.
 
-  `require(_checkIdentity(_requestorder.workerpool, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));`
+`require(_checkIdentity(_requestorder.workerpool, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));`
 
 8. The application must fit the dataset’s and the worker pool’s application restrictions \(if any\).
 
-  `require(_checkIdentity(_datasetorder.apprestrict, _apporder.app, GROUPMEMBER_PURPOSE));`
-  `require(_checkIdentity(_workerpoolorder.apprestrict, _apporder.app, GROUPMEMBER_PURPOSE));`
+`require(_checkIdentity(_datasetorder.apprestrict, _apporder.app, GROUPMEMBER_PURPOSE));`
+`require(_checkIdentity(_workerpoolorder.apprestrict, _apporder.app, GROUPMEMBER_PURPOSE));`
 
 9. The dataset must fit the application’s and the worker pool’s restrictions \(if any\).
 
-  `require(_checkIdentity(_apporder.datasetrestrict, _datasetorder.dataset, GROUPMEMBER_PURPOSE));`
-  `require(_checkIdentity(_workerpoolorder.datasetrestrict, _datasetorder.dataset, GROUPMEMBER_PURPOSE));`
+`require(_checkIdentity(_apporder.datasetrestrict, _datasetorder.dataset, GROUPMEMBER_PURPOSE));`
+`require(_checkIdentity(_workerpoolorder.datasetrestrict, _datasetorder.dataset, GROUPMEMBER_PURPOSE));`
 
 10. The worker pool must fit the application’s and the dataset’s restrictions \(if any\).
 
-  `require(_checkIdentity(_apporder.workerpoolrestrict, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));`
-  `require(_checkIdentity(_datasetorder.workerpoolrestrict, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));`
+`require(_checkIdentity(_apporder.workerpoolrestrict, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));`
+`require(_checkIdentity(_datasetorder.workerpoolrestrict, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));`
 
 11. The requester must fit the application’s, the dataset’s and the worker pool’s restrictions \(if any\).
 
-  `require(_checkIdentity(_apporder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));`
-  `require(_checkIdentity(_datasetorder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));`
-  `require(_checkIdentity(_workerpoolorder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));`
+`require(_checkIdentity(_apporder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));`
+`require(_checkIdentity(_datasetorder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));`
+`require(_checkIdentity(_workerpoolorder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));`
 
 13. All resources must be registered in the corresponding registries.
 
-  `require(m_appregistry.isRegistered(_apporder.app));`
-  `require(m_datasetregistry.isRegistered(_datasetorder.dataset));`
-  `require(m_workerpoolregistry.isRegistered(_workerpoolorder.workerpool));`
+`require(m_appregistry.isRegistered(_apporder.app));`
+`require(m_datasetregistry.isRegistered(_datasetorder.dataset));`
+`require(m_workerpoolregistry.isRegistered(_workerpoolorder.workerpool));`
 
 14. All orders must be signed or presigned.
 
-  `require(_checkPresignatureOrSignature(App(_apporder.app).m_owner(), _apporder.hash(), _apporder.sign));`
-  `require(_checkPresignatureOrSignature(Dataset(_datasetorder.dataset).m_owner(), _datasetorder.hash(), _datasetorder.sign));`
-  `require(_checkPresignatureOrSignature(Workerpool(_workerpoolorder.workerpool).m_owner(), _workerpoolorder.hash(), _workerpoolorder.sign));`
-  `require(_checkPresignatureOrSignature(_requestorder.requester, _requestorder.hash(), _requestorder.sign));`
+`require(_checkPresignatureOrSignature(App(_apporder.app).m_owner(), _apporder.hash(), _apporder.sign));`
+`require(_checkPresignatureOrSignature(Dataset(_datasetorder.dataset).m_owner(), _datasetorder.hash(), _datasetorder.sign));`
+`require(_checkPresignatureOrSignature(Workerpool(_workerpoolorder.workerpool).m_owner(), _workerpoolorder.hash(), _workerpoolorder.sign));`
+`require(_checkPresignatureOrSignature(_requestorder.requester, _requestorder.hash(), _requestorder.sign));`
 
 15. The deal produced must contain at least one task.
 16. Requester and worker pool must be able to stake.
@@ -531,8 +529,8 @@ Whenever the scheduler proposes to certify a result using the PoCo’s trust lay
 
 A scheduler could therefore emit two kinds of workerpoolorder:
 
-* A workerpoolorder offering execution with the PoCo’s trust layer disabled \(`trust = 0`\) and accepting all applications \(`apprestrict = 0`\)
-* A workerpoolorder offering secure execution of whitelisted tasks. The application whitelist would use the `GroupInterface` to be verified by the iExec Clerk. This group could either be managed by the scheduler or by a certification authority that would check application's determinism.
+- A workerpoolorder offering execution with the PoCo’s trust layer disabled \(`trust = 0`\) and accepting all applications \(`apprestrict = 0`\)
+- A workerpoolorder offering secure execution of whitelisted tasks. The application whitelist would use the `GroupInterface` to be verified by the iExec Clerk. This group could either be managed by the scheduler or by a certification authority that would check application's determinism.
 
 ## Other technical choices
 
@@ -571,8 +569,7 @@ As described in the protocol parameters section, this reward is `reward = kitty.
 ### References
 
 | \[EIP1154\] | _\(_[_1_](https://docs.iex.ec/poco.html#id8)_,_ [_2_](https://docs.iex.ec/poco.html#id9)_,_ [_3_](https://docs.iex.ec/poco.html#id10)_\)_ [EIP 1154: Oracle Interface](https://eips.ethereum.org/EIPS/eip-1154) |
-| :--- | :--- |
-
+| :---------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 | [\[\*\]](proof-of-contribution.md#other-technical-choices) | value susceptible to change. |
-| :--- | :--- |
+| :--------------------------------------------------------- | :--------------------------- |
