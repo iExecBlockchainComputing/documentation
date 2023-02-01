@@ -357,4 +357,7 @@ The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables associa
 
 ## Next step?
 
-In this tutorial, you learned how to leverage your application with the power of Trusted Execution Environments using iExec. But according to your use case, you may need to use some confidential data to get the full potential of the **Confidential Computing** paradigm. Check out the next chapter to see how.
+In this tutorial, you learned how to leverage your application with the power of Trusted Execution Environments using iExec. But according to your use case, you may need to use some confidential data to get the full potential of the **Confidential Computing** paradigm. Check out next chapters to see how:
+
+- [Access confidential assets from your app](access-confidential-assets.md)
+- [Protect the result](end-to-end-encryption.md)
