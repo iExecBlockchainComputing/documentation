@@ -410,7 +410,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
     "multiaddr": "docker.io/username/tee-dataset-app:1.0.0", // app image
     "checksum": "0x15bed530c76f1f3b05b2db8d44c417128b8934899bc85804a655a01b441bfa78", // image digest
     "mrenclave": {
-      "provider": "SCONE", // TEE provider (keep default value)
+      "framework": "SCONE", // TEE framework (keep default value)
       "version": "v5", // Scone version (keep default value)
       "entrypoint": "node /app/app.js" OR "python3 /app/app.py", // your app image entrypoint
       "heapSize": 1073741824, // heap size in bytes (1GB)
