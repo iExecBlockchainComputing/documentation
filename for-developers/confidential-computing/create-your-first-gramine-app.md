@@ -99,12 +99,12 @@ RUN /finalize-app.sh
 Build the docker image.
 
 ```bash
-docker build . --tag tee-hello-world:1.0.0
+docker build . --tag <docker-hub-user>/tee-gramine-hello-world:1.0.0
 ```
 
 Push your image on DockerHub:
 ```bash
-docker.io/<username>/tee-hello-world:1.0.0
+docker push <docker-hub-user>/tee-gramine-hello-world:1.0.0
 ```
 
 Congratulations, you just built your Gramine TEE application.
@@ -128,17 +128,17 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 {
   ...
   "app": {
-    "owner": "0x<yourAddress>",
-    "name": "tee-hello-world",
+    "owner": "<your-wallet-address>", // starts with 0x
+    "name": "tee-gramine-hello-world",
     "type": "DOCKER",
-    "multiaddr": "docker.io/<username>/tee-hello-world:1.0.0", // update it with your own DockerHub username
-    "checksum": "0x<checksum>", // update it with your own image digest
+    "multiaddr": "docker.io/<docker-hub-user>/tee-gramine-hello-world:1.0.0", // update it with your own DockerHub username
+    "checksum": "<checksum>", // starts with 0x, update it with your own image digest
     "mrenclave": {
       "framework": "GRAMINE",
       "version": "v1",
       "entrypoint": "/workplace /app/app.js" OR "/workplace/app/app.py", // update it with your own image entrypoint
       "heapSize": 1073741824,
-      "fingerprint": "<mrenclave>" // see how to retrieve it below
+      "fingerprint": "<mrenclave>" // no 0x prefix, see how to retrieve it below
     }
   },
   ...
@@ -149,7 +149,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 Run your Gramine TEE image with `sps=unset` to get the enclave fingerprint (mrenclave):
 
 ```bash
-docker run --rm -e sps=unset <username>/tee-hello-world:1.0.0
+docker run --rm -e sps=unset <docker-hub-user>/tee-gramine-hello-world:1.0.0
 ```
 
 The run is expected to fail but should look for a `mr_enclave` field in your logs:
