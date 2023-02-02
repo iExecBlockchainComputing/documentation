@@ -199,12 +199,15 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 ```
 
 {% hint style="info" %}
+See [Create your identity on the blockchain](../quick-start-for-developers.md#create-your-identity-on-the-blockchain) to retrieve `<your-wallet-address>` value.
+
+See [Deploy your app on iExec](../your-first-app.md#deploy-your-app-on-iexec) to retrieve your image `<checksum>`.
+
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
 
 ```bash
 docker run --rm -e SCONE_HASH=1 <docker-hub-user>/tee-scone-hello-world:1.0.0-debug
 ```
-
 {% endhint %}
 
 Deploy the app with the standard command:
