@@ -19,6 +19,14 @@ After understanding the fundamentals of Confidential Computing and explaining th
 
 The short answer is: the application is protected by taking a snapshot of the file system's state. The TEE image will use the [fspf](intel-sgx-technology.md#fspf-file-system-protection-file) feature of SCONE to authenticate the file system directories that would be used by the application \(/bin, /lib...\) as well as the code itself. It takes a snapshot of their state that will be later shared with the worker \(via the Blockchain\) to make sure everything is under control. If we change one bit of one of the authenticated files, the file system's state changes completely and the enclave will refuse to boot since it considers it as a possible attack.
 
+In order to follow this tutorial, you will need to register a [free SCONE Account](https://scontain.com) to access SCONE build tools and curated images from the [SCONE registry](https://gitlab.scontain.com/).
+Once your account is activated, you need to [request access to the SCONE build tools for iExec](mailto:info@scontain.com?cc=scone-access@iex.ec&subject=iExec%20Build%20Tools&body=Hi%20SCONE%20Team%2C%0D%0A%0D%0AI%20would%20like%20to%20get%20access%20to%20the%20SCONE%20build%20tools%20for%20iExec:%0A%20-%20scone-production/iexec-sconify-image%0A%20-%20sconecuratedimages%20%28all%20curated%20images%20such%20as%20nodejs%2C%20python...%29%0A%0AMy%20DockerID%20is%20...%0A%0ABest%20regards%0A%0A...).
+
+```bash
+# when your account is ready, run `docker login` to connect the SCONE registry
+docker login registry.scontain.com:5050
+```
+
 ## Prepare your application
 
 Before going further, your `<docker-hub-user>/hello-world:1.0.0` image built previously is required.
@@ -49,15 +57,6 @@ SCONE provides TEE conversion tooling (Python, Java, ..) plus eventually TEE bas
 {% endhint %}
 
 ## Build the TEE docker image
-
-You will need to register a [free SCONE Account](https://scontain.com) to access SCONE build tools and curated images from the [SCONE registry](https://gitlab.scontain.com/).
-
-Once your account is activated, you need to [request access to the SCONE build tools for iExec](mailto:info@scontain.com?cc=scone-access@iex.ec&subject=iExec%20Build%20Tools&body=Hi%20SCONE%20Team%2C%0D%0A%0D%0AI%20would%20like%20to%20get%20access%20to%20the%20SCONE%20build%20tools%20for%20iExec:%0A%20-%20scone-production/iexec-sconify-image%0A%20-%20sconecuratedimages%20%28all%20curated%20images%20such%20as%20nodejs%2C%20python...%29%0A%0AMy%20DockerID%20is%20...%0A%0ABest%20regards%0A%0A...).
-
-```bash
-# when your account is ready, run `docker login` to connect the SCONE registry
-docker login registry.scontain.com:5050
-```
 
 We will use the following script to wrap the sconification process, copy the `sconify.sh` script in the current directory:
 
