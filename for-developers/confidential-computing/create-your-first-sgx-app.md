@@ -21,7 +21,10 @@ The short answer is: the application is protected by taking a snapshot of the fi
 
 ## Prepare your application
 
-Create a directory tree for your application in `~/iexec-projects/`.
+For this tutorial, you will start from the end of [Your first application](../your-first-app.md) tutorial and your `<dockerusername>/my-hello-world:1.0.0` OCI image.
+You can reuse the same directory tree or create a new one.
+
+To create a new directory tree for your application, execute the following commands in `~/iexec-projects/`.
 
 ```bash
 cd ~/iexec-projects
@@ -169,11 +172,8 @@ ENTRYPOINT="node /app/app.js"
 # declare an image name
 IMG_NAME=tee-hello-world
 
-IMG_FROM=${IMG_NAME}:temp-non-tee
+IMG_FROM=<dockerusername>/my-hello-world:1.0.0
 IMG_TO=${IMG_NAME}:tee-debug
-
-# build the regular non-TEE image
-docker build . -t ${IMG_FROM}
 
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
@@ -212,11 +212,8 @@ ENTRYPOINT="python3 /app/app.py"
 # declare an image name
 IMG_NAME=tee-hello-world
 
-IMG_FROM=${IMG_NAME}:temp-non-tee
+IMG_FROM=<dockerusername>/my-hello-world:1.0.0
 IMG_TO=${IMG_NAME}:tee-debug
-
-# build the regular non-TEE image
-docker build . -t ${IMG_FROM}
 
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
