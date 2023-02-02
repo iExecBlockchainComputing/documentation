@@ -1,7 +1,7 @@
 # Choose your TEE framework
 
 {% hint style="warning" %}
-Please make sure you have already checked the [Quick Start](../quick-start-for-developers.md) and [Build your first application](../your-first-app.md) tutorials before building your trusted application on iExec.
+Before going any further, make sure you managed to [Build your first application](../your-first-app.md).
 {% endhint %}
 
 After understanding the fundamentals of Confidential Computing and explaining the technologies behind it, it is time to roll up our sleeves and get hands-on with [enclaves](intel-sgx-technology.md#enclave). In this guide, we will focus on protecting an application - that is already compatible with the iExec platform - using SGX, and without changing the source code. That means we will use the same code we [previously](../your-first-app.md#build-your-app) deployed for a basic iExec application.

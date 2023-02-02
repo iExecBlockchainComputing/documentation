@@ -1,5 +1,9 @@
 # Build a Gramine application
 
+{% hint style="warning" %}
+Before going any further, make sure you managed to [Build your first application](../your-first-app.md).
+{% endhint %}
+
 {% hint style="success" %}
 **Prerequisites**
 
