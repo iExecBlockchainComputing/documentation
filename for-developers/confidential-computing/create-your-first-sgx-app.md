@@ -185,13 +185,13 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
     "name": "tee-scone-hello-world", // application name
     "type": "DOCKER",
     "multiaddr": "docker.io/<docker-hub-user>/tee-scone-hello-world:1.0.0-debug", // app image
-    "checksum": "0x15bed530c76f1f3b05b2db8d44c417128b8934899bc85804a655a01b441bfa78", // image digest
+    "checksum": "<checksum>", // starts with 0x, update it with your own image digest
     "mrenclave": {
       "framework": "SCONE", // TEE framework (keep default value)
       "version": "v5", // Scone version (keep default value)
-      "entrypoint": "node /app/app.js" OR "python3 /app/app.py", // your app image entrypoint
-      "heapSize": 1073741824, // heap size in bytes (1GB)
-      "fingerprint": "eca3ace86f1e8a5c47123c8fd271319e9eb25356803d36666dc620f30365c0c1" // fingerprint of the enclave code (mrenclave), see how to retrieve it below
+      "entrypoint": "node /app/app.js" OR "python3 /app/app.py", // update it with your own image entrypoint
+      "heapSize": 1073741824, // heap size in bytes, update it with --heap option value used in sconify.sh script during TEE image build
+      "fingerprint": "<mrenclave>" // fingerprint of the enclave code (mrenclave), without 0x prefix, see how to retrieve it below
     }
   },
   ...
