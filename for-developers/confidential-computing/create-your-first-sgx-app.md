@@ -35,117 +35,17 @@ touch Dockerfile
 touch sconify.sh
 ```
 
-**Copy the following content** in `src/` .
+If you start from a new firectory tree, you will need to replay the following steps from [Build your first application](../your-first-app.md):
 
-{% tabs %}
-{% tab title="JavaScript" %}
-{% code title="src/app.js" %}
-
-```javascript
-const fsPromises = require("fs").promises;
-const figlet = require("figlet");
-
-(async () => {
-  try {
-    const iexecOut = process.env.IEXEC_OUT;
-    // Do whatever you want (let's write hello world here)
-    const message = process.argv.length > 2 ? process.argv[2] : "World";
-
-    const text = figlet.textSync(`Hello, ${message}!`); // Let's add some art for e.g.
-    console.log(text);
-    // Append some results in /iexec_out/
-    await fsPromises.writeFile(`${iexecOut}/result.txt`, text);
-    // Declare everything is computed
-    const computedJsonObj = {
-      "deterministic-output-path": `${iexecOut}/result.txt`,
-    };
-    await fsPromises.writeFile(
-      `${iexecOut}/computed.json`,
-      JSON.stringify(computedJsonObj)
-    );
-  } catch (e) {
-    console.log(e);
-    process.exit(1);
-  }
-})();
-```
-
-{% endcode %}
-{% endtab %}
-
-{% tab title="Python" %}
-{% code title="src/app.py" %}
-
-```python
-import os
-import sys
-import json
-from pyfiglet import Figlet
-
-iexec_out = os.environ['IEXEC_OUT']
-
-# Do whatever you want (let's write hello world here)
-text = 'Hello, {}!'.format(sys.argv[1] if len(sys.argv) > 1 else "World")
-text = Figlet().renderText(text) # Let's add some art for e.g.
-print(text)
-
-# Append some results in /iexec_out/
-with open(iexec_out + '/result.txt', 'w+') as fout:
-    fout.write(text)
-
-# Declare everything is computed
-with open(iexec_out + '/computed.json', 'w+') as f:
-    json.dump({ "deterministic-output-path" : iexec_out + '/result.txt' }, f)
-```
-
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+- [Write the app](../your-first-app.md#write-the-app) Javascript or Python source code in `src/`
+- [Dockerize your app](../your-first-app#dockerize-your-app)
+- [Push your app to Dockerhub](../your-first-app#push-your-app-to-dockerhub)
 
 As we mentioned earlier, the advantage of using **SCONE** is the ability to make the application **Intel® SGX-enabled** without changing the source code. The only thing we are going to do is rebuilding the app using the Trusted-Execution-Environment tooling provided by **SCONE**.
 
 {% hint style="info" %}
 SCONE provides TEE conversion tooling (Python, Java, ..) plus eventually TEE base images for other languages (NodeJs).
 {% endhint %}
-
-Copy the Dockerfile of the non-TEE app:
-
-{% tabs %}
-{% tab title="Javascript" %}
-{% code title="Dockerfile" %}
-
-```bash
-# Starting from a base image supported by SCONE
-FROM node:14-alpine3.11
-
-# install your dependencies
-RUN mkdir /app && cd /app && npm install figlet@1.x
-
-COPY ./src /app
-
-ENTRYPOINT [ "node", "/app/app.js"]
-```
-
-{% endcode %}
-{% endtab %}
-
-{% tab title="Python" %}
-{% code title="Dockerfile" %}
-
-```bash
-FROM python:3.7.3-alpine3.10
-
-### install python dependencies if you have some
-RUN pip3 install pyfiglet
-
-COPY ./src /app
-
-ENTRYPOINT ["python3", "/app/app.py"]
-```
-
-{% endcode %}
-{% endtab %}
-{% endtabs %}
 
 ## Build the TEE docker image
 
