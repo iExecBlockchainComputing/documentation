@@ -21,7 +21,7 @@ The short answer is: the application is protected by taking a snapshot of the fi
 
 ## Prepare your application
 
-Before going further, your `<dockerusername>/my-hello-world:1.0.0` image built previously is required.
+Before going further, your `<docker-hub-user>/hello-world:1.0.0` image built previously is required.
 If you missed that part, please go back to [Build your first application](../your-first-app.md).
 
 For this tutorial, you can reuse the same directory tree or create a new one.
@@ -71,10 +71,10 @@ We will use the following script to wrap the sconification process, copy the `sc
 # declare the app entrypoint
 ENTRYPOINT="node /app/app.js"
 # declare an image name
-IMG_NAME=tee-hello-world
+IMG_NAME=tee-scone-hello-world
 
-IMG_FROM=<dockerusername>/my-hello-world:1.0.0
-IMG_TO=<dockerusername>/${IMG_NAME}:tee-debug
+IMG_FROM=<docker-hub-user>/hello-world:1.0.0
+IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
@@ -111,10 +111,10 @@ docker run -it --rm \
 # declare the app entrypoint
 ENTRYPOINT="python3 /app/app.py"
 # declare an image name
-IMG_NAME=tee-hello-world
+IMG_NAME=tee-scone-hello-world
 
-IMG_FROM=<dockerusername>/my-hello-world:1.0.0
-IMG_TO=<dockerusername>/${IMG_NAME}:tee-debug
+IMG_FROM=<docker-hub-user>/hello-world:1.0.0
+IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
@@ -182,10 +182,10 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 {
   ...
   "app": {
-    "owner": "0xF048eF3d7E3B33A465E0599E641BB29421f7Df92", // your address
-    "name": "tee-hello-world", // application name
+    "owner": "<your-wallet-address>", // starts with 0x
+    "name": "tee-scone-hello-world", // application name
     "type": "DOCKER",
-    "multiaddr": "docker.io/username/tee-hello-world:1.0.0", // app image
+    "multiaddr": "docker.io/<docker-hub-user>/tee-scone-hello-world:1.0.0-debug", // app image
     "checksum": "0x15bed530c76f1f3b05b2db8d44c417128b8934899bc85804a655a01b441bfa78", // image digest
     "mrenclave": {
       "framework": "SCONE", // TEE framework (keep default value)
@@ -202,8 +202,8 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 {% hint style="info" %}
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
 
-```sh
-docker run --rm -e SCONE_HASH=1 <dockerusername>/tee-hello-world:tee-debug
+```bash
+docker run --rm -e SCONE_HASH=1 <docker-hub-user>/tee-scone-hello-world:1.0.0-debug
 ```
 
 {% endhint %}
