@@ -198,7 +198,7 @@ docker run -it --rm \
             --command=${ENTRYPOINT} \
             && echo -e "\n------------------\n" \
             && echo "successfully built TEE docker image => ${IMG_TO}" \
-            && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
+            && echo "application mrenclave.fingerprint is $(docker run --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
 
 {% endcode %}
@@ -241,7 +241,7 @@ docker run -it \
             --command=${ENTRYPOINT} \
             && echo -e "\n------------------\n" \
             && echo "successfully built TEE docker image => ${IMG_TO}" \
-            && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
+            && echo "application mrenclave.fingerprint is $(docker run --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
 
 {% endcode %}
@@ -308,7 +308,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
 
 ```sh
-docker run -it --rm -e SCONE_HASH=1 tee-hello-world:tee-debug
+docker run --rm -e SCONE_HASH=1 tee-hello-world:tee-debug
 ```
 
 {% endhint %}
