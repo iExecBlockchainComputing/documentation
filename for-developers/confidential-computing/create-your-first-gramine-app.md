@@ -98,12 +98,12 @@ RUN /finalize-app.sh
 
 Build the docker image.
 
-```sh
+```bash
 docker build . --tag tee-hello-world:1.0.0
 ```
 
 Push your image on DockerHub:
-```sh
+```bash
 docker.io/<username>/tee-hello-world:1.0.0
 ```
 
@@ -117,7 +117,7 @@ At this stage, your application is ready to be tested on iExec. The process is s
 
 Gramine TEE applications require some additional information to be filled in during deployment.
 
-```sh
+```bash
 # prepare the Gramine TEE application template
 iexec app init --tee-framework gramine
 ```
@@ -148,7 +148,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 {% hint style="info" %}
 Run your Gramine TEE image with `sps=unset` to get the enclave fingerprint (mrenclave):
 
-```sh
+```bash
 docker run --rm -e sps=unset <username>/tee-hello-world:1.0.0
 ```
 
@@ -162,7 +162,7 @@ Hint: The `mr_enclave` is also available in your logs when building your app.
 
 Deploy the app with the standard command:
 
-```sh
+```bash
 iexec app deploy --chain bellecour
 ```
 
@@ -172,18 +172,18 @@ Specify the tag `--tag tee,gramine` in `iexec app run` command to run a tee app.
 
 Verify your chain.json is reset to the default configuration
 
-```sh
+```bash
 "bellecour": {}
 ```
 
-```sh
+```bash
 # initialize the storage
 iexec storage init --chain bellecour --tee-framework gramine
 ```
 
 You are now ready to run the app
 
-```sh
+```bash
 iexec app run --tag tee,gramine --workerpool v8-debug.main.pools.iexec.eth --watch --chain bellecour
 ```
 
