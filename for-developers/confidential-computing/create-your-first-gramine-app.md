@@ -156,7 +156,7 @@ Run your Gramine TEE image with `sps=unset` to get the enclave fingerprint (mren
 docker run --rm -e sps=unset <docker-hub-user>/tee-gramine-hello-world:1.0.0
 ```
 
-The run is expected to fail but should look for a `mr_enclave` field in your logs:
+The run is expected to fail but you should look for a `mr_enclave` field in your logs:
 ```
     mr_enclave:  dcec6d7f76520cb996d6e9dac105b9c3d75c7bb4a4d8f3669f6101cbca6aff4f
 ```
