@@ -21,10 +21,11 @@ The short answer is: the application is protected by taking a snapshot of the fi
 
 ## Prepare your application
 
-For this tutorial, you will start from the end of [Your first application](../your-first-app.md) tutorial and your `<dockerusername>/my-hello-world:1.0.0` OCI image.
-You can reuse the same directory tree or create a new one.
+Before going further, your `<dockerusername>/my-hello-world:1.0.0` image built previously is required.
+If you missed that part, please go back to [Build your first application](../your-first-app.md).
 
-To create a new directory tree for your application, execute the following commands in `~/iexec-projects/`.
+For this tutorial, you can reuse the same directory tree or create a new one.
+To create a new directory tree, execute the following commands in `~/iexec-projects/`.
 
 ```bash
 cd ~/iexec-projects
