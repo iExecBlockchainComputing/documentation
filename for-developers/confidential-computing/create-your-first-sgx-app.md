@@ -74,7 +74,7 @@ ENTRYPOINT="node /app/app.js"
 IMG_NAME=tee-hello-world
 
 IMG_FROM=<dockerusername>/my-hello-world:1.0.0
-IMG_TO=${IMG_NAME}:tee-debug
+IMG_TO=<dockerusername>/${IMG_NAME}:tee-debug
 
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
@@ -114,7 +114,7 @@ ENTRYPOINT="python3 /app/app.py"
 IMG_NAME=tee-hello-world
 
 IMG_FROM=<dockerusername>/my-hello-world:1.0.0
-IMG_TO=${IMG_NAME}:tee-debug
+IMG_TO=<dockerusername>/${IMG_NAME}:tee-debug
 
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
