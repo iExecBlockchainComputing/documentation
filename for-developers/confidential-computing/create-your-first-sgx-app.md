@@ -1,4 +1,4 @@
-# Build trusted applications
+# Build a Scone application
 
 {% hint style="success" %}
 **Prerequisites**
