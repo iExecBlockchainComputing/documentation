@@ -73,8 +73,9 @@ RUN /finalize-app.sh
 FROM iexechub/iexec-gramine-base:0.10.0
 
 ### Install python and required dependencies
-RUN apt-get install -y python3 && rm -rf /var/lib/apt/lists/* \
-     && pip3 install pyfiglet
+RUN apt-get update \
+    && apt-get install -y python3 \
+    && rm -rf /var/lib/apt/lists/*
 
 ARG SOURCE_DIR=src
 ARG GRAMINE_DIR=gramine
@@ -86,6 +87,9 @@ COPY $SOURCE_DIR/app.py /workplace/app
 RUN sed -i "s#MAIN_FUNC=#MAIN_FUNC=/workplace/app/app.py#" /apploader.sh
 
 WORKDIR /workplace/app
+
+# Install required dependencies
+RUN pip3 install pyfiglet
 
 # Copy the manifest to use from within the base image
 # or create your own
