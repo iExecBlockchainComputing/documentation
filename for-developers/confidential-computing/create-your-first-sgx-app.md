@@ -66,15 +66,15 @@ We will use the following script to wrap the sconification process, copy the `sc
 ```bash
 #!/bin/bash
 
-# declare the app entrypoint
+# Declare the app entrypoint
 ENTRYPOINT="node /app/app.js"
-# declare an image name
-IMG_NAME=tee-scone-hello-world
 
+# Declare image related variables
+IMG_NAME=tee-scone-hello-world
 IMG_FROM=<docker-hub-user>/hello-world:1.0.0
 IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 
-# run the sconifier to build the TEE image based on the non-TEE image
+# Run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
             registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
@@ -106,15 +106,15 @@ docker run -it --rm \
 ```bash
 #!/bin/bash
 
-# declare the app entrypoint
+# Declare the app entrypoint
 ENTRYPOINT="python3 /app/app.py"
-# declare an image name
-IMG_NAME=tee-scone-hello-world
 
+# Declare image related variables
+IMG_NAME=tee-scone-hello-world
 IMG_FROM=<docker-hub-user>/hello-world:1.0.0
 IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 
-# run the sconifier to build the TEE image based on the non-TEE image
+# Run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
             -v /var/run/docker.sock:/var/run/docker.sock \
             registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
