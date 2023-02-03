@@ -179,103 +179,53 @@ ENTRYPOINT ["python3", "/app/app.py"]
 {% endtab %}
 {% endtabs %}
 
-{% tabs %}
-{% tab title="Javascript" %}
-{% code title="sconify.sh" %}
+Build the docker image.
 
 ```bash
-#!/bin/bash
-
-# declare the app entrypoint
-ENTRYPOINT="node /app/app.js"
-# declare an image name
-IMG_NAME=tee-developer-secret-app
-
-IMG_FROM=${IMG_NAME}:temp-non-tee
-IMG_TO=${IMG_NAME}:tee-debug
-
-# build the regular non-TEE image
-docker build . -t ${IMG_FROM}
-
-# pull the SCONE curated image corresponding to our base image
-docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
-
-# run the sconifier to build the TEE image based on the non-TEE image
-docker run -it --rm \
-            -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
-            sconify_iexec \
-            --name=${IMG_NAME} \
-            --from=${IMG_FROM} \
-            --to=${IMG_TO} \
-            --binary-fs \
-            --fs-dir=/app \
-            --host-path=/etc/hosts \
-            --host-path=/etc/resolv.conf \
-            --binary=/usr/local/bin/node \
-            --heap=1G \
-            --dlopen=1 \
-            --no-color \
-            --verbose \
-            --command=${ENTRYPOINT} \
-            && echo -e "\n------------------\n" \
-            && echo "successfully built TEE docker image => ${IMG_TO}" \
-            && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
+docker build . --tag <docker-hub-user>/countapi:1.0.0
 ```
 
-{% endcode %}
-{% endtab %}
+### Build a TEE Scone application
 
-{% tab title="Python" %}
-{% code title="sconify.sh" %}
+Follow the steps described from [Build Scone app > Build the TEE docker image](create-your-first-sgx-app.md#build-the-tee-docker-image).
+Create the `sconify.sh` script and update the variables as follow:
 
 ```bash
-#!/bin/bash
-
-# declare the app entrypoint
-ENTRYPOINT="python3 /app/app.py"
-# declare an image name
-IMG_NAME=tee-developer-secret-app
-
-IMG_FROM=${IMG_NAME}:temp-non-tee
-IMG_TO=${IMG_NAME}:tee-debug
-
-# build the regular non-TEE image
-docker build . -t ${IMG_FROM}
-
-# run the sconifier to build the TEE image based on the non-TEE image
-docker run -it \
-            -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
-            sconify_iexec \
-            --name=${IMG_NAME} \
-            --from=${IMG_FROM} \
-            --to=${IMG_TO} \
-            --binary-fs \
-            --fs-dir=/app \
-            --host-path=/etc/hosts \
-            --host-path=/etc/resolv.conf \
-            --binary=/usr/local/bin/python3.7 \
-            --heap=1G \
-            --dlopen=1 \
-            --no-color \
-            --verbose \
-            --command=${ENTRYPOINT} \
-            && echo -e "\n------------------\n" \
-            && echo "successfully built TEE docker image => ${IMG_TO}" \
-            && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
+# Declare image related variables
+IMG_NAME=tee-scone-countapi
+IMG_FROM=<docker-hub-user>/countapi:1.0.0
+IMG_TO=<docker-hub-user>/countapi:1.0.0-debug
 ```
-
-{% endcode %}
-{% endtab %}
-
-{% endtabs %}
 
 Run the `sconify.sh` script to build the TEE-debug app.
 
 {% hint style="info" %}
 The `sconify.sh` script prints the generated docker image name, you must retag this image and push it on dockerhub.
 {% endhint %}
+
+### Build a TEE Gramine application
+
+Follow the steps described from [Build Gramine app > Prepare your application](create-your-first-gramine-app.md#prepare-your-application).
+Update the `RUN` statements in the `Dockerfile` to install required dependencies for your application:
+
+{% tabs %}
+{% tab title="Javascript" %}
+{% code title="Dockerfile" %}
+```bash
+# Install required node dependencies
+RUN npm install axios
+```
+{% endcode %}
+{% endtab %}
+{% tab title="Python" %}
+{% code title="Dockerfile" %}
+```bash
+# Install required Python dependencies
+RUN pip3 install requests
+```
+{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 ## Test your app on iExec
 
