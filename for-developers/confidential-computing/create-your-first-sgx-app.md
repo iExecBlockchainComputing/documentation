@@ -1,5 +1,9 @@
 # Build a Scone application
 
+{% hint style="warning" %}
+Before going any further, make sure you managed to [Build your first application](../your-first-app.md).
+{% endhint %}
+
 {% hint style="success" %}
 **Prerequisites**
 
@@ -7,13 +11,8 @@
 - [Nodejs](https://nodejs.org) 14.0.0 or higher.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
-  {% endhint %}
-
-{% hint style="warning" %}
-Please make sure you have already checked the [quickstart](../your-first-app.md) and [Your first application](../your-first-app.md) tutorials before building your trusted application on iExec.
 {% endhint %}
 
-After understanding the fundamentals of Confidential Computing and explaining the technologies behind it, it is time to roll up our sleeves and get hands-on with [enclaves](intel-sgx-technology.md#enclave). In this guide, we will focus on protecting an application - that is already compatible with the iExec platform - using SGX, and without changing the source code. That means we will use the same code we [previously](../your-first-app.md#build-your-app) deployed for a basic iExec application.
 
 **How would the enclave verify the integrity of the code?**
 
