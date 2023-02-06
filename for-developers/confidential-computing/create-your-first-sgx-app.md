@@ -154,7 +154,7 @@ Push your image on DockerHub:
 docker push <docker-hub-user>/tee-scone-hello-world:1.0.0-debug
 ```
 
-Congratulation you just built your first TEE application.
+Congratulations, you just built your Scone TEE application.
 
 {% hint style="info" %}
 The `sconify.sh` script prints the generated docker image name, you must retag this image and push it on dockerhub.
