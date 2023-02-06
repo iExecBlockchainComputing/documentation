@@ -139,7 +139,9 @@ except Exception:
 {% endtab %}
 {% endtabs %}
 
-## Build the TEE docker image
+## With Scone
+
+### Build a TEE Scone application
 
 The Dockerfile and the build scripts are similar to the ones we saw [previously](create-your-first-sgx-app.md) for a trusted application:
 
@@ -185,8 +187,6 @@ Build the docker image.
 docker build . --tag <docker-hub-user>/countapi:1.0.0
 ```
 
-### Build a TEE Scone application
-
 Follow the steps described from [Build Scone app > Build the TEE docker image](create-your-first-sgx-app.md#build-the-tee-docker-image).
 Create the `sconify.sh` script and update the variables as follow:
 
@@ -208,6 +208,13 @@ Push your image on DockerHub:
 ```bash
 docker push <docker-hub-user>/tee-scone-countapi:1.0.0-debug
 ```
+
+### Test your Scone app on iExec
+
+At this stage, your application is ready to be tested on iExec.
+Follow the steps as previously described in [Build Scone app](create-your-first-sgx-app.md#test-your-app-on-iexec).
+
+## With Gramine
 
 ### Build a TEE Gramine application
 
@@ -245,91 +252,10 @@ Push your image on DockerHub:
 docker push <docker-hub-user>/tee-gramine-countapi:1.0.0
 ```
 
-## Test your app on iExec
+### Test your Gramine app on iExec
 
 At this stage, your application is ready to be tested on iExec. The process is similar to testing any type of application on the platform, with these minor exceptions:
-
-### Deploy the TEE app on iExec
-
-TEE applications require some additional information to be filled in during deployment.
-
-```bash
-# prepare the TEE application template
-iexec app init --tee
-```
-
-Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
-
-```json
-{
-  ...
-  "app": {
-    "owner": "0xF048eF3d7E3B33A465E0599E641BB29421f7Df92", // your address
-    "name": "tee-developer-secret-app", // application name
-    "type": "DOCKER",
-    "multiaddr": "docker.io/username/tee-developer-secret-app:1.0.0", // app image
-    "checksum": "0xf997788fcb5c9a47d8fa2653098da3c58343d400a82ca13d014d711d60560cac", // image digest
-    "mrenclave": {
-      "framework": "SCONE", // TEE framework (keep default value)
-      "version": "v5", // Scone version (keep default value)
-      "entrypoint": "node /app/app.js" OR "python3 /app/app.py", // your app image entrypoint
-      "heapSize": 1073741824, // heap size in bytes (1GB)
-      "fingerprint": "7d264f09de532fb1d55d25c4eb345a26454f4c21a1379e3813570538124a158e" // fingerprint of the enclave code (mrenclave), see how to retrieve it below
-    }
-  },
-  ...
-}
-```
-
-{% hint style="info" %}
-Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
-
-```bash
-docker run -it --rm -e SCONE_HASH=1 tee-developer-secret-app:tee-debug
-```
-
-{% endhint %}
-
-Deploy the app with the standard command:
-
-```bash
-iexec app deploy --chain bellecour
-```
-
-You will get a hexadecimal address for your deployed app. Use that address to push the app developer secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms).
-
-For simplicity, we will use the secret in a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the dataset encryption key to this SMS (this is fine for debugging but do not use to store production secrets).
-
-These `sed` commands will do the trick:
-
-```bash
-# set a custom bellecour SMS in chain.json
-sed -i 's|"bellecour": {},|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|g' chain.json
-```
-
-```bash
-# push the app developer secret to the SMS
-iexec app push-secret --chain bellecour
-# check the secret is available on the SMS
-iexec app check-secret --chain bellecour
-```
-
-```bash
-# restore the default configuration in chain.json
-sed -i 's|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|"bellecour": {},|g' chain.json
-```
-
-### Run the TEE app
-
-Specify the tag `--tag tee,scone` in `iexec app run` command to run a tee app with an app developer secret.
-
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v8-debug.main.pools.iexec.eth`.
-
-You are now ready to run the app
-
-```bash
-iexec app run <appAddress> --tag tee,scone --workerpool v8-debug.main.pools.iexec.eth --watch --chain bellecour
-```
+Follow the steps as previously described in [Build Gramine app](create-your-first-gramine-app.md#test-your-app-on-iexec).
 
 ## Next step?
 
