@@ -194,7 +194,7 @@ Create the `sconify.sh` script and update the variables as follow:
 # Declare image related variables
 IMG_NAME=tee-scone-countapi
 IMG_FROM=<docker-hub-user>/countapi:1.0.0
-IMG_TO=<docker-hub-user>/countapi:1.0.0-debug
+IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 ```
 
 Run the `sconify.sh` script to build the TEE-debug app.
