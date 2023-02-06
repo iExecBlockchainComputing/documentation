@@ -19,16 +19,16 @@ For security reasons, application logs are only accessible to the requester.
 
 ## Statuses of Replicates
 
-One Task bought by a requester will result in one to many Replicates depending on the level of trust set by the requester. For a given task, each worker involved will have it own Replicate containing the description of the task to compute inside. The whole computation of a Replicate is made of several stages. Each stage completed by a worker will result to an update of its Replicate status.
+One Task bought by a requester will result in one or more Replicates depending on the level of trust set by the requester. For a given task, each worker involved in the computation will have its own Replicate containing the description of the task to compute. The whole computation of a Replicate is made of several stages. Each stage completed by a worker will result in an update of its Replicate status.
 
 Here are the different possible statuses for a replicate:
 
 * **CREATED**: A new replicate is assigned to your worker just after it asked for new one
-* **RUNNING**: Your worker confirms is going to work on this replicate
+* **RUNNING**: Your worker confirms it is going to work on this replicate
 * **APP\_DOWNLOADING**: Your worker is downloaing the application
 * **APP\_DOWNLOADED**: The download of the application is completed
 * **APP\_DOWNLOAD\_FAILED**: The download of the application failed
-* **DATA\_DOWNLOADING**: Your worker is downloaing the dataset
+* **DATA\_DOWNLOADING**: Your worker is downloading the dataset
 * **DATA\_DOWNLOADED**: The download of the dataset is completed
 * **DATA\_DOWNLOAD\_FAILED**: The download of the dataset failed
 * **COMPUTING**: Your worker is computing the task
@@ -46,16 +46,16 @@ Here are the different possible statuses for a replicate:
 * **REVEALING**: Your worker sent the “reveal\(..\)” transactions \(proof that he is the owner of the fingerprint of the result\)
 * **REVEALED**: Your worker has revealed the proof on chain
 * **REVEAL\_FAILED**: The reveal transaction failed
-* **RESULT\_UPLOAD\_REQUESTED**: Your worker has been called for uploading the result to a remote filesystem
-* **RESULT\_UPLOAD\_REQUEST\_FAILED**: Your worker did not accept to be called for uploading the result
+* **RESULT\_UPLOAD\_REQUESTED**: Your worker has been requested to upload the result to a remote filesystem
+* **RESULT\_UPLOAD\_REQUEST\_FAILED**: Your worker did not accept to be requested to upload the result
 * **RESULT\_UPLOADING**: Your worker is uploading the result
 * **RESULT\_UPLOADED**: The result is uploaded \(to an iExec Result Repository or to IPFS\)
 * **RESULT\_UPLOAD\_FAILED**: The upload of the result failed
 * **COMPLETED**: The whole task is completed meaning the task is finalized. You have been rewarded if you are part of the consensus
-* **REVEAL\_TIMEOUT**: Your worker took too long to reveal its proof \(more than 2 period after the consensus\)
+* **REVEAL\_TIMEOUT**: Your worker took too long to reveal its proof \(more than 2 periods after the consensus\)
 * **WORKER\_LOST**: Your worker didn’t ping the iexec-core scheduler for a while. It is considered as out for this task
 * **ABORTED\_ON\_CONSENSUS\_REACHED**: The consensus is reached but you are not part of it
 * **ABORTED\_ON\_CONTRIBUTION\_TIMEOUT**: Your worker took too long to contribute \(7 periods after the purchase of the task\)
 * **FAILED**: Your worker failed to participate to the task
 * **OUT\_OF\_GAS**: Your worker needs some ETH, please refill its wallet
-* **RECOVERING**: Your worker has been stop, it is starting back from where it stop
+* **RECOVERING**: Your worker has been stopped, it is starting back from where it stopped
