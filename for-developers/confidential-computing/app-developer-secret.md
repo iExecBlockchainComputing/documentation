@@ -253,7 +253,7 @@ At this stage, your application is ready to be tested on iExec. The process is s
 
 TEE applications require some additional information to be filled in during deployment.
 
-```sh
+```bash
 # prepare the TEE application template
 iexec app init --tee
 ```
@@ -284,7 +284,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 {% hint style="info" %}
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
 
-```sh
+```bash
 docker run -it --rm -e SCONE_HASH=1 tee-developer-secret-app:tee-debug
 ```
 
@@ -292,7 +292,7 @@ docker run -it --rm -e SCONE_HASH=1 tee-developer-secret-app:tee-debug
 
 Deploy the app with the standard command:
 
-```sh
+```bash
 iexec app deploy --chain bellecour
 ```
 
@@ -302,19 +302,19 @@ For simplicity, we will use the secret in a TEE-debug app on a debug workerpool.
 
 These `sed` commands will do the trick:
 
-```sh
+```bash
 # set a custom bellecour SMS in chain.json
 sed -i 's|"bellecour": {},|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|g' chain.json
 ```
 
-```sh
+```bash
 # push the app developer secret to the SMS
 iexec app push-secret --chain bellecour
 # check the secret is available on the SMS
 iexec app check-secret --chain bellecour
 ```
 
-```sh
+```bash
 # restore the default configuration in chain.json
 sed -i 's|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|"bellecour": {},|g' chain.json
 ```
@@ -327,7 +327,7 @@ One last thing, in order to run a **TEE-debug** app you will also need to select
 
 You are now ready to run the app
 
-```sh
+```bash
 iexec app run <appAddress> --tag tee,scone --workerpool v8-debug.main.pools.iexec.eth --watch --chain bellecour
 ```
 
