@@ -46,8 +46,8 @@ touch sconify.sh
 If you start from a new firectory tree, you will need to replay the following steps from [Build your first application](../your-first-app.md):
 
 - [Write the app](../your-first-app.md#write-the-app) Javascript or Python source code in `src/`
-- [Dockerize your app](../your-first-app#dockerize-your-app)
-- [Push your app to Dockerhub](../your-first-app#push-your-app-to-dockerhub)
+- [Dockerize your app](../your-first-app.md#dockerize-your-app)
+- [Push your app to Dockerhub](../your-first-app.md#push-your-app-to-dockerhub)
 
 As we mentioned earlier, the advantage of using **SCONE** is the ability to make the application **Intel® SGX-enabled** without changing the source code. The only thing we are going to do is rebuilding the app using the Trusted-Execution-Environment tooling provided by **SCONE**.
 
