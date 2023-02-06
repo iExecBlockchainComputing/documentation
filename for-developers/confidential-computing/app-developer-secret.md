@@ -227,6 +227,12 @@ RUN pip3 install requests
 {% endtab %}
 {% endtabs %}
 
+Build the docker image.
+
+```bash
+docker build . --tag <docker-hub-user>/tee-gramine-countapi:1.0.0
+```
+
 ## Test your app on iExec
 
 At this stage, your application is ready to be tested on iExec. The process is similar to testing any type of application on the platform, with these minor exceptions:
