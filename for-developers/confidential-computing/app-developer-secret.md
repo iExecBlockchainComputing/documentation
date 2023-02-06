@@ -203,6 +203,12 @@ Run the `sconify.sh` script to build the TEE-debug app.
 The `sconify.sh` script prints the generated docker image name, you must retag this image and push it on dockerhub.
 {% endhint %}
 
+Push your image on DockerHub:
+
+```bash
+docker push <docker-hub-user>/tee-scone-countapi:1.0.0-debug
+```
+
 ### Build a TEE Gramine application
 
 Follow the steps described from [Build Gramine app > Prepare your application](create-your-first-gramine-app.md#prepare-your-application).
@@ -231,6 +237,12 @@ Build the docker image.
 
 ```bash
 docker build . --tag <docker-hub-user>/tee-gramine-countapi:1.0.0
+```
+
+Push your image on DockerHub:
+
+```bash
+docker push <docker-hub-user>/tee-gramine-countapi:1.0.0
 ```
 
 ## Test your app on iExec

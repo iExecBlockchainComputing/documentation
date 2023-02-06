@@ -148,6 +148,12 @@ chmod +x sconify.sh
 ./sconify.sh
 ```
 
+Push your image on DockerHub:
+
+```bash
+docker push <docker-hub-user>/tee-scone-hello-world:1.0.0-debug
+```
+
 Congratulation you just built your first TEE application.
 
 {% hint style="info" %}
