@@ -334,6 +334,9 @@ with open(iexec_out + '/computed.json', 'w+') as f:
 {% endtab %}
 {% endtabs %}
 
+As a developer, make it a rule to never log sensitive information in your application.
+{% endhint %}
+
 ### Dockerize your app
 
 **Copy the following content** in `Dockerfile` .
@@ -543,25 +546,9 @@ iexec task show <taskid> --download my-app-result --chain bellecour  \
 
 **Congratulations your app successfully ran on iExec!**
 
-### Debug your app on iExec
+## Debug your app on iExec
 
-Sometimes things don't work out right the first time and you may want to debug your application.
-
-Get debug information of task
-
-```bash
-iexec task debug <taskid> --logs --chain bellecour
-```
-
-{% hint style="info" %}
-`iexec task debug <taskid>` allows anyone to know the **onchain** and **offchain** statuses of the task.
-
-`--logs` option allows the requester to retrieve the worker's application logs.
-
-For security reasons, application logs are only accessible to the requester.
-
-As a developer, make it a rule to never log sensitive information in your application.
-{% endhint %}
+Sometimes things don't work out right the first time and you may need to [Debug your tasks](for-developers/advanced/task-feedback.md).
 
 ## Publish your app on the iExec marketplace
 
