@@ -1,4 +1,4 @@
----
+(---
 description: >-
   A worker is an essential actor of the iExec Network. It will be in charge of
   computing tasks sent by requesters on the iExec Marketplace.
@@ -6,131 +6,32 @@ description: >-
 
 # Quick start
 
-⚠️ _**Unfortunately, it is not currently possible to join a public worker pool as an individual worker. The iExec team aims top change this soon, with plans to get individuals to connect their machines (specifically Intel® SGX enabled machines) to earn RLC tokens.**_
+The iExec Worker participates in a workerpool by computing tasks purchased by requesters on the iExec marketplace. The iExec Worker must connect to the iExec Core Scheduler of the workerpool to actively participate in the computation.
 
-_**Keep an eye on the iExec communication channels to be the first to know when public worker pools are made available. Thanks for your patience!** _⚠️
-
-A worker will be rewarded with RLCs for every properly computed tasks.
+A worker will be rewarded with RLC for every properly computed tasks.
 
 Please note that:
 
-* your wallet must be loaded with ETH and RLC must be deposited to your iExec account in order to stake for incoming tasks.
+* your wallet must be loaded with RLC. Some RLC must be deposited to your iExec account in order to stake for incoming tasks.
 * your computer needs at least 2 CPUs.
 
 ## Start a worker
 
-You will find a list of workerpools at [https://pools.iex.ec/](https://pools.iex.ec/)
+Find a workerpool which allows your worker to connect.
 
-After having loaded some ETH and deposited some RLC to your iExec account, you can start your worker.
+As an example of how you could deploy you own worker, you can check the configuration documentation of the [Worker Pass](https://github.com/iExecBlockchainComputing/wpwp-worker-setup).
 
-You have different ways to join a workerpool:
+For security reason, it is **highly recommended** to launch your worker in a virtual machine.
 
-* with a Virtual Machine
-* with Docker
-* with Join-Workerpool scripts
+After having loaded some RLC and deposited them to your iExec account, you can start your worker.
 
-For security reason, it is **highly recommended to use the virtual machine**.
+![](../.gitbook/assets/my-workerpool-dashboard.png)
 
-The Docker containers run on top of the host kernel by design, but from the point of view of security it can be seen as a risk that needs to be mitigated. As a worker, you have no control on applications that should run on your machine.
-
-### Virtual Machine \(VM\)
-
-A VM is ready to make you join the public workerpool.
-
-**Download the VM**
-
-[https://download.iex.ec/iExec-Public-Worker.ova](https://download.iex.ec/iExec-Public-Worker.ova)  
-\(mirror: [https://drive.google.com/file/d/1Q655sygSbqCffmwi8G12leMzbRQLOI9x/](https://drive.google.com/file/d/1Q655sygSbqCffmwi8G12leMzbRQLOI9x/)\)
-
-Install Virtual Box
-
-[https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
-
-**Get or create a wallet**
-
-Keep your wallet in a safe place, you will need it later. Same advice for your wallet password, you will need it later. Go to the 'Wallet Management' section for more information
-
-Top up some ETH & RLC and make a RLC deposit to your iExec account
-
-**Launch the VM**
-
-![Launch the VM](../.gitbook/assets/worker_vm_import.png)
-
-To import the VM, just click on iexec-worker.ova file. You will see the “Import Virtual Appliance” window. If you only have 4GB of RAM, please change the RAM to 2,048MB in this window. Delete the previous version if you had installed any in the past. Click on the ‘Import’ button.
-
-![](../.gitbook/assets/worker_vm_start.png)
-
-Double click on ‘iExec-Worker’ \(or click on ‘start’\).
-
-**Copy your wallet from your host computer to the VM**
-
-Open the ‘keystore’ folder, then copy/paste the content of your wallet file from your host computer into the ‘wallet.json’ file of the VM.
-
-**Start your worker**
-
-Click on the “Launch Worker” icon on the VM desktop and follow instructions.
-
-When the worker initialization process is complete, the worker will be started and you will get something like: **You worker is all set**. Your worker will now be able to compute some tasks comming from the iExec network to earn some RLCs.
-
-{% hint style="warning" %}
-If you want to properly shutdown your worker, you can click on the “Stop Worker” icon placed in the desktop of the VM
-{% endhint %}
-
-**Supported OS**
-
-* Linux
-* MacOS
-* Windows
-
-{% hint style="info" %}
-Change keyboard settings, this is qwerty mode by default. [https://websiteforstudents.com/configure-ubuntu-18-04-lts-beta-keyboard-layout-for-native-languages/](https://websiteforstudents.com/configure-ubuntu-18-04-lts-beta-keyboard-layout-for-native-languages/)
-{% endhint %}
-
-### Customize the VM worker with your wallet
-
-**1 -Export your private from your wallet manager, metasmask.**
-
-**2 - Install iexec sdk \(password: iexec\)**
-
-Right click on the desktop, and open a terminal
-
-```text
-sudo apt-get install && sudo  npm install -g iexec
-```
-
-**3 - Import your wallet with the iExec SDK.**
-
-```text
-iexec wallet import your_private_key
-```
-
-**4 - Launch your worker, the script will automatically use the imported wallet.**
-
-### Join-Workerpool script
-
-When available, click on the “Join Worker Pool” button on the top left of the dashboard page and follow instructions.
-
-![Join-Workerpool script](../.gitbook/assets/joinwp.png)
-
-**Supported OS**
-
-* Linux
+When the worker initialization process is complete, the worker will be started and you will get something like: **You worker is all set**. Your worker will now be able to compute some tasks coming from the iExec network to earn some RLCs.
 
 ## Wallet restriction
 
 An exclusive wallet must be associated to your worker. You need N wallets if you want N workers.
-
-## Fees
-
-Gas price on the Ethereum network is constantly changing. A high traffic could potentially increase average gas price since some people might want to get their transactions mined very fast. By taking a look at [https://ethgasstation.info/](https://ethgasstation.info/), you will see a Median Gas Price \(gwei\) which will be different in few hours.
-
-* IEXEC\_GAS\_PRICE\_MULTIPLIER
-
-For each transaction, the worker will look at the current gas price and will multiply it by a K factor in order to send \[cheap & slow\] or \[expensive & fast\] transactions. You can tune that in the config of your worker. This K factor is called IEXEC\_GAS\_PRICE\_MULTIPLIER and it default value is 1.3 \(which means a little faster than some other guys\).
-
-* IEXEC\_GAS\_PRICE\_CAP
-
-To avoid sending super expensive transactions, you can cap the value NETWORK\_GAS\_PRICE \* IEXEC\_GAS\_PRICE\_MULTIPLIER. This cap value is called IEXEC\_GAS\_PRICE\_CAP and the default value is 22Gwei \(you can change it too\). \(edited\)
 
 ## Statuses of Replicates
 
@@ -174,20 +75,3 @@ Here are the different possible statuses for a replicate:
 * **FAILED**: Your worker failed to participate to the task
 * **OUT\_OF\_GAS**: Your worker needs some ETH, please refill its wallet
 * **RECOVERING**: Your worker has been stop, it is starting back from where it stop
-
-## SGX worker setup
-
-As a worker you need SGX-compatible hardware if you want to perform TEE-based computations.
-
-An unofficial list of SGX enabled CPU is available [here](https://github.com/ayeks/SGX-hardware). Basically if your computer was built after 2016 it should be good. In addition to an SGX-compatible CPU you also need to make sure the BIOS of your machine support the SGX extension. Most mainstream brand of computer \(Dell, HP,…\) do. If the SGX option is available in your BIOS then you need to enable it.
-
-![](../.gitbook/assets/bios1.jpeg)
-
-The next step is to install the drivers from Intel for the SGX extension. This can be done in one command line using the following script \(on Ubuntu\):
-
-```text
-# curl -fssl https://raw.githubusercontent.com/SconeDocs/SH/master/install_sgx_driver.sh | bash
-```
-
-That’s it! Now you can register at your scheduler as an SGX compatible worker, and you’ll soon receive requests for SGX jobs.
-
