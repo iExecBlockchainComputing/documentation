@@ -16,6 +16,8 @@ Before going any further, make sure you managed to [Build with a TEE framework](
 Trusted Execution Environments offer a huge advantage from a security perspective. They guarantee that the behavior of execution does not change even when launched on an untrusted remote machine. The data inside this type of environment is also protected, which allows its monetization while preventing leakage.
 
 With iExec, it is possible to securely associate an application developer secret to the runtime of an application.
+This association is performed through the usage of environment variables which cannot leak outside of the enclave memory.
+In this tutorial, you will learn how to leverage an application developer secret by using the `IEXEC_APP_DEVELOPER_SECRET` environment variable in your application code.
 
 {% hint style="warning" %}
 The app developer secret is only exposed to your app inside authorized [enclaves](intel-sgx-technology.md#enclave) and never leaves them.
@@ -143,7 +145,10 @@ except Exception:
 
 ### Build a TEE Scone application
 
-The Dockerfile and the build scripts are similar to the ones we saw [previously](create-your-first-sgx-app.md) for a trusted application:
+In this section, you will:
+
+- Build the native image of the application as described in [Build your first application](../your-first-app.md#dockerize-your-app).
+- Create and execute the `sconify.sh` script to build the **Scone TEE application** as we saw in [Build Scone app > Prepare your application](create-your-first-sgx-app.md#prepare-your-application).
 
 {% tabs %}
 {% tab title="Javascript" %}
@@ -187,7 +192,7 @@ Build the docker image.
 docker build . --tag <docker-hub-user>/count-api:1.0.0
 ```
 
-Follow the steps described from [Build Scone app > Build the TEE docker image](create-your-first-sgx-app.md#build-the-tee-docker-image).
+Follow the steps described in [Build Scone app > Build the TEE docker image](create-your-first-sgx-app.md#build-the-tee-docker-image).
 Create the `sconify.sh` script and update the variables as follow:
 
 ```bash
@@ -218,8 +223,9 @@ Follow the steps as previously described in [Build Scone app](create-your-first-
 
 ### Build a TEE Gramine application
 
-Follow the steps described from [Build Gramine app > Prepare your application](create-your-first-gramine-app.md#prepare-your-application).
-Update the `RUN` statements in the `Dockerfile` to install required dependencies for your application:
+In this section, you will create a `Dockerfile` and create your **Gramine TEE application** as we saw in [Build Gramine app > Prepare your application](create-your-first-gramine-app.md#prepare-your-application).
+
+You need to copy the `Dockerfile`, then update its `RUN` statements to install required dependencies for your application:
 
 {% tabs %}
 {% tab title="Javascript" %}
