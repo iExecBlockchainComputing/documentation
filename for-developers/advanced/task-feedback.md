@@ -41,7 +41,7 @@ Here are the different possible statuses for a _replicate_:
 - `CONTRIBUTE_FAILED`: The contribute transaction failed
 - `CONTRIBUTED`: Your worker has contributed on chain
 - `CANT_REVEAL`: Your worker cant reveal the proof that it is the owner of the result digest
-- `REVEALING`: Your worker sent the "reveal(..)" transactions (proof that he is the owner of the result digest)
+- `REVEALING`: Your worker sent the "reveal(..)" transaction (proof that he is the owner of the result digest)
 - `REVEALED`: Your worker has revealed the proof on chain
 - `REVEAL_FAILED`: The reveal transaction failed
 - `RESULT_UPLOAD_REQUESTED`: Your worker has been requested to upload the result to a remote filesystem
