@@ -14,6 +14,7 @@ iexec task debug <taskid> --logs --chain bellecour
 `iexec task debug <taskid>` allows anyone to know the **onchain** and **offchain** statuses of the task.
 
 `--logs` option allows the requester to retrieve the worker's application logs.
+{% endhint %}
 
 ## Statuses of _replicates_
 
