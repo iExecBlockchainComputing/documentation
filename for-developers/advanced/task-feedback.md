@@ -22,7 +22,7 @@ One task bought by a requester will result in one or more _replicates_ depending
 
 Here are the different possible statuses for a _replicate_:
 
-- `CREATED`: A new _replicate_ is assigned to your worker just after it asked for more work
+- `CREATED`: A new _replicate_ is assigned to a worker just after it asked for more work
 - `RUNNING`: Your worker confirms it is going to work on this _replicate_
 - `APP_DOWNLOADING`: Your worker is downloading the application
 - `APP_DOWNLOADED`: The download of the application is completed
