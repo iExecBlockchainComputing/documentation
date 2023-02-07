@@ -4,17 +4,17 @@
 
 Sometimes things don't work out right the first time and you may need to debug your application.
 
-Get debug information of task
+- Get debug information of a task
+```bash
+iexec task debug <taskid> --chain bellecour
+```
+It allows anyone to know on-chain and off-chain statuses of the task.
 
+- Get debug logs of a task
 ```bash
 iexec task debug <taskid> --logs --chain bellecour
 ```
-
-{% hint style="info" %}
-`iexec task debug <taskid>` allows anyone to know the **onchain** and **offchain** statuses of the task.
-
-`--logs` option allows the requester to retrieve the worker's application logs.
-{% endhint %}
+It allows the requester to retrieve the application logs produced by the workers.
 
 ## Statuses of _replicates_
 
