@@ -184,7 +184,7 @@ ENTRYPOINT ["python3", "/app/app.py"]
 Build the docker image.
 
 ```bash
-docker build . --tag <docker-hub-user>/countapi:1.0.0
+docker build . --tag <docker-hub-user>/count-api:1.0.0
 ```
 
 Follow the steps described from [Build Scone app > Build the TEE docker image](create-your-first-sgx-app.md#build-the-tee-docker-image).
@@ -192,8 +192,8 @@ Create the `sconify.sh` script and update the variables as follow:
 
 ```bash
 # Declare image related variables
-IMG_NAME=tee-scone-countapi
-IMG_FROM=<docker-hub-user>/countapi:1.0.0
+IMG_NAME=tee-scone-count-api
+IMG_FROM=<docker-hub-user>/count-api:1.0.0
 IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 ```
 
@@ -206,7 +206,7 @@ The `sconify.sh` script prints the generated docker image name, you must retag t
 Push your image on DockerHub:
 
 ```bash
-docker push <docker-hub-user>/tee-scone-countapi:1.0.0-debug
+docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
 ```
 
 ### Test your Scone app on iExec
@@ -243,13 +243,13 @@ RUN pip3 install requests
 Build the docker image.
 
 ```bash
-docker build . --tag <docker-hub-user>/tee-gramine-countapi:1.0.0
+docker build . --tag <docker-hub-user>/tee-gramine-count-api:1.0.0
 ```
 
 Push your image on DockerHub:
 
 ```bash
-docker push <docker-hub-user>/tee-gramine-countapi:1.0.0
+docker push <docker-hub-user>/tee-gramine-count-api:1.0.0
 ```
 
 ### Test your Gramine app on iExec
