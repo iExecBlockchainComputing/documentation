@@ -152,41 +152,30 @@ In this section, you will:
 - Build the native image of the application as described in [Build your first application](../your-first-app.md#dockerize-your-app).
 - Create and execute the `sconify.sh` script to build the **Scone TEE application** as we saw in [Build Scone app > Prepare your application](create-your-first-sgx-app.md#prepare-your-application).
 
-{% tabs %}
-{% tab title="Javascript" %}
-{% code title="Dockerfile" %}
+Create the `Dockerfile`
 
-```bash
-# Starting from a base image supported by SCONE
-FROM node:14-alpine3.11
+- for a Javascript application
+  ```bash
+  # Starting from a base image supported by SCONE
+  FROM node:14-alpine3.11
 
-# install your dependencies
-RUN mkdir /app && cd /app && npm install axios
+  # install your dependencies
+  RUN mkdir /app && cd /app && npm install axios
 
-COPY ./src /app
+  COPY ./src /app
 
-ENTRYPOINT [ "node", "/app/app.js"]
-```
+  ENTRYPOINT [ "node", "/app/app.js"]
+  ```
+- for Python application
+  ```bash
+  FROM python:3.7.3-alpine3.10
 
-{% endcode %}
-{% endtab %}
+  RUN pip3 install requests
 
-{% tab title="Python" %}
-{% code title="Dockerfile" %}
+  COPY ./src /app
 
-```bash
-FROM python:3.7.3-alpine3.10
-
-RUN pip3 install requests
-
-COPY ./src /app
-
-ENTRYPOINT ["python3", "/app/app.py"]
-```
-
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+  ENTRYPOINT ["python3", "/app/app.py"]
+  ```
 
 Build the docker image.
 
@@ -242,24 +231,16 @@ In this section, you will create a `Dockerfile` and create your **Gramine TEE ap
 
 You need to copy the `Dockerfile`, then update its `RUN` statements to install required dependencies for your application:
 
-{% tabs %}
-{% tab title="Javascript" %}
-{% code title="Dockerfile" %}
-```bash
-# Install required node dependencies
-RUN npm install axios
-```
-{% endcode %}
-{% endtab %}
-{% tab title="Python" %}
-{% code title="Dockerfile" %}
-```bash
-# Install required Python dependencies
-RUN pip3 install requests
-```
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+- for a Javascript application
+  ```bash
+  # Install required node dependencies
+  RUN npm install axios
+  ```
+- for a Python application
+  ```bash
+  # Install required Python dependencies
+  RUN pip3 install requests
+  ```
 
 Build the docker image.
 
