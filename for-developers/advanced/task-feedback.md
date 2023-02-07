@@ -49,7 +49,7 @@ Here are the different possible statuses for a _replicate_:
 - `RESULT_UPLOAD_REQUESTED`: Your worker has been requested to upload the result to a remote filesystem
 - `RESULT_UPLOAD_REQUEST_FAILED`: Your worker did not accept to be requested to upload the result
 - `RESULT_UPLOADING`: Your worker is uploading the result
-- `RESULT_UPLOADED`: The result is uploaded (to an iExec Result Repository or to IPFS)
+- `RESULT_UPLOADED`: The result is uploaded to IPFS (over the _iExec Result Proxy_)
 - `RESULT_UPLOAD_FAILED`: The upload of the result failed
 - `COMPLETED`: The whole task is completed meaning the task is finalized. You have been rewarded if you are part of the consensus
 - `REVEAL_TIMEOUT`: Your worker took too long to reveal its proof (more than 2 periods after the consensus)
