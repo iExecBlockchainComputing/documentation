@@ -36,7 +36,7 @@ Here are the different possible statuses for a _replicate_:
 | `COMPUTE_FAILED` | The computation failed
 | `CAN_CONTRIBUTE` | The worker can contribute the result digest the computation
 | `CANT_CONTRIBUTE_SINCE_STAKE_TOO_LOW` | The worker hasn't enough RLC in its account to contribute (30% of the task in RLC by default)
-| `CANT_CONTRIBUTE_SINCE_TASK_NOT_ACTIVE` | The task is not active on chain. This status usually happens when different workers have contributed on the same task but the consensus has been reached before your contribution.
+| `CANT_CONTRIBUTE_SINCE_TASK_NOT_ACTIVE` | The task is not active on chain. This status usually happens when different workers have contributed on the same task but the consensus has been reached before the related worker contributed.
 | `CANT_CONTRIBUTE_SINCE_AFTER_DEADLINE` | The deadline for the contribution is reached
 | `CANT_CONTRIBUTE_SINCE_CONTRIBUTION_ALREADY_SET` | The worker already contributed for this task
 | `CONTRIBUTING` | The worker sent the "contribute(..)" transaction (result digest) on chain
@@ -51,10 +51,10 @@ Here are the different possible statuses for a _replicate_:
 | `RESULT_UPLOADING` | The worker is uploading the result
 | `RESULT_UPLOADED` | The result is uploaded to IPFS (over the _iExec Result Proxy_)
 | `RESULT_UPLOAD_FAILED` | The upload of the result failed
-| `COMPLETED` | The whole task is completed meaning the task is finalized. You have been rewarded if you are part of the consensus
+| `COMPLETED` | The whole task is completed meaning the task is finalized. The worker has been rewarded if it is part of the consensus
 | `REVEAL_TIMEOUT` | The worker took too long to reveal its proof (more than 2 periods after the consensus)
 | `WORKER_LOST` | The worker didn't ping the iexec-core scheduler for a while. It is considered as out for this task
-| `ABORTED_ON_CONSENSUS_REACHED` | The consensus is reached but you are not part of it
+| `ABORTED_ON_CONSENSUS_REACHED` | The consensus is reached but the related worker is not part of it
 | `ABORTED_ON_CONTRIBUTION_TIMEOUT` | The worker took too long to contribute (7 periods after the purchase of the task)
 | `FAILED` | The worker failed to participate to the task
 | `OUT_OF_GAS` | The worker needs some ETH, please refill its wallet
