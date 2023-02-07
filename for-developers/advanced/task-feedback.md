@@ -17,14 +17,14 @@ iexec task debug <taskid> --logs --chain bellecour
 
 For security reasons, application logs are only accessible to the requester.
 
-## Statuses of Replicates
+## Statuses of _replicates_
 
-One Task bought by a requester will result in one or more Replicates depending on the level of trust set by the requester. For a given task, each worker involved in the computation will have its own Replicate containing the description of the task to compute. The whole computation of a Replicate is made of several stages. Each stage completed by a worker will result in an update of its Replicate status.
+One Task bought by a requester will result in one or more _replicates_ depending on the level of trust set by the requester. For a given task, each worker involved in the computation will have its own _replicate_ containing the description of the task to compute. The whole computation of a _replicate_ is made of several stages. Each stage completed by a worker will result in an update of its _replicate_ status.
 
-Here are the different possible statuses for a replicate:
+Here are the different possible statuses for a _replicate_:
 
-* **CREATED**: A new replicate is assigned to your worker just after it asked for new one
-* **RUNNING**: Your worker confirms it is going to work on this replicate
+* **CREATED**: A new _replicate_ is assigned to your worker just after it asked for new one
+* **RUNNING**: Your worker confirms it is going to work on this _replicate_
 * **APP\_DOWNLOADING**: Your worker is downloaing the application
 * **APP\_DOWNLOADED**: The download of the application is completed
 * **APP\_DOWNLOAD\_FAILED**: The download of the application failed
