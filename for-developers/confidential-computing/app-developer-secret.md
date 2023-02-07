@@ -141,8 +141,8 @@ except Exception:
 {% endtab %}
 {% endtabs %}
 
-## With Scone
-
+<details>
+<summary>With Scone</summary>
 ### Build a TEE Scone application
 
 In this section, you will:
@@ -228,9 +228,10 @@ At this stage, your application is ready to be tested on iExec with the followin
   iexec app check-secret --chain bellecour
   ```
 - [Run your application](create-your-first-sgx-app.md#run-the-tee-app).
+</details>
 
-## With Gramine
-
+<details>
+<summary>With Gramine</summary>
 ### Build a TEE Gramine application
 
 In this section, you will create a `Dockerfile` and create your **Gramine TEE application** as we saw in [Build Gramine app > Prepare your application](create-your-first-gramine-app.md#prepare-your-application).
@@ -282,6 +283,7 @@ At this stage, your application is ready to be tested on iExec with the followin
   iexec app check-secret --chain bellecour
   ```
 - [Run your application](create-your-first-gramine-app.md#run-the-tee-app)
+</details>
 
 ## Next step?
 
