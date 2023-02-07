@@ -15,8 +15,6 @@ iexec task debug <taskid> --logs --chain bellecour
 
 `--logs` option allows the requester to retrieve the worker's application logs.
 
-For security reasons, application logs are only accessible to the requester.
-
 ## Statuses of _replicates_
 
 One task bought by a requester will result in one or more _replicates_ depending on the level of trust set by the requester. For a given task, each worker involved in the computation will have its own _replicate_ containing the description of the task to compute. The whole computation of a _replicate_ is made of several stages. Each stage completed by a worker will result in an update of its _replicate_ status.

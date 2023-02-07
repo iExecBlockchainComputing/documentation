@@ -550,6 +550,12 @@ iexec task show <taskid> --download my-app-result --chain bellecour  \
 
 Sometimes things don't work out right the first time and you may need to [Debug your tasks](for-developers/advanced/task-feedback.md).
 
+{% hint style="warning" %}
+As a developer, remember that execution logs are not only accessible the requester of the task, but are also natively accessible by:
+- the workerpool manager
+- worker(s) involved in the task
+{% endhint %}
+
 ## Publish your app on the iExec marketplace
 
 ```bash
