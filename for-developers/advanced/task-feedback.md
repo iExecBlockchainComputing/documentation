@@ -14,7 +14,7 @@ It allows anyone to know on-chain and off-chain statuses of the task.
 ```bash
 iexec task debug <taskid> --logs --chain bellecour
 ```
-It allows the requester to retrieve the application logs produced by the workers.
+It allows the requester to retrieve application logs produced by workers.
 
 ## Statuses of _replicates_
 
