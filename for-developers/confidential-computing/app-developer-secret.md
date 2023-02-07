@@ -166,7 +166,7 @@ Create the `Dockerfile`
 
   ENTRYPOINT [ "node", "/app/app.js"]
   ```
-- for Python application
+- for a Python application
   ```bash
   FROM python:3.7.3-alpine3.10
 
@@ -219,6 +219,7 @@ At this stage, your application is ready to be tested on iExec with the followin
   iexec app check-secret --chain bellecour
   ```
 - [Run your application](create-your-first-sgx-app.md#run-the-tee-app).
+
 </details>
 
 <details>
@@ -268,6 +269,7 @@ At this stage, your application is ready to be tested on iExec with the followin
   iexec app check-secret --chain bellecour
   ```
 - [Run your application](create-your-first-gramine-app.md#run-the-tee-app)
+
 </details>
 
 ## Next step?
