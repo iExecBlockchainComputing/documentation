@@ -17,7 +17,10 @@ Trusted Execution Environments offer a huge advantage from a security perspectiv
 
 With iExec, it is possible to securely associate an application developer secret to the runtime of an application.
 This association is performed through the usage of environment variables which cannot leak outside of the enclave memory.
+
+{% hint style="info" %}
 In this tutorial, you will learn how to leverage an application developer secret by using the `IEXEC_APP_DEVELOPER_SECRET` environment variable in your application code.
+{% endhint %}
 
 {% hint style="warning" %}
 The app developer secret is only exposed to your app inside authorized [enclaves](intel-sgx-technology.md#enclave) and never leaves them.
