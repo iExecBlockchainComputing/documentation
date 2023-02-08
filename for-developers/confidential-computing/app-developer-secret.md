@@ -1,5 +1,9 @@
 # Use a developer secret
 
+{% hint style="warning" %}
+Before going any further, make sure you managed to [Build with a TEE framework](choose-your-tee-framework.md).
+{% endhint %}
+
 {% hint style="success" %}
 **Prerequisites**
 
@@ -9,13 +13,14 @@
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-software-guard-extension-intel-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
   {% endhint %}
 
-{% hint style="warning" %}
-Please make sure you have already checked the [Quickstart](../quick-start-for-developers.md), [Your first application](../your-first-app.md) and [Build trusted applications](create-your-first-sgx-app.md) tutorials before learning how to use a developer secret.
-{% endhint %}
-
 Trusted Execution Environments offer a huge advantage from a security perspective. They guarantee that the behavior of execution does not change even when launched on an untrusted remote machine. The data inside this type of environment is also protected, which allows its monetization while preventing leakage.
 
 With iExec, it is possible to securely associate an application developer secret to the runtime of an application.
+This association is performed through the usage of environment variables which cannot leak outside of the enclave memory.
+
+{% hint style="info" %}
+In this tutorial, you will learn how to leverage an application developer secret by using the `IEXEC_APP_DEVELOPER_SECRET` environment variable in your application code.
+{% endhint %}
 
 {% hint style="warning" %}
 The app developer secret is only exposed to your app inside authorized [enclaves](intel-sgx-technology.md#enclave) and never leaves them.
@@ -139,137 +144,57 @@ except Exception:
 {% endtab %}
 {% endtabs %}
 
-## Build the TEE docker image
+<details>
 
-The Dockerfile and the build scripts are similar to the ones we saw [previously](create-your-first-sgx-app.md) for a trusted application:
+<summary>With Scone</summary>
 
-{% tabs %}
-{% tab title="Javascript" %}
-{% code title="Dockerfile" %}
+### Build a TEE Scone application
 
-```bash
-# Starting from a base image supported by SCONE
-FROM node:14-alpine3.11
+In this section, you will:
 
-# install your dependencies
-RUN mkdir /app && cd /app && npm install axios
+- Build the native image of the application as described in [Build your first application](../your-first-app.md#dockerize-your-app).
+- Create and execute the `sconify.sh` script to build the **Scone TEE application** as we saw in [Build Scone app > Prepare your application](create-your-first-sgx-app.md#prepare-your-application).
 
-COPY ./src /app
+Create the `Dockerfile`
 
-ENTRYPOINT [ "node", "/app/app.js"]
-```
+- for a Javascript application
+  ```bash
+  # Starting from a base image supported by SCONE
+  FROM node:14-alpine3.11
 
-{% endcode %}
-{% endtab %}
+  # install your dependencies
+  RUN mkdir /app && cd /app && npm install axios
 
-{% tab title="Python" %}
-{% code title="Dockerfile" %}
+  COPY ./src /app
 
-```bash
-FROM python:3.7.3-alpine3.10
+  ENTRYPOINT [ "node", "/app/app.js"]
+  ```
+- for a Python application
+  ```bash
+  FROM python:3.7.3-alpine3.10
 
-RUN pip3 install requests
+  RUN pip3 install requests
 
-COPY ./src /app
+  COPY ./src /app
 
-ENTRYPOINT ["python3", "/app/app.py"]
-```
+  ENTRYPOINT ["python3", "/app/app.py"]
+  ```
 
-{% endcode %}
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="Javascript" %}
-{% code title="sconify.sh" %}
+Build the docker image.
 
 ```bash
-#!/bin/bash
-
-# declare the app entrypoint
-ENTRYPOINT="node /app/app.js"
-# declare an image name
-IMG_NAME=tee-developer-secret-app
-
-IMG_FROM=${IMG_NAME}:temp-non-tee
-IMG_TO=${IMG_NAME}:tee-debug
-
-# build the regular non-TEE image
-docker build . -t ${IMG_FROM}
-
-# pull the SCONE curated image corresponding to our base image
-docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
-
-# run the sconifier to build the TEE image based on the non-TEE image
-docker run -it --rm \
-            -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
-            sconify_iexec \
-            --name=${IMG_NAME} \
-            --from=${IMG_FROM} \
-            --to=${IMG_TO} \
-            --binary-fs \
-            --fs-dir=/app \
-            --host-path=/etc/hosts \
-            --host-path=/etc/resolv.conf \
-            --binary=/usr/local/bin/node \
-            --heap=1G \
-            --dlopen=1 \
-            --no-color \
-            --verbose \
-            --command=${ENTRYPOINT} \
-            && echo -e "\n------------------\n" \
-            && echo "successfully built TEE docker image => ${IMG_TO}" \
-            && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
+docker build . --tag <docker-hub-user>/count-api:1.0.0
 ```
 
-{% endcode %}
-{% endtab %}
-
-{% tab title="Python" %}
-{% code title="sconify.sh" %}
+Follow the steps described in [Build Scone app > Build the TEE docker image](create-your-first-sgx-app.md#build-the-tee-docker-image).
+Create the `sconify.sh` script and update the variables as follow:
 
 ```bash
-#!/bin/bash
-
-# declare the app entrypoint
-ENTRYPOINT="python3 /app/app.py"
-# declare an image name
-IMG_NAME=tee-developer-secret-app
-
-IMG_FROM=${IMG_NAME}:temp-non-tee
-IMG_TO=${IMG_NAME}:tee-debug
-
-# build the regular non-TEE image
-docker build . -t ${IMG_FROM}
-
-# run the sconifier to build the TEE image based on the non-TEE image
-docker run -it \
-            -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
-            sconify_iexec \
-            --name=${IMG_NAME} \
-            --from=${IMG_FROM} \
-            --to=${IMG_TO} \
-            --binary-fs \
-            --fs-dir=/app \
-            --host-path=/etc/hosts \
-            --host-path=/etc/resolv.conf \
-            --binary=/usr/local/bin/python3.7 \
-            --heap=1G \
-            --dlopen=1 \
-            --no-color \
-            --verbose \
-            --command=${ENTRYPOINT} \
-            && echo -e "\n------------------\n" \
-            && echo "successfully built TEE docker image => ${IMG_TO}" \
-            && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
+# Declare image related variables
+IMG_NAME=tee-scone-count-api
+IMG_FROM=<docker-hub-user>/count-api:1.0.0
+IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 ```
-
-{% endcode %}
-{% endtab %}
-
-{% endtabs %}
 
 Run the `sconify.sh` script to build the TEE-debug app.
 
@@ -277,91 +202,78 @@ Run the `sconify.sh` script to build the TEE-debug app.
 The `sconify.sh` script prints the generated docker image name, you must retag this image and push it on dockerhub.
 {% endhint %}
 
-## Test your app on iExec
+Push your image on DockerHub:
 
-At this stage, your application is ready to be tested on iExec. The process is similar to testing any type of application on the platform, with these minor exceptions:
-
-### Deploy the TEE app on iExec
-
-TEE applications require some additional information to be filled in during deployment.
-
-```sh
-# prepare the TEE application template
-iexec app init --tee
+```bash
+docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
 ```
 
-Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
+### Test your Scone app on iExec
 
-```json
-{
-  ...
-  "app": {
-    "owner": "0xF048eF3d7E3B33A465E0599E641BB29421f7Df92", // your address
-    "name": "tee-developer-secret-app", // application name
-    "type": "DOCKER",
-    "multiaddr": "docker.io/username/tee-developer-secret-app:1.0.0", // app image
-    "checksum": "0xf997788fcb5c9a47d8fa2653098da3c58343d400a82ca13d014d711d60560cac", // image digest
-    "mrenclave": {
-      "framework": "SCONE", // TEE framework (keep default value)
-      "version": "v5", // Scone version (keep default value)
-      "entrypoint": "node /app/app.js" OR "python3 /app/app.py", // your app image entrypoint
-      "heapSize": 1073741824, // heap size in bytes (1GB)
-      "fingerprint": "7d264f09de532fb1d55d25c4eb345a26454f4c21a1379e3813570538124a158e" // fingerprint of the enclave code (mrenclave), see how to retrieve it below
-    }
-  },
-  ...
-}
+At this stage, your application is ready to be tested on iExec with the following steps:
+
+- [Deploy your application](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec)
+- Push your application developer secret to the SMS:
+  ```bash
+  iexec app push-secret --chain bellecour
+  ```
+- Check the secret exists in the SMS:
+  ```bash
+  iexec app check-secret --chain bellecour
+  ```
+- [Run your application](create-your-first-sgx-app.md#run-the-tee-app).
+
+</details>
+
+<details>
+
+<summary>With Gramine</summary>
+
+### Build a TEE Gramine application
+
+In this section, you will create a `Dockerfile` and create your **Gramine TEE application** as we saw in [Build Gramine app > Prepare your application](create-your-first-gramine-app.md#prepare-your-application).
+
+You need to copy the `Dockerfile`, then update its `RUN` statements to install required dependencies for your application:
+
+- for a Javascript application
+  ```bash
+  # Install required node dependencies
+  RUN npm install axios
+  ```
+- for a Python application
+  ```bash
+  # Install required Python dependencies
+  RUN pip3 install requests
+  ```
+
+Build the docker image.
+
+```bash
+docker build . --tag <docker-hub-user>/tee-gramine-count-api:1.0.0
 ```
 
-{% hint style="info" %}
-Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
+Push your image on DockerHub:
 
-```sh
-docker run -it --rm -e SCONE_HASH=1 tee-developer-secret-app:tee-debug
+```bash
+docker push <docker-hub-user>/tee-gramine-count-api:1.0.0
 ```
 
-{% endhint %}
+### Test your Gramine app on iExec
 
-Deploy the app with the standard command:
+At this stage, your application is ready to be tested on iExec with the following steps:
 
-```sh
-iexec app deploy --chain bellecour
-```
+- [Deploy your application](create-your-first-gramine-app.md#deploy-the-tee-app-on-iexec)
+- Push your application developer secret to the SMS:
+  ```bash
+  iexec app push-secret --chain bellecour
+  ```
+- Check the secret exists in the SMS:
+  ```bash
+  iexec app check-secret --chain bellecour
+  ```
+- [Run your application](create-your-first-gramine-app.md#run-the-tee-app)
 
-You will get a hexadecimal address for your deployed app. Use that address to push the app developer secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms).
-
-For simplicity, we will use the secret in a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the dataset encryption key to this SMS (this is fine for debugging but do not use to store production secrets).
-
-These `sed` commands will do the trick:
-
-```sh
-# set a custom bellecour SMS in chain.json
-sed -i 's|"bellecour": {},|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|g' chain.json
-```
-
-```sh
-# push the app developer secret to the SMS
-iexec app push-secret --chain bellecour
-# check the secret is available on the SMS
-iexec app check-secret --chain bellecour
-```
-
-```sh
-# restore the default configuration in chain.json
-sed -i 's|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|"bellecour": {},|g' chain.json
-```
-
-### Run the TEE app
-
-Specify the tag `--tag tee,scone` in `iexec app run` command to run a tee app with an app developer secret.
-
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v8-debug.main.pools.iexec.eth`.
-
-You are now ready to run the app
-
-```sh
-iexec app run <appAddress> --tag tee,scone --workerpool v8-debug.main.pools.iexec.eth --watch --chain bellecour
-```
+</details>
 
 ## Next step?
 
