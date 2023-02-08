@@ -553,7 +553,7 @@ iexec task show <taskid> --download my-app-result --chain bellecour  \
 
 ## Debug your app on iExec
 
-Sometimes things don't work out right the first time and you may need to [Debug your tasks](for-developers/advanced/task-feedback.md).
+Sometimes things don't work out right the first time and you may need to [Debug your tasks](advanced/task-feedback.md).
 
 ## Publish your app on the iExec marketplace
 
