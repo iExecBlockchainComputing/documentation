@@ -43,7 +43,6 @@ touch Dockerfile
 touch sconify.sh
 ```
 
-
 If you start from a new firectory tree, you will need to replay the following steps from [Build your first application](../your-first-app.md):
 
 - [Write the app](../your-first-app.md#write-the-app) Javascript or Python source code in `src/`
@@ -55,7 +54,6 @@ As we mentioned earlier, the advantage of using **SCONE** is the ability to make
 {% hint style="info" %}
 SCONE provides TEE conversion tooling (Python, Java, ..) plus eventually TEE base images for other languages (NodeJs).
 {% endhint %}
-
 
 ## Build the TEE docker image
 
