@@ -4,13 +4,13 @@
 
 Sometimes things don't work out right the first time and you may need to debug your application.
 
-- Get debug information of a task
+- Get debug information of a _task_
 ```bash
 iexec task debug <taskid> --chain bellecour
 ```
-It allows anyone to know on-chain and off-chain statuses of the task.
+It allows anyone to know on-chain and off-chain statuses of the _task_.
 
-- Get debug logs of a task
+- Get debug logs of a _task_
 ```bash
 iexec task debug <taskid> --logs --chain bellecour
 ```
