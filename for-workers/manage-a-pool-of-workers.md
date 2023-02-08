@@ -13,4 +13,4 @@ An iExec workerpool is orchestrated by an _iExec Core Scheduler_. The _iExec Cor
 
 ## Deploy a workerpool
 
-You can deploy your own workerpool on iExec by following this [documentation](https://github.com/iExecBlockchainComputing/deploy-workerpool).
+You can deploy your own workerpool on iExec with [this repository](https://github.com/iExecBlockchainComputing/deploy-workerpool). Be sure to check a particular [release](https://github.com/iExecBlockchainComputing/deploy-workerpool/releases) before starting your deployment.
