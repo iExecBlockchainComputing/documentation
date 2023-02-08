@@ -5,7 +5,7 @@
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
 - [Nodejs](https://nodejs.org) 14.0.0 or higher.
-- [iExec SDK](https://www.npmjs.com/package/iexec) 7.2.0 or higher.
+- [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-software-guard-extension-intel-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
   {% endhint %}
 
@@ -203,7 +203,7 @@ docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15-v4 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
@@ -214,7 +214,7 @@ docker run -it --rm \
             --host-path=/etc/resolv.conf \
             --binary=/usr/local/bin/node \
             --heap=1G \
-            --dlopen=2 \
+            --dlopen=1 \
             --no-color \
             --verbose \
             --command=${ENTRYPOINT} \
@@ -246,7 +246,7 @@ docker build . -t ${IMG_FROM}
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15-v4 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
@@ -257,7 +257,7 @@ docker run -it \
             --host-path=/etc/resolv.conf \
             --binary=/usr/local/bin/python3.7 \
             --heap=1G \
-            --dlopen=2 \
+            --dlopen=1 \
             --no-color \
             --verbose \
             --command=${ENTRYPOINT} \
@@ -302,7 +302,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
     "multiaddr": "docker.io/username/tee-developer-secret-app:1.0.0", // app image
     "checksum": "0xf997788fcb5c9a47d8fa2653098da3c58343d400a82ca13d014d711d60560cac", // image digest
     "mrenclave": {
-      "provider": "SCONE", // TEE provider (keep default value)
+      "framework": "SCONE", // TEE framework (keep default value)
       "version": "v5", // Scone version (keep default value)
       "entrypoint": "node /app/app.js" OR "python3 /app/app.py", // your app image entrypoint
       "heapSize": 1073741824, // heap size in bytes (1GB)
@@ -336,7 +336,7 @@ These `sed` commands will do the trick:
 
 ```sh
 # set a custom bellecour SMS in chain.json
-sed -i 's|"bellecour": {},|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|g' chain.json
+sed -i 's|"bellecour": {},|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|g' chain.json
 ```
 
 ```sh
@@ -348,19 +348,19 @@ iexec app check-secret --chain bellecour
 
 ```sh
 # restore the default configuration in chain.json
-sed -i 's|"bellecour": { "sms": "https://v7.sms.debug-tee-services.bellecour.iex.ec" },|"bellecour": {},|g' chain.json
+sed -i 's|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|"bellecour": {},|g' chain.json
 ```
 
 ### Run the TEE app
 
-Specify the tag `--tag tee` in `iexec app run` command to run a tee app with an app developer secret.
+Specify the tag `--tag tee,scone` in `iexec app run` command to run a tee app with an app developer secret.
 
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v7-debug.main.pools.iexec.eth`.
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v8-debug.main.pools.iexec.eth`.
 
 You are now ready to run the app
 
 ```sh
-iexec app run <appAddress> --tag tee --workerpool v7-debug.main.pools.iexec.eth --watch --chain bellecour
+iexec app run <appAddress> --tag tee,scone --workerpool v8-debug.main.pools.iexec.eth --watch --chain bellecour
 ```
 
 ## Next step?
