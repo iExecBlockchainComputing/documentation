@@ -198,11 +198,7 @@ IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 
 Run the `sconify.sh` script to build the TEE-debug app.
 
-{% hint style="info" %}
-The `sconify.sh` script prints the generated docker image name, you must retag this image and push it on dockerhub.
-{% endhint %}
-
-Push your image on DockerHub:
+Push your image on Docker Hub:
 
 ```bash
 docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
@@ -277,4 +273,5 @@ At this stage, your application is ready to be tested on iExec with the followin
 
 ## Next step?
 
-Thanks to the explained confidential computing workflow, it is possible to use an app developer secret with a trusted application.
+Thanks to the explained confidential computing workflow, you discovered how to use an app developer secret with a trusted application.
+Check out how to [Access requester secrets](requester-secrets.md).
