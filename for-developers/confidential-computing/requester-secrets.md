@@ -11,7 +11,7 @@ Before going any further, make sure you managed to [Build with a TEE framework](
 - [Nodejs](https://nodejs.org) 14.0.0 or higher.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
-  {% endhint %}
+{% endhint %}
 
 Trusted Execution Environments offer a huge advantage from a security perspective. They guarantee that the behavior of execution does not change even when launched on an untrusted remote machine. The data inside this type of environment is also protected, which allows its monetization while preventing leakage.
 
@@ -163,40 +163,34 @@ In this section, you will:
 Create the `Dockerfile`
 
 {% tabs %}
-{% tab title="Javascript" %}
-{% code title="Dockerfile" %}
+{% tab title="Scone" %}
 
-```bash
-# Starting from a base image supported by SCONE
-FROM node:14-alpine3.11
+The Dockerfile and the build scripts are similar to the ones we saw [previously](create-your-first-sgx-app.md) for a trusted application:
 
-# install your dependencies
-RUN mkdir /app && cd /app && npm install axios
+Create the `Dockerfile`
 
-COPY ./src /app
+- for a Javascrip application
+  ```bash
+  # Starting from a base image supported by SCONE
+  FROM node:14-alpine3.11
 
-ENTRYPOINT [ "node", "/app/app.js"]
-```
+  # install your dependencies
+  RUN mkdir /app && cd /app && npm install axios
 
-{% endcode %}
-{% endtab %}
+  COPY ./src /app
 
-{% tab title="Python" %}
-{% code title="Dockerfile" %}
+  ENTRYPOINT [ "node", "/app/app.js"]
+  ```
+- for a Python application
+  ```bash
+  FROM python:3.7.3-alpine3.10
 
-```bash
-FROM python:3.7.3-alpine3.10
+  RUN pip3 install requests
 
-RUN pip3 install requests
+  COPY ./src /app
 
-COPY ./src /app
-
-ENTRYPOINT ["python3", "/app/app.py"]
-```
-
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+  ENTRYPOINT ["python3", "/app/app.py"]
+  ```
 
 Build the docker image.
 
@@ -221,6 +215,27 @@ Push your image on Docker Hub:
 ```bash
 docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
 ```
+
+{% endtab %}
+{% tab title="Gramine" %}
+
+In this section, you will create a `Dockerfile` and create your **Gramine TEE application** as we saw in [Build Gramine app > Prepare your application](create-your-first-gramine-app.md#prepare-your-application).
+
+You need to copy the `Dockerfile`, then update its `RUN` statements to install required dependencies for your application:
+
+- for a Javascript application
+  ```bash
+  # Install required node dependencies
+  RUN npm install axios
+  ```
+- for a Python application
+  ```bash
+  # Install required Python dependencies
+  RUN pip3 install requests
+  ```
+
+{% endtab %}
+{% endtabs %}
 
 ## Test your app on iExec
 
