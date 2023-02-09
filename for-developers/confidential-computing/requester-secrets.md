@@ -153,9 +153,14 @@ except Exception:
 {% endtab %}
 {% endtabs %}
 
-## Build the TEE docker image
+## Build a TEE Scone application
 
-The Dockerfile and the build scripts are similar to the ones we saw [previously](create-your-first-sgx-app.md) for a trusted application:
+In this section, you will:
+
+- Build the native image of the application as described in [Build your first application](../your-first-app.md#dockerize-your-app).
+- Create and execute the `sconify.sh` script to build the **Scone TEE application** as we saw in [Build Scone app > Prepare your application](create-your-first-sgx-app.md#prepare-your-application).
+
+Create the `Dockerfile`
 
 {% tabs %}
 {% tab title="Javascript" %}
@@ -193,103 +198,29 @@ ENTRYPOINT ["python3", "/app/app.py"]
 {% endtab %}
 {% endtabs %}
 
-{% tabs %}
-{% tab title="Javascript" %}
-{% code title="sconify.sh" %}
+Build the docker image.
 
 ```bash
-#!/bin/bash
-
-# declare the app entrypoint
-ENTRYPOINT="node /app/app.js"
-# declare an image name
-IMG_NAME=tee-requester-secrets-app
-
-IMG_FROM=${IMG_NAME}:temp-non-tee
-IMG_TO=${IMG_NAME}:tee-debug
-
-# build the regular non-TEE image
-docker build . -t ${IMG_FROM}
-
-# pull the SCONE curated image corresponding to our base image
-docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
-
-# run the sconifier to build the TEE image based on the non-TEE image
-docker run -it --rm \
-            -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
-            sconify_iexec \
-            --name=${IMG_NAME} \
-            --from=${IMG_FROM} \
-            --to=${IMG_TO} \
-            --binary-fs \
-            --fs-dir=/app \
-            --host-path=/etc/hosts \
-            --host-path=/etc/resolv.conf \
-            --binary=/usr/local/bin/node \
-            --heap=1G \
-            --dlopen=1 \
-            --no-color \
-            --verbose \
-            --command=${ENTRYPOINT} \
-            && echo -e "\n------------------\n" \
-            && echo "successfully built TEE docker image => ${IMG_TO}" \
-            && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
+docker build . --tag <docker-hub-user>/count-api:1.0.0
 ```
 
-{% endcode %}
-{% endtab %}
-
-{% tab title="Python" %}
-{% code title="sconify.sh" %}
+Follow the steps described in [Build Scone app > Build the TEE docker image](create-your-first-sgx-app.md#build-the-tee-docker-image).
+Create the `sconify.sh` script and update the variables as follow:
 
 ```bash
-#!/bin/bash
-
-# declare the app entrypoint
-ENTRYPOINT="python3 /app/app.py"
-# declare an image name
-IMG_NAME=tee-requester-secrets-app
-
-IMG_FROM=${IMG_NAME}:temp-non-tee
-IMG_TO=${IMG_NAME}:tee-debug
-
-# build the regular non-TEE image
-docker build . -t ${IMG_FROM}
-
-# run the sconifier to build the TEE image based on the non-TEE image
-docker run -it \
-            -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
-            sconify_iexec \
-            --name=${IMG_NAME} \
-            --from=${IMG_FROM} \
-            --to=${IMG_TO} \
-            --binary-fs \
-            --fs-dir=/app \
-            --host-path=/etc/hosts \
-            --host-path=/etc/resolv.conf \
-            --binary=/usr/local/bin/python3.7 \
-            --heap=1G \
-            --dlopen=1 \
-            --no-color \
-            --verbose \
-            --command=${ENTRYPOINT} \
-            && echo -e "\n------------------\n" \
-            && echo "successfully built TEE docker image => ${IMG_TO}" \
-            && echo "application mrenclave.fingerprint is $(docker run -it --rm -e SCONE_HASH=1 ${IMG_TO})"
+# Declare image related variables
+IMG_NAME=tee-scone-count-api
+IMG_FROM=<docker-hub-user>/count-api:1.0.0
+IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 ```
-
-{% endcode %}
-{% endtab %}
-
-{% endtabs %}
 
 Run the `sconify.sh` script to build the TEE-debug app.
 
-{% hint style="info" %}
-The `sconify.sh` script prints the generated docker image name, you must retag this image and push it on dockerhub.
-{% endhint %}
+Push your image on Docker Hub:
+
+```bash
+docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
+```
 
 ## Test your app on iExec
 
