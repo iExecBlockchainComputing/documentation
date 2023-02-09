@@ -155,15 +155,15 @@ except Exception:
 
 ## Build a TEE Scone application
 
-In this section, you will:
-
-- Build the native image of the application as described in [Build your first application](../your-first-app.md#dockerize-your-app).
-- Create and execute the `sconify.sh` script to build the **Scone TEE application** as we saw in [Build Scone app > Prepare your application](create-your-first-sgx-app.md#prepare-your-application).
-
 Create the `Dockerfile`
 
 {% tabs %}
 {% tab title="Scone" %}
+
+In this section, you will:
+
+- Build the native image of the application as described in [Build your first application](../your-first-app.md#dockerize-your-app).
+- Create and execute the `sconify.sh` script to build the **Scone TEE application** as we saw in [Build Scone app > Prepare your application](create-your-first-sgx-app.md#prepare-your-application).
 
 The Dockerfile and the build scripts are similar to the ones we saw [previously](create-your-first-sgx-app.md) for a trusted application:
 
