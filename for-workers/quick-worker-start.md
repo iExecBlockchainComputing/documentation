@@ -1,4 +1,4 @@
-(---
+---
 description: >-
   A worker is an essential actor of the iExec Network. It will be in charge of
   computing tasks sent by requesters on the iExec Marketplace.
