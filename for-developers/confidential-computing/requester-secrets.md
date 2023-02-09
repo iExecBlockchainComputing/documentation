@@ -228,18 +228,27 @@ At this stage, your application is ready to be tested on iExec with the followin
 
 ### Deploy the TEE app on iExec
 
+{% tabs %}
+{% tab title="Scone" %}
+
 [Deploy your application](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec)
-
-You will get a hexadecimal address for your deployed app. Use that address to push the app developer secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms).
-
-For simplicity, we will use the secret in a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the dataset encryption key to this SMS (this is fine for debugging but do not use to store production secrets).
-
-These `sed` commands will do the trick:
 
 ```bash
 # set a custom bellecour SMS in chain.json
 sed -i 's|"bellecour": {},|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|g' chain.json
 ```
+
+{% endtab %}
+{% tab title="Gramine" %}
+
+[Deploy your application](create-your-first-gramine-app.md#deploy-the-tee-app-on-iexec)
+
+{% endtab %}
+{% endtabs %}
+
+You will get a hexadecimal address for your deployed app. Use that address to push the app developer secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms).
+
+For simplicity, we will use the secret in a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the dataset encryption key to this SMS (this is fine for debugging but do not use to store production secrets).
 
 ### Push some requester secrets to the SMS
 
@@ -262,11 +271,12 @@ sed -i 's|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.be
 
 ### Run the TEE app
 
-Specify the tag `--tag tee,scone` in `iexec app run` command to run a tee app with an app developer secret.
-
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v8-debug.main.pools.iexec.eth`.
-
 You are now ready to run the app with requester secrets.
+
+{% tabs %}
+{% tab title="Scone" %}
+
+Specify the `--secret` and `--tag tee,scone` options in `iexec app run` command to run a tee app with requester secrets on Scone
 
 ```bash
 iexec app run <appAddress> \
@@ -277,6 +287,24 @@ iexec app run <appAddress> \
   --watch \
   --chain bellecour
 ```
+
+{% endtab %}
+{% tab title="Gramine" %}
+
+Specify the `--secret` and `--tag tee,gramine` options in `iexec app run` command to run a TEE app with requester secrets on Gramine
+
+```bash
+iexec app run <appAddress> \
+  --tag tee,gramine
+  --workerpool v8-debug.main.pools.iexec.eth \
+  --secret 1=my-namespace \
+  --secret 2=my-key \
+  --watch \
+  --chain bellecour
+```
+
+{% endtab %}
+{% endtabs %}
 
 {% hint style="info" %}
 The option `--secret <secretMapping...>` allow the requester to provision any number of secrets with the mapping syntax `<key>=<name>`.
