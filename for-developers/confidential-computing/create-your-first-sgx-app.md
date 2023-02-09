@@ -46,8 +46,8 @@ touch sconify.sh
 If you start from a new firectory tree, you will need to replay the following steps from [Build your first application](../your-first-app.md):
 
 - [Write the app](../your-first-app.md#write-the-app) Javascript or Python source code in `src/`
-- [Dockerize your app](../your-first-app#dockerize-your-app)
-- [Push your app to Dockerhub](../your-first-app#push-your-app-to-dockerhub)
+- [Dockerize your app](../your-first-app.md#dockerize-your-app)
+- [Push your app to Dockerhub](../your-first-app.md#push-your-app-to-dockerhub)
 
 As we mentioned earlier, the advantage of using **SCONE** is the ability to make the application **Intel® SGX-enabled** without changing the source code. The only thing we are going to do is rebuilding the app using the Trusted-Execution-Environment tooling provided by **SCONE**.
 
@@ -66,15 +66,15 @@ We will use the following script to wrap the sconification process, copy the `sc
 ```bash
 #!/bin/bash
 
-# declare the app entrypoint
+# Declare the app entrypoint
 ENTRYPOINT="node /app/app.js"
-# declare an image name
-IMG_NAME=tee-scone-hello-world
 
+# Declare image related variables
+IMG_NAME=tee-scone-hello-world
 IMG_FROM=<docker-hub-user>/hello-world:1.0.0
 IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 
-# run the sconifier to build the TEE image based on the non-TEE image
+# Run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
             registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
@@ -106,15 +106,15 @@ docker run -it --rm \
 ```bash
 #!/bin/bash
 
-# declare the app entrypoint
+# Declare the app entrypoint
 ENTRYPOINT="python3 /app/app.py"
-# declare an image name
-IMG_NAME=tee-scone-hello-world
 
+# Declare image related variables
+IMG_NAME=tee-scone-hello-world
 IMG_FROM=<docker-hub-user>/hello-world:1.0.0
 IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 
-# run the sconifier to build the TEE image based on the non-TEE image
+# Run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
             -v /var/run/docker.sock:/var/run/docker.sock \
             registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
@@ -148,7 +148,13 @@ chmod +x sconify.sh
 ./sconify.sh
 ```
 
-Congratulation you just built your first TEE application.
+Push your image on DockerHub:
+
+```bash
+docker push <docker-hub-user>/tee-scone-hello-world:1.0.0-debug
+```
+
+Congratulations, you just built your Scone TEE application.
 
 {% hint style="info" %}
 The `sconify.sh` script prints the generated docker image name, you must retag this image and push it on dockerhub.

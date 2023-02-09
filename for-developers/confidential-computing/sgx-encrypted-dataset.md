@@ -1,5 +1,9 @@
 # Use confidential assets
 
+{% hint style="warning" %}
+Before going any further, make sure you managed to [Build with a TEE framework](choose-your-tee-framework.md).
+{% endhint %}
+
 {% hint style="success" %}
 **Prerequisites**
 
@@ -8,10 +12,6 @@
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
   {% endhint %}
-
-{% hint style="warning" %}
-Please make sure you have already checked the [Quickstart](../quick-start-for-developers.md), [Your first application](../your-first-app.md) and [Build trusted applications](create-your-first-sgx-app.md) tutorials before learning how to manage confidential datasets.
-{% endhint %}
 
 Trusted Execution Environments offer a huge advantage from a security perspective. They guarantee that the behavior of execution does not change even when launched on an untrusted remote machine. The data inside this type of environment is also protected, which allows its monetization while preventing leakage.
 
