@@ -224,54 +224,11 @@ docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
 
 ## Test your app on iExec
 
-At this stage, your application is ready to be tested on iExec. The process is similar to testing any type of application on the platform, with these minor exceptions:
+At this stage, your application is ready to be tested on iExec with the following steps:
 
 ### Deploy the TEE app on iExec
 
-TEE applications require some additional information to be filled in during deployment.
-
-```sh
-# prepare the TEE application template
-iexec app init --tee
-```
-
-Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
-
-```json
-{
-  ...
-  "app": {
-    "owner": "0xF048eF3d7E3B33A465E0599E641BB29421f7Df92", // your address
-    "name": "tee-requester-secrets-app", // application name
-    "type": "DOCKER",
-    "multiaddr": "docker.io/username/tee-requester-secrets-app:1.0.0", // app image
-    "checksum": "0xa562ff90fd989ca618f2bb17f87b00b4b0486f46d3dae868350f9a27c424ed94", // image digest
-    "mrenclave": {
-      "framework": "SCONE", // TEE framework (keep default value)
-      "version": "v5", // Scone version (keep default value)
-      "entrypoint": "node /app/app.js" OR "python3 /app/app.py", // your app image entrypoint
-      "heapSize": 1073741824, // heap size in bytes (1GB)
-      "fingerprint": "253e7253d201ce25327becf1a3351f8945770e9624570fecd7db7d836b7ea192" // fingerprint of the enclave code (mrenclave), see how to retrieve it below
-    }
-  },
-  ...
-}
-```
-
-{% hint style="info" %}
-Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
-
-```sh
-docker run -it --rm -e SCONE_HASH=1 tee-developer-secret-app:tee-debug
-```
-
-{% endhint %}
-
-Deploy the app with the standard command:
-
-```sh
-iexec app deploy --chain bellecour
-```
+[Deploy your application](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec)
 
 You will get a hexadecimal address for your deployed app. Use that address to push the app developer secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms).
 
@@ -279,21 +236,26 @@ For simplicity, we will use the secret in a TEE-debug app on a debug workerpool.
 
 These `sed` commands will do the trick:
 
-```sh
+```bash
 # set a custom bellecour SMS in chain.json
 sed -i 's|"bellecour": {},|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|g' chain.json
 ```
 
-```sh
-# push some requester secrets to the SMS
+### Push some requester secrets to the SMS
+
+```bash
 iexec requester push-secret my-namespace --chain bellecour
 iexec requester push-secret my-key --chain bellecour
-# check the secret is available on the SMS
+```
+
+### Check secrets availability in the SMS
+
+```bash
 iexec requester check-secret my-namespace --chain bellecour
 iexec requester check-secret my-key --chain bellecour
 ```
 
-```sh
+```bash
 # restore the default configuration in chain.json
 sed -i 's|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|"bellecour": {},|g' chain.json
 ```
@@ -306,7 +268,7 @@ One last thing, in order to run a **TEE-debug** app you will also need to select
 
 You are now ready to run the app with requester secrets.
 
-```sh
+```bash
 iexec app run <appAddress> \
   --tag tee,scone \
   --workerpool v8-debug.main.pools.iexec.eth \
@@ -321,14 +283,14 @@ The option `--secret <secretMapping...>` allow the requester to provision any nu
 
 example:
 
-```sh
+```bash
 --secret 1=foo 3=bar
 ```
 
 - the secret named `foo` will be available in `IEXEC_REQUESTER_SECRET_1`
 - the secret named `bar` will be available in `IEXEC_REQUESTER_SECRET_3`
 - `IEXEC_REQUESTER_SECRET_2` will be skipped
-  {% endhint %}
+{% endhint %}
 
 ## Next step?
 
