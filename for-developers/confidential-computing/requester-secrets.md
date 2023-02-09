@@ -17,6 +17,10 @@ Trusted Execution Environments offer a huge advantage from a security perspectiv
 
 With iExec, it is possible to securely consume requester-provided secrets in the application.
 
+{% hint title="info" %}
+In this tutorial, you will learn how to leverage requester secrets by using the `IEXEC_REQUESTER_SECRET_#` environment variables in your code.
+{% endhint %}
+
 {% hint style="warning" %}
 The requester secrets are only exposed to authorized apps inside [enclaves](intel-sgx-technology.md#enclave) and never leave them.
 {% endhint %}
