@@ -25,6 +25,19 @@ mkdir src
 touch Dockerfile
 ```
 
+### Update chain.json
+
+Make sure your `chain.json` content is as follows:
+
+```json
+{
+  "default": "bellecour",
+  "chains": {
+    "bellecour": {}
+  }
+}
+```
+
 Copy from previous steps your [Javascript or Python sources](../your-first-app.md#write-the-app) in `src/` .
 When your sources are copied, your are ready to dockerize your application:
 
@@ -177,12 +190,6 @@ iexec app deploy --chain bellecour
 ### Run the TEE app
 
 Specify the tag `--tag tee,gramine` in `iexec app run` command to run a tee app.
-
-Verify your chain.json is reset to the default configuration
-
-```bash
-"bellecour": {}
-```
 
 ```bash
 # initialize the storage

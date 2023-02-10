@@ -43,7 +43,9 @@ touch Dockerfile
 touch sconify.sh
 ```
 
-Check or update your `chain.json` with the following content:
+### Update chain json
+
+Make sure your `chain.json` content is as follows:
 
 ```json
 {

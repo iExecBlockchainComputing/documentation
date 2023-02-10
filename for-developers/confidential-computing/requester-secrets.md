@@ -54,18 +54,11 @@ touch Dockerfile
 touch sconify.sh
 ```
 
-When workgin with the **Scone** framework, update `chain.json` content as follow:
+Depending on the TEE framework you are using, make sure your `chain.json` content is correct:
 
-```json
-{
-  "default": "bellecour",
-  "chains": {
-    "bellecour": {
-      "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" }
-    }
-  }
-}
-```
+- [Scone chain.json](create-your-first-sgx-app.md#update-chain-json)
+- [Gramine chain.json](create-your-first-gramine-app.md#update-chain-json)
+
 
 The application use the requester secrets to make a call to a secret endpoint of [countapi.xyz](https://countapi.xyz/) and writes the result in a file:
 
