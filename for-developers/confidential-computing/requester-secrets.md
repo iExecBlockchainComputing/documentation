@@ -59,8 +59,11 @@ When workgin with the **Scone** framework, update `chain.json` content as follow
 
 ```json
 {
-  "bellecour": {
-    "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" }
+  "default": "bellecour",
+  "chains": {
+    "bellecour": {
+      "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" }
+    }
   }
 }
 ```
