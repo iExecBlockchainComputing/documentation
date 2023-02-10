@@ -51,6 +51,16 @@ touch Dockerfile
 touch sconify.sh
 ```
 
+When working with the **Scone** framework, update `chain.json` content as follow:
+
+```json
+{
+  "bellecour": {
+    "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" }
+  }
+}
+```
+
 The application uses the developer secret to make a call to a secret endpoint of [countapi.xyz](https://countapi.xyz/) and writes the result in a file:
 
 **Copy the following content** in `src/` .

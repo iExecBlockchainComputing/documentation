@@ -55,6 +55,16 @@ touch Dockerfile
 touch sconify.sh
 ```
 
+When workgin with the **Scone** framework, update `chain.json` content as follow:
+
+```json
+{
+  "bellecour": {
+    "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" }
+  }
+}
+```
+
 The application use the requester secrets to make a call to a secret endpoint of [countapi.xyz](https://countapi.xyz/) and writes the result in a file:
 
 **Copy the following content** in `src/` .
@@ -259,11 +269,6 @@ At this stage, your application is ready to be tested on iExec with the followin
 
 [Deploy your application](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec)
 
-```bash
-# set a custom bellecour SMS in chain.json
-sed -i 's|"bellecour": {},|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|g' chain.json
-```
-
 {% endtab %}
 {% tab title="Gramine" %}
 
@@ -288,11 +293,6 @@ iexec requester push-secret my-key --chain bellecour
 ```bash
 iexec requester check-secret my-namespace --chain bellecour
 iexec requester check-secret my-key --chain bellecour
-```
-
-```bash
-# restore the default configuration in chain.json
-sed -i 's|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|"bellecour": {},|g' chain.json
 ```
 
 ### Run the TEE app

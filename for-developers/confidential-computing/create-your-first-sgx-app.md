@@ -43,6 +43,16 @@ touch Dockerfile
 touch sconify.sh
 ```
 
+Check or update your `chain.json` with the following content:
+
+```json
+{
+  "bellecour": {
+    "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" }
+  }
+}
+```
+
 If you start from a new firectory tree, you will need to replay the following steps from [Build your first application](../your-first-app.md):
 
 - [Write the app](../your-first-app.md#write-the-app) Javascript or Python source code in `src/`
@@ -229,21 +239,9 @@ One last thing, in order to run a **TEE-debug** app you will also need to select
 
 The debug workerpool is connected to a debug Secret Management Service (this is fine for debugging but do not use to store production secrets), we will need to init the storage token on this SMS.
 
-These `sed` commands will do the trick:
-
-```bash
-# set a custom bellecour SMS in chain.json
-sed -i 's|"bellecour": {},|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|g' chain.json
-```
-
 ```bash
 # initialize the storage
 iexec storage init --chain bellecour --tee-framework scone
-```
-
-```bash
-# restore the default configuration in chain.json
-sed -i 's|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|"bellecour": {},|g' chain.json
 ```
 
 You are now ready to run the app
