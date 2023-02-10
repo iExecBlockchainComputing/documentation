@@ -274,4 +274,8 @@ At this stage, your application is ready to be tested on iExec with the followin
 ## Next step?
 
 Thanks to the explained confidential computing workflow, you discovered how to use an app developer secret with a trusted application.
-Check out how to [Access requester secrets](requester-secrets.md).
+To go further, check out how to:
+
+- [Access requester secrets](requester-secrets.md)
+- [Access a confidential dataset](sgx-encrypted-dataset.md)
+- [Protect the result](end-to-end-encryption.md)

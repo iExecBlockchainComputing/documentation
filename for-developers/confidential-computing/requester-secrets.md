@@ -348,4 +348,9 @@ example:
 
 ## Next step?
 
-Thanks to the explained confidential computing workflow, it is possible to consume requester secrets with a trusted application.
+Thanks to the explained confidential computing workflow, you discovered how to consume requester secrets with a trusted application.
+To go further, check out how to:
+
+- [Attach a secret to your app](app-developer-secret.md)
+- [Access a confidential dataset](sgx-encrypted-dataset.md)
+- [Protect the result](end-to-end-encryption.md)
