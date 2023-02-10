@@ -18,7 +18,12 @@ Trusted Execution Environments offer a huge advantage from a security perspectiv
 With iExec, it is possible to securely consume requester-provided secrets in the application.
 
 {% hint title="info" %}
-In this tutorial, you will learn how to leverage requester secrets by using the `IEXEC_REQUESTER_SECRET_#` environment variables in your code.
+In this tutorial, you will learn how to leverage requester secrets by using the following environment variables in your code:
+
+- `IEXEC_REQUESTER_SECRET_1`
+- `IEXEC_REQUESTER_SECRET_2`
+- `...`
+- `IEXEC_REQUESTER_SECRET_<N>`
 {% endhint %}
 
 {% hint style="warning" %}
