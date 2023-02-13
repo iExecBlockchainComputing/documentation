@@ -18,7 +18,7 @@
     - [Access a confidential dataset](for-developers/confidential-computing/sgx-encrypted-dataset.md)
   - [Protect the result](for-developers/confidential-computing/end-to-end-encryption.md)
 - [Debug your tasks](for-developers/advanced/task-feedback.md)
-- [Manage your resources](for-developers/advanced/README.md)
+- [Manage your orders](for-developers/advanced/README.md)
   - [Manage your apporders](for-developers/advanced/manage-your-apporders.md)
   - [Manage your datasetorders](for-developers/advanced/manage-your-datasetorders.md)
 - [Go to production](for-developers/go-to-production.md)
