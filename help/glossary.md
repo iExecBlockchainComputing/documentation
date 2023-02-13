@@ -56,6 +56,10 @@ An agreement between all parties (requester and providers) in the iExec network.
 
 A decentralized, open-source blockchain with smart contract functionality. Ethereum proposes using blockchain technology to maintain a decentralized payment network and to store computer code that can be used to power decentralized applications.
 
+## Enclave
+
+In confidential computing jargon, an "enclave" is the special memory zone protected by the CPU. For simplicity's sake, we can refer to private regions of memory defined by Intel® SGX application as "enclaves".
+
 ## EVM (Ethereum Virtual Machine)
 
 The Ethereum's execution environment. This is the virtual machine which executes the smart contracts on the blockchain.
@@ -98,6 +102,10 @@ A decentralized method that enables to generate a new token without the involvem
 
 Please note that minting an NFT (non-fungible token) is a different procedure. To mint an NFT, users usually sign up with a cryptocurrecny wallet on an NFT marketplace (or other platform). Then that create an NFT by uploading a file and paying for the creation. Once the transaction is verified, a new NFT is minted. This process to add NFTs to a blockchain allows creators to sell their photos, videos, and digital 3D objects.
 See “ERC-721” for more information.
+
+## MREnclave
+
+The MREnclave is a hash value that identifies every enclave. It is obtained from the content of memory pages and access rights. The MREnclave is available after the TEE application is built.
 
 # N
 
@@ -142,6 +150,11 @@ A person who buys the execution of a task in the iExec marketplace.
 ## RLC (Run on lots of computers)
 
 An Ethereum (ERC20) token launched during the iExec ICO in 2017. This utility token is used on the iExec marketplace to buy and sell computing assets.
+
+
+## Remote attestation
+
+As explained by [Intel](https://software.intel.com/en-us/sgx/attestation-services), the remote attestation is the process that happens before any exchange between a remote provider and an enclave. It allows the provider to verify that the expected software is running in an Intel® SGX-protected way, as well as getting other details about the application being attested. If the attestation is successful, a secure communication channel is established between the provider and the enclave, and secrets can safely land in the latter.
 
 ## Roadmap
 
