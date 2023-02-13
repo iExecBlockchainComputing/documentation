@@ -6,9 +6,9 @@ Before going any further, make sure you managed to [Build with a TEE framework](
 
 ### Secret Management Service (SMS)
 
-With the integration of SCONE in iExec, you do not need to worry about [remote attestation](intel-sgx-technology.md#remote-attestation). We do that for you, we guarantee that the code is running inside an enclave. But that is not all, we also verify that the enclave asking for secrets is authorized to do so. Hence, we implemented a component to handle the permission management for those secrets. You guessed it, it is the SMS! The SMS queries the blockchain and determines, for each task, the required secrets and provisions them on the fly.
+You can use confidential assets on iExec thanks to the _iExec Secret Management Service_. This service verifies that the enclave asking for secrets is authorized to do so. Any user - as a confidential asset provider - declares on the blockchain which enclaves are authorized to access it. For each task, the SMS will query the blockchain to determine if the enclave requesting secrets is indeed whitelisted for it.
 
-**Confidential application:** To make your confidential asset available on iExec, you should first encrypt it using the SDK, before making the encrypted file publicly available. Deploy your confidential asset on the blockchain, then push the encryption key into the SMS.
+As a general flow, to make your confidential asset available on iExec, you should first encrypt it using the SDK, before making the encrypted file publicly available. Deploy your confidential asset on the blockchain, then push the encryption key into the SMS.
 
 - [Attach a secret to your app](app-developer-secret.md)
 - [Access requester secrets from your app](requester-secrets.md)
