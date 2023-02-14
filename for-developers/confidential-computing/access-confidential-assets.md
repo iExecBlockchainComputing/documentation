@@ -22,8 +22,8 @@ graph TD
     Req --> |2. Buy task| Chain
     Chain[Blockchain] --> |3. Notify task to compute| Worker[Worker/Workerpool]
     Worker --> |4. Launch TEE application| App[TEE application]
-    App --> |5. Get secrets for task| SMS
-    SMS --> |6. Check authorization for secrets| Chain
+    App --> |5.a. Get secrets for task| SMS
+    SMS --> |5.b. Check authorization for secrets| Chain
 ```
 
 ## Next step?
