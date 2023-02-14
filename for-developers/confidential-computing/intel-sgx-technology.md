@@ -21,8 +21,11 @@ graph TD
     Chain[Blockchain] --> |2. Notify task to compute| Worker[Worker/Workerpool]
     Worker --> |3. Launch TEE application| App[TEE application pre-starting]
     App --> |4. Send report containing integrity <br>information of the enclave| SMS{SMS <br> Is integrity and authenticity <br> of the requesting enclave valid?}
-    SMS --> |4.a. No| AppFailed[TEE application run aborted]
-    SMS --> |4.b. Yes| AppStarted[TEE application started]   
+    SMS --> |No| AppFailed[TEE application run aborted]
+    SMS --> |Yes| AppStarted[TEE application started]   
+
+    style AppFailed color:red
+    style AppStarted color:green 
 ```
 
 To build such Confidential Computing (TEE) application, a developer would need to use the Intel® SGX SDK. With iExec, you don't need to manipulate it. Instead iExec supports high-level frameworks, known as TEE frameworks, such as Scone and Gramine. Further sections will cover in details these [TEE frameworks](choose-your-tee-framework.md).
