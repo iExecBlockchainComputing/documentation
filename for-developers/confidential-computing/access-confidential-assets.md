@@ -7,7 +7,7 @@ Before going any further, make sure you managed to [Build with a TEE framework](
 ### Secret Management Service (SMS)
 
 You can use confidential assets on iExec thanks to the _iExec Secret Management Service_. This service verifies that the enclave asking for secrets is authorized to do so. Any user - as a confidential asset provider - declares on the blockchain which enclaves are authorized to access it. For each task, the SMS will query the blockchain to determine if the enclave requesting secrets is indeed whitelisted for it.
-
+```mermaid
 graph TD
     Req[Requester] -->|1.a. push secret| SMS(SMS fa:fa-vault)
     AppDev[App Developer] -->|1.b. push secret| SMS
@@ -17,6 +17,7 @@ graph TD
     Worker --> |4. launch TEE application| App[TEE application fa:fa-shield]
     App --> |5. get secrets for task| SMS
     SMS --> |6. check authorization for secrets| Chain
+```
 
 The SMS currently supports 3 types of secrets:
 1. [Application developer secret](app-developer-secret.md): This secret is directly accessible from the application as an environment variable. It is owned by the developer of the application. It can be any kind of data (API key, private key, token, ..) as long as it respects the size limit (max. 4096 kB).
