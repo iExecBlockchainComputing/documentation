@@ -13,10 +13,11 @@ The SMS currently supports 3 types of secrets:
 2. [Requester secrets](requester-secrets.md): These secrets are directly accessible from the application as an environment variables, as long as the requester has decided to share them with it. These secrets can be any kind of data as long as they respect the size limit (max. 4096 kB). Before buying a task, a requester secret is pushed into the SMS and is not linked to any application. When a requester buys a task, the requester can declare which secrets can be accessed by the application. Doing so, a single requester secret can be shared with multiple applications.
 3. [Dataset secret](sgx-encrypted-dataset.md): A dataset secret is not directly accessible from the application but its decrypted content is. If a dataset is requested and authorized to be used in it, its content will be automatically decrypted in the application enclave. To monetize such a dataset on iExec, the original dataset must be encrypted using the iExec SDK, its encrypted counterpart must be publicly available and its encryption key pushed into the SMS.
 
+Here is a general overview of how confidential assets are used on iExec:
 ```mermaid
 graph TD
     Req[Requester] -->|1.a. Push secret| SMS[SMS]
-    AppDev[App Developer] -->|1.b. Push secret| SMS
+    AppDev[Application developer] -->|1.b. Push secret| SMS
     DatasetOwn[Dataset owner] -->|1.c. Push secret| SMS
     Req --> |2. Buy task| Chain
     Chain[Blockchain] --> |3. Notify task to compute| Worker[Worker/Workerpool]
@@ -24,3 +25,10 @@ graph TD
     App --> |5. Get secrets for task| SMS
     SMS --> |6. Check authorization for secrets| Chain
 ```
+
+## Next step?
+
+You now understand how these three kinds of confidential assets work on iExec, you can go one step further by learning how to manipulate them:
+- [Attach a secret to your app](app-developer-secret.md)
+- [Access requester secrets](requester-secrets.md)
+- [Access a confidential dataset](sgx-encrypted-dataset.md)
