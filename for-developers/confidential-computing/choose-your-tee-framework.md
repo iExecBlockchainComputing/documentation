@@ -13,11 +13,9 @@ Two TEE frameworks are supported on the iExec platform:
 
 ## Scone
 
-At a high-level, Scone protects the confidentiality and integrity of the data and the code without needing to modify or recompile the application.
+At a high-level, Scone protects the confidentiality and integrity of the data and the code without needing to modify or recompile the application. With native Intel® SGX technology, the OS is not a part of the Trusted Computing Base (TCB) hence system calls and kernel services are not available from an Intel® SGX. enclave. This can be limiting as the application will not be able to use File System and sockets directly from the code running inside the enclave. The [Scone](https://scontain.com/) framework resolves this, and reduce the burden of porting the application to Intel® SGX.
 
-Kernel services and system calls are not available from an Intel® SGX enclave as the OS is not a part of the trusted computing base (TCB) in Intel® SGX. This can be limiting as your application will not be able to use sockets or the file system directly from code running inside the enclave. To resolve this, and reduce the burden of porting your application to Intel® SGX, you can use use the [SCONE](https://scontain.com/) framework.
-
-SCONE provides a C standard library interface to container processes. System calls are executed outside of the enclave, but they are shielded by transparently encrypting/decrypting application data: files stored outside of the enclave are therefore encrypted, and network communication is protected by transport layer security (TLS).
+More precisely, Scone provides a C standard library interface to container processes. System calls are executed outside of the enclave, but they are shielded by transparently encrypting/decrypting application data. Files stored outside of the enclave are therefore encrypted, and network communication is protected by transport layer security (TLS).
 
 For a deeper understanding, you can have a look to the official [Scone documentation](https://sconedocs.github.io/).
 
