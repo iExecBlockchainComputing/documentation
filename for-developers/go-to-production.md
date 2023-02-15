@@ -38,9 +38,11 @@ The following applies only to the Scone framework.
 
 Let's talk about the [SMS](confidential-computing/access-confidential-assets.md). As seen before, this is a critical component. It holds all the secrets you give it, so nobody should be able to access its memory. That's why the production SMS runs inside an enclave.
 
-The consequences are fairly easy to explain: if this enclave is lost, everything it contains is lost as well! To ensure security for your secrets, the SMS has been designed so nobody but the authorized applications can retrieve the secrets it holds - even iExec, the root-privilege user, can't retrieve the secrets they don't own. Please remember to keep your secrets locally in case the enclave is lost. Otherwise, nobody will be able to restore them.
+The consequences are fairly easy to explain: if this enclave is lost, everything it contains is lost as well! To ensure security for your secrets, the SMS has been designed so nobody can retrieve the secrets it holds - even iExec, the root-privilege user, can't retrieve the secrets they don't own. These secrets are only exposed outside the enclave when they are sent to the CAS over a RA-TLS channel to create the Scone session. Please remember to keep your secrets locally in case the enclave is lost. Otherwise, nobody will be able to restore them.
 
 As a reminder, a Scone enclave is protected by its application hash (AKA [MrEnclave](../help/glossary#mrenclave)) and the machine hardware.
+
+Below is a graph showing how the secrets and session mechanism works:
 ```mermaid
 graph TD
     S[Secret owner] -->|1. Push secret| SMS
