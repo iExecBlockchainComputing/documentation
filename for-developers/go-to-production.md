@@ -6,9 +6,9 @@ Before going any further, make sure you managed to:
 - [Build Confidential Computing app](confidential-computing/README.md)
 {% endhint %}
 
-## Update chain json
+## Connect to the production environment
 
-Make sure your `chain.json` content is as follows:
+To connect to the production environment, make sure your `chain.json` content is as follows:
 
 ```json
 {
@@ -25,18 +25,20 @@ If you're developing a standard application, then you know everything needed to 
 
 ## Confidential Computing application
 
-If you're developing a Confidential Computing application, then you'll need to be aware of important information. 
-
-### Remote attestation
-With the integration of TEE frameworks in iExec, you do not need to worry about [remote attestation](../help/glossary.md#remote-attestation). iExec does that for you, guaranteeing that the code is running inside an enclave.
-
-### The SMS is not meant to be a recovery storage
-
 {% hint style="warning" %}
 The following applies only to the Scone framework.
 {% endhint %}
 
-Let's talk about the [SMS](confidential-computing/access-confidential-assets.md). As seen before, this is a critical component. It holds all the secrets you give it, so nobody should be able to access its memory. That's why the production SMS runs inside an enclave.
+
+If you're developing a Confidential Computing application, then you'll need to be aware of important information.
+
+### SMS running inside an enclave
+
+The [iExec SMS](confidential-computing/access-confidential-assets.md) is a crucial component for TEE tasks on iExec. The SMS is in charge of:
+- storing all secrets of iExec users (application developer, requester, dataset owner)
+- defining - by following on-chain governance - which secrets are accessible to a specific enclave.
+
+To reach a higher level of security on the production environment, the iExec SMS runs inside an enclave.
 
 The consequences are fairly easy to explain: if this enclave is lost, everything it contains is lost as well! To ensure security for your secrets, the SMS has been designed so nobody can retrieve the secrets it holds - even iExec, the root-privilege user, can't retrieve the secrets they don't own. These secrets are only exposed outside the enclave when they are sent to the CAS over a RA-TLS channel to create the Scone session. Please remember to keep your secrets locally in case the enclave is lost. Otherwise, nobody will be able to restore them.
 
