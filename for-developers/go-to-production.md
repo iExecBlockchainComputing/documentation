@@ -21,7 +21,7 @@ To connect to the production environment, make sure your `chain.json` content is
 
 ## Standard application
 
-If you're developing a standard application, then you are already set. To reach more audience, you can [publish your app to the Dapps store](#publish-your-app-to-the-dapps-store).
+If you are developing a standard application, then you are already set. To reach more audience, you can [publish your app to the Dapps store](#publish-your-app-to-the-dapps-store).
 
 ## Confidential Computing application
 
@@ -29,8 +29,7 @@ If you're developing a standard application, then you are already set. To reach 
 The following applies only to the Scone framework.
 {% endhint %}
 
-
-If you're developing a Confidential Computing application, be aware of following information.
+If you are developing a Confidential Computing application, be aware of following information.
 
 ### SMS running inside an enclave
 
@@ -75,6 +74,7 @@ graph TD
 
     style SMS fill:green,color:white
     style SMSCPU fill:green,color:white
+    style SMSDB fill:green,color:white
     style CAS fill:green,color:white
     style CASDB fill:green,color:white
     style CASCPU fill:green,color:white
@@ -105,4 +105,4 @@ For these reasons, secrets can be lost at any time, with or without notice. Alwa
 
 ## Publish your app to the Dapps store
 
-To get more visibility for your application, make your app available on the [Dapps store](https://dapps.iex.ec/). To get there, follow instructions inside the [iexec-dapps-registry](https://github.com/iExecBlockchainComputing/iexec-dapps-registry) repository. For any trouble, contact the [iExec Help Center](https://iexecproject.atlassian.net/servicedesk/customer/portal/4).
+To get more visibility for your application, make your application available on the [Dapps store](https://dapps.iex.ec/). To get there, follow instructions inside the [iexec-dapps-registry](https://github.com/iExecBlockchainComputing/iexec-dapps-registry) repository. For any trouble, contact the [iExec Help Center](https://iexecproject.atlassian.net/servicedesk/customer/portal/4).
