@@ -1,5 +1,24 @@
 # Go to production
 
+{% hint style="warning" %}
+Before going any further, make sure you managed to:
+- [Build your first application](your-first-app.md)
+- [Build Confidential Computing app](confidential-computing/README.md)
+{% endhint %}
+
+## Update chain json
+
+Make sure your `chain.json` content is as follows:
+
+```json
+{
+  "default": "bellecour",
+  "chains": {
+    "bellecour": {}
+  }
+}
+```
+
 ## Standard application
 
 If you're developing a standard application, then you know everything needed to go to production! [Publish your orders](advanced/manage-your-apporders.md) with the price you think they are worth and here you go!
@@ -65,3 +84,7 @@ graph TD
 ```
 
 If the application hash changes, then the old enclave memory becomes inaccessible for the new enclave. If the hardware changes, then the same applies. You've got it, if the SMS is updated, the secrets it holds are lost. If the SMS is migrated to another instance, the secrets it holds are lost. This may happen at any moment, with or without notice. So, be careful with your secrets and keep them locally.
+
+## Publish your app to the Dapps store
+
+To get more visibility for your application, make your app available on the [Dapps store](https://dapps.iex.ec/). To get there, follow instructions inside the [iexec-dapps-registry](https://github.com/iExecBlockchainComputing/iexec-dapps-registry) repository. For any trouble, contact the [iExec Help Center](https://iexecproject.atlassian.net/servicedesk/customer/portal/4).
