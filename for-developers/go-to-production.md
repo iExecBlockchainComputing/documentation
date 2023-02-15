@@ -27,35 +27,41 @@ graph TD
     S[Secret owner] -->|1. Push secret| SMS
     Req[Requester] --> |2. Buy task| Chain
     Chain[Blockchain] --> |3. Notify task to compute| Worker[Worker/Workerpool]
-    Worker --> |4. Request: Create session <br>of secrets for task| SMS
-    SMS --> |5. Check authorization for secrets| Chain
+    Worker --> |4. Request:<br> Create session of secrets for task| SMS
+    SMS --> |5. Check authorization <br>for secrets| Chain
     SMS --> |6.a. Get encrypted secrets| SMSDB
     SMS --> |6.b. Get SMS database decryption key| CAS
-    SMS --> |7. Push session of secrets which will be only <br> accessible to the Application in enclave| CAS
-    SMS --> |8. Response: session ID| Worker
-    Worker --> |9. Launch application with session ID| App[Application in enclave]
+    SMS --> |7. Push session of secrets <br>which will be only <br> accessible to <br>the Application| CAS
+    SMS --> |8. Response: <br>session ID| Worker
+    Worker --> |9. Launch application with session ID| App[Application]
     App --> |10. Get all secrets for this session ID over RA-TLS channel| CAS
     SMS --- SMSCPU
     App --- AppCPU(Intel SGX CPU)
     CAS --- CASDB
-    CASDB --- |Encryption is performed using a private Seal Key that is unique to that particular platform/hardware| CASCPU
+    CASDB --- |Encryption is performed using a private Seal Key that <br>is unique to that particular platform/hardware| CASCPU
 
     subgraph "Security Services"
-        SMS[Scone SMS in enclave]
-        SMSDB[(Encrypted SMS database)]
-        SMSCPU(Intel SGX CPU)
-        CAS[CAS in enclave: Configuration and Attestation Service]
+        SMS[Scone SMS]
+        SMSDB[(Encrypted <br>SMS<br> database)]
+        SMSCPU(Intel SGX <br>CPU)
+        CAS[CAS: Configuration and Attestation Service]
         CASDB[(CAS Database)]
         CASCPU(Specific Intel SGX CPU)
     end
 
-    style SMS fill:green
-    style SMSCPU fill:green
-    style CAS fill:green
-    style CASDB fill:green
-    style CASCPU fill:green
-    style App fill:green
-    style AppCPU fill:green
+    subgraph "Legend"
+        IN[Enclave protection]
+        Out[No enclave protection]
+    end
+
+    style SMS fill:green,color:white
+    style SMSCPU fill:green,color:white
+    style CAS fill:green,color:white
+    style CASDB fill:green,color:white
+    style CASCPU fill:green,color:white
+    style App fill:green,color:white
+    style AppCPU fill:green,color:white
+    style IN fill:green,color:white
 ```
 
 If the application hash changes, then the old enclave memory becomes inaccessible for the new enclave. If the hardware changes, then the same applies. You've got it, if the SMS is updated, the secrets it holds are lost. If the SMS is migrated to another instance, the secrets it holds are lost. This may happen at any moment, with or without notice. So, be careful with your secrets and keep them locally.
