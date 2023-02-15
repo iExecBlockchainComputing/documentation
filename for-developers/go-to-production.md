@@ -21,7 +21,7 @@ To connect to the production environment, make sure your `chain.json` content is
 
 ## Standard application
 
-If you're developing a standard application, then you know everything needed to go to production! [Publish your orders](advanced/manage-your-apporders.md) with the price you think they are worth and here you go!
+If you're developing a standard application, then you are already set. To reach more audience, you can [publish your app to the Dapps store](#publish-your-app-to-the-dapps-store).
 
 ## Confidential Computing application
 
@@ -30,7 +30,7 @@ The following applies only to the Scone framework.
 {% endhint %}
 
 
-If you're developing a Confidential Computing application, then you'll need to be aware of important information.
+If you're developing a Confidential Computing application, be aware of following information.
 
 ### SMS running inside an enclave
 
@@ -39,10 +39,6 @@ The [iExec SMS](confidential-computing/access-confidential-assets.md) is a cruci
 - defining - by following on-chain governance - which secrets are accessible to a specific enclave.
 
 To reach a higher level of security on the production environment, the iExec SMS runs inside an enclave.
-
-The consequences are fairly easy to explain: if this enclave is lost, everything it contains is lost as well! To ensure security for your secrets, the SMS has been designed so nobody can retrieve the secrets it holds - even iExec, the root-privilege user, can't retrieve the secrets they don't own. These secrets are only exposed outside the enclave when they are sent to the CAS over a RA-TLS channel to create the Scone session. Please remember to keep your secrets locally in case the enclave is lost. Otherwise, nobody will be able to restore them.
-
-As a reminder, a Scone enclave is protected by its application hash (AKA [MrEnclave](../help/glossary#mrenclave)) and the machine hardware.
 
 Below is a graph showing how the secrets and session mechanism works:
 ```mermaid
@@ -87,7 +83,25 @@ graph TD
     style IN fill:green,color:white
 ```
 
-If the application hash changes, then the old enclave memory becomes inaccessible for the new enclave. If the hardware changes, then the same applies. You've got it, if the SMS is updated, the secrets it holds are lost. If the SMS is migrated to another instance, the secrets it holds are lost. This may happen at any moment, with or without notice. So, be careful with your secrets and keep them locally.
+As seen in this diagram, a sub-sets of secrets are transferred to an authorized Application enclave over an RA-TLS channel ([Remote Attestation](https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/attestation-services.html)).
+Inside Security Services, all secrets are protected by an SMS database encryption key, itself backed by the CAS. The SMS enclave needs to prove its authenticity and integrity to the CAS in order to get access to its database encryption key.
+To reach a higher level of security, the CAS enclave, which is the only component aware of the SMS database encryption key, is itself [sealed](https://www.intel.com/content/www/us/en/developer/articles/technical/introduction-to-intel-sgx-sealing.html) to a specific platform enclave.
+With that pattern, no one even an administrator or someone with root privileges can inspect confidential assets of users.
+
+### CAS update and failure
+
+While giving high guaranties about confidentiality of the data, if the CAS software is updated, or if the hardware under the CAS is updated or falls out of order, the CAS data will not be recoverable, hence user secrets will be lost.
+
+### SMS update
+
+In addition, when deploying a new configuration or software release for the SMS, the application enclave hash (MREnclave) will change. For that reason, old SMS data enclave will not be accessible to the new one, hence user secrets will be lost.
+
+### Backup your secrets
+
+{% hint style="warning" %}
+For these reasons, secrets can be lost at any time, with or without notice. Always keep a local copy of your secrets. Nobody even iExec will be able to restore them.
+{% endhint %}
+
 
 ## Publish your app to the Dapps store
 
