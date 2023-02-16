@@ -1,17 +1,16 @@
 # Use confidential assets
 
 {% hint style="warning" %}
-Before going any further, make sure you managed to [Build with a TEE framework](choose-your-tee-framework.md).
+The [Gramine TEE framework](choose-your-tee-framework.md#gramine) is not supported at the moment.
+Before going any further, make sure you managed to [Build with a Scone TEE application](create-your-first-sgx-app.md).
 {% endhint %}
 
 {% hint style="success" %}
 **Prerequisites**
 
-- [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
-- [Nodejs](https://nodejs.org) 14.0.0 or higher.
-- [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
-  {% endhint %}
+- [Build With a Scone TEE application](create-your-first-sgx-app.md)
+{% endhint %}
 
 Trusted Execution Environments offer a huge advantage from a security perspective. They guarantee that the behavior of execution does not change even when launched on an untrusted remote machine. The data inside this type of environment is also protected, which allows its monetization while preventing leakage.
 
@@ -29,19 +28,22 @@ Let's see how to do all of that!
 
 ## Encrypt the dataset
 
-Before starting, let's make sure we are inside the folder `~/iexec-projects` - created previously, during the [quick start](../quick-start-for-developers.md) tutorial.
+Before starting, let's make sure we are inside the `~/iexec-projects` folder created previously during the [quick start](../quick-start-for-developers.md) tutorial.
 
 ```bash
 cd ~/iexec-projects
+mkdir tee-dataset-app && cd tee-dataset-app
+iexec init --skip-wallet
 ```
 
+Make sure your `iexec.json` content is the same as the one described [here](create-your-first-sgx-app.md#update-chain-json).
 Init the dataset configuration.
 
 ```bash
 iexec dataset init --encrypted
 ```
 
-This command will create the folders `datasets/encrypted`, `datasets/original` and `.secrets/datasets`. A new section `"dataset"` will be added to the `iexec.json` file as well.
+This command will create the `datasets/encrypted`, `datasets/original` and `.secrets/datasets` folders. A new section `"dataset"` will be added to the `iexec.json` file as well.
 
 ```bash
 .
@@ -49,7 +51,7 @@ This command will create the folders `datasets/encrypted`, `datasets/original` a
 │   ├── encrypted
 │   └── original
 └── .secrets
-│    └── datasets
+     └── datasets
 ...
 ```
 
@@ -101,7 +103,7 @@ The file `.secrets/datasets/my-first-dataset.txt.key` is the encryption key, mak
 
 ## Deploy the dataset
 
-Fill in the fields of the `iexec.json` file. Choose a `name` for your dataset, put the encrypted file's URI in `multiaddr`\(the URI you got after publishing the file\), and add the `checksum` \(you can get it by running `sha256sum datasets/encrypted/my-first-dataset.txt.enc`\)
+Fill in the fields of the `iexec.json` file. Choose a `name` for your dataset, put the encrypted file's URI in `multiaddr`\(the URI you got after publishing the file\), and add the `checksum` \(you can get it by running `sha256sum datasets/encrypted/my-first-dataset.txt.enc`\).
 
 ```bash
 $ cat iexec.json
@@ -129,23 +131,15 @@ You will get a hexadecimal address for your deployed dataset. Use that address t
 
 For simplicity, we will use the dataset with a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the dataset encryption key to this SMS (this is fine for debugging but do not use to store production secrets).
 
-These `sed` commands will do the trick:
-
-```sh
-# set a custom bellecour SMS in chain.json
-sed -i 's|"bellecour": {},|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|g' chain.json
-```
-
-```sh
-# push the dataset secret to the SMS
+### Push the dataset secret to the SMS
+```bash
 iexec dataset push-secret --chain bellecour
-# check the secret is available on the SMS
-iexec dataset check-secret --chain bellecour
 ```
 
-```sh
-# restore the default configuration in chain.json
-sed -i 's|"bellecour": { "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" } },|"bellecour": {},|g' chain.json
+### Check secret availability on the SMS
+
+```bash
+iexec dataset check-secret --chain bellecour
 ```
 
 We saw in this section how to encrypt a dataset and deploy it on iExec. In addition, we learned how to push the encryption secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms). Now we need to build the application that is going to consume this dataset.
@@ -155,9 +149,7 @@ We saw in this section how to encrypt a dataset and deploy it on iExec. In addit
 Let's create a directory tree for this app in `~/iexec-projects/`.
 
 ```bash
-cd ~/iexec-projects
-mkdir tee-dataset-app && cd tee-dataset-app
-iexec init --skip-wallet
+cd ~/iexec-projects/tee-dataset-app
 mkdir src
 touch Dockerfile
 touch sconify.sh
