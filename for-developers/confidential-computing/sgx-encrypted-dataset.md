@@ -243,43 +243,10 @@ with open(iexec_out + '/computed.json', 'w+') as f:
 {% endtab %}
 {% endtabs %}
 
+
 ## Build the TEE docker image
 
-The Dockerfile and the build scripts are the same as the ones we saw [previously](create-your-first-sgx-app.md) for a trusted application:
-
-{% tabs %}
-{% tab title="Javascript" %}
-{% code title="Dockerfile" %}
-
-```bash
-# Starting from a base image supported by SCONE
-FROM node:14-alpine3.11
-
-# install your dependencies
-RUN mkdir /app && cd /app && npm install figlet@1.x
-
-COPY ./src /app
-
-ENTRYPOINT [ "node", "/app/app.js"]
-```
-
-{% endcode %}
-{% endtab %}
-
-{% tab title="Python" %}
-{% code title="Dockerfile" %}
-
-```bash
-FROM python:3.7.3-alpine3.10
-### install python dependencies if you have some
-RUN pip3 install pyfiglet
-COPY ./src /app
-ENTRYPOINT ["python3", "/app/app.py"]
-```
-
-{% endcode %}
-{% endtab %}
-{% endtabs %}
+Create the `Dockerfile` as described in [Build your first application](../your-first-app.md#dockerize-your-app).
 
 {% tabs %}
 {% tab title="Javascript" %}
