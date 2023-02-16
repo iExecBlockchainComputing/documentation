@@ -2,7 +2,7 @@
 
 {% hint style="warning" %}
 The [Gramine TEE framework](choose-your-tee-framework.md#gramine) is not supported at the moment.
-Before going any further, make sure you managed to [Build with a Scone TEE application](create-your-first-sgx-app.md).
+This page is only applicable to the [Scone TEE framework](choose-your-tee-framework.md#scone).
 {% endhint %}
 
 {% hint style="success" %}
