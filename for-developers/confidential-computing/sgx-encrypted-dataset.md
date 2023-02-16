@@ -263,7 +263,7 @@ IMG_FROM=<docker-hub-user>/hello-world-with-dataset:1.0.0
 IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 ```
 
-Run the `sconify.sh` script to build the TEE-debug app, then push your image on Docker Hub
+Run the `sconify.sh` script to build the TEE-debug app, then push your image on Docker Hub.
 
 ```bash
 docker push <docker-hub-user>/tee-scone-hello-world-with-dataset:1.0.0-debug
@@ -285,10 +285,20 @@ One last thing, in order to run a **TEE-debug** app you will also need to select
 
 You are now ready to run the app
 
-```sh
-iexec app run <appAddress> --tag tee,scone --dataset <datasetAddress> --workerpool v8-debug.main.pools.iexec.eth --watch --chain bellecour
+```bash
+iexec app run <appAddress> \
+  --tag tee,scone \
+  --dataset <datasetAddress> \
+  --workerpool v8-debug.main.pools.iexec.eth \
+  --watch \
+  --chain bellecour
 ```
 
 ## Next step?
 
-Thanks to the explained confidential computing workflow, it is possible to use an encrypted dataset with a trusted application. We can go another step further and protect the result too. See in the next chapter how to make your execution result encrypted so that you are the only one who can read it.
+Thanks to the explained confidential computing workflow, you discovered how to use an encrypted dataset with a trusted application.
+To go further, check out how to:
+
+- [Attach a secret to your app](app-developer-secret.md)
+- [Access requester secrets](requester-secrets.md)
+- [Protect the result](end-to-end-encryption.md)
