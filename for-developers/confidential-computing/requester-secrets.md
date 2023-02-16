@@ -274,7 +274,7 @@ At this stage, your application is ready to be tested on iExec with the followin
 
 You will get a hexadecimal address for your deployed app. Use that address to push the app developer secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms).
 
-For simplicity, we will use the secret in a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the dataset encryption key to this SMS (this is fine for debugging but do not use to store production secrets).
+For simplicity, we will use secrets in a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the requester secrets to this SMS (this is fine for debugging but do not use to store production secrets).
 
 ### Push some requester secrets to the SMS
 
