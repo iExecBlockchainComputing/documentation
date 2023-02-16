@@ -263,9 +263,7 @@ IMG_FROM=<docker-hub-user>/hello-world-with-dataset:1.0.0
 IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 ```
 
-Run the `sconify.sh` script to build the TEE-debug app.
-
-Push your image on Docker Hub
+Run the `sconify.sh` script to build the TEE-debug app, then push your image on Docker Hub
 
 ```bash
 docker push <docker-hub-user>/tee-scone-hello-world-with-dataset:1.0.0-debug
@@ -273,54 +271,11 @@ docker push <docker-hub-user>/tee-scone-hello-world-with-dataset:1.0.0-debug
 
 ## Test your app on iExec
 
-At this stage, your application is ready to be tested on iExec. The process is similar to testing any type of application on the platform, with these minor exceptions:
+At this stage, your application is ready to be tested on iExec.
 
 ### Deploy the TEE app on iExec
 
-TEE applications require some additional information to be filled in during deployment.
-
-```sh
-# prepare the TEE application template
-iexec app init --tee
-```
-
-Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
-
-```json
-{
-  ...
-  "app": {
-    "owner": "0xF048eF3d7E3B33A465E0599E641BB29421f7Df92", // your address
-    "name": "tee-dataset-app", // application name
-    "type": "DOCKER",
-    "multiaddr": "docker.io/username/tee-dataset-app:1.0.0", // app image
-    "checksum": "0x15bed530c76f1f3b05b2db8d44c417128b8934899bc85804a655a01b441bfa78", // image digest
-    "mrenclave": {
-      "framework": "SCONE", // TEE framework (keep default value)
-      "version": "v5", // Scone version (keep default value)
-      "entrypoint": "node /app/app.js" OR "python3 /app/app.py", // your app image entrypoint
-      "heapSize": 1073741824, // heap size in bytes (1GB)
-      "fingerprint": "eca3ace86f1e8a5c47123c8fd271319e9eb25356803d36666dc620f30365c0c1" // fingerprint of the enclave code (mrenclave), see how to retrieve it below
-    }
-  },
-  ...
-}
-```
-
-{% hint style="info" %}
-Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave):
-
-```sh
-docker run -it --rm -e SCONE_HASH=1 tee-dataset-app:tee-debug
-```
-
-{% endhint %}
-
-Deploy the app with the standard command:
-
-```sh
-iexec app deploy --chain bellecour
-```
+Deploy the application as described in [Build Scone app](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec).
 
 ### Run the TEE app
 
