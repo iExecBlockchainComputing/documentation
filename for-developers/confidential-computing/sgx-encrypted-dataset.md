@@ -51,8 +51,7 @@ This command will create the `datasets/encrypted`, `datasets/original` and `.sec
 │   ├── encrypted
 │   └── original
 └── .secrets
-     └── datasets
-...
+    └── datasets
 ```
 
 We will create a dummy file that has `"Hello, world!"` as content inside `datasets/original`. Alternatively, you can put your own dataset file.
