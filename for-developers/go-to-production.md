@@ -51,7 +51,7 @@ docker run -it \
 
 ### Impacts of the SMS in enclave
 
-As you already learned in previous [confidential assets](confidential-computing/access-confidential-assets.md) section, the iExec SMS is a crucial component for TEE tasks on iExec, being in charge of:
+As you have already learned in previous [confidential assets](confidential-computing/access-confidential-assets.md) section, the iExec SMS is a crucial component for TEE tasks on iExec, being in charge of:
 - storing all secrets of iExec users (application developer, requester, dataset owner)
 - defining - by following on-chain governance - which secrets are accessible to a specific enclave.
 
