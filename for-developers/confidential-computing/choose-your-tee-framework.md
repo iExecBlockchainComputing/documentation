@@ -28,7 +28,7 @@ For a deeper understanding, you can have a look to the official [Gramine documen
 ## Let's build
 
 {% hint style="warning" %}
-Following steps will guide you how to build a Confidential Computing application. The environment you are about to use is a "develop" environment:
+Following steps will show you how to build a Confidential Computing application. The environment you are about to use is a "develop" environment:
 - which can be reset at any time
 - where configurations and secrets might be inspected
 

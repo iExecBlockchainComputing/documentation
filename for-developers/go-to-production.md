@@ -86,11 +86,11 @@ graph TD
 As seen in this diagram, a sub-sets of secrets are transferred to an authorized Application enclave over an RA-TLS channel ([Remote Attestation](https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/attestation-services.html)).
 Inside Security Services, all secrets are protected by an SMS database encryption key, itself backed by the CAS. The SMS enclave needs to prove its authenticity and integrity to the CAS in order to get access to its database encryption key.
 To reach a higher level of security, the CAS enclave, which is the only component aware of the SMS database encryption key, is itself [sealed](https://www.intel.com/content/www/us/en/developer/articles/technical/introduction-to-intel-sgx-sealing.html) to a specific platform enclave.
-With that pattern, no one even an administrator or someone with root privileges can inspect confidential assets of users.
+With that pattern, no one, even an administrator or someone with root privileges, can inspect confidential assets of users.
 
 ### CAS update and failure
 
-While giving high guaranties about confidentiality of the data, if the CAS software is updated, or if the hardware under the CAS is updated or falls out of order, the CAS data will not be recoverable, hence user secrets will be lost.
+While giving high guarantees about confidentiality of the data, if the CAS software is updated, or if the hardware under the CAS is updated or falls out of order, the CAS data will not be recoverable, hence user secrets will be lost.
 
 ### SMS update
 
@@ -99,7 +99,7 @@ In addition, when deploying a new configuration or software release for the SMS,
 ### Backup your secrets
 
 {% hint style="warning" %}
-For these reasons, secrets can be lost at any time, with or without notice. Always keep a local copy of your secrets. Nobody even iExec will be able to restore them.
+For these reasons, secrets can be lost at any time, with or without notice. Always keep a local copy of your secrets. Nobody, even iExec, will be able to restore them.
 {% endhint %}
 
 
