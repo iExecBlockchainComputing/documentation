@@ -157,7 +157,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
     "mrenclave": {
       "framework": "GRAMINE",
       "version": "v1",
-      "entrypoint": "/workplace /app/app.js" OR "/workplace/app/app.py", // update it with your own image entrypoint
+      "entrypoint": "/workplace/app/app.js" OR "/workplace/app/app.py", // update it with your own image entrypoint
       "heapSize": 1073741824,
       "fingerprint": "<mrenclave>" // no 0x prefix, see how to retrieve it below
     }
