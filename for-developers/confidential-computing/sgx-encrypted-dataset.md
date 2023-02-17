@@ -30,7 +30,7 @@ Let's see how to do all of that!
 
 ## Encrypt the dataset
 
-Before starting, let's make sure we are inside the `~/iexec-projects` folder created previously during the [quick start](../quick-start-for-developers.md) tutorial.
+Before starting, let's make sure we are inside the `~/iexec-projects` folder previously created during the [quick start](../quick-start-for-developers.md) tutorial.
 
 ```bash
 cd ~/iexec-projects
