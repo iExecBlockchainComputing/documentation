@@ -45,7 +45,7 @@ Init the dataset configuration.
 iexec dataset init --encrypted
 ```
 
-This command will create the `datasets/encrypted`, `datasets/original` and `.secrets/datasets` folders. A new section `"dataset"` will be added to the `iexec.json` file as well.
+This command will create the `datasets/encrypted`, `datasets/original` and `.secrets/datasets` folders. A new `dataset` section will be added to the `iexec.json` file as well.
 
 ```bash
 .
