@@ -31,7 +31,25 @@ The following applies only to the Scone framework.
 
 If you are developing a Confidential Computing application, be aware of following information.
 
-### SMS running inside an enclave
+### Sign your application
+
+Any Confidential Computing application built previously on the [develop environnement](confidential-computing/choose-your-tee-framework.md#lets-build) runs in a debug enclave, which, as warned, might be inspected. To prevent confidential data to be inspected, the application must run in a production enclave.
+To run your application in a production enclave, the application needs to be signed with a key compatible with the Intel® Attestation Service (IAS). Create this key in your [Intel developer Portal](https://api.portal.trustedservices.intel.com/).
+
+When the key is created (`my-signer-key.pem`), update the previous [sconify.sh](confidential-computing/create-your-first-sgx-app.md#build-the-tee-docker-image) script by :
+- sharing the folder containing the `my-signer-key.pem`, here `/signer`
+- adding the `--scone-signer` option
+```bash
+docker run -it \
+            -v /signer:/signer \
+            [...]
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:<version> \
+            sconify_iexec \
+            --scone-signer=/signer/my-signer-key.pem \
+            [...]
+```
+
+### Impacts of the SMS in enclave
 
 The [iExec SMS](confidential-computing/access-confidential-assets.md) is a crucial component for TEE tasks on iExec. The SMS is in charge of:
 - storing all secrets of iExec users (application developer, requester, dataset owner)
@@ -88,15 +106,15 @@ Inside Security Services, all secrets are protected by an SMS database encryptio
 To reach a higher level of security, the CAS enclave, which is the only component aware of the SMS database encryption key, is itself [sealed](https://www.intel.com/content/www/us/en/developer/articles/technical/introduction-to-intel-sgx-sealing.html) to a specific platform enclave.
 With that pattern, no one, even an administrator or someone with root privileges, can inspect confidential assets of users.
 
-### CAS update and failure
+#### CAS update and failure
 
 While giving high guarantees about confidentiality of the data, if the CAS software is updated, or if the hardware under the CAS is updated or falls out of order, the CAS data will not be recoverable, hence user secrets will be lost.
 
-### SMS update
+#### SMS update
 
 In addition, when deploying a new configuration or software release for the SMS, the application enclave hash (MREnclave) will change. For that reason, old SMS data enclave will not be accessible to the new one, hence user secrets will be lost.
 
-### Backup your secrets
+#### Backup your secrets
 
 {% hint style="warning" %}
 For these reasons, secrets can be lost at any time, with or without notice. Always keep a local copy of your secrets. Nobody, even iExec, will be able to restore them.
