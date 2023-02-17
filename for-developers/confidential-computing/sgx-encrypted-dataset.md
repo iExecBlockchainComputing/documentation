@@ -87,7 +87,7 @@ datasets
     └── my-first-dataset.txt
 ```
 
-As you can see, the command generated the file `datasets/encrypted/my-first-dataset.txt.enc`. That file is the encrypted version of your dataset, you should push it somewhere accessible because the worker will download it during the execution process. You will enter this file's URI in the `iexec.json`file \(`multiaddr` attribute\) when you will deploy your dataset. Make sure that the URI is a **DIRECT** download link \(not a link to a web page for example\).
+As you can see, the command generated the file `datasets/encrypted/my-first-dataset.txt.enc`. That file is the encrypted version of your dataset, you should push it somewhere accessible because the worker will download it during the execution process. You will enter this file's URI in the `iexec.json`file (`multiaddr` attribute) when you will deploy your dataset. Make sure that the URI is a **DIRECT** download link (not a link to a web page for example).
 
 {% hint style="info" %}
 You can use Github for example to publish the file but you should add **/raw/** to the URI like this: [https://github.com/&lt;username&gt;/&lt;repo&gt;/raw/master/my-first-dataset.zip](https://github.com/<username>/<repo>/raw/master/my-first-dataset.zip)
@@ -104,7 +104,7 @@ The file `.secrets/datasets/my-first-dataset.txt.key` is the encryption key, mak
 
 ## Deploy the dataset
 
-Fill in the fields of the `iexec.json` file. Choose a `name` for your dataset, put the encrypted file's URI in `multiaddr`\(the URI you got after publishing the file\), and add the `checksum` \(you can get it by running `sha256sum datasets/encrypted/my-first-dataset.txt.enc`\).
+Fill in the fields of the `iexec.json` file. Choose a `name` for your dataset, put the encrypted file's URI in `multiaddr` (the URI you got after publishing the file), and add the `checksum` (you can get it by running `sha256sum datasets/encrypted/my-first-dataset.txt.enc`).
 
 ```bash
 $ cat iexec.json
@@ -158,7 +158,7 @@ touch sconify.sh
 
 In the folder `src/` create the file `app.js` or `app.py` then copy this code inside:
 
-The application reads the content of the dataset and writes it into the result's folder \(in an artistic way using **Figlet\)**:
+The application reads the content of the dataset and writes it into the result's folder (in an artistic way using **Figlet**):
 
 {% tabs %}
 {% tab title="Javascript" %}
