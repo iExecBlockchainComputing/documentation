@@ -38,7 +38,7 @@ mkdir tee-dataset-app && cd tee-dataset-app
 iexec init --skip-wallet
 ```
 
-Make sure your `iexec.json` content is the same as the one described [here](create-your-first-sgx-app.md#update-chain-json).
+Make sure your `chain.json` content is the same as the one described [here](create-your-first-sgx-app.md#update-chain-json).
 Init the dataset configuration.
 
 ```bash
