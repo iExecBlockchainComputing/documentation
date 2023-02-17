@@ -1,5 +1,7 @@
 # Build a Gramine application
 
+In this tutorial, you will learn how to build and run a Confidential Computing application with the Gramine TEE framework.
+
 {% hint style="warning" %}
 Before going any further, make sure you managed to [Build your first application](../your-first-app.md).
 {% endhint %}

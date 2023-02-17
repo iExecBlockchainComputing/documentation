@@ -1,7 +1,9 @@
 # Use confidential assets
 
+In this tutorial, you will learn how to leverage an encrypted dataset by using the `IEXEC_DATASET_FILENAME` environment variable in your application.
+
 {% hint style="warning" %}
-The [Gramine TEE framework](choose-your-tee-framework.md#gramine) is not supported at the moment.
+The [Gramine TEE framework](choose-your-tee-framework.md#gramine) does not support encrypted datasets at the moment.
 This page is only applicable to the [Scone TEE framework](choose-your-tee-framework.md#scone).
 {% endhint %}
 
@@ -17,8 +19,6 @@ Trusted Execution Environments offer a huge advantage from a security perspectiv
 With iExec, it is possible to authorize only applications you trust to use your datasets and get paid for it. Data is encrypted using standard encryption mechanisms and the plain version never leaves your machine. The encrypted version is made available for usage and the encryption key is pushed into the [SMS](intel-sgx-technology.md#secret-management-service-sms). After you deploy the dataset on iExec it is you, and only you, who decides which application is allowed to get the secret to decrypt it.
 
 {% hint style="warning" %}
-In this tutorial, you will learn how to leverage an encrypted dataset by using the `IEXEC_DATASET_FILENAME` environment variable in your application.
-
 Datasets are only decrypted inside authorized [enclaves](intel-sgx-technology.md#enclave) and never leave them. The same thing applies to secrets.
 {% endhint %}
 
