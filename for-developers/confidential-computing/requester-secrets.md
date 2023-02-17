@@ -1,5 +1,11 @@
 # Use requester secrets
 
+In this tutorial, you will learn how to:
+
+- leverage requester secrets by using the following environment variables in your code:
+`IEXEC_REQUESTER_SECRET_1`, `IEXEC_REQUESTER_SECRET_2`, `...`, `IEXEC_REQUESTER_SECRET_<N>`
+- map your personal secrets to those environment variables when buying an execution on iExec network
+
 {% hint style="warning" %}
 Before going any further, make sure you managed to [Build with a TEE framework](choose-your-tee-framework.md).
 {% endhint %}
@@ -16,14 +22,6 @@ Before going any further, make sure you managed to [Build with a TEE framework](
 Trusted Execution Environments offer a huge advantage from a security perspective. They guarantee that the behavior of execution does not change even when launched on an untrusted remote machine. The data inside this type of environment is also protected, which allows its monetization while preventing leakage.
 
 With iExec, it is possible to securely consume requester-provided secrets in the application.
-
-{% hint title="info" %}
-In this tutorial, you will learn how to:
-
-- leverage requester secrets by using the following environment variables in your code:
-`IEXEC_REQUESTER_SECRET_1`, `IEXEC_REQUESTER_SECRET_2`, `...`, `IEXEC_REQUESTER_SECRET_<N>`
-- map your personal secrets to those environment variables when buying an execution on iExec network
-{% endhint %}
 
 {% hint style="warning" %}
 The requester secrets are only exposed to authorized apps inside [enclaves](intel-sgx-technology.md#enclave) and never leave them.
@@ -274,7 +272,7 @@ At this stage, your application is ready to be tested on iExec with the followin
 
 You will get a hexadecimal address for your deployed app. Use that address to push the app developer secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms).
 
-For simplicity, we will use the secret in a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the dataset encryption key to this SMS (this is fine for debugging but do not use to store production secrets).
+For simplicity, we will use secrets in a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the requester secrets to this SMS (this is fine for debugging but do not use to store production secrets).
 
 ### Push some requester secrets to the SMS
 
@@ -343,7 +341,7 @@ example:
 
 ## Next step?
 
-Thanks to the explained confidential computing workflow, you discovered how to consume requester secrets with a trusted application.
+Thanks to the explained confidential computing workflow, you now know how to consume requester secrets in a Confidential Computing application.
 To go further, check out how to:
 
 - [Attach a secret to your app](app-developer-secret.md)

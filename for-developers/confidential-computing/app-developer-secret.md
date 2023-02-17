@@ -1,5 +1,7 @@
 # Use a developer secret
 
+In this tutorial, you will learn how to leverage an application developer secret by using the `IEXEC_APP_DEVELOPER_SECRET` environment variable in your application code.
+
 {% hint style="warning" %}
 Before going any further, make sure you managed to [Build with a TEE framework](choose-your-tee-framework.md).
 {% endhint %}
@@ -17,10 +19,6 @@ Trusted Execution Environments offer a huge advantage from a security perspectiv
 
 With iExec, it is possible to securely associate an application developer secret to the runtime of an application.
 This association is performed through the usage of environment variables which cannot leak outside of the enclave memory.
-
-{% hint style="info" %}
-In this tutorial, you will learn how to leverage an application developer secret by using the `IEXEC_APP_DEVELOPER_SECRET` environment variable in your application code.
-{% endhint %}
 
 {% hint style="warning" %}
 The app developer secret is only exposed to your app inside authorized [enclaves](intel-sgx-technology.md#enclave) and never leaves them.
@@ -278,7 +276,7 @@ At this stage, your application is ready to be tested on iExec with the followin
 
 ## Next step?
 
-Thanks to the explained confidential computing workflow, you discovered how to use an app developer secret with a trusted application.
+Thanks to the explained confidential computing workflow, you now know how to use an app developer secret in a Confidential Computing application.
 To go further, check out how to:
 
 - [Access requester secrets](requester-secrets.md)
