@@ -343,7 +343,7 @@ example:
 
 ## Next step?
 
-Thanks to the explained confidential computing workflow, you discovered how to consume requester secrets with a trusted application.
+Thanks to the explained confidential computing workflow, you now know how to consume requester secrets in a Confidential Computing application.
 To go further, check out how to:
 
 - [Attach a secret to your app](app-developer-secret.md)

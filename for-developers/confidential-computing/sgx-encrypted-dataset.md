@@ -298,7 +298,7 @@ iexec app run <appAddress> \
 
 ## Next step?
 
-Thanks to the explained confidential computing workflow, you discovered how to use an encrypted dataset with a trusted application.
+Thanks to the explained confidential computing workflow, you now know how to use an encrypted dataset in a Confidential Computing application.
 To go further, check out how to:
 
 - [Attach a secret to your app](app-developer-secret.md)
