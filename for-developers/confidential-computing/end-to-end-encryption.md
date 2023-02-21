@@ -46,15 +46,49 @@ Make sure you use the debug Secret Management Service (see [Build trusted applic
 
 Now, push the public key to the SMS:
 
+{% tabs %}
+{% tab title="Scone" %}
+
 ```bash
-iexec result push-encryption-key --chain bellecour
+iexec result push-encryption-key \
+    --chain bellecour \
+    --tee-framework scone
 ```
+
+{% endtab %}
+{% tab title="Gramine" %}
+
+```bash
+iexec result push-encryption-key \
+    --chain bellecour \
+    --tee-framework gramine
+```
+
+{% endtab %}
+{% endtabs %}
 
 And check it using:
 
+{% tabs %}
+{% tab title="Scone" %}
+
 ```bash
-iexec result check-encryption-key --chain bellecour
+iexec result check-encryption-key \
+    --chain bellecour \
+    --tee-framework scone
 ```
+
+{% endtab %}
+{% tab title="Gramine" %}
+
+```bash
+iexec result check-encryption-key \
+    --chain bellecour \
+    --tee-framework gramine
+```
+
+{% endtab %}
+{% endtabs %}
 
 Now to see that in action, you'd need to trigger a task and specify yourself as the beneficiary in the command:
 
