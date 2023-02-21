@@ -19,7 +19,7 @@ Before going any further, make sure you managed to [Build with a TEE framework](
 You don't need to change your application's code or redeploy it to add this feature.
 {% endhint %}
 
-Assuming your application is deployed (if not please check how to do it [here](../your-first-app.md#deploy-your-app-on-iexec)), before triggering an execution you need to generate a public/private AES key-pair and push the public part to the [Secret Management Service](intel-sgx-technology.md#secret-management-service-sms). The latter, in turn, will provide it, at runtime, to the enclave running your trusted application.
+Assuming your application is deployed (if not please check how to do it [here for Scone](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec) or [here for Gramine](create-your-first-gramine-app.md#deploy-the-tee-app-on-iexec)), before triggering an execution you need to generate a public/private AES key-pair and push the public part to the [Secret Management Service](intel-sgx-technology.md#secret-management-service-sms). The latter, in turn, will provide it, at runtime, to the enclave running your trusted application.
 
 To generate the key-pair, go to `~/iexec-projects` and use the following SDK command:
 
