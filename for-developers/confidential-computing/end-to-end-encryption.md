@@ -1,5 +1,7 @@
 # Protect result
 
+In previous tutorials, we saw how to build trusted applications that run securely inside [enclaves](intel-sgx-technology.md#enclave) and combine them with confidential datasets to get the most out of confidential computing advantages. In this chapter, we will push things further to protect the workflow in an end to end mode. That means the next step would be encrypting results.
+
 {% hint style="warning" %}
 Before going any further, make sure you managed to [Build with a TEE framework](choose-your-tee-framework.md).
 {% endhint %}
@@ -13,13 +15,11 @@ Before going any further, make sure you managed to [Build with a TEE framework](
 * Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
 {% endhint %}
 
-In previous tutorials, we saw how to build trusted applications that run securely inside [enclaves](intel-sgx-technology.md#enclave) and combine them with confidential datasets to get the most out of confidential computing advantages. In this chapter, we will push things further to protect the workflow in an end to end mode. That means the next step would be encrypting results.
-
 {% hint style="info" %}
 You don't need to change your application's code or redeploy it to add this feature.
 {% endhint %}
 
-Assuming your application is deployed \(if not please check how to do it [here](../your-first-app.md#deploy-your-app-on-iexec)\), before triggering an execution you need to generate a public/private AES key-pair and push the public part to the [Secret Management Service](intel-sgx-technology.md#secret-management-service-sms). The latter, in turn, will provide it, at runtime, to the enclave running your trusted application.
+Assuming your application is deployed (if not please check how to do it [here](../your-first-app.md#deploy-your-app-on-iexec)), before triggering an execution you need to generate a public/private AES key-pair and push the public part to the [Secret Management Service](intel-sgx-technology.md#secret-management-service-sms). The latter, in turn, will provide it, at runtime, to the enclave running your trusted application.
 
 To generate the key-pair, go to `~/iexec-projects` and use the following SDK command:
 
