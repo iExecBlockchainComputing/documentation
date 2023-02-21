@@ -23,6 +23,11 @@ Assuming your application is deployed (if not please check how to do it [here](.
 
 To generate the key-pair, go to `~/iexec-projects` and use the following SDK command:
 
+Depending on the TEE framework you are using, make sure your `chain.json` content is correct:
+
+- [Scone chain.json](create-your-first-sgx-app.md#update-chain-json)
+- [Gramine chain.json](create-your-first-gramine-app.md#update-chain-json)
+
 ```bash
 iexec result generate-encryption-keypair
 ```
@@ -53,6 +58,9 @@ iexec result check-encryption-key --chain bellecour
 
 Now to see that in action, you'd need to trigger a task and specify yourself as the beneficiary in the command:
 
+{% tabs %}
+{% tab title="Scone" %}
+
 ```bash
 iexec app run <0x-your-app-address> \
     --chain bellecour \
@@ -60,6 +68,20 @@ iexec app run <0x-your-app-address> \
     --encrypt-result \
     --watch
 ```
+
+{% endtab %}
+{% tab title="Gramine" %}
+
+```bash
+iexec app run <0x-your-app-address> \
+    --chain bellecour \
+    --tag tee,gramine \
+    --encrypt-result \
+    --watch
+```
+
+{% endtab %}
+{% endtabs %}
 
 Wait for the task to be `COMPLETED` and download the result:
 
