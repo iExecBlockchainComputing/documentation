@@ -76,7 +76,7 @@ graph TD
     CAS --- CASDB
     CASDB --- |Encryption is performed using a private Seal Key that <br>is unique to that particular platform/hardware| CASCPU
 
-    subgraph "Security Services"
+    subgraph SECU[<b>Security Services</b>]
         SMS[Scone SMS]
         SMSDB[(Encrypted <br>SMS<br> database)]
         SMSCPU(Intel SGX <br>CPU)
@@ -85,20 +85,14 @@ graph TD
         CASCPU(Specific Intel SGX CPU)
     end
 
-    subgraph "Legend"
+    subgraph Legend
         IN[Enclave protection]
         Out[No enclave protection]
     end
 
-    style SMS fill:green,color:white
-    style SMSCPU fill:green,color:white
-    style SMSDB fill:green,color:white
-    style CAS fill:green,color:white
-    style CASDB fill:green,color:white
-    style CASCPU fill:green,color:white
-    style App fill:green,color:white
-    style AppCPU fill:green,color:white
-    style IN fill:green,color:white
+    style Legend fill:#e1effc
+    classDef enclaveStyle fill:green,color:white
+    class SMS,SMSCPU,SMSDB,CAS,CASDB,CASCPU,App,AppCPU,IN enclaveStyle
 ```
 
 As seen in this diagram, required secrets are transferred to an authorized Application enclave over an RA-TLS channel ([Remote Attestation](https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/attestation-services.html)).
