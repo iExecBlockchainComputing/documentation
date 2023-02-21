@@ -102,7 +102,7 @@ graph TD
 ```
 
 As seen in this diagram, required secrets are transferred to an authorized Application enclave over an RA-TLS channel ([Remote Attestation](https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/attestation-services.html)).
-Inside Security Services, all secrets are protected by an SMS database encryption key, itself backed by the CAS. The SMS enclave needs to prove its authenticity and integrity to the CAS in order to get access to its database encryption key.
+Inside **Security Services** (yellow area in above diagram), all secrets are protected by an SMS database encryption key, itself backed by the CAS. The SMS enclave needs to prove its authenticity and integrity to the CAS in order to get access to its database encryption key.
 To reach a higher level of security, the CAS enclave, which is the only component aware of the SMS database encryption key, is itself [sealed](https://www.intel.com/content/www/us/en/developer/articles/technical/introduction-to-intel-sgx-sealing.html) to a specific platform enclave.
 With that pattern, no one, even an administrator or someone with root privileges, can inspect confidential assets of users.
 
