@@ -209,7 +209,7 @@ See” Confidential Computing ” for more information
 
 ## Whitepaper
 
-Explain the purpose and technology behind a project. Producing a whitepaper is a key step for a crypto startup to help investors understand technical information about its concept; whitepapers usually include a roadmap for how the project plans to grow and succeed. iExec’s whitepaper is available here <https://iex.ec/wp-content/uploads/2022/09/iexec_whitepaper.pdf>
+Explain the purpose and technology behind a project. Producing a whitepaper is a key step for a crypto startup to help investors understand technical information about its concept; whitepapers usually include a roadmap for how the project plans to grow and succeed. iExec’s whitepaper is available [here](https://iex.ec/wp-content/uploads/2022/09/iexec_whitepaper.pdf)
 
 ## Workers
 
