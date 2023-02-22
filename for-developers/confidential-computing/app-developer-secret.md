@@ -201,12 +201,6 @@ IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 
 Run the `sconify.sh` script to build the TEE-debug app.
 
-Push your image on Docker Hub:
-
-```bash
-docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
-```
-
 </details>
 
 <details>
@@ -236,13 +230,26 @@ Build the docker image.
 docker build . --tag <docker-hub-user>/tee-gramine-count-api:1.0.0
 ```
 
-Push your image on DockerHub:
+</details>
+
+### Push your image on Docker Hub
+
+{% tabs %}
+{% tab title="Scone" %}
+
+```bash
+docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
+```
+
+{% endtab %}
+{% tab title="Gramine" %}
 
 ```bash
 docker push <docker-hub-user>/tee-gramine-count-api:1.0.0
 ```
 
-</details>
+{% endtab %}
+{% endtabs %}
 
 ## Test your app on iExec
 
