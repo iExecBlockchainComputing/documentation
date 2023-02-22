@@ -1,6 +1,6 @@
 # Protect result
 
-In previous tutorials, we saw how to build [Confidential Computing applications](intel-sgx-technology.md#enclave) that run securely inside enclaves and combine them with confidential datasets to get the most out of confidential computing advantages. In this chapter, we will push things further to protect the workflow in an end to end mode. That means the next step would be encrypting results.
+In previous tutorials, we saw how to build [Confidential Computing applications](intel-sgx-technology.md) that run securely inside enclaves and combine them with confidential assets to get the most out of confidential computing advantages. In this chapter, we will push things further to protect the workflow in an end to end mode. That means the next step would be encrypting results.
 
 {% hint style="warning" %}
 Before going any further, make sure you managed to [Build with a TEE framework](choose-your-tee-framework.md).
