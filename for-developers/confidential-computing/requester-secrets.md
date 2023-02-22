@@ -161,7 +161,7 @@ except Exception:
 {% endtab %}
 {% endtabs %}
 
-## Build a TEE Scone application
+## Build a Confidential Computing application
 
 Create the `Dockerfile`
 
