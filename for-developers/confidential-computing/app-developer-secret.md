@@ -149,6 +149,8 @@ except Exception:
 
 ## Build a Confidential Computing application
 
+### Build the docker image
+
 {% tabs %}
 {% tab title="Scone" %}
 
@@ -233,7 +235,7 @@ docker build . --tag <docker-hub-user>/tee-gramine-count-api:1.0.0
 {% endtab %}
 {% endtabs %}
 
-### Push your image on Docker Hub
+### Push the image on Docker Hub
 
 {% tabs %}
 {% tab title="Scone" %}
