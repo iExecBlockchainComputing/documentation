@@ -207,21 +207,6 @@ Push your image on Docker Hub:
 docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
 ```
 
-### Test your Scone app on iExec
-
-At this stage, your application is ready to be tested on iExec with the following steps:
-
-- [Deploy your application](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec)
-- Push your application developer secret to the SMS:
-  ```bash
-  iexec app push-secret --chain bellecour
-  ```
-- Check the secret exists in the SMS:
-  ```bash
-  iexec app check-secret --chain bellecour
-  ```
-- [Run your application](create-your-first-sgx-app.md#run-the-tee-app).
-
 </details>
 
 <details>
@@ -257,22 +242,45 @@ Push your image on DockerHub:
 docker push <docker-hub-user>/tee-gramine-count-api:1.0.0
 ```
 
-### Test your Gramine app on iExec
+</details>
+
+## Test your app on iExec
 
 At this stage, your application is ready to be tested on iExec with the following steps:
 
-- [Deploy your application](create-your-first-gramine-app.md#deploy-the-tee-app-on-iexec)
-- Push your application developer secret to the SMS:
-  ```bash
-  iexec app push-secret --chain bellecour
-  ```
-- Check the secret exists in the SMS:
-  ```bash
-  iexec app check-secret --chain bellecour
-  ```
-- [Run your application](create-your-first-gramine-app.md#run-the-tee-app)
+### Deploy the TEE app on iExec
 
-</details>
+{% tabs %}
+{% tab title="Scone" %}
+[Deploy your application](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec)
+{% endtab %}
+{% tab title="Gramine" %}
+[Deploy your application](create-your-first-gramine-app.md#deploy-the-tee-app-on-iexec)
+{% endtab %}
+{% endtabs %}
+
+### Push an application developer secret to the SMS
+
+```bash
+iexec app push-secret --chain bellecour
+```
+
+### Check the secret exists in the SMS
+
+```bash
+iexec app check-secret --chain bellecour
+```
+
+### Run the TEE app
+
+{% tabs %}
+{% tab title="Scone" %}
+[Run your application](create-your-first-sgx-app.md#run-the-tee-app).
+{% endtab %}
+{% tab title="Gramine" %}
+[Run your application](create-your-first-gramine-app.md#run-the-tee-app)
+{% endtab %}
+{% endtabs %}
 
 ## Next step?
 
