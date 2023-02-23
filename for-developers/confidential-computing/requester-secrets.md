@@ -161,7 +161,7 @@ except Exception:
 {% endtab %}
 {% endtabs %}
 
-## Build a TEE Scone application
+## Build a Confidential Computing application
 
 Create the `Dockerfile`
 
@@ -221,12 +221,6 @@ IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 
 Run the `sconify.sh` script to build the TEE-debug app.
 
-Push your image on Docker Hub:
-
-```bash
-docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
-```
-
 {% endtab %}
 {% tab title="Gramine" %}
 
@@ -246,6 +240,25 @@ RUN npm install axios
 ```bash
 # Install required Python dependencies
 RUN pip3 install requests
+```
+
+{% endtab %}
+{% endtabs %}
+
+### Push the image on Docker Hub
+
+{% tabs %}
+{% tab title="Scone" %}
+
+```bash
+docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
+```
+
+{% endtab %}
+{% tab title="Gramine" %}
+
+```bash
+docker push <docker-hub-user>/tee-gramine-count-api:1.0.0
 ```
 
 {% endtab %}

@@ -147,11 +147,12 @@ except Exception:
 {% endtab %}
 {% endtabs %}
 
-<details>
+## Build a Confidential Computing application
 
-<summary>With Scone</summary>
+### Build the docker image
 
-### Build a TEE Scone application
+{% tabs %}
+{% tab title="Scone" %}
 
 In this section, you will:
 
@@ -160,28 +161,31 @@ In this section, you will:
 
 Create the `Dockerfile`
 
-- for a Javascript application
-  ```bash
-  # Starting from a base image supported by SCONE
-  FROM node:14-alpine3.11
+### For a Javascript application
 
-  # install your dependencies
-  RUN mkdir /app && cd /app && npm install axios
+```bash
+# Starting from a base image supported by SCONE
+FROM node:14-alpine3.11
 
-  COPY ./src /app
+# install your dependencies
+RUN mkdir /app && cd /app && npm install axios
 
-  ENTRYPOINT [ "node", "/app/app.js"]
-  ```
-- for a Python application
-  ```bash
-  FROM python:3.7.3-alpine3.10
+COPY ./src /app
 
-  RUN pip3 install requests
+ENTRYPOINT [ "node", "/app/app.js"]
+```
 
-  COPY ./src /app
+### For a Python application
 
-  ENTRYPOINT ["python3", "/app/app.py"]
-  ```
+```bash
+FROM python:3.7.3-alpine3.10
+
+RUN pip3 install requests
+
+COPY ./src /app
+
+ENTRYPOINT ["python3", "/app/app.py"]
+```
 
 Build the docker image.
 
@@ -201,49 +205,26 @@ IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 
 Run the `sconify.sh` script to build the TEE-debug app.
 
-Push your image on Docker Hub:
-
-```bash
-docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
-```
-
-### Test your Scone app on iExec
-
-At this stage, your application is ready to be tested on iExec with the following steps:
-
-- [Deploy your application](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec)
-- Push your application developer secret to the SMS:
-  ```bash
-  iexec app push-secret --chain bellecour
-  ```
-- Check the secret exists in the SMS:
-  ```bash
-  iexec app check-secret --chain bellecour
-  ```
-- [Run your application](create-your-first-sgx-app.md#run-the-tee-app).
-
-</details>
-
-<details>
-
-<summary>With Gramine</summary>
-
-### Build a TEE Gramine application
+{% endtab %}
+{% tab title="Gramine" %}
 
 In this section, you will create a `Dockerfile` and create your **Gramine TEE application** as we saw in [Build Gramine app > Prepare your application](create-your-first-gramine-app.md#prepare-your-application).
 
 You need to copy the `Dockerfile`, then update its `RUN` statements to install required dependencies for your application:
 
-- for a Javascript application
-  ```bash
-  # Install required node dependencies
-  RUN npm install axios
-  ```
-- for a Python application
-  ```bash
-  # Install required Python dependencies
-  RUN pip3 install requests
-  ```
+### For a Javascript application
+
+```bash
+# Install required node dependencies
+RUN npm install axios
+```
+
+### For a Python application
+
+```bash
+# Install required Python dependencies
+RUN pip3 install requests
+```
 
 Build the docker image.
 
@@ -251,28 +232,65 @@ Build the docker image.
 docker build . --tag <docker-hub-user>/tee-gramine-count-api:1.0.0
 ```
 
-Push your image on DockerHub:
+{% endtab %}
+{% endtabs %}
+
+### Push the image on Docker Hub
+
+{% tabs %}
+{% tab title="Scone" %}
+
+```bash
+docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
+```
+
+{% endtab %}
+{% tab title="Gramine" %}
 
 ```bash
 docker push <docker-hub-user>/tee-gramine-count-api:1.0.0
 ```
 
-### Test your Gramine app on iExec
+{% endtab %}
+{% endtabs %}
+
+## Test your app on iExec
 
 At this stage, your application is ready to be tested on iExec with the following steps:
 
-- [Deploy your application](create-your-first-gramine-app.md#deploy-the-tee-app-on-iexec)
-- Push your application developer secret to the SMS:
-  ```bash
-  iexec app push-secret --chain bellecour
-  ```
-- Check the secret exists in the SMS:
-  ```bash
-  iexec app check-secret --chain bellecour
-  ```
-- [Run your application](create-your-first-gramine-app.md#run-the-tee-app)
+### Deploy the TEE app on iExec
 
-</details>
+{% tabs %}
+{% tab title="Scone" %}
+[Deploy your application](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec)
+{% endtab %}
+{% tab title="Gramine" %}
+[Deploy your application](create-your-first-gramine-app.md#deploy-the-tee-app-on-iexec)
+{% endtab %}
+{% endtabs %}
+
+### Push an application developer secret to the SMS
+
+```bash
+iexec app push-secret --chain bellecour
+```
+
+### Check the secret exists in the SMS
+
+```bash
+iexec app check-secret --chain bellecour
+```
+
+### Run the TEE app
+
+{% tabs %}
+{% tab title="Scone" %}
+[Run your application](create-your-first-sgx-app.md#run-the-tee-app)
+{% endtab %}
+{% tab title="Gramine" %}
+[Run your application](create-your-first-gramine-app.md#run-the-tee-app)
+{% endtab %}
+{% endtabs %}
 
 ## Next step?
 
