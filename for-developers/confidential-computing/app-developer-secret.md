@@ -285,7 +285,7 @@ iexec app check-secret --chain bellecour
 
 {% tabs %}
 {% tab title="Scone" %}
-[Run your application](create-your-first-sgx-app.md#run-the-tee-app).
+[Run your application](create-your-first-sgx-app.md#run-the-tee-app)
 {% endtab %}
 {% tab title="Gramine" %}
 [Run your application](create-your-first-gramine-app.md#run-the-tee-app)
