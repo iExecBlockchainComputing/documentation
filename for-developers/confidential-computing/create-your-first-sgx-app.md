@@ -10,11 +10,10 @@ Before going any further, make sure you managed to [Build your first application
 **Prerequisites**
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
-- [Nodejs](https://nodejs.org) 14.0.0 or higher.
+- [Nodejs](https://nodejs.org) 14.17.1 or higher.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
-{% endhint %}
-
+  {% endhint %}
 
 **How would the enclave verify the integrity of the code?**
 
@@ -230,6 +229,7 @@ Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave
 ```bash
 docker run --rm -e SCONE_HASH=1 <docker-hub-user>/tee-scone-hello-world:1.0.0-debug
 ```
+
 {% endhint %}
 
 Deploy the app with the standard command:

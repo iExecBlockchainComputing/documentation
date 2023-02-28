@@ -9,11 +9,11 @@ Before going any further, make sure you managed to [Build with a TEE framework](
 {% hint style="success" %}
 **Prerequisites**
 
-* [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
-* [Nodejs](https://nodejs.org) 14.0.0 or higher.
-* [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
-* Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
-{% endhint %}
+- [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
+- [Nodejs](https://nodejs.org) 14.17.1 or higher.
+- [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
+- Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
+  {% endhint %}
 
 {% hint style="info" %}
 You don't need to change your application's code or redeploy it to add this feature.
@@ -130,11 +130,13 @@ mkdir /tmp/trash && \
 ```
 
 {% code title="iexec\_out/result.zip" %}
+
 ```bash
 )3�Xq��Yv��ȿzE�fRu<\�ݵm�m���疞r���c��(a���{{'��ܼ���͛�q/[{����H�t>��������h��gD$g��\.�k��j�����"�s?"�h�J�_Q41�_[{��X��������Ԛ��a�蘟v���E����r����肽
 �����Յ]9W�TL�*���
           �t��d���z��O`����!���e�&snoL3�K6L9���%
 ```
+
 {% endcode %}
 
 Now you should decrypt the result by running:
@@ -159,4 +161,3 @@ Hello, world!
 Voilà! By finishing this part, you should be able to use confidential computing on iExec like a Ninja. All parts of the workflow are protected: the execution, the dataset, and the result.
 
 You can go to the advanced section and learn more about managing orders on the iExec to effectively monetize your applications and datasets.
-

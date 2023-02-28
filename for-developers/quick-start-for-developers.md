@@ -9,8 +9,8 @@ description: >-
 {% hint style="success" %}
 **Prerequisite**
 
-* [Nodejs](https://nodejs.org) 14.0.0 or higher
-{% endhint %}
+- [Nodejs](https://nodejs.org) 14.17.1 or higher
+  {% endhint %}
 
 iExec enables decentralized docker app deployment and monetization on the blockchain.
 
@@ -18,12 +18,12 @@ In this guide, we will use the iExec SDK command-line interface to deploy an iEx
 
 **Tutorial Steps :**
 
-* [Create your identity on the blockchain](quick-start-for-developers.md#create-your-identity-on-the-blockchain)
-* [Initialize your iExec project](quick-start-for-developers.md#initialize-your-iexec-project)
-* [Deploy your app on iExec](quick-start-for-developers.md#deploy-your-app-on-iexec)
-* [Run your app on iExec](quick-start-for-developers.md#run-your-app-on-iexec)
-* [Publish your app on iExec marketplace](quick-start-for-developers.md#publish-your-app-on-the-iexec-marketplace)
-* [What's next?](quick-start-for-developers.md#whats-next)
+- [Create your identity on the blockchain](quick-start-for-developers.md#create-your-identity-on-the-blockchain)
+- [Initialize your iExec project](quick-start-for-developers.md#initialize-your-iexec-project)
+- [Deploy your app on iExec](quick-start-for-developers.md#deploy-your-app-on-iexec)
+- [Run your app on iExec](quick-start-for-developers.md#run-your-app-on-iexec)
+- [Publish your app on iExec marketplace](quick-start-for-developers.md#publish-your-app-on-the-iexec-marketplace)
+- [What's next?](quick-start-for-developers.md#whats-next)
 
 ## Create your identity on the blockchain
 
@@ -48,9 +48,9 @@ You will be asked to choose a password to protect your wallet, don't forget it s
 {% hint style="success" %}
 Your wallet is stored in the ethereum keystore, the location depends on your OS:
 
-* On Linux: ~/.ethereum/keystore
-* On Mac : ~/Library/Ethereum/keystore
-* On Windows: ~/AppData/Roaming/Ethereum/keystore
+- On Linux: ~/.ethereum/keystore
+- On Mac : ~/Library/Ethereum/keystore
+- On Windows: ~/AppData/Roaming/Ethereum/keystore
 
 Wallet file name follow the pattern `UTC--<CREATION_DATE>--<ADDRESS>`
 {% endhint %}
@@ -72,10 +72,10 @@ iexec init --skip-wallet
 {% hint style="info" %}
 The iExec SDK creates the minimum configuration files:
 
-* `iexec.json` contains the project configuration
-* `chain.json` contains the blockchain connection configuration
-* we use `--skip-wallet` to skip wallet creation as we already created it
-{% endhint %}
+- `iexec.json` contains the project configuration
+- `chain.json` contains the blockchain connection configuration
+- we use `--skip-wallet` to skip wallet creation as we already created it
+  {% endhint %}
 
 You can now connect to the blockchain. In the following steps we will use the **iExec sidechain (also called Bellecour)**.
 
@@ -121,13 +121,13 @@ iexec app init
 
 The iExec SDK writes the minimum app configuration in `iexec.json`
 
-| **key** | **description** |
-| :--- | :--- |
-| owner | app owner ethereum address \(default your wallet address\) |
-| name | name of the application |
-| type | type of application \("DOCKER" for docker container\) |
-| multiaddr | download URI of the application \(a public docker registry\) |
-| checksum | checksum of the app \("0x" + docker image digest\) |
+| **key**   | **description**                                                             |
+| :-------- | :-------------------------------------------------------------------------- |
+| owner     | app owner ethereum address \(default your wallet address\)                  |
+| name      | name of the application                                                     |
+| type      | type of application \("DOCKER" for docker container\)                       |
+| multiaddr | download URI of the application \(a public docker registry\)                |
+| checksum  | checksum of the app \("0x" + docker image digest\)                          |
 | mrenclave | app fingerprint used for confidential computing use cases \(default empty\) |
 
 {% hint style="info" %}
@@ -166,18 +166,25 @@ Your iExec account is managed by smart contracts \(and not owned by iExec\).
 When you request an execution the price for the task is locked from your account's stake then transferred to accounts of the workers contributing to the task \(read more about [Proof of Contribution](../key-concepts/proof-of-contribution.md) protocol\).
 
 At any time you can:
-* view your balance 
+
+- view your balance
+
 ```sh
 iexec account show
 ```
-* deposit RLC from your wallet to your iExec Account
+
+- deposit RLC from your wallet to your iExec Account
+
 ```sh
 iexec account deposit <amount>
 ```
-* withdraw RLC from your iExec account to your wallet \(only stake can be withdrawn\)
+
+- withdraw RLC from your iExec account to your wallet \(only stake can be withdrawn\)
+
 ```sh
 iexec account withdraw <amount>
 ```
+
 {% endhint %}
 
 Currently, iExec sponsors applications running on Bellecour, and you won't have to pay for the computation.
@@ -193,9 +200,9 @@ iexec app run --args <your-name-here> --watch --chain bellecour
 
 Useful options:
 
-* `--args <args>`  specify the app execution arguments
-* `--watch`  watch execution status changes
-* `--workerpool <address>` specify the workerpool to use
+- `--args <args>` specify the app execution arguments
+- `--watch` watch execution status changes
+- `--workerpool <address>` specify the workerpool to use
 
 Discover more option with `iexec app run --help`
 {% endhint %}
@@ -213,6 +220,7 @@ Download the result of your task
 ```text
 iexec task show <taskid> --download my-result --chain bellecour
 ```
+
 You can get your taskid with the command:
 
 ```text
@@ -268,20 +276,20 @@ iexec orderbook app <your app address> --chain bellecour
 
 Congratulation you just created a decentralized application! Anyone can now trigger an execution of your application on the iExec decentralized infrastructure.
 
-* With the iexec SDK CLI `iexec app run <app address> --chain bellecour`
-* On iExec marketplace
+- With the iexec SDK CLI `iexec app run <app address> --chain bellecour`
+- On iExec marketplace
 
 ## What's next?
 
 You are now familiar with the following key iExec concepts for developers:
 
-* Your wallet is your on-chain ID and blockchain account
-* You can deploy decentralized applications on iExec
-* Anyone can run tasks against payment in RLC on iExec
-* Payments are processed by the decentralized platform between users' iExec Accounts
-* Resource governance is managed by orders
+- Your wallet is your on-chain ID and blockchain account
+- You can deploy decentralized applications on iExec
+- Anyone can run tasks against payment in RLC on iExec
+- Payments are processed by the decentralized platform between users' iExec Accounts
+- Resource governance is managed by orders
 
 Continue with these guides:
 
-* [Learn how to build your first application running on iExec](your-first-app.md)
-* [Learn how to manage your apporders](advanced/manage-your-apporders.md)
+- [Learn how to build your first application running on iExec](your-first-app.md)
+- [Learn how to manage your apporders](advanced/manage-your-apporders.md)

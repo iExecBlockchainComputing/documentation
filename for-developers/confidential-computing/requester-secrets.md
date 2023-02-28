@@ -3,7 +3,7 @@
 In this tutorial, you will learn how to:
 
 - leverage requester secrets by using the following environment variables in your code:
-`IEXEC_REQUESTER_SECRET_1`, `IEXEC_REQUESTER_SECRET_2`, `...`, `IEXEC_REQUESTER_SECRET_<N>`
+  `IEXEC_REQUESTER_SECRET_1`, `IEXEC_REQUESTER_SECRET_2`, `...`, `IEXEC_REQUESTER_SECRET_<N>`
 - map your personal secrets to those environment variables when buying an execution on iExec network
 
 {% hint style="warning" %}
@@ -14,10 +14,10 @@ Before going any further, make sure you managed to [Build with a TEE framework](
 **Prerequisites**
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
-- [Nodejs](https://nodejs.org) 14.0.0 or higher.
+- [Nodejs](https://nodejs.org) 14.17.1 or higher.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
-{% endhint %}
+  {% endhint %}
 
 Trusted Execution Environments offer a huge advantage from a security perspective. They guarantee that the behavior of execution does not change even when launched on an untrusted remote machine. The data inside this type of environment is also protected, which allows its monetization while preventing leakage.
 
@@ -56,7 +56,6 @@ Depending on the TEE framework you are using, make sure your `chain.json` conten
 
 - [Scone chain.json](create-your-first-sgx-app.md#update-chain-json)
 - [Gramine chain.json](create-your-first-gramine-app.md#update-chain-json)
-
 
 The application use the requester secrets to make a call to a secret endpoint of [countapi.xyz](https://countapi.xyz/) and writes the result in a file:
 
@@ -350,7 +349,7 @@ example:
 - the secret named `foo` will be available in `IEXEC_REQUESTER_SECRET_1`
 - the secret named `bar` will be available in `IEXEC_REQUESTER_SECRET_3`
 - `IEXEC_REQUESTER_SECRET_2` will be skipped
-{% endhint %}
+  {% endhint %}
 
 ## Next step?
 
