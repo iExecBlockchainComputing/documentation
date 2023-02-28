@@ -13,7 +13,8 @@ Before going any further, make sure you managed to [Build your first application
 - [Nodejs](https://nodejs.org) 14.17.1 or higher.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [Gramine](choose-your-tee-framework.md#gramine) framework.
-  {% endhint %}
+
+{% endhint %}
 
 ## Prepare your application
 
