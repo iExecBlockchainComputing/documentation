@@ -54,7 +54,7 @@ Below are the details of the implementations:
 
 1. **Deal**
 
-[A deal is sealed by the Clerk. ](proof-of-contribution.md#brokering)This marks the beginning of the execution. An event is created to notify the worker pool’s scheduler.
+[A deal is sealed by the Clerk.](proof-of-contribution.md#brokering) This marks the beginning of the execution. An event is created to notify the worker pool’s scheduler.
 
 The consensus timer starts when the deal is signed. The corresponding task must be completed before the end of this countdown. Otherwise, the scheduler gets punished by a loss of stake and reputation, and the user reimbursed.
 
@@ -261,7 +261,7 @@ An overview of the iExecODB \(Open Decentralized Brokering\) is available in thi
 
 As discussed earlier, iExec introduces the offchain signature of orders as a new core element of the iExec Open Decentralized Brokering, the iExec Clerk should match these orders. There are 4 types of orders corresponding to the 4 actors involved: the worker pool, the application, the dataset and the requester. Each order types has to follow a specific structure and is signed using [EIP712](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-712.md) structure signature mechanism.
 
-### Orders description:
+### Orders description
 
 #### **AppOrder**
 

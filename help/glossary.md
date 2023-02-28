@@ -168,7 +168,7 @@ Organizes the work distribution for workers in a worker pool.
 
 ## SDK (Software Development Kit)
 
-A set of tools for interaction with smart contracts and the iExec’s marketplace. It is available as a CLI and JS library. Access SDK here: https://github.com/iExecBlockchainComputing/iexec-sdk
+A set of tools for interaction with smart contracts and the iExec’s marketplace. It is available as a CLI and JS library. Access SDK here: <https://github.com/iExecBlockchainComputing/iexec-sdk>
 
 ## SGX (Secure Guard Extension by Intel)
 

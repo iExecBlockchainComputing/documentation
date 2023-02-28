@@ -20,7 +20,7 @@ To help you decide, more details on each of these wallets can be found below.
 
 ### **Portis**
 
-iExec is now also compatible with the[ **Portis** ](https://www.portis.io/)wallet. With Portis wallet, instead of dealing with your own private key, you can log in with just an email address and password.
+iExec is now also compatible with the [**Portis**](https://www.portis.io/) wallet. With Portis wallet, instead of dealing with your own private key, you can log in with just an email address and password.
 
 {% hint style="warning" %}
 
