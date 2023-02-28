@@ -3,29 +3,38 @@
 In this tutorial, you will learn how to leverage an application developer secret by using the `IEXEC_APP_DEVELOPER_SECRET` environment variable in your application code.
 
 {% hint style="warning" %}
+
 Before going any further, make sure you managed to [Build with a TEE framework](choose-your-tee-framework.md).
+
 {% endhint %}
 
 {% hint style="success" %}
+
 **Prerequisites**
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
 - [Nodejs](https://nodejs.org) 14.17.1 or higher.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-software-guard-extension-intel-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
-  {% endhint %}
+
+{% endhint %}
 
 Trusted Execution Environments offer a huge advantage from a security perspective. They guarantee that the behavior of execution does not change even when launched on an untrusted remote machine. The data inside this type of environment is also protected, which allows its monetization while preventing leakage.
 
-With iExec, it is possible to securely associate an application developer secret to the runtime of an application.
-This association is performed through the usage of environment variables which cannot leak outside of the enclave memory.
+With iExec, it is possible to securely associate an application developer secret to the runtime of an application. This association is performed through the usage of environment variables which cannot leak outside of the enclave memory.
 
 {% hint style="warning" %}
+
 The app developer secret is only exposed to your app inside authorized [enclaves](intel-sgx-technology.md#enclave) and never leaves them.
+
 {% endhint %}
 
 {% hint style="info" %}
-Your secrets are securely transferred with the SDK from your machine to the SMS over a TLS channel. Internally, your secrets are encrypted with standard AES encryption before being written to disk. Next releases will feature an SMS running entirely inside a trusted enclave.
+
+Your secrets are securely transferred with the SDK from your machine to the SMS over a TLS channel.
+
+Internally, your secrets are encrypted with standard AES encryption before being written to disk. Next releases will feature an SMS running entirely inside a trusted enclave.
+
 {% endhint %}
 
 Let's see how to do all of that!
@@ -33,9 +42,11 @@ Let's see how to do all of that!
 ## Prepare your application
 
 {% hint style="info" %}
-We will use the API [countapi.xyz](https://countapi.xyz/).
-This service keeps a count of hits on any couple of `namespace/key` (ex: <https://api.countapi.xyz/hit/foo/bar>).
+
+We will use the API [countapi.xyz](https://countapi.xyz/). This service keeps a count of hits on any couple of `namespace/key` (ex: <https://api.countapi.xyz/hit/foo/bar>).
+
 In this example, we will use an app developer secret to set `namespace/key`.
+
 {% endhint %}
 
 Let's create a directory tree for this app in `~/iexec-projects/`.
@@ -59,7 +70,9 @@ The application uses the developer secret to make a call to a secret endpoint of
 **Copy the following content** in `src/` .
 
 {% tabs %}
+
 {% tab title="Javascript" %}
+
 {% code title="src/app.js" %}
 
 ```javascript
@@ -101,9 +114,11 @@ const axios = require("axios");
 ```
 
 {% endcode %}
+
 {% endtab %}
 
 {% tab title="Python" %}
+
 {% code title="src/app.py" %}
 
 ```python
@@ -144,7 +159,9 @@ except Exception:
 ```
 
 {% endcode %}
+
 {% endtab %}
+
 {% endtabs %}
 
 ## Build a Confidential Computing application
@@ -152,6 +169,7 @@ except Exception:
 ### Build the docker image
 
 {% tabs %}
+
 {% tab title="Scone" %}
 
 In this section, you will:
@@ -194,6 +212,7 @@ docker build . --tag <docker-hub-user>/count-api:1.0.0
 ```
 
 Follow the steps described in [Build Scone app > Build the TEE docker image](create-your-first-sgx-app.md#build-the-tee-docker-image).
+
 Create the `sconify.sh` script and update the variables as follow:
 
 ```bash
@@ -206,6 +225,7 @@ IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 Run the `sconify.sh` script to build the TEE-debug app.
 
 {% endtab %}
+
 {% tab title="Gramine" %}
 
 In this section, you will create a `Dockerfile` and create your **Gramine TEE application** as we saw in [Build Gramine app > Prepare your application](create-your-first-gramine-app.md#prepare-your-application).
@@ -233,11 +253,13 @@ docker build . --tag <docker-hub-user>/tee-gramine-count-api:1.0.0
 ```
 
 {% endtab %}
+
 {% endtabs %}
 
 ### Push the image on Docker Hub
 
 {% tabs %}
+
 {% tab title="Scone" %}
 
 ```bash
@@ -245,6 +267,7 @@ docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
 ```
 
 {% endtab %}
+
 {% tab title="Gramine" %}
 
 ```bash
@@ -252,6 +275,7 @@ docker push <docker-hub-user>/tee-gramine-count-api:1.0.0
 ```
 
 {% endtab %}
+
 {% endtabs %}
 
 ## Test your app on iExec
@@ -261,12 +285,19 @@ At this stage, your application is ready to be tested on iExec with the followin
 ### Deploy the TEE app on iExec
 
 {% tabs %}
+
 {% tab title="Scone" %}
+
 [Deploy your application](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec)
+
 {% endtab %}
+
 {% tab title="Gramine" %}
+
 [Deploy your application](create-your-first-gramine-app.md#deploy-the-tee-app-on-iexec)
+
 {% endtab %}
+
 {% endtabs %}
 
 ### Push an application developer secret to the SMS
@@ -284,17 +315,25 @@ iexec app check-secret --chain bellecour
 ### Run the TEE app
 
 {% tabs %}
+
 {% tab title="Scone" %}
+
 [Run your application](create-your-first-sgx-app.md#run-the-tee-app)
+
 {% endtab %}
+
 {% tab title="Gramine" %}
+
 [Run your application](create-your-first-gramine-app.md#run-the-tee-app)
+
 {% endtab %}
+
 {% endtabs %}
 
 ## Next step?
 
 Thanks to the explained confidential computing workflow, you now know how to use an app developer secret in a Confidential Computing application.
+
 To go further, check out how to:
 
 - [Access requester secrets](requester-secrets.md)

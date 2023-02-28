@@ -3,10 +3,13 @@
 In this tutorial, you will learn how to build and run a Confidential Computing application with the Gramine TEE framework.
 
 {% hint style="warning" %}
+
 Before going any further, make sure you managed to [Build your first application](../your-first-app.md).
+
 {% endhint %}
 
 {% hint style="success" %}
+
 **Prerequisites**
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
@@ -42,10 +45,13 @@ Make sure your `chain.json` content is as follows:
 ```
 
 Copy from previous steps your [Javascript or Python sources](../your-first-app.md#write-the-app) in `src/` .
+
 When your sources are copied, your are ready to dockerize your application:
 
 {% tabs %}
+
 {% tab title="Javascript" %}
+
 {% code title="Dockerfile" %}
 
 ```bash
@@ -80,9 +86,11 @@ RUN /finalize-app.sh
 ```
 
 {% endcode %}
+
 {% endtab %}
 
 {% tab title="Python" %}
+
 {% code title="Dockerfile" %}
 
 ```bash
@@ -116,7 +124,9 @@ RUN /finalize-app.sh
 ```
 
 {% endcode %}
+
 {% endtab %}
+
 {% endtabs %}
 
 Build the docker image.
@@ -168,6 +178,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 ```
 
 {% hint style="info" %}
+
 Run your Gramine TEE image with `sps=unset` to get the enclave fingerprint (mrenclave):
 
 ```bash
@@ -181,6 +192,7 @@ The run is expected to fail but you should look for a `mr_enclave` field in your
 ```
 
 Hint: The `mr_enclave` is also available in your logs when building your app.
+
 {% endhint %}
 
 Deploy the app with the standard command:
@@ -205,8 +217,9 @@ iexec app run --tag tee,gramine --workerpool v8-debug.main.pools.iexec.eth --wat
 ```
 
 {% hint style="info" %}
-You noticed we used `v8-debug.main.pools.iexec.eth` instead of an ethereum address, this is an ENS name.
-The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables associating decentralized naming to ethereum addresses.
+
+You noticed we used `v8-debug.main.pools.iexec.eth` instead of an ethereum address, this is an ENS name. The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables associating decentralized naming to ethereum addresses.
+
 {% endhint %}
 
 ### Troubleshoot your Gramine task run
@@ -223,11 +236,11 @@ If your error is related to Gramine, you might see following output
 [error] get keys failed, return -[<ERROR_CODE>]
 ```
 
-| Error code | Error message             | Description                                                                                                                     | Action                                                                                                                                                                                                                                                                                                    |
-| ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `111`      | `Unreachable SPS`         | The SPS is not reachable or offline.                                                                                            | Please contact [iExec Help Center](https://iexecproject.atlassian.net/servicedesk/customer/portal/4).                                                                                                                                                                                                     |
-| `9984`     | `Invalid SPS Certificate` | The SSL certificate of the SPS is not signed by a Certificate Authority you trust.                                              | You might be using a `<version>` of the Gramine base (`iexechub/iexec-gramine-base:<version>`) which is too old. Verify the `<version>` to use [in the documentation](#prepare-your-application) or please contact [iExec Help Center](https://iexecproject.atlassian.net/servicedesk/customer/portal/4). |
-| `30952`    | `Unexpected MRENCLAVE`    | The measurement of the enclave does not match your on-chain configuration of your deployed dapp `"fingerprint": "<mrenclave>"`. | It is likely you did not set the `<mrenclave>` properly, please verify [how to retrieve it](#deploy-the-tee-app-on-iexec).                                                                                                                                                                                |
+| Error code | Error message | Description | Action |
+| --- | --- | --- | --- |
+| `111` | `Unreachable SPS` | The SPS is not reachable or offline. | Please contact [iExec Help Center](https://iexecproject.atlassian.net/servicedesk/customer/portal/4). |
+| `9984` | `Invalid SPS Certificate` | The SSL certificate of the SPS is not signed by a Certificate Authority you trust. | You might be using a `<version>` of the Gramine base (`iexechub/iexec-gramine-base:<version>`) which is too old. Verify the `<version>` to use [in the documentation](#prepare-your-application) or please contact [iExec Help Center](https://iexecproject.atlassian.net/servicedesk/customer/portal/4). |
+| `30952` | `Unexpected MRENCLAVE` | The measurement of the enclave does not match your on-chain configuration of your deployed dapp `"fingerprint": "<mrenclave>"`. | It is likely you did not set the `<mrenclave>` properly, please verify [how to retrieve it](#deploy-the-tee-app-on-iexec). |
 
 ## Next step?
 

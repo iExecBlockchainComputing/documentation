@@ -1,16 +1,17 @@
 ---
 description: >-
-  In this tutorial we will show you how you can create decentralized application
-  over the iExec infrastructure.
+  In this tutorial we will show you how you can create decentralized application over the iExec infrastructure.
 ---
 
 # Quick Start
 
 {% hint style="success" %}
+
 **Prerequisite**
 
 - [Nodejs](https://nodejs.org) 14.17.1 or higher
-  {% endhint %}
+
+{% endhint %}
 
 iExec enables decentralized docker app deployment and monetization on the blockchain.
 
@@ -46,6 +47,7 @@ iexec wallet create
 You will be asked to choose a password to protect your wallet, don't forget it since there is no way to recover it. The SDK creates a wallet file that contains a randomly generated private key encrypted by the chosen password and the derived public address. Make sure to back up the wallet file in a safe place and write down your address.
 
 {% hint style="success" %}
+
 Your wallet is stored in the ethereum keystore, the location depends on your OS:
 
 - On Linux: ~/.ethereum/keystore
@@ -53,10 +55,13 @@ Your wallet is stored in the ethereum keystore, the location depends on your OS:
 - On Windows: ~/AppData/Roaming/Ethereum/keystore
 
 Wallet file name follow the pattern `UTC--<CREATION_DATE>--<ADDRESS>`
+
 {% endhint %}
 
 {% hint style="info" %}
+
 iExec SDK uses standard Ethereum wallet, you can reuse or import existing Ethereum wallet. See iExec SDK documentation [wallet command](https://github.com/iExecBlockchainComputing/iexec-sdk#wallet) and [wallet options](https://github.com/iExecBlockchainComputing/iexec-sdk#wallet-options).
+
 {% endhint %}
 
 ## Initialize your iExec project
@@ -70,12 +75,14 @@ iexec init --skip-wallet
 ```
 
 {% hint style="info" %}
+
 The iExec SDK creates the minimum configuration files:
 
 - `iexec.json` contains the project configuration
 - `chain.json` contains the blockchain connection configuration
 - we use `--skip-wallet` to skip wallet creation as we already created it
-  {% endhint %}
+
+{% endhint %}
 
 You can now connect to the blockchain. In the following steps we will use the **iExec sidechain (also called Bellecour)**.
 
@@ -102,9 +109,11 @@ iexec storage init --chain bellecour
 ```
 
 {% hint style="info" %}
+
 iExec provides a default storage solution based on [IPFS](https://ipfs.io/). This solution ensures your result to be publicly accessible through a decentralized network.
 
 As you may don't want all your business to be exposed to the world, iExec enables both optional **RSA result encryption** and pushing results to **private storage providers**.
+
 {% endhint %}
 
 ## Deploy your app on iExec
@@ -121,20 +130,20 @@ iexec app init
 
 The iExec SDK writes the minimum app configuration in `iexec.json`
 
-| **key**   | **description**                                                             |
-| :-------- | :-------------------------------------------------------------------------- |
-| owner     | app owner ethereum address \(default your wallet address\)                  |
-| name      | name of the application                                                     |
-| type      | type of application \("DOCKER" for docker container\)                       |
-| multiaddr | download URI of the application \(a public docker registry\)                |
-| checksum  | checksum of the app \("0x" + docker image digest\)                          |
+| **key** | **description** |
+| :-- | :-- |
+| owner | app owner ethereum address \(default your wallet address\) |
+| name | name of the application |
+| type | type of application \("DOCKER" for docker container\) |
+| multiaddr | download URI of the application \(a public docker registry\) |
+| checksum | checksum of the app \("0x" + docker image digest\) |
 | mrenclave | app fingerprint used for confidential computing use cases \(default empty\) |
 
 {% hint style="info" %}
+
 The default app is the public docker image [iexechub/python-hello-world](https://hub.docker.com/repository/docker/iexechub/python-hello-world).
 
-Given an input string, the application generates an ASCII art greeting.
-{% endhint %}
+Given an input string, the application generates an ASCII art greeting. {% endhint %}
 
 You can deploy this application on iExec, it will run out of the box. Where you are confident with iExec concept, you can read [Your first app](your-first-app.md) and learn how to setup your own app on iExec.
 
@@ -145,7 +154,9 @@ iexec app deploy --chain bellecour
 ```
 
 {% hint style="success" %}
+
 While running `iexec app deploy --chain bellecour` you sent your first transaction on the bellecour blockchain.
+
 {% endhint %}
 
 You can check your deployed apps with their index, let's check your last deployed app:
@@ -159,6 +170,7 @@ iexec app show --chain bellecour
 iExec allows you to run applications on a decentralized infrastructure with payment in **RLC** tokens \(the native cryptocurrency of iExec\).
 
 {% hint style="info" %}
+
 To run an application you must have enough RLC staked on your iExec account to pay for the computing resources.
 
 Your iExec account is managed by smart contracts \(and not owned by iExec\).
@@ -196,6 +208,7 @@ iexec app run --args <your-name-here> --watch --chain bellecour
 ```
 
 {% hint style="info" %}
+
 `iexec app run` allows to run an application on iExec at the market price.
 
 Useful options:
@@ -205,12 +218,15 @@ Useful options:
 - `--workerpool <address>` specify the workerpool to use
 
 Discover more option with `iexec app run --help`
+
 {% endhint %}
 
 {% hint style="success" %}
+
 Congratulation you requested the execution of [iexechub/python-hello-world](https://hub.docker.com/repository/docker/iexechub/python-hello-world).
 
 This will generate an ASCII art greeting with your name.
+
 {% endhint %}
 
 Once the task is completed copy the taskid from `iexec app run` output \(taskid is a 32Bytes hexadecimal string\).
@@ -228,7 +244,9 @@ iexec deal show <dealid>
 ```
 
 {% hint style="info" %}
+
 A task result is a zip file containing the output files of the application.
+
 {% endhint %}
 
 [iexechub/python-hello-world](https://hub.docker.com/repository/docker/iexechub/python-hello-world) produce an text file in `result.txt`.
@@ -249,9 +267,11 @@ Your application is deployed on iExec and you completed an execution on iExec. F
 As the owner of this application, you can define the conditions under which it can be used
 
 {% hint style="info" %}
+
 iExec uses orders signed by the resource owner's wallet to ensure resources governance.
 
 The conditions to use an app are defined in the **apporder**.
+
 {% endhint %}
 
 Publish a new apporder for your application.
@@ -261,9 +281,11 @@ iexec app publish --chain bellecour
 ```
 
 {% hint style="info" %}
+
 `iexec app publish` options allows to define custom access rules to the app \(run `iexec app publish --help` to discover all the possibilities\).
 
 You will learn more about orders management later, keep the apporder default values for now.
+
 {% endhint %}
 
 Your application is now available for everyone on iExec marketplace on the conditions defined in apporder.

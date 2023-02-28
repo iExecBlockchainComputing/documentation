@@ -2,33 +2,40 @@
 
 In this tutorial, you will learn how to:
 
-- leverage requester secrets by using the following environment variables in your code:
-  `IEXEC_REQUESTER_SECRET_1`, `IEXEC_REQUESTER_SECRET_2`, `...`, `IEXEC_REQUESTER_SECRET_<N>`
+- leverage requester secrets by using the following environment variables in your code: `IEXEC_REQUESTER_SECRET_1`, `IEXEC_REQUESTER_SECRET_2`, `...`, `IEXEC_REQUESTER_SECRET_<N>`
 - map your personal secrets to those environment variables when buying an execution on iExec network
 
 {% hint style="warning" %}
+
 Before going any further, make sure you managed to [Build with a TEE framework](choose-your-tee-framework.md).
+
 {% endhint %}
 
 {% hint style="success" %}
+
 **Prerequisites**
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
 - [Nodejs](https://nodejs.org) 14.17.1 or higher.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
-  {% endhint %}
+
+{% endhint %}
 
 Trusted Execution Environments offer a huge advantage from a security perspective. They guarantee that the behavior of execution does not change even when launched on an untrusted remote machine. The data inside this type of environment is also protected, which allows its monetization while preventing leakage.
 
 With iExec, it is possible to securely consume requester-provided secrets in the application.
 
 {% hint style="warning" %}
+
 The requester secrets are only exposed to authorized apps inside [enclaves](intel-sgx-technology.md#enclave) and never leave them.
+
 {% endhint %}
 
 {% hint style="info" %}
+
 Your secrets are securely transferred with the SDK from your machine to the SMS over a TLS channel. Internally, your secrets are encrypted with standard AES encryption before being written to disk. Next releases will feature an SMS running entirely inside a trusted enclave.
+
 {% endhint %}
 
 Let's see how to do all of that!
@@ -36,9 +43,9 @@ Let's see how to do all of that!
 ## Prepare your application
 
 {% hint style="info" %}
-We will use the API [countapi.xyz](https://countapi.xyz/).
-This service keeps a count of hit on any couple of `namespace/key` (ex: <https://api.countapi.xyz/hit/foo/bar>).
-In this example, we will use requester secrets to set `namespace/key`.
+
+We will use the API [countapi.xyz](https://countapi.xyz/). This service keeps a count of hit on any couple of `namespace/key` (ex: <https://api.countapi.xyz/hit/foo/bar>). In this example, we will use requester secrets to set `namespace/key`.
+
 {% endhint %}
 
 Let's create a directory tree for this app in `~/iexec-projects/`.
@@ -62,7 +69,9 @@ The application use the requester secrets to make a call to a secret endpoint of
 **Copy the following content** in `src/` .
 
 {% tabs %}
+
 {% tab title="Javascript" %}
+
 {% code title="src/app.js" %}
 
 ```javascript
@@ -109,9 +118,11 @@ const axios = require("axios");
 ```
 
 {% endcode %}
+
 {% endtab %}
 
 {% tab title="Python" %}
+
 {% code title="src/app.py" %}
 
 ```python
@@ -157,7 +168,9 @@ except Exception:
 ```
 
 {% endcode %}
+
 {% endtab %}
+
 {% endtabs %}
 
 ## Build a Confidential Computing application
@@ -165,6 +178,7 @@ except Exception:
 Create the `Dockerfile`
 
 {% tabs %}
+
 {% tab title="Scone" %}
 
 In this section, you will:
@@ -208,8 +222,7 @@ Build the docker image.
 docker build . --tag <docker-hub-user>/count-api:1.0.0
 ```
 
-Follow the steps described in [Build Scone app > Build the TEE docker image](create-your-first-sgx-app.md#build-the-tee-docker-image).
-Create the `sconify.sh` script and update the variables as follow:
+Follow the steps described in [Build Scone app > Build the TEE docker image](create-your-first-sgx-app.md#build-the-tee-docker-image). Create the `sconify.sh` script and update the variables as follow:
 
 ```bash
 # Declare image related variables
@@ -221,6 +234,7 @@ IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 Run the `sconify.sh` script to build the TEE-debug app.
 
 {% endtab %}
+
 {% tab title="Gramine" %}
 
 In this section, you will create a `Dockerfile` and create your **Gramine TEE application** as we saw in [Build Gramine app > Prepare your application](create-your-first-gramine-app.md#prepare-your-application).
@@ -242,11 +256,13 @@ RUN pip3 install requests
 ```
 
 {% endtab %}
+
 {% endtabs %}
 
 ### Push the image on Docker Hub
 
 {% tabs %}
+
 {% tab title="Scone" %}
 
 ```bash
@@ -254,6 +270,7 @@ docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
 ```
 
 {% endtab %}
+
 {% tab title="Gramine" %}
 
 ```bash
@@ -261,6 +278,7 @@ docker push <docker-hub-user>/tee-gramine-count-api:1.0.0
 ```
 
 {% endtab %}
+
 {% endtabs %}
 
 ## Test your app on iExec
@@ -270,16 +288,19 @@ At this stage, your application is ready to be tested on iExec with the followin
 ### Deploy the TEE app on iExec
 
 {% tabs %}
+
 {% tab title="Scone" %}
 
 [Deploy your application](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec)
 
 {% endtab %}
+
 {% tab title="Gramine" %}
 
 [Deploy your application](create-your-first-gramine-app.md#deploy-the-tee-app-on-iexec)
 
 {% endtab %}
+
 {% endtabs %}
 
 You will get a hexadecimal address for your deployed app. Use that address to push the app developer secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms).
@@ -305,6 +326,7 @@ iexec requester check-secret my-key --chain bellecour
 You are now ready to run the app with requester secrets.
 
 {% tabs %}
+
 {% tab title="Scone" %}
 
 Specify the `--secret` and `--tag tee,scone` options in `iexec app run` command to run a tee app with requester secrets on Scone
@@ -320,6 +342,7 @@ iexec app run <appAddress> \
 ```
 
 {% endtab %}
+
 {% tab title="Gramine" %}
 
 Specify the `--secret` and `--tag tee,gramine` options in `iexec app run` command to run a TEE app with requester secrets on Gramine
@@ -335,9 +358,11 @@ iexec app run <appAddress> \
 ```
 
 {% endtab %}
+
 {% endtabs %}
 
 {% hint style="info" %}
+
 The option `--secret <secretMapping...>` allow the requester to provision any number of secrets with the mapping syntax `<key>=<name>`.
 
 example:
@@ -349,11 +374,13 @@ example:
 - the secret named `foo` will be available in `IEXEC_REQUESTER_SECRET_1`
 - the secret named `bar` will be available in `IEXEC_REQUESTER_SECRET_3`
 - `IEXEC_REQUESTER_SECRET_2` will be skipped
-  {% endhint %}
+
+{% endhint %}
 
 ## Next step?
 
 Thanks to the explained confidential computing workflow, you now know how to consume requester secrets in a Confidential Computing application.
+
 To go further, check out how to:
 
 - [Attach a secret to your app](app-developer-secret.md)

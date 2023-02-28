@@ -3,20 +3,26 @@
 In previous tutorials, we saw how to build [Confidential Computing applications](intel-sgx-technology.md) that run securely inside enclaves and combine them with confidential assets to get the most out of confidential computing advantages. In this chapter, we will push things further to protect the workflow in an end to end mode. That means the next step would be encrypting results.
 
 {% hint style="warning" %}
+
 Before going any further, make sure you managed to [Build with a TEE framework](choose-your-tee-framework.md).
+
 {% endhint %}
 
 {% hint style="success" %}
+
 **Prerequisites**
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
 - [Nodejs](https://nodejs.org) 14.17.1 or higher.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
-  {% endhint %}
+
+{% endhint %}
 
 {% hint style="info" %}
+
 You don't need to change your application's code or redeploy it to add this feature.
+
 {% endhint %}
 
 Assuming your application is deployed (if not please check how to do it [with Scone](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec) or [with Gramine](create-your-first-gramine-app.md#deploy-the-tee-app-on-iexec)), before triggering an execution you need to generate an RSA key-pair, then push the public key to the [Secret Management Service](intel-sgx-technology.md#secret-management-service-sms). The latter, in turn, will provide it, at runtime, to the enclave running your Confidential Computing application.
@@ -45,6 +51,7 @@ This generates two files in `.secrets/beneficiary/`. Make sure to back up the pr
 Now, push the public key to the SMS:
 
 {% tabs %}
+
 {% tab title="Scone" %}
 
 ```bash
@@ -54,6 +61,7 @@ iexec result push-encryption-key \
 ```
 
 {% endtab %}
+
 {% tab title="Gramine" %}
 
 ```bash
@@ -63,11 +71,13 @@ iexec result push-encryption-key \
 ```
 
 {% endtab %}
+
 {% endtabs %}
 
 And check it using:
 
 {% tabs %}
+
 {% tab title="Scone" %}
 
 ```bash
@@ -77,6 +87,7 @@ iexec result check-encryption-key \
 ```
 
 {% endtab %}
+
 {% tab title="Gramine" %}
 
 ```bash
@@ -86,11 +97,13 @@ iexec result check-encryption-key \
 ```
 
 {% endtab %}
+
 {% endtabs %}
 
 Now to see that in action, you'd need to trigger a task and specify yourself as the beneficiary in the command:
 
 {% tabs %}
+
 {% tab title="Scone" %}
 
 ```bash
@@ -102,6 +115,7 @@ iexec app run <0x-your-app-address> \
 ```
 
 {% endtab %}
+
 {% tab title="Gramine" %}
 
 ```bash
@@ -113,6 +127,7 @@ iexec app run <0x-your-app-address> \
 ```
 
 {% endtab %}
+
 {% endtabs %}
 
 Wait for the task to be `COMPLETED` and download the result:
