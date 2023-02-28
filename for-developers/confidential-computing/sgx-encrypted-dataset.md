@@ -3,15 +3,18 @@
 In this tutorial, you will learn how to leverage an encrypted dataset by using the `IEXEC_DATASET_FILENAME` environment variable in your application.
 
 {% hint style="warning" %}
-The [Gramine TEE framework](choose-your-tee-framework.md#gramine) does not support encrypted datasets at the moment.
-This page is only applicable to the [Scone TEE framework](choose-your-tee-framework.md#scone).
+
+The [Gramine TEE framework](choose-your-tee-framework.md#gramine) does not support encrypted datasets at the moment. This page is only applicable to the [Scone TEE framework](choose-your-tee-framework.md#scone).
+
 {% endhint %}
 
 {% hint style="success" %}
+
 **Prerequisites**
 
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
 - [Build With a Scone TEE application](create-your-first-sgx-app.md)
+
 {% endhint %}
 
 Trusted Execution Environments offer a huge advantage from a security perspective. They guarantee that the behavior of execution does not change even when launched on an untrusted remote machine. The data inside this type of environment is also protected, which allows its monetization while preventing leakage.
@@ -19,11 +22,15 @@ Trusted Execution Environments offer a huge advantage from a security perspectiv
 With iExec, it is possible to authorize only applications you trust to use your datasets and get paid for it. Data is encrypted using standard encryption mechanisms and the plain version never leaves your machine. The encrypted version is made available for usage and the encryption key is pushed into the [SMS](intel-sgx-technology.md#secret-management-service-sms). After you deploy the dataset on iExec it is you, and only you, who decides which application is allowed to get the secret to decrypt it.
 
 {% hint style="warning" %}
+
 Datasets are only decrypted inside authorized [enclaves](intel-sgx-technology.md#enclave) and never leave them. The same thing applies to secrets.
+
 {% endhint %}
 
 {% hint style="info" %}
+
 Your secrets are securely transferred with the SDK from your machine to the SMS over a TLS channel. Internally, your secrets are encrypted with standard AES encryption before being written to disk. Next releases will feature an SMS running entirely inside a trusted enclave.
+
 {% endhint %}
 
 Let's see how to do all of that!
@@ -39,6 +46,7 @@ iexec init --skip-wallet
 ```
 
 Make sure your `chain.json` content is the same as the one described [here](create-your-first-sgx-app.md#update-chain-json).
+
 Init the dataset configuration.
 
 ```bash
@@ -76,7 +84,9 @@ iexec dataset encrypt
 ```
 
 {% hint style="info" %}
+
 `iexec dataset encrypt` will output a checksum, keep this value for a later use.
+
 {% endhint %}
 
 ```bash
@@ -90,7 +100,9 @@ datasets
 As you can see, the command generated the file `datasets/encrypted/my-first-dataset.txt.enc`. That file is the encrypted version of your dataset, you should push it somewhere accessible because the worker will download it during the execution process. You will enter this file's URI in the `iexec.json`file (`multiaddr` attribute) when you will deploy your dataset. Make sure that the URI is a **DIRECT** download link (not a link to a web page for example).
 
 {% hint style="info" %}
+
 You can use Github for example to publish the file but you should add **/raw/** to the URI like this: [https://github.com/&lt;username&gt;/&lt;repo&gt;/raw/master/my-first-dataset.zip](https://github.com/<username>/<repo>/raw/master/my-first-dataset.zip)
+
 {% endhint %}
 
 The file `.secrets/datasets/my-first-dataset.txt.key` is the encryption key, make sure to back it up securely. The file `.secrets/datasets/dataset.key` is just an "alias" in the sense that it is the key of the last encrypted dataset.
@@ -133,6 +145,7 @@ You will get a hexadecimal address for your deployed dataset. Use that address t
 For simplicity, we will use the dataset with a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the dataset encryption key to this SMS (this is fine for debugging but do not use to store production secrets).
 
 ### Push the dataset secret to the SMS
+
 ```bash
 iexec dataset push-secret --chain bellecour
 ```
@@ -161,7 +174,9 @@ In the folder `src/` create the file `app.js` or `app.py` then copy this code in
 The application reads the content of the dataset and writes it into the result's folder (in an artistic way using **Figlet**):
 
 {% tabs %}
+
 {% tab title="Javascript" %}
+
 {% code title="src/app.js" %}
 
 ```javascript
@@ -203,9 +218,11 @@ const figlet = require("figlet");
 ```
 
 {% endcode %}
+
 {% endtab %}
 
 {% tab title="Python" %}
+
 {% code title="src/app.py" %}
 
 ```python
@@ -241,9 +258,10 @@ with open(iexec_out + '/computed.json', 'w+') as f:
 ```
 
 {% endcode %}
-{% endtab %}
-{% endtabs %}
 
+{% endtab %}
+
+{% endtabs %}
 
 ## Build the TEE docker image
 
@@ -256,6 +274,7 @@ docker build . --tag <docker-hub-user>/hello-world-with-dataset:1.0.0
 ```
 
 Follow the steps described in [Build Scone app > Build the TEE docker image](create-your-first-sgx-app.md#build-the-tee-docker-image).
+
 Create the `sconify.sh` script and update the variables as follow:
 
 ```bash
@@ -299,6 +318,7 @@ iexec app run <appAddress> \
 ## Next step?
 
 Thanks to the explained confidential computing workflow, you now know how to use an encrypted dataset in a Confidential Computing application.
+
 To go further, check out how to:
 
 - [Attach a secret to your app](app-developer-secret.md)

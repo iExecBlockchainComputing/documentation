@@ -23,7 +23,9 @@ To help you decide, more details on each of these wallets can be found below.
 iExec is now also compatible with the[ **Portis** ](https://www.portis.io/)wallet. With Portis wallet, instead of dealing with your own private key, you can log in with just an email address and password.
 
 {% hint style="warning" %}
+
 **You will need enable cookies for use Portis.**
+
 {% endhint %}
 
 ![](../../.gitbook/assets/portis-cookies.png)
@@ -48,11 +50,11 @@ Using the chain selector, you can select which network you would like to connect
 
 Remember:
 
-* **Testnet** provides a training environment with **free** test crypto-currencies.
-* Both **Ethereum Mainnet** and **iExec Sidechain** use real cryptocurrencies.
-* **Ethereum Mainnet** network is great for building **decentralized** apps.
-* **iExec Sidechain** is **cheap** and **fast** but is more centralized.
-* The **iExec Sidechain** is linked to **Ethereum Mainnet**. RLC tokens can be transferred between them.
+- **Testnet** provides a training environment with **free** test crypto-currencies.
+- Both **Ethereum Mainnet** and **iExec Sidechain** use real cryptocurrencies.
+- **Ethereum Mainnet** network is great for building **decentralized** apps.
+- **iExec Sidechain** is **cheap** and **fast** but is more centralized.
+- The **iExec Sidechain** is linked to **Ethereum Mainnet**. RLC tokens can be transferred between them.
 
 **Your Wallet**
 
@@ -65,11 +67,13 @@ Your crypto-currencies can be found here. When connected to Ethereum Mainnet, al
 Your iExec account is linked to your wallet address. The account shows your credit ready to spend on the iExec platform.
 
 {% hint style="warning" %}
+
 Funds must be transferred from your wallet to your iExec account. The iExec account is a smart contract linked to your wallet - iExec can no control over the funds in your account.
+
 {% endhint %}
 
-* When buying resources, you spend the RLC from your iExec Account
-* When selling resources, the RLC earned can be found in your iExec Account
+- When buying resources, you spend the RLC from your iExec Account
+- When selling resources, the RLC earned can be found in your iExec Account
 
 ![](../../.gitbook/assets/account.png)
 
@@ -136,8 +140,10 @@ Click **Send to iExec Sidechain** to transfer some RLC from your wallet to iExec
 ![](../../.gitbook/assets/send-to-iexec-sidechain.png)
 
 {% hint style="warning" %}
+
 **Remember**:  
 **1 xRLC on iExec Sidechain has the same value than 1 RLC on Ethereum Mainnet.**
+
 {% endhint %}
 
 ### Use iExec on iExec Sidechain
@@ -157,6 +163,7 @@ Use **Send to Ethereum Mainnet** to transfer some xRLC from your wallet to Ether
 ![](../../.gitbook/assets/send-to-ethereum-mainnet.png)
 
 {% hint style="warning" %}
-**Remember**: **1 RLC on Ethereum Mainnet has the same value than 1 xRLC on iExec Sidechain.**
-{% endhint %}
 
+**Remember**: **1 RLC on Ethereum Mainnet has the same value than 1 xRLC on iExec Sidechain.**
+
+{% endhint %}

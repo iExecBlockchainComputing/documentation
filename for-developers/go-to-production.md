@@ -1,9 +1,12 @@
 # Go to production
 
 {% hint style="warning" %}
+
 Before going any further, make sure you managed to:
+
 - [Build your first application](your-first-app.md)
 - [Build Confidential Computing app](confidential-computing/README.md)
+
 {% endhint %}
 
 ## Connect to the production environment
@@ -26,7 +29,9 @@ If you are developing a standard application, then you are already set. To reach
 ## Confidential Computing application
 
 {% hint style="warning" %}
+
 The following applies only to the Scone framework.
+
 {% endhint %}
 
 If you are developing a Confidential Computing application, be aware of following information.
@@ -34,11 +39,14 @@ If you are developing a Confidential Computing application, be aware of followin
 ### Sign your application
 
 Any Confidential Computing application built previously on the [develop environment](confidential-computing/choose-your-tee-framework.md#lets-build) runs in a debug enclave, which, as warned, might be inspected.
+
 To run your application in a production enclave, the application needs to be signed with a key compatible with the Intel® Attestation Service (IAS). Create this key in your [Intel developer Portal](https://api.portal.trustedservices.intel.com/).
 
 When the key is created (`my-signer-key.pem`), update the previous [sconify.sh](confidential-computing/create-your-first-sgx-app.md#build-the-tee-docker-image) script by :
+
 - sharing the folder containing the `my-signer-key.pem`, here `/signer`
 - adding the `--scone-signer` option
+
 ```bash
 docker run -it \
             -v /signer:/signer \
@@ -52,12 +60,14 @@ docker run -it \
 ### Impacts of the SMS in enclave
 
 As you have already learned in previous [confidential assets](confidential-computing/access-confidential-assets.md) section, the iExec SMS is a crucial component for TEE tasks on iExec, being in charge of:
+
 - storing all secrets of iExec users (application developer, requester, dataset owner)
 - defining - by following on-chain governance - which secrets are accessible to a specific enclave.
 
 To reach a higher level of security on the production environment, the iExec SMS runs inside an enclave.
 
 Below is a graph showing how the secrets and session mechanism works:
+
 ```mermaid
 graph TD
     S[Secret owner] -->|1. Push secret| SMS
@@ -96,8 +106,11 @@ graph TD
 ```
 
 As seen in this diagram, required secrets are transferred to an authorized Application enclave over an RA-TLS channel ([Remote Attestation](https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/attestation-services.html)).
+
 Inside **Security Services** (yellow area in above diagram), all secrets are protected by an SMS database encryption key, itself backed by the CAS. The SMS enclave needs to prove its authenticity and integrity to the CAS in order to get access to its database encryption key.
+
 To reach a higher level of security, the CAS enclave, which is the only component aware of the SMS database encryption key, is itself [sealed](https://www.intel.com/content/www/us/en/developer/articles/technical/introduction-to-intel-sgx-sealing.html) to a specific platform enclave.
+
 With that pattern, no one, even an administrator or someone with root privileges, can inspect confidential assets of users.
 
 #### CAS update and failure
@@ -111,9 +124,10 @@ In addition, when deploying a new configuration or software release for the SMS,
 #### Backup your secrets
 
 {% hint style="warning" %}
-For these reasons, secrets can be lost at any time, with or without notice. Always keep a local copy of your secrets. Nobody, even iExec, will be able to restore them.
-{% endhint %}
 
+For these reasons, secrets can be lost at any time, with or without notice. Always keep a local copy of your secrets. Nobody, even iExec, will be able to restore them.
+
+{% endhint %}
 
 ## Publish your app to the Dapps store
 

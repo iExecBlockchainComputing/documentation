@@ -4,21 +4,23 @@
 
 If you haven’t already, you will need to create an Ethereum wallet:
 
-* Go to MyEtherWallet [https://myetherwallet.com](https://myetherwallet.com)
-* Create a wallet following MEW’s instructions
+- Go to MyEtherWallet [https://myetherwallet.com](https://myetherwallet.com)
+- Create a wallet following MEW’s instructions
 
 {% hint style="warning" %}
+
 Remember your password. You will need it later. \_\*\*\_Back up your wallet properly.
+
 {% endhint %}
 
 ![](../../.gitbook/assets/mew_createwallet.png)
 
-* Download your Keystore file, **keep it safe and secret**.
-* To Import the wallet using the Keystore file, you will need to open the downloaded wallet file with any text editor and copy its content.
+- Download your Keystore file, **keep it safe and secret**.
+- To Import the wallet using the Keystore file, you will need to open the downloaded wallet file with any text editor and copy its content.
 
 Useful link:
 
-* How to get an Ethereum wallet ? [https://www.myetherwallet.com/](https://www.myetherwallet.com/)
+- How to get an Ethereum wallet ? [https://www.myetherwallet.com/](https://www.myetherwallet.com/)
 
 ## Credit your wallet with ETH and RLC
 
@@ -28,8 +30,8 @@ Useful links:
 
 For testing purpose and access to limited computing resources:
 
-> * How to get some test ETH \(Kovan\) on your Ethereum wallet ? [https://gitter.im/kovan-testnet/faucet](https://gitter.im/kovan-testnet/faucet)
-> * How to get some test RLC \(Kovan\) on your Ethereum wallet ? [https://faucet.iex.ec/kovan](https://faucet.iex.ec/kovan)
+> - How to get some test ETH \(Kovan\) on your Ethereum wallet ? [https://gitter.im/kovan-testnet/faucet](https://gitter.im/kovan-testnet/faucet)
+> - How to get some test RLC \(Kovan\) on your Ethereum wallet ? [https://faucet.iex.ec/kovan](https://faucet.iex.ec/kovan)
 
 ### Login with Metamask
 
@@ -38,29 +40,31 @@ For testing purpose and access to limited computing resources:
 Once you’ve unlocked your Metamask, you can login on the iExec marketplace [https://market.iex.ec](https://market.iex.ec) with embedded wallet management. In the **Account**, both Balance and Allowance are displayed, and values are expressed in nRLC \(nano RLC\). When a computing deal is closed, a dedicated smart contract is created, an allowance step is mandatory to give authority to this new smart contract to proceed to the payment when the computing task is successfully ended.
 
 {% hint style="info" %}
+
 When your worker joins a worker pool, you must deposit and keep **a minimal of 5 RLC** on your account.  
 This amount is enough to be candidate for any deals.  
 After the job completion, the reward goes into your account.
 
 **The wallet owner must withdraw RLC tokens from his account to his wallet with the SDK or with the marketplace embedded wallet**.
+
 {% endhint %}
 
 ## **Wallet management with the SDK**
 
 The iExec SDK provides all features needed to manage one or multiple wallets.
 
-> * **Wallet creation** : you can directly create a new wallet.
-> * **Keystore directory** : all the wallets you should manage are now stored in a specified location.
-> * **Encrypted wallet** : By default, all the wallet are encrypted in the keystore and protected by a user password.
-> * **Import wallet** : You can import \(recreate a local wallet file\) from a private key.
-> * **Using aliases** : the option --wallet-file allows to use custom filename for your wallet, to ease the management of multiple wallets.
+> - **Wallet creation** : you can directly create a new wallet.
+> - **Keystore directory** : all the wallets you should manage are now stored in a specified location.
+> - **Encrypted wallet** : By default, all the wallet are encrypted in the keystore and protected by a user password.
+> - **Import wallet** : You can import \(recreate a local wallet file\) from a private key.
+> - **Using aliases** : the option --wallet-file allows to use custom filename for your wallet, to ease the management of multiple wallets.
 >
 > ```text
 > cp ~/.ethereum/keystore/UTC--2019-04-23T08-34-59.991000000Z--7E82621Ea3B9BB78d62e32E88cf97f4B855C36D4 my_custom_wallet_filename
 > iexec wallet show --wallet-file my_custom_wallet_filename
 > ```
 >
-> * **Account management** : you can send ETH and RLC to another address. You can deposit and withdraw RLC to your account.
+> - **Account management** : you can send ETH and RLC to another address. You can deposit and withdraw RLC to your account.
 
 Go checkout the [iExec SDK](https://github.com/iExecBlockchainComputing/iexec-sdk/) page to get wallet management option.
 
@@ -83,10 +87,9 @@ The iExecClerk smart contract service is the piece of software that manages unde
 Staking is a important part of the consensus protocol, to prevent attacks and maintain a high level of trust between participants. Workers and schedulers have to commit a security deposit, who computed an erroneous result will lose their stake. The movements of RLC is presented below.
 
 |  | **RLC needed** | **ETH needed** | Staking and incentives |
-| :--- | :--- | :--- | :--- |
+| :-- | :-- | :-- | :-- |
 | Requester | yes | no | payment, token locked during execution |
 | App provider | no | yes for deployment | reward |
 | Dataset provider | no | yes for deployment | reward |
 | Worker | yes | yes | stacking for security deposit, reward |
 | Scheduler | yes | yes | stacking for security deposit, reward |
-

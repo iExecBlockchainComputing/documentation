@@ -1,7 +1,6 @@
 ---
 description: >-
-  A worker is an essential actor of the iExec Network. It will be in charge of
-  computing tasks sent by requesters on the iExec Marketplace.
+  A worker is an essential actor of the iExec Network. It will be in charge of computing tasks sent by requesters on the iExec Marketplace.
 ---
 
 # Quick start
@@ -12,8 +11,8 @@ A worker will be rewarded with RLC for every properly computed tasks.
 
 Please note that:
 
-* your wallet must be loaded with RLC. Some RLC must be deposited to your iExec account in order to stake for incoming tasks.
-* your computer needs at least 2 CPUs.
+- your wallet must be loaded with RLC. Some RLC must be deposited to your iExec account in order to stake for incoming tasks.
+- your computer needs at least 2 CPUs.
 
 ## Start a worker
 

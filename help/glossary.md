@@ -101,6 +101,7 @@ The iExec Marketplace connects resource providers with resource users, allowing 
 A decentralized method that enables to generate a new token without the involvement of a central authority. It can either be a non-fungible token or a crypto coin.
 
 Please note that minting an NFT (non-fungible token) is a different procedure. To mint an NFT, users usually sign up with a cryptocurrecny wallet on an NFT marketplace (or other platform). Then that create an NFT by uploading a file and paying for the creation. Once the transaction is verified, a new NFT is minted. This process to add NFTs to a blockchain allows creators to sell their photos, videos, and digital 3D objects.
+
 See “ERC-721” for more information.
 
 ## MREnclave
@@ -150,7 +151,6 @@ A person who buys the execution of a task in the iExec marketplace.
 ## RLC (Run on lots of computers)
 
 An Ethereum (ERC20) token launched during the iExec ICO in 2017. This utility token is used on the iExec marketplace to buy and sell computing assets.
-
 
 ## Remote attestation
 

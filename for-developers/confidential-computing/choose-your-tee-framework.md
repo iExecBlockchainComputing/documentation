@@ -1,7 +1,9 @@
 # Choose your TEE framework
 
 {% hint style="warning" %}
+
 Before going any further, make sure you managed to [Build your first application](../your-first-app.md).
+
 {% endhint %}
 
 After understanding the fundamentals of Confidential Computing and explaining the technologies behind it, it is time to roll up our sleeves and get hands-on with [enclaves](intel-sgx-technology.md#enclave). In this guide, we will focus on protecting an application - that is already compatible with the iExec platform - using SGX, and without changing the source code. That means we will use the same code we [previously](../your-first-app.md#build-your-app) deployed for a basic iExec application.
@@ -28,11 +30,14 @@ For a deeper understanding, you can have a look to the official [Gramine documen
 ## Let's build
 
 {% hint style="warning" %}
+
 Following steps will show you how to build a Confidential Computing application. The environment you are about to use is a "develop" environment:
+
 - which can be reset at any time
 - where configurations and secrets might be inspected (debug enclaves)
 
 When your developer discovery journey is complete, please reach the [production section](../go-to-production.md).
+
 {% endhint %}
 
 <table data-view="cards">
