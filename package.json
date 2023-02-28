@@ -13,6 +13,11 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{md,json,yaml}": "prettier --write"
+    "*.md": [
+      "prettier --write"
+    ],
+    "*.{json,yaml}": [
+      "prettier --write"
+    ]
   }
 }
