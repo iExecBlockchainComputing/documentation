@@ -5,4 +5,4 @@ description: >-
 
 # Assets
 
-[iExec Assets and logos ](https://iex.ec/assets/)
+[iExec Assets and logos](https://iex.ec/assets/)
