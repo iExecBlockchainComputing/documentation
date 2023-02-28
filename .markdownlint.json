@@ -1,8 +1,9 @@
 {
   "default": true,
-  "MD013": false,
-  "MD033": {
-    "allowed_elements": ["br"]
+  "line-length": false,
+  "no-duplicate-header": {
+    "allow_different_nesting": true
   },
-  "MD041": false
+  "no-inline-html": false,
+  "no-emphasis-as-header": false
 }

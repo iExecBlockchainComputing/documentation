@@ -10,6 +10,7 @@
   "scripts": {
     "format": "prettier --write .",
     "lint": "markdownlint --fix .",
+    "lint-strict": "markdownlint -c .markdownlint_strict.json .",
     "prepare": "husky install"
   },
   "lint-staged": {
