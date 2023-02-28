@@ -179,7 +179,7 @@ In this section, you will:
 
 Create the `Dockerfile`
 
-### For a Javascript application
+**For a Javascript application**
 
 ```bash
 # Starting from a base image supported by SCONE
@@ -193,7 +193,7 @@ COPY ./src /app
 ENTRYPOINT [ "node", "/app/app.js"]
 ```
 
-### For a Python application
+**For a Python application**
 
 ```bash
 FROM python:3.7.3-alpine3.10
@@ -232,14 +232,14 @@ In this section, you will create a `Dockerfile` and create your **Gramine TEE ap
 
 You need to copy the `Dockerfile`, then update its `RUN` statements to install required dependencies for your application:
 
-### For a Javascript application
+**For a Javascript application**
 
 ```bash
 # Install required node dependencies
 RUN npm install axios
 ```
 
-### For a Python application
+**For a Python application**
 
 ```bash
 # Install required Python dependencies
