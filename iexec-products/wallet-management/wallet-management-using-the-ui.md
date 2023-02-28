@@ -28,25 +28,25 @@ iExec is now also compatible with the [**Portis**](https://www.portis.io/) walle
 
 {% endhint %}
 
-![](../../.gitbook/assets/portis-cookies.png)
+![portis-cookies](../../.gitbook/assets/portis-cookies.png)
 
 ## User Interface Guide
 
 To help you understand how to use interface and features of the iExec Wallet Manager, we've integrated an interactive guide that walks you through the user interface.
 
-![](../../.gitbook/assets/1-guide-ui.png)
+![ui-guide](../../.gitbook/assets/1-guide-ui.png)
 
 **Wallet Address**
 
 Your wallet address is unique to your own wallet and is your public identity on the blockchain.
 
-![](../../.gitbook/assets/your-address.png)
+![your-address](../../.gitbook/assets/your-address.png)
 
 **Chain selector**
 
 Using the chain selector, you can select which network you would like to connect to.
 
-![](../../.gitbook/assets/chain-selector.png)
+![chain-selector](../../.gitbook/assets/chain-selector.png)
 
 Remember:
 
@@ -60,7 +60,7 @@ Remember:
 
 Your crypto-currencies can be found here. When connected to Ethereum Mainnet, all transactions require a small amount of ETH to be used for transaction fees. These transactions fees are sometimes referred to as 'gas' fees. Ensure you have enough ETH in your wallet to pay these.
 
-![](../../.gitbook/assets/wallet.png)
+![wallet](../../.gitbook/assets/wallet.png)
 
 **Your iExec Account**
 
@@ -75,7 +75,7 @@ Funds must be transferred from your wallet to your iExec account. The iExec acco
 - When buying resources, you spend the RLC from your iExec Account
 - When selling resources, the RLC earned can be found in your iExec Account
 
-![](../../.gitbook/assets/account.png)
+![account](../../.gitbook/assets/account.png)
 
 ## What you can do with Wallet Manager
 
@@ -83,19 +83,19 @@ Funds must be transferred from your wallet to your iExec account. The iExec acco
 
 Use **Deposit RLC** to top up your iExec Account with funds from your wallet.
 
-![](../../.gitbook/assets/actions.png)
+![deposit](../../.gitbook/assets/actions.png)
 
 ### Withdraw RLC
 
 Use **Withdraw RLC** to withdraw the RLC from your iExec Account to your wallet.
 
-![](../../.gitbook/assets/withdraw-rlc.png)
+![withdraw](../../.gitbook/assets/withdraw-rlc.png)
 
 ### Get ETH \(Access Ethereum Tokens with Moonpay\)
 
 MoonPay is a fiat currency on-ramp solution for accessing blockchain tokens using an everyday bank card. MoonPay can be used to purchase Ethereum tokens directly from within the iExec Wallet Manager.
 
-![](../../.gitbook/assets/moonpay.png)
+![buy-eth](../../.gitbook/assets/moonpay.png)
 
 ### Get RLC \(Using UniSwap\)
 
@@ -103,7 +103,7 @@ You will need RLC tokens to use the iExec platform. One option is to use [UniSwa
 
 Click **Get RLC** to refill your wallet with RLC. Remember that you will need to transfer this into your iExec Account before being able to use it with iExec services.
 
-![](../../.gitbook/assets/get-rlc-uniswap.png)
+![swap](../../.gitbook/assets/get-rlc-uniswap.png)
 
 ## Using the iExec Sidechain
 
@@ -117,7 +117,7 @@ No need to configure anything, your wallet is ready to connect to iExec Sidechai
 
 You will need to manually add the network within Metamask.
 
-![](../../.gitbook/assets/networks.png)
+![add-network](../../.gitbook/assets/networks.png)
 
 **Network Name:** iExec Sidechain
 
@@ -137,7 +137,7 @@ First switch network to **Ethereum Mainnet**.
 
 Click **Send to iExec Sidechain** to transfer some RLC from your wallet to iExec Sidechain.
 
-![](../../.gitbook/assets/send-to-iexec-sidechain.png)
+![bridge](../../.gitbook/assets/send-to-iexec-sidechain.png)
 
 {% hint style="warning" %}
 
@@ -160,7 +160,7 @@ First switch network to **iExec Sidechain**.
 
 Use **Send to Ethereum Mainnet** to transfer some xRLC from your wallet to Ethereum Mainnet.
 
-![](../../.gitbook/assets/send-to-ethereum-mainnet.png)
+![bridge](../../.gitbook/assets/send-to-ethereum-mainnet.png)
 
 {% hint style="warning" %}
 

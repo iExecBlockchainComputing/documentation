@@ -52,23 +52,23 @@ The [nominal workflow](https://github.com/iExecBlockchainComputing/iexec-doc/raw
 
 Below are the details of the implementations:
 
-1. **Deal**
+**1. Deal**
 
 [A deal is sealed by the Clerk.](proof-of-contribution.md#brokering) This marks the beginning of the execution. An event is created to notify the worker pool’s scheduler.
 
 The consensus timer starts when the deal is signed. The corresponding task must be completed before the end of this countdown. Otherwise, the scheduler gets punished by a loss of stake and reputation, and the user reimbursed.
 
-2. **Initialization**
+**2. Initialization**
 
 The scheduler calls the `initialize` method. Given a deal id and a position in the request order \(within the deal window\), this function initializes the corresponding task and returns the _taskid_.`bytes32 taskid = keccak256(abi.encodePacked(_dealid, idx));`
 
-3. **Authorization signature**
+**3. Authorization signature**
 
 The scheduler designates workers that participate in this task. The scheduler’s Ethereum wallet signs a message containing the worker’s Ethereum address, the taskid, and \(optionally\) the Ethereum address of the worker's enclave. If the worker doesn't use an enclave, this field must be filled with `address(0)`.
 
 This Ethereum signature \(authorization\) is sent to the worker through an off-chain channel implemented by the middleware.
 
-4. **Task computation**
+**4. Task computation**
 
 Once the authorization is received and verified, the worker computes the requested tasks. Results from this execution are placed in the `/iexec_out` folder. The following values are then computed:
 
@@ -84,7 +84,7 @@ Alternatively, if the application is used in a doracle context (the results are 
 
 If a TEE was used to produce the result, the post-processing enclave will automatically produce an `enclave-signature` entry that contains the enclave signature \(of the resultHash and resultSeal\). TEE certification of results is transparent to the application developer.
 
-5. **Contribution**
+**5. Contribution**
 
 Once the execution has been performed, the worker pushes its contribution using the `contribute` method. The contribution contains:
 
@@ -103,15 +103,15 @@ The enclave signature. This is required if the `enclaveChallenge` is not `addres
 
 The signature computed by the scheduler at step 2.
 
-6. **Consensus**
+**6. Consensus**
 
 During the contribution, the consensus is updated and verified. Contributions are possible until the consensus is reached, at which point the contributions are closed. We then enter a 2h reveal phase.
 
-7. **Reveal**
+**7. Reveal**
 
 During the reveal phase, workers that have contributed to the consensus must call the `reveal` method with the `resultDigest`. This verifies that the `resultHash` and `resultSeal` they provided are valid. Failure to reveal is equivalent to a bad contribution, and results in a loss of stake and reputation.
 
-8. **Finalize**
+**8. Finalize**
 
 Once all contributions have been revealed, or at the end of the reveal period if some \(but not all\) reveals are missing, the scheduler must call the `finalize` method. This finalizes the task, rewards good contribution and punishes bad ones. This must be called before the end of the consensus timer.
 
@@ -413,65 +413,106 @@ In order to trigger an execution, a deal must be registered by the iExec Clerk. 
 
 Orders compatibility required:
 
-1. The worker pool’s category and the requester’s category must be equal.
+**1. The worker pool’s category and the requester’s category must be equal.**
 
-`require(_requestorder.category == _workerpoolorder.category);`
+```sol
+require(_requestorder.category == _workerpoolorder.category);
+```
 
-2. The worker pool’s trust must be greater or equal to the requester’s trust.
+**2. The worker pool’s trust must be greater or equal to the requester’s trust.**
 
-`require(_requestorder.trust == _workerpoolorder.trust);`
+```sol
+require(_requestorder.trust == _workerpoolorder.trust);
+```
 
-3. The app’s, dataset’s and worker pool’s prices must be less or equal to the requester’s appmaxprice, datasetmaxprice and workerpoolmaxprice.
+**3. The app’s, dataset’s and worker pool’s prices must be less or equal to the requester’s appmaxprice, datasetmaxprice and workerpoolmaxprice.**
 
-`require(_requestorder.appmaxprice >= _apporder.appprice);` `require(_requestorder.datasetmaxprice >= _datasetorder.datasetprice);` `require(_requestorder.workerpoolmaxprice >= _workerpoolorder.workerpoolprice);`
+```sol
+require(_requestorder.appmaxprice >= _apporder.appprice);
+require(_requestorder.datasetmaxprice >= _datasetorder.datasetprice);
+require(_requestorder.workerpoolmaxprice >= _workerpoolorder.workerpoolprice);
+```
 
-4. The worker pool’s tag must enable all the features required by the app’s tag, the dataset’s tag and the worker pool’s tag.
+**4. The worker pool’s tag must enable all the features required by the app’s tag, the dataset’s tag and the worker pool’s tag.**
 
-`require(tag & ~_workerpoolorder.tag == 0x0);` `require(tag & ~_workerpoolorder.tag == 0x0);`
+```sol
+require(tag & ~_workerpoolorder.tag == 0x0);
+require(tag & ~_workerpoolorder.tag == 0x0);
+```
 
-5. If TEE tag is required, then application must be TEE compatible.
+**5. If TEE tag is required, then application must be TEE compatible.**
 
-`require((tag ^ _apporder.tag)[31] & 0x01 == 0x0);`
+```sol
+require((tag ^ _apporder.tag)[31] & 0x01 == 0x0);
+```
 
-6. The app provided by the apporder must match the one required by the requester.
+**6. The app provided by the apporder must match the one required by the requester.**
 
-`require(_requestorder.app == _apporder.app);`
+```sol
+require(_requestorder.app == _apporder.app);
+```
 
-7. The dataset provided by the datasetorder must match the one required by the requester.
+**7. The dataset provided by the datasetorder must match the one required by the requester.**
 
-`require(_requestorder.dataset == _datasetorder.dataset);`
+```sol
+require(_requestorder.dataset == _datasetorder.dataset);
+```
 
-8. If the requester specified a worker pool restriction, the worker pool must match this value or be part of the corresponding group.
+**8. If the requester specified a worker pool restriction, the worker pool must match this value or be part of the corresponding group.**
 
-`require(_checkIdentity(_requestorder.workerpool, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));`
+```sol
+require(_checkIdentity(_requestorder.workerpool, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));
+```
 
-8. The application must fit the dataset’s and the worker pool’s application restrictions \(if any\).
+**9. The application must fit the dataset’s and the worker pool’s application restrictions \(if any\).**
 
-`require(_checkIdentity(_datasetorder.apprestrict, _apporder.app, GROUPMEMBER_PURPOSE));` `require(_checkIdentity(_workerpoolorder.apprestrict, _apporder.app, GROUPMEMBER_PURPOSE));`
+```sol
+require(_checkIdentity(_datasetorder.apprestrict, _apporder.app, GROUPMEMBER_PURPOSE));
+require(_checkIdentity(_workerpoolorder.apprestrict, _apporder.app, GROUPMEMBER_PURPOSE));
+```
 
-9. The dataset must fit the application’s and the worker pool’s restrictions \(if any\).
+**10. The dataset must fit the application’s and the worker pool’s restrictions \(if any\).**
 
-`require(_checkIdentity(_apporder.datasetrestrict, _datasetorder.dataset, GROUPMEMBER_PURPOSE));` `require(_checkIdentity(_workerpoolorder.datasetrestrict, _datasetorder.dataset, GROUPMEMBER_PURPOSE));`
+```sol
+require(_checkIdentity(_apporder.datasetrestrict, _datasetorder.dataset, GROUPMEMBER_PURPOSE));
+require(_checkIdentity(_workerpoolorder.datasetrestrict, _datasetorder.dataset, GROUPMEMBER_PURPOSE));
+```
 
-10. The worker pool must fit the application’s and the dataset’s restrictions \(if any\).
+**11. The worker pool must fit the application’s and the dataset’s restrictions \(if any\).**
 
-`require(_checkIdentity(_apporder.workerpoolrestrict, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));` `require(_checkIdentity(_datasetorder.workerpoolrestrict, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));`
+```sol
+require(_checkIdentity(_apporder.workerpoolrestrict, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));
+require(_checkIdentity(_datasetorder.workerpoolrestrict, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));
+```
 
-11. The requester must fit the application’s, the dataset’s and the worker pool’s restrictions \(if any\).
+**12. The requester must fit the application’s, the dataset’s and the worker pool’s restrictions \(if any\).**
 
-`require(_checkIdentity(_apporder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));` `require(_checkIdentity(_datasetorder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));` `require(_checkIdentity(_workerpoolorder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));`
+```sol
+require(_checkIdentity(_apporder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));
+require(_checkIdentity(_datasetorder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));
+require(_checkIdentity(_workerpoolorder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));
+```
 
-13. All resources must be registered in the corresponding registries.
+**13. All resources must be registered in the corresponding registries.**
 
-`require(m_appregistry.isRegistered(_apporder.app));` `require(m_datasetregistry.isRegistered(_datasetorder.dataset));` `require(m_workerpoolregistry.isRegistered(_workerpoolorder.workerpool));`
+```sol
+require(m_appregistry.isRegistered(_apporder.app));
+require(m_datasetregistry.isRegistered(_datasetorder.dataset));
+require(m_workerpoolregistry.isRegistered(_workerpoolorder.workerpool));
+```
 
-14. All orders must be signed or presigned.
+**14. All orders must be signed or presigned.**
 
-`require(_checkPresignatureOrSignature(App(_apporder.app).m_owner(), _apporder.hash(), _apporder.sign));` `require(_checkPresignatureOrSignature(Dataset(_datasetorder.dataset).m_owner(), _datasetorder.hash(), _datasetorder.sign));` `require(_checkPresignatureOrSignature(Workerpool(_workerpoolorder.workerpool).m_owner(), _workerpoolorder.hash(), _workerpoolorder.sign));` `require(_checkPresignatureOrSignature(_requestorder.requester, _requestorder.hash(), _requestorder.sign));`
+```sol
+require(_checkPresignatureOrSignature(App(_apporder.app).m_owner(), _apporder.hash(), _apporder.sign));
+require(_checkPresignatureOrSignature(Dataset(_datasetorder.dataset).m_owner(), _datasetorder.hash(), _datasetorder.sign));
+require(_checkPresignatureOrSignature(Workerpool(_workerpoolorder.workerpool).m_owner(), _workerpoolorder.hash(), _workerpoolorder.sign));
+require(_checkPresignatureOrSignature(_requestorder.requester, _requestorder.hash(), _requestorder.sign));
+```
 
-15. The deal produced must contain at least one task.
+**15. The deal produced must contain at least one task.**
 
-16. Requester and worker pool must be able to stake.
+**16. Requester and worker pool must be able to stake.**
 
 ### FAQ : How to write an order ?
 

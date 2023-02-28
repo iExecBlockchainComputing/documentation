@@ -6,7 +6,7 @@ Before going any further, make sure you managed to [Build with a TEE framework](
 
 {% endhint %}
 
-### Secret Management Service (SMS)
+## Secret Management Service (SMS)
 
 You can use confidential assets on iExec thanks to the _iExec Secret Management Service_. This service verifies that the enclave asking for secrets is authorized to do so. Any user - as a confidential asset provider - declares on the blockchain which enclaves are authorized to access it. For each task, the SMS will query the blockchain to determine if the enclave requesting secrets is indeed whitelisted for it.
 

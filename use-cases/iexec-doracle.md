@@ -47,7 +47,7 @@ An iExec dOracle can be seen as an “on-chain API”: fundamentally it is a sim
 
 The off-chain part of a dOracle is a classical iExec dApp, that will be executed on the iExec platform and be replicated on several workers as part of an iExec computation deal. It contains the oracle logic, for example to query a web API and process the result. Whenever an operator wishes to update the dOracle, it requests a computation like in a normal iExec deal, specifying the dOracle app as dApp, and the parameters if applicable. The dOracle result is written in the `${IEXEC_OUT}/computed.json` file by the dApp, under the `callback_data` key.
 
-```
+```bash
 $ cat ${IEXEC_OUT}/computed.json
 { 'callback-data': '0x48656c6c6f2c20776f726c6421'}
 ```
