@@ -3,24 +3,28 @@
 In this tutorial, you will learn how to build and run a Confidential Computing application with the Scone TEE framework.
 
 {% hint style="warning" %}
+
 Before going any further, make sure you managed to [Build your first application](../your-first-app.md).
+
 {% endhint %}
 
 {% hint style="success" %}
+
 **Prerequisites**
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
-- [Nodejs](https://nodejs.org) 14.0.0 or higher.
+- [Nodejs](https://nodejs.org) 14.17.1 or higher.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
-{% endhint %}
 
+{% endhint %}
 
 **How would the enclave verify the integrity of the code?**
 
 The short answer is: the application is protected by taking a snapshot of the file system's state. The TEE image will use the [fspf](intel-sgx-technology.md#fspf-file-system-protection-file) feature of SCONE to authenticate the file system directories that would be used by the application \(/bin, /lib...\) as well as the code itself. It takes a snapshot of their state that will be later shared with the worker \(via the Blockchain\) to make sure everything is under control. If we change one bit of one of the authenticated files, the file system's state changes completely and the enclave will refuse to boot since it considers it as a possible attack.
 
 In order to follow this tutorial, you will need to register a [free SCONE Account](https://scontain.com) to access SCONE build tools and curated images from the [SCONE registry](https://gitlab.scontain.com/).
+
 Once your account is activated, you need to [request access to the SCONE build tools for iExec](mailto:info@scontain.com?cc=scone-access@iex.ec&subject=iExec%20Build%20Tools&body=Hi%20SCONE%20Team%2C%0D%0A%0D%0AI%20would%20like%20to%20get%20access%20to%20the%20SCONE%20build%20tools%20for%20iExec:%0A%20-%20scone-production/iexec-sconify-image%0A%20-%20sconecuratedimages%20%28all%20curated%20images%20such%20as%20nodejs%2C%20python...%29%0A%0AMy%20DockerID%20is%20...%0A%0ABest%20regards%0A%0A...).
 
 ```bash
@@ -31,9 +35,11 @@ docker login registry.scontain.com:5050
 ## Prepare your application
 
 Before going further, your `<docker-hub-user>/hello-world:1.0.0` image built previously is required.
+
 If you missed that part, please go back to [Build your first application](../your-first-app.md).
 
 For this tutorial, you can reuse the same directory tree or create a new one.
+
 To create a new directory tree, execute the following commands in `~/iexec-projects/`.
 
 ```bash
@@ -69,7 +75,9 @@ If you start from a new firectory tree, you will need to replay the following st
 As we mentioned earlier, the advantage of using **SCONE** is the ability to make the application **Intel® SGX-enabled** without changing the source code. The only thing we are going to do is rebuilding the app using the Trusted-Execution-Environment tooling provided by **SCONE**.
 
 {% hint style="info" %}
+
 SCONE provides TEE conversion tooling (Python, Java, ..) plus eventually TEE base images for other languages (NodeJs).
+
 {% endhint %}
 
 ## Build the TEE docker image
@@ -77,7 +85,9 @@ SCONE provides TEE conversion tooling (Python, Java, ..) plus eventually TEE bas
 We will use the following script to wrap the sconification process, copy the `sconify.sh` script in the current directory:
 
 {% tabs %}
+
 {% tab title="Javascript" %}
+
 {% code title="sconify.sh" %}
 
 ```bash
@@ -115,9 +125,11 @@ docker run -it --rm \
 ```
 
 {% endcode %}
+
 {% endtab %}
 
 {% tab title="Python" %}
+
 {% code title="sconify.sh" %}
 
 ```bash
@@ -155,7 +167,9 @@ docker run -it \
 ```
 
 {% endcode %}
+
 {% endtab %}
+
 {% endtabs %}
 
 ```bash
@@ -174,12 +188,15 @@ docker push <docker-hub-user>/tee-scone-hello-world:1.0.0-debug
 Congratulations, you just built your Scone TEE application.
 
 {% hint style="info" %}
+
 The `sconify.sh` script prints the generated docker image name, you must retag this image and push it on dockerhub.
+
 {% endhint %}
 
 {% hint style="info" %}
 
 You may have noticed the `tee-debug` flag in the image name, the built image is actually in TEE debug mode, this allows you to have some debug features while developping the app.
+
 Once you are happy with the debug app, contact us to go to production!
 
 {% endhint %}
@@ -221,6 +238,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 ```
 
 {% hint style="info" %}
+
 See [Create your identity on the blockchain](../quick-start-for-developers.md#create-your-identity-on-the-blockchain) to retrieve `<your-wallet-address>` value.
 
 See [Deploy your app on iExec](../your-first-app.md#deploy-your-app-on-iexec) to retrieve your image `<checksum>`.
@@ -230,6 +248,7 @@ Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint (mrenclave
 ```bash
 docker run --rm -e SCONE_HASH=1 <docker-hub-user>/tee-scone-hello-world:1.0.0-debug
 ```
+
 {% endhint %}
 
 Deploy the app with the standard command:
@@ -258,8 +277,11 @@ iexec app run --tag tee,scone --workerpool v8-debug.main.pools.iexec.eth --watch
 ```
 
 {% hint style="info" %}
+
 You noticed we used `v8-debug.main.pools.iexec.eth` instead of an ethereum address, this is an ENS name.
+
 The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables associating decentralized naming to ethereum addresses.
+
 {% endhint %}
 
 ## Next step?
