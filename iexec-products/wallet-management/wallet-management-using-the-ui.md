@@ -36,13 +36,13 @@ To help you understand how to use interface and features of the iExec Wallet Man
 
 ![ui-guide](../../.gitbook/assets/1-guide-ui.png)
 
-**Wallet Address**
+**Wallet Address:**
 
 Your wallet address is unique to your own wallet and is your public identity on the blockchain.
 
 ![your-address](../../.gitbook/assets/your-address.png)
 
-**Chain selector**
+**Chain selector:**
 
 Using the chain selector, you can select which network you would like to connect to.
 
@@ -56,13 +56,13 @@ Remember:
 - **iExec Sidechain** is **cheap** and **fast** but is more centralized.
 - The **iExec Sidechain** is linked to **Ethereum Mainnet**. RLC tokens can be transferred between them.
 
-**Your Wallet**
+**Your Wallet:**
 
 Your crypto-currencies can be found here. When connected to Ethereum Mainnet, all transactions require a small amount of ETH to be used for transaction fees. These transactions fees are sometimes referred to as 'gas' fees. Ensure you have enough ETH in your wallet to pay these.
 
 ![wallet](../../.gitbook/assets/wallet.png)
 
-**Your iExec Account**
+**Your iExec Account:**
 
 Your iExec account is linked to your wallet address. The account shows your credit ready to spend on the iExec platform.
 

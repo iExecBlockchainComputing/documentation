@@ -4,7 +4,7 @@ We are introducing a new method for pricing and we have defined several task cat
 
 In the future, we’ll redefine the categories, and provide more advanced tools for helping developers to maximize the usage of the infrastructure
 
-**Categories Description**
+**Categories Description:**
 
 | **Category** | **Maximum Elapsed Time** |
 | :----------- | :----------------------- |

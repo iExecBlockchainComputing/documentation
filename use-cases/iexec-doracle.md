@@ -43,7 +43,7 @@ A normal execution ends when the deal is finalized; all the stakeholders are pai
 
 An iExec dOracle can be seen as an “on-chain API”: fundamentally it is a simple value-store smart contract, with accessors for other smart contracts to get its data, and an internal mechanism to update the data in the most secure way possible. The dOracle architecture is composed of two parts: an on-chain smart contract and a classical iExec dApp \(packaged in a docker container\).
 
-**Off-chain component**
+**Off-chain component:**
 
 The off-chain part of a dOracle is a classical iExec dApp, that will be executed on the iExec platform and be replicated on several workers as part of an iExec computation deal. It contains the oracle logic, for example to query a web API and process the result. Whenever an operator wishes to update the dOracle, it requests a computation like in a normal iExec deal, specifying the dOracle app as dApp, and the parameters if applicable. The dOracle result is written in the `${IEXEC_OUT}/computed.json` file by the dApp, under the `callback_data` key.
 
@@ -54,7 +54,7 @@ $ cat ${IEXEC_OUT}/computed.json
 
 When the computation ends the worker will send both this `callback-data` \(containing the oracle result\) on the blockchain. The `callback-data` value is stored in the `resultsCallback` field of the `Task` object in the `IexecProxy` smart contract.
 
-**On-chain component**
+**On-chain component:**
 
 The on-chain part is the dOracle contract. Anyone can request an update of its internal state by sending the id of a task corresponding to the execution of the corresponding dApp. With this id, the dOracle contract will query the blockchain and retrieve the deal object. It then checks that the execution passes the dOracle requirements \(trust level, execution tag, that the app is right\). If it does the dOracle contract then decodes the value in the results field and update its fields accordingly. The value is then accessible like a normal value on a smart contract.
 

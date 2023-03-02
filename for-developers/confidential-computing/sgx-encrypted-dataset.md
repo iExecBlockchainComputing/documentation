@@ -10,7 +10,7 @@ The [Gramine TEE framework](choose-your-tee-framework.md#gramine) does not suppo
 
 {% hint style="success" %}
 
-**Prerequisites**
+**Prerequisites:**
 
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
 - [Build With a Scone TEE application](create-your-first-sgx-app.md)

@@ -19,13 +19,13 @@ In addition to providing trust, PoCo also orchestrates the different contributio
 
 A major quality of PoCo lies in the fact that it is a modular protocol. It comes with features that are context-specific.
 
-### **Result consolidation**
+### Result consolidation
 
 PoCo relies on replication to achieve result consolidation. This is purely a software solution that enforces a confidence level on the result. [This confidence level can be customized by the requester.](proof-of-contribution.md#replication-and-trust)
 
 This layer also supports the onchain consolidation of execution results carried out in Trusted Execution Environments \(TEE\) such as Intel SGX.
 
-### **Secure payment**
+### Secure payment
 
 Once a deal is sealed on the iExec Marketplace, requester funds are locked to ensure all resource providers are paid for their contributions. Resources can take the form of data, applications or computing power.
 
@@ -35,7 +35,7 @@ Worker and scheduler must stake RLC to participate as a computing providers. Bad
 
 This is essential on the public blockchain, but all values can be set to 0 for private blockchain solutions.
 
-### **Permissioning**
+### Permissioning
 
 For an execution to happen, a deal must be signed between the different parties involved. A permission mechanism can be used to control access to applications, datasets and worker pools.
 
@@ -52,23 +52,23 @@ The [nominal workflow](https://github.com/iExecBlockchainComputing/iexec-doc/raw
 
 Below are the details of the implementations:
 
-**1. Deal**
+**1. Deal:**
 
 [A deal is sealed by the Clerk.](proof-of-contribution.md#brokering) This marks the beginning of the execution. An event is created to notify the worker pool’s scheduler.
 
 The consensus timer starts when the deal is signed. The corresponding task must be completed before the end of this countdown. Otherwise, the scheduler gets punished by a loss of stake and reputation, and the user reimbursed.
 
-**2. Initialization**
+**2. Initialization:**
 
 The scheduler calls the `initialize` method. Given a deal id and a position in the request order \(within the deal window\), this function initializes the corresponding task and returns the _taskid_.`bytes32 taskid = keccak256(abi.encodePacked(_dealid, idx));`
 
-**3. Authorization signature**
+**3. Authorization signature:**
 
 The scheduler designates workers that participate in this task. The scheduler’s Ethereum wallet signs a message containing the worker’s Ethereum address, the taskid, and \(optionally\) the Ethereum address of the worker's enclave. If the worker doesn't use an enclave, this field must be filled with `address(0)`.
 
 This Ethereum signature \(authorization\) is sent to the worker through an off-chain channel implemented by the middleware.
 
-**4. Task computation**
+**4. Task computation:**
 
 Once the authorization is received and verified, the worker computes the requested tasks. Results from this execution are placed in the `/iexec_out` folder. The following values are then computed:
 
@@ -84,7 +84,7 @@ Alternatively, if the application is used in a doracle context (the results are 
 
 If a TEE was used to produce the result, the post-processing enclave will automatically produce an `enclave-signature` entry that contains the enclave signature \(of the resultHash and resultSeal\). TEE certification of results is transparent to the application developer.
 
-**5. Contribution**
+**5. Contribution:**
 
 Once the execution has been performed, the worker pushes its contribution using the `contribute` method. The contribution contains:
 
@@ -103,15 +103,15 @@ The enclave signature. This is required if the `enclaveChallenge` is not `addres
 
 The signature computed by the scheduler at step 2.
 
-**6. Consensus**
+**6. Consensus:**
 
 During the contribution, the consensus is updated and verified. Contributions are possible until the consensus is reached, at which point the contributions are closed. We then enter a 2h reveal phase.
 
-**7. Reveal**
+**7. Reveal:**
 
 During the reveal phase, workers that have contributed to the consensus must call the `reveal` method with the `resultDigest`. This verifies that the `resultHash` and `resultSeal` they provided are valid. Failure to reveal is equivalent to a bad contribution, and results in a loss of stake and reputation.
 
-**8. Finalize**
+**8. Finalize:**
 
 Once all contributions have been revealed, or at the end of the reveal period if some \(but not all\) reveals are missing, the scheduler must call the `finalize` method. This finalizes the task, rewards good contribution and punishes bad ones. This must be called before the end of the consensus timer.
 
@@ -538,7 +538,7 @@ An application can only perform result encryption inside an enclave. No encrypti
 
 \(TODO: potential issue, key leaking to malicious application with the requester attacking a beneficiary\)
 
-**\[Dataset owner\] How do I limit the usage of my dataset to a specific application**
+**\[Dataset owner\] How do I limit the usage of my dataset to a specific application?**
 
 iExec’s Data wallet and Data store is a complete solution to monetize valuable datasets preserving privacy. Before uploading a dataset you should encrypt it using the iExec SDK. Through this process, the encryption key becomes the valuable data that has to be protected.
 
@@ -565,11 +565,11 @@ A scheduler could therefore emit two kinds of workerpoolorder:
 
 Some requester might want an onchain callback with the result of the execution. The callback mechanism is based on [\[EIP1154\]](https://docs.iex.ec/pocosrc/poco-else.html#eip1154). The result is a `bytes` value that is set during the `finalize`. The `IexecProxy` implements both side of the [\[EIP1154\]](https://docs.iex.ec/pocosrc/poco-else.html#eip1154).
 
-**Pull**
+**Pull:**
 
 Results are identified by their `taskid` and can be pulled through the `resultFor` method.
 
-**Push**
+**Push:**
 
 In order to use the push approach, the requester can use the `callback` field to specify the address of a smart contract that implements the `receiveResult` method specified in [\[EIP1154\]](https://docs.iex.ec/pocosrc/poco-else.html#eip1154). This method will be called during the finalization with a minimum of 100000 nanoRLC gas to proceed [\[\*\]](https://docs.iex.ec/poco.html#id13).
 

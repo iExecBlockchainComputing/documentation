@@ -10,7 +10,7 @@ Before going any further, make sure you managed to [Build your first application
 
 {% hint style="success" %}
 
-**Prerequisites**
+**Prerequisites:**
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
 - [Nodejs](https://nodejs.org) 14.17.1 or higher.
