@@ -1,0 +1,26 @@
+{
+  "name": "documentation",
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "markdownlint": "^0.27.0",
+    "markdownlint-cli": "^0.33.0",
+    "prettier": "^2.8.3"
+  },
+  "scripts": {
+    "format-check": "prettier .",
+    "format-fix": "prettier --write .",
+    "lint-check": "markdownlint .",
+    "lint-fix": "markdownlint --fix .",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.md": [
+      "prettier --write",
+      "markdownlint --fix"
+    ],
+    "*.{json,yaml}": [
+      "prettier --write"
+    ]
+  }
+}
