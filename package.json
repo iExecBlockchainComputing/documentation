@@ -8,8 +8,10 @@
     "prettier": "^2.8.3"
   },
   "scripts": {
-    "format": "prettier --write .",
-    "lint": "markdownlint --fix .",
+    "format-check": "prettier .",
+    "format-fix": "prettier --write .",
+    "lint-check": "markdownlint .",
+    "lint-fix": "markdownlint --fix .",
     "lint-strict": "markdownlint -c .markdownlint_strict.json .",
     "prepare": "husky install"
   },
