@@ -1,7 +1,6 @@
 ---
 description: >-
-  A worker is an essential actor of the iExec Network. It will be in charge of
-  computing tasks sent by requesters on the iExec Marketplace.
+  A worker is an essential actor of the iExec Network. It will be in charge of computing tasks sent by requesters on the iExec Marketplace.
 ---
 
 # Quick start
@@ -12,8 +11,8 @@ A worker will be rewarded with RLC for every properly computed tasks.
 
 Please note that:
 
-* your wallet must be loaded with RLC. Some RLC must be deposited to your iExec account in order to stake for incoming tasks.
-* your computer needs at least 2 CPUs.
+- your wallet must be loaded with RLC. Some RLC must be deposited to your iExec account in order to stake for incoming tasks.
+- your computer needs at least 2 CPUs.
 
 ## Start a worker
 
@@ -25,7 +24,7 @@ For security reason, it is **highly recommended** to launch your worker in a vir
 
 After having loaded some RLC and deposited them to your iExec account, you can start your worker.
 
-![](../.gitbook/assets/my-workerpool-dashboard.png)
+![dashboard](../.gitbook/assets/my-workerpool-dashboard.png)
 
 When the worker initialization process is complete, the worker will be started and you will get something like: **You worker is all set**. Your worker will now be able to compute some tasks coming from the iExec network to earn some RLCs.
 

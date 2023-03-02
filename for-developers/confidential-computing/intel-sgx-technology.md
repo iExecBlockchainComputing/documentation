@@ -15,6 +15,7 @@ An application's code can be separated into "trusted" and "untrusted" parts wher
 ## Confidential Computing with iExec
 
 Here is a general overview of how a TEE application runs on iExec:
+
 ```mermaid
 graph TD
     Req[Requester] --> |1. Buy task| Chain
@@ -22,10 +23,10 @@ graph TD
     Worker --> |3. Launch TEE application| App[TEE application pre-starting]
     App --> |4. Send report containing integrity <br>information of the enclave| SMS{SMS <br> Is integrity and authenticity <br> of the requesting enclave valid?}
     SMS --> |No| AppFailed[TEE application run aborted]
-    SMS --> |Yes| AppStarted[TEE application started]   
+    SMS --> |Yes| AppStarted[TEE application started]
 
     style AppFailed color:red
-    style AppStarted color:green 
+    style AppStarted color:green
 ```
 
 To build such Confidential Computing (TEE) application, a developer would need to use the Intel® SGX SDK. With iExec, you don't need to manipulate it. Instead iExec supports high-level frameworks, known as TEE frameworks, such as Scone and Gramine. Further sections will cover in details these [TEE frameworks](choose-your-tee-framework.md).

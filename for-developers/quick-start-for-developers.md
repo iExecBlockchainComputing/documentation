@@ -7,7 +7,7 @@ description: >-
 
 {% hint style="success" %}
 
-**Prerequisite**
+**Prerequisite:**
 
 - [Nodejs](https://nodejs.org) 14.17.1 or higher
 

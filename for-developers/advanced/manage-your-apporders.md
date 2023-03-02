@@ -15,7 +15,7 @@ iexec order init --app
 Edit the apporder part in `iexec.json` to set the conditions to use your app
 
 | key | description |
-| :--- | :--- |
+| :-- | :-- |
 | app | app address |
 | appprice | price to charge the requester for each execution of the app \(in nRLC\) |
 | volume | number of order created, each usage decrease this number |
@@ -53,4 +53,3 @@ An unpublished order is still valid on the blockchain, to invalidate it use the 
 ```text
 iexec order cancel --app <orderHash>
 ```
-

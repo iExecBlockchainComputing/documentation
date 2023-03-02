@@ -1,8 +1,6 @@
 ---
 description: >-
-  A workerpool manager is an essential actor in the iExec network. It will be in
-  charge of proposing available computing resources (workers) to task
-  requesters.
+  A workerpool manager is an essential actor in the iExec network. It will be in charge of proposing available computing resources (workers) to task requesters.
 ---
 
 # Manage a workerpool

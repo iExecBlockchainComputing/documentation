@@ -1,8 +1,6 @@
 ---
 description: >-
-  iExec is building the future of the Internet infrastructure by decentralizing
-  the cloud computing market. It is the first blockchain-based cloud computing
-  marketplace.
+  iExec is building the future of the Internet infrastructure by decentralizing the cloud computing market. It is the first blockchain-based cloud computing marketplace.
 ---
 
 # iExec Technical Documentation
@@ -17,15 +15,15 @@ Comparable to the oil market, the iExec marketplace offers a uniform and standar
 
 iExec distinguishes between 3 different types of cloud resource providers :
 
-* **Application providers**
+- **Application providers**
 
 Your algorithms can change the world! Developers and application providers can monetize their apps, dapps, functions or algorithms.
 
-* **Computing providers**
+- **Computing providers**
 
 No more CPU cycle wasted! Computing providers can make the most of their servers, by joining the iExec network and renting them.
 
-* **Data providers**
+- **Data providers**
 
 Data is the new gold! Data providers can monetize datasets usage and open up new revenue streams for their assets. A single entity can be all types of providers at the same time.
 
@@ -62,4 +60,3 @@ You may also check out the list of worker pools currently available on the iExec
 Data providers that own valuable datasets can make them available for use by applications through the iExec Data Store.
 
 iExec pay per task model empowers Intel SGX and IBM Datashield to offer new opportunities of creating highly-secure applications that respect data privacy and ownership.
-
