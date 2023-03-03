@@ -15,7 +15,7 @@ iexec order init --dataset
 Edit the datasetorder part in `iexec.json` to set the conditions to use your dataset
 
 | key | description |
-| :--- | :--- |
+| --- | --- |
 | dataset | dataset address |
 | datasetprice | price to charge the requester for each use of the dataset \(in nRLC\) |
 | volume | number of order created, each usage decrease this number |
@@ -53,4 +53,3 @@ An unpublished order is still valid on the blockchain, to invalidate it use the 
 ```text
 iexec order cancel --dataset <orderHash>
 ```
-
