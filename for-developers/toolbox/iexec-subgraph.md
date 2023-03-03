@@ -4,7 +4,7 @@ iExec's PoCo is indexed in a subgraph to provide a powerful and flexible interfa
 
 ## Graphiql interface
 
-{% embed url="https://thegraph.bellecour.iex.ec/subgraphs/name/bellecour/poco-v5/graphql" %}
+Explore the iExec's PoCo through the [Graphiql interface](https://thegraph.bellecour.iex.ec/subgraphs/name/bellecour/poco-v5/graphql)
 
 ## Graphql API for developers
 
