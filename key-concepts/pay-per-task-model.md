@@ -7,7 +7,7 @@ In the future, we’ll redefine the categories, and provide more advanced tools 
 **Categories Description:**
 
 | **Category** | **Maximum Elapsed Time** |
-| :----------- | :----------------------- |
+| ------------ | ------------------------ |
 | 0 – XS       | 5 min                    |
 | 1 – S        | 20 min                   |
 | 2 – M        | 1 hour                   |

@@ -87,7 +87,7 @@ The iExecClerk smart contract service is the piece of software that manages unde
 Staking is a important part of the consensus protocol, to prevent attacks and maintain a high level of trust between participants. Workers and schedulers have to commit a security deposit, who computed an erroneous result will lose their stake. The movements of RLC is presented below.
 
 |  | **RLC needed** | **ETH needed** | Staking and incentives |
-| :-- | :-- | :-- | :-- |
+| --- | --- | --- | --- |
 | Requester | yes | no | payment, token locked during execution |
 | App provider | no | yes for deployment | reward |
 | Dataset provider | no | yes for deployment | reward |

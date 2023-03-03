@@ -131,7 +131,7 @@ iexec app init
 The iExec SDK writes the minimum app configuration in `iexec.json`
 
 | **key** | **description** |
-| :-- | :-- |
+| --- | --- |
 | owner | app owner ethereum address \(default your wallet address\) |
 | name | name of the application |
 | type | type of application \("DOCKER" for docker container\) |
