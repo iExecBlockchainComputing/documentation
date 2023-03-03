@@ -26,7 +26,7 @@ iExec dOracle allows you to create your own Oracle, with custom logic, while ben
 
 - It is secure. You can set the desired level of trust for your dOracle execution. The conjunction of random sampling and iExec’s built-in incentive and reputation systems makes your dOracle highly secured.
 - It is easy-to-use. It relies on 2 years of research and development to make the iExec platform simple and developer friendly. Creating your own personalized Decentralized Oracle only takes a simple dockerized application and a few lines of Solidity!
-- It is cheap. It does not rely on bribing or incentivize honest behavior, only on random sampling and a powerful reputation system to make attack impractical.
+- It is cheap. It does not rely on bribing or incentivizing honest behavior, only on random sampling and a powerful reputation system to make attack impractical.
 
 ## How does it work?
 
