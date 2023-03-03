@@ -7,3 +7,7 @@ iExec SDK runs in NodeJS and browser environment.
 iExec SDK is available on [npm](https://www.npmjs.com/package/iexec) and [GitHub](https://github.com/iExecBlockchainComputing/iexec-sdk)
 
 [Check the documentation](https://github.com/iExecBlockchainComputing/iexec-sdk)
+
+## nodejs
+
+{% embed url="https://codesandbox.io/p/sandbox/iexec-sdk-nodejs-hu6n6v?file=%2Findex.js" %}
