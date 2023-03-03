@@ -224,7 +224,7 @@ Based on [\[Sarmenta2002\]](proof-of-contribution.md#requiring-a-trust-level) de
 The trust level is expressed, on-chain, by an integer `trust` such that `threshold = 1 - 1 / trust`.
 
 | **Trust** | **PoCo enforced confidence threshold** |
-| :-------- | :------------------------------------- |
+| --------- | -------------------------------------- |
 | 0         | 0%                                     |
 | 1         | 0%                                     |
 | 2         | 50%                                    |
@@ -239,7 +239,7 @@ This consensus mechanism requires replicable applications. Non-deterministic app
 #### References
 
 | \[Sarmenta2002\] | _\(1, 2\)_ Luis F.G.Sarmenta. Sabotage-tolerance mechanisms for volunteer computing systems. 2002. Future Generation Computer Systems, 18\(4\), 561–572 [Sarmenta2002 PDF](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.67.2962&rep=rep1&type=pdf) |
-| :-- | :-- |
+| --- | --- |
 
 | \[Trust2018\] | _\(1, 2, 3\)_ Trust management in the Proof of Contribution protocol. 2018. Technical report. [Trust2018 PDF](https://github.com/iExecBlockchainComputing/iexec-doc/raw/master/techreport/iExec_PoCo_and_trustmanagement_v1.pdf) |
 
@@ -396,7 +396,7 @@ The tag specifies the need or the availability of features that go beyond the sp
 In V3, tags are 32 bytes \(256 bits\) long array where each bit corresponds to a feature.
 
 | **Value** | **Description** |
-| :-- | :-- |
+| --- | --- |
 | `0x0000000000000000000000000000000000000000000000000000000000000001` | TEE \(physical enclave\) |
 | `0x0000000000000000000000000000000000000000000000000000000000000002` | — |
 | `0x0000000000000000000000000000000000000000000000000000000000000004` | — |
@@ -596,6 +596,6 @@ As described in the protocol parameters section, this reward is `reward = kitty.
 ### References
 
 | \[EIP1154\] | _\(_[_1_](https://docs.iex.ec/poco.html#id8)_,_ [_2_](https://docs.iex.ec/poco.html#id9)_,_ [_3_](https://docs.iex.ec/poco.html#id10)_\)_ [EIP 1154: Oracle Interface](https://eips.ethereum.org/EIPS/eip-1154) |
-| :-- | :-- |
+| --- | --- |
 
 | [\[\*\]](proof-of-contribution.md#other-technical-choices) | value susceptible to change. |
