@@ -12,7 +12,7 @@ To keep the contribution process smooth, please read this small guide.
 
 We enforce a standard style for the documentation through a `husky` pre-commit hook running `prettier` and `markdownlint`.
 
-We ask you tou run the following command to install the pre-commit hook before contributing anything.
+We ask you to run the following command to install the pre-commit hook before contributing anything.
 
 _NB:_ You will need `NodeJS >= 14.21` and `npm >= 8`
 
