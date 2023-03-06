@@ -19,10 +19,6 @@ Before going any further, make sure you managed to [Build your first application
 
 {% endhint %}
 
-**How would the enclave verify the integrity of the code?**
-
-The short answer is: the application is protected by taking a snapshot of the file system's state. The TEE image will use the [fspf](intel-sgx-technology.md#fspf-file-system-protection-file) feature of SCONE to authenticate the file system directories that would be used by the application \(/bin, /lib...\) as well as the code itself. It takes a snapshot of their state that will be later shared with the worker \(via the Blockchain\) to make sure everything is under control. If we change one bit of one of the authenticated files, the file system's state changes completely and the enclave will refuse to boot since it considers it as a possible attack.
-
 In order to follow this tutorial, you will need to register a [free SCONE Account](https://scontain.com) to access SCONE build tools and curated images from the [SCONE registry](https://gitlab.scontain.com/).
 
 Once your account is activated, you need to [request access to the SCONE build tools for iExec](mailto:info@scontain.com?cc=scone-access@iex.ec&subject=iExec%20Build%20Tools&body=Hi%20SCONE%20Team%2C%0D%0A%0D%0AI%20would%20like%20to%20get%20access%20to%20the%20SCONE%20build%20tools%20for%20iExec:%0A%20-%20scone-production/iexec-sconify-image%0A%20-%20sconecuratedimages%20%28all%20curated%20images%20such%20as%20nodejs%2C%20python...%29%0A%0AMy%20DockerID%20is%20...%0A%0ABest%20regards%0A%0A...).
@@ -60,7 +56,7 @@ Make sure your `chain.json` content is as follows:
   "default": "bellecour",
   "chains": {
     "bellecour": {
-      "sms": { "scone": "https://v8.sms.debug-tee-services.bellecour.iex.ec" }
+      "sms": { "scone": "https://sms.scone-debug.v8-bellecour.iex.ec" }
     }
   }
 }
@@ -100,6 +96,8 @@ ENTRYPOINT="node /app/app.js"
 IMG_NAME=tee-scone-hello-world
 IMG_FROM=<docker-hub-user>/hello-world:1.0.0
 IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
+
+docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
 
 # Run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
@@ -189,12 +187,6 @@ Congratulations, you just built your Scone TEE application.
 
 {% hint style="info" %}
 
-The `sconify.sh` script prints the generated docker image name, you must retag this image and push it on dockerhub.
-
-{% endhint %}
-
-{% hint style="info" %}
-
 You may have noticed the `tee-debug` flag in the image name, the built image is actually in TEE debug mode, this allows you to have some debug features while developping the app.
 
 Once you are happy with the debug app, contact us to go to production!
@@ -261,7 +253,7 @@ iexec app deploy --chain bellecour
 
 Specify the tag `--tag tee,scone` in `iexec app run` command to run a tee app.
 
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `v8-debug.main.pools.iexec.eth`.
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `debug-v8-bellecour.main.pools.iexec.eth`.
 
 The debug workerpool is connected to a debug Secret Management Service (this is fine for debugging but do not use to store production secrets), we will need to init the storage token on this SMS.
 
@@ -273,12 +265,12 @@ iexec storage init --chain bellecour --tee-framework scone
 You are now ready to run the app
 
 ```bash
-iexec app run --tag tee,scone --workerpool v8-debug.main.pools.iexec.eth --watch --chain bellecour
+iexec app run --tag tee,scone --workerpool debug-v8-bellecour.main.pools.iexec.eth --watch --chain bellecour
 ```
 
 {% hint style="info" %}
 
-You noticed we used `v8-debug.main.pools.iexec.eth` instead of an ethereum address, this is an ENS name.
+You noticed we used `debug-v8-bellecour.main.pools.iexec.eth` instead of an ethereum address, this is an ENS name.
 
 The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables associating decentralized naming to ethereum addresses.
 
