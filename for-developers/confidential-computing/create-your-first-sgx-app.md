@@ -104,7 +104,7 @@ IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 # Run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v8 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
@@ -146,7 +146,7 @@ IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 # Run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v6 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v8 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
