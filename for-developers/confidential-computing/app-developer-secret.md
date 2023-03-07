@@ -164,8 +164,6 @@ except Exception:
 
 {% endtabs %}
 
-{% endhint %}
-
 {% hint style="info" %}
 
 As seen above, a single slot is dedicated to store the application developer secret. If you want to use multiple secrets, feel free to pack your secrets into a single one and unpack them when reading the `IEXEC_APP_DEVELOPER_SECRET` environment variable from the application code.
