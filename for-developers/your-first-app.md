@@ -516,7 +516,7 @@ cd ~/iexec-projects/
 You will need a few configurations in `iexec.json` to deploy your app:
 
 - Replace app **name** with your application name \(display only\)
-- Replace app **multiaddr** with your app image download URI \(should looks like `registry.hub.docker.com/<docker-hub-user>/hello-world:1.0.0`\)
+- Replace app **multiaddr** with your app image download URI \(should looks like `docker.io/<docker-hub-user>/hello-world:1.0.0`\)
 - Replace app **checksum** with your application image checksum \(see tip below\)
 
 {% hint style="info" %}
