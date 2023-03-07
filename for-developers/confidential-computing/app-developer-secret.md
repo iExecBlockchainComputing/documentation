@@ -31,9 +31,7 @@ The app developer secret is only exposed to your app inside authorized [enclaves
 
 {% hint style="info" %}
 
-Your secrets are securely transferred with the SDK from your machine to the SMS over a TLS channel.
-
-Internally, your secrets are encrypted with standard AES encryption before being written to disk. Next releases will feature an SMS running entirely inside a trusted enclave.
+Your secrets are transferred with the SDK from your machine to the SMS over a TLS channel.
 
 {% endhint %}
 
