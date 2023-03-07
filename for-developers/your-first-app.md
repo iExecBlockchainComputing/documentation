@@ -258,8 +258,8 @@ Create the folder tree for your application in `~/iexec-projects/`.
 
 ```bash
 cd ~/iexec-projects
-mkdir my-hello-world-app
-cd my-hello-world-app
+mkdir hello-world-app
+cd hello-world-app
 mkdir src
 touch Dockerfile
 ```
@@ -394,7 +394,7 @@ ENTRYPOINT ["python3", "/app/app.py"]
 Build the docker image.
 
 ```bash
-docker build . --tag my-hello-world
+docker build . --tag hello-world
 ```
 
 {% hint style="success" %}
@@ -424,7 +424,7 @@ docker run --rm \
     -v /tmp/iexec_out:/iexec_out \
     -e IEXEC_IN=/iexec_in \
     -e IEXEC_OUT=/iexec_out \
-    my-hello-world arg1 arg2 arg3
+    hello-world arg1 arg2 arg3
 ```
 
 {% hint style="success" %}
@@ -469,7 +469,7 @@ docker run \
     -e IEXEC_INPUT_FILE_NAME_1=file1 \
     -e IEXEC_INPUT_FILE_NAME_2=file2 \
     -e IEXEC_INPUT_FILES_NUMBER=2 \
-    my-hello-world \
+    hello-world \
     arg1 arg2 arg3
 ```
 
@@ -486,19 +486,19 @@ docker login
 Tag your application image to push it to your dockerhub public repository.
 
 ```bash
-docker tag my-hello-world <dockerusername>/my-hello-world:1.0.0
+docker tag hello-world <docker-hub-user>/hello-world:1.0.0
 ```
 
 {% hint style="warning" %}
 
-replace `<dockerusername>` with your docker user name
+replace `<docker-hub-user>` with your docker user name
 
 {% endhint %}
 
 Push the image to Dockerhub.
 
 ```bash
-docker push <dockerusername>/my-hello-world:1.0.0
+docker push <docker-hub-user>/hello-world:1.0.0
 ```
 
 **Congratulations, your app is ready to be deployed on iExec!**
@@ -516,7 +516,7 @@ cd ~/iexec-projects/
 You will need a few configurations in `iexec.json` to deploy your app:
 
 - Replace app **name** with your application name \(display only\)
-- Replace app **multiaddr** with your app image download URI \(should looks like `registry.hub.docker.com/<dockerusername>/my-hello-world:1.0.0`\)
+- Replace app **multiaddr** with your app image download URI \(should looks like `docker.io/<docker-hub-user>/hello-world:1.0.0`\)
 - Replace app **checksum** with your application image checksum \(see tip below\)
 
 {% hint style="info" %}
@@ -524,7 +524,7 @@ You will need a few configurations in `iexec.json` to deploy your app:
 The checksum of your app is the sha256 digest of the docker image prefixed with `0x` , you can use the following command to get it.
 
 ```bash
-docker pull <dockerusername>/my-hello-world:1.0.0 | grep "Digest: sha256:" | sed 's/.*sha256:/0x/'
+docker pull <docker-hub-user>/hello-world:1.0.0 | grep "Digest: sha256:" | sed 's/.*sha256:/0x/'
 ```
 
 {% endhint %}
