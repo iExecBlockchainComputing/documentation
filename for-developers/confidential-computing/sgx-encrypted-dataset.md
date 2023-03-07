@@ -116,7 +116,7 @@ The file `.secrets/datasets/my-first-dataset.txt.key` is the encryption key, mak
 
 ## Deploy the dataset
 
-Fill in the fields of the `iexec.json` file. Choose a `name` for your dataset, put the encrypted file's URI in `multiaddr` (the URI you got after publishing the file), and add the `checksum` (you can get it by running `sha256sum datasets/encrypted/my-first-dataset.txt.enc`).
+Fill in the fields of the `iexec.json` file. Choose a `name` for your dataset, put the encrypted file's URI in `multiaddr` (the URI you got after publishing the file) and fill the `checksum` field. The `checksum` of the dataset consists of a `0x` prefix followed by the `sha256sum` of the dataset. This `checksum` is printed when running the `iexec dataset encrypt` command. If you missed it, you can retrieve the `sha256sum` of the dataset by running `sha256sum datasets/encrypted/my-first-dataset.txt.enc`.
 
 ```bash
 $ cat iexec.json
@@ -129,7 +129,7 @@ $ cat iexec.json
     "owner": "0x-your-wallet-address",
     "name": "Encrypted hello world dataset",
     "multiaddr": "/ipfs/QmW2WQi7j6c7UgJTarActp7tDNikE4B2qXtFCfLPdsgaTQ",
-    "checksum": "0x0000000000000000000000000000000000000000000000000000000000000000"
+    "checksum": "<0x-sha256sum-of-the-dataset>" // starts with 0x
   }
 }
 ```
