@@ -34,7 +34,7 @@ The requester secrets are only exposed to authorized apps inside [enclaves](inte
 
 {% hint style="info" %}
 
-Your secrets are securely transferred with the SDK from your machine to the SMS over a TLS channel. Internally, your secrets are encrypted with standard AES encryption before being written to disk. Next releases will feature an SMS running entirely inside a trusted enclave.
+Your secrets are transferred with the SDK from your machine to the SMS over a TLS channel.
 
 {% endhint %}
 
@@ -162,7 +162,7 @@ try:
         json.dump({ "deterministic-output-path" : iexec_out + "/result.txt" }, f)
 
 except Exception:
-    # do not log anything that could reveal the app developer secret!
+    # do not log anything that could reveal the requester developer secret!
     print("something went wrong")
     exit(1)
 ```
@@ -302,8 +302,6 @@ At this stage, your application is ready to be tested on iExec with the followin
 {% endtab %}
 
 {% endtabs %}
-
-You will get a hexadecimal address for your deployed app. Use that address to push the app developer secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms).
 
 For simplicity, we will use secrets in a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the requester secrets to this SMS (this is fine for debugging but do not use to store production secrets).
 
