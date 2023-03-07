@@ -167,6 +167,7 @@ cd ~/iexec-projects/tee-dataset-app
 mkdir src
 touch Dockerfile
 touch sconify.sh
+chmod +x sconify.sh
 ```
 
 In the folder `src/` create the file `app.js` or `app.py` then copy this code inside:

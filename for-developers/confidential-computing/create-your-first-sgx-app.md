@@ -49,6 +49,7 @@ iexec init --skip-wallet
 mkdir src
 touch Dockerfile
 touch sconify.sh
+chmod +x sconify.sh
 ```
 
 ### Update chain json

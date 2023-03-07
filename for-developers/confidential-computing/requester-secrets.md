@@ -57,6 +57,7 @@ iexec init --skip-wallet
 mkdir src
 touch Dockerfile
 touch sconify.sh
+chmod +x sconify.sh
 ```
 
 Depending on the TEE framework you are using, make sure your `chain.json` content is correct:
