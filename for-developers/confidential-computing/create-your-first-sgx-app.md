@@ -181,7 +181,7 @@ docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15-v6 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15-v8 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
@@ -224,7 +224,7 @@ docker build . -t ${IMG_FROM}
 # run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15-v6 \
+            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.3.15-v8 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
