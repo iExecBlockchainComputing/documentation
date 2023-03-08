@@ -126,7 +126,7 @@ This page shows the detail of a transaction on the protocol smart contracts.
 
 Transactions that does not impact the protocol are not indexed in the explorer.
 
-To inspect any transaction on iExec Bellecour sidechain, use a block explorer such as [Blockscout](blockscout-bellecour.iex.ec/)
+To inspect any transaction on iExec Bellecour sidechain, use a block explorer such as [Blockscout](https://blockscout-bellecour.iex.ec/)
 
 {% endhint %}
 
