@@ -49,6 +49,7 @@ iexec init --skip-wallet
 mkdir src
 touch Dockerfile
 touch sconify.sh
+chmod +x sconify.sh
 ```
 
 ### Update chain json
@@ -172,10 +173,9 @@ docker run -it \
 
 {% endtabs %}
 
+Run the `sconify.sh` script to build the Scone TEE application:
+
 ```bash
-# make the script executable
-chmod +x sconify.sh
-# run the sconify script
 ./sconify.sh
 ```
 
