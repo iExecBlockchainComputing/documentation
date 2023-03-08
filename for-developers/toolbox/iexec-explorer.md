@@ -11,7 +11,7 @@ The iExec explorer home page gives a quick overview of the protocol recent activ
 - The latests [Deals](#deal) and [tasks](#task) running on the platform
 - The latests [Apps](#app), [Datasets](#dataset) and [Workerpools](#workerpool) deployed
 
-![explorer_home](../../.gitbook/assets/explorer_home.png)
+![iExec Explorer](../../.gitbook/assets/explorer_home.png)
 
 ## Navigation
 
@@ -19,11 +19,11 @@ The iExec explorer home page gives a quick overview of the protocol recent activ
 
 The search bar allow to find an object by it's address, ENS or transaction hash.
 
-![explorer_search-by-address](../../.gitbook/assets/explorer_search-by-address.png)
+![search by address](../../.gitbook/assets/explorer_search-by-address.png)
 
-![explorer_search-by-ens](../../.gitbook/assets/explorer_search-by-ens.png)
+![search by ens](../../.gitbook/assets/explorer_search-by-ens.png)
 
-![explorer_search-by-tx-hash](../../.gitbook/assets/explorer_search-by-tx-hash.png)
+![search by tx hash](../../.gitbook/assets/explorer_search-by-tx-hash.png)
 
 ### Links
 
@@ -51,7 +51,7 @@ This page summaries the interactions of an ethereum address with the protocol.
 
 Specific role based views (such as [Worker](#worker-view)) are available on this page.
 
-![explorer_address-details](../../.gitbook/assets/explorer_address-details.png)
+![address details](../../.gitbook/assets/explorer_address-details.png)
 
 #### Worker view
 
@@ -65,25 +65,25 @@ The worker's latests contributions on tasks are exposed with their current statu
 | PROVED | the worker contribution was in the consensus when the task was finalized (the worker has been rewarded) |
 | REJECTED | the worker contribution was not in the consensus when the task was finalized (the worker's stake has been seized) |
 
-![explorer_address-details_worker-view](../../.gitbook/assets/explorer_address-details_worker-view.png)
+![address details: worker view](../../.gitbook/assets/explorer_address-details_worker-view.png)
 
 ### App
 
 This page shows the details of an app and the latests usages.
 
-![explorer_app-details](../../.gitbook/assets/explorer_app-details.png)
+![app details](../../.gitbook/assets/explorer_app-details.png)
 
 ### Dataset
 
 This page shows the details of a dataset and the latests usages.
 
-![explorer_dataset-details](../../.gitbook/assets/explorer_dataset-details.png)
+![dataset details](../../.gitbook/assets/explorer_dataset-details.png)
 
 ### Workerpool
 
 This page shows the details of a workerpool and the latests usages.
 
-![explorer_workerpool-details](../../.gitbook/assets/explorer_workerpool-details.png)
+![workerpool details](../../.gitbook/assets/explorer_workerpool-details.png)
 
 ### Deal
 
@@ -98,7 +98,7 @@ The `Status` shows a synthetic information of the deal's tasks completion.
 | CLAIMABLE | tasks not finalized before the deadline<br/> - not finalized tasks can be claimed |
 | CLAIMED | tasks not finalized before the deadline and claimed as failed |
 
-![explorer_deal-details](../../.gitbook/assets/explorer_deal-details.png)
+![deal details](../../.gitbook/assets/explorer_deal-details.png)
 
 ### Task
 
@@ -116,7 +116,7 @@ Once the task status is `COMPLETED`, the result is available
 - on chain if a callback contract has been specified
 - off-chain as a downloadable archive if no callback contract was specified
 
-![explorer_task-details](../../.gitbook/assets/explorer_task-details.png)
+![task details](../../.gitbook/assets/explorer_task-details.png)
 
 ### Transaction
 
@@ -132,4 +132,4 @@ To inspect any transaction on iExec Bellecour sidechain, use a block explorer su
 
 The protocol related ethereum events triggered by the transaction are exposed.
 
-![explorer_transaction-details](../../.gitbook/assets/explorer_transaction-details.png)
+![transaction details](../../.gitbook/assets/explorer_transaction-details.png)
