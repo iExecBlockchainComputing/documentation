@@ -34,6 +34,12 @@ docker login registry.scontain.com:5050
 
 ## Prepare your application
 
+{% hint style="warning" %}
+
+BEST_PRACTICES_WARNING_PLACEHOLDER
+
+{% endhint %}
+
 Before going further, your `<docker-hub-user>/hello-world:1.0.0` image built previously is required.
 
 If you missed that part, please go back to [Build your first application](../your-first-app.md).

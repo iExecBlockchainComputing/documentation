@@ -266,6 +266,12 @@ touch Dockerfile
 
 ### Write the app
 
+{% hint style="warning" %}
+
+BEST_PRACTICES_WARNING_PLACEHOLDER
+
+{% endhint %}
+
 The following examples only feature Javascript and Python use cases for simplicity concerns but remember that you can run on iExec anything which is Dockerizable.
 
 **Copy the following content** in `src/` .

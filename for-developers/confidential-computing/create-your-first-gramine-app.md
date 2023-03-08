@@ -21,6 +21,12 @@ Before going any further, make sure you managed to [Build your first application
 
 ## Prepare your application
 
+{% hint style="warning" %}
+
+BEST_PRACTICES_WARNING_PLACEHOLDER
+
+{% endhint %}
+
 Create a directory tree for your application in `~/iexec-projects/`.
 
 ```bash

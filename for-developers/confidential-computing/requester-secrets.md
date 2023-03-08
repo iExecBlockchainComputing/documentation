@@ -42,6 +42,12 @@ Let's see how to do all of that!
 
 ## Prepare your application
 
+{% hint style="warning" %}
+
+BEST_PRACTICES_WARNING_PLACEHOLDER
+
+{% endhint %}
+
 {% hint style="info" %}
 
 We will use the API [countapi.xyz](https://countapi.xyz/). This service keeps a count of hit on any couple of `namespace/key` (ex: <https://api.countapi.xyz/hit/foo/bar>). In this example, we will use requester secrets to set `namespace/key`.
