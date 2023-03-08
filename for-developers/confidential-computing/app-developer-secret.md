@@ -214,7 +214,7 @@ docker build . --tag <docker-hub-user>/count-api:1.0.0
 
 Follow the steps described in [Build Scone app > Build the TEE docker image](create-your-first-sgx-app.md#build-the-tee-docker-image).
 
-Create the `sconify.sh` script and update the variables as follow:
+Update the `sconify.sh` script with the variables as follow:
 
 ```bash
 # Declare image related variables
@@ -223,7 +223,11 @@ IMG_FROM=<docker-hub-user>/count-api:1.0.0
 IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 ```
 
-Run the `sconify.sh` script to build the TEE-debug app.
+Run the `sconify.sh` script to build the Scone TEE application:
+
+```bash
+./sconify.sh
+```
 
 {% endtab %}
 
