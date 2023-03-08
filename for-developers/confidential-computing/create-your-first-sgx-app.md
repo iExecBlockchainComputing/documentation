@@ -36,7 +36,9 @@ docker login registry.scontain.com:5050
 
 {% hint style="warning" %}
 
-BEST_PRACTICES_WARNING_PLACEHOLDER
+For demo purposes, we omitted some development best practices in these examples.
+
+Make sure to check your field's best practices before going to production.
 
 {% endhint %}
 
