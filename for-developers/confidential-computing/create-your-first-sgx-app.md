@@ -34,6 +34,14 @@ docker login registry.scontain.com:5050
 
 ## Prepare your application
 
+{% hint style="warning" %}
+
+For demo purposes, we omitted some development best practices in these examples.
+
+Make sure to check your field's best practices before going to production.
+
+{% endhint %}
+
 Before going further, your `<docker-hub-user>/hello-world:1.0.0` image built previously is required.
 
 If you missed that part, please go back to [Build your first application](../your-first-app.md).

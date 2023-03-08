@@ -266,6 +266,14 @@ touch Dockerfile
 
 ### Write the app
 
+{% hint style="warning" %}
+
+For demo purposes, we omitted some development best practices in these examples.
+
+Make sure to check your field's best practices before going to production.
+
+{% endhint %}
+
 The following examples only feature Javascript and Python use cases for simplicity concerns but remember that you can run on iExec anything which is Dockerizable.
 
 **Copy the following content** in `src/` .

@@ -21,6 +21,14 @@ Before going any further, make sure you managed to [Build your first application
 
 ## Prepare your application
 
+{% hint style="warning" %}
+
+For demo purposes, we omitted some development best practices in these examples.
+
+Make sure to check your field's best practices before going to production.
+
+{% endhint %}
+
 Create a directory tree for your application in `~/iexec-projects/`.
 
 ```bash

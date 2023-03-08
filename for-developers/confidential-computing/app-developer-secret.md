@@ -39,6 +39,14 @@ Let's see how to do all of that!
 
 ## Prepare your application
 
+{% hint style="warning" %}
+
+For demo purposes, we omitted some development best practices in these examples.
+
+Make sure to check your field's best practices before going to production.
+
+{% endhint %}
+
 {% hint style="info" %}
 
 We will use the API [countapi.xyz](https://countapi.xyz/). This service keeps a count of hits on any couple of `namespace/key` (ex: <https://api.countapi.xyz/hit/foo/bar>).

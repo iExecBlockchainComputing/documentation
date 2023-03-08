@@ -160,6 +160,14 @@ We saw in this section how to encrypt a dataset and deploy it on iExec. In addit
 
 ## Prepare your application
 
+{% hint style="warning" %}
+
+For demo purposes, we omitted some development best practices in these examples.
+
+Make sure to check your field's best practices before going to production.
+
+{% endhint %}
+
 Let's create a directory tree for this app in `~/iexec-projects/`.
 
 ```bash
