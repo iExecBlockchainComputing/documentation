@@ -101,7 +101,7 @@ As you can see, the command generated the file `datasets/encrypted/my-first-data
 
 {% hint style="info" %}
 
-You can use Github for example to publish the file but you should add **/raw/** to the URI like this: [https://github.com/&lt;username&gt;/&lt;repo&gt;/raw/master/my-first-dataset.zip](https://github.com/<username>/<repo>/raw/master/my-first-dataset.zip)
+You can use Github for example to publish the file but you should add **/raw/** to the URI like this: [https://github.com/&lt;username&gt;/&lt;repo&gt;/raw/master/my-first-dataset.txt.enc](https://github.com/<username>/<repo>/raw/master/my-first-dataset.txt.enc)
 
 {% endhint %}
 
