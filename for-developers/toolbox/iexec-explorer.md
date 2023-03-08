@@ -62,8 +62,8 @@ The worker's latests contributions on tasks are exposed with their current statu
 | Status | Description |
 | --- | --- |
 | CONTRIBUTED | the worker submitted the computation result on the blockchain but the task is not finalized yet |
-| PROVED | the worker contribution was in the consensus when the task was finalized (the worker has been rewarded) |
-| REJECTED | the worker contribution was not in the consensus when the task was finalized (the worker's stake has been seized) |
+| PROVED | the worker contribution was in the consensus when the task was finalized<br/> - the worker has been rewarded |
+| REJECTED | the worker contribution was not in the consensus when the task was finalized<br/> - the worker's stake has been seized |
 
 ![address details: worker view](../../.gitbook/assets/explorer_address-details_worker-view.png)
 
