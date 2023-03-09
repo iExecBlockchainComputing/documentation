@@ -27,7 +27,7 @@ Keep in mind that you must use efficient calls and caching policy when querying 
 
 ### Protocol metrics
 
-```gql
+```graphql
 {
   protocol(id: "iExec") {
     appsCount
@@ -45,7 +45,7 @@ Keep in mind that you must use efficient calls and caching policy when querying 
 
 ### Application latests usages
 
-```gql
+```graphql
 query appUsages($appAddress: String!) {
   app(id: $appAddress) {
     usages(orderBy: timestamp, orderDirection: desc) {
@@ -64,7 +64,7 @@ query appUsages($appAddress: String!) {
 
 #### Worker rewards an seizes
 
-```gql
+```graphql
 query workerRewardsAndSeizes($worker: String!) {
   rewards(
     where: { account: $worker }
@@ -120,7 +120,7 @@ Although an ethereum address has multiple valid formats, The Graph requires lowe
 
 By default, query responses are limited to 100 items per collection. If you want to receive more, you can go up to 1000 items per collection and beyond that, you can paginate with:
 
-```gql
+```graphql
 someCollection(first: 1000, skip: <number>) { ... }
 ```
 
