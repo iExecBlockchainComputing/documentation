@@ -4,8 +4,6 @@ The iExec SDK is a [CLI](#command-line-interface) and a [JS library](#javascript
 
 iExec SDK is available on [npm](https://www.npmjs.com/package/iexec) and [GitHub](https://github.com/iExecBlockchainComputing/iexec-sdk)
 
-[Check the documentation](https://github.com/iExecBlockchainComputing/iexec-sdk)
-
 ## Command Line Interface
 
 The CLI documentation is available [here](https://github.com/iExecBlockchainComputing/iexec-sdk/blob/master/docs/README.md)
