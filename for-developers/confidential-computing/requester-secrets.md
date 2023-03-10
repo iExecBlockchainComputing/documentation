@@ -347,7 +347,7 @@ Specify the `--secret` and `--tag tee,scone` options in `iexec app run` command 
 ```bash
 iexec app run <appAddress> \
   --tag tee,scone \
-  --workerpool v8-debug.main.pools.iexec.eth \
+  --workerpool debug-v8-bellecour.main.pools.iexec.eth \
   --secret 1=my-namespace \
   --secret 2=my-key \
   --watch \
@@ -363,7 +363,7 @@ Specify the `--secret` and `--tag tee,gramine` options in `iexec app run` comman
 ```bash
 iexec app run <appAddress> \
   --tag tee,gramine
-  --workerpool v8-debug.main.pools.iexec.eth \
+  --workerpool debug-v8-bellecour.main.pools.iexec.eth \
   --secret 1=my-namespace \
   --secret 2=my-key \
   --watch \

@@ -221,12 +221,12 @@ iexec storage init --chain bellecour --tee-framework gramine
 You are now ready to run the app
 
 ```bash
-iexec app run --tag tee,gramine --workerpool v8-debug.main.pools.iexec.eth --watch --chain bellecour
+iexec app run --tag tee,gramine --workerpool debug-v8-bellecour.main.pools.iexec.eth --watch --chain bellecour
 ```
 
 {% hint style="info" %}
 
-You noticed we used `v8-debug.main.pools.iexec.eth` instead of an ethereum address, this is an ENS name. The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables associating decentralized naming to ethereum addresses.
+You noticed we used `debug-v8-bellecour.main.pools.iexec.eth` instead of an ethereum address, this is an ENS name. The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables associating decentralized naming to ethereum addresses.
 
 {% endhint %}
 
