@@ -13,6 +13,20 @@ The iExec explorer home page gives a quick overview of the protocol recent activ
 
 ![iExec Explorer](../../.gitbook/assets/explorer_home.png)
 
+## Login
+
+The **Login** button allow to connect your ethereum wallet to the application.
+
+Connecting your wallet allow to [interact](#actions) with the protocol in the application.
+
+### Account
+
+Once connected with a wallet, the **Account** button allow open the account modal, from where the user can manage her/his wallet and iExec account.
+
+### My activity
+
+Once connected the **My activity** button allow the user to quickly navigate to her/his wallet [address details](#address) page.
+
 ## Navigation
 
 ### Search bar
@@ -133,3 +147,13 @@ To inspect any transaction on iExec Bellecour sidechain, use a block explorer su
 The protocol related ethereum events triggered by the transaction are exposed.
 
 ![transaction details](../../.gitbook/assets/explorer_transaction-details.png)
+
+## Actions
+
+| Action | Access | Description |
+| --- | --- | --- |
+| Deposit | [Account modal](#account) | Send a transaction to transfer RLC/xRLC from the user wallet to the user account<br/> - tokens in user account can be used on the platform |
+| Withdraw | [Account modal](#account) | Send a transaction to transfer RLC/xRLC from the user account to the user wallet<br/> - tokens in user wallet can be traded outside the platform |
+| Download result | [Task](#task) | Download the result archive of a COMPLETED task (Download is not available for tasks with onchain callback) |
+| Claim task | [Task](#task) | Send a transaction to claim a task has failed<br/> - claiming a task will unlock the escrowed tokens for requester and workers while the workerpool escrowed tokens will be seized |
+| Claim deal | [Deal](#deal) | Send one or multiple transactions to claim some deal's task have failed (see, Claim task) |
