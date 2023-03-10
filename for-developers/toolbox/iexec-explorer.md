@@ -83,7 +83,7 @@ The worker's latests contributions on tasks are exposed with their current statu
 
 ### App
 
-This page shows the details of an app and the latests usages.
+This page shows the details of an app and its latest usages.
 
 ![app details](../../.gitbook/assets/explorer_app-details.png)
 
