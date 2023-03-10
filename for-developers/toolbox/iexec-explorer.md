@@ -31,7 +31,7 @@ Once connected the **My activity** button allows the user to quickly navigate to
 
 ### Search bar
 
-The search bar allows to find an item by it's address, ENS or transaction hash.
+The search bar allows to find an item by it's address, ENS name or transaction hash.
 
 ![search by address](../../.gitbook/assets/explorer_search-by-address.png)
 
