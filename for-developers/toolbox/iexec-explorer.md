@@ -31,7 +31,7 @@ Once connected the **My activity** button allow the user to quickly navigate to 
 
 ### Search bar
 
-The search bar allow to find an object by it's address, ENS or transaction hash.
+The search bar allow to find an item by it's address, ENS or transaction hash.
 
 ![search by address](../../.gitbook/assets/explorer_search-by-address.png)
 
@@ -41,7 +41,7 @@ The search bar allow to find an object by it's address, ENS or transaction hash.
 
 ### Links
 
-Each item can be clicked to access a [detailed view](#detailed-views) of the corresponding object.
+Each item can be clicked to access it's [detailed view](#detailed-views).
 
 ### Block explorer links
 
@@ -49,7 +49,7 @@ For a low level view, an external links to a [block explorer](https://blockscout
 
 ## Detailed views
 
-The following object have a detailed view.
+The following items have a detailed view.
 
 - [Address](#address)
 - [App](#app)
