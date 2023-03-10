@@ -8,8 +8,8 @@ The iExec explorer is available at <https://explorer.iex.ec>.
 
 The iExec explorer home page gives a quick overview of the protocol recent activity.
 
-- The latests [Deals](#deal) and [tasks](#task) running on the platform
-- The latests [Apps](#app), [Datasets](#dataset) and [Workerpools](#workerpool) deployed
+- The latest [Deals](#deal) and [Tasks](#task) running on the platform
+- The latest [Apps](#app), [Datasets](#dataset) and [Workerpools](#workerpool) deployed
 
 ![iExec Explorer](../../.gitbook/assets/explorer_home.png)
 
