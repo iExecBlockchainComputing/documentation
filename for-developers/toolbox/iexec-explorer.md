@@ -116,7 +116,7 @@ The `Status` shows a synthetic information of the deal's tasks completion.
 
 ### Task
 
-This page shows the details of a task and it's completion status.
+This page shows the details of a task and its completion status.
 
 | Status | Description |
 | --- | --- |
