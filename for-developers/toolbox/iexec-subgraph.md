@@ -43,7 +43,7 @@ Keep in mind that you must use efficient calls and caching policy when querying 
 
 [Try this query](https://thegraph.bellecour.iex.ec/subgraphs/name/bellecour/poco-v5/graphql?query=%7B%0A++protocol%28id%3A+%22iExec%22%29+%7B%0A++++appsCount%0A++++datasetsCount%0A++++workerpoolsCount%0A++++dealsCount%0A++++tasksCount%0A++++completedTasksCount%0A++++claimedTasksCount%0A++%7D%0A%7D)
 
-### Application latests usages
+### Application latest usages
 
 ```graphql
 query appUsages($appAddress: String!) {
