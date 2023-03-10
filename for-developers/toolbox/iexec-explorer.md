@@ -1,6 +1,6 @@
 # iExec explorer
 
-The iExec explorer is a high level protocol explorer that allow to quickly browse iExec protocol.
+The iExec explorer is a high level protocol explorer that allows to quickly browse iExec protocol.
 
 The iExec explorer is available at <https://explorer.iex.ec>.
 
@@ -15,23 +15,23 @@ The iExec explorer home page gives a quick overview of the protocol recent activ
 
 ## Login
 
-The **Login** button allow to connect your ethereum wallet to the application.
+The **Login** button allows to connect your ethereum wallet to the application.
 
-Connecting your wallet allow to [interact](#actions) with the protocol in the application.
+Connecting your wallet allows to [interact](#actions) with the protocol in the application.
 
 ### Account
 
-Once connected with a wallet, the **Account** button allow open the account modal, from where the user can manage her/his wallet and iExec account.
+Once connected with a wallet, the **Account** button allows to open the account modal, from where the user can manage her/his wallet and iExec account.
 
 ### My activity
 
-Once connected the **My activity** button allow the user to quickly navigate to her/his wallet [address details](#address) page.
+Once connected the **My activity** button allows the user to quickly navigate to her/his wallet [address details](#address) page.
 
 ## Navigation
 
 ### Search bar
 
-The search bar allow to find an item by it's address, ENS or transaction hash.
+The search bar allows to find an item by it's address, ENS or transaction hash.
 
 ![search by address](../../.gitbook/assets/explorer_search-by-address.png)
 
