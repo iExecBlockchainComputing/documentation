@@ -49,7 +49,7 @@ The following object have a detailed view.
 
 This page summaries the interactions of an ethereum address with the protocol.
 
-Specific role based views (such as [Worker](#worker-view)) are available on this page.
+Specific role based views (such as Requester, [Worker](#worker-view), App developer, Dataset provider, Workerpool manager) are available on this page.
 
 ![address details](../../.gitbook/assets/explorer_address-details.png)
 
