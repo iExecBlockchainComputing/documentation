@@ -89,7 +89,7 @@ This page shows the details of an app and its latest usages.
 
 ### Dataset
 
-This page shows the details of a dataset and the latests usages.
+This page shows the details of a dataset and its latest usages.
 
 ![dataset details](../../.gitbook/assets/explorer_dataset-details.png)
 
