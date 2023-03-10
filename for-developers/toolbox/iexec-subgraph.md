@@ -128,7 +128,7 @@ someCollection(first: 1000, skip: <number>) { ... }
 
 Subgraphs are built to quickly access a representation of onchain state through a friendly API.
 
-Under the hood, a subgraph is a centralized system watching the blockchain events and indexing data in a database. Like any system, it may be subjects to issues (bugs, sync problems...) and reflects an erroneous or outdated state of the onchain data.
+Under the hood, a subgraph is a centralized system watching the blockchain events and indexing data in a database. Like any system, it may be subject to issues (bugs, sync problems...) and reflect an erroneous or outdated state of the onchain data.
 
 However relying on a subgraph to read and display non critical data is fine, users must always check the onchain state before interacting with a contract.
 
