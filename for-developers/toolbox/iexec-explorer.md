@@ -95,7 +95,7 @@ This page shows the details of a dataset and its latest usages.
 
 ### Workerpool
 
-This page shows the details of a workerpool and the latests usages.
+This page shows the details of a workerpool and its latest usages.
 
 ![workerpool details](../../.gitbook/assets/explorer_workerpool-details.png)
 
