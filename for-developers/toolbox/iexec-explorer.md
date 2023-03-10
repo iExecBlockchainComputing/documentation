@@ -45,7 +45,7 @@ Each item can be clicked to access it's [detailed view](#detailed-views).
 
 ### Block explorer links
 
-For a low level view, an external link to a [block explorer](https://blockscout-bellecour.iex.ec/) is available on [addresses](#address) and transactions.
+For a low level view, an external link to a [block explorer](https://blockscout-bellecour.iex.ec/) is available on addresses and transactions.
 
 ## Detailed views
 
