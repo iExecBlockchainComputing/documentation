@@ -22,6 +22,10 @@
   - [Manage your apporders](for-developers/advanced/manage-your-apporders.md)
   - [Manage your datasetorders](for-developers/advanced/manage-your-datasetorders.md)
 - [Go to production](for-developers/go-to-production.md)
+- [Toolbox](for-developers/toolbox/README.md)
+  - [iExec explorer](for-developers/toolbox/iexec-explorer.md)
+  - [iExec subgraph](for-developers/toolbox/iexec-subgraph.md)
+  - [iExec SDK](for-developers/toolbox/iexec-sdk.md)
 
 ## For Workers
 
