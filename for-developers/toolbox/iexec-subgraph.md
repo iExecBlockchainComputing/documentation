@@ -4,7 +4,7 @@ Reading and aggregating complex data from blockchains can be slow and tedious, t
 
 The iExec's protocol is indexed by [The Graph](https://thegraph.com) and can be explored with a [GraphQL](https://graphql.org/) API.
 
-The [iExec Explorer](./iexec-explorer.md) is an example of application built with the iExec subgraph.
+The [iExec Explorer](./iexec-explorer.md) is an example of an application built with the iExec subgraph.
 
 ## GraphQL API
 
