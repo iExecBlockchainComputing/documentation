@@ -5,7 +5,6 @@
 ## For Developers
 
 - [Quick Start](for-developers/quick-start-for-developers.md)
-- [Run app from marketplace](todo-run-app.md)
 - [Build your first application](for-developers/your-first-app.md)
 - [Build Confidential Computing app](for-developers/confidential-computing/README.md)
   - [Overview](for-developers/confidential-computing/intel-sgx-technology.md)
@@ -18,10 +17,12 @@
     - [Access a confidential dataset](for-developers/confidential-computing/sgx-encrypted-dataset.md)
   - [Protect the result](for-developers/confidential-computing/end-to-end-encryption.md)
 - [Debug your tasks](for-developers/advanced/task-feedback.md)
-- [Manage your orders](for-developers/advanced/README.md)
-  - [Manage your apporders](for-developers/advanced/manage-your-apporders.md)
-  - [Manage your datasetorders](for-developers/advanced/manage-your-datasetorders.md)
 - [Go to production](for-developers/go-to-production.md)
+- [Technical references](for-developers/technical-references.md)
+  - [Application I/O](for-developers/application-io.md)
+  - [Manage your orders](for-developers/advanced/README.md)
+    - [Manage your apporders](for-developers/advanced/manage-your-apporders.md)
+    - [Manage your datasetorders](for-developers/advanced/manage-your-datasetorders.md)
 - [Toolbox](for-developers/toolbox/README.md)
   - [iExec explorer](for-developers/toolbox/iexec-explorer.md)
   - [iExec subgraph](for-developers/toolbox/iexec-subgraph.md)
