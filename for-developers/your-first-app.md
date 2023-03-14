@@ -20,7 +20,6 @@ In this guide, we will prepare an iExec app based on an existing docker image an
 **Tutorial Steps :**
 
 - [Understand what is an iExec decentralized application?](your-first-app.md#understand-what-is-an-iexec-decentralized-application)
-- [Application I/O](your-first-app.md#application-i-o)
 - [Build your app](your-first-app.md#build-your-app)
 - [Test your app locally](your-first-app.md#test-your-app-locally)
 - [Test your app on iExec](your-first-app.md#test-your-app-on-iexec)
