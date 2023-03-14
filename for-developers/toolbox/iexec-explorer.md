@@ -25,13 +25,13 @@ Once connected with a wallet, the **Account** button allows to open the account 
 
 ### My activity
 
-Once connected the **My activity** button allows the user to quickly navigate to her/his wallet [address details](#address) page.
+Once connected, the **My activity** button allows the user to quickly navigate to her/his wallet [address details](#address) page.
 
 ## Navigation
 
 ### Search bar
 
-The search bar allows to find an item by it's address, ENS name or transaction hash.
+The search bar allows to find an item by its address, ENS name or transaction hash.
 
 ![search by address](../../.gitbook/assets/explorer_search-by-address.png)
 
@@ -41,7 +41,7 @@ The search bar allows to find an item by it's address, ENS name or transaction h
 
 ### Links
 
-Each item can be clicked to access it's [detailed view](#detailed-views).
+Each item can be clicked to access its [detailed view](#detailed-views).
 
 ### Block explorer links
 
@@ -61,7 +61,7 @@ The following items have a detailed view.
 
 ### Address
 
-This page summaries the interactions of an ethereum address with the protocol.
+This page summarizes the interactions of an ethereum address with the protocol.
 
 Specific role based views (such as Requester, [Worker](#worker-view), App developer, Dataset provider, Workerpool manager) are available on this page.
 
@@ -71,7 +71,7 @@ Specific role based views (such as Requester, [Worker](#worker-view), App develo
 
 The worker view shows the wallet activity as a worker.
 
-The worker's latests contributions on tasks are exposed with their current status.
+The worker's latest contributions on tasks are exposed with their current status.
 
 | Status | Description |
 | --- | --- |
@@ -123,7 +123,7 @@ This page shows the details of a task and its completion status.
 | STARTED | the task was initialized and waiting for worker's contributions<br/> - this status is displayed in red when the deadline is reached, the task can be claimed |
 | REVEALING | the task received enough contributions to reach the [PoCo](../../key-concepts/proof-of-contribution.md) consensus but is not yet finalized<br/> - this status is displayed in red when the deadline is reached, the task can be claimed |
 | COMPLETED | the task is successfully finalized<br/> - resource providers have been rewarded |
-| FAILLED | the task was not `COMPLETED` before the deadline and was claimed as failed.<br/> - the workerpool stake has been seized<br/> - the requester has been refund |
+| FAILLED | the task was not `COMPLETED` before the deadline and was claimed as failed.<br/> - the workerpool stake has been seized<br/> - the requester has been refunded |
 
 Once the task status is `COMPLETED`, the result is available
 
