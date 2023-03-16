@@ -108,7 +108,7 @@ You may also find useful information on these resources:
 - [GraphQL documentation](https://graphql.org/learn/)
 - [The Graph documentation](https://thegraph.com/docs/)
 
-### How to find an item by it's ethereum address?
+### How to find an item by its ethereum address?
 
 Although an ethereum address has multiple valid formats, The Graph requires lowercase addresses.
 
