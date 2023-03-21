@@ -27,6 +27,9 @@
   - [iExec explorer](for-developers/toolbox/iexec-explorer.md)
   - [iExec subgraph](for-developers/toolbox/iexec-subgraph.md)
   - [iExec SDK](for-developers/toolbox/iexec-sdk.md)
+- [iExec sidechain](for-developers/sidechain/README.md)
+  - [Chain details](for-developers/sidechain/chain-details.md)
+  - [Test2](for-developers/sidechain/test2.md)
 
 ## For Workers
 
