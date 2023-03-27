@@ -38,7 +38,9 @@ While the _task_ holds a meta status, each _replicate_ has its own status which 
 | Replicate status | Description |
 | --- | --- |
 | `CREATED` | A new _replicate_ is assigned to a worker just after it asked for more work |
-| `RUNNING` | The worker confirms it is going to work on this _replicate_ |
+| `STARTING` | The worker starts preflight checks to confirm it can work on this _replicate_ |
+| `STARTED` | The worker confirms it is going to work on this _replicate_ |
+| `START_FAILED` | The worker confirms it is going to work on this _replicate_ |
 | `APP_DOWNLOADING` | The worker is downloading the application |
 | `APP_DOWNLOADED` | The download of the application is completed |
 | `APP_DOWNLOAD_FAILED` | The download of the application failed |
@@ -48,28 +50,29 @@ While the _task_ holds a meta status, each _replicate_ has its own status which 
 | `COMPUTING` | The worker is computing the _task_ |
 | `COMPUTED` | The computation is completed |
 | `COMPUTE_FAILED` | The computation failed |
-| `CAN_CONTRIBUTE` | The worker can contribute the result digest the computation |
-| `CANT_CONTRIBUTE_SINCE_STAKE_TOO_LOW` | The worker hasn't enough RLC in its account to contribute (30% of the _task_ in RLC by default) |
-| `CANT_CONTRIBUTE_SINCE_TASK_NOT_ACTIVE` | The _task_ is not active on chain. This status usually happens when different workers have contributed on the same _task_ but the consensus has been reached before the related worker contributed. |
-| `CANT_CONTRIBUTE_SINCE_AFTER_DEADLINE` | The deadline for the contribution is reached |
-| `CANT_CONTRIBUTE_SINCE_CONTRIBUTION_ALREADY_SET` | The worker already contributed for this _task_ |
 | `CONTRIBUTING` | The worker sent the "contribute(..)" transaction (result digest) on chain |
 | `CONTRIBUTE_FAILED` | The contribute transaction failed |
 | `CONTRIBUTED` | The worker has contributed on chain |
-| `CANT_REVEAL` | The worker cant reveal the proof that it is the owner of the result digest |
 | `REVEALING` | The worker sent the "reveal(..)" transaction (proof that he is the owner of the result digest) |
 | `REVEALED` | The worker has revealed the proof on chain |
 | `REVEAL_FAILED` | The reveal transaction failed |
 | `RESULT_UPLOAD_REQUESTED` | The worker has been requested to upload the result to a remote filesystem |
 | `RESULT_UPLOAD_REQUEST_FAILED` | The worker did not accept to be requested to upload the result |
 | `RESULT_UPLOADING` | The worker is uploading the result |
-| `RESULT_UPLOADED` | The result is uploaded to IPFS (over the _iExec Result Proxy_) |
 | `RESULT_UPLOAD_FAILED` | The upload of the result failed |
+| `RESULT_UPLOADED` | The result is uploaded to IPFS (over the _iExec Result Proxy_) |
+| `COMPLETING` | The _task_ is finalized, the worker will purge data related to its _replicate_ |
 | `COMPLETED` | The whole _task_ is completed meaning the _task_ is finalized. The worker has been rewarded if it is part of the consensus |
-| `REVEAL_TIMEOUT` | The worker took too long to reveal its proof (more than 2 periods after the consensus) |
-| `WORKER_LOST` | The worker didn't ping the iexec-core scheduler for a while. It is considered as out for this _task_ |
-| `ABORTED_ON_CONSENSUS_REACHED` | The consensus is reached but the related worker is not part of it |
-| `ABORTED_ON_CONTRIBUTION_TIMEOUT` | The worker took too long to contribute (7 periods after the purchase of the _task_) |
+| `COMPLETE_FAILED` | The worker failed to clean the local _replicate_ resources after the _task_ is finnalized |
 | `FAILED` | The worker failed to participate to the _task_ |
-| `OUT_OF_GAS` | The worker needs some ETH, please refill its wallet |
+| `ABORTED` | The scheduler asked the worker to stop working on this _replicate_ while the latter was still working on it |
 | `RECOVERING` | The worker has been stopped, it is starting back from where it stopped |
+| `WORKER_LOST` | The worker didn't ping the iexec-core scheduler for a while. It is considered as out for this _task_ |
+
+## Cause of off-chain replicates
+
+A _replicate_ can fail with the following causes:
+
+| Replicate failure cause | Description |
+| `OUT_OF_GAS` | The worker needs some ETH, please refill its wallet |
+| `REVEAL_TIMEOUT` | The worker took too long to reveal its proof (more than 2 periods after the consensus) |
