@@ -69,6 +69,29 @@ While the _task_ holds a meta status, each _replicate_ has its own status which 
 | `RECOVERING` | The worker has been stopped, it is starting back from where it stopped |
 | `WORKER_LOST` | The worker didn't ping the iexec-core scheduler for a while. It is considered as out for this _task_ |
 
+The transitions between those states are as follow:
+
+```mermaid
+stateDiagram
+CREATED --> STARTING
+STARTING --> STARTED
+STARTED --> APP_DOWNLOADING
+APP_DOWNLOADING --> APP_DOWNLOADED
+APP_DOWNLOADED --> DATA_DOWNLOADING
+DATA_DOWNLOADING --> DATA_DOWNLOADED
+DATA_DOWNLOADED --> COMPUTING
+COMPUTING --> COMPUTED
+COMPUTED --> CONTRIBUTING
+CONTRIBUTING --> CONTRIBUTED
+CONTRIBUTED --> REVEALING
+REVEALING --> REVEALED
+REVEALED --> RESULT_UPLOAD_REQUESTED
+RESULT_UPLOAD_REQUESTED --> RESULT_UPLOADING
+RESULT_UPLOADING --> RESULT_UPLOADED
+RESULT_UPLOADED --> COMPLETING
+COMPLETING --> COMPLETED
+```
+
 ## Cause of off-chain replicates
 
 A _replicate_ can fail with the following causes:
