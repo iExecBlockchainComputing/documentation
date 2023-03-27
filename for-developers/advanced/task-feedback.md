@@ -97,5 +97,6 @@ COMPLETING --> COMPLETED
 A _replicate_ can fail with the following causes:
 
 | Replicate failure cause | Description |
+| --- | --- |
 | `OUT_OF_GAS` | The worker needs some ETH, please refill its wallet |
 | `REVEAL_TIMEOUT` | The worker took too long to reveal its proof (more than 2 periods after the consensus) |
