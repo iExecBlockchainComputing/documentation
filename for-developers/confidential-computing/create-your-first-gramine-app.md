@@ -143,6 +143,12 @@ Build the docker image.
 docker build . --tag <docker-hub-user>/tee-gramine-hello-world:1.0.0
 ```
 
+Login to DockerHub:
+
+```bash
+docker login
+```
+
 Push your image on DockerHub:
 
 ```bash
@@ -155,7 +161,7 @@ Congratulations, you just built your Gramine TEE application.
 
 At this stage, your application is ready to be tested on iExec. The process is similar to testing any type of application on the platform, with these minor exceptions:
 
-### Deploy the TEE app on iExec
+### Initialize your Gramine app for iExec
 
 Gramine TEE applications require some additional information to be filled in during deployment.
 
@@ -163,6 +169,24 @@ Gramine TEE applications require some additional information to be filled in dur
 # prepare the Gramine TEE application template
 iexec app init --tee-framework gramine
 ```
+
+### Retrieve mrenclave of your Gramine enclave
+
+Run your Gramine TEE image with `sps=unset` to get the enclave fingerprint (mrenclave):
+
+```bash
+docker run --rm -e sps=unset <docker-hub-user>/tee-gramine-hello-world:1.0.0
+```
+
+The run is expected to fail but you should look for a `mr_enclave` field in your logs:
+
+```bash
+    mr_enclave:  dcec6d7f76520cb996d6e9dac105b9c3d75c7bb4a4d8f3669f6101cbca6aff4f
+```
+
+Hint: The `mr_enclave` is also available in your logs when building your app.
+
+### Configure your Gramine app
 
 Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 
@@ -185,25 +209,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 }
 ```
 
-{% hint style="info" %}
-
-Run your Gramine TEE image with `sps=unset` to get the enclave fingerprint (mrenclave):
-
-```bash
-docker run --rm -e sps=unset <docker-hub-user>/tee-gramine-hello-world:1.0.0
-```
-
-The run is expected to fail but you should look for a `mr_enclave` field in your logs:
-
-```bash
-    mr_enclave:  dcec6d7f76520cb996d6e9dac105b9c3d75c7bb4a4d8f3669f6101cbca6aff4f
-```
-
-Hint: The `mr_enclave` is also available in your logs when building your app.
-
-{% endhint %}
-
-Deploy the app with the standard command:
+### Deploy the app with the standard command:
 
 ```bash
 iexec app deploy --chain bellecour
