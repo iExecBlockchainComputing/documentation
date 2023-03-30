@@ -26,3 +26,6 @@ Tasks on iExec's off-chain/confidential computing marketplace are paid with ERC2
 1 RLC = 1 xRLC
 ```
 Users can send tokens from Ethereum Mainnet to the iExec Sidechain or vice-versa using the **Account Manager** available across all iExec products.
+
+![iExec account manager bridge](../../.gitbook/assets/iexec-account-manager-bridge-1.png)
+![iExec account manager bridge](../../.gitbook/assets/iexec-account-manager-bridge-2.png)
