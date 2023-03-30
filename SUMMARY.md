@@ -28,8 +28,8 @@
   - [iExec subgraph](for-developers/toolbox/iexec-subgraph.md)
   - [iExec SDK](for-developers/toolbox/iexec-sdk.md)
 - [iExec sidechain](for-developers/sidechain/README.md)
-  - [Chain details](for-developers/sidechain/chain-details.md)
-  - [Test2](for-developers/sidechain/test2.md)
+  - [Overview](for-developers/sidechain/overview.md)
+  - [Connect to iExec Sidechain](for-developers/sidechain/connect.md)
 
 ## For Workers
 
