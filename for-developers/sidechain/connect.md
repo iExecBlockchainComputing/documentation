@@ -1,10 +1,11 @@
 # Connect to iExec Sidechain
 
-As mentioned in the [Overview](for-developers/sidechain/overview.md) section, iExec Sidechain is EVM-compatible meaning that users can connect to Bellecour with their existing EVM-compatible wallets (e.g. Metamask, Portis, ...etc).  
-The following instructions explain how to connect to iExec Sidechain.
+As mentioned in the [Overview](for-developers/sidechain/overview.md) section, iExec Sidechain is EVM-compatible meaning that users can interact with it using their existing EVM-compatible wallets (e.g. Metamask, Portis, ...etc).  
+The following instructions explain how to connect to the iExec Sidechain.
 
 ## Option 1 - Chainlist
-iExec Sidechain is listed on [https://chainlist.org](https://chainlist.org/?search=iExec) so users can add it to their wallets easily from there.
+iExec Sidechain is listed on [https://chainlist.org](https://chainlist.org/?search=iExec).
+Users are able to easily add the network to their wallets through this website.
 
 ![Chainlist](../../.gitbook/assets/chainlist.png)
 
@@ -14,7 +15,7 @@ iExec Sidechain could also be added to wallets directly from its explorer <https
 ![Blockscout](../../.gitbook/assets/blockscout.png)
 
 ## Option 3 - iExec account manager
-iExec account manager used across iExec products, when used for the first time, allows users to add iExec Sidechain to the network list of their wallet.
+iExec account manager present across iExec products, when used for the first time, allows users to add iExec Sidechain to the network list of their wallets.
 
 ![iExec account manager 1](../../.gitbook/assets/iexec-account-manager-1.png)
 ![iExec account manager 2](../../.gitbook/assets/iexec-account-manager-2.png)
