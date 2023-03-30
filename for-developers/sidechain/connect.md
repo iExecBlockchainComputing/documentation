@@ -21,7 +21,6 @@ iExec account manager used across iExec products, when used for the first time, 
 ![iExec account manager 3](../../.gitbook/assets/iexec-account-manager-3.png)
 ![iExec account manager 4](../../.gitbook/assets/iexec-account-manager-4.png)
 
-
 ## Option 4 - Manually on Metamask
 
 Open Metamask and click on **Add network**
