@@ -1,5 +1,5 @@
 # iExec sidechain
-iExec sidechain, aka **Bellecour**, is a Proof of Authority Blockchain that aims at scaling the underling infrastructure of iExec's off-chain/confidential computing platform. It is linked to Ethereum Mainnet with a bridge that enables sending RLC in both directions.
+iExec sidechain, aka **Bellecour**, is a Proof of Authority Blockchain that aims at scaling the underling infrastructure of iExec's off-chain/confidential computing platform. It is linked to Ethereum Mainnet with a bridge that enables sending [RLC](https://iex.ec/rlc-token/) tokens in both directions.
 
 * **Explorer**: <https://blockscout.bellecour.iex.ec>
 * **Netstats**: <https://netstats.bellecour.iex.ec>
@@ -17,13 +17,12 @@ iExec sidechain, aka **Bellecour**, is a Proof of Authority Blockchain that aims
 ## Validators
 Currently, the Sidechain is running with 8 validators, some of them are not controlled by iExec which makes the chain more decentralized and resilient.
 
-## xRLC
-Tasks on iExec's off-chain/confidential computing marketplace are paid with ERC20 tokens [RLC](https://iex.ec/rlc-token/). Users wanting to interact with the platform need to bridge RLCs from Ethereum Mainnet to the Sidechain. The bridged asset is called xRLC on Bellecour.
-```
-1 RLC = 1xRLC
-```
-
 ## Whitelisting
-By default, all operations related to iExec's Marketplace such as deploying Dapps/Datasets/Workerpools and running tasks are permissable without any authorization. However, developers who want to deploy custom Smart Contracts need to send a whitelisting request using the following link: https://support.iex.ec ???
+By default, all operations related to iExec's Marketplace such as deploying Dapps/Datasets/Workerpools and running tasks are permissable without any authorization. However, developers who want to deploy custom Smart Contracts need to send a whitelisting request using the following [link](https://iexecproject.atlassian.net/servicedesk/customer/portal/4/group/9/create/66).
 
 ## Bridge
+Tasks on iExec's off-chain/confidential computing marketplace are paid with ERC20 RLC tokens. Users wanting to interact with the platform need to bridge RLC tokens from Ethereum Mainnet to the Sidechain. The bridged asset is called xRLC on Bellecour.
+```
+1 RLC = 1 xRLC
+```
+Users can send tokens from Ethereum Mainnet to the iExec Sidechain or vice-versa using the **Account Manager** available across all iExec products.
