@@ -7,30 +7,30 @@ The following instructions explain how to connect to the iExec Sidechain.
 iExec Sidechain is listed on [https://chainlist.org](https://chainlist.org/?search=iExec).
 Users are able to easily add the network to their wallets through this website.
 
-![Chainlist](../../.gitbook/assets/chainlist.png)
+![Add iExec Sidechain using Chainlist](../../.gitbook/assets/chainlist.png)
 
 ## Option 2 - Blockscout
 iExec Sidechain could also be added to wallets directly from its explorer <https://blockscout.bellecour.iex.ec>.
 
-![Blockscout](../../.gitbook/assets/blockscout.png)
+![Add iExec Sidechain using Blockscout](../../.gitbook/assets/blockscout.png)
 
 ## Option 3 - iExec account manager
 iExec account manager present across iExec products, when used for the first time, allows users to add iExec Sidechain to the network list of their wallets.
 
-![iExec account manager 1](../../.gitbook/assets/iexec-account-manager-1.png)
-![iExec account manager 2](../../.gitbook/assets/iexec-account-manager-2.png)
-![iExec account manager 3](../../.gitbook/assets/iexec-account-manager-3.png)
-![iExec account manager 4](../../.gitbook/assets/iexec-account-manager-4.png)
+![Login with Metamask](../../.gitbook/assets/iexec-account-manager-1.png)
+![Select account](../../.gitbook/assets/iexec-account-manager-2.png)
+![Add network](../../.gitbook/assets/iexec-account-manager-3.png)
+![Switch network](../../.gitbook/assets/iexec-account-manager-4.png)
 
 ## Option 4 - Manually on Metamask
 
 Open Metamask and click on **Add network**
 
-![Metamask add network 1](../../.gitbook/assets/metamask-add-network-1.png)
+![Open network manager](../../.gitbook/assets/metamask-add-network-1.png)
 
 Select **Add a network manually**
 
-![Metamask add network 2](../../.gitbook/assets/metamask-add-network-2.png)
+![Add a network manually](../../.gitbook/assets/metamask-add-network-2.png)
 
 Enter the following chain details and click on **Save**:
 * Network name: iExec Sidechain
@@ -39,4 +39,4 @@ Enter the following chain details and click on **Save**:
 * Currency symbol: xRLC
 * Block explorer URL: https://blockscout.bellecour.iex.ec
 
-![Metamask add network 3](../../.gitbook/assets/metamask-add-network-3.png)
+![Network details](../../.gitbook/assets/metamask-add-network-3.png)
