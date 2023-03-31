@@ -100,7 +100,7 @@ subgraph Reveal stage
 end
 
 subgraph Result upload stage
-    REVEALED -- Only one contributing worker will upload results --> RESULT_UPLOAD_REQUESTED
+    REVEALED -- Only one contributing worker will upload the result --> RESULT_UPLOAD_REQUESTED
     RESULT_UPLOAD_REQUESTED --> RESULT_UPLOADING
     RESULT_UPLOADING --> RESULT_UPLOADED
     RESULT_UPLOADING --> RESULT_UPLOAD_FAILED
