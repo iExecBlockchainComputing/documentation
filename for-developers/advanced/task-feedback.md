@@ -230,7 +230,7 @@ In the following table, the task type column behaves as follow:
 | `POST_COMPUTE_TIMEOUT` | `COMPUTING` | `TEE` | |
 | `POST_COMPUTE_FAILED_UNKOWN_ISSUE` | `COMPUTING` | `TEE` | |
 | `OUT_OF_GAS` | `CONTRIBUTING`, `REVEALING` | | The worker needs some ETH, please refill its wallet |
-| `DETERMINISM_HASH_NOT_FOUND` | `CONTRIBUTING`, `REVEALING` | | The `computed.json` file does not contain the hash |
+| `DETERMINISM_HASH_NOT_FOUND` | `CONTRIBUTING`, `REVEALING` | | The `computed.json` file does not contain result hash |
 | `CHAIN_RECEIPT_NOT_VALID` | `CONTRIBUTING`, `REVEALING` | | The transaction failed on the blockchain |
 | `ENCLAVE_SIGNATURE_NOT_FOUND` | `CONTRIBUTING` | `TEE` | |
 | `CONSENSUS_BLOCK_MISSING` | `REVEALING` | | |
