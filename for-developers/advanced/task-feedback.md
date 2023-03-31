@@ -236,4 +236,4 @@ In the following table, the task type column behaves as follow:
 | `CONSENSUS_BLOCK_MISSING` | `REVEALING` | | |
 | `BLOCK_NOT_REACHED` | `REVEALING` | | The worker has not reached the consensus block |
 | `CANNOT_REVEAL` | `REVEALING` | | One of the mandatory condition was not met. Reveal cannot happen |
-| `RESULT_LINK_MISSING` | `UPLOADING` | | No upload result link was determined for the task |
+| `RESULT_LINK_MISSING` | `UPLOADING` | | No upload result link was provided by the worker |
