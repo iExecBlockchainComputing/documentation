@@ -125,7 +125,7 @@ COMPLETE_FAILED --> ABORTED
 ## Off-chain replicates failure causes
 
 When a worker fails to complete a _replicate_, it returns a failure cause. This cause is helpful to understand what went wrong.
-### Failures from Scheduler
+### Failures detected by the Scheduler
 
 | Replicate failure cause | Description |
 | --- | --- |
