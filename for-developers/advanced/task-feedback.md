@@ -40,7 +40,7 @@ While the _task_ holds a meta status, each _replicate_ has its own status which 
 | `CREATED` | A new _replicate_ is assigned to a worker just after it asked for more work |
 | `STARTING` | The worker starts preflight checks to confirm it can work on this _replicate_ |
 | `STARTED` | The worker confirms it is going to work on this _replicate_ |
-| `START_FAILED` | The worker confirms it is going to work on this _replicate_ |
+| `START_FAILED` | The preflight checks have failed. The worker will NOT work on this _replicate_ |
 | `APP_DOWNLOADING` | The worker is downloading the application |
 | `APP_DOWNLOADED` | The download of the application is completed |
 | `APP_DOWNLOAD_FAILED` | The download of the application failed |
