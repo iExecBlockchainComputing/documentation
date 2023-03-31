@@ -107,7 +107,7 @@ subgraph Result upload stage
 end
 
 RESULT_UPLOADED --> COMPLETING
-REVEALED -- Most workers do not upload results --> COMPLETING
+REVEALED -- Most workers do not upload their result --> COMPLETING
 COMPLETING --> COMPLETED
 
 COMPLETING --> COMPLETE_FAILED
