@@ -63,7 +63,7 @@ While the _task_ holds a meta status, each _replicate_ has its own status which 
 | `RESULT_UPLOADED` | The result is uploaded to IPFS (over the _iExec Result Proxy_) |
 | `COMPLETING` | The _task_ is finalized, the worker will purge data related to its _replicate_ |
 | `COMPLETED` | The whole _task_ is completed meaning the _task_ is finalized. The worker has been rewarded if it is part of the consensus |
-| `COMPLETE_FAILED` | The worker failed to clean the local _replicate_ resources after the _task_ is finnalized |
+| `COMPLETE_FAILED` | The worker failed to clean the local _replicate_ resources after the _task_ is finalized |
 | `FAILED` | The worker failed to participate to the _task_ |
 | `ABORTED` | The scheduler asked the worker to stop working on this _replicate_ while the latter was still working on it |
 | `RECOVERING` | The worker has been stopped, it is starting back from where it stopped |
