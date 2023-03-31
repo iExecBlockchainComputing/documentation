@@ -155,7 +155,7 @@ In the following table, the task type column behaves as follow:
 | `CONTRIBUTION_ALREADY_SET` | `STARTING`, `APP_DOWNLOADING`, `DATA_DOWNLOADING`, `COMPUTING`, `CONTRIBUTING` | | The worker has already contributed |
 | `WORKERPOOL_AUTHORIZATION_NOT_FOUND` | `STARTING`, `APP_DOWNLOADING`, `DATA_DOWNLOADING`, `COMPUTING`, `CONTRIBUTING` | | The authorization to contribute to the task is missing |
 | `TASK_DESCRIPTION_INVALID` | `STARTING` | `STD` | The task description contains inconsistencies and cannot be executed |
-| `TEE_NOT_SUPPORTED` | `STARTING` | `TEE` | The current worker cannot execute TEE tasks |
+| `TEE_NOT_SUPPORTED` | `STARTING` | `TEE` | The current worker is not well configured to execute TEE tasks (or not compatible at all) |
 | `UNKNOWN_SMS` | `STARTING` | `TEE` | SMS URL could not be resolved for this task |
 | `GET_TEE_SERVICES_CONFIGURATION_FAILED` | `STARTING` | `TEE` | Failed to fetch TEE task configuration properties from SMS |
 | `APP_IMAGE_DOWNLOAD_FAILED` | `APP_DOWNLOADING` | | The download of the application `OCI` image failed |
