@@ -15,7 +15,7 @@ iExec Sidechain could also be added to wallets directly from its explorer <https
 ![Add iExec Sidechain using Blockscout](../../.gitbook/assets/blockscout.png)
 
 ## Option 3 - iExec account manager
-iExec account manager present across iExec products, when used for the first time, allows users to add iExec Sidechain to the network list of their wallets.
+iExec account manager is available across multiple iExec products. When used for the first time, it allows users to add iExec Sidechain to the network list of their wallets.
 
 ![Login with Metamask](../../.gitbook/assets/iexec-account-manager-1.png)
 ![Select account](../../.gitbook/assets/iexec-account-manager-2.png)
