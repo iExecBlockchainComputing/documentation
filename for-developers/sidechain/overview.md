@@ -13,7 +13,7 @@ iExec sidechain, aka **Bellecour**, is a Proof of Authority Blockchain that aims
 ## Validators
 Currently, the Sidechain is running with 8 validators, some of them are not controlled by iExec which makes the chain more decentralized and resilient.
 The governance of the chain is managed through ballots and votes.
-### Governance Dapps:
+#### Governance Dapps:
 * Voting: <https://voting.bellecour.iex.ec>
 * Validators: <https://validator.bellecour.iex.ec>
 * Ceremony: <https://ceremony.bellecour.iex.ec>
