@@ -60,7 +60,7 @@ While the _task_ holds a meta status, each _replicate_ has its own status which 
 | `RESULT_UPLOAD_REQUEST_FAILED` | The worker did not accept to be requested to upload the result |
 | `RESULT_UPLOADING` | The worker is uploading the result |
 | `RESULT_UPLOAD_FAILED` | The upload of the result failed |
-| `RESULT_UPLOADED` | The result is uploaded to IPFS (over the _iExec Result Proxy_) |
+| `RESULT_UPLOADED` | The result is uploaded to IPFS (over the _iExec Result Proxy_). For `TEE` tasks, results can be pushed to Dropbox as well |
 | `COMPLETING` | The _task_ is finalized, the worker will purge data related to its _replicate_ |
 | `COMPLETED` | The whole _task_ is completed meaning the _task_ is finalized. The worker has been rewarded if it is part of the consensus |
 | `COMPLETE_FAILED` | The worker failed to clean the local _replicate_ resources after the _task_ is finalized |
