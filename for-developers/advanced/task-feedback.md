@@ -146,8 +146,8 @@ A _replicate_ can fail with the following causes:
 | `CONTRIBUTION_TIMEOUT` | `STARTING`, `APP_DOWNLOADING`, `DATA_DOWNLOADING`, `COMPUTING`, `CONTRIBUTING` | Contribution deadline has already been reached |
 | `CONTRIBUTION_ALREADY_SET` | `STARTING`, `APP_DOWNLOADING`, `DATA_DOWNLOADING`, `COMPUTING`, `CONTRIBUTING` | The worker has already contributed |
 | `WORKERPOOL_AUTHORIZATION_NOT_FOUND` | `STARTING`, `APP_DOWNLOADING`, `DATA_DOWNLOADING`, `COMPUTING`, `CONTRIBUTING` | The authorization to contribute to the task is missing |
-| `APP_IMAGE_DOWNLOAD_FAILED` | `APP_DOWNLOADING` | The download of the application `OCI` image failed |
-| `APP_NOT_FOUND_LOCALLY` | `COMPUTING` | The `application OCI` image could not be found on the worker |
+| `APP_IMAGE_DOWNLOAD_FAILED` | `APP_DOWNLOADING` | The download of the `application` image failed |
+| `APP_NOT_FOUND_LOCALLY` | `COMPUTING` | The `application` image could not be found on the worker |
 | `APP_COMPUTE_FAILED` | `COMPUTING` | The application execution failed |
 | `POST_COMPUTE_COMPUTED_FILE_NOT_FOUND` | `COMPUTING` | The  `computed.json` file could not be found |
 | `POST_COMPUTE_RESULT_DIGEST_COMPUTATION_FAILED` | `COMPUTING` | The result digest could not be computed from the `computed.json` file |
@@ -205,7 +205,7 @@ A _replicate_ can fail with the following causes:
 | `TEE_SESSION_GENERATION_UNKNOWN_ISSUE` | `COMPUTING` | |
 | `PRE_COMPUTE_INVALID_ENCLAVE_CONFIGURATION` | `COMPUTING` | Application enclave configuration is invalid |
 | `PRE_COMPUTE_INVALID_ENCLAVE_HEAP_CONFIGURATION` | `COMPUTING` | Application requested HEAP size is bigger than maximum allocatable memory |
-| `PRE_COMPUTE_IMAGE_MISSING` | `COMPUTING` | The `pre-compute OCI` image could not be found on the worker |
+| `PRE_COMPUTE_IMAGE_MISSING` | `COMPUTING` | The `pre-compute` image could not be found on the worker |
 | `PRE_COMPUTE_TASK_ID_MISSING` | `COMPUTING` | The `IEXEC_TASK_ID` environment variable could not be resolved from the `pre-compute` container |
 | `PRE_COMPUTE_EXIT_REPORTING_FAILED` | `COMPUTING` | The `pre-compute` container failed to post its failure cause to the worker |
 | `PRE_COMPUTE_OUTPUT_PATH_MISSING` | `COMPUTING` | The `IEXEC_PRE_COMPUTE_OUT` environment variable could not be resolved from the `pre-compute` container |
@@ -224,7 +224,7 @@ A _replicate_ can fail with the following causes:
 | `PRE_COMPUTE_INPUT_FILE_DOWNLOAD_FAILED` | `COMPUTING` | |
 | `PRE_COMPUTE_TIMEOUT` | `COMPUTING` | |
 | `PRE_COMPUTE_FAILED_UNKNOWN_ISSUE` | `COMPUTING` | |
-| `POST_COMPUTE_IMAGE_MISSING` | `COMPUTING` | The `post-compute OCI` image could not be found on the worker |
+| `POST_COMPUTE_IMAGE_MISSING` | `COMPUTING` | The `post-compute` image could not be found on the worker |
 | `POST_COMPUTE_TASK_ID_MISSING` | `COMPUTING` | The `RESULT_TASK_ID` environment variable could not be resolved from the `post-compute` container |
 | `POST_COMPUTE_EXIT_REPORTING_FAILED` | `COMPUTING` | The `post-compute` container failed to post its failure cause to the worker |
 | `POST_COMPUTE_WORKER_ADDRESS_MISSING` | `COMPUTING` | The `RESULT_SIGN_WORKER_ADDRESS` environment variable could not be resolved from the `post-compute` container |
