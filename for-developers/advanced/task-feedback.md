@@ -156,7 +156,7 @@ A _replicate_ can fail with the following causes:
 | `OUT_OF_GAS` | `CONTRIBUTING`, `REVEALING` | The worker needs some ETH, please refill its wallet |
 | `DETERMINISM_HASH_NOT_FOUND` | `CONTRIBUTING`, `REVEALING` | The `result digest` could not be read from the `computed.json` file |
 | `CHAIN_RECEIPT_NOT_VALID` | `CONTRIBUTING`, `REVEALING` | The transaction failed on the blockchain |
-| `CONSENSUS_BLOCK_MISSING` | `REVEALING` | |
+| `CONSENSUS_BLOCK_MISSING` | `REVEALING` | The consensus block number was not part of the `PLEASE_REVEAL` notification |
 | `BLOCK_NOT_REACHED` | `REVEALING` | The worker has not reached the consensus block |
 | `CANNOT_REVEAL` | `REVEALING` | One of the mandatory condition was not met. Reveal cannot happen |
 | `RESULT_LINK_MISSING` | `UPLOADING` | No result link has been provided by the worker |
@@ -178,29 +178,29 @@ A _replicate_ can fail with the following causes:
 | `UNKNOWN_SMS` | `STARTING` | SMS URL could not be resolved for this task |
 | `GET_TEE_SERVICES_CONFIGURATION_FAILED` | `STARTING` | Failed to fetch TEE task configuration properties from SMS |
 | `TEE_PREPARATION_FAILED` | `COMPUTING` | TEE task preparation step could not be completed, task cannot be executed by the worker |
-| `TEE_SESSION_GENERATION_INVALID_AUTHORIZATION` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_EMPTY_PARAMS_UNAUTHORIZED` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_NO_MATCH_ONCHAIN_TYPE` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_GET_CHAIN_TASK_FAILED` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_TASK_NOT_ACTIVE` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_GET_CHAIN_DEAL_FAILED` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_INVALID_SIGNATURE` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_PRE_COMPUTE_GET_DATASET_SECRET_FAILED` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_APP_COMPUTE_NO_ENCLAVE_CONFIG` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_APP_COMPUTE_INVALID_ENCLAVE_CONFIG` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_ENCRYPTION_TOKENS_FAILED_EMPTY_BENEFICIARY_KEY` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_STORAGE_TOKENS_FAILED` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_WORKER_ADDRESS` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_PUBLIC_ENCLAVE_CHALLENGE` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_TEE_CHALLENGE` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_TEE_CREDENTIALS` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_SECURE_SESSION_STORAGE_CALL_FAILED` | `COMPUTING` | |
+| `TEE_SESSION_GENERATION_INVALID_AUTHORIZATION` | `COMPUTING` | The worker could not authenticate on the SMS |
+| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_EMPTY_PARAMS_UNAUTHORIZED` | `COMPUTING` | The parameters provided by the worker do not allow the `TEE` session generation |
+| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_NO_MATCH_ONCHAIN_TYPE` | `COMPUTING` | The provided task id does not match with a `TEE` task on-chain |
+| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_GET_CHAIN_TASK_FAILED` | `COMPUTING` | The associated _task_ could not be retrieved on-chain |
+| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_TASK_NOT_ACTIVE` | `COMPUTING` | The _task_ is not active on chain |
+| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_GET_CHAIN_DEAL_FAILED` | `COMPUTING` | The associated _deal_ could not be retrieved on-chain |
+| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_INVALID_SIGNATURE` | `COMPUTING` | The provided authorization was not signed by the correct workerpool |
+| `TEE_SESSION_GENERATION_PRE_COMPUTE_GET_DATASET_SECRET_FAILED` | `COMPUTING` | Dataset secret could not be fetched from the SMS database |
+| `TEE_SESSION_GENERATION_APP_COMPUTE_NO_ENCLAVE_CONFIG` | `COMPUTING` | Application enclave configuration could not be read from _task_ description |
+| `TEE_SESSION_GENERATION_APP_COMPUTE_INVALID_ENCLAVE_CONFIG` | `COMPUTING` | Application enclave configuration could not be validated |
+| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_ENCRYPTION_TOKENS_FAILED_EMPTY_BENEFICIARY_KEY` | `COMPUTING` | Beneficiary results encryption key could not be fetched from the SMS database |
+| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_STORAGE_TOKENS_FAILED` | `COMPUTING` | Results storage (IPFS or Dropbox) token could not be fetched from the SMS database |
+| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_WORKER_ADDRESS` | `COMPUTING` | The worker address is missing for the enclave signature computation |
+| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_PUBLIC_ENCLAVE_CHALLENGE` | `COMPUTING` | The enclave challenge is missing for the enclave signature computation |
+| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_TEE_CHALLENGE` | `COMPUTING` | The `TEE` challenge is missing for the enclave signature computation |
+| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_TEE_CREDENTIALS` | `COMPUTING` | The `TEE` credentials are missing for the enclave signature computation |
+| `TEE_SESSION_GENERATION_SECURE_SESSION_STORAGE_CALL_FAILED` | `COMPUTING` | The `TEE` session could not be posted on the secure session storage |
 | `TEE_SESSION_GENERATION_SECURE_SESSION_GENERATION_FAILED` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_SECURE_SESSION_NO_TEE_PROVIDER` | `COMPUTING` | |
+| `TEE_SESSION_GENERATION_SECURE_SESSION_NO_TEE_PROVIDER` | `COMPUTING` | No `TEE` provider was found on the _task_ description |
 | `TEE_SESSION_GENERATION_SECURE_SESSION_UNKNOWN_TEE_PROVIDER` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_GET_TASK_DESCRIPTION_FAILED` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_NO_SESSION_REQUEST` | `COMPUTING` | |
-| `TEE_SESSION_GENERATION_NO_TASK_DESCRIPTION` | `COMPUTING` | |
+| `TEE_SESSION_GENERATION_GET_TASK_DESCRIPTION_FAILED` | `COMPUTING` | The _task_ description could not be read on-chain |
+| `TEE_SESSION_GENERATION_NO_SESSION_REQUEST` | `COMPUTING` | The `TEE` session request was empty |
+| `TEE_SESSION_GENERATION_NO_TASK_DESCRIPTION` | `COMPUTING` | The _task_ description was not found in the `TEE` session request |
 | `TEE_SESSION_GENERATION_GET_SESSION_FAILED` | `COMPUTING` | |
 | `TEE_SESSION_GENERATION_UNKNOWN_ISSUE` | `COMPUTING` | |
 | `PRE_COMPUTE_INVALID_ENCLAVE_CONFIGURATION` | `COMPUTING` | Application enclave configuration is invalid |
@@ -216,14 +216,14 @@ A _replicate_ can fail with the following causes:
 | `PRE_COMPUTE_DATASET_FILENAME_MISSING` | `COMPUTING` | The `IEXEC_DATASET_FILENAME` environment variable could not be resolved from the `pre-compute` container |
 | `PRE_COMPUTE_INPUT_FILES_NUMBER_MISSING` | `COMPUTING` | The `IEXEC_INPUT_FILES_NUMBER` environment variable could not be resolved from the `pre-compute` container |
 | `PRE_COMPUTE_AT_LEAST_ONE_INPUT_FILE_URL_MISSING` | `COMPUTING` | At least one environment variable starting with `IEXEC_INPUT_FILE_URL_` prefix could not be resolve from the `pre-compute` container |
-| `PRE_COMPUTE_OUTPUT_FOLDER_NOT_FOUND` | `COMPUTING` | |
-| `PRE_COMPUTE_DATASET_DOWNLOAD_FAILED` | `COMPUTING` | |
-| `PRE_COMPUTE_INVALID_DATASET_CHECKSUM` | `COMPUTING` | |
-| `PRE_COMPUTE_DATASET_DECRYPTION_FAILED` | `COMPUTING` | |
-| `PRE_COMPUTE_SAVING_PLAIN_DATASET_FAILED` | `COMPUTING` | |
-| `PRE_COMPUTE_INPUT_FILE_DOWNLOAD_FAILED` | `COMPUTING` | |
-| `PRE_COMPUTE_TIMEOUT` | `COMPUTING` | |
-| `PRE_COMPUTE_FAILED_UNKNOWN_ISSUE` | `COMPUTING` | |
+| `PRE_COMPUTE_OUTPUT_FOLDER_NOT_FOUND` | `COMPUTING` | The folder to store the dataset or input files could not be found |
+| `PRE_COMPUTE_DATASET_DOWNLOAD_FAILED` | `COMPUTING` | The `pre-compute` failed to download the dataset |
+| `PRE_COMPUTE_INVALID_DATASET_CHECKSUM` | `COMPUTING` | The downloaded dataset checksum does not match the expected one |
+| `PRE_COMPUTE_DATASET_DECRYPTION_FAILED` | `COMPUTING` | The downloaded dataset decryption failed |
+| `PRE_COMPUTE_SAVING_PLAIN_DATASET_FAILED` | `COMPUTING` | The decrypted dataset could not be saved |
+| `PRE_COMPUTE_INPUT_FILE_DOWNLOAD_FAILED` | `COMPUTING` | The `pre-commpute` failed to download at least one input file |
+| `PRE_COMPUTE_TIMEOUT` | `COMPUTING` | The `pre-compute` did not complete on time |
+| `PRE_COMPUTE_FAILED_UNKNOWN_ISSUE` | `COMPUTING` | The `pre-compute` failed for an unknown cause |
 | `POST_COMPUTE_IMAGE_MISSING` | `COMPUTING` | The `post-compute` image could not be found on the worker |
 | `POST_COMPUTE_TASK_ID_MISSING` | `COMPUTING` | The `RESULT_TASK_ID` environment variable could not be resolved from the `post-compute` container |
 | `POST_COMPUTE_EXIT_REPORTING_FAILED` | `COMPUTING` | The `post-compute` container failed to post its failure cause to the worker |
@@ -236,6 +236,6 @@ A _replicate_ can fail with the following causes:
 | `POST_COMPUTE_DROPBOX_UPLOAD_FAILED` | `COMPUTING` | Upload to `DROPBOX` failed |
 | `POST_COMPUTE_IPFS_UPLOAD_FAILED` | `COMPUTING` | Upload to `IPFS` failed |
 | `POST_COMPUTE_INVALID_TEE_SIGNATURE` | `COMPUTING` | The provided signed TEE challenge is invalid |
-| `POST_COMPUTE_TIMEOUT` | `COMPUTING` | |
-| `POST_COMPUTE_FAILED_UNKOWN_ISSUE` | `COMPUTING` | |
-| `ENCLAVE_SIGNATURE_NOT_FOUND` | `CONTRIBUTING` | |
+| `POST_COMPUTE_TIMEOUT` | `COMPUTING` | The `post-compute` did not complete on time |
+| `POST_COMPUTE_FAILED_UNKOWN_ISSUE` | `COMPUTING` | The `post-compute` failed for an unknown cause |
+| `ENCLAVE_SIGNATURE_NOT_FOUND` | `CONTRIBUTING` | The enclave signature could not be verified on the results. The latter may have been tampered with and will not be contributed |
