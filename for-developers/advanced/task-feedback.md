@@ -60,7 +60,7 @@ While the _task_ holds a meta status, each _replicate_ has its own status which 
 | `RESULT_UPLOAD_REQUEST_FAILED` | The worker did not accept to be requested to upload the result |
 | `RESULT_UPLOADING` | The worker is uploading the result |
 | `RESULT_UPLOAD_FAILED` | The upload of the result failed |
-| `RESULT_UPLOADED` | The result is uploaded to IPFS (over the _iExec Result Proxy_). For `TEE` tasks, results can be pushed to Dropbox as well |
+| `RESULT_UPLOADED` | The result has been uploaded to IPFS over the _iExec Result Proxy_ (standard or TEE tasks) or to Dropbox (TEE only), dependending on the _deal_ parameters |
 | `COMPLETING` | The _task_ is finalized, the worker will purge data related to its _replicate_ |
 | `COMPLETED` | The whole _task_ is completed meaning the _task_ is finalized. The worker has been rewarded if it is part of the consensus |
 | `COMPLETE_FAILED` | The worker failed to clean the local _replicate_ resources after the _task_ is finalized |
@@ -150,11 +150,11 @@ A _replicate_ can fail with the following causes:
 | `APP_NOT_FOUND_LOCALLY` | `COMPUTING` | The `application` image could not be found on the worker |
 | `APP_COMPUTE_FAILED` | `COMPUTING` | The application execution failed |
 | `POST_COMPUTE_COMPUTED_FILE_NOT_FOUND` | `COMPUTING` | The  `computed.json` file could not be found |
-| `POST_COMPUTE_RESULT_DIGEST_COMPUTATION_FAILED` | `COMPUTING` | The result digest could not be computed from the `computed.json` file |
+| `POST_COMPUTE_RESULT_DIGEST_COMPUTATION_FAILED` | `COMPUTING` | The `result digest` could not be computed from the `computed.json` file |
 | `POST_COMPUTE_OUT_FOLDER_ZIP_FAILED` | `COMPUTING` | `post-compute` failed to zip the output folder resulting from the computation |
 | `POST_COMPUTE_SEND_COMPUTED_FILE_FAILED` | `COMPUTING` | Failed to post `computed.json` to worker |
 | `OUT_OF_GAS` | `CONTRIBUTING`, `REVEALING` | The worker needs some ETH, please refill its wallet |
-| `DETERMINISM_HASH_NOT_FOUND` | `CONTRIBUTING`, `REVEALING` | The `computed.json` file does not contain result hash |
+| `DETERMINISM_HASH_NOT_FOUND` | `CONTRIBUTING`, `REVEALING` | The `result digest` could not be read from the `computed.json` file |
 | `CHAIN_RECEIPT_NOT_VALID` | `CONTRIBUTING`, `REVEALING` | The transaction failed on the blockchain |
 | `CONSENSUS_BLOCK_MISSING` | `REVEALING` | |
 | `BLOCK_NOT_REACHED` | `REVEALING` | The worker has not reached the consensus block |
@@ -174,7 +174,7 @@ A _replicate_ can fail with the following causes:
 
 | Replicate failure cause | Replicate status | Description |
 | --- | --- | --- |
-| `TEE_NOT_SUPPORTED` | `STARTING` | The current worker is not well configured to execute TEE tasks (or not compatible at all) |
+| `TEE_NOT_SUPPORTED` | `STARTING` | The current worker does not support `TEE` tasks. It may not be well configured or not compatible at all |
 | `UNKNOWN_SMS` | `STARTING` | SMS URL could not be resolved for this task |
 | `GET_TEE_SERVICES_CONFIGURATION_FAILED` | `STARTING` | Failed to fetch TEE task configuration properties from SMS |
 | `TEE_PREPARATION_FAILED` | `COMPUTING` | TEE task preparation step could not be completed, task cannot be executed by the worker |
