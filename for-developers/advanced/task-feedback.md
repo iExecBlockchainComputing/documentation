@@ -159,7 +159,7 @@ A _replicate_ can fail with the following causes:
 | `CONSENSUS_BLOCK_MISSING` | `REVEALING` | |
 | `BLOCK_NOT_REACHED` | `REVEALING` | The worker has not reached the consensus block |
 | `CANNOT_REVEAL` | `REVEALING` | One of the mandatory condition was not met. Reveal cannot happen |
-| `RESULT_LINK_MISSING` | `UPLOADING` | No upload result link was provided by the worker |
+| `RESULT_LINK_MISSING` | `UPLOADING` | No result link has been provided by the worker |
 
 #### Specific failures for standard tasks
 
