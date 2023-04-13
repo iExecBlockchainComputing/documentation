@@ -60,7 +60,7 @@ While the _task_ holds a meta status, each _replicate_ has its own status which 
 | `RESULT_UPLOAD_REQUEST_FAILED` | The worker did not accept to be requested to upload the result |
 | `RESULT_UPLOADING` | The worker is uploading the result |
 | `RESULT_UPLOAD_FAILED` | The upload of the result failed |
-| `RESULT_UPLOADED` | The result has been uploaded to IPFS over the _iExec Result Proxy_ (standard or TEE tasks) or to Dropbox (TEE only), dependending on the _deal_ parameters |
+| `RESULT_UPLOADED` | The result has been uploaded to IPFS over the _iExec Result Proxy_ (standard or TEE _tasks_) or to Dropbox (TEE only), dependending on the _deal_ parameters |
 | `COMPLETING` | The _task_ is finalized, the worker will purge data related to its _replicate_ |
 | `COMPLETED` | The whole _task_ is completed meaning the _task_ is finalized. The worker has been rewarded if it is part of the consensus |
 | `COMPLETE_FAILED` | The worker failed to clean the local _replicate_ resources after the _task_ is finalized |
@@ -140,12 +140,12 @@ A _replicate_ can fail with the following causes:
 
 | Replicate failure cause | Replicate status | Description |
 | --- | --- | --- |
-| `CHAIN_UNREACHABLE` | `STARTING`, `APP_DOWNLOADING`, `DATA_DOWNLOADING`, `COMPUTING`, `CONTRIBUTING` | The task model could not be fetched from the blockchain |
+| `CHAIN_UNREACHABLE` | `STARTING`, `APP_DOWNLOADING`, `DATA_DOWNLOADING`, `COMPUTING`, `CONTRIBUTING` | The _task_ model could not be fetched from the blockchain |
 | `STAKE_TOO_LOW` | `STARTING`, `APP_DOWNLOADING`, `DATA_DOWNLOADING`, `COMPUTING`, `CONTRIBUTING` | Worker deposit is too low |
-| `TASK_NOT_ACTIVE` | `STARTING`, `APP_DOWNLOADING`, `DATA_DOWNLOADING`, `COMPUTING`, `CONTRIBUTING` | On-chain task status is not `ACTIVE` |
+| `TASK_NOT_ACTIVE` | `STARTING`, `APP_DOWNLOADING`, `DATA_DOWNLOADING`, `COMPUTING`, `CONTRIBUTING` | On-chain _task_ status is not `ACTIVE` |
 | `CONTRIBUTION_TIMEOUT` | `STARTING`, `APP_DOWNLOADING`, `DATA_DOWNLOADING`, `COMPUTING`, `CONTRIBUTING` | Contribution deadline has already been reached |
 | `CONTRIBUTION_ALREADY_SET` | `STARTING`, `APP_DOWNLOADING`, `DATA_DOWNLOADING`, `COMPUTING`, `CONTRIBUTING` | The worker has already contributed |
-| `WORKERPOOL_AUTHORIZATION_NOT_FOUND` | `STARTING`, `APP_DOWNLOADING`, `DATA_DOWNLOADING`, `COMPUTING`, `CONTRIBUTING` | The authorization to contribute to the task is missing |
+| `WORKERPOOL_AUTHORIZATION_NOT_FOUND` | `STARTING`, `APP_DOWNLOADING`, `DATA_DOWNLOADING`, `COMPUTING`, `CONTRIBUTING` | The authorization to contribute to the _task_ is missing |
 | `APP_IMAGE_DOWNLOAD_FAILED` | `APP_DOWNLOADING` | The download of the `application` image failed |
 | `APP_NOT_FOUND_LOCALLY` | `COMPUTING` | The `application` image could not be found on the worker |
 | `APP_COMPUTE_FAILED` | `COMPUTING` | The application execution failed |
@@ -165,7 +165,7 @@ A _replicate_ can fail with the following causes:
 
 | Replicate failure cause | Replicate status | Description |
 | --- | --- | --- |
-| `TASK_DESCRIPTION_INVALID` | `STARTING` | The task description contains inconsistencies and cannot be executed |
+| `TASK_DESCRIPTION_INVALID` | `STARTING` | The _task_ description contains inconsistencies and cannot be executed |
 | `DATASET_FILE_DOWNLOAD_FAILED` | `DATA_DOWNLOADING` | Dataset download failed |
 | `DATASET_FILE_BAD_CHECKSUM` | `DATA_DOWNLOADING` | Downloaded dataset checksum does not match on-chain provided checksum |
 | `INPUT_FILES_DOWNLOAD_FAILED` | `DATA_DOWNLOADING` | At least one input file could not be downloaded |
@@ -174,13 +174,13 @@ A _replicate_ can fail with the following causes:
 
 | Replicate failure cause | Replicate status | Description |
 | --- | --- | --- |
-| `TEE_NOT_SUPPORTED` | `STARTING` | The current worker does not support `TEE` tasks. It may not be well configured or not compatible at all |
-| `UNKNOWN_SMS` | `STARTING` | SMS URL could not be resolved for this task |
-| `GET_TEE_SERVICES_CONFIGURATION_FAILED` | `STARTING` | Failed to fetch TEE task configuration properties from SMS |
-| `TEE_PREPARATION_FAILED` | `COMPUTING` | TEE task preparation step could not be completed, task cannot be executed by the worker |
+| `TEE_NOT_SUPPORTED` | `STARTING` | The current worker does not support `TEE` _tasks_. It may not be well configured or not compatible at all |
+| `UNKNOWN_SMS` | `STARTING` | SMS URL could not be resolved for this _task_ |
+| `GET_TEE_SERVICES_CONFIGURATION_FAILED` | `STARTING` | Failed to fetch TEE _task_ configuration properties from SMS |
+| `TEE_PREPARATION_FAILED` | `COMPUTING` | TEE _task_ preparation step could not be completed, _task_ cannot be executed by the worker |
 | `TEE_SESSION_GENERATION_INVALID_AUTHORIZATION` | `COMPUTING` | The worker could not authenticate to the SMS |
 | `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_EMPTY_PARAMS_UNAUTHORIZED` | `COMPUTING` | The parameters provided by the worker do not allow the `TEE` session generation |
-| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_NO_MATCH_ONCHAIN_TYPE` | `COMPUTING` | The provided task id does not match with a `TEE` task on-chain |
+| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_NO_MATCH_ONCHAIN_TYPE` | `COMPUTING` | The provided _task ID_ does not match with a `TEE` _task_ on-chain |
 | `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_GET_CHAIN_TASK_FAILED` | `COMPUTING` | The associated _task_ could not be retrieved on-chain |
 | `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_TASK_NOT_ACTIVE` | `COMPUTING` | The _task_ is not active on chain |
 | `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_GET_CHAIN_DEAL_FAILED` | `COMPUTING` | The associated _deal_ could not be retrieved on-chain |
@@ -188,7 +188,7 @@ A _replicate_ can fail with the following causes:
 | `TEE_SESSION_GENERATION_PRE_COMPUTE_GET_DATASET_SECRET_FAILED` | `COMPUTING` | Dataset secret could not be fetched from the SMS database |
 | `TEE_SESSION_GENERATION_APP_COMPUTE_NO_ENCLAVE_CONFIG` | `COMPUTING` | Application enclave configuration could not be read from on-chain _app_ description |
 | `TEE_SESSION_GENERATION_APP_COMPUTE_INVALID_ENCLAVE_CONFIG` | `COMPUTING` | Application enclave configuration could not be validated |
-| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_ENCRYPTION_TOKENS_FAILED_EMPTY_BENEFICIARY_KEY` | `COMPUTING` | Beneficiary results encryption key could not be fetched from the SMS database |
+| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_ENCRYPTION_TOKENS_FAILED_EMPTY_BENEFICIARY_KEY` | `COMPUTING` | Beneficiary result encryption key could not be fetched from the SMS database |
 | `TEE_SESSION_GENERATION_POST_COMPUTE_GET_STORAGE_TOKENS_FAILED` | `COMPUTING` | Results storage (IPFS or Dropbox) token could not be fetched from the SMS database |
 | `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_WORKER_ADDRESS` | `COMPUTING` | The worker address is missing to compute the enclave signature |
 | `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_PUBLIC_ENCLAVE_CHALLENGE` | `COMPUTING` | The enclave challenge is missing for the enclave signature computation |
