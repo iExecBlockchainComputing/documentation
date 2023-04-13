@@ -218,7 +218,7 @@ A _replicate_ can fail with the following causes:
 | `PRE_COMPUTE_DATASET_DOWNLOAD_FAILED` | `COMPUTING` | The `pre-compute` failed to download the dataset |
 | `PRE_COMPUTE_INVALID_DATASET_CHECKSUM` | `COMPUTING` | The downloaded dataset checksum does not match the expected one |
 | `PRE_COMPUTE_DATASET_DECRYPTION_FAILED` | `COMPUTING` | The downloaded dataset decryption failed |
-| `PRE_COMPUTE_SAVING_PLAIN_DATASET_FAILED` | `COMPUTING` | The decrypted dataset could not be saved |
+| `PRE_COMPUTE_SAVING_PLAIN_DATASET_FAILED` | `COMPUTING` | The decrypted dataset could not be saved in the enclave |
 | `PRE_COMPUTE_INPUT_FILE_DOWNLOAD_FAILED` | `COMPUTING` | The `pre-commpute` failed to download at least one input file |
 | `PRE_COMPUTE_TIMEOUT` | `COMPUTING` | The `pre-compute` did not complete on time |
 | `PRE_COMPUTE_FAILED_UNKNOWN_ISSUE` | `COMPUTING` | The `pre-compute` failed for an unknown cause |
