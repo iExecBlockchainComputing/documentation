@@ -184,7 +184,7 @@ A _replicate_ can fail with the following causes:
 | `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_GET_CHAIN_TASK_FAILED` | `COMPUTING` | The associated _task_ could not be retrieved on-chain |
 | `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_TASK_NOT_ACTIVE` | `COMPUTING` | The _task_ is not active on chain |
 | `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_GET_CHAIN_DEAL_FAILED` | `COMPUTING` | The associated _deal_ could not be retrieved on-chain |
-| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_INVALID_SIGNATURE` | `COMPUTING` | The provided authorization was not signed by the correct workerpool |
+| `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_INVALID_SIGNATURE` | `COMPUTING` | The provided authorization has not been signed by the correct workerpool owner |
 | `TEE_SESSION_GENERATION_PRE_COMPUTE_GET_DATASET_SECRET_FAILED` | `COMPUTING` | Dataset secret could not be fetched from the SMS database |
 | `TEE_SESSION_GENERATION_APP_COMPUTE_NO_ENCLAVE_CONFIG` | `COMPUTING` | Application enclave configuration could not be read from on-chain _app_ description |
 | `TEE_SESSION_GENERATION_APP_COMPUTE_INVALID_ENCLAVE_CONFIG` | `COMPUTING` | Application enclave configuration could not be validated |
