@@ -178,7 +178,7 @@ A _replicate_ can fail with the following causes:
 | `UNKNOWN_SMS` | `STARTING` | SMS URL could not be resolved for this task |
 | `GET_TEE_SERVICES_CONFIGURATION_FAILED` | `STARTING` | Failed to fetch TEE task configuration properties from SMS |
 | `TEE_PREPARATION_FAILED` | `COMPUTING` | TEE task preparation step could not be completed, task cannot be executed by the worker |
-| `TEE_SESSION_GENERATION_INVALID_AUTHORIZATION` | `COMPUTING` | The worker could not authenticate on the SMS |
+| `TEE_SESSION_GENERATION_INVALID_AUTHORIZATION` | `COMPUTING` | The worker could not authenticate to the SMS |
 | `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_EMPTY_PARAMS_UNAUTHORIZED` | `COMPUTING` | The parameters provided by the worker do not allow the `TEE` session generation |
 | `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_NO_MATCH_ONCHAIN_TYPE` | `COMPUTING` | The provided task id does not match with a `TEE` task on-chain |
 | `TEE_SESSION_GENERATION_EXECUTION_NOT_AUTHORIZED_GET_CHAIN_TASK_FAILED` | `COMPUTING` | The associated _task_ could not be retrieved on-chain |
