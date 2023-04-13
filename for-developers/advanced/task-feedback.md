@@ -196,10 +196,10 @@ A _replicate_ can fail with the following causes:
 | `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_TEE_CREDENTIALS` | `COMPUTING` | The `TEE` credentials are missing for the enclave signature computation |
 | `TEE_SESSION_GENERATION_SECURE_SESSION_STORAGE_CALL_FAILED` | `COMPUTING` | The `TEE` session could not be posted on the secure session storage |
 | `TEE_SESSION_GENERATION_SECURE_SESSION_GENERATION_FAILED` | `COMPUTING` | The `TEE` session could not be generated but the SMS can't provide the reason |
-| `TEE_SESSION_GENERATION_SECURE_SESSION_NO_TEE_PROVIDER` | `COMPUTING` | No `TEE` provider was found on the _task_ description |
+| `TEE_SESSION_GENERATION_SECURE_SESSION_NO_TEE_PROVIDER` | `COMPUTING` | No `TEE` provider has been found on the _task_ description |
 | `TEE_SESSION_GENERATION_GET_TASK_DESCRIPTION_FAILED` | `COMPUTING` | The _task_ description could not be read on-chain |
 | `TEE_SESSION_GENERATION_NO_SESSION_REQUEST` | `COMPUTING` | The `TEE` session request was empty |
-| `TEE_SESSION_GENERATION_NO_TASK_DESCRIPTION` | `COMPUTING` | The _task_ description was not found in the `TEE` session request |
+| `TEE_SESSION_GENERATION_NO_TASK_DESCRIPTION` | `COMPUTING` | The _task_ description has not been found in the `TEE` session request |
 | `TEE_SESSION_GENERATION_UNKNOWN_ISSUE` | `COMPUTING` | The `TEE` session could not be generated but the SMS hasn't provided any reason |
 | `PRE_COMPUTE_INVALID_ENCLAVE_CONFIGURATION` | `COMPUTING` | Application enclave configuration is invalid |
 | `PRE_COMPUTE_INVALID_ENCLAVE_HEAP_CONFIGURATION` | `COMPUTING` | Application requested HEAP size is bigger than maximum allocatable memory |
