@@ -190,7 +190,7 @@ A _replicate_ can fail with the following causes:
 | `TEE_SESSION_GENERATION_APP_COMPUTE_INVALID_ENCLAVE_CONFIG` | `COMPUTING` | Application enclave configuration could not be validated |
 | `TEE_SESSION_GENERATION_POST_COMPUTE_GET_ENCRYPTION_TOKENS_FAILED_EMPTY_BENEFICIARY_KEY` | `COMPUTING` | Beneficiary results encryption key could not be fetched from the SMS database |
 | `TEE_SESSION_GENERATION_POST_COMPUTE_GET_STORAGE_TOKENS_FAILED` | `COMPUTING` | Results storage (IPFS or Dropbox) token could not be fetched from the SMS database |
-| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_WORKER_ADDRESS` | `COMPUTING` | The worker address is missing for the enclave signature computation |
+| `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_WORKER_ADDRESS` | `COMPUTING` | The worker address is missing to compute the enclave signature |
 | `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_PUBLIC_ENCLAVE_CHALLENGE` | `COMPUTING` | The enclave challenge is missing for the enclave signature computation |
 | `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_TEE_CHALLENGE` | `COMPUTING` | The `TEE` challenge is missing for the enclave signature computation |
 | `TEE_SESSION_GENERATION_POST_COMPUTE_GET_SIGNATURE_TOKENS_FAILED_EMPTY_TEE_CREDENTIALS` | `COMPUTING` | The `TEE` credentials are missing for the enclave signature computation |
