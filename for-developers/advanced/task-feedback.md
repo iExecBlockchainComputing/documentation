@@ -236,4 +236,4 @@ A _replicate_ can fail with the following causes:
 | `POST_COMPUTE_INVALID_TEE_SIGNATURE` | `COMPUTING` | The provided signed TEE challenge is invalid |
 | `POST_COMPUTE_TIMEOUT` | `COMPUTING` | The `post-compute` did not complete on time |
 | `POST_COMPUTE_FAILED_UNKOWN_ISSUE` | `COMPUTING` | The `post-compute` failed for an unknown cause |
-| `ENCLAVE_SIGNATURE_NOT_FOUND` | `CONTRIBUTING` | The enclave signature could not be verified on the results. The latter may have been tampered with and will not be contributed |
+| `ENCLAVE_SIGNATURE_NOT_FOUND` | `CONTRIBUTING` | The enclave signature could not be found for the result. The worker will not contribute |
