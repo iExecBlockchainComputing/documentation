@@ -200,7 +200,7 @@ A _replicate_ can fail with the following causes:
 | `TEE_SESSION_GENERATION_GET_TASK_DESCRIPTION_FAILED` | `COMPUTING` | The _task_ description could not be read on-chain |
 | `TEE_SESSION_GENERATION_NO_SESSION_REQUEST` | `COMPUTING` | The `TEE` session request was empty |
 | `TEE_SESSION_GENERATION_NO_TASK_DESCRIPTION` | `COMPUTING` | The _task_ description was not found in the `TEE` session request |
-| `TEE_SESSION_GENERATION_UNKNOWN_ISSUE` | `COMPUTING` | The `TEE` session could not be generated for an unknown reason |
+| `TEE_SESSION_GENERATION_UNKNOWN_ISSUE` | `COMPUTING` | The `TEE` session could not be generated but the SMS hasn't provided any reason |
 | `PRE_COMPUTE_INVALID_ENCLAVE_CONFIGURATION` | `COMPUTING` | Application enclave configuration is invalid |
 | `PRE_COMPUTE_INVALID_ENCLAVE_HEAP_CONFIGURATION` | `COMPUTING` | Application requested HEAP size is bigger than maximum allocatable memory |
 | `PRE_COMPUTE_IMAGE_MISSING` | `COMPUTING` | The `pre-compute` image could not be found on the worker |
