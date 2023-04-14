@@ -74,45 +74,66 @@ The transitions between those states are as follow:
 ```mermaid
 flowchart
 
-subgraph Contribute stage
-    CREATED --> STARTING
-    STARTING --> STARTED
-    STARTED --> APP_DOWNLOADING
-    APP_DOWNLOADING --> APP_DOWNLOADED
-    APP_DOWNLOADED --> DATA_DOWNLOADING
-    DATA_DOWNLOADING --> DATA_DOWNLOADED
-    DATA_DOWNLOADED --> COMPUTING
-    COMPUTING --> COMPUTED
-    COMPUTED --> CONTRIBUTING
-    CONTRIBUTING --> CONTRIBUTED
+CREATED --> STARTING
 
-    STARTING --> START_FAILED
-    APP_DOWNLOADING --> APP_DOWNLOAD_FAILED
-    DATA_DOWNLOADING --> DATA_DOWNLOAD_FAILED
-    COMPUTING --> COMPUTE_FAILED
-    CONTRIBUTING --> CONTRIBUTE_FAILED
+subgraph Start stage
+    STARTING --> STARTED
+    STARTING --> START_FAILED:::failure
+end
+
+subgraph App download stage
+    STARTED --> APP_DOWNLOADING
+
+    APP_DOWNLOADING --> APP_DOWNLOADED
+    APP_DOWNLOADING --> APP_DOWNLOAD_FAILED:::failure
+end
+
+subgraph Data download stage
+    APP_DOWNLOADED --> DATA_DOWNLOADING
+
+    DATA_DOWNLOADING --> DATA_DOWNLOADED
+    DATA_DOWNLOADING --> DATA_DOWNLOAD_FAILED:::failure
+end
+
+subgraph Compute stage
+    DATA_DOWNLOADED --> COMPUTING
+
+    COMPUTING --> COMPUTED
+    COMPUTING --> COMPUTE_FAILED:::failure
+end
+
+subgraph Contribute stage
+    COMPUTED --> CONTRIBUTING
+
+    CONTRIBUTING --> CONTRIBUTED
+    CONTRIBUTING --> CONTRIBUTE_FAILED:::failure
+
 end
 
 subgraph Reveal stage
     CONTRIBUTED --> REVEALING
+
     REVEALING --> REVEALED
-    REVEALING --> REVEAL_FAILED
+    REVEALING --> REVEAL_FAILED:::failure
 end
 
 subgraph Result upload stage
     REVEALED -- Only one contributing worker will upload the result --> RESULT_UPLOAD_REQUESTED
     RESULT_UPLOAD_REQUESTED --> RESULT_UPLOADING
     RESULT_UPLOADING --> RESULT_UPLOADED
-    RESULT_UPLOADING --> RESULT_UPLOAD_FAILED
+    RESULT_UPLOADING --> RESULT_UPLOAD_FAILED:::failure
 end
 
-RESULT_UPLOADED --> COMPLETING
-REVEALED -- Most workers do not upload their result --> COMPLETING
-COMPLETING --> COMPLETED
+subgraph Complete stage
+    RESULT_UPLOADED --> COMPLETING
+    REVEALED -- Most workers do not upload their result --> COMPLETING
 
-COMPLETING --> COMPLETE_FAILED
+    COMPLETING --> COMPLETE_FAILED:::failure
+    COMPLETING --> COMPLETED:::completed
+end
 
-START_FAILED --> ABORTED
+
+START_FAILED --> ABORTED:::failure
 APP_DOWNLOAD_FAILED --> ABORTED
 DATA_DOWNLOAD_FAILED --> ABORTED
 COMPUTE_FAILED --> ABORTED
@@ -120,6 +141,10 @@ CONTRIBUTE_FAILED --> ABORTED
 REVEAL_FAILED --> ABORTED
 RESULT_UPLOAD_FAILED --> ABORTED
 COMPLETE_FAILED --> ABORTED
+
+%% Style definitions
+classDef failure fill:#a00
+classDef completed fill:#0a0
 ```
 
 ## Off-chain replicates failure causes
