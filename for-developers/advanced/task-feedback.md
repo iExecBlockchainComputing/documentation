@@ -24,8 +24,8 @@ It allows the requester to retrieve application logs produced by workers.
 
 ### Task statuses
 
-During its execution, a task transition between different off-chain statuses. Those statuses let you track how a task progresses when it's being executed and makes it easier for you to debug if the execution fails.
-Here are the statuses a task can be transitioned to:
+During its execution, a _task_ transitions between different off-chain statuses. Those statuses let you track how a _task_ progresses when it's being executed and makes it easier for you to debug if the execution fails.
+Here are the statuses a _task_ can be transitioned to:
 
 | Task status             | Description                                                              |
 |-------------------------|--------------------------------------------------------------------------|
