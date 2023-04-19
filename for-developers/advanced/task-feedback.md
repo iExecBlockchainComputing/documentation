@@ -22,6 +22,90 @@ It allows the requester to retrieve application logs produced by workers.
 
 ## Off-chain statuses
 
+### Task statuses
+
+During its execution, a task transition between different off-chain statuses. Those statuses let you track how a task progresses when it's being executed and makes it easier for you to debug if the execution fails.
+Here are the statuses a task can be transitioned to:
+
+| Task status             | Description                                                              |
+|-------------------------|--------------------------------------------------------------------------|
+| `RECEIVED`              | The Scheduler has detected the deal.                                     |
+| `INITIALIZING`          | The Scheduler is trying to set the task on-chain status to `INITIALIZED` |
+| `INITIALIZED`           | The task on-chain status has been correctly set to `INITIALIZED`         |
+| `RUNNING`               | At least one Worker has started to work on the task                      |
+| `CONSENSUS_REACHED`     | The consensus has been reached                                           |
+| `AT_LEAST_ONE_REVEALED` | At least one Worker revealed its result                                  |
+| `RESULT_UPLOADING`      | The selected Worker is uploading its result                              |
+| `RESULT_UPLOADED`       | The result has been uploaded                                             |
+| `FINALIZING`            | The Scheduler is trying to set the task on-chain status to `FINALIZED`   |
+| `FINALIZED`             | The task on-chain status has been correctly set to `FINALIZED`           |
+
+However, things sometimes don't work as expected. In that case, failure statuses help to understand what went wrong:
+
+| Task status              | Description                                                                  |
+|--------------------------|------------------------------------------------------------------------------|
+| `INITIALIZE_FAILED`      | Task on-chain initialization failed                                          |
+| `RUNNING_FAILED`         | All Workers have failed to run this TEE task                                 |
+| `CONTRIBUTION_TIMEOUT`   | Contribution deadline has been reached before any contribution has been sent |
+| `RESULT_UPLOAD_TIMEOUT`  | The final deadline has been reached while the result was being uploaded      |
+| `FINALIZE_FAILED`        | Task on-chain finalization failed                                            |
+| `FINAL_DEADLINE_REACHED` | The final deadline has been reached                                          |
+| `FAILED`                 | Final status for any previous failure                                        |
+
+
+The transitions between those states are as follows:
+```mermaid
+flowchart
+
+%%% Usual flow
+
+RECEIVED --> INITIALIZING
+INITIALIZING --> INITIALIZED
+INITIALIZED --> RUNNING
+RUNNING --> CONSENSUS_REACHED
+CONSENSUS_REACHED --> AT_LEAST_ONE_REVEALED
+AT_LEAST_ONE_REVEALED --> RESULT_UPLOADING
+RESULT_UPLOADING --> RESULT_UPLOADED
+RESULT_UPLOADED --> FINALIZING
+FINALIZING --> FINALIZED
+FINALIZED --> COMPLETED:::completed
+
+%%% Failures
+
+RECEIVED -- If TEE task but no configured SMS\nor on-chain INITIALIZE request failed --> INITIALIZE_FAILED
+INITIALIZING -- If on-chain INITIALIZE transaction reverted --> INITIALIZE_FAILED
+INITIALIZED --> CONTRIBUTION_TIMEOUT
+RUNNING -- If TEE task and\nall alive workers have failed to run the task --> RUNNING_FAILED
+RUNNING --> CONTRIBUTION_TIMEOUT
+RESULT_UPLOADING --> RESULT_UPLOAD_TIMEOUT
+RESULT_UPLOADED -- If on-chain FINALIZE request failed --> FINALIZE_FAILED
+FINALIZING -- If on-chain FINALIZE transaction reverted  --> FINALIZE_FAILED
+
+INITIALIZE_FAILED --> FAILED
+RUNNING_FAILED --> FAILED
+CONTRIBUTION_TIMEOUT --> FAILED
+RESULT_UPLOAD_TIMEOUT --> FAILED
+FINALIZE_FAILED --> FAILED
+
+subgraph Failures
+    INITIALIZE_FAILED:::failure
+    RUNNING_FAILED:::failure
+    CONTRIBUTION_TIMEOUT:::failure
+    RESULT_UPLOAD_TIMEOUT:::failure
+    FINALIZE_FAILED:::failure
+
+    FAILED:::failure
+end
+
+
+%% Style definitions
+classDef failure fill:#a00
+classDef completed fill:#0a0
+```
+
+Please note that, for the sake of simplicity, the `FINAL_DEADLINE_REACHED` status has not been pictured. In fact, any other non-final status can lead to this `FINAL_DEADLINE_REACHED` status.
+
+### Replicate statuses
 One _task_ bought by a requester will result in one off-chain _task_ with one or more _replicates_ depending on the level of trust set by the requester. For a given _task_, each worker involved in the computation will have its own _replicate_ containing the description of the _task_ to compute. The whole computation of a _replicate_ is made of several stages. Each stage completed by a worker will result in an update of its _replicate_ status.
 
 The links between a _task_ to its _replicates_ can be represented as follows:
@@ -69,7 +153,7 @@ While the _task_ holds a meta status, each _replicate_ has its own status which 
 | `RECOVERING` | The worker has been stopped, it is starting back from where it stopped |
 | `WORKER_LOST` | The worker didn't ping the iexec-core scheduler for a while. It is considered as out for this _task_ |
 
-The transitions between those states are as follow:
+The transitions between those states are as follows:
 
 ```mermaid
 flowchart
@@ -147,21 +231,21 @@ classDef failure fill:#a00
 classDef completed fill:#0a0
 ```
 
-## Off-chain replicates failure causes
+### Off-chain replicates failure causes
 
 When a worker fails to complete a _replicate_, it returns a failure cause. This cause is helpful to understand what went wrong.
 
-### Failures detected by the Scheduler
+#### Failures detected by the Scheduler
 
 | Replicate failure cause | Description |
 | --- | --- |
 | `REVEAL_TIMEOUT` | The worker took too long to reveal its proof (more than 2 periods after the consensus) |
 
-### Failures from Worker
+#### Failures from Worker
 
 A _replicate_ can fail with the following causes:
 
-#### Common failures
+##### Common failures
 
 | Replicate failure cause | Replicate status | Description |
 | --- | --- | --- |
@@ -186,7 +270,7 @@ A _replicate_ can fail with the following causes:
 | `CANNOT_REVEAL` | `REVEALING` | One of the mandatory condition was not met. Reveal cannot happen |
 | `RESULT_LINK_MISSING` | `UPLOADING` | No result link has been provided by the worker |
 
-#### Specific failures for standard tasks
+##### Specific failures for standard tasks
 
 | Replicate failure cause | Replicate status | Description |
 | --- | --- | --- |
@@ -195,7 +279,7 @@ A _replicate_ can fail with the following causes:
 | `DATASET_FILE_BAD_CHECKSUM` | `DATA_DOWNLOADING` | Downloaded dataset checksum does not match on-chain provided checksum |
 | `INPUT_FILES_DOWNLOAD_FAILED` | `DATA_DOWNLOADING` | At least one input file could not be downloaded |
 
-#### Specific failures for TEE tasks
+##### Specific failures for TEE tasks
 
 | Replicate failure cause | Replicate status | Description |
 | --- | --- | --- |
