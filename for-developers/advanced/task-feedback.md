@@ -29,7 +29,7 @@ Here are the statuses a task can be transitioned to:
 
 | Task status             | Description                                                              |
 |-------------------------|--------------------------------------------------------------------------|
-| `RECEIVED`              | The Scheduler has detected the deal.                                     |
+| `RECEIVED`              | The Scheduler has detected the deal                                      |
 | `INITIALIZING`          | The Scheduler is trying to set the task on-chain status to `INITIALIZED` |
 | `INITIALIZED`           | The task on-chain status has been correctly set to `INITIALIZED`         |
 | `RUNNING`               | At least one Worker has started to work on the task                      |
