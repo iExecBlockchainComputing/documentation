@@ -27,25 +27,25 @@ It allows the requester to retrieve application logs produced by workers.
 During its execution, a _task_ transitions between different off-chain statuses. Those statuses let you track how a _task_ progresses when it's being executed and makes it easier for you to debug if the execution fails.
 Here are the statuses a _task_ can be transitioned to:
 
-| Task status             | Description                                                              |
-|-------------------------|--------------------------------------------------------------------------|
-| `RECEIVED`              | The Scheduler has detected the deal                                      |
-| `INITIALIZING`          | The Scheduler is trying to set the task on-chain status to `INITIALIZED` |
-| `INITIALIZED`           | The task on-chain status has been correctly set to `INITIALIZED`         |
-| `RUNNING`               | At least one Worker has started to work on the task                      |
-| `CONSENSUS_REACHED`     | The consensus has been reached                                           |
-| `AT_LEAST_ONE_REVEALED` | At least one Worker revealed its result                                  |
-| `RESULT_UPLOADING`      | The selected Worker is uploading its result                              |
-| `RESULT_UPLOADED`       | The result has been uploaded                                             |
-| `FINALIZING`            | The Scheduler is trying to set the task on-chain status to `FINALIZED`   |
-| `FINALIZED`             | The task on-chain status has been correctly set to `FINALIZED`           |
+| Task status             | Description                                                                |
+|-------------------------|----------------------------------------------------------------------------|
+| `RECEIVED`              | The Scheduler has detected the deal                                        |
+| `INITIALIZING`          | The Scheduler is trying to set the _task_ on-chain status to `INITIALIZED` |
+| `INITIALIZED`           | The _task_ on-chain status has been correctly set to `INITIALIZED`         |
+| `RUNNING`               | At least one Worker has started to work on the _task_                      |
+| `CONSENSUS_REACHED`     | The consensus has been reached                                             |
+| `AT_LEAST_ONE_REVEALED` | At least one Worker revealed its result                                    |
+| `RESULT_UPLOADING`      | The selected Worker is uploading its result                                |
+| `RESULT_UPLOADED`       | The result has been uploaded                                               |
+| `FINALIZING`            | The Scheduler is trying to set the _task_ on-chain status to `FINALIZED`   |
+| `FINALIZED`             | The _task_ on-chain status has been correctly set to `FINALIZED`           |
 
 However, things sometimes don't work as expected. In that case, failure statuses help to understand what went wrong:
 
 | Task status              | Description                                                                  |
 |--------------------------|------------------------------------------------------------------------------|
 | `INITIALIZE_FAILED`      | Task on-chain initialization failed                                          |
-| `RUNNING_FAILED`         | All Workers have failed to run this TEE task                                 |
+| `RUNNING_FAILED`         | All Workers have failed to run this TEE _task_                               |
 | `CONTRIBUTION_TIMEOUT`   | Contribution deadline has been reached before any contribution has been sent |
 | `RESULT_UPLOAD_TIMEOUT`  | The final deadline has been reached while the result was being uploaded      |
 | `FINALIZE_FAILED`        | Task on-chain finalization failed                                            |
