@@ -24,11 +24,10 @@ It allows the requester to retrieve application logs produced by workers.
 
 ### Task statuses
 
-During its execution, a _task_ transitions between different off-chain statuses. Those statuses let you track how a _task_ progresses when it's being executed and makes it easier for you to debug if the execution fails.
-Here are the statuses a _task_ can be transitioned to:
+During its execution, a _task_ transitions between different off-chain statuses. Those statuses let you track how a _task_ progresses when it's being executed and makes it easier for you to debug if the execution fails. Here are the statuses a _task_ can be transitioned to:
 
 | Task status | Description |
-|---|---|
+| --- | --- |
 | `RECEIVED` | The Scheduler has detected the deal |
 | `INITIALIZING` | The Scheduler is trying to set the _task_ on-chain status to `INITIALIZED` |
 | `INITIALIZED` | The _task_ on-chain status has been correctly set to `INITIALIZED` |
@@ -43,7 +42,7 @@ Here are the statuses a _task_ can be transitioned to:
 However, things sometimes don't work as expected. In that case, failure statuses help to understand what went wrong:
 
 | Task status | Description |
-|---|---|
+| --- | --- |
 | `INITIALIZE_FAILED` | Task on-chain initialization failed |
 | `RUNNING_FAILED` | All Workers have failed to run this TEE _task_ |
 | `CONTRIBUTION_TIMEOUT` | Contribution deadline has been reached before any contribution has been sent |
@@ -52,8 +51,8 @@ However, things sometimes don't work as expected. In that case, failure statuses
 | `FINAL_DEADLINE_REACHED` | The final deadline has been reached |
 | `FAILED` | Final status for any previous failure |
 
-
 The transitions between those states are as follows:
+
 ```mermaid
 flowchart
 
@@ -105,6 +104,7 @@ classDef completed fill:#0a0
 Please note that, for the sake of simplicity, the `FINAL_DEADLINE_REACHED` status has not been pictured. In fact, any other non-final status can lead to this `FINAL_DEADLINE_REACHED` status.
 
 ### Replicate statuses
+
 One _task_ bought by a requester will result in one off-chain _task_ with one or more _replicates_ depending on the level of trust set by the requester. For a given _task_, each worker involved in the computation will have its own _replicate_ containing the description of the _task_ to compute. The whole computation of a _replicate_ is made of several stages. Each stage completed by a worker will result in an update of its _replicate_ status.
 
 The links between a _task_ to its _replicates_ can be represented as follows:
@@ -257,7 +257,7 @@ A _replicate_ can fail with the following causes:
 | `APP_IMAGE_DOWNLOAD_FAILED` | `APP_DOWNLOADING` | The download of the `application` image failed |
 | `APP_NOT_FOUND_LOCALLY` | `COMPUTING` | The `application` image could not be found on the worker |
 | `APP_COMPUTE_FAILED` | `COMPUTING` | The application execution failed |
-| `POST_COMPUTE_COMPUTED_FILE_NOT_FOUND` | `COMPUTING` | The  `computed.json` file could not be found |
+| `POST_COMPUTE_COMPUTED_FILE_NOT_FOUND` | `COMPUTING` | The `computed.json` file could not be found |
 | `POST_COMPUTE_RESULT_DIGEST_COMPUTATION_FAILED` | `COMPUTING` | The `result digest` could not be computed from the `computed.json` file |
 | `POST_COMPUTE_OUT_FOLDER_ZIP_FAILED` | `COMPUTING` | `post-compute` failed to zip the output folder resulting from the computation |
 | `POST_COMPUTE_SEND_COMPUTED_FILE_FAILED` | `COMPUTING` | Failed to post `computed.json` to worker |
