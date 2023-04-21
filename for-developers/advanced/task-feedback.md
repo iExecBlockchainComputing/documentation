@@ -28,7 +28,7 @@ During its execution, a _task_ transitions between different off-chain statuses.
 Here are the statuses a _task_ can be transitioned to:
 
 | Task status | Description |
-|----|---|
+|---|---|
 | `RECEIVED` | The Scheduler has detected the deal |
 | `INITIALIZING` | The Scheduler is trying to set the _task_ on-chain status to `INITIALIZED` |
 | `INITIALIZED` | The _task_ on-chain status has been correctly set to `INITIALIZED` |
