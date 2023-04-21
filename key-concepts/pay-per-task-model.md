@@ -4,13 +4,12 @@ We are introducing a new method for pricing and we have defined several task cat
 
 In the future, we’ll redefine the categories, and provide more advanced tools for helping developers to maximize the usage of the infrastructure
 
-**Categories Description**
+**Categories Description:**
 
 | **Category** | **Maximum Elapsed Time** |
-| :--- | :--- |
-| 0 – XS | 5 min |
-| 1 – S | 20 min |
-| 2 – M | 1 hour |
-| 3 – L | 3 hour |
-| 4 – XL | 10 hour |
-
+| ------------ | ------------------------ |
+| 0 – XS       | 5 min                    |
+| 1 – S        | 20 min                   |
+| 2 – M        | 1 hour                   |
+| 3 – L        | 3 hour                   |
+| 4 – XL       | 10 hour                  |

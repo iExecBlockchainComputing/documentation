@@ -1,27 +1,38 @@
 # Protect result
 
-{% hint style="success" %}
-**Prerequisites**
-
-* [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
-* [Nodejs](https://nodejs.org) 14.0.0 or higher.
-* [iExec SDK](https://www.npmjs.com/package/iexec) 7.2.0 or higher.
-* Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
-{% endhint %}
+In previous tutorials, we saw how to build [Confidential Computing applications](intel-sgx-technology.md) that run securely inside enclaves and combine them with confidential assets to get the most out of confidential computing advantages. In this chapter, we will push things further to protect the workflow in an end to end mode. That means the next step would be encrypting results.
 
 {% hint style="warning" %}
-Please make sure you have already checked the [Quickstart](../quick-start-for-developers.md), [Your first application](../your-first-app.md) and [Build trusted applications](create-your-first-sgx-app.md) tutorials before learning how to protect the result of your task.
+
+Before going any further, make sure you managed to [Build with a TEE framework](choose-your-tee-framework.md).
+
 {% endhint %}
 
-In previous tutorials, we saw how to build trusted applications that run securely inside [enclaves](intel-sgx-technology.md#enclave) and combine them with confidential datasets to get the most out of confidential computing advantages. In this chapter, we will push things further to protect the workflow in an end to end mode. That means the next step would be encrypting results.
+{% hint style="success" %}
+
+**Prerequisites:**
+
+- [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
+- [Nodejs](https://nodejs.org) 14.17.1 or higher.
+- [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
+- Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
+
+{% endhint %}
 
 {% hint style="info" %}
+
 You don't need to change your application's code or redeploy it to add this feature.
+
 {% endhint %}
 
-Assuming your application is deployed \(if not please check how to do it [here](../your-first-app.md#deploy-your-app-on-iexec)\), before triggering an execution you need to generate a public/private AES key-pair and push the public part to the [Secret Management Service](intel-sgx-technology.md#secret-management-service-sms). The latter, in turn, will provide it, at runtime, to the enclave running your trusted application.
+Assuming your application is deployed (if not please check how to do it [with Scone](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec) or [with Gramine](create-your-first-gramine-app.md#deploy-the-tee-app-on-iexec)), before triggering an execution you need to generate an RSA key-pair, then push the public key to the [Secret Management Service](intel-sgx-technology.md#secret-management-service-sms). The latter, in turn, will provide it, at runtime, to the enclave running your Confidential Computing application.
 
 To generate the key-pair, go to `~/iexec-projects` and use the following SDK command:
+
+Depending on the TEE framework you are using, make sure your `chain.json` content is correct:
+
+- [Scone chain.json](create-your-first-sgx-app.md#update-chain-json)
+- [Gramine chain.json](create-your-first-gramine-app.md#update-chain-json)
 
 ```bash
 iexec result generate-encryption-keypair
@@ -37,29 +48,87 @@ This generates two files in `.secrets/beneficiary/`. Make sure to back up the pr
 ...
 ```
 
-Make sure you use the debug Secret Management Service (see [Build trusted applications > Deploy the dataset](sgx-encrypted-dataset.md#deploy-the-dataset)). Default SMS is production so make sure you use the right one.
-
 Now, push the public key to the SMS:
 
+{% tabs %}
+
+{% tab title="Scone" %}
+
 ```bash
-iexec result push-encryption-key --chain bellecour
+iexec result push-encryption-key \
+    --chain bellecour \
+    --tee-framework scone
 ```
+
+{% endtab %}
+
+{% tab title="Gramine" %}
+
+```bash
+iexec result push-encryption-key \
+    --chain bellecour \
+    --tee-framework gramine
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 And check it using:
 
+{% tabs %}
+
+{% tab title="Scone" %}
+
 ```bash
-iexec result check-encryption-key --chain bellecour
+iexec result check-encryption-key \
+    --chain bellecour \
+    --tee-framework scone
 ```
+
+{% endtab %}
+
+{% tab title="Gramine" %}
+
+```bash
+iexec result check-encryption-key \
+    --chain bellecour \
+    --tee-framework gramine
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 Now to see that in action, you'd need to trigger a task and specify yourself as the beneficiary in the command:
 
+{% tabs %}
+
+{% tab title="Scone" %}
+
 ```bash
 iexec app run <0x-your-app-address> \
-    --chain bellecour                  \
-    --tag tee                       \
+    --chain bellecour \
+    --tag tee,scone \
     --encrypt-result \
     --watch
 ```
+
+{% endtab %}
+
+{% tab title="Gramine" %}
+
+```bash
+iexec app run <0x-your-app-address> \
+    --chain bellecour \
+    --tag tee,gramine \
+    --encrypt-result \
+    --watch
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 Wait for the task to be `COMPLETED` and download the result:
 
@@ -76,11 +145,13 @@ mkdir /tmp/trash && \
 ```
 
 {% code title="iexec\_out/result.zip" %}
+
 ```bash
 )3�Xq��Yv��ȿzE�fRu<\�ݵm�m���疞r���c��(a���{{'��ܼ���͛�q/[{����H�t>��������h��gD$g��\.�k��j�����"�s?"�h�J�_Q41�_[{��X��������Ԛ��a�蘟v���E����r����肽
 �����Յ]9W�TL�*���
           �t��d���z��O`����!���e�&snoL3�K6L9���%
 ```
+
 {% endcode %}
 
 Now you should decrypt the result by running:
@@ -105,4 +176,3 @@ Hello, world!
 Voilà! By finishing this part, you should be able to use confidential computing on iExec like a Ninja. All parts of the workflow are protected: the execution, the dataset, and the result.
 
 You can go to the advanced section and learn more about managing orders on the iExec to effectively monetize your applications and datasets.
-
