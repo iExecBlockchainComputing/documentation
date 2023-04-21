@@ -43,11 +43,11 @@ However, things sometimes don't work as expected. In that case, failure statuses
 
 | Task status | Description |
 | --- | --- |
-| `INITIALIZE_FAILED` | Task on-chain initialization failed |
+| `INITIALIZE_FAILED` | _Task_ on-chain initialization failed |
 | `RUNNING_FAILED` | All Workers have failed to run this TEE _task_ |
 | `CONTRIBUTION_TIMEOUT` | Contribution deadline has been reached before any contribution has been sent |
 | `RESULT_UPLOAD_TIMEOUT` | The final deadline has been reached while the result was being uploaded |
-| `FINALIZE_FAILED` | Task on-chain finalization failed |
+| `FINALIZE_FAILED` | _Task_ on-chain finalization failed |
 | `FINAL_DEADLINE_REACHED` | The final deadline has been reached |
 | `FAILED` | Final status for any previous failure |
 
