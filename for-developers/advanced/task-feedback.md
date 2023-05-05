@@ -140,7 +140,6 @@ While the _task_ holds a meta status, each _replicate_ has its own status which 
 | `REVEALED` | The worker has revealed the proof on chain |
 | `REVEAL_FAILED` | The reveal transaction failed |
 | `RESULT_UPLOAD_REQUESTED` | The worker has been requested to upload the result to a remote filesystem |
-| `RESULT_UPLOAD_REQUEST_FAILED` | The worker did not accept to be requested to upload the result |
 | `RESULT_UPLOADING` | The worker is uploading the result |
 | `RESULT_UPLOAD_FAILED` | The upload of the result failed |
 | `RESULT_UPLOADED` | The result has been uploaded to IPFS over the _iExec Result Proxy_ (standard or TEE _tasks_) or to Dropbox (TEE only), dependending on the _deal_ parameters |
