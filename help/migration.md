@@ -2,17 +2,19 @@
 
 iExec v8 comes with some breaking changes, follow this guide to migrate from v7 to v8.
 
+Reminder, the v7 version is still supported until the next major release 
+[V7 Marketplace](https://v7.market.iex.ec)
+
 - [CLI users](#cli-users)
+ - [SDK upgrade version](#sdk-upgrade-version)
   - [Application migration](#application-migration)
   - [Dataset migration](#dataset-migration)
-  - [Requester migration](#requester-migration)
+  - [Requester migration](#requester-migration) 
 - [JS library](#js-library)
 
 ## CLI users
 
-### Application migration
-
-With the support of gramine for confidential computing, the workflow to deploy and manage a dapp has slighly evolved
+### SDK upgrade version
 
 Upgrade iExec SDK CLI to v8:
 
@@ -22,33 +24,35 @@ npm i -g iexec@8
 iexec -V
 # 8.0.0
 ```
+
+### Application migration
+
+With the support of gramine for confidential computing, the workflow to deploy and manage a dapp has slighly evolved
+
 #### Standard app migration
 
-Starting from the same Docker image and the same I/O management, Application developers need to publish their application and their sell order to the v8 marketplace in order to make it available for requesters.
+Starting from the same Docker image and the same I/O management, the App has to be published with their sell order to the v8 marketplace.
 
 #### Scone app migration
 
-Starting from the same Docker image and the same I/O management, you only need to rebuild your docker image with the new V8 sconify.sh
-https://documentations.iex.ec/staging/v/v8-staging/for-developers/confidential-computing/choose-your-tee-framework/create-your-first-sgx-app#build-the-tee-docker-image   
+Starting from the same Docker image and the same I/O management, you only need to rebuild your docker image with the new V8 sconifier sconify.sh
 
-The app init must explicitly declare the Scone tee framework.
+[More details](https://documentations.iex.ec/staging/v/v8-staging/for-developers/confidential-computing/choose-your-tee-framework/create-your-first-sgx-app#build-the-tee-docker-image)
+
+The app initialization must explicitly declare the Scone tee framework.
+
 ```bash
 iexec app  init --tee-framework scone
 ```
+
 Publish your application to the v8 marketplace:
 
 ```bash
 iexec app publish <app-address> [options]
 ```
 
-If your application uses a secret, push it to the v8 SMS:
+Edit the "tee scone" tag in iexec.json before Signing and publishing your sell order. 
 
-```bash
-iexec app push-secret <app-address> [options]
-```
-
-Sign and publish your sell order after edit the "tee scone" tag from the app order 
-description in iexec.json
 ```file
 "order": {
     "apporder": {
@@ -65,24 +69,22 @@ description in iexec.json
 
 #### App secret 
 
-Publish your app secret in the v8 SMS
+If your application uses a secret, push it to the v8 SMS (Secret Management Service):
 
 ```bash
-iexec app push-secret [options]
+iexec app push-secret <app-address> [options]
 ```
 
 
 ### Dataset migration
 
-Dataset developers need to push their dataset secret to the v8 SMS and publish their dataset sell order to the v8 marketplace in order to make it available for requesters.
+Dataset developers need to push their dataset secret to the v8 SMS and publish their dataset sell order to the v8 marketplace.
 
-Upgrade iExec SDK CLI to v8:
+
+Publish your dataset to the v8 marketplace:
 
 ```bash
-npm i -g iexec@8
-
-iexec -V
-# 8.0.0
+iexec dataset publish <dataset-address> [options]
 ```
 
 Push your dataset secret to the v8 SMS:
@@ -91,11 +93,6 @@ Push your dataset secret to the v8 SMS:
 iexec dataset push-secret <dataset-address> --secret-path <secret-path> [options]
 ```
 
-Publish your dataset to the v8 marketplace:
-
-```bash
-iexec dataset publish <dataset-address> [options]
-```
 Publish your dataset order with the correct tag
 
 Before
@@ -116,15 +113,6 @@ for tee application gramine
 ### Requester migration
 
 Requesters need to login to the Result proxy v8 to store their results and must push their encryption public key to the v8 SMS to use result encryption feature.
-
-Upgrade iExec SDK CLI to v8:
-
-```bash
-npm i -g iexec@8
-
-iexec -V
-# 8.0.0
-```
 
 Login to the v8 Result proxy:
 
