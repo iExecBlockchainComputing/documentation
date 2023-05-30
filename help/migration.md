@@ -2,11 +2,17 @@
 
 iExec v8 comes with some breaking changes, follow this guide to migrate from v7 to v8.
 
-Reminder, the v7 version is still supported until the next major release 
+{% hint style="info" %}
+
+The v7 iExec Marketplace is still supported until the next major release.
+
 [V7 Marketplace](https://v7.market.iex.ec)
 
+{% endhint %}
+
+
 - [CLI users](#cli-users)
- - [SDK upgrade version](#sdk-upgrade-version)
+  - [SDK upgrade version](#sdk-upgrade-version)
   - [Application migration](#application-migration)
   - [Dataset migration](#dataset-migration)
   - [Requester migration](#requester-migration) 
@@ -45,13 +51,13 @@ The app initialization must explicitly declare the Scone tee framework.
 iexec app  init --tee-framework scone
 ```
 
-Publish your application to the v8 marketplace:
+Deploy your application to the v8 marketplace:
 
 ```bash
-iexec app publish <app-address> [options]
+iexec app deploy <app-address> [options]
 ```
 
-Edit the "tee scone" tag in iexec.json before Signing and publishing your sell order. 
+Edit with the new "tee scone" tag in iexec.json, before signing and publishing your sell order. 
 
 ```file
 "order": {
@@ -75,16 +81,14 @@ If your application uses a secret, push it to the v8 SMS (Secret Management Serv
 iexec app push-secret <app-address> [options]
 ```
 
-
 ### Dataset migration
 
-Dataset developers need to push their dataset secret to the v8 SMS and publish their dataset sell order to the v8 marketplace.
+Dataset developers should deploy their v7 dataset to v8 without any modifications, and push the dataset secret to v8 SMS. They should also publish their dataset sell order to the v8 marketplace.
 
-
-Publish your dataset to the v8 marketplace:
+Deploy your dataset to the v8 marketplace:
 
 ```bash
-iexec dataset publish <dataset-address> [options]
+iexec dataset deploy <dataset-address> [options]
 ```
 
 Push your dataset secret to the v8 SMS:
@@ -95,24 +99,14 @@ iexec dataset push-secret <dataset-address> --secret-path <secret-path> [options
 
 Publish your dataset order with the correct tag
 
-Before
-for tee application
-```file
-"tag": "0x0000000000000000000000000000000000000000000000000000000000000001"
-```
-After
+| Tee framework | V7 | V8 |
+| --- | --- | --- |
+| Tag Scone | "0x0000000000000000000000000000000000000000000000000000000000000001" | "0x0000000000000000000000000000000000000000000000000000000000000003" |
+| Tag Gramine | n/a | "0x0000000000000000000000000000000000000000000000000000000000000005" |
 
-for tee application scone 
-```file
-"tag": 0x0000000000000000000000000000000000000000000000000000000000000003"
-```
-for tee application gramine
-```file
-"tag": 0x0000000000000000000000000000000000000000000000000000000000000005"
-```
 ### Requester migration
 
-Requesters need to login to the Result proxy v8 to store their results and must push their encryption public key to the v8 SMS to use result encryption feature.
+Requesters need to login to the Result proxy v8 to store their results and must push their public key to the v8 SMS to use result encryption feature.
 
 Login to the v8 Result proxy:
 
@@ -124,6 +118,13 @@ iexec storage init --tee-framework gramine
 ```
 
 Push your encryption key to the v8 SMS:
+
+{% hint style="info" %}
+To generate your encryption keypair 
+```bash
+iexec result generate-encryption-keypair
+```
+{% endhint %}
 
 ```bash
 iexec result push-encryption-key [options]
@@ -142,7 +143,9 @@ iexec requester push-secret [options]
 
 ## JS library
 
-Upgrade iExec SDK CLI to v8 in your project's dependencies to use the v8 stack.
+Upgrade iExec SDK JS library to v8 in your project's dependencies.
+
+Then, migrate your assets in a similar way to CLI.
 
 ```bash
 npm i iexec@8
