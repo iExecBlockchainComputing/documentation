@@ -33,11 +33,11 @@ iexec -V
 
 ### Application migration
 
-With the support of gramine for confidential computing, the workflow to deploy and manage a dapp has slighly evolved
+With the support of Gramine for confidential computing, the workflow for deploying and managing a dapp has slightly evolved.
 
 #### Standard app migration
 
-Starting from the same Docker image and the same I/O management, the App has to be published with their sell order to the v8 marketplace.
+The application must be published to the v8 marketplace with its sell order, using the same Docker image and I/O management as before.
 
 #### Scone app migration
 
@@ -57,7 +57,7 @@ Deploy your application to the v8 marketplace:
 iexec app deploy <app-address> [options]
 ```
 
-Edit with the new "tee scone" tag in iexec.json, before signing and publishing your sell order. 
+Edit the iexec.json file with the new "tee scone" tag before signing and publishing your sell order.
 
 ```file
 "order": {
@@ -83,7 +83,7 @@ iexec app push-secret <app-address> [options]
 
 ### Dataset migration
 
-Dataset developers should deploy their v7 dataset to v8 without any modifications, and push the dataset secret to v8 SMS. They should also publish their dataset sell order to the v8 marketplace.
+DDataset developers should deploy their v7 dataset to v8 without making any modifications, and then push the dataset secret to v8 SMS. Additionally, they should publish their dataset's sell order on the v8 marketplace.
 
 Deploy your dataset to the v8 marketplace:
 
@@ -106,7 +106,7 @@ Publish your dataset order with the correct tag
 
 ### Requester migration
 
-Requesters need to login to the Result proxy v8 to store their results and must push their public key to the v8 SMS to use result encryption feature.
+Requesters must log in to the Result Proxy v8 to store their results. To use the result encryption feature, they must also push their public key to the v8 SMS.
 
 Login to the v8 Result proxy:
 
@@ -143,9 +143,9 @@ iexec requester push-secret [options]
 
 ## JS library
 
-Upgrade iExec SDK JS library to v8 in your project's dependencies.
+Upgrade the iExec SDK JS library to v8 in your project's dependencies.
 
-Then, migrate your assets in a similar way to CLI.
+Then, migrate your assets in a similar way as with the CLI.
 
 ```bash
 npm i iexec@8
