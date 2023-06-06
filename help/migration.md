@@ -41,9 +41,7 @@ The application must be published to the v8 marketplace with its sell order, usi
 
 #### Scone app migration
 
-Starting from the same Docker image and the same I/O management, you only need to rebuild your docker image with the new V8 sconifier sconify.sh
-
-[More details](https://documentations.iex.ec/staging/v/v8-staging/for-developers/confidential-computing/choose-your-tee-framework/create-your-first-sgx-app#build-the-tee-docker-image)
+Starting from the same Docker image and the same I/O management, you only need to rebuild your docker image with the new v8 sconifier (`sconify.sh` script). See more details [here](https://documentations.iex.ec/staging/v/v8-staging/for-developers/confidential-computing/choose-your-tee-framework/create-your-first-sgx-app#build-the-tee-docker-image).
 
 The app initialization must explicitly declare the Scone TEE framework.
 
