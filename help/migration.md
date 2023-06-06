@@ -33,7 +33,7 @@ iexec -V
 
 ### Application migration
 
-With the support of Gramine for confidential computing, the workflow for deploying and managing a dapp has slightly evolved.
+With the support of Gramine for Confidential Computing applications, the workflow for deploying and managing a dapp has slightly evolved.
 
 #### Standard app migration
 
