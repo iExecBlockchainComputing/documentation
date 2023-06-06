@@ -97,7 +97,7 @@ Push your dataset secret to the v8 SMS:
 iexec dataset push-secret <dataset-address> --secret-path <secret-path> [options]
 ```
 
-Publish your dataset order with the correct tag
+Publish your dataset order with the correct tag. See tables bellow:
 
 | Tee framework | V7 | V8 |
 | --- | --- | --- |
