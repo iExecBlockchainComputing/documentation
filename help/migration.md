@@ -37,7 +37,7 @@ With the support of Gramine for Confidential Computing applications, the workflo
 
 #### Standard app migration
 
-The application must be published to the v8 marketplace with its sell order, using the same Docker image and I/O management as before.
+The application must be published to the v8 marketplace with its sell order, using same Docker image and I/O management as before.
 
 #### Scone app migration
 
