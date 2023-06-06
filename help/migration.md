@@ -135,7 +135,7 @@ iexec result push-encryption-key --tee-framework gramine
 
 #### Requester secret 
 
-Publish your requester secret in the v8 SMS
+Publish your requester secret to the v8 SMS
 
 ```bash
 iexec requester push-secret [options]
