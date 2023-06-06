@@ -15,7 +15,7 @@ The v7 iExec Marketplace is still supported until the next v9 release.
   - [SDK upgrade version](#sdk-upgrade-version)
   - [Application migration](#application-migration)
   - [Dataset migration](#dataset-migration)
-  - [Requester migration](#requester-migration) 
+  - [Requester migration](#requester-migration)
 - [JS library](#js-library)
 
 ## CLI users
