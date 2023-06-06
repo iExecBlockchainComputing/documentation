@@ -106,7 +106,7 @@ Publish your dataset order with the correct tag
 
 ### Requester migration
 
-Requesters must log in to the Result Proxy v8 to store their results. To use the result encryption feature, they must also push their public key to the v8 SMS.
+Requesters must log in to the v8 Result Proxy to store their results. To use the result encryption feature, they must also push their public key to the v8 SMS.
 
 Login to the v8 Result proxy:
 
