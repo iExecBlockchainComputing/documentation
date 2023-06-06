@@ -4,7 +4,7 @@ iExec v8 comes with some breaking changes, follow this guide to migrate from v7 
 
 {% hint style="info" %}
 
-The v7 iExec Marketplace is still supported until the next major release.
+The v7 iExec Marketplace is still supported until the next v9 release.
 
 [V7 Marketplace](https://v7.market.iex.ec)
 
