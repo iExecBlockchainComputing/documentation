@@ -45,7 +45,7 @@ Starting from the same Docker image and the same I/O management, you only need t
 
 [More details](https://documentations.iex.ec/staging/v/v8-staging/for-developers/confidential-computing/choose-your-tee-framework/create-your-first-sgx-app#build-the-tee-docker-image)
 
-The app initialization must explicitly declare the Scone tee framework.
+The app initialization must explicitly declare the Scone TEE framework.
 
 ```bash
 iexec app  init --tee-framework scone
