@@ -2,7 +2,17 @@
 
 iExec v8 comes with some breaking changes, follow this guide to migrate from v7 to v8.
 
+{% hint style="info" %}
+
+The v7 iExec Marketplace is still supported until the next v9 release.
+
+[V7 Marketplace](https://v7.market.iex.ec)
+
+{% endhint %}
+
+
 - [CLI users](#cli-users)
+  - [SDK upgrade version](#sdk-upgrade-version)
   - [Application migration](#application-migration)
   - [Dataset migration](#dataset-migration)
   - [Requester migration](#requester-migration)
@@ -10,9 +20,7 @@ iExec v8 comes with some breaking changes, follow this guide to migrate from v7 
 
 ## CLI users
 
-### Application migration
-
-Application developers need to publish their application sell order to the v8 marketplace in order to make it available for requesters.
+### SDK upgrade version
 
 Upgrade iExec SDK CLI to v8:
 
@@ -23,13 +31,49 @@ iexec -V
 # 8.0.0
 ```
 
-Publish your application to the v8 marketplace:
+### Application migration
+
+With the support of Gramine for Confidential Computing applications, the workflow for deploying and managing a dapp has slightly evolved.
+
+#### Standard app migration
+
+The application must be published to the v8 marketplace with its sell order, using same Docker image and I/O management as before.
+
+#### Scone app migration
+
+Starting from the same Docker image and the same I/O management, you only need to rebuild your docker image with the new v8 sconifier (`sconify.sh` script). See more details [here](https://documentations.iex.ec/staging/v/v8-staging/for-developers/confidential-computing/choose-your-tee-framework/create-your-first-sgx-app#build-the-tee-docker-image).
+
+The app initialization must explicitly declare the Scone TEE framework.
 
 ```bash
-iexec app publish <app-address> [options]
+iexec app  init --tee-framework scone
 ```
 
-If your application uses a secret, push it to the v8 SMS:
+Deploy your application to the v8 marketplace:
+
+```bash
+iexec app deploy <app-address> [options]
+```
+
+Edit the iexec.json file with the new "tee scone" tag before signing and publishing your sell order.
+
+```file
+"order": {
+    "apporder": {
+      "app": "<your-app-address>", // starts with 0x
+      "appprice": "1",
+      "volume": "10",
+      "tag": "0x0000000000000000000000000000000000000000000000000000000000000003",
+      "datasetrestrict": "0x0000000000000000000000000000000000000000",
+      "workerpoolrestrict": "0x0000000000000000000000000000000000000000",
+      "requesterrestrict": "0x0000000000000000000000000000000000000000"
+    },
+}
+```
+
+#### App secret 
+
+If your application uses a secret, push it to the v8 SMS (Secret Management Service):
 
 ```bash
 iexec app push-secret <app-address> [options]
@@ -37,15 +81,12 @@ iexec app push-secret <app-address> [options]
 
 ### Dataset migration
 
-Dataset developers need to push their dataset secret to the v8 SMS and publish their dataset sell order to the v8 marketplace in order to make it available for requesters.
+Dataset developers should deploy their v7 dataset to v8 without making any modifications, and then push the dataset secret to the v8 SMS. Additionally, they should publish their sell order for the dataset on the v8 marketplace.
 
-Upgrade iExec SDK CLI to v8:
+Deploy your dataset to the v8 marketplace:
 
 ```bash
-npm i -g iexec@8
-
-iexec -V
-# 8.0.0
+iexec dataset deploy <dataset-address> [options]
 ```
 
 Push your dataset secret to the v8 SMS:
@@ -54,24 +95,21 @@ Push your dataset secret to the v8 SMS:
 iexec dataset push-secret <dataset-address> --secret-path <secret-path> [options]
 ```
 
-Publish your dataset to the v8 marketplace:
+Publish your dataset order with the correct tag. See tables bellow:
 
-```bash
-iexec dataset publish <dataset-address> [options]
-```
+| v7 | Tag |
+| --- | --- |
+| Scone | "0x0000000000000000000000000000000000000000000000000000000000000001" | "0x0000000000000000000000000000000000000000000000000000000000000003" |
+| Gramine | n/a | "0x0000000000000000000000000000000000000000000000000000000000000005" |
+
+| v8 | Tag |
+| --- | --- |
+| Scone | "0x0000000000000000000000000000000000000000000000000000000000000003" |
+| Gramine | "0x0000000000000000000000000000000000000000000000000000000000000005" |
 
 ### Requester migration
 
-Requesters need to login to the Result proxy v8 to store their results and must push their encryption public key to the v8 SMS to use result encryption feature.
-
-Upgrade iExec SDK CLI to v8:
-
-```bash
-npm i -g iexec@8
-
-iexec -V
-# 8.0.0
-```
+Requesters must log in to the v8 Result Proxy to store their results. To use the result encryption feature, they must also push their public key to the v8 SMS.
 
 Login to the v8 Result proxy:
 
@@ -84,6 +122,13 @@ iexec storage init --tee-framework gramine
 
 Push your encryption key to the v8 SMS:
 
+{% hint style="info" %}
+To generate your encryption keypair 
+```bash
+iexec result generate-encryption-keypair
+```
+{% endhint %}
+
 ```bash
 iexec result push-encryption-key [options]
 
@@ -91,9 +136,19 @@ iexec result push-encryption-key [options]
 iexec result push-encryption-key --tee-framework gramine
 ```
 
+#### Requester secret 
+
+Publish your requester secret to the v8 SMS
+
+```bash
+iexec requester push-secret [options]
+```
+
 ## JS library
 
-Upgrade iExec SDK CLI to v8 in your project's dependencies to use the v8 stack.
+Upgrade the iExec SDK JS library to v8 marketplace in your project's dependencies.
+
+Next, you should proceed to transfer your assets to the v8 marketplace using a method similar to the one employed with the CLI, previously presented on this page.
 
 ```bash
 npm i iexec@8
