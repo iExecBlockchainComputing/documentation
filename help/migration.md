@@ -146,9 +146,9 @@ iexec requester push-secret [options]
 
 ## JS library
 
-Upgrade the iExec SDK JS library to v8 in your project's dependencies.
+Upgrade the iExec SDK JS library to v8 marketplace in your project's dependencies.
 
-Then, migrate your assets in a similar way as with the CLI.
+Next, you should proceed to transfer your assets to the v8 marketplace using a method similar to the one employed with the CLI, previously presented on this page.
 
 ```bash
 npm i iexec@8
