@@ -60,7 +60,7 @@ Edit the iexec.json file with the new "tee scone" tag before signing and publish
 ```file
 "order": {
     "apporder": {
-      "app": "0x2f6657E11BF67E02092f5876f290d2884fC99626",
+      "app": "<your-app-address>", // starts with 0x
       "appprice": "1",
       "volume": "10",
       "tag": "0x0000000000000000000000000000000000000000000000000000000000000003",
