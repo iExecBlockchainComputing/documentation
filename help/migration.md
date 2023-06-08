@@ -81,7 +81,7 @@ iexec app push-secret <app-address> [options]
 
 ### Dataset migration
 
-DDataset developers should deploy their v7 dataset to v8 without making any modifications, and then push the dataset secret to v8 SMS. Additionally, they should publish their dataset's sell order on the v8 marketplace.
+Dataset developers should deploy their v7 dataset to v8 without making any modifications, and then push the dataset secret to the v8 SMS. Additionally, they should publish their sell order for the dataset on the v8 marketplace.
 
 Deploy your dataset to the v8 marketplace:
 
