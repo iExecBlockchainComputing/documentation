@@ -151,7 +151,7 @@ While the _task_ holds a meta status, each _replicate_ has its own status which 
 | `RECOVERING` | The worker has been stopped, it is starting back from where it stopped |
 | `WORKER_LOST` | The worker didn't ping the iexec-core scheduler for a while. It is considered as out for this _task_ |
 
-The transitions between those states are as follows:
+The transitions between those states are as follows. Please note that all failed status - pictured in red in the following diagram - finally lead to `ABORTED`. For the sake of simplicity, this final status has not been represented here.
 
 ```mermaid
 flowchart
@@ -220,16 +220,6 @@ subgraph Complete stage
     COMPLETING --> COMPLETE_FAILED:::failure
     COMPLETING --> COMPLETED:::completed
 end
-
-START_FAILED --> ABORTED:::failure
-APP_DOWNLOAD_FAILED --> ABORTED
-DATA_DOWNLOAD_FAILED --> ABORTED
-COMPUTE_FAILED --> ABORTED
-CONTRIBUTE_FAILED --> ABORTED
-REVEAL_FAILED --> ABORTED
-RESULT_UPLOAD_FAILED --> ABORTED
-CONTRIBUTE_AND_FINALIZE_FAILED --> ABORTED
-COMPLETE_FAILED --> ABORTED
 
 %% Style definitions
 classDef failure fill:#a00
