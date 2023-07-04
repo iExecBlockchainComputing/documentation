@@ -162,7 +162,7 @@ subgraph Compute stage
 end
 
 subgraph Contribute stage
-    COMPUTED -- If trust != 1\nor standard task\nor contribution have already been made\nor callback mode --> CONTRIBUTING
+    COMPUTED -- If trust != 1\nor standard task\nor at least one contribution has already been made\nor callback mode --> CONTRIBUTING
 
     CONTRIBUTING --> CONTRIBUTED
     CONTRIBUTING --> CONTRIBUTE_FAILED:::failure
@@ -183,7 +183,7 @@ subgraph Result upload stage
 end
 
 subgraph Contribute and Finalize stage
-    COMPUTED -- If trust = 1\nand TEE task\nand no contribution have been made yet\nand not in callback mode --> CONTRIBUTE_AND_FINALIZE_ONGOING
+    COMPUTED -- If trust = 1\nand TEE task\nand no contribution has been made yet\nand not in callback mode --> CONTRIBUTE_AND_FINALIZE_ONGOING
 
     CONTRIBUTE_AND_FINALIZE_ONGOING --> CONTRIBUTE_AND_FINALIZE_DONE
     CONTRIBUTE_AND_FINALIZE_ONGOING --> CONTRIBUTE_AND_FINALIZE_FAILED:::failure
