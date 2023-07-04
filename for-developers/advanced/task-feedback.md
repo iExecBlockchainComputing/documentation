@@ -126,7 +126,7 @@ See the following flowchart for details on their transitions.
 
 {% hint style="warning" %}
 
-Please ote that all failed status - pictured in red in the following diagram - finally lead to `ABORTED`. For the sake of simplicity, this final status has not been represented here.
+Please note that all failed status - pictured in red in the following diagram - finally lead to `ABORTED`. For the sake of simplicity, this final status has not been represented here.
 
 {% endhint %}
 
