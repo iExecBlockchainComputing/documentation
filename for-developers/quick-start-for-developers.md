@@ -60,7 +60,7 @@ Wallet file name follow the pattern `UTC--<CREATION_DATE>--<ADDRESS>`
 
 {% hint style="info" %}
 
-iExec SDK uses standard Ethereum wallet, you can reuse or import existing Ethereum wallet. See iExec SDK documentation [wallet command](https://github.com/iExecBlockchainComputing/iexec-sdk#wallet) and [wallet options](https://github.com/iExecBlockchainComputing/iexec-sdk#wallet-options).
+iExec SDK uses standard Ethereum wallet, you can reuse or import existing Ethereum wallet. See iExec SDK documentation [wallet command](https://github.com/iExecBlockchainComputing/iexec-sdk/blob/v8.1.5/CLI.md#iexec-wallet).
 
 {% endhint %}
 
