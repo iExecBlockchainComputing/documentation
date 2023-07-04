@@ -185,11 +185,10 @@ subgraph Compute stage
 end
 
 subgraph Contribute stage
-    COMPUTED --> CONTRIBUTING
+    COMPUTED -- If trust != 1\nor standard task\nor contribution have already been made --> CONTRIBUTING
 
     CONTRIBUTING --> CONTRIBUTED
     CONTRIBUTING --> CONTRIBUTE_FAILED:::failure
-
 end
 
 subgraph Reveal stage
@@ -206,14 +205,21 @@ subgraph Result upload stage
     RESULT_UPLOADING --> RESULT_UPLOAD_FAILED:::failure
 end
 
+subgraph Contribute and Finalize stage
+    COMPUTED -- If trust = 1\nand TEE task\nand no contribution have been made yet --> CONTRIBUTE_AND_FINALIZE_ONGOING
+
+    CONTRIBUTE_AND_FINALIZE_ONGOING --> CONTRIBUTE_AND_FINALIZE_DONE
+    CONTRIBUTE_AND_FINALIZE_ONGOING --> CONTRIBUTE_AND_FINALIZE_FAILED:::failure
+end
+
 subgraph Complete stage
     RESULT_UPLOADED --> COMPLETING
     REVEALED -- Most workers do not upload their result --> COMPLETING
+    CONTRIBUTE_AND_FINALIZE_DONE --> COMPLETING
 
     COMPLETING --> COMPLETE_FAILED:::failure
     COMPLETING --> COMPLETED:::completed
 end
-
 
 START_FAILED --> ABORTED:::failure
 APP_DOWNLOAD_FAILED --> ABORTED
@@ -222,6 +228,7 @@ COMPUTE_FAILED --> ABORTED
 CONTRIBUTE_FAILED --> ABORTED
 REVEAL_FAILED --> ABORTED
 RESULT_UPLOAD_FAILED --> ABORTED
+CONTRIBUTE_AND_FINALIZE_FAILED --> ABORTED
 COMPLETE_FAILED --> ABORTED
 
 %% Style definitions
