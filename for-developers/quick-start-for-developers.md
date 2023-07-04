@@ -88,7 +88,8 @@ You can now connect to the blockchain. In the following steps we will use the **
 
 {% hint style="info" %}
 
-**Bellecour** is an Ethereum blockchain run by iExec. Unlike the Ethereum mainnet or public testnets, transactions on Bellecour do not require the payment of transaction fees ([Read more about transaction fees](https://bitfalls.com/2017/12/05/ethereum-gas-and-transaction-fees-explained/)).
+**Bellecour** is an Ethereum blockchain run by iExec. Unlike the Ethereum mainnet or public testnets,
+transactions on Bellecour do not require the payment of transaction fees ([Read more about transaction fees](https://ethereum.org/en/developers/docs/gas/)).
 
 {% endhint %}
 
