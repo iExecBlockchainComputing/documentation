@@ -143,6 +143,9 @@ While the _task_ holds a meta status, each _replicate_ has its own status which 
 | `RESULT_UPLOADING` | The worker is uploading the result |
 | `RESULT_UPLOAD_FAILED` | The upload of the result failed |
 | `RESULT_UPLOADED` | The result has been uploaded to IPFS over the _iExec Result Proxy_ (standard or TEE _tasks_) or to Dropbox (TEE only), dependending on the _deal_ parameters |
+| `CONTRIBUTE_AND_FINALIZE_ONGOING` | The worker sent the "contributeAndFinalize(...)" transaction on chain |
+| `CONTRIBUTE_AND_FINALIZE_DONE` | The worker has contributed and finalized the task. The last is now considered as completed on-chain |
+| `CONTRIBUTE_AND_FINALIZE_FAILED` | The contributeAndFinalize transaction failed |
 | `COMPLETING` | The _task_ is finalized, the worker will purge data related to its _replicate_ |
 | `COMPLETED` | The whole _task_ is completed meaning the _task_ is finalized. The worker has been rewarded if it is part of the consensus |
 | `COMPLETE_FAILED` | The worker failed to clean the local _replicate_ resources after the _task_ is finalized |
@@ -185,7 +188,7 @@ subgraph Compute stage
 end
 
 subgraph Contribute stage
-    COMPUTED -- If trust != 1\nor standard task\nor contribution have already been made --> CONTRIBUTING
+    COMPUTED -- If trust != 1\nor standard task\nor contribution have already been made\nor callback mode --> CONTRIBUTING
 
     CONTRIBUTING --> CONTRIBUTED
     CONTRIBUTING --> CONTRIBUTE_FAILED:::failure
@@ -206,7 +209,7 @@ subgraph Result upload stage
 end
 
 subgraph Contribute and Finalize stage
-    COMPUTED -- If trust = 1\nand TEE task\nand no contribution have been made yet --> CONTRIBUTE_AND_FINALIZE_ONGOING
+    COMPUTED -- If trust = 1\nand TEE task\nand no contribution have been made yet\nand not in callback mode --> CONTRIBUTE_AND_FINALIZE_ONGOING
 
     CONTRIBUTE_AND_FINALIZE_ONGOING --> CONTRIBUTE_AND_FINALIZE_DONE
     CONTRIBUTE_AND_FINALIZE_ONGOING --> CONTRIBUTE_AND_FINALIZE_FAILED:::failure
@@ -225,6 +228,8 @@ end
 classDef failure fill:#a00
 classDef completed fill:#0a0
 ```
+
+ContributeAndFinalize mode is a particular case that makes the _tasks_ execution faster and cheaper. In that mode, the _workers_ can contribute and finalize the tasks themselves. As the _workers_ have to be trustworthy to enable that mode, it is required the apps run in Trusted Execution Environments. Another limitation iExec strives to remove is the non-callback mode.
 
 ### Off-chain replicates failure causes
 
