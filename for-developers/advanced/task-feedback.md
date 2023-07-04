@@ -144,7 +144,7 @@ While the _task_ holds a meta status, each _replicate_ has its own status which 
 | `RESULT_UPLOAD_FAILED` | The upload of the result failed |
 | `RESULT_UPLOADED` | The result has been uploaded to IPFS over the _iExec Result Proxy_ (standard or TEE _tasks_) or to Dropbox (TEE only), dependending on the _deal_ parameters |
 | `CONTRIBUTE_AND_FINALIZE_ONGOING` | The worker sent the "contributeAndFinalize(...)" transaction on chain |
-| `CONTRIBUTE_AND_FINALIZE_DONE` | The worker has contributed and finalized the task. The last is now considered as completed on-chain |
+| `CONTRIBUTE_AND_FINALIZE_DONE` | The worker has contributed and finalized the task. The latter is now considered as completed on-chain |
 | `CONTRIBUTE_AND_FINALIZE_FAILED` | The contributeAndFinalize transaction failed |
 | `COMPLETING` | The _task_ is finalized, the worker will purge data related to its _replicate_ |
 | `COMPLETED` | The whole _task_ is completed meaning the _task_ is finalized. The worker has been rewarded if it is part of the consensus |
