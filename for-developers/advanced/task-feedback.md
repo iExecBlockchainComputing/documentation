@@ -117,8 +117,8 @@ task1
 ```
 
 A replicate status workflow can follow two different flows:
-1. Usual flow: the _task_ is replicated on a number of _workers_, depending on required trust. The _Scheduler_ has to notify the _workers_ when the consensus is reached. It should also finalize the _task_ on-chain.
-2. ContributeAndFinalize flow: the _task_ is finalized by the only _worker_ that has worked on it. It makes the _task_ execution faster and cheaper. However, some limitations apply:
+1. Usual flow (default): the _task_ is replicated on a number of _workers_, depending on required trust. The _Scheduler_ has to notify the _workers_ when the consensus is reached. It should also finalize the _task_ on-chain.
+2. Optimized flow (under conditions): the _task_ is finalized by the only _worker_ that has worked on it. It makes the _task_ execution faster and cheaper. However, some limitations apply:
    1. The _worker_ has to be trustworthy. To achieve this point, only TEE _tasks_ are eligible to this workflow.
    2. Callback mode is currently unsupported. iExec strives to remove this limitation.
 
