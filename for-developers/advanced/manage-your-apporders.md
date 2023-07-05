@@ -19,12 +19,15 @@ Edit the `apporder` part in `iexec.json` to set the conditions to use your app
 | app | app address |
 | appprice | price to charge the requester for each execution of the app (in nRLC) |
 | volume | number of order created, each usage decreases this number |
-| tag | restrict usage to specific runtime such "tee" or "gpu" |
-| datasetrestrict | restrict to use the app with a specific dataset (1) |
-| workerpoolrestrict | restrict to run the app on a specific workerpool (1) |
-| requesterrestrict | restrict the app usage to a specific requester (1) |
+| tag | restrict usage to specific runtime such as `tee` or `gpu` (1) |
+| datasetrestrict | restrict to use the app with a specific dataset (2) |
+| workerpoolrestrict | restrict to run the app on a specific workerpool (2) |
+| requesterrestrict | restrict the app usage to a specific requester (2) |
 
-1. the restriction is disabled by default with 0x0000000000000000000000000000000000000000
+1. See [tag](../../key-concepts/proof-of-contribution.md#tag)
+2. the restriction is disabled by default with 0x0000000000000000000000000000000000000000
+
+{% hint style="info" %} For more information on orders, see [Orders description](../../key-concepts/proof-of-contribution.md#orders-description). {% endhint %}
 
 When you are happy with your `apporder` sign it and publish it
 

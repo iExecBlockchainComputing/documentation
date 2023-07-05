@@ -34,14 +34,17 @@ Edit the `workerpoolorder` part in `iexec.json` to set the conditions to use you
 | workerpool | workerpool address |
 | workerpoolprice | price to charge the requester for each execution of the app (in nRLC) |
 | volume | number of orders created, each usage decreases this number |
-| tag | restrict usage to a specific runtime such as `tee` or `gpu` |
+| tag | restrict usage to a specific runtime such as `tee` or `gpu` (1) |
 | category | Order category, will define the deal `workClockTimeRef` and its deadlines |
 | trust | Trust level of the execution, impacts the number of replicates |
-| apprestrict | restrict the workerpool usage to a specifig app (1) |
-| datasetrestrict | restrict the workerpool usage to a specific dataset (1) |
-| requesterrestrict | restrict the workerpool usage to a specific requester (1) |
+| apprestrict | restrict the workerpool usage to a specifig app (2) |
+| datasetrestrict | restrict the workerpool usage to a specific dataset (2) |
+| requesterrestrict | restrict the workerpool usage to a specific requester (2) |
 
-1. the restriction is disabled by default with 0x0000000000000000000000000000000000000000.
+1. See [tag](../key-concepts/proof-of-contribution.md#tag)
+2. the restriction is disabled by default with 0x0000000000000000000000000000000000000000.
+
+{% hint style="info" %} For more information on orders, see [Orders description](../key-concepts/proof-of-contribution.md#orders-description). {% endhint %}
 
 When you are happy with your `workerpoolorder` sign it and publish it
 
