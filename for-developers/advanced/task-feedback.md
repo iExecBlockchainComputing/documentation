@@ -26,12 +26,6 @@ It allows the requester to retrieve application logs produced by workers.
 
 During its execution, a _task_ transitions between different off-chain statuses. Those statuses let you track how a _task_ progresses when it's being executed and makes it easier for you to debug if the execution fails. The transitions between those statuses are as follows.
 
-{% hint style="warning" %}
-
-Please note that, for the sake of simplicity, the `FINAL_DEADLINE_REACHED` status has not been pictured. In fact, any other non-final status can lead to this `FINAL_DEADLINE_REACHED` status.
-
-{% endhint %}
-
 ```mermaid
 flowchart
 
@@ -50,9 +44,11 @@ INITIALIZE_FAILED --> FAILED
 RUNNING_FAILED --> FAILED
 CONTRIBUTION_TIMEOUT --> FAILED
 RESULT_UPLOAD_TIMEOUT --> FAILED
+FINAL_DEADLINE_REACHED --> FAILED
 FINALIZE_FAILED --> FAILED
 
 subgraph Failures
+    FINAL_DEADLINE_REACHED:::failure
     INITIALIZE_FAILED:::failure
     RUNNING_FAILED:::failure
     CONTRIBUTION_TIMEOUT:::failure
@@ -80,6 +76,15 @@ FINALIZED --> COMPLETED:::completed
 classDef failure fill:#a00
 classDef completed fill:#0a0
 ```
+
+{% hint style="warning" %}
+
+Please note that, for the sake of simplicity, transitions to the `FINAL_DEADLINE_REACHED` status have not been pictured. In fact, all statuses except final statuses (`FAILED` and `COMPLETED`) can lead to this `FINAL_DEADLINE_REACHED` status.
+
+As a reminder, _tasks_ have a max execution time, defined by their category. Their final deadlines are defined as follows: `deal start time` + `max execution time`.
+When a _task_ update is triggered on a _Scheduler_ for a non-completed non-failed _task_ while its final deadline is met, then this _task_ status transitions to `FINAL_DEADLINE_REACHED`.
+
+{% endhint %}
 
 Below the description of each status:
 
@@ -128,12 +133,6 @@ A replicate status workflow can follow two different flows:
    2. Callback mode is currently unsupported. iExec strives to remove this limitation.
 
 See the following flowchart for details on their transitions.
-
-{% hint style="warning" %}
-
-Please note that all failed status - pictured in red in the following diagram - finally lead to `ABORTED`. For the sake of simplicity, this final status has not been represented here.
-
-{% endhint %}
 
 ```mermaid
 flowchart
@@ -207,6 +206,12 @@ end
 classDef failure fill:#a00
 classDef completed fill:#0a0
 ```
+
+{% hint style="warning" %}
+
+Please note that all failed status - pictured in red in the following diagram - finally lead to `ABORTED`. For the sake of simplicity, this final status has not been represented here.
+
+{% endhint %}
 
 While the _task_ holds a meta status, each _replicate_ has its own status which can be one of these:
 
