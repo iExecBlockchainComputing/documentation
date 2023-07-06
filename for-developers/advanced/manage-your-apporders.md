@@ -27,6 +27,14 @@ Edit the `apporder` part in `iexec.json` to set the conditions to use your app
 1. See [tag](../../key-concepts/proof-of-contribution.md#tag)
 2. the restriction is disabled by default with 0x0000000000000000000000000000000000000000
 
+The supported tags for application orders are:
+
+| Tag value | Description |
+| --- | --- |
+| 0x0000000000000000000000000000000000000000000000000000000000000000 | No specific feature, standard task |
+| 0x0000000000000000000000000000000000000000000000000000000000000003 | TEE task with Scone framework |
+| 0x0000000000000000000000000000000000000000000000000000000000000005 | TEE task with Gramine framework |
+
 {% hint style="info" %} For more information on orders, see [Orders description](../../key-concepts/proof-of-contribution.md#orders-description). {% endhint %}
 
 When you are happy with your `apporder` sign it and publish it

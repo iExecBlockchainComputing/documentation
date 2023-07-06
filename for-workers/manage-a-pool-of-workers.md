@@ -44,6 +44,19 @@ Edit the `workerpoolorder` part in `iexec.json` to set the conditions to use you
 1. See [tag](../key-concepts/proof-of-contribution.md#tag)
 2. the restriction is disabled by default with 0x0000000000000000000000000000000000000000.
 
+As described in [tag](../key-concepts/proof-of-contribution.md#tag), a workerpool will only accept app, dataset and request order tags' combinations matching its own tag. With the current tag specifications, it is mandatory to properly define the `workerpoolorder`'s tag.
+
+| Tag value | Description |
+| --- | --- |
+| `0x0000000000000000000000000000000000000000000000000000000000000000` | Order for the execution of a standard task |
+| `0x0000000000000000000000000000000000000000000000000000000000000003` | Order for the execution of a TEE task with Scone framework |
+| `0x0000000000000000000000000000000000000000000000000000000000000005` | Order for the execution of a TEE task with Gramine framework |
+
+{% hint style="warning" %}
+
+1. Do not publish order with the `tee`,`scone` and `gramine` tag bits enabled. Such an order could match a TEE Gramine task with a Standard dataset and a TEE Scone request. This would produce an unpredictable behavior.
+2. TEE workerpool orders only support `trust` values `0` or `1`. {% endhint %}
+
 {% hint style="info" %} For more information on orders, see [Orders description](../key-concepts/proof-of-contribution.md#orders-description). {% endhint %}
 
 When you are happy with your `workerpoolorder` sign it and publish it
