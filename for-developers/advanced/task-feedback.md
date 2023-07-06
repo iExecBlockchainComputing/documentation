@@ -24,7 +24,69 @@ It allows the requester to retrieve application logs produced by workers.
 
 ### Task statuses
 
-During its execution, a _task_ transitions between different off-chain statuses. Those statuses let you track how a _task_ progresses when it's being executed and makes it easier for you to debug if the execution fails. Here are the statuses a _task_ can be transitioned to:
+During its execution, a _task_ transitions between different off-chain statuses. Those statuses let you track how a _task_ progresses when it's being executed and makes it easier for you to debug if the execution fails. The transitions between those statuses are as follows.
+
+```mermaid
+flowchart
+
+%% Failures
+
+RECEIVED -- If TEE task but no configured SMS\nor on-chain INITIALIZE request failed --> INITIALIZE_FAILED
+INITIALIZING -- If on-chain INITIALIZE transaction reverted --> INITIALIZE_FAILED
+INITIALIZED --> CONTRIBUTION_TIMEOUT
+RUNNING --> CONTRIBUTION_TIMEOUT
+RUNNING -- If TEE task and\nall alive workers have failed to run the task --> RUNNING_FAILED
+RESULT_UPLOADING --> RESULT_UPLOAD_TIMEOUT
+RESULT_UPLOADED -- If on-chain FINALIZE request failed --> FINALIZE_FAILED
+FINALIZING -- If on-chain FINALIZE transaction reverted  --> FINALIZE_FAILED
+
+INITIALIZE_FAILED --> FAILED
+RUNNING_FAILED --> FAILED
+CONTRIBUTION_TIMEOUT --> FAILED
+RESULT_UPLOAD_TIMEOUT --> FAILED
+FINAL_DEADLINE_REACHED --> FAILED
+FINALIZE_FAILED --> FAILED
+
+subgraph Failures
+    FINAL_DEADLINE_REACHED:::failure
+    INITIALIZE_FAILED:::failure
+    RUNNING_FAILED:::failure
+    CONTRIBUTION_TIMEOUT:::failure
+    RESULT_UPLOAD_TIMEOUT:::failure
+    FINALIZE_FAILED:::failure
+
+    FAILED:::failure
+end
+
+%% Usual flow
+
+RECEIVED --> INITIALIZING
+INITIALIZING --> INITIALIZED
+INITIALIZED --> RUNNING
+RUNNING -- If trust != 1\nor standard task\nor callback mode --> CONSENSUS_REACHED
+CONSENSUS_REACHED --> AT_LEAST_ONE_REVEALED
+AT_LEAST_ONE_REVEALED --> RESULT_UPLOADING
+RESULT_UPLOADING --> RESULT_UPLOADED
+RESULT_UPLOADED --> FINALIZING
+FINALIZING --> FINALIZED
+RUNNING -- If trust = 1\nand TEE task\nand not in callback mode --> FINALIZED
+FINALIZED --> COMPLETED:::completed
+
+%% Style definitions
+classDef failure fill:#a00
+classDef completed fill:#0a0
+```
+
+{% hint style="warning" %}
+
+Please note that, for the sake of simplicity, transitions to the `FINAL_DEADLINE_REACHED` status have not been pictured. In fact, all statuses except final statuses (`FAILED` and `COMPLETED`) can lead to this `FINAL_DEADLINE_REACHED` status.
+
+As a reminder, _tasks_ have a max execution time, defined by their category. Their final deadlines are defined as follows: `deal start time` + `max execution time`.
+When a _task_ update is triggered on a _Scheduler_ for a non-completed non-failed _task_ while its final deadline is met, then this _task_ status transitions to `FINAL_DEADLINE_REACHED`.
+
+{% endhint %}
+
+Below the description of each status:
 
 | Task status | Description |
 | --- | --- |
@@ -51,58 +113,6 @@ However, things sometimes don't work as expected. In that case, failure statuses
 | `FINAL_DEADLINE_REACHED` | The final deadline has been reached |
 | `FAILED` | Final status for any previous failure |
 
-The transitions between those states are as follows:
-
-```mermaid
-flowchart
-
-%% Failures
-
-RECEIVED -- If TEE task but no configured SMS\nor on-chain INITIALIZE request failed --> INITIALIZE_FAILED
-INITIALIZING -- If on-chain INITIALIZE transaction reverted --> INITIALIZE_FAILED
-INITIALIZED --> CONTRIBUTION_TIMEOUT
-RUNNING --> CONTRIBUTION_TIMEOUT
-RUNNING -- If TEE task and\nall alive workers have failed to run the task --> RUNNING_FAILED
-RESULT_UPLOADING --> RESULT_UPLOAD_TIMEOUT
-RESULT_UPLOADED -- If on-chain FINALIZE request failed --> FINALIZE_FAILED
-FINALIZING -- If on-chain FINALIZE transaction reverted  --> FINALIZE_FAILED
-
-INITIALIZE_FAILED --> FAILED
-RUNNING_FAILED --> FAILED
-CONTRIBUTION_TIMEOUT --> FAILED
-RESULT_UPLOAD_TIMEOUT --> FAILED
-FINALIZE_FAILED --> FAILED
-
-subgraph Failures
-    INITIALIZE_FAILED:::failure
-    RUNNING_FAILED:::failure
-    CONTRIBUTION_TIMEOUT:::failure
-    RESULT_UPLOAD_TIMEOUT:::failure
-    FINALIZE_FAILED:::failure
-
-    FAILED:::failure
-end
-
-%% Usual flow
-
-RECEIVED --> INITIALIZING
-INITIALIZING --> INITIALIZED
-INITIALIZED --> RUNNING
-RUNNING --> CONSENSUS_REACHED
-CONSENSUS_REACHED --> AT_LEAST_ONE_REVEALED
-AT_LEAST_ONE_REVEALED --> RESULT_UPLOADING
-RESULT_UPLOADING --> RESULT_UPLOADED
-RESULT_UPLOADED --> FINALIZING
-FINALIZING --> FINALIZED
-FINALIZED --> COMPLETED:::completed
-
-%% Style definitions
-classDef failure fill:#a00
-classDef completed fill:#0a0
-```
-
-Please note that, for the sake of simplicity, the `FINAL_DEADLINE_REACHED` status has not been pictured. In fact, any other non-final status can lead to this `FINAL_DEADLINE_REACHED` status.
-
 ### Replicate statuses
 
 One _task_ bought by a requester will result in one off-chain _task_ with one or more _replicates_ depending on the level of trust set by the requester. For a given _task_, each worker involved in the computation will have its own _replicate_ containing the description of the _task_ to compute. The whole computation of a _replicate_ is made of several stages. Each stage completed by a worker will result in an update of its _replicate_ status.
@@ -123,12 +133,6 @@ A replicate status workflow can follow two different flows:
    2. Callback mode is currently unsupported. iExec strives to remove this limitation.
 
 See the following flowchart for details on their transitions.
-
-{% hint style="warning" %}
-
-Please note that all failed status - pictured in red in the following diagram - finally lead to `ABORTED`. For the sake of simplicity, this final status has not been represented here.
-
-{% endhint %}
 
 ```mermaid
 flowchart
@@ -202,6 +206,12 @@ end
 classDef failure fill:#a00
 classDef completed fill:#0a0
 ```
+
+{% hint style="warning" %}
+
+Please note that all failed status - pictured in red in the above diagram - finally lead to `ABORTED`. For the sake of simplicity, this final status has not been represented here.
+
+{% endhint %}
 
 While the _task_ holds a meta status, each _replicate_ has its own status which can be one of these:
 
