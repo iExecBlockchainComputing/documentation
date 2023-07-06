@@ -24,34 +24,13 @@ It allows the requester to retrieve application logs produced by workers.
 
 ### Task statuses
 
-During its execution, a _task_ transitions between different off-chain statuses. Those statuses let you track how a _task_ progresses when it's being executed and makes it easier for you to debug if the execution fails. Here are the statuses a _task_ can be transitioned to:
+During its execution, a _task_ transitions between different off-chain statuses. Those statuses let you track how a _task_ progresses when it's being executed and makes it easier for you to debug if the execution fails. The transitions between those statuses are as follows.
 
-| Task status | Description |
-| --- | --- |
-| `RECEIVED` | The Scheduler has detected the deal |
-| `INITIALIZING` | The Scheduler is trying to set the _task_ on-chain status to `INITIALIZED` |
-| `INITIALIZED` | The _task_ on-chain status has been correctly set to `INITIALIZED` |
-| `RUNNING` | At least one Worker has started to work on the _task_ |
-| `CONSENSUS_REACHED` | The consensus has been reached |
-| `AT_LEAST_ONE_REVEALED` | At least one Worker revealed its result |
-| `RESULT_UPLOADING` | The selected Worker is uploading its result |
-| `RESULT_UPLOADED` | The result has been uploaded |
-| `FINALIZING` | The Scheduler is trying to set the _task_ on-chain status to `FINALIZED` |
-| `FINALIZED` | The _task_ on-chain status has been correctly set to `FINALIZED` |
+{% hint style="warning" %}
 
-However, things sometimes don't work as expected. In that case, failure statuses help to understand what went wrong:
+Please note that, for the sake of simplicity, the `FINAL_DEADLINE_REACHED` status has not been pictured. In fact, any other non-final status can lead to this `FINAL_DEADLINE_REACHED` status.
 
-| Task status | Description |
-| --- | --- |
-| `INITIALIZE_FAILED` | _Task_ on-chain initialization failed |
-| `RUNNING_FAILED` | All Workers have failed to run this TEE _task_ |
-| `CONTRIBUTION_TIMEOUT` | Contribution deadline has been reached before any contribution has been sent |
-| `RESULT_UPLOAD_TIMEOUT` | The final deadline has been reached while the result was being uploaded |
-| `FINALIZE_FAILED` | _Task_ on-chain finalization failed |
-| `FINAL_DEADLINE_REACHED` | The final deadline has been reached |
-| `FAILED` | Final status for any previous failure |
-
-The transitions between those states are as follows:
+{% endhint %}
 
 ```mermaid
 flowchart
@@ -102,7 +81,32 @@ classDef failure fill:#a00
 classDef completed fill:#0a0
 ```
 
-Please note that, for the sake of simplicity, the `FINAL_DEADLINE_REACHED` status has not been pictured. In fact, any other non-final status can lead to this `FINAL_DEADLINE_REACHED` status.
+Below the description of each status:
+
+| Task status | Description |
+| --- | --- |
+| `RECEIVED` | The Scheduler has detected the deal |
+| `INITIALIZING` | The Scheduler is trying to set the _task_ on-chain status to `INITIALIZED` |
+| `INITIALIZED` | The _task_ on-chain status has been correctly set to `INITIALIZED` |
+| `RUNNING` | At least one Worker has started to work on the _task_ |
+| `CONSENSUS_REACHED` | The consensus has been reached |
+| `AT_LEAST_ONE_REVEALED` | At least one Worker revealed its result |
+| `RESULT_UPLOADING` | The selected Worker is uploading its result |
+| `RESULT_UPLOADED` | The result has been uploaded |
+| `FINALIZING` | The Scheduler is trying to set the _task_ on-chain status to `FINALIZED` |
+| `FINALIZED` | The _task_ on-chain status has been correctly set to `FINALIZED` |
+
+However, things sometimes don't work as expected. In that case, failure statuses help to understand what went wrong:
+
+| Task status | Description |
+| --- | --- |
+| `INITIALIZE_FAILED` | _Task_ on-chain initialization failed |
+| `RUNNING_FAILED` | All Workers have failed to run this TEE _task_ |
+| `CONTRIBUTION_TIMEOUT` | Contribution deadline has been reached before any contribution has been sent |
+| `RESULT_UPLOAD_TIMEOUT` | The final deadline has been reached while the result was being uploaded |
+| `FINALIZE_FAILED` | _Task_ on-chain finalization failed |
+| `FINAL_DEADLINE_REACHED` | The final deadline has been reached |
+| `FAILED` | Final status for any previous failure |
 
 ### Replicate statuses
 
