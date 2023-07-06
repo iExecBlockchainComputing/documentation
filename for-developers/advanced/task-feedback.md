@@ -209,7 +209,7 @@ classDef completed fill:#0a0
 
 {% hint style="warning" %}
 
-Please note that all failed status - pictured in red in the following diagram - finally lead to `ABORTED`. For the sake of simplicity, this final status has not been represented here.
+Please note that all failed status - pictured in red in the above diagram - finally lead to `ABORTED`. For the sake of simplicity, this final status has not been represented here.
 
 {% endhint %}
 
