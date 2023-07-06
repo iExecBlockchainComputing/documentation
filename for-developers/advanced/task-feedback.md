@@ -116,42 +116,19 @@ task1
 └── replicate3 (workerZ)
 ```
 
-While the _task_ holds a meta status, each _replicate_ has its own status which can be one of these:
+A replicate status workflow can follow two different flows:
+1. Usual flow (default): the _task_ is replicated on a number of _workers_, depending on required trust. The _Scheduler_ has to notify the _workers_ when the consensus is reached. It should also finalize the _task_ on-chain.
+2. Optimized flow (under conditions): the _task_ is finalized by the only _worker_ that has worked on it. It makes the _task_ execution faster and cheaper. However, some limitations apply:
+   1. The _worker_ has to be trustworthy. To achieve this point, only TEE _tasks_ are eligible to this workflow.
+   2. Callback mode is currently unsupported. iExec strives to remove this limitation.
 
-| Replicate status | Description |
-| --- | --- |
-| `CREATED` | A new _replicate_ is assigned to a worker just after it asked for more work |
-| `STARTING` | The worker starts preflight checks to confirm it can work on this _replicate_ |
-| `STARTED` | The worker confirms it is going to work on this _replicate_ |
-| `START_FAILED` | The preflight checks have failed. The worker will NOT work on this _replicate_ |
-| `APP_DOWNLOADING` | The worker is downloading the application |
-| `APP_DOWNLOADED` | The download of the application is completed |
-| `APP_DOWNLOAD_FAILED` | The download of the application failed |
-| `DATA_DOWNLOADING` | The worker is downloading the dataset |
-| `DATA_DOWNLOADED` | The download of the dataset is completed |
-| `DATA_DOWNLOAD_FAILED` | The download of the dataset failed |
-| `COMPUTING` | The worker is computing the _task_ |
-| `COMPUTED` | The computation is completed |
-| `COMPUTE_FAILED` | The computation failed |
-| `CONTRIBUTING` | The worker sent the "contribute(..)" transaction (result digest) on chain |
-| `CONTRIBUTE_FAILED` | The contribute transaction failed |
-| `CONTRIBUTED` | The worker has contributed on chain |
-| `REVEALING` | The worker sent the "reveal(..)" transaction (proof that he is the owner of the result digest) |
-| `REVEALED` | The worker has revealed the proof on chain |
-| `REVEAL_FAILED` | The reveal transaction failed |
-| `RESULT_UPLOAD_REQUESTED` | The worker has been requested to upload the result to a remote filesystem |
-| `RESULT_UPLOADING` | The worker is uploading the result |
-| `RESULT_UPLOAD_FAILED` | The upload of the result failed |
-| `RESULT_UPLOADED` | The result has been uploaded to IPFS over the _iExec Result Proxy_ (standard or TEE _tasks_) or to Dropbox (TEE only), dependending on the _deal_ parameters |
-| `COMPLETING` | The _task_ is finalized, the worker will purge data related to its _replicate_ |
-| `COMPLETED` | The whole _task_ is completed meaning the _task_ is finalized. The worker has been rewarded if it is part of the consensus |
-| `COMPLETE_FAILED` | The worker failed to clean the local _replicate_ resources after the _task_ is finalized |
-| `FAILED` | The worker failed to participate to the _task_ |
-| `ABORTED` | The scheduler asked the worker to stop working on this _replicate_ while the latter was still working on it |
-| `RECOVERING` | The worker has been stopped, it is starting back from where it stopped |
-| `WORKER_LOST` | The worker didn't ping the iexec-core scheduler for a while. It is considered as out for this _task_ |
+See the following flowchart for details on their transitions.
 
-The transitions between those states are as follows:
+{% hint style="warning" %}
+
+Please note that all failed status - pictured in red in the following diagram - finally lead to `ABORTED`. For the sake of simplicity, this final status has not been represented here.
+
+{% endhint %}
 
 ```mermaid
 flowchart
@@ -185,11 +162,10 @@ subgraph Compute stage
 end
 
 subgraph Contribute stage
-    COMPUTED --> CONTRIBUTING
+    COMPUTED -- If trust != 1\nor standard task\nor at least one contribution has already been made\nor callback mode --> CONTRIBUTING
 
     CONTRIBUTING --> CONTRIBUTED
     CONTRIBUTING --> CONTRIBUTE_FAILED:::failure
-
 end
 
 subgraph Reveal stage
@@ -206,28 +182,64 @@ subgraph Result upload stage
     RESULT_UPLOADING --> RESULT_UPLOAD_FAILED:::failure
 end
 
+subgraph Contribute and Finalize stage
+    COMPUTED -- If trust = 1\nand TEE task\nand no contribution has been made yet\nand not in callback mode --> CONTRIBUTE_AND_FINALIZE_ONGOING
+
+    CONTRIBUTE_AND_FINALIZE_ONGOING --> CONTRIBUTE_AND_FINALIZE_DONE
+    CONTRIBUTE_AND_FINALIZE_ONGOING --> CONTRIBUTE_AND_FINALIZE_FAILED:::failure
+end
+
 subgraph Complete stage
     RESULT_UPLOADED --> COMPLETING
     REVEALED -- Most workers do not upload their result --> COMPLETING
+    CONTRIBUTE_AND_FINALIZE_DONE --> COMPLETING
 
     COMPLETING --> COMPLETE_FAILED:::failure
     COMPLETING --> COMPLETED:::completed
 end
 
-
-START_FAILED --> ABORTED:::failure
-APP_DOWNLOAD_FAILED --> ABORTED
-DATA_DOWNLOAD_FAILED --> ABORTED
-COMPUTE_FAILED --> ABORTED
-CONTRIBUTE_FAILED --> ABORTED
-REVEAL_FAILED --> ABORTED
-RESULT_UPLOAD_FAILED --> ABORTED
-COMPLETE_FAILED --> ABORTED
-
 %% Style definitions
 classDef failure fill:#a00
 classDef completed fill:#0a0
 ```
+
+While the _task_ holds a meta status, each _replicate_ has its own status which can be one of these:
+
+| Replicate status | Description |
+| --- | --- |
+| `CREATED` | A new _replicate_ is assigned to a worker just after it asked for more work |
+| `STARTING` | The worker starts preflight checks to confirm it can work on this _replicate_ |
+| `STARTED` | The worker confirms it is going to work on this _replicate_ |
+| `START_FAILED` | The preflight checks have failed. The worker will NOT work on this _replicate_ |
+| `APP_DOWNLOADING` | The worker is downloading the application |
+| `APP_DOWNLOADED` | The download of the application is completed |
+| `APP_DOWNLOAD_FAILED` | The download of the application failed |
+| `DATA_DOWNLOADING` | The worker is downloading the dataset |
+| `DATA_DOWNLOADED` | The download of the dataset is completed |
+| `DATA_DOWNLOAD_FAILED` | The download of the dataset failed |
+| `COMPUTING` | The worker is computing the _task_ |
+| `COMPUTED` | The computation is completed |
+| `COMPUTE_FAILED` | The computation failed |
+| `CONTRIBUTING` | The worker sent the "contribute(..)" transaction (result digest) on chain |
+| `CONTRIBUTE_FAILED` | The contribute transaction failed |
+| `CONTRIBUTED` | The worker has contributed on chain |
+| `REVEALING` | The worker sent the "reveal(..)" transaction (proof that he is the owner of the result digest) |
+| `REVEALED` | The worker has revealed the proof on chain |
+| `REVEAL_FAILED` | The reveal transaction failed |
+| `RESULT_UPLOAD_REQUESTED` | The worker has been requested to upload the result to a remote filesystem |
+| `RESULT_UPLOADING` | The worker is uploading the result |
+| `RESULT_UPLOAD_FAILED` | The upload of the result failed |
+| `RESULT_UPLOADED` | The result has been uploaded to IPFS over the _iExec Result Proxy_ (standard or TEE _tasks_) or to Dropbox (TEE only), dependending on the _deal_ parameters |
+| `CONTRIBUTE_AND_FINALIZE_ONGOING` | The worker sent the "contributeAndFinalize(...)" transaction on chain |
+| `CONTRIBUTE_AND_FINALIZE_DONE` | The worker has contributed and finalized the task. The latter is now considered as completed on-chain |
+| `CONTRIBUTE_AND_FINALIZE_FAILED` | The contributeAndFinalize transaction failed |
+| `COMPLETING` | The _task_ is finalized, the worker will purge data related to its _replicate_ |
+| `COMPLETED` | The whole _task_ is completed meaning the _task_ is finalized. The worker has been rewarded if it is part of the consensus |
+| `COMPLETE_FAILED` | The worker failed to clean the local _replicate_ resources after the _task_ is finalized |
+| `FAILED` | The worker failed to participate to the _task_ |
+| `ABORTED` | The scheduler asked the worker to stop working on this _replicate_ while the latter was still working on it |
+| `RECOVERING` | The worker has been stopped, it is starting back from where it stopped |
+| `WORKER_LOST` | The worker didn't ping the iexec-core scheduler for a while. It is considered as out for this _task_ |
 
 ### Off-chain replicates failure causes
 
