@@ -149,7 +149,7 @@ As a developer, make it a rule to never log sensitive information in your applic
 
 {% hint style="warning" %}
 
-iExec platform currently only supports result files whose name doesn't exceed 31 characters. Please ensure your files name respects this limit. Otherwise, the app execution on iExec will fail.
+iExec platform currently only supports result files whose name doesn't exceed 31 characters. Please ensure your file names respect this limit. Otherwise, the app execution on iExec will fail.
 
 {% endhint %}
 
