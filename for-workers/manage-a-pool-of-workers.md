@@ -55,7 +55,9 @@ As described in [tag](../key-concepts/proof-of-contribution.md#tag), a workerpoo
 {% hint style="warning" %}
 
 1. Do not publish order with the `tee`,`scone` and `gramine` tag bits enabled. Such an order could match a TEE Gramine task with a Standard dataset and a TEE Scone request. This would produce an unpredictable behavior.
-2. TEE workerpool orders only support `trust` values `0` or `1`. {% endhint %}
+2. Currently, TEE workflow do not support tasks replication on several workers. TEE workerpool orders must be published with `trust` value equal to `0` or `1`.
+
+{% endhint %}
 
 {% hint style="info" %} For more information on orders, see [Orders description](../key-concepts/proof-of-contribution.md#orders-description). {% endhint %}
 
