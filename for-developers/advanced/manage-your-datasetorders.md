@@ -19,7 +19,7 @@ Edit the `datasetorder` part in `iexec.json` to set the conditions to use your d
 | `dataset` | dataset address |
 | `datasetprice` | price to charge the requester for each use of the dataset (in nRLC) |
 | `volume` | number of authorized uses, each use decreases this number |
-| `tag` | restrict usage to specific runtime such as `tee` or `gpu` (1) |
+| `tag` | restrict usage to a specific runtime such as `gpu` or `tee`. The latter requires to define either `scone` or `gramine` bit to specify the TEE framework (1) |
 | `apprestrict` | restrict to use the dataset with a specific app (2) |
 | `workerpoolrestrict` | restrict to use the dataset on a specific workerpool (2) |
 | `requesterrestrict` | restrict the dataset usage to a specific requester (2) |

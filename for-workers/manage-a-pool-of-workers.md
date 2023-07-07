@@ -34,7 +34,7 @@ Edit the `workerpoolorder` part in `iexec.json` to set the conditions to use you
 | `workerpool` | workerpool address |
 | `workerpoolprice` | price to charge the requester for each execution of the app (in nRLC) |
 | `volume` | number of authorized uses, each use decreases this number |
-| `tag` | restrict usage to a specific runtime such as `tee` or `gpu` (1) |
+| `tag` | restrict usage to a specific runtime such as `gpu` or `tee`. The latter requires to define either `scone` or `gramine` bit to specify the TEE framework and should not be used alone (1) |
 | `category` | Order category, will define the deal `workClockTimeRef` and its deadlines |
 | `trust` | Trust level of the execution, impacts the number of replicates |
 | `apprestrict` | restrict the workerpool usage to a specifig app (2) |

@@ -19,7 +19,7 @@ Edit the `apporder` part in `iexec.json` to set the conditions to use your app
 | `app` | app address |
 | `appprice` | price to charge the requester for each execution of the app (in nRLC) |
 | `volume` | number of authorized uses, each use decreases this number |
-| `tag` | restrict usage to specific runtime such as `tee` or `gpu` (1) |
+| `tag` | restrict usage to a specific runtime such as `gpu` or `tee`. The latter requires to define either `scone` or `gramine` bit to specify the TEE framework and should not be used alone (1) |
 | `datasetrestrict` | restrict to use the app with a specific dataset (2) |
 | `workerpoolrestrict` | restrict to run the app on a specific workerpool (2) |
 | `requesterrestrict` | restrict the app usage to a specific requester (2) |
@@ -31,9 +31,9 @@ The supported tags for application orders are:
 
 | Tag value | Description |
 | --- | --- |
-| 0x0000000000000000000000000000000000000000000000000000000000000000 | Standard task |
-| 0x0000000000000000000000000000000000000000000000000000000000000003 | TEE task with Scone framework |
-| 0x0000000000000000000000000000000000000000000000000000000000000005 | TEE task with Gramine framework |
+| `0x0000000000000000000000000000000000000000000000000000000000000000` | Standard task |
+| `0x0000000000000000000000000000000000000000000000000000000000000003` | TEE task with Scone framework |
+| `0x0000000000000000000000000000000000000000000000000000000000000005` | TEE task with Gramine framework |
 
 {% hint style="info" %} For more information on orders, see [Orders description](../../key-concepts/proof-of-contribution.md#orders-description). {% endhint %}
 
