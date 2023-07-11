@@ -214,3 +214,9 @@ It contains at least a field `deterministic-output-path` which is the path of th
 The `computed.json` file is compared across replicated tasks in the [Proof of Contribution protocol](../key-concepts/proof-of-contribution.md) to achieve a consensus on workers.
 
 {% endhint %}
+
+{% hint style="warning" %}
+
+iExec platform currently only supports result files whose name doesn't exceed 31 characters. Please ensure your file names respect this limit. Otherwise, the app execution on iExec will fail.
+
+{% endhint %}
