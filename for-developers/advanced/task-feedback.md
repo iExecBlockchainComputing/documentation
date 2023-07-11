@@ -280,6 +280,7 @@ A _replicate_ can fail with the following causes:
 | `APP_COMPUTE_FAILED` | `COMPUTING` | The application execution failed |
 | `POST_COMPUTE_COMPUTED_FILE_NOT_FOUND` | `COMPUTING` | The `computed.json` file could not be found |
 | `POST_COMPUTE_RESULT_DIGEST_COMPUTATION_FAILED` | `COMPUTING` | The `result digest` could not be computed from the `computed.json` file |
+| `POST_COMPUTE_TOO_LONG_RESULT_FILE_NAME` | `COMPUTING` | One or more of the result files name exceed the limit of 31 characters |
 | `POST_COMPUTE_OUT_FOLDER_ZIP_FAILED` | `COMPUTING` | `post-compute` failed to zip the output folder resulting from the computation |
 | `POST_COMPUTE_SEND_COMPUTED_FILE_FAILED` | `COMPUTING` | Failed to post `computed.json` to worker |
 | `OUT_OF_GAS` | `CONTRIBUTING`, `REVEALING` | The worker needs some ETH, please refill its wallet |
