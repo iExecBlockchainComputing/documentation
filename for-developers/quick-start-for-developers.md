@@ -229,6 +229,30 @@ This will generate an ASCII art greeting with your name.
 
 {% endhint %}
 
+The execution of tasks on the iExec network is asynchronous by design.
+
+```mermaid
+graph TD
+    Requester["Requester (or anyone)"] --> |"1. Match compatible orders \n(request, application, dataset & workerpool orders) \n & Wait result" | Blockchain
+    Blockchain --> |2. Notify new deal with tasks to compute| Scheduler
+    Worker --> |3. Request new task to compute| Scheduler
+    Worker --> |4. Run application| Application[Application image]
+    Worker --> |5.a. Push result| ResultStorage["Result Storage"]
+    Worker --> |5.b. Commit result proof| Blockchain
+    Workerpool --> |6. Publish result link or callback| Blockchain
+
+    subgraph Workerpool
+        Scheduler
+        Worker
+        Application
+    end
+```
+
+Guaranties about completion times (fast/slow) are available in the [category section](../key-concepts/pay-per-task-model.md):
+
+- maximum deal/task time
+- maximum computing time
+
 Once the task is completed copy the taskid from `iexec app run` output \(taskid is a 32Bytes hexadecimal string\).
 
 Download the result of your task
