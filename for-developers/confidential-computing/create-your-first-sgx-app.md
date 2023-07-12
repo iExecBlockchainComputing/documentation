@@ -282,6 +282,13 @@ You noticed we used `debug-v8-bellecour.main.pools.iexec.eth` instead of an ethe
 
 The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables associating decentralized naming to ethereum addresses.
 
+
+{% endhint %}
+
+{% hint style="info" %}
+
+Remember, you can access task and app logs by following the instructions on page [Debug your tasks](advanced/task-feedback.md).
+
 {% endhint %}
 
 ## Next step?

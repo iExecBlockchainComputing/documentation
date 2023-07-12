@@ -383,7 +383,7 @@ iexec task show <taskid> --download my-app-result --chain bellecour  \
 
 **Congratulations your app successfully ran on iExec!**
 
-## Debug your app on iExec
+## Access to app and task logs on iExec
 
 Sometimes things don't work out right the first time and you may need to [Debug your tasks](advanced/task-feedback.md).
 
