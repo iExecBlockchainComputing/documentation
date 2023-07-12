@@ -22,6 +22,14 @@ To connect to the production environment, make sure your `chain.json` content is
 }
 ```
 
+Do not forget to target a production workerpool when running a production application:
+
+```bash
+iexec app run <0x-your-app-address> \
+    --workerpool prod-v8-bellecour.main.pools.iexec.eth \
+    [...]
+```
+
 ## Standard application
 
 If you are developing a standard application, then you are already set. To reach more audience, you can [publish your app to the Dapps store](#publish-your-app-to-the-dapps-store).
