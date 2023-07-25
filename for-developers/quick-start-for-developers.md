@@ -84,16 +84,9 @@ The iExec SDK creates the minimum configuration files:
 
 {% endhint %}
 
-You can now connect to the blockchain. In the following steps we will use the **iExec sidechain (also called Bellecour)**.
+You can now connect to the blockchain. In the following steps, we will use the [iExec sidechain (also called Bellecour)](sidechain/overview.md).
 
-{% hint style="info" %}
-
-**Bellecour** is an Ethereum blockchain run by iExec. Unlike the Ethereum mainnet or public testnets,
-transactions on Bellecour do not require the payment of transaction fees ([Read more about transaction fees](https://ethereum.org/en/developers/docs/gas/)).
-
-{% endhint %}
-
-You can now check your wallet content on Bellecour:
+You can now check your wallet content:
 
 ```text
 iexec wallet show --chain bellecour
