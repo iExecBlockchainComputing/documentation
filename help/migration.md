@@ -97,7 +97,7 @@ iexec dataset push-secret <dataset-address> --secret-path <secret-path> [options
 Publish your dataset order with the correct tag. See tables bellow:
 
 | v7 | Tag |
-| --- | --- | --- |
+| --- | --- |
 | Scone | "0x0000000000000000000000000000000000000000000000000000000000000001" | "0x0000000000000000000000000000000000000000000000000000000000000003" |
 | Gramine | n/a | "0x0000000000000000000000000000000000000000000000000000000000000005" |
 
