@@ -10,6 +10,13 @@ The v7 iExec Marketplace is still supported until the next v9 release.
 
 {% endhint %}
 
+{% hint style="info" %}
+
+The iExec Testnet blockchain (aka Viviani) is no longer available. It is necessary to port your dApps to the iExec Sidechain (aka Bellecour) by redeploying all your digital assets: apps, datasets, workerpools and any related orders.
+
+{% endhint %}
+
+
 - [CLI users](#cli-users)
   - [SDK upgrade version](#sdk-upgrade-version)
   - [Application migration](#application-migration)
