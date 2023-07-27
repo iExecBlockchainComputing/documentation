@@ -60,7 +60,7 @@ Wallet file name follow the pattern `UTC--<CREATION_DATE>--<ADDRESS>`
 
 {% hint style="info" %}
 
-iExec SDK uses standard Ethereum wallet, you can reuse or import existing Ethereum wallet. See iExec SDK documentation [wallet command](https://github.com/iExecBlockchainComputing/iexec-sdk#wallet) and [wallet options](https://github.com/iExecBlockchainComputing/iexec-sdk#wallet-options).
+iExec SDK uses standard Ethereum wallet, you can reuse or import existing Ethereum wallet. See iExec SDK documentation [wallet command](https://github.com/iExecBlockchainComputing/iexec-sdk/blob/v8.1.5/CLI.md#iexec-wallet).
 
 {% endhint %}
 
@@ -84,15 +84,9 @@ The iExec SDK creates the minimum configuration files:
 
 {% endhint %}
 
-You can now connect to the blockchain. In the following steps we will use the **iExec sidechain (also called Bellecour)**.
+You can now connect to the blockchain. In the following steps, we will use the [iExec sidechain (also called Bellecour)](sidechain/overview.md).
 
-{% hint style="info" %}
-
-**Bellecour** is an Ethereum blockchain run by iExec. Unlike the Ethereum mainnet or public testnets, transactions on Bellecour do not require the payment of transaction fees ([Read more about transaction fees](https://bitfalls.com/2017/12/05/ethereum-gas-and-transaction-fees-explained/)).
-
-{% endhint %}
-
-You can now check your wallet content on Bellecour:
+You can now check your wallet content:
 
 ```text
 iexec wallet show --chain bellecour
