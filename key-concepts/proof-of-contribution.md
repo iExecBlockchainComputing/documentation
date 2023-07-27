@@ -393,13 +393,13 @@ struct RequestOrder
 
 The tag specifies the need or the availability of features that go beyond the specifications of the category. The tag is a requirement when it is part of an app order, a dataset order or a requester order. On the other hand, the tag in the workerpool order expresses the availability of the corresponding features.
 
-Tags are 32 bytes (256 bits) long array where each bit corresponds to a feature.
+In V3, tags are 32 bytes (256 bits) long array where each bit corresponds to a feature.
 
 | **Value** | **Description** |
 | --- | --- |
 | `0x0000000000000000000000000000000000000000000000000000000000000001` | TEE (physical enclave) |
-| `0x0000000000000000000000000000000000000000000000000000000000000002` | Scone TEE framework |
-| `0x0000000000000000000000000000000000000000000000000000000000000004` | Gramine TEE framework |
+| `0x0000000000000000000000000000000000000000000000000000000000000002` | — |
+| `0x0000000000000000000000000000000000000000000000000000000000000004` | — |
 | `0x0000000000000000000000000000000000000000000000000000000000000008` | — |
 | `0x0000000000000000000000000000000000000000000000000000000000000010` | — |
 | … | … |

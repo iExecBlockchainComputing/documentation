@@ -19,13 +19,12 @@ Edit the `datasetorder` part in `iexec.json` to set the conditions to use your d
 | `dataset` | dataset address |
 | `datasetprice` | price to charge the requester for each use of the dataset (in nRLC) |
 | `volume` | number of authorized uses, each use decreases this number |
-| `tag` | restrict usage to a specific runtime such as `gpu` or `tee`. The latter requires to define either `scone` or `gramine` bit to specify the TEE framework (1) |
-| `apprestrict` | restrict to use the dataset with a specific app (2) |
-| `workerpoolrestrict` | restrict to use the dataset on a specific workerpool (2) |
-| `requesterrestrict` | restrict the dataset usage to a specific requester (2) |
+| `tag` | restrict usage to a specific runtime such as `gpu` or `tee`. The latter requires to define either `scone` or `gramine` bit to specify the TEE framework |
+| `apprestrict` | restrict to use the dataset with a specific app (1) |
+| `workerpoolrestrict` | restrict to use the dataset on a specific workerpool (1) |
+| `requesterrestrict` | restrict the dataset usage to a specific requester (1) |
 
-1. See [tag](../../key-concepts/proof-of-contribution.md#tag)
-2. the restriction is disabled by default with 0x0000000000000000000000000000000000000000
+1. the restriction is disabled by default with 0x0000000000000000000000000000000000000000
 
 The supported tags for dataset orders are:
 
@@ -35,8 +34,6 @@ The supported tags for dataset orders are:
 | `0x0000000000000000000000000000000000000000000000000000000000000003` | Encrypted dataset for TEE task with Scone framework |
 
 {% hint style="warning" %} TEE tasks with Gramine framework do not support datasets. Do not publish dataset orders with the `tee` and `gramine` tag bits enabled. {% endhint %}
-
-{% hint style="info" %} For more information on orders, see [Orders description](../../key-concepts/proof-of-contribution.md#orders-description). {% endhint %}
 
 When you are happy with your `datasetorder` sign it and publish it
 

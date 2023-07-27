@@ -34,17 +34,16 @@ Edit the `workerpoolorder` part in `iexec.json` to set the conditions to use you
 | `workerpool` | workerpool address |
 | `workerpoolprice` | price to charge the requester for each execution of the app (in nRLC) |
 | `volume` | number of authorized uses, each use decreases this number |
-| `tag` | restrict usage to a specific runtime such as `gpu` or `tee`. The latter requires to define either `scone` or `gramine` bit to specify the TEE framework and should not be used alone (1) |
+| `tag` | restrict usage to a specific runtime such as `gpu` or `tee`. The latter requires to define either `scone` or `gramine` bit to specify the TEE framework and should not be used alone |
 | `category` | Order category, will define the deal `workClockTimeRef` and its deadlines |
 | `trust` | Trust level of the execution, impacts the number of replicates |
-| `apprestrict` | restrict the workerpool usage to a specifig app (2) |
-| `datasetrestrict` | restrict the workerpool usage to a specific dataset (2) |
-| `requesterrestrict` | restrict the workerpool usage to a specific requester (2) |
+| `apprestrict` | restrict the workerpool usage to a specifig app (1) |
+| `datasetrestrict` | restrict the workerpool usage to a specific dataset (1) |
+| `requesterrestrict` | restrict the workerpool usage to a specific requester (1) |
 
-1. See [tag](../key-concepts/proof-of-contribution.md#tag)
-2. the restriction is disabled by default with 0x0000000000000000000000000000000000000000.
+1. the restriction is disabled by default with 0x0000000000000000000000000000000000000000.
 
-As described in [tag](../key-concepts/proof-of-contribution.md#tag), a workerpool will only accept app, dataset and request order tags' combinations matching its own tag. With the current tag specifications, it is mandatory to properly define the `workerpoolorder`'s tag.
+The supported tags for workerpool orders are:
 
 | Tag value | Description |
 | --- | --- |
@@ -58,8 +57,6 @@ As described in [tag](../key-concepts/proof-of-contribution.md#tag), a workerpoo
 2. Currently, TEE workflow do not support tasks replication on several workers. TEE workerpool orders must be published with `trust` value equal to `0` or `1`.
 
 {% endhint %}
-
-{% hint style="info" %} For more information on orders, see [Orders description](../key-concepts/proof-of-contribution.md#orders-description). {% endhint %}
 
 When you are happy with your `workerpoolorder` sign it and publish it
 
