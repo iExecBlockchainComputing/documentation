@@ -215,7 +215,7 @@ Useful options:
 
 - `--args <args>` specify the app execution arguments
 - `--watch` watch execution status changes
-- `--workerpool <address>` specify the workerpool to use
+- `--workerpool <address>` specify the workerpool to use (eg: `--workerpool debug-v8-bellecour.main.pools.iexec.eth`)
 
 Discover more option with `iexec app run --help`
 
@@ -298,7 +298,7 @@ iexec orderbook app <your app address> --chain bellecour
 
 Congratulation you just created a decentralized application! Anyone can now trigger an execution of your application on the iExec decentralized infrastructure.
 
-- With the iexec SDK CLI `iexec app run <app address> --chain bellecour`
+- With the iexec SDK CLI `iexec app run <app address> --chain bellecour --workerpool debug-v8-bellecour.main.pools.iexec.eth`
 - On iExec marketplace
 
 ## What's next?
