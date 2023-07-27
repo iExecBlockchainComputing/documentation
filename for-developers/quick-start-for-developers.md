@@ -60,7 +60,7 @@ Wallet file name follow the pattern `UTC--<CREATION_DATE>--<ADDRESS>`
 
 {% hint style="info" %}
 
-iExec SDK uses standard Ethereum wallet, you can reuse or import existing Ethereum wallet. See iExec SDK documentation [wallet command](https://github.com/iExecBlockchainComputing/iexec-sdk#wallet) and [wallet options](https://github.com/iExecBlockchainComputing/iexec-sdk#wallet-options).
+iExec SDK uses standard Ethereum wallet, you can reuse or import existing Ethereum wallet. See iExec SDK documentation [wallet command](https://github.com/iExecBlockchainComputing/iexec-sdk/blob/v8.1.5/CLI.md#iexec-wallet).
 
 {% endhint %}
 
@@ -84,15 +84,9 @@ The iExec SDK creates the minimum configuration files:
 
 {% endhint %}
 
-You can now connect to the blockchain. In the following steps we will use the **iExec sidechain (also called Bellecour)**.
+You can now connect to the blockchain. In the following steps, we will use the [iExec sidechain (also called Bellecour)](sidechain/overview.md).
 
-{% hint style="info" %}
-
-**Bellecour** is an Ethereum blockchain run by iExec. Unlike the Ethereum mainnet or public testnets, transactions on Bellecour do not require the payment of transaction fees ([Read more about transaction fees](https://bitfalls.com/2017/12/05/ethereum-gas-and-transaction-fees-explained/)).
-
-{% endhint %}
-
-You can now check your wallet content on Bellecour:
+You can now check your wallet content:
 
 ```text
 iexec wallet show --chain bellecour
@@ -215,7 +209,7 @@ Useful options:
 
 - `--args <args>` specify the app execution arguments
 - `--watch` watch execution status changes
-- `--workerpool <address>` specify the workerpool to use
+- `--workerpool <address>` specify the workerpool to use (eg: `--workerpool debug-v8-bellecour.main.pools.iexec.eth`)
 
 Discover more option with `iexec app run --help`
 
@@ -228,6 +222,30 @@ Congratulation you requested the execution of [iexechub/python-hello-world](http
 This will generate an ASCII art greeting with your name.
 
 {% endhint %}
+
+The execution of tasks on the iExec network is asynchronous by design.
+
+```mermaid
+graph TD
+    Requester["Requester (or anyone)"] --> |"1. Match compatible orders \n(request, application, dataset & workerpool orders) \n & Wait result" | Blockchain
+    Blockchain --> |2. Notify new deal with tasks to compute| Scheduler
+    Worker --> |3. Request new task to compute| Scheduler
+    Worker --> |4. Run application| Application[Application image]
+    Worker --> |5.a. Push result| ResultStorage["Result Storage"]
+    Worker --> |5.b. Commit result proof| Blockchain
+    Workerpool --> |6. Publish result link or callback| Blockchain
+
+    subgraph Workerpool
+        Scheduler
+        Worker
+        Application
+    end
+```
+
+Guaranties about completion times (fast/slow) are available in the [category section](../key-concepts/pay-per-task-model.md):
+
+- maximum deal/task time
+- maximum computing time
 
 Once the task is completed copy the taskid from `iexec app run` output \(taskid is a 32Bytes hexadecimal string\).
 
@@ -298,7 +316,7 @@ iexec orderbook app <your app address> --chain bellecour
 
 Congratulation you just created a decentralized application! Anyone can now trigger an execution of your application on the iExec decentralized infrastructure.
 
-- With the iexec SDK CLI `iexec app run <app address> --chain bellecour`
+- With the iexec SDK CLI `iexec app run <app address> --chain bellecour --workerpool debug-v8-bellecour.main.pools.iexec.eth`
 - On iExec marketplace
 
 ## What's next?

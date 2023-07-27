@@ -81,8 +81,7 @@ classDef completed fill:#0a0
 
 Please note that, for the sake of simplicity, transitions to the `FINAL_DEADLINE_REACHED` status have not been pictured. In fact, all statuses except final statuses (`FAILED` and `COMPLETED`) can lead to this `FINAL_DEADLINE_REACHED` status.
 
-As a reminder, _tasks_ have a max execution time, defined by their category. Their final deadlines are defined as follows: `deal start time` + `max execution time`.
-When a _task_ update is triggered on a _Scheduler_ for a non-completed non-failed _task_ while its final deadline is met, then this _task_ status transitions to `FINAL_DEADLINE_REACHED`.
+As a reminder, _tasks_ have a max execution time, defined by their category. Their final deadlines are defined as follows: `deal start time` + `max execution time`. When a _task_ update is triggered on a _Scheduler_ for a non-completed non-failed _task_ while its final deadline is met, then this _task_ status transitions to `FINAL_DEADLINE_REACHED`.
 
 {% endhint %}
 
@@ -127,6 +126,7 @@ task1
 ```
 
 A replicate status workflow can follow two different flows:
+
 1. Usual flow (default): the _task_ is replicated on a number of _workers_, depending on required trust. The _Scheduler_ has to notify the _workers_ when the consensus is reached. It should also finalize the _task_ on-chain.
 2. Optimized flow (under conditions): the _task_ is finalized by the only _worker_ that has worked on it. It makes the _task_ execution faster and cheaper. However, some limitations apply:
    1. The _worker_ has to be trustworthy. To achieve this point, only TEE _tasks_ are eligible to this workflow.

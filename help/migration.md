@@ -16,6 +16,7 @@ The iExec Testnet blockchain (aka Viviani) is no longer available. It is necessa
 
 {% endhint %}
 
+
 - [CLI users](#cli-users)
   - [SDK upgrade version](#sdk-upgrade-version)
   - [Application migration](#application-migration)
@@ -76,7 +77,7 @@ Edit the iexec.json file with the new "tee scone" tag before signing and publish
 }
 ```
 
-#### App secret 
+#### App secret
 
 If your application uses a secret, push it to the v8 SMS (Secret Management Service):
 
@@ -127,11 +128,12 @@ iexec storage init --tee-framework gramine
 
 Push your encryption key to the v8 SMS:
 
-{% hint style="info" %}
-To generate your encryption keypair 
+{% hint style="info" %} To generate your encryption keypair
+
 ```bash
 iexec result generate-encryption-keypair
 ```
+
 {% endhint %}
 
 ```bash
@@ -141,7 +143,7 @@ iexec result push-encryption-key [options]
 iexec result push-encryption-key --tee-framework gramine
 ```
 
-#### Requester secret 
+#### Requester secret
 
 Publish your requester secret to the v8 SMS
 
