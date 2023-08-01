@@ -284,6 +284,12 @@ The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables associa
 
 {% endhint %}
 
+{% hint style="info" %}
+
+Remember, you can access task and app logs by following the instructions on page [Debug your tasks](advanced/task-feedback.md).
+
+{% endhint %}
+
 ## Next step?
 
 In this tutorial, you learned how to leverage your application with the power of Trusted Execution Environments using iExec. But according to your use case, you may need to use some confidential data to get the full potential of the **Confidential Computing** paradigm. Check out next chapters to see how:
