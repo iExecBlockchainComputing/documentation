@@ -25,7 +25,7 @@ Once your account is activated, you need to [request access to the SCONE build t
 
 ```bash
 # when your account is ready, run `docker login` to connect the SCONE registry
-docker login registry.scontain.com:5050
+docker login registry.scontain.com
 ```
 
 ## Prepare your application
@@ -106,12 +106,12 @@ IMG_NAME=tee-scone-hello-world
 IMG_FROM=<docker-hub-user>/hello-world:1.0.0
 IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 
-docker pull registry.scontain.com:5050/sconecuratedimages/node:14.4.0-alpine3.11
+docker pull registry.scontain.com/sconecuratedimages/node:14.4.0-alpine3.11
 
 # Run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v12 \
+            registry.scontain.com/scone-production/iexec-sconify-image:5.7.5-v12 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
@@ -153,7 +153,7 @@ IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 # Run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:5.7.5-v12 \
+            registry.scontain.com/scone-production/iexec-sconify-image:5.7.5-v12 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
