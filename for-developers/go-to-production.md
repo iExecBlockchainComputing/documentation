@@ -59,7 +59,7 @@ When the key is created (`my-signer-key.pem`), update the previous [sconify.sh](
 docker run -it \
             -v /signer:/signer \
             [...]
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:<version> \
+            registry.scontain.com/scone-production/iexec-sconify-image:<version> \
             sconify_iexec \
             --scone-signer=/signer/my-signer-key.pem \
             [...]
