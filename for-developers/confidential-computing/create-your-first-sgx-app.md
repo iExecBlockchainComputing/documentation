@@ -286,7 +286,7 @@ The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables associa
 
 {% hint style="info" %}
 
-Remember, you can access task and app logs by following the instructions on page [Debug your tasks](advanced/task-feedback.md).
+Remember, you can access task and app logs by following the instructions on page [Debug your tasks](../advanced/task-feedback.md).
 
 {% endhint %}
 
