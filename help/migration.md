@@ -60,19 +60,21 @@ Deploy your application to the v8 marketplace:
 iexec app deploy <app-address> [options]
 ```
 
-Edit the iexec.json file with the new "tee scone" tag before signing and publishing your sell order.
+Edit `iexec.json` file with the new "tee scone" tag before signing and publishing your sell order.
 
-```file
-"order": {
+```json
+{
+  "order": {
     "apporder": {
       "app": "<your-app-address>", // starts with 0x
-      "appprice": "1",
-      "volume": "10",
+      "appprice": "<unitary-usage-price>",
+      "volume": "<allowed-usage-count>",
       "tag": "0x0000000000000000000000000000000000000000000000000000000000000003",
       "datasetrestrict": "0x0000000000000000000000000000000000000000",
       "workerpoolrestrict": "0x0000000000000000000000000000000000000000",
       "requesterrestrict": "0x0000000000000000000000000000000000000000"
-    },
+    }
+  }
 }
 ```
 
@@ -100,17 +102,23 @@ Push your dataset secret to the v8 SMS:
 iexec dataset push-secret <dataset-address> --secret-path <secret-path> [options]
 ```
 
-Publish your dataset order with the correct tag. See tables bellow:
+Edit `iexec.json` file with the new "tee scone" tag before signing and publishing your sell order.
 
-| v7 | Tag |
-| --- | --- |
-| Scone | `0x0000000000000000000000000000000000000000000000000000000000000001` |
-| Gramine | n/a |
-
-| v8 | Tag |
-| --- | --- |
-| Scone | `0x0000000000000000000000000000000000000000000000000000000000000003` |
-| Gramine | `0x0000000000000000000000000000000000000000000000000000000000000005` |
+```json
+{
+  "order": {
+    "datasetorder": {
+      "dataset": "<your-dataset-address>", // starts with 0x
+      "datasetprice": "<unitary-usage-price>",
+      "volume": "<allowed-usage-count>",
+      "tag": "0x0000000000000000000000000000000000000000000000000000000000000003",
+      "apprestrict": "0x0000000000000000000000000000000000000000",
+      "workerpoolrestrict": "0x0000000000000000000000000000000000000000",
+      "requesterrestrict": "0x0000000000000000000000000000000000000000"
+    }
+  }
+}
+```
 
 ### Requester migration
 
