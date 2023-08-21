@@ -46,7 +46,7 @@ The application must be published to the v8 marketplace with its sell order, usi
 
 #### Scone app migration
 
-Starting from the same Docker image and the same I/O management, you only need to rebuild your docker image with the new v8 sconifier (`sconify.sh` script). See more details [here](https://documentations.iex.ec/staging/v/v8-staging/for-developers/confidential-computing/choose-your-tee-framework/create-your-first-sgx-app#build-the-tee-docker-image).
+Starting from the same Docker image and the same I/O management, you only need to rebuild your docker image with the new v8 sconifier (`sconify.sh` script). See more details [here](../for-developers/confidential-computing/create-your-first-sgx-app.md#build-the-tee-docker-image).
 
 The app initialization must explicitly declare the Scone TEE framework.
 
@@ -60,21 +60,25 @@ Deploy your application to the v8 marketplace:
 iexec app deploy <app-address> [options]
 ```
 
-Edit the iexec.json file with the new "tee scone" tag before signing and publishing your sell order.
+Edit `iexec.json` file with the new "tee scone" tag before signing and publishing your sell order.
 
-```file
-"order": {
+```json
+{
+  "order": {
     "apporder": {
       "app": "<your-app-address>", // starts with 0x
-      "appprice": "1",
-      "volume": "10",
+      "appprice": "<unitary-usage-price>",
+      "volume": "<allowed-usage-count>",
       "tag": "0x0000000000000000000000000000000000000000000000000000000000000003",
       "datasetrestrict": "0x0000000000000000000000000000000000000000",
       "workerpoolrestrict": "0x0000000000000000000000000000000000000000",
       "requesterrestrict": "0x0000000000000000000000000000000000000000"
-    },
+    }
+  }
 }
 ```
+
+{% hint style="info" %} For more information on app orders management, please see [here](../for-developers/advanced/manage-your-apporders.md). {% endhint %}
 
 #### App secret
 
@@ -100,17 +104,25 @@ Push your dataset secret to the v8 SMS:
 iexec dataset push-secret <dataset-address> --secret-path <secret-path> [options]
 ```
 
-Publish your dataset order with the correct tag. See tables bellow:
+Edit `iexec.json` file with the new "tee scone" tag before signing and publishing your sell order.
 
-| v7 | Tag |
-| --- | --- |
-| Scone | `0x0000000000000000000000000000000000000000000000000000000000000001` |
-| Gramine | n/a |
+```json
+{
+  "order": {
+    "datasetorder": {
+      "dataset": "<your-dataset-address>", // starts with 0x
+      "datasetprice": "<unitary-usage-price>",
+      "volume": "<allowed-usage-count>",
+      "tag": "0x0000000000000000000000000000000000000000000000000000000000000003",
+      "apprestrict": "0x0000000000000000000000000000000000000000",
+      "workerpoolrestrict": "0x0000000000000000000000000000000000000000",
+      "requesterrestrict": "0x0000000000000000000000000000000000000000"
+    }
+  }
+}
+```
 
-| v8 | Tag |
-| --- | --- |
-| Scone | `0x0000000000000000000000000000000000000000000000000000000000000003` |
-| Gramine | `0x0000000000000000000000000000000000000000000000000000000000000005` |
+{% hint style="info" %} For more information on dataset orders management, please see [here](../for-developers/advanced/manage-your-datasetorders.md). {% endhint %}
 
 ### Requester migration
 
