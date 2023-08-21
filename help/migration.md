@@ -78,6 +78,8 @@ Edit `iexec.json` file with the new "tee scone" tag before signing and publishin
 }
 ```
 
+{% hint style="info" %} For more information on app orders management, please see [here](../for-developers/advanced/manage-your-apporders.md). {% endhint %}
+
 #### App secret
 
 If your application uses a secret, push it to the v8 SMS (Secret Management Service):
@@ -119,6 +121,8 @@ Edit `iexec.json` file with the new "tee scone" tag before signing and publishin
   }
 }
 ```
+
+{% hint style="info" %} For more information on dataset orders management, please see [here](../for-developers/advanced/manage-your-datasetorders.md). {% endhint %}
 
 ### Requester migration
 
