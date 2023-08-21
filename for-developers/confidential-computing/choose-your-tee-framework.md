@@ -13,6 +13,14 @@ Two TEE frameworks are supported on the iExec platform:
 - Scone
 - Gramine
 
+{% hint style="warning %}
+
+Today, it is not possible to build a TEE application for a SGX enclave from a laptop based on an ARM architecture like the latest **MacBook Pro** devices. Before going further, please ensure you are working on a `x86_64` compatible device like a laptop, a server or a virtual machine properly configured with previously mentioned required tools.
+
+It is strongly recommended to work with an **Ubuntu 20.04 LTS** installation due to limitations on supported C libraries in Scone and Gramine frameworks.
+
+{% endhint %}
+
 ## Scone
 
 At a high-level, Scone protects the confidentiality and integrity of the data and the code without needing to modify or recompile the application. With native Intel® SGX technology, the OS is not a part of the Trusted Computing Base (TCB) hence system calls and kernel services are not available from an Intel® SGX enclave. This can be limiting as the application will not be able to use File System and sockets directly from the code running inside the enclave. The [Scone](https://scontain.com/) framework resolves this and reduces the burden of porting the application to Intel® SGX.
