@@ -2,24 +2,24 @@
 
 Orders enable setting custom governance for resources.
 
-Here you will learn how to manage your application's rules.
+Here you will learn how to manage your application's monetization rules.
 
 ## Publish a custom apporder
 
-Initialize an apporder
+Initialize an `apporder`:
 
 ```bash
 iexec order init --app
 ```
 
-Edit the `apporder` part in `iexec.json` to set the conditions to use your app
+Edit the `apporder` part in `iexec.json` to set the conditions to use your app:
 
 | key | description |
 | --- | --- |
 | `app` | app address |
 | `appprice` | price to charge the requester for each execution of the app (in nRLC) |
 | `volume` | number of authorized uses, each use decreases this number |
-| `tag` | restrict usage to a specific runtime such as `gpu` or `tee`. The latter requires to define either `scone` or `gramine` bit to specify the TEE framework and should not be used alone |
+| `tag` | restrict usage to a specific runtime such as **Scone** or **Gramine** TEE frameworks |
 | `datasetrestrict` | restrict to use the app with a specific dataset (1) |
 | `workerpoolrestrict` | restrict to run the app on a specific workerpool (1) |
 | `requesterrestrict` | restrict the app usage to a specific requester (1) |
@@ -34,7 +34,7 @@ The supported tags for application orders are:
 | `0x0000000000000000000000000000000000000000000000000000000000000003` | TEE task with Scone framework |
 | `0x0000000000000000000000000000000000000000000000000000000000000005` | TEE task with Gramine framework |
 
-When you are happy with your `apporder` sign it and publish it
+As soon as your `apporder` complies to your requirements, you must sign it and you may publish it.
 
 ```bash
 iexec order sign --app && iexec order publish --app

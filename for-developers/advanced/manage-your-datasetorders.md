@@ -2,24 +2,24 @@
 
 Orders enable setting custom governance for resources.
 
-Here you will learn how to manage your dataset's rules.
+Here you will learn how to manage your dataset's monetization rules.
 
 ## Publish a custom datasetorder
 
-Initialize a datasetorder
+Initialize a `datasetorder`:
 
 ```bash
 iexec order init --dataset
 ```
 
-Edit the `datasetorder` part in `iexec.json` to set the conditions to use your dataset
+Edit the `datasetorder` part in `iexec.json` to set the conditions to use your dataset:
 
 | key | description |
 | --- | --- |
 | `dataset` | dataset address |
 | `datasetprice` | price to charge the requester for each use of the dataset (in nRLC) |
 | `volume` | number of authorized uses, each use decreases this number |
-| `tag` | restrict usage to a specific runtime such as `gpu` or `tee`. The latter requires to define either `scone` or `gramine` bit to specify the TEE framework |
+| `tag` | restrict usage to a specific runtime such as **Scone** or **Gramine** TEE frameworks |
 | `apprestrict` | restrict to use the dataset with a specific app (1) |
 | `workerpoolrestrict` | restrict to use the dataset on a specific workerpool (1) |
 | `requesterrestrict` | restrict the dataset usage to a specific requester (1) |
@@ -35,7 +35,7 @@ The supported tags for dataset orders are:
 
 {% hint style="warning" %} TEE tasks with Gramine framework do not support datasets. Do not publish dataset orders with the `tee` and `gramine` tag bits enabled. {% endhint %}
 
-When you are happy with your `datasetorder` sign it and publish it
+As soon as your `datasetorder` complies to your requirements, you must sign it and you may publish it.
 
 ```bash
 iexec order sign --dataset && iexec order publish --dataset

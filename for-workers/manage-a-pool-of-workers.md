@@ -13,28 +13,28 @@ An iExec workerpool is orchestrated by an _iExec Core Scheduler_. The _iExec Cor
 
 You can deploy your own workerpool on iExec with [this repository](https://github.com/iExecBlockchainComputing/deploy-workerpool). Be sure to check a particular [release](https://github.com/iExecBlockchainComputing/deploy-workerpool/releases) before starting your deployment.
 
-## Manage a workerpool orders
+## Manage your workerpoolorders
 
 Orders enable setting custom governance for resources.
 
-Here you will learn how to manage your workerpool's rules.
+Here you will learn how to manage your workerpool's monetization rules.
 
 ### Publish a workerpool order
 
-Initialize a workerpool order
+Initialize a `workerpoolorder`:
 
 ```bash
 iexec order init --workerpool
 ```
 
-Edit the `workerpoolorder` part in `iexec.json` to set the conditions to use your workerpool.
+Edit the `workerpoolorder` part in `iexec.json` to set the conditions to use your workerpool:
 
 | key | description |
 | --- | --- |
 | `workerpool` | workerpool address |
 | `workerpoolprice` | price to charge the requester for each execution of the app (in nRLC) |
 | `volume` | number of authorized uses, each use decreases this number |
-| `tag` | restrict usage to a specific runtime such as `gpu` or `tee`. The latter requires to define either `scone` or `gramine` bit to specify the TEE framework and should not be used alone |
+| `tag` | restrict usage to a specific runtime such as **Scone** or **Gramine** TEE frameworks |
 | `category` | Order category, will define the deal `workClockTimeRef` and its deadlines |
 | `trust` | Trust level of the execution, impacts the number of replicates |
 | `apprestrict` | restrict the workerpool usage to a specifig app (1) |
@@ -53,12 +53,12 @@ The supported tags for workerpool orders are:
 
 {% hint style="warning" %}
 
-1. Do not publish order with the `tee`,`scone` and `gramine` tag bits enabled. Such an order could match a TEE Gramine task with a Standard dataset and a TEE Scone request. This would produce an unpredictable behavior.
-2. Currently, TEE workflow do not support tasks replication on several workers. TEE workerpool orders must be published with `trust` value equal to `0` or `1`.
+1. Do not publish workerpool orders with a tag value out of the specified list. Such an order could produce undesirable and unpredictable behaviors. The [iExec SDK](../for-developers/toolbox/iexec-sdk.md) implements all required preflight checks to avoid erroneous orders publishing.
+2. Currently, TEE workflow do not support tasks replication on several workers. TEE workerpool orders must be published with `trust` value equal to `1`.
 
 {% endhint %}
 
-When you are happy with your `workerpoolorder` sign it and publish it
+As soon as your `ẁorkerpoolorder` complies to your requirements, you must sign it and you may publish it.
 
 ```bash
 iexec order sign --workerpool && iexec order publish --workerpool
@@ -66,7 +66,7 @@ iexec order sign --workerpool && iexec order publish --workerpool
 
 ## Remove an order from iExec Marketplace
 
-List the published orders for your app.
+List the published orders for your workerpool.
 
 ```bash
 iexec orderbook workerpool <your workerpool address>
