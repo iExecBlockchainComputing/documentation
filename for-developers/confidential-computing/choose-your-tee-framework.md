@@ -13,7 +13,7 @@ Two TEE frameworks are supported on the iExec platform:
 - Scone
 - Gramine
 
-{% hint style="warning %}
+{% hint style="warning" %}
 
 Today, it is not possible to build a TEE application for a SGX enclave from a laptop based on an ARM architecture like the latest **MacBook Pro** devices. Before going further, please ensure you are working on a `x86_64` compatible device like a laptop, a server or a virtual machine properly configured with previously mentioned required tools.
 
