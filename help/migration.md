@@ -78,7 +78,11 @@ Edit `iexec.json` file with the new "tee scone" tag before signing and publishin
 }
 ```
 
-{% hint style="info" %} For more information on app orders management, please see [here](../for-developers/advanced/manage-your-apporders.md). {% endhint %}
+{% hint style="info" %}
+
+For more information, please refer to [Manage your apporders](../for-developers/advanced/manage-your-apporders.md).
+
+{% endhint %}
 
 #### App secret
 
@@ -122,7 +126,11 @@ Edit `iexec.json` file with the new "tee scone" tag before signing and publishin
 }
 ```
 
-{% hint style="info" %} For more information on dataset orders management, please see [here](../for-developers/advanced/manage-your-datasetorders.md). {% endhint %}
+{% hint style="info" %}
+
+For more information, please refer to [Manage you datasetorders](../for-developers/advanced/manage-your-datasetorders.md).
+
+{% endhint %}
 
 ### Requester migration
 
