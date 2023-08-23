@@ -1,34 +1,42 @@
 # Manage your apporders
 
-Orders enables setting custom governance for resources.
+Orders enable setting custom governance for resources.
 
-Here you will learn how to manage your application's rules.
+Here you will learn how to manage your application's monetization rules.
 
 ## Publish a custom apporder
 
-Initialize an apporder
+Initialize an `apporder`:
 
-```text
+```bash
 iexec order init --app
 ```
 
-Edit the apporder part in `iexec.json` to set the conditions to use your app
+Edit the `apporder` part in `iexec.json` to set the conditions to use your app:
 
 | key | description |
 | --- | --- |
-| app | app address |
-| appprice | price to charge the requester for each execution of the app \(in nRLC\) |
-| volume | number of order created, each usage decrease this number |
-| tag | restrict usage to specific runtime such "tee" or "gpu" |
-| datasetrestrict | restrict to use the app with a specific dataset \(1\) |
-| workerpoolrestrict | restrict to run the app on a specific workerpool \(1\) |
-| requesterrestrict | restrict the app usage to a specific requester \(1\) |
+| `app` | app address |
+| `appprice` | price to charge the requester for each execution of the app (in nRLC) |
+| `volume` | number of authorized uses, each use decreases this number |
+| `tag` | restrict usage to a specific runtime such as **Scone** or **Gramine** TEE frameworks |
+| `datasetrestrict` | restrict to use the app with a specific dataset (1) |
+| `workerpoolrestrict` | restrict to run the app on a specific workerpool (1) |
+| `requesterrestrict` | restrict the app usage to a specific requester (1) |
 
 1. the restriction is disabled by default with 0x0000000000000000000000000000000000000000
 
-When you are happy with your apporder sign it and publish it
+The supported tags for application orders are:
 
-```text
+| Tag value | Description |
+| --- | --- |
+| `0x0000000000000000000000000000000000000000000000000000000000000000` | Standard task |
+| `0x0000000000000000000000000000000000000000000000000000000000000003` | TEE task with Scone framework |
+| `0x0000000000000000000000000000000000000000000000000000000000000005` | TEE task with Gramine framework |
+
+As soon as your `apporder` complies to your requirements, you must sign it and you may publish it.
+
+```bash
 iexec order sign --app && iexec order publish --app
 ```
 
@@ -36,20 +44,20 @@ iexec order sign --app && iexec order publish --app
 
 List the published orders for your app.
 
-```text
+```bash
 iexec orderbook app <your app address>
 ```
 
 Copy the `orderHash` of the order you want to remove
 
-Unpublish the apporder from the iExec Marketplace
+Unpublish the `apporder` from the iExec Marketplace
 
-```text
+```bash
 iexec order unpublish --app <orderHash>
 ```
 
 An unpublished order is still valid on the blockchain, to invalidate it use the cancel command.
 
-```text
+```bash
 iexec order cancel --app <orderHash>
 ```
