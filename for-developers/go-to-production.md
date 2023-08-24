@@ -22,6 +22,14 @@ To connect to the production environment, make sure your `chain.json` content is
 }
 ```
 
+Do not forget to target a production workerpool when running a production application:
+
+```bash
+iexec app run <0x-your-app-address> \
+    --workerpool prod-v8-bellecour.main.pools.iexec.eth \
+    [...]
+```
+
 ## Standard application
 
 If you are developing a standard application, then you are already set. To reach more audience, you can [publish your app to the Dapps store](#publish-your-app-to-the-dapps-store).
@@ -51,7 +59,7 @@ When the key is created (`my-signer-key.pem`), update the previous [sconify.sh](
 docker run -it \
             -v /signer:/signer \
             [...]
-            registry.scontain.com:5050/scone-production/iexec-sconify-image:<version> \
+            registry.scontain.com/scone-production/iexec-sconify-image:<version> \
             sconify_iexec \
             --scone-signer=/signer/my-signer-key.pem \
             [...]

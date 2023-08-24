@@ -24,7 +24,68 @@ It allows the requester to retrieve application logs produced by workers.
 
 ### Task statuses
 
-During its execution, a _task_ transitions between different off-chain statuses. Those statuses let you track how a _task_ progresses when it's being executed and makes it easier for you to debug if the execution fails. Here are the statuses a _task_ can be transitioned to:
+During its execution, a _task_ transitions between different off-chain statuses. Those statuses let you track how a _task_ progresses when it's being executed and makes it easier for you to debug if the execution fails. The transitions between those statuses are as follows.
+
+```mermaid
+flowchart
+
+%% Failures
+
+RECEIVED -- If TEE task but no configured SMS\nor on-chain INITIALIZE request failed --> INITIALIZE_FAILED
+INITIALIZING -- If on-chain INITIALIZE transaction reverted --> INITIALIZE_FAILED
+INITIALIZED --> CONTRIBUTION_TIMEOUT
+RUNNING --> CONTRIBUTION_TIMEOUT
+RUNNING -- If TEE task and\nall alive workers have failed to run the task --> RUNNING_FAILED
+RESULT_UPLOADING --> RESULT_UPLOAD_TIMEOUT
+RESULT_UPLOADED -- If on-chain FINALIZE request failed --> FINALIZE_FAILED
+FINALIZING -- If on-chain FINALIZE transaction reverted  --> FINALIZE_FAILED
+
+INITIALIZE_FAILED --> FAILED
+RUNNING_FAILED --> FAILED
+CONTRIBUTION_TIMEOUT --> FAILED
+RESULT_UPLOAD_TIMEOUT --> FAILED
+FINAL_DEADLINE_REACHED --> FAILED
+FINALIZE_FAILED --> FAILED
+
+subgraph Failures
+    FINAL_DEADLINE_REACHED:::failure
+    INITIALIZE_FAILED:::failure
+    RUNNING_FAILED:::failure
+    CONTRIBUTION_TIMEOUT:::failure
+    RESULT_UPLOAD_TIMEOUT:::failure
+    FINALIZE_FAILED:::failure
+
+    FAILED:::failure
+end
+
+%% Usual flow
+
+RECEIVED --> INITIALIZING
+INITIALIZING --> INITIALIZED
+INITIALIZED --> RUNNING
+RUNNING -- If trust != 1\nor standard task\nor callback mode --> CONSENSUS_REACHED
+CONSENSUS_REACHED --> AT_LEAST_ONE_REVEALED
+AT_LEAST_ONE_REVEALED --> RESULT_UPLOADING
+RESULT_UPLOADING --> RESULT_UPLOADED
+RESULT_UPLOADED --> FINALIZING
+FINALIZING --> FINALIZED
+RUNNING -- If trust = 1\nand TEE task\nand not in callback mode --> FINALIZED
+FINALIZED --> COMPLETED:::completed
+
+%% Style definitions
+classDef failure fill:#a00
+classDef completed fill:#0a0
+```
+
+{% hint style="warning" %}
+
+Please note that, for the sake of simplicity, transitions to the `FINAL_DEADLINE_REACHED` status have not been pictured. In fact, all statuses except final statuses (`FAILED` and `COMPLETED`) can lead to this `FINAL_DEADLINE_REACHED` status.
+
+As a reminder, _tasks_ have a max execution time, defined by their category. Their final deadlines are defined as follows: `deal start time` + `max execution time`. When a _task_ update is triggered on a _Scheduler_ for a non-completed non-failed _task_ while its final deadline is met, then this _task_ status transitions to `FINAL_DEADLINE_REACHED`.
+
+{% endhint %}
+
+Below the description of each status:
 
 | Task status | Description |
 | --- | --- |
@@ -51,58 +112,6 @@ However, things sometimes don't work as expected. In that case, failure statuses
 | `FINAL_DEADLINE_REACHED` | The final deadline has been reached |
 | `FAILED` | Final status for any previous failure |
 
-The transitions between those states are as follows:
-
-```mermaid
-flowchart
-
-%% Failures
-
-RECEIVED -- If TEE task but no configured SMS\nor on-chain INITIALIZE request failed --> INITIALIZE_FAILED
-INITIALIZING -- If on-chain INITIALIZE transaction reverted --> INITIALIZE_FAILED
-INITIALIZED --> CONTRIBUTION_TIMEOUT
-RUNNING --> CONTRIBUTION_TIMEOUT
-RUNNING -- If TEE task and\nall alive workers have failed to run the task --> RUNNING_FAILED
-RESULT_UPLOADING --> RESULT_UPLOAD_TIMEOUT
-RESULT_UPLOADED -- If on-chain FINALIZE request failed --> FINALIZE_FAILED
-FINALIZING -- If on-chain FINALIZE transaction reverted  --> FINALIZE_FAILED
-
-INITIALIZE_FAILED --> FAILED
-RUNNING_FAILED --> FAILED
-CONTRIBUTION_TIMEOUT --> FAILED
-RESULT_UPLOAD_TIMEOUT --> FAILED
-FINALIZE_FAILED --> FAILED
-
-subgraph Failures
-    INITIALIZE_FAILED:::failure
-    RUNNING_FAILED:::failure
-    CONTRIBUTION_TIMEOUT:::failure
-    RESULT_UPLOAD_TIMEOUT:::failure
-    FINALIZE_FAILED:::failure
-
-    FAILED:::failure
-end
-
-%% Usual flow
-
-RECEIVED --> INITIALIZING
-INITIALIZING --> INITIALIZED
-INITIALIZED --> RUNNING
-RUNNING --> CONSENSUS_REACHED
-CONSENSUS_REACHED --> AT_LEAST_ONE_REVEALED
-AT_LEAST_ONE_REVEALED --> RESULT_UPLOADING
-RESULT_UPLOADING --> RESULT_UPLOADED
-RESULT_UPLOADED --> FINALIZING
-FINALIZING --> FINALIZED
-FINALIZED --> COMPLETED:::completed
-
-%% Style definitions
-classDef failure fill:#a00
-classDef completed fill:#0a0
-```
-
-Please note that, for the sake of simplicity, the `FINAL_DEADLINE_REACHED` status has not been pictured. In fact, any other non-final status can lead to this `FINAL_DEADLINE_REACHED` status.
-
 ### Replicate statuses
 
 One _task_ bought by a requester will result in one off-chain _task_ with one or more _replicates_ depending on the level of trust set by the requester. For a given _task_, each worker involved in the computation will have its own _replicate_ containing the description of the _task_ to compute. The whole computation of a _replicate_ is made of several stages. Each stage completed by a worker will result in an update of its _replicate_ status.
@@ -116,42 +125,14 @@ task1
 └── replicate3 (workerZ)
 ```
 
-While the _task_ holds a meta status, each _replicate_ has its own status which can be one of these:
+A replicate status workflow can follow two different flows:
 
-| Replicate status | Description |
-| --- | --- |
-| `CREATED` | A new _replicate_ is assigned to a worker just after it asked for more work |
-| `STARTING` | The worker starts preflight checks to confirm it can work on this _replicate_ |
-| `STARTED` | The worker confirms it is going to work on this _replicate_ |
-| `START_FAILED` | The preflight checks have failed. The worker will NOT work on this _replicate_ |
-| `APP_DOWNLOADING` | The worker is downloading the application |
-| `APP_DOWNLOADED` | The download of the application is completed |
-| `APP_DOWNLOAD_FAILED` | The download of the application failed |
-| `DATA_DOWNLOADING` | The worker is downloading the dataset |
-| `DATA_DOWNLOADED` | The download of the dataset is completed |
-| `DATA_DOWNLOAD_FAILED` | The download of the dataset failed |
-| `COMPUTING` | The worker is computing the _task_ |
-| `COMPUTED` | The computation is completed |
-| `COMPUTE_FAILED` | The computation failed |
-| `CONTRIBUTING` | The worker sent the "contribute(..)" transaction (result digest) on chain |
-| `CONTRIBUTE_FAILED` | The contribute transaction failed |
-| `CONTRIBUTED` | The worker has contributed on chain |
-| `REVEALING` | The worker sent the "reveal(..)" transaction (proof that he is the owner of the result digest) |
-| `REVEALED` | The worker has revealed the proof on chain |
-| `REVEAL_FAILED` | The reveal transaction failed |
-| `RESULT_UPLOAD_REQUESTED` | The worker has been requested to upload the result to a remote filesystem |
-| `RESULT_UPLOADING` | The worker is uploading the result |
-| `RESULT_UPLOAD_FAILED` | The upload of the result failed |
-| `RESULT_UPLOADED` | The result has been uploaded to IPFS over the _iExec Result Proxy_ (standard or TEE _tasks_) or to Dropbox (TEE only), dependending on the _deal_ parameters |
-| `COMPLETING` | The _task_ is finalized, the worker will purge data related to its _replicate_ |
-| `COMPLETED` | The whole _task_ is completed meaning the _task_ is finalized. The worker has been rewarded if it is part of the consensus |
-| `COMPLETE_FAILED` | The worker failed to clean the local _replicate_ resources after the _task_ is finalized |
-| `FAILED` | The worker failed to participate to the _task_ |
-| `ABORTED` | The scheduler asked the worker to stop working on this _replicate_ while the latter was still working on it |
-| `RECOVERING` | The worker has been stopped, it is starting back from where it stopped |
-| `WORKER_LOST` | The worker didn't ping the iexec-core scheduler for a while. It is considered as out for this _task_ |
+1. Usual flow (default): the _task_ is replicated on a number of _workers_, depending on required trust. The _Scheduler_ has to notify the _workers_ when the consensus is reached. It should also finalize the _task_ on-chain.
+2. Optimized flow (under conditions): the _task_ is finalized by the only _worker_ that has worked on it. It makes the _task_ execution faster and cheaper. However, some limitations apply:
+   1. The _worker_ has to be trustworthy. To achieve this point, only TEE _tasks_ are eligible to this workflow.
+   2. Callback mode is currently unsupported. iExec strives to remove this limitation.
 
-The transitions between those states are as follows:
+See the following flowchart for details on their transitions.
 
 ```mermaid
 flowchart
@@ -185,11 +166,10 @@ subgraph Compute stage
 end
 
 subgraph Contribute stage
-    COMPUTED --> CONTRIBUTING
+    COMPUTED -- If trust != 1\nor standard task\nor at least one contribution has already been made\nor callback mode --> CONTRIBUTING
 
     CONTRIBUTING --> CONTRIBUTED
     CONTRIBUTING --> CONTRIBUTE_FAILED:::failure
-
 end
 
 subgraph Reveal stage
@@ -206,28 +186,70 @@ subgraph Result upload stage
     RESULT_UPLOADING --> RESULT_UPLOAD_FAILED:::failure
 end
 
+subgraph Contribute and Finalize stage
+    COMPUTED -- If trust = 1\nand TEE task\nand no contribution has been made yet\nand not in callback mode --> CONTRIBUTE_AND_FINALIZE_ONGOING
+
+    CONTRIBUTE_AND_FINALIZE_ONGOING --> CONTRIBUTE_AND_FINALIZE_DONE
+    CONTRIBUTE_AND_FINALIZE_ONGOING --> CONTRIBUTE_AND_FINALIZE_FAILED:::failure
+end
+
 subgraph Complete stage
     RESULT_UPLOADED --> COMPLETING
     REVEALED -- Most workers do not upload their result --> COMPLETING
+    CONTRIBUTE_AND_FINALIZE_DONE --> COMPLETING
 
     COMPLETING --> COMPLETE_FAILED:::failure
     COMPLETING --> COMPLETED:::completed
 end
 
-
-START_FAILED --> ABORTED:::failure
-APP_DOWNLOAD_FAILED --> ABORTED
-DATA_DOWNLOAD_FAILED --> ABORTED
-COMPUTE_FAILED --> ABORTED
-CONTRIBUTE_FAILED --> ABORTED
-REVEAL_FAILED --> ABORTED
-RESULT_UPLOAD_FAILED --> ABORTED
-COMPLETE_FAILED --> ABORTED
-
 %% Style definitions
 classDef failure fill:#a00
 classDef completed fill:#0a0
 ```
+
+{% hint style="warning" %}
+
+Please note that all failed status - pictured in red in the above diagram - finally lead to `ABORTED`. For the sake of simplicity, this final status has not been represented here.
+
+{% endhint %}
+
+While the _task_ holds a meta status, each _replicate_ has its own status which can be one of these:
+
+| Replicate status | Description |
+| --- | --- |
+| `CREATED` | A new _replicate_ is assigned to a worker just after it asked for more work |
+| `STARTING` | The worker starts preflight checks to confirm it can work on this _replicate_ |
+| `STARTED` | The worker confirms it is going to work on this _replicate_ |
+| `START_FAILED` | The preflight checks have failed. The worker will NOT work on this _replicate_ |
+| `APP_DOWNLOADING` | The worker is downloading the application |
+| `APP_DOWNLOADED` | The download of the application is completed |
+| `APP_DOWNLOAD_FAILED` | The download of the application failed |
+| `DATA_DOWNLOADING` | The worker is downloading the dataset |
+| `DATA_DOWNLOADED` | The download of the dataset is completed |
+| `DATA_DOWNLOAD_FAILED` | The download of the dataset failed |
+| `COMPUTING` | The worker is computing the _task_ |
+| `COMPUTED` | The computation is completed |
+| `COMPUTE_FAILED` | The computation failed |
+| `CONTRIBUTING` | The worker sent the "contribute(..)" transaction (result digest) on chain |
+| `CONTRIBUTE_FAILED` | The contribute transaction failed |
+| `CONTRIBUTED` | The worker has contributed on chain |
+| `REVEALING` | The worker sent the "reveal(..)" transaction (proof that he is the owner of the result digest) |
+| `REVEALED` | The worker has revealed the proof on chain |
+| `REVEAL_FAILED` | The reveal transaction failed |
+| `RESULT_UPLOAD_REQUESTED` | The worker has been requested to upload the result to a remote filesystem |
+| `RESULT_UPLOADING` | The worker is uploading the result |
+| `RESULT_UPLOAD_FAILED` | The upload of the result failed |
+| `RESULT_UPLOADED` | The result has been uploaded to IPFS over the _iExec Result Proxy_ (standard or TEE _tasks_) or to Dropbox (TEE only), dependending on the _deal_ parameters |
+| `CONTRIBUTE_AND_FINALIZE_ONGOING` | The worker sent the "contributeAndFinalize(...)" transaction on chain |
+| `CONTRIBUTE_AND_FINALIZE_DONE` | The worker has contributed and finalized the task. The latter is now considered as completed on-chain |
+| `CONTRIBUTE_AND_FINALIZE_FAILED` | The contributeAndFinalize transaction failed |
+| `COMPLETING` | The _task_ is finalized, the worker will purge data related to its _replicate_ |
+| `COMPLETED` | The whole _task_ is completed meaning the _task_ is finalized. The worker has been rewarded if it is part of the consensus |
+| `COMPLETE_FAILED` | The worker failed to clean the local _replicate_ resources after the _task_ is finalized |
+| `FAILED` | The worker failed to participate to the _task_ |
+| `ABORTED` | The scheduler asked the worker to stop working on this _replicate_ while the latter was still working on it |
+| `RECOVERING` | The worker has been stopped, it is starting back from where it stopped |
+| `WORKER_LOST` | The worker didn't ping the iexec-core scheduler for a while. It is considered as out for this _task_ |
 
 ### Off-chain replicates failure causes
 
@@ -258,6 +280,7 @@ A _replicate_ can fail with the following causes:
 | `APP_COMPUTE_FAILED` | `COMPUTING` | The application execution failed |
 | `POST_COMPUTE_COMPUTED_FILE_NOT_FOUND` | `COMPUTING` | The `computed.json` file could not be found |
 | `POST_COMPUTE_RESULT_DIGEST_COMPUTATION_FAILED` | `COMPUTING` | The `result digest` could not be computed from the `computed.json` file |
+| `POST_COMPUTE_TOO_LONG_RESULT_FILE_NAME` | `COMPUTING` | One or more of the result files name exceed the limit of 31 characters |
 | `POST_COMPUTE_OUT_FOLDER_ZIP_FAILED` | `COMPUTING` | `post-compute` failed to zip the output folder resulting from the computation |
 | `POST_COMPUTE_SEND_COMPUTED_FILE_FAILED` | `COMPUTING` | Failed to post `computed.json` to worker |
 | `OUT_OF_GAS` | `CONTRIBUTING`, `REVEALING` | The worker needs some ETH, please refill its wallet |

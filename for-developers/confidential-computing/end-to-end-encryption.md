@@ -108,6 +108,7 @@ Now to see that in action, you'd need to trigger a task and specify yourself as 
 
 ```bash
 iexec app run <0x-your-app-address> \
+    --workerpool debug-v8-bellecour.main.pools.iexec.eth \
     --chain bellecour \
     --tag tee,scone \
     --encrypt-result \
@@ -120,6 +121,7 @@ iexec app run <0x-your-app-address> \
 
 ```bash
 iexec app run <0x-your-app-address> \
+    --workerpool debug-v8-bellecour.main.pools.iexec.eth \
     --chain bellecour \
     --tag tee,gramine \
     --encrypt-result \

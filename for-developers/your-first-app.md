@@ -190,19 +190,21 @@ ENTRYPOINT ["python3", "/app/app.py"]
 Build the docker image.
 
 {% hint style="warning" %}
-iExec expects your Docker container to be built for the `linux/amd64` platform.
-However, if you develop on a
-Macbook Pro with the M1 processor, the platform is `linux/arm64`, which is different.
-To prepare your application, you will need to install `buildkit` and then prepare your docker image for the both platforms.
+
+iExec expects your Docker container to be built for the `linux/amd64` platform. However, if you develop on a **MacBook Pro** with the M1 processor, the platform is `linux/arm64`, which is different. To prepare your application, you will need to install `buildkit` and then prepare your docker image for both platforms.
 
 ```bash
 brew install buildkit
-docker buildx build --platform linux/amd64,linux/arm64 --push -t <docker-hub-user>/hello-world:1.0.0 .
+# ARM64 variant for local testing only
+docker buildx build --platform linux/arm64 -t <docker-hub-user>/hello-world .
+# AMD64 variant to deploy on iExec
+docker buildx build --platform linux/amd64 -t <docker-hub-user>/hello-world .
 ```
+
 {% endhint %}
 
 ```bash
-docker build . --tag hello-world
+docker build --tag hello-world .
 ```
 
 {% hint style="success" %}
@@ -352,7 +354,7 @@ iexec app show --chain bellecour
 ### Run your app on iExec
 
 ```bash
-iexec app run --watch --chain bellecour
+iexec app run --workerpool debug-v8-bellecour.main.pools.iexec.eth --watch --chain bellecour
 ```
 
 {% hint style="info" %}
@@ -383,7 +385,7 @@ iexec task show <taskid> --download my-app-result --chain bellecour  \
 
 **Congratulations your app successfully ran on iExec!**
 
-## Debug your app on iExec
+## Access to app and task logs on iExec
 
 Sometimes things don't work out right the first time and you may need to [Debug your tasks](advanced/task-feedback.md).
 

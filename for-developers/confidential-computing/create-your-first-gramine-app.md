@@ -230,15 +230,15 @@ You noticed we used `debug-v8-bellecour.main.pools.iexec.eth` instead of an ethe
 
 {% endhint %}
 
+{% hint style="info" %}
+
+Remember, you can access task and app logs by following the instructions on page [Debug your tasks](../advanced/task-feedback.md).
+
+{% endhint %}
+
 ### Troubleshoot your Gramine task run
 
-If your task does not complete, you can check detailed logs of your task with
-
-```bash
-iexec task debug <taskid> --logs --chain bellecour
-```
-
-If your error is related to Gramine, you might see following output
+If your task does not complete and the error is related to Gramine, you might see following output:
 
 ```bash
 [error] get keys failed, return -[<ERROR_CODE>]
