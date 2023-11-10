@@ -89,7 +89,7 @@ You can now connect to the blockchain. In the following steps, we will use the [
 You can now check your wallet content:
 
 ```text
-iexec wallet show --chain bellecour
+iexec wallet show
 ```
 
 ### Initialize your remote storage
@@ -99,7 +99,7 @@ iExec enables running apps producing output files, you will need a place for sto
 Initialize your default remote storage:
 
 ```text
-iexec storage init --chain bellecour
+iexec storage init
 ```
 
 {% hint style="info" %}
@@ -144,19 +144,19 @@ You can deploy this application on iExec, it will run out of the box. When you a
 You will now deploy your app on iExec, this will be your first transaction on the blockchain:
 
 ```text
-iexec app deploy --chain bellecour
+iexec app deploy
 ```
 
 {% hint style="success" %}
 
-While running `iexec app deploy --chain bellecour` you sent your first transaction on the bellecour blockchain.
+While running `iexec app deploy` you sent your first transaction on the bellecour blockchain.
 
 {% endhint %}
 
 You can check your deployed apps with their index, let's check your last deployed app:
 
 ```text
-iexec app show --chain bellecour
+iexec app show
 ```
 
 ## Run your app on iExec
@@ -198,7 +198,7 @@ Currently, iExec sponsors applications running on Bellecour, and you won't have 
 Everything is ready to run your application!
 
 ```text
-iexec app run --args <your-name-here> --workerpool prod-v8-bellecour.main.pools.iexec.eth --watch --chain bellecour
+iexec app run --args <your-name-here> --workerpool prod-v8-bellecour.main.pools.iexec.eth --watch
 ```
 
 {% hint style="info" %}
@@ -252,7 +252,7 @@ Once the task is completed copy the taskid from `iexec app run` output \(taskid 
 Download the result of your task
 
 ```text
-iexec task show <taskid> --download my-result --chain bellecour
+iexec task show <taskid> --download my-result
 ```
 
 You can get your taskid with the command:
@@ -295,7 +295,7 @@ The conditions to use an app are defined in the **apporder**.
 Publish a new apporder for your application.
 
 ```text
-iexec app publish --chain bellecour
+iexec app publish
 ```
 
 {% hint style="info" %}
@@ -311,12 +311,12 @@ Your application is now available for everyone on iExec marketplace on the condi
 You can check the published apporders for your app
 
 ```text
-iexec orderbook app <your app address> --chain bellecour
+iexec orderbook app <your app address>
 ```
 
 Congratulation you just created a decentralized application! Anyone can now trigger an execution of your application on the iExec decentralized infrastructure.
 
-- With the iexec SDK CLI `iexec app run <app address> --chain bellecour --workerpool prod-v8-bellecour.main.pools.iexec.eth`
+- With the iexec SDK CLI `iexec app run <app address> --workerpool prod-v8-bellecour.main.pools.iexec.eth`
 - On iExec marketplace
 
 ## What's next?

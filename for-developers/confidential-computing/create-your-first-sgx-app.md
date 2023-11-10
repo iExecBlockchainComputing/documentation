@@ -254,7 +254,7 @@ docker run --rm -e SCONE_HASH=1 <docker-hub-user>/tee-scone-hello-world:1.0.0-de
 Deploy the app with the standard command:
 
 ```bash
-iexec app deploy --chain bellecour
+iexec app deploy
 ```
 
 ### Run the TEE app
@@ -267,13 +267,13 @@ The debug workerpool is connected to a debug Secret Management Service (this is 
 
 ```bash
 # initialize the storage
-iexec storage init --chain bellecour --tee-framework scone
+iexec storage init --tee-framework scone
 ```
 
 You are now ready to run the app
 
 ```bash
-iexec app run --tag tee,scone --workerpool debug-v8-bellecour.main.pools.iexec.eth --watch --chain bellecour
+iexec app run --tag tee,scone --workerpool debug-v8-bellecour.main.pools.iexec.eth --watch
 ```
 
 {% hint style="info" %}

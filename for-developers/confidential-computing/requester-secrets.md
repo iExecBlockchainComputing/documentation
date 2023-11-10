@@ -323,15 +323,15 @@ For simplicity, we will use secrets in a TEE-debug app on a debug workerpool. Th
 ### Push some requester secrets to the SMS
 
 ```bash
-iexec requester push-secret my-namespace --chain bellecour
-iexec requester push-secret my-key --chain bellecour
+iexec requester push-secret my-namespace
+iexec requester push-secret my-key
 ```
 
 ### Check secrets availability in the SMS
 
 ```bash
-iexec requester check-secret my-namespace --chain bellecour
-iexec requester check-secret my-key --chain bellecour
+iexec requester check-secret my-namespace
+iexec requester check-secret my-key
 ```
 
 ### Run the TEE app
@@ -350,8 +350,7 @@ iexec app run <appAddress> \
   --workerpool debug-v8-bellecour.main.pools.iexec.eth \
   --secret 1=my-namespace \
   --secret 2=my-key \
-  --watch \
-  --chain bellecour
+  --watch
 ```
 
 {% endtab %}
@@ -366,8 +365,7 @@ iexec app run <appAddress> \
   --workerpool debug-v8-bellecour.main.pools.iexec.eth \
   --secret 1=my-namespace \
   --secret 2=my-key \
-  --watch \
-  --chain bellecour
+  --watch
 ```
 
 {% endtab %}
