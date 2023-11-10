@@ -106,7 +106,7 @@ iexec storage init --chain bellecour
 
 iExec provides a default storage solution based on [IPFS](https://ipfs.io/). This solution ensures your result to be publicly accessible through a decentralized network.
 
-As you may don't want all your business to be exposed to the world, iExec enables both optional **RSA result encryption** and pushing results to **private storage providers**.
+As you may not want all your business to be exposed to the world, iExec enables both optional **RSA result encryption** and pushing results to **private storage providers**.
 
 {% endhint %}
 
@@ -139,7 +139,7 @@ The default app is the public docker image [iexechub/python-hello-world](https:/
 
 Given an input string, the application generates an ASCII art greeting. {% endhint %}
 
-You can deploy this application on iExec, it will run out of the box. Where you are confident with iExec concept, you can read [Your first app](your-first-app.md) and learn how to setup your own app on iExec.
+You can deploy this application on iExec, it will run out of the box. When you are confident with iExec concept, you can read [Your first app](your-first-app.md) and learn how to setup your own app on iExec.
 
 You will now deploy your app on iExec, this will be your first transaction on the blockchain:
 
