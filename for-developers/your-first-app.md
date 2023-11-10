@@ -342,19 +342,19 @@ docker pull <docker-hub-user>/hello-world:1.0.0 | grep "Digest: sha256:" | sed '
 Deploy your app on iExec
 
 ```bash
-iexec app deploy --chain bellecour
+iexec app deploy
 ```
 
 Verify the deployed app \(name, multiaddr, checksum, owner\)
 
 ```bash
-iexec app show --chain bellecour
+iexec app show
 ```
 
 ### Run your app on iExec
 
 ```bash
-iexec app run --workerpool debug-v8-bellecour.main.pools.iexec.eth --watch --chain bellecour
+iexec app run --workerpool debug-v8-bellecour.main.pools.iexec.eth --watch
 ```
 
 {% hint style="info" %}
@@ -379,7 +379,7 @@ With `--input-files https://example.com/file-A.txt,https://example.com/file-B.zi
 Once the run is completed copy the taskid from `iexec app run` output to download and check the result
 
 ```bash
-iexec task show <taskid> --download my-app-result --chain bellecour  \
+iexec task show <taskid> --download my-app-result  \
     && unzip my-app-result.zip -d my-app-result
 ```
 
@@ -392,7 +392,7 @@ Sometimes things don't work out right the first time and you may need to [Debug 
 ## Publish your app on the iExec marketplace
 
 ```bash
-iexec app publish --chain bellecour
+iexec app publish
 ```
 
 **Congratulations your application is now available on iExec!**

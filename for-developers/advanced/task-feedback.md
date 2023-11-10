@@ -7,7 +7,7 @@ Sometimes things don't work out right the first time and you may need to debug y
 - Get debug information of a _task_
 
 ```bash
-iexec task debug <taskid> --chain bellecour
+iexec task debug <taskid>
 ```
 
 It allows anyone to know on-chain and off-chain statuses of the _task_.
@@ -15,7 +15,7 @@ It allows anyone to know on-chain and off-chain statuses of the _task_.
 - Get debug logs of a _task_
 
 ```bash
-iexec task debug <taskid> --logs --chain bellecour
+iexec task debug <taskid> --logs
 ```
 
 It allows the requester to retrieve application logs produced by workers.

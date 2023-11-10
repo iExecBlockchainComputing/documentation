@@ -206,7 +206,7 @@ Hint: The `mr_enclave` is also available in your logs when building your app.
 Deploy the app with the standard command:
 
 ```bash
-iexec app deploy --chain bellecour
+iexec app deploy
 ```
 
 ### Run the TEE app
@@ -215,13 +215,13 @@ Specify the tag `--tag tee,gramine` in `iexec app run` command to run a tee app.
 
 ```bash
 # initialize the storage
-iexec storage init --chain bellecour --tee-framework gramine
+iexec storage init --tee-framework gramine
 ```
 
 You are now ready to run the app
 
 ```bash
-iexec app run --tag tee,gramine --workerpool debug-v8-bellecour.main.pools.iexec.eth --watch --chain bellecour
+iexec app run --tag tee,gramine --workerpool debug-v8-bellecour.main.pools.iexec.eth --watch
 ```
 
 {% hint style="info" %}
