@@ -89,7 +89,7 @@ You can now connect to the blockchain. In the following steps, we will use the [
 You can now check your wallet content:
 
 ```text
-iexec wallet show --chain bellecour
+iexec wallet show
 ```
 
 ### Initialize your remote storage
@@ -99,14 +99,14 @@ iExec enables running apps producing output files, you will need a place for sto
 Initialize your default remote storage:
 
 ```text
-iexec storage init --chain bellecour
+iexec storage init
 ```
 
 {% hint style="info" %}
 
 iExec provides a default storage solution based on [IPFS](https://ipfs.io/). This solution ensures your result to be publicly accessible through a decentralized network.
 
-As you may don't want all your business to be exposed to the world, iExec enables both optional **RSA result encryption** and pushing results to **private storage providers**.
+As you may not want all your business to be exposed to the world, iExec enables both optional **RSA result encryption** and pushing results to **private storage providers**.
 
 {% endhint %}
 
@@ -139,24 +139,24 @@ The default app is the public docker image [iexechub/python-hello-world](https:/
 
 Given an input string, the application generates an ASCII art greeting. {% endhint %}
 
-You can deploy this application on iExec, it will run out of the box. Where you are confident with iExec concept, you can read [Your first app](your-first-app.md) and learn how to setup your own app on iExec.
+You can deploy this application on iExec, it will run out of the box. When you are confident with iExec concept, you can read [Your first app](your-first-app.md) and learn how to setup your own app on iExec.
 
 You will now deploy your app on iExec, this will be your first transaction on the blockchain:
 
 ```text
-iexec app deploy --chain bellecour
+iexec app deploy
 ```
 
 {% hint style="success" %}
 
-While running `iexec app deploy --chain bellecour` you sent your first transaction on the bellecour blockchain.
+While running `iexec app deploy` you sent your first transaction on the bellecour blockchain.
 
 {% endhint %}
 
 You can check your deployed apps with their index, let's check your last deployed app:
 
 ```text
-iexec app show --chain bellecour
+iexec app show
 ```
 
 ## Run your app on iExec
@@ -198,7 +198,7 @@ Currently, iExec sponsors applications running on Bellecour, and you won't have 
 Everything is ready to run your application!
 
 ```text
-iexec app run --args <your-name-here> --watch --chain bellecour
+iexec app run --args <your-name-here> --workerpool prod-v8-bellecour.main.pools.iexec.eth --watch
 ```
 
 {% hint style="info" %}
@@ -209,7 +209,7 @@ Useful options:
 
 - `--args <args>` specify the app execution arguments
 - `--watch` watch execution status changes
-- `--workerpool <address>` specify the workerpool to use (eg: `--workerpool debug-v8-bellecour.main.pools.iexec.eth`)
+- `--workerpool <address>` specify the workerpool to use (eg: `--workerpool prod-v8-bellecour.main.pools.iexec.eth`)
 
 Discover more option with `iexec app run --help`
 
@@ -252,7 +252,7 @@ Once the task is completed copy the taskid from `iexec app run` output \(taskid 
 Download the result of your task
 
 ```text
-iexec task show <taskid> --download my-result --chain bellecour
+iexec task show <taskid> --download my-result
 ```
 
 You can get your taskid with the command:
@@ -295,7 +295,7 @@ The conditions to use an app are defined in the **apporder**.
 Publish a new apporder for your application.
 
 ```text
-iexec app publish --chain bellecour
+iexec app publish
 ```
 
 {% hint style="info" %}
@@ -311,12 +311,12 @@ Your application is now available for everyone on iExec marketplace on the condi
 You can check the published apporders for your app
 
 ```text
-iexec orderbook app <your app address> --chain bellecour
+iexec orderbook app <your app address>
 ```
 
 Congratulation you just created a decentralized application! Anyone can now trigger an execution of your application on the iExec decentralized infrastructure.
 
-- With the iexec SDK CLI `iexec app run <app address> --chain bellecour --workerpool debug-v8-bellecour.main.pools.iexec.eth`
+- With the iexec SDK CLI `iexec app run <app address> --workerpool prod-v8-bellecour.main.pools.iexec.eth`
 - On iExec marketplace
 
 ## What's next?

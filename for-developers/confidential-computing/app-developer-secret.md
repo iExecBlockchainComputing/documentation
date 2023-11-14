@@ -320,13 +320,13 @@ At this stage, your application is ready to be tested on iExec with the followin
 ### Push an application developer secret to the SMS
 
 ```bash
-iexec app push-secret --chain bellecour
+iexec app push-secret
 ```
 
 ### Check the secret exists in the SMS
 
 ```bash
-iexec app check-secret --chain bellecour
+iexec app check-secret
 ```
 
 ### Run the TEE app

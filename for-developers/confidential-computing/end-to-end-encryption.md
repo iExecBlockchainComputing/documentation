@@ -55,9 +55,7 @@ Now, push the public key to the SMS:
 {% tab title="Scone" %}
 
 ```bash
-iexec result push-encryption-key \
-    --chain bellecour \
-    --tee-framework scone
+iexec result push-encryption-key --tee-framework scone
 ```
 
 {% endtab %}
@@ -65,9 +63,7 @@ iexec result push-encryption-key \
 {% tab title="Gramine" %}
 
 ```bash
-iexec result push-encryption-key \
-    --chain bellecour \
-    --tee-framework gramine
+iexec result push-encryption-key --tee-framework gramine
 ```
 
 {% endtab %}
@@ -81,9 +77,7 @@ And check it using:
 {% tab title="Scone" %}
 
 ```bash
-iexec result check-encryption-key \
-    --chain bellecour \
-    --tee-framework scone
+iexec result check-encryption-key --tee-framework scone
 ```
 
 {% endtab %}
@@ -91,9 +85,7 @@ iexec result check-encryption-key \
 {% tab title="Gramine" %}
 
 ```bash
-iexec result check-encryption-key \
-    --chain bellecour \
-    --tee-framework gramine
+iexec result check-encryption-key --tee-framework gramine
 ```
 
 {% endtab %}
@@ -109,7 +101,6 @@ Now to see that in action, you'd need to trigger a task and specify yourself as 
 ```bash
 iexec app run <0x-your-app-address> \
     --workerpool debug-v8-bellecour.main.pools.iexec.eth \
-    --chain bellecour \
     --tag tee,scone \
     --encrypt-result \
     --watch
@@ -122,7 +113,6 @@ iexec app run <0x-your-app-address> \
 ```bash
 iexec app run <0x-your-app-address> \
     --workerpool debug-v8-bellecour.main.pools.iexec.eth \
-    --chain bellecour \
     --tag tee,gramine \
     --encrypt-result \
     --watch
@@ -135,7 +125,7 @@ iexec app run <0x-your-app-address> \
 Wait for the task to be `COMPLETED` and download the result:
 
 ```bash
-iexec task show <0x-your-task-id> --download --chain bellecour
+iexec task show <0x-your-task-id> --download
 ```
 
 If you extract the obtained zip and try to read the content of the file `iexec_out/result.zip.aes` you will find it encrypted:

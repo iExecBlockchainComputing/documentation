@@ -137,7 +137,7 @@ $ cat iexec.json
 To deploy your dataset run:
 
 ```bash
-iexec dataset deploy --chain bellecour
+iexec dataset deploy
 ```
 
 You will get a hexadecimal address for your deployed dataset. Use that address to push the encryption key to the [SMS](intel-sgx-technology.md#secret-management-service-sms) so it is available for authorized applications.
@@ -147,13 +147,13 @@ For simplicity, we will use the dataset with a TEE-debug app on a debug workerpo
 ### Push the dataset secret to the SMS
 
 ```bash
-iexec dataset push-secret --chain bellecour
+iexec dataset push-secret
 ```
 
 ### Check secret availability on the SMS
 
 ```bash
-iexec dataset check-secret --chain bellecour
+iexec dataset check-secret
 ```
 
 We saw in this section how to encrypt a dataset and deploy it on iExec. In addition, we learned how to push the encryption secret to the [SMS](intel-sgx-technology.md#secret-management-service-sms). Now we need to build the application that is going to consume this dataset.
@@ -324,8 +324,7 @@ iexec app run <appAddress> \
   --tag tee,scone \
   --dataset <datasetAddress> \
   --workerpool debug-v8-bellecour.main.pools.iexec.eth \
-  --watch \
-  --chain bellecour
+  --watch
 ```
 
 ## Next step?
