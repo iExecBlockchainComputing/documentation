@@ -46,7 +46,7 @@
 - [Pay per task model](key-concepts/pay-per-task-model.md)
 
 ## Help
-
+- [Update secrets in SMS in V8.2: (date:2023/12/04)](help/update-secret.md)
 - [v7 to v8 migration](help/migration.md)
 - [Glossary](help/glossary.md)
 - [Assets](help/assets.md)
