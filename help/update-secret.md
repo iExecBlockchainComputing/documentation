@@ -4,7 +4,7 @@ iExec is rolling out an upgraded version of iExec SMS (Secret Management Service
 
 Any assets (such as Apps or Datasets) that are using secrets created prior to this date will no longer be supported after the migration. Requesters will also be affected and will need to take certain actions to retrieve results and generate encrypted results.
 
-[Annoucement](https://medium.com/iex-ec/iexec-secret-management-service-upgrade-iexec-8-3-3fa483866f9f)
+[Announcement](https://medium.com/iex-ec/iexec-secret-management-service-upgrade-iexec-8-3-3fa483866f9f)
 
 {% hint style="info" %}
 
