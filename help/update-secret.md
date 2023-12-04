@@ -45,8 +45,6 @@ Login to the Result proxy:
 ```bash
 iexec storage init
 
-# if you want to use the Gramine TEE framework
-iexec storage init --tee-framework gramine
 ```
 
 Push your encryption key to the SMS:
