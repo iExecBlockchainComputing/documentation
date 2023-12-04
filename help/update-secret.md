@@ -18,7 +18,7 @@ The update will take place on December 4, between 13:00 and 16:00 UTC.
   - [Requester ](#requester)
 - [Push secrets with JS library](#js-library)
 
-## Push Secrets with CLI users
+## Push Secrets with CLI
 
 ### Application
 
