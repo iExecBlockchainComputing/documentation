@@ -1,4 +1,4 @@
-# Update Secrets in SMS in V8.2 [2023/12/04]
+# Update Secrets in SMS [2023/12/04]
 
 iExec is rolling out an upgraded version of iExec SMS (Secret Management Service). 
 
