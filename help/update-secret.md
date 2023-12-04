@@ -60,8 +60,6 @@ iexec result generate-encryption-keypair
 ```bash
 iexec result push-encryption-key [options]
 
-# if you want to use the Gramine TEE framework
-iexec result push-encryption-key --tee-framework gramine
 ```
 
 #### Requester secret
