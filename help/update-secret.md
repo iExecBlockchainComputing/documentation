@@ -12,7 +12,7 @@ The update will take place on December 4, between 13:00 and 16:00 UTC.
 
 {% endhint %}
 
-- [Push secrets with CLI users](#cli-users)
+- [Push secrets with CLI](#cli-users)
   - [Application](#application)
   - [Dataset](#dataset)
   - [Requester ](#requester)
