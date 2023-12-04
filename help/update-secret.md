@@ -40,12 +40,14 @@ iexec dataset push-secret <dataset-address> --secret-path <secret-path> [options
 
 Requesters must log in to the Result Proxy to store their results. To use the result encryption feature, they must also push their public key to the SMS.
 
+#### Initialize storage 
+
 Login to the Result proxy:
 
 ```bash
 iexec storage init
-
 ```
+#### Encryption key for results
 
 Push your encryption key to the SMS:
 
@@ -59,7 +61,6 @@ iexec result generate-encryption-keypair
 
 ```bash
 iexec result push-encryption-key [options]
-
 ```
 
 #### Requester secret
