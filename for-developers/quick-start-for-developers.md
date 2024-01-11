@@ -19,7 +19,7 @@ In this guide, we will use the iExec SDK command-line interface to deploy an iEx
 - [Publish your app on iExec marketplace](quick-start-for-developers.md#publish-your-app-on-the-iexec-marketplace)
 - [What's next?](quick-start-for-developers.md#whats-next)
 
-## Install the iExec SDK 
+## Install the iExec SDK
 
 Requirements: [![npm version](https://img.shields.io/badge/nodejs-%3E=18.0.0-brightgreen.svg)](https://nodejs.org/en/).
 
