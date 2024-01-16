@@ -121,14 +121,6 @@ To reach a higher level of security, the CAS enclave, which is the only componen
 
 With that pattern, no one, even an administrator or someone with root privileges, can inspect confidential assets of users.
 
-#### CAS update and failure
-
-While giving high guarantees about confidentiality of the data, if the CAS software is updated, or if the hardware under the CAS is updated or falls out of order, the CAS data will not be recoverable, hence user secrets will be lost.
-
-#### SMS update
-
-In addition, when deploying a new configuration or software release for the SMS, the application enclave hash (MREnclave) will change. For that reason, old SMS data enclave will not be accessible to the new one, hence user secrets will be lost.
-
 #### Backup your secrets
 
 {% hint style="warning" %}
