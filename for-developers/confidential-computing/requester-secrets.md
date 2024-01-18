@@ -16,7 +16,7 @@ Before going any further, make sure you managed to [Build with a TEE framework](
 **Prerequisites:**
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
-- [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher. [Install the iExec SDK](../quick-start-for-developers.md#install_the_iExec_SDK)
+- [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher. [Install the iExec SDK](../quick-start-for-developers.md#install-the-iexec-sdk)
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
 
 {% endhint %}
