@@ -125,7 +125,7 @@ With that pattern, no one, even an administrator or someone with root privileges
 
 {% hint style="warning" %}
 
-For these reasons, secrets can be lost at any time, with or without notice. Always keep a local copy of your secrets. Nobody, even iExec, will be able to restore them.
+Always keep a local copy of your secrets. For security reasons, it is not possible to extract your secret from the SMS. In other words, the SMS only allows you to share secrets securely in order to process confidential computing tasks.
 
 {% endhint %}
 
