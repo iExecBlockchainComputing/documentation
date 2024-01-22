@@ -121,19 +121,11 @@ To reach a higher level of security, the CAS enclave, which is the only componen
 
 With that pattern, no one, even an administrator or someone with root privileges, can inspect confidential assets of users.
 
-#### CAS update and failure
-
-While giving high guarantees about confidentiality of the data, if the CAS software is updated, or if the hardware under the CAS is updated or falls out of order, the CAS data will not be recoverable, hence user secrets will be lost.
-
-#### SMS update
-
-In addition, when deploying a new configuration or software release for the SMS, the application enclave hash (MREnclave) will change. For that reason, old SMS data enclave will not be accessible to the new one, hence user secrets will be lost.
-
 #### Backup your secrets
 
 {% hint style="warning" %}
 
-For these reasons, secrets can be lost at any time, with or without notice. Always keep a local copy of your secrets. Nobody, even iExec, will be able to restore them.
+Always keep a local copy of your secrets. For security reasons, it is not possible to extract your secret from the SMS. In other words, the SMS only allows you to share secrets securely in order to process confidential computing tasks.
 
 {% endhint %}
 
