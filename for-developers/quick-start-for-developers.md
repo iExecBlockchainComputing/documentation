@@ -5,20 +5,13 @@ description: >-
 
 # Quick Start
 
-{% hint style="success" %}
-
-**Prerequisite:**
-
-- [Nodejs](https://nodejs.org) 14.17.1 or higher
-
-{% endhint %}
-
 iExec enables decentralized docker app deployment and monetization on the blockchain.
 
 In this guide, we will use the iExec SDK command-line interface to deploy an iExec app on a test blockchain.
 
 **Tutorial Steps :**
 
+- [Install the iExec SDK](quick-start-for-developers.md#install-the-iexec-sdk)
 - [Create your identity on the blockchain](quick-start-for-developers.md#create-your-identity-on-the-blockchain)
 - [Initialize your iExec project](quick-start-for-developers.md#initialize-your-iexec-project)
 - [Deploy your app on iExec](quick-start-for-developers.md#deploy-your-app-on-iexec)
@@ -26,17 +19,21 @@ In this guide, we will use the iExec SDK command-line interface to deploy an iEx
 - [Publish your app on iExec marketplace](quick-start-for-developers.md#publish-your-app-on-the-iexec-marketplace)
 - [What's next?](quick-start-for-developers.md#whats-next)
 
+## Install the iExec SDK
+
+Requirements: [![npm version](https://img.shields.io/badge/nodejs-%3E=18.0.0-brightgreen.svg)](https://nodejs.org/en/).
+
+```bash
+npm -g install iexec # install the cli
+iexec --version
+iexec --help
+```
+
 ## Create your identity on the blockchain
 
 On the blockchain, your identity is defined by your **wallet,** constisting of cryptochraphically encrypted **private key** and **public address.** What you own on the blockchain is associated with your address. The applications you deploy on iExec are associated with your wallet.
 
 Let's set up your wallet.
-
-Install the iExec SDK cli \(requires [Nodejs](https://nodejs.org)\)
-
-```text
-npm i -g iexec        # sudo <cmd> if needed
-```
 
 Create a new Wallet file
 

@@ -9,8 +9,7 @@ description: >-
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
 - [Dockerhub](https://hub.docker.com/) account.
-- [Nodejs](https://nodejs.org) 14.17.1 or higher.
-- [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
+- [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher. [Install the iExec SDK](quick-start-for-developers.md#install-the-iexec-sdk).
 - [Quickstart](quick-start-for-developers.md) tutorial completed
 
 {% endhint %}

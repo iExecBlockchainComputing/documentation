@@ -13,8 +13,7 @@ Before going any further, make sure you managed to [Build your first application
 **Prerequisites:**
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and client.
-- [Nodejs](https://nodejs.org) 14.17.1 or higher.
-- [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
+- [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher. [Install the iExec SDK](../quick-start-for-developers.md#install-the-iexec-sdk)
 - Familiarity with the basic concepts of [Intel® SGX](intel-sgx-technology.md#intel-r-software-guard-extension-intel-r-sgx) and [SCONE](intel-sgx-technology.md#scone-framework) framework.
 
 {% endhint %}
@@ -111,7 +110,7 @@ docker pull registry.scontain.com/sconecuratedimages/node:14.4.0-alpine3.11
 # Run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com/scone-production/iexec-sconify-image:5.7.5-v12 \
+            registry.scontain.com/scone-production/iexec-sconify-image:5.7.5-v14 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
@@ -153,7 +152,7 @@ IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 # Run the sconifier to build the TEE image based on the non-TEE image
 docker run -it \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com/scone-production/iexec-sconify-image:5.7.5-v12 \
+            registry.scontain.com/scone-production/iexec-sconify-image:5.7.5-v14 \
             sconify_iexec \
             --name=${IMG_NAME} \
             --from=${IMG_FROM} \
