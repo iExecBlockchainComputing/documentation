@@ -8,9 +8,7 @@
 - [Build your first application](for-developers/your-first-app.md)
 - [Build Confidential Computing app](for-developers/confidential-computing/README.md)
   - [Overview](for-developers/confidential-computing/intel-sgx-technology.md)
-  - [Build with a TEE framework](for-developers/confidential-computing/choose-your-tee-framework.md)
-    - [Build Scone app](for-developers/confidential-computing/create-your-first-sgx-app.md)
-    - [Build Gramine app](for-developers/confidential-computing/create-your-first-gramine-app.md)
+  - [Build your first application with Scone framework](for-developers/confidential-computing/create-your-first-sgx-app.md)
   - [Access confidential assets](for-developers/confidential-computing/access-confidential-assets.md)
     - [Attach a secret to your app](for-developers/confidential-computing/app-developer-secret.md)
     - [Access requester secrets](for-developers/confidential-computing/requester-secrets.md)
@@ -46,6 +44,7 @@
 - [Pay per task model](key-concepts/pay-per-task-model.md)
 
 ## Help
+
 - [Update secrets in SMS [2023/12/04]](help/update-secret.md)
 - [v7 to v8 migration](help/migration.md)
 - [Glossary](help/glossary.md)

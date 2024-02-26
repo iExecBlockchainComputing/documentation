@@ -46,7 +46,7 @@ If you are developing a Confidential Computing application, be aware of followin
 
 ### Sign your application
 
-Any Confidential Computing application built previously on the [develop environment](confidential-computing/choose-your-tee-framework.md#lets-build) runs in a debug enclave, which, as warned, might be inspected.
+Any Confidential Computing application built previously on the [develop environment](confidential-computing/intel-sgx-technology.md#lets-build) runs in a debug enclave, which, as warned, might be inspected.
 
 To run your application in a production enclave, the application needs to be signed with a key compatible with the Intel® Attestation Service (IAS). Create this key in your [Intel developer Portal](https://api.portal.trustedservices.intel.com/).
 

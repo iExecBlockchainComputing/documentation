@@ -31,9 +31,14 @@ The supported tags for dataset orders are:
 | Tag value | Description |
 | --- | --- |
 | `0x0000000000000000000000000000000000000000000000000000000000000000` | No specific feature. Beware, such orders can be matched in TEE workerpools orders. |
-| `0x0000000000000000000000000000000000000000000000000000000000000003` | Encrypted dataset for TEE task with Scone framework |
+| `0x0000000000000000000000000000000000000000000000000000000000000003` | Encrypted dataset for TEE task with Scone framework. |
+| `0x0000000000000000000000000000000000000000000000000000000000000005` | Encrypted dataset for TEE task with Gramine framework (Reserved value, do not use). |
 
-{% hint style="warning" %} TEE tasks with Gramine framework do not support datasets. Do not publish dataset orders with the `tee` and `gramine` tag bits enabled. {% endhint %}
+{% hint style="warning" %}
+
+TEE tasks with Gramine TEE framework are not supported yet. Do not publish orders with both `tee` and `gramine` tag bits enabled.
+
+{% endhint %}
 
 As soon as your `datasetorder` complies to your requirements, you must sign it and you may publish it.
 

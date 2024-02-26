@@ -4,7 +4,7 @@ In this tutorial, you will learn how to leverage an application developer secret
 
 {% hint style="warning" %}
 
-Before going any further, make sure you managed to [Build with a TEE framework](choose-your-tee-framework.md).
+Before going any further, make sure you managed to [Build your first application with Scone framework](create-your-first-sgx-app.md).
 
 {% endhint %}
 
@@ -66,10 +66,7 @@ touch sconify.sh
 chmod +x sconify.sh
 ```
 
-Depending on the TEE framework you are using, make sure your `chain.json` content is correct:
-
-- [Scone chain.json](create-your-first-sgx-app.md#update-chain-json)
-- [Gramine chain.json](create-your-first-gramine-app.md#update-chain-json)
+Make sure your [`chain.json`](create-your-first-sgx-app.md#update-chain-json) content is correct.
 
 The application uses the developer secret to make a call to a secret endpoint of [countapi.xyz](https://countapi.xyz/) and writes the result in a file:
 
@@ -180,10 +177,6 @@ As seen above, a single slot is dedicated to store the application developer sec
 
 ### Build the docker image
 
-{% tabs %}
-
-{% tab title="Scone" %}
-
 In this section, you will:
 
 - Build the native image of the application as described in [Build your first application](../your-first-app.md#dockerize-your-app).
@@ -240,59 +233,11 @@ Run the `sconify.sh` script to build the Scone TEE application:
 ./sconify.sh
 ```
 
-{% endtab %}
-
-{% tab title="Gramine" %}
-
-In this section, you will create a `Dockerfile` and create your **Gramine TEE application** as we saw in [Build Gramine app > Prepare your application](create-your-first-gramine-app.md#prepare-your-application).
-
-You need to copy the `Dockerfile`, then update its `RUN` statements to install required dependencies for your application:
-
-**For a Javascript application:**
-
-```bash
-# Install required node dependencies
-RUN npm install axios
-```
-
-**For a Python application:**
-
-```bash
-# Install required Python dependencies
-RUN pip3 install requests
-```
-
-Build the docker image.
-
-```bash
-docker build . --tag <docker-hub-user>/tee-gramine-count-api:1.0.0
-```
-
-{% endtab %}
-
-{% endtabs %}
-
 ### Push the image on Docker Hub
-
-{% tabs %}
-
-{% tab title="Scone" %}
 
 ```bash
 docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
 ```
-
-{% endtab %}
-
-{% tab title="Gramine" %}
-
-```bash
-docker push <docker-hub-user>/tee-gramine-count-api:1.0.0
-```
-
-{% endtab %}
-
-{% endtabs %}
 
 ## Test your app on iExec
 
@@ -300,21 +245,7 @@ At this stage, your application is ready to be tested on iExec with the followin
 
 ### Deploy the TEE app on iExec
 
-{% tabs %}
-
-{% tab title="Scone" %}
-
 [Deploy your application](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec)
-
-{% endtab %}
-
-{% tab title="Gramine" %}
-
-[Deploy your application](create-your-first-gramine-app.md#deploy-the-tee-app-on-iexec)
-
-{% endtab %}
-
-{% endtabs %}
 
 ### Push an application developer secret to the SMS
 
@@ -330,21 +261,7 @@ iexec app check-secret
 
 ### Run the TEE app
 
-{% tabs %}
-
-{% tab title="Scone" %}
-
 [Run your application](create-your-first-sgx-app.md#run-the-tee-app)
-
-{% endtab %}
-
-{% tab title="Gramine" %}
-
-[Run your application](create-your-first-gramine-app.md#run-the-tee-app)
-
-{% endtab %}
-
-{% endtabs %}
 
 ## Next step?
 
