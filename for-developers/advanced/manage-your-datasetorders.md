@@ -32,7 +32,7 @@ The supported tags for dataset orders are:
 | --- | --- |
 | `0x0000000000000000000000000000000000000000000000000000000000000000` | No specific feature. Beware, such orders can be matched in TEE workerpools orders. |
 | `0x0000000000000000000000000000000000000000000000000000000000000003` | Encrypted dataset for TEE task with Scone framework. |
-| `0x0000000000000000000000000000000000000000000000000000000000000005` | Encrypted dataset for TEE task with Gramine framework (Reserved value, do not use). |
+| `0x0000000000000000000000000000000000000000000000000000000000000005` | Encrypted dataset for TEE task with Gramine framework (reserved value, do not use) |
 
 {% hint style="warning" %}
 

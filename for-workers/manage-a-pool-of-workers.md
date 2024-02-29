@@ -49,7 +49,7 @@ The supported tags for workerpool orders are:
 | --- | --- |
 | `0x0000000000000000000000000000000000000000000000000000000000000000` | Order for the execution of a standard task |
 | `0x0000000000000000000000000000000000000000000000000000000000000003` | Order for the execution of a TEE task with Scone framework |
-| `0x0000000000000000000000000000000000000000000000000000000000000005` | Order for the execution of a TEE task with Gramine framework (Reserved value, do not use). |
+| `0x0000000000000000000000000000000000000000000000000000000000000005` | Order for the execution of a TEE task with Gramine framework (reserved value, do not use) |
 
 {% hint style="warning" %}
 
