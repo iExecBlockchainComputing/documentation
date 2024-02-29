@@ -49,12 +49,13 @@ The supported tags for workerpool orders are:
 | --- | --- |
 | `0x0000000000000000000000000000000000000000000000000000000000000000` | Order for the execution of a standard task |
 | `0x0000000000000000000000000000000000000000000000000000000000000003` | Order for the execution of a TEE task with Scone framework |
-| `0x0000000000000000000000000000000000000000000000000000000000000005` | Order for the execution of a TEE task with Gramine framework |
+| `0x0000000000000000000000000000000000000000000000000000000000000005` | Order for the execution of a TEE task with Gramine framework (reserved value, do not use) |
 
 {% hint style="warning" %}
 
 1. Do not publish workerpool orders with a tag value out of the specified list. Such an order could produce undesirable and unpredictable behaviors. The [iExec SDK](../for-developers/toolbox/iexec-sdk.md) implements all required preflight checks to avoid erroneous orders publishing.
 2. Currently, TEE workflow do not support tasks replication on several workers. TEE workerpool orders must be published with `trust` value equal to `1`.
+3. TEE tasks with Gramine TEE framework are not supported yet. Do not publish orders with both `tee` and `gramine` tag bits enabled.
 
 {% endhint %}
 

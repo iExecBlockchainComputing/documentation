@@ -2,7 +2,7 @@
 
 {% hint style="warning" %}
 
-Before going any further, make sure you managed to [Build with a TEE framework](choose-your-tee-framework.md).
+Before going any further, make sure you managed to [Build your first application with Scone framework](create-your-first-sgx-app.md).
 
 {% endhint %}
 

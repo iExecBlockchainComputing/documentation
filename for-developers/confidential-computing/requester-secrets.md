@@ -7,7 +7,7 @@ In this tutorial, you will learn how to:
 
 {% hint style="warning" %}
 
-Before going any further, make sure you managed to [Build with a TEE framework](choose-your-tee-framework.md).
+Before going any further, make sure you managed to [Build your first application with Scone framework](create-your-first-sgx-app.md).
 
 {% endhint %}
 
@@ -67,10 +67,7 @@ touch sconify.sh
 chmod +x sconify.sh
 ```
 
-Depending on the TEE framework you are using, make sure your `chain.json` content is correct:
-
-- [Scone chain.json](create-your-first-sgx-app.md#update-chain-json)
-- [Gramine chain.json](create-your-first-gramine-app.md#update-chain-json)
+Make sure your [`chain.json`](create-your-first-sgx-app.md#update-chain-json) content is correct.
 
 The application use the requester secrets to make a call to a secret endpoint of [countapi.xyz](https://countapi.xyz/) and writes the result in a file:
 
@@ -185,10 +182,6 @@ except Exception:
 
 Create the `Dockerfile`
 
-{% tabs %}
-
-{% tab title="Scone" %}
-
 In this section, you will:
 
 - Build the native image of the application as described in [Build your first application](../your-first-app.md#dockerize-your-app).
@@ -247,53 +240,11 @@ Run the `sconify.sh` script to build the Scone TEE application:
 ./sconify.sh
 ```
 
-{% endtab %}
-
-{% tab title="Gramine" %}
-
-In this section, you will create a `Dockerfile` and create your **Gramine TEE application** as we saw in [Build Gramine app > Prepare your application](create-your-first-gramine-app.md#prepare-your-application).
-
-You need to copy the `Dockerfile`, then update its `RUN` statements to install required dependencies for your application:
-
-**For a Javascript application:**
-
-```bash
-# Install required node dependencies
-RUN npm install axios
-```
-
-**For a Python application:**
-
-```bash
-# Install required Python dependencies
-RUN pip3 install requests
-```
-
-{% endtab %}
-
-{% endtabs %}
-
 ### Push the image on Docker Hub
-
-{% tabs %}
-
-{% tab title="Scone" %}
 
 ```bash
 docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
 ```
-
-{% endtab %}
-
-{% tab title="Gramine" %}
-
-```bash
-docker push <docker-hub-user>/tee-gramine-count-api:1.0.0
-```
-
-{% endtab %}
-
-{% endtabs %}
 
 ## Test your app on iExec
 
@@ -301,21 +252,7 @@ At this stage, your application is ready to be tested on iExec with the followin
 
 ### Deploy the TEE app on iExec
 
-{% tabs %}
-
-{% tab title="Scone" %}
-
 [Deploy your application](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec)
-
-{% endtab %}
-
-{% tab title="Gramine" %}
-
-[Deploy your application](create-your-first-gramine-app.md#deploy-the-tee-app-on-iexec)
-
-{% endtab %}
-
-{% endtabs %}
 
 For simplicity, we will use secrets in a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the requester secrets to this SMS (this is fine for debugging but do not use to store production secrets).
 
@@ -337,10 +274,6 @@ iexec requester check-secret my-key
 
 You are now ready to run the app with requester secrets.
 
-{% tabs %}
-
-{% tab title="Scone" %}
-
 Specify the `--secret` and `--tag tee,scone` options in `iexec app run` command to run a tee app with requester secrets on Scone
 
 ```bash
@@ -351,25 +284,6 @@ iexec app run <appAddress> \
   --secret 2=my-key \
   --watch
 ```
-
-{% endtab %}
-
-{% tab title="Gramine" %}
-
-Specify the `--secret` and `--tag tee,gramine` options in `iexec app run` command to run a TEE app with requester secrets on Gramine
-
-```bash
-iexec app run <appAddress> \
-  --tag tee,gramine
-  --workerpool debug-v8-bellecour.main.pools.iexec.eth \
-  --secret 1=my-namespace \
-  --secret 2=my-key \
-  --watch
-```
-
-{% endtab %}
-
-{% endtabs %}
 
 {% hint style="info" %}
 

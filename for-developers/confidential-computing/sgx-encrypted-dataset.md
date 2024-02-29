@@ -2,12 +2,6 @@
 
 In this tutorial, you will learn how to leverage an encrypted dataset by using the `IEXEC_DATASET_FILENAME` environment variable in your application.
 
-{% hint style="warning" %}
-
-The [Gramine TEE framework](choose-your-tee-framework.md#gramine) does not support encrypted datasets at the moment. This page is only applicable to the [Scone TEE framework](choose-your-tee-framework.md#scone).
-
-{% endhint %}
-
 {% hint style="success" %}
 
 **Prerequisites:**
