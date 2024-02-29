@@ -38,7 +38,7 @@ iexec -V
 
 ### Application migration
 
-With the support of Gramine for Confidential Computing applications, the workflow for deploying and managing a dapp has slightly evolved.
+With the early work around Gramine support for Confidential Computing applications, the workflow for deploying and managing a dapp has slightly evolved.
 
 #### Standard app migration
 
@@ -140,9 +140,6 @@ Login to the v8 Result proxy:
 
 ```bash
 iexec storage init
-
-# if you want to use the Gramine TEE framework
-iexec storage init --tee-framework gramine
 ```
 
 Push your encryption key to the v8 SMS:
@@ -157,9 +154,6 @@ iexec result generate-encryption-keypair
 
 ```bash
 iexec result push-encryption-key [options]
-
-# if you want to use the Gramine TEE framework
-iexec result push-encryption-key --tee-framework gramine
 ```
 
 #### Requester secret

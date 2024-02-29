@@ -4,7 +4,7 @@ In previous tutorials, we saw how to build [Confidential Computing applications]
 
 {% hint style="warning" %}
 
-Before going any further, make sure you managed to [Build with a TEE framework](choose-your-tee-framework.md).
+Before going any further, make sure you managed to [Build your first application with Scone framework](create-your-first-sgx-app.md).
 
 {% endhint %}
 
@@ -24,14 +24,11 @@ You don't need to change your application's code or redeploy it to add this feat
 
 {% endhint %}
 
-Assuming your application is deployed (if not please check how to do it [with Scone](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec) or [with Gramine](create-your-first-gramine-app.md#deploy-the-tee-app-on-iexec)), before triggering an execution you need to generate an RSA key-pair, then push the public key to the [Secret Management Service](intel-sgx-technology.md#secret-management-service-sms). The latter, in turn, will provide it, at runtime, to the enclave running your Confidential Computing application.
+Assuming your application is deployed (if not please check how to do it [with Scone](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec)), before triggering an execution you need to generate an RSA key-pair, then push the public key to the [Secret Management Service](intel-sgx-technology.md#secret-management-service-sms). The latter, in turn, will provide it, at runtime, to the enclave running your Confidential Computing application.
 
 To generate the key-pair, go to `~/iexec-projects` and use the following SDK command:
 
-Depending on the TEE framework you are using, make sure your `chain.json` content is correct:
-
-- [Scone chain.json](create-your-first-sgx-app.md#update-chain-json)
-- [Gramine chain.json](create-your-first-gramine-app.md#update-chain-json)
+Make sure your [`chain.json`](create-your-first-sgx-app.md#update-chain-json) content is correct.
 
 ```bash
 iexec result generate-encryption-keypair
@@ -49,53 +46,17 @@ This generates two files in `.secrets/beneficiary/`. Make sure to back up the pr
 
 Now, push the public key to the SMS:
 
-{% tabs %}
-
-{% tab title="Scone" %}
-
 ```bash
 iexec result push-encryption-key --tee-framework scone
 ```
 
-{% endtab %}
-
-{% tab title="Gramine" %}
-
-```bash
-iexec result push-encryption-key --tee-framework gramine
-```
-
-{% endtab %}
-
-{% endtabs %}
-
 And check it using:
-
-{% tabs %}
-
-{% tab title="Scone" %}
 
 ```bash
 iexec result check-encryption-key --tee-framework scone
 ```
 
-{% endtab %}
-
-{% tab title="Gramine" %}
-
-```bash
-iexec result check-encryption-key --tee-framework gramine
-```
-
-{% endtab %}
-
-{% endtabs %}
-
 Now to see that in action, you'd need to trigger a task and specify yourself as the beneficiary in the command:
-
-{% tabs %}
-
-{% tab title="Scone" %}
 
 ```bash
 iexec app run <0x-your-app-address> \
@@ -104,22 +65,6 @@ iexec app run <0x-your-app-address> \
     --encrypt-result \
     --watch
 ```
-
-{% endtab %}
-
-{% tab title="Gramine" %}
-
-```bash
-iexec app run <0x-your-app-address> \
-    --workerpool debug-v8-bellecour.main.pools.iexec.eth \
-    --tag tee,gramine \
-    --encrypt-result \
-    --watch
-```
-
-{% endtab %}
-
-{% endtabs %}
 
 Wait for the task to be `COMPLETED` and download the result:
 

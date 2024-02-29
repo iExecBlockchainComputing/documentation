@@ -29,4 +29,23 @@ graph TD
     style AppStarted color:green
 ```
 
-To build such Confidential Computing (TEE) application, a developer would need to use the Intel® SGX SDK. With iExec, you don't need to manipulate it. Instead iExec supports high-level frameworks, known as TEE frameworks, such as Scone and Gramine. Further sections will cover in details these [TEE frameworks](choose-your-tee-framework.md).
+To build such Confidential Computing (TEE) application, a developer would need to use the Intel® SGX SDK. With iExec, you don't need to manipulate it. Instead iExec supports the high-level Scone framework.
+
+At a high-level, Scone protects the confidentiality and integrity of the data and the code without needing to modify or recompile the application. With native Intel® SGX technology, the OS is not a part of the Trusted Computing Base (TCB) hence system calls and kernel services are not available from an Intel® SGX enclave. This can be limiting as the application will not be able to use File System and sockets directly from the code running inside the enclave. The [Scone](https://scontain.com/) framework resolves this and reduces the burden of porting the application to Intel® SGX.
+
+More precisely, Scone provides a C standard library interface to container processes. System calls are executed outside of the enclave, but they are shielded by transparently encrypting/decrypting application data. Files stored outside of the enclave are therefore encrypted, and network communication is protected by Transport Layer Security (TLS).
+
+For a deeper understanding, you can have a look to the official [Scone documentation](https://sconedocs.github.io/).
+
+## Let's build
+
+{% hint style="warning" %}
+
+Following steps will show you how to build a Confidential Computing application. The environment you are about to use is a "develop" environment:
+
+- which can be reset at any time
+- where configurations and secrets might be inspected (debug enclaves)
+
+When your developer discovery journey is complete, please reach the [production section](../go-to-production.md).
+
+{% endhint %}
