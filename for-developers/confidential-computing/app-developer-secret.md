@@ -48,7 +48,7 @@ Make sure to check your field's best practices before going to production.
 
 {% hint style="info" %}
 
-We will create a dapp computing the function $(f(x) = a*x^3 + b*x^2 + c*x + d) with a,b,c,d kept secret. 
+We will create a dapp computing the function f(x) = a*x^3 + b*x^2 + c*x + d with a,b,c,d kept secret. 
 
 In this example, the app developer secret must be be set with the following format `a;b;c;d`.
 
@@ -266,7 +266,13 @@ At this stage, your application is ready to be tested on iExec with the followin
 iexec app push-secret
 ```
 
-For example set your secret with 1;1;1;1 for a,b,c,d coeficients
+For example set your secret with `1;1;1;1` for a,b,c,d coeficients.
+
+{% hint style="warning" %}
+
+For security reason of the Secret Management Service, secret can't be updated  
+
+{% endhint %}
 
 ### Check the secret exists in the SMS
 
