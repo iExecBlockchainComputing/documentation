@@ -48,9 +48,9 @@ Make sure to check your field's best practices before going to production.
 
 {% hint style="info" %}
 
-We will use the API [countapi.xyz](https://countapi.xyz/). This service keeps a count of hits on any couple of `namespace/key` (ex: <https://api.countapi.xyz/hit/foo/bar>).
+We will create a dapp computing the function $(f(x) = a*x^3 + b*x^2 + c*x + d) with a,b,c,d kept secret. 
 
-In this example, we will use an app developer secret to set `namespace/key`.
+In this example, the app developer secret must be be set with the following format `a;b;c;d`.
 
 {% endhint %}
 
@@ -67,8 +67,6 @@ chmod +x sconify.sh
 ```
 
 Make sure your [`chain.json`](create-your-first-sgx-app.md#update-chain-json) content is correct.
-
-The application uses the developer secret to make a call to a secret endpoint of [countapi.xyz](https://countapi.xyz/) and writes the result in a file:
 
 **Copy the following content** in `src/` .
 
@@ -126,38 +124,55 @@ const axios = require("axios");
 
 ```python
 import os
+import sys
 import json
-import requests
 
 try:
     iexec_out = os.environ["IEXEC_OUT"]
 
-    # get the secret endpoint from app developer secret
+    # Get the secret endpoint from the app developer secret
     try:
         secret = os.environ["IEXEC_APP_DEVELOPER_SECRET"]
-    except Exception:
-        print("missing IEXEC_APP_DEVELOPER_SECRET")
+        # Split the secret into coefficients
+        coefficients = secret.split(";")
+        if len(coefficients) != 4:
+            raise ValueError("Incorrect number of coefficients provided")
+        a, b, c, d = map(float, coefficients)
+    except KeyError:
+        print("Missing IEXEC_APP_DEVELOPER_SECRET")
+        exit(1)
+    except ValueError as e:
+        print("Invalid coefficients:", e)
         exit(1)
 
-    # get the hit count from countapi
-    response = requests.request("GET", "https://api.countapi.xyz/hit/iexec/" + secret)
-    json_response = response.json()
-    hit_count = json_response["value"]
+    # Function to compute f(x)
+    def cubic_polynomial(x):
+        return a * x**3 + b * x**2 + c * x + d
 
-    result = "endpoint hit " + str(hit_count) + " times"
-    print(result)
+    # Get the x value from command-line arguments
+    if len(sys.argv) != 2:
+        result="Usage: exactly one argument required for this dapp: x ; to compute f(x)=a.x^3 + b.x^2 + c.x + d , x=1 by default"
+        print(result)
+        _x=1     
+    else:  
+        _x=sys.argv[1]     
+    
+    x = float(_x)
 
-    # write the result
-    with open(iexec_out + "/result.txt", "w+") as fout:
-        fout.write(result)
+    # Compute f(x)
+    result = cubic_polynomial(x)
 
-    # declare everything is computed
+    # Write the result to a JSON file
+    with open(iexec_out + "/result.json", "w+") as f:
+        json.dump({"x= ": x, ";f(x)=": result}, f)
+    f.close()
+    # Declare computation complete
     with open(iexec_out + "/computed.json", "w+") as f:
-        json.dump({ "deterministic-output-path" : iexec_out + "/result.txt" }, f)
+        json.dump({"deterministic-output-path": iexec_out + "/result.json"}, f)
+    f.close()
 
-except Exception:
-    # do not log anything that could reveal the app developer secret!
-    print("something went wrong")
+except Exception as e:
+    print("Something went wrong:", e)
     exit(1)
 ```
 
@@ -203,17 +218,15 @@ ENTRYPOINT [ "node", "/app/app.js"]
 ```bash
 FROM python:3.7.3-alpine3.10
 
-RUN pip3 install requests
-
+### install python dependencies if you have some
 COPY ./src /app
-
 ENTRYPOINT ["python3", "/app/app.py"]
 ```
 
 Build the docker image.
 
 ```bash
-docker build . --tag <docker-hub-user>/count-api:1.0.0
+docker build . --tag <docker-hub-user>/secret-function:1.0.0
 ```
 
 Follow the steps described in [Build Scone app > Build the TEE docker image](create-your-first-sgx-app.md#build-the-tee-docker-image).
@@ -222,8 +235,8 @@ Update the `sconify.sh` script with the variables as follow:
 
 ```bash
 # Declare image related variables
-IMG_NAME=tee-scone-count-api
-IMG_FROM=<docker-hub-user>/count-api:1.0.0
+IMG_NAME=tee-scone-secret-fonction
+IMG_FROM=<docker-hub-user>/secret-function:1.0.0
 IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 ```
 
@@ -236,7 +249,7 @@ Run the `sconify.sh` script to build the Scone TEE application:
 ### Push the image on Docker Hub
 
 ```bash
-docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
+docker push <docker-hub-user>/tee-scone-secret-function:1.0.0-debug
 ```
 
 ## Test your app on iExec
@@ -252,6 +265,8 @@ At this stage, your application is ready to be tested on iExec with the followin
 ```bash
 iexec app push-secret
 ```
+
+For example set your secret with 1;1;1;1 for a,b,c,d coeficients
 
 ### Check the secret exists in the SMS
 
