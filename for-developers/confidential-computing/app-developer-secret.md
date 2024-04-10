@@ -48,7 +48,7 @@ Make sure to check your field's best practices before going to production.
 
 {% hint style="info" %}
 
-We will create a dapp computing the function f(x) = a*x^3 + b*x^2 + c*x + d with a,b,c,d kept secret. 
+We will create a dapp computing the function f(x) = a.x^3 + b.x^2 + c.x + d with a,b,c,d kept secret. 
 
 In this example, the app developer secret must be be set with the following format `a;b;c;d`.
 
