@@ -46,10 +46,10 @@ Make sure to check your field's best practices before going to production.
 
 {% endhint %}
 
-
-Let's build a dapp that calculates the function, 
+Let's develop an application designed to evaluate the function:
 $$f(x) = ax^3 + bx^2 + cx + d$$ 
-with a,b,c,d hidden from requester with app secret feature
+
+where the coefficients a, b, c and d are kept confidential using an application secret 
 
 
 Let's create a directory tree for this app in `~/iexec-projects/`.
