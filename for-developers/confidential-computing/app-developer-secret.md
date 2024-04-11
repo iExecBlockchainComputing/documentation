@@ -48,9 +48,8 @@ Make sure to check your field's best practices before going to production.
 
 {% hint style="info" %}
 
-We will create a dapp computing the function $f(x) = ax^3 + bx^2 + cx + d$ with a,b,c,d kept secret. 
-
-In this example, the app developer secret must be be set with the following format `a;b;c;d`.
+We will create a dapp computing the function, with a,b,c,d kept hidden from requester with app secret:
+$$f(x) = ax^3 + bx^2 + cx + d$$ 
 
 {% endhint %}
 
@@ -294,6 +293,7 @@ At this stage, your application is ready to be tested on iExec with the followin
 ```bash
 iexec app push-secret
 ```
+In this example, the app developer secret must be strictly set under the following format `a;b;c;d`.
 
 For example set your secret with `1;1;1;1` for a,b,c,d coeficients.
 
