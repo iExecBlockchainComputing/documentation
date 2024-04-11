@@ -78,27 +78,56 @@ Make sure your [`chain.json`](create-your-first-sgx-app.md#update-chain-json) co
 
 ```javascript
 const fsPromises = require("fs").promises;
-const axios = require("axios");
 
 (async () => {
   try {
     const iexecOut = process.env.IEXEC_OUT;
+    console.log(iexecOut);
+
     // get the secret endpoint from app developer secret
     const secret = process.env.IEXEC_APP_DEVELOPER_SECRET;
+    let a = 1, b = 1, c = 1, d = 1; // Default values
+
     if (!secret) {
       console.log("missing IEXEC_APP_DEVELOPER_SECRET");
-      process.exit(1);
+    } else {
+      // Split the secret into coefficients
+      let coefficients = secret.split(";");
+      if (coefficients.length !== 4) {
+        console.log("problem length IEXEC_APP_DEVELOPER_SECRET");
+      } else {
+        [a, b, c, d] = coefficients.map(parseFloat);
+      }
     }
-    // get the hit count from countapi
-    const hitCount = await axios
-      .get(`https://api.countapi.xyz/hit/iexec/${secret}`)
-      .then(({ data }) => data.value);
 
-    const result = `endpoint hit ${hitCount} times`;
-    console.log(result);
-    // write the result
-    await fsPromises.writeFile(`${iexecOut}/result.txt`, result);
-    // declare everything is computed
+    // Function to compute f(x)
+    function cubicPolynomial(x) {
+      return a * Math.pow(x, 3) + b * Math.pow(x, 2) + c * x + d;
+    }
+
+    // Get the value of x from command-line arguments
+    let x;
+    if (process.argv.length !== 3) {
+      console.log("Usage: exactly one argument required for this dapp: x ; to compute f(x)=a.x^3 + b.x^2 + c.x + d , x=1 by default");
+      x = 1;
+    } else {
+      x = parseFloat(process.argv[2]);
+    }
+
+    // Compute f(x)
+    let result = cubicPolynomial(x);
+    
+    // Create result object
+    const resultObj = {
+      "x": x,
+      "result": result
+    };
+    // Convert result object to JSON string
+    const resultJson = JSON.stringify(resultObj);
+    // Write result to file
+    await fsPromises.writeFile(`${iexecOut}/result.txt`, resultJson);
+
+    // Declare everything is computed
     const computedJsonObj = {
       "deterministic-output-path": `${iexecOut}/result.txt`,
     };
@@ -108,7 +137,7 @@ const axios = require("axios");
     );
   } catch (e) {
     // do not log anything that could reveal the app developer secret!
-    console.log("something went wrong");
+    console.log(e);
     process.exit(1);
   }
 })();
@@ -206,7 +235,7 @@ Create the `Dockerfile`
 FROM node:14-alpine3.11
 
 # install your dependencies
-RUN mkdir /app && cd /app && npm install axios
+RUN mkdir /app && cd /app
 
 COPY ./src /app
 
