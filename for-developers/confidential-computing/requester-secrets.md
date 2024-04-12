@@ -70,7 +70,7 @@ chmod +x sconify.sh
 
 Make sure your [`chain.json`](create-your-first-sgx-app.md#update-chain-json) content is correct.
 
-The application uses the requester secret to make a call to evaluate the function with a secret value and writes the result in a file:
+The application uses the requester's secret to evaluate a secret function f(x), keeping the input x also confidential, and writes the result in a file.
 
 **Copy the following content** in `src/` .
 
@@ -86,7 +86,6 @@ const fsPromises = require("fs").promises;
 (async () => {
   try {
     const iexecOut = process.env.IEXEC_OUT;
-
     // get the secret endpoint from app developer secret
     const app_secret = process.env.IEXEC_APP_DEVELOPER_SECRET;
     let a = 1, b = 1, c = 1, d = 1; // Default values
@@ -296,12 +295,13 @@ At this stage, your application is ready to be tested on iExec with the followin
 
 For simplicity, we will use secrets in a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the requester secrets to this SMS (this is fine for debugging but do not use to store production secrets).
 
-### Push the app secret to the SMS
+In this example, the app developer's secret must be strictly defined in the following format `a;b;c;d`.
+For example set your secret to `1;1;1;1` for coeficients a,b,c,d.
+For details, go to [Use app secret](app-developer-secret.md####Push-an-application-developer-secret-to-the-SMS)
 
 ```bash
 iexec app <appAddress> push-secret
 iexec app <appAddress> check-secret
-
 ```
 
 ### Push some requester secrets to the SMS
@@ -332,7 +332,7 @@ iexec app run <appAddress> \
 
 {% hint style="info" %}
 
-The option `--secret <secretMapping...>` allow the requester to provision any number of secrets with the mapping syntax `<key>=<name>`.
+The option `--secret <secretMapping...>` allows the requester to provision any number of secrets with the mapping syntax `<key>=<name>`.
 
 example:
 

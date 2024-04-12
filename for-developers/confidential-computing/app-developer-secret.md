@@ -49,8 +49,8 @@ Make sure to check your field's best practices before going to production.
 Let's develop an application designed to evaluate the function:
 $$f(x) = ax^3 + bx^2 + cx + d$$ 
 
-where the coefficients a, b, c and d are kept confidential using an application secret 
-
+where the coefficients a, b, c and d are kept confidential using an application secret,
+and the input x is given as argument of the app.
 
 Let's create a directory tree for this app in `~/iexec-projects/`.
 
@@ -80,12 +80,10 @@ const fsPromises = require("fs").promises;
 (async () => {
   try {
     const iexecOut = process.env.IEXEC_OUT;
-    console.log(iexecOut);
-
     // get the secret endpoint from app developer secret
     const secret = process.env.IEXEC_APP_DEVELOPER_SECRET;
+    
     let a = 1, b = 1, c = 1, d = 1; // Default values
-
     if (!secret) {
       console.log("missing IEXEC_APP_DEVELOPER_SECRET");
     } else {
@@ -231,12 +229,9 @@ Create the `Dockerfile`
 ```bash
 # Starting from a base image supported by SCONE
 FROM node:14-alpine3.11
-
 # install your dependencies
 RUN mkdir /app && cd /app
-
 COPY ./src /app
-
 ENTRYPOINT [ "node", "/app/app.js"]
 ```
 
@@ -244,7 +239,6 @@ ENTRYPOINT [ "node", "/app/app.js"]
 
 ```bash
 FROM python:3.7.3-alpine3.10
-
 ### install python dependencies if you have some
 COPY ./src /app
 ENTRYPOINT ["python3", "/app/app.py"]
@@ -292,13 +286,13 @@ At this stage, your application is ready to be tested on iExec with the followin
 ```bash
 iexec app push-secret
 ```
-In this example, the app developer secret must be strictly set under the following format `a;b;c;d`.
+In this example, the app developer's secret must be strictly defined in the following format `a;b;c;d`.
 
-For example set your secret with `1;1;1;1` for a,b,c,d coeficients.
+For example set your secret to `1;1;1;1` for coeficients a,b,c,d.
 
 {% hint style="warning" %}
 
-For Secret Management Service security reasons, the app secret cannot be updated, use with cautious.
+For Secret Management Service security reasons, the app secret cannot be updated. Use with caution.
 {% endhint %}
 
 ### Check the secret exists in the SMS
