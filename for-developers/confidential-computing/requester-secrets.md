@@ -300,8 +300,8 @@ For example set your secret to `1;1;1;1` for coeficients a,b,c,d.
 For details, go to [Use app secret](app-developer-secret.md####Push-an-application-developer-secret-to-the-SMS)
 
 ```bash
-iexec app <appAddress> push-secret
-iexec app <appAddress> check-secret
+iexec app  push-secret <appAddress>
+iexec app  check-secret <appAddress>
 ```
 
 ### Push some requester secrets to the SMS
