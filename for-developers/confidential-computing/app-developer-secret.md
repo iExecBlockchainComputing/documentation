@@ -256,7 +256,7 @@ Update the `sconify.sh` script with the variables as follow:
 
 ```bash
 # Declare image related variables
-IMG_NAME=tee-scone-secret-fonction
+IMG_NAME=tee-scone-secret-function
 IMG_FROM=<docker-hub-user>/secret-function:1.0.0
 IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 ```
