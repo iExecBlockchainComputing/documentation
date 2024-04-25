@@ -14,7 +14,7 @@ The library documentation is available [here](https://github.com/iExecBlockchain
 
 ### Browser integration
 
-{% embed url="https://codesandbox.io/embed/iexec-sdk-browser-sjxhhh?fontsize=14&hidenavigation=1&module=%2Fsrc%2Findex.js&moduleview=1&theme=dark" %}
+{% embed url="https://codesandbox.io/p/github/iExecBlockchainComputing/iexec-sdk-sandbox-buy-computation/main?file=%2Fsrc%2Findex.js&moduleview=1&theme=dark" %}
 
 ### NodeJS integration
 
