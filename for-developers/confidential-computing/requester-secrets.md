@@ -49,11 +49,12 @@ Make sure to check your field's best practices before going to production.
 
 {% endhint %}
 
-{% hint style="info" %}
+Let's develop an application designed to evaluate the function:
+$$f(x) = ax^3 + bx^2 + cx + d$$ 
 
-We will use the API [countapi.xyz](https://countapi.xyz/). This service keeps a count of hit on any couple of `namespace/key` (ex: <https://api.countapi.xyz/hit/foo/bar>). In this example, we will use requester secrets to set `namespace/key`.
+where the coefficients a, b, c and d are kept confidential using an application secret, 
+and the input x is kept confidential using the requester's secret.
 
-{% endhint %}
 
 Let's create a directory tree for this app in `~/iexec-projects/`.
 
@@ -69,7 +70,7 @@ chmod +x sconify.sh
 
 Make sure your [`chain.json`](create-your-first-sgx-app.md#update-chain-json) content is correct.
 
-The application use the requester secrets to make a call to a secret endpoint of [countapi.xyz](https://countapi.xyz/) and writes the result in a file:
+The application uses the requester's secret to evaluate a secret function f(x), keeping the input x also confidential, and writes the result in a file.
 
 **Copy the following content** in `src/` .
 
@@ -81,32 +82,53 @@ The application use the requester secrets to make a call to a secret endpoint of
 
 ```javascript
 const fsPromises = require("fs").promises;
-const axios = require("axios");
 
 (async () => {
   try {
     const iexecOut = process.env.IEXEC_OUT;
-    // get the secret endpoint from requester secrets
-    const secretNamespace = process.env.IEXEC_REQUESTER_SECRET_1;
-    const secretKey = process.env.IEXEC_REQUESTER_SECRET_2;
-    if (!secretNamespace) {
-      console.log("missing requester secret 1 (namespace)");
-      process.exit(1);
-    }
-    if (!secretKey) {
-      console.log("missing requester secret 2 (key)");
-      process.exit(1);
-    }
-    // get the hit count from countapi
-    const hitCount = await axios
-      .get(`https://api.countapi.xyz/hit/${secretNamespace}/${secretKey}`)
-      .then(({ data }) => data.value);
+    // get the secret endpoint from app developer secret
+    const app_secret = process.env.IEXEC_APP_DEVELOPER_SECRET;
+    let a = 1, b = 1, c = 1, d = 1; // Default values
+    const req_secret = process.env.IEXEC_REQUESTER_SECRET_1;
+    let x = 1 
 
-    const result = `endpoint hit ${hitCount} times`;
-    console.log(result);
-    // write the result
-    await fsPromises.writeFile(`${iexecOut}/result.txt`, result);
-    // declare everything is computed
+    if (!app_secret) {
+      console.log("missing IEXEC_APP_DEVELOPER_SECRET");
+    } else {
+      // Split the secret into coefficients
+      let coefficients = app_secret.split(";");
+      if (coefficients.length !== 4) {
+        console.log("problem with the length of IEXEC_APP_DEVELOPER_SECRET");
+      } else {
+        [a, b, c, d] = coefficients.map(parseFloat);
+      }
+    }
+
+    if (!req_secret) {
+      console.log("missing IEXEC_REQUESTER_SECRET_1");
+    } else {
+      x = parseFloat(req_secret); 
+    }
+
+    // Function to compute f(x)
+    function cubicPolynomial(x) {
+      return a * Math.pow(x, 3) + b * Math.pow(x, 2) + c * x + d;
+    }
+
+    // Compute f(x)
+    let result = cubicPolynomial(x);
+    // Create result object
+    const resultObj = {
+      "x": x,
+      "result": result
+    };
+    
+    // Convert result object to JSON string
+    const resultJson = JSON.stringify(resultObj);
+    // Write result to file
+    await fsPromises.writeFile(`${iexecOut}/result.txt`, resultJson);
+
+    // Declare everything is computed
     const computedJsonObj = {
       "deterministic-output-path": `${iexecOut}/result.txt`,
     };
@@ -115,8 +137,8 @@ const axios = require("axios");
       JSON.stringify(computedJsonObj)
     );
   } catch (e) {
-    // do not log anything that could reveal the requester secrets!
-    console.log("something went wrong");
+    // do not log anything that could reveal the app developer secret!
+    console.log(e);
     process.exit(1);
   }
 })();
@@ -133,43 +155,62 @@ const axios = require("axios");
 ```python
 import os
 import json
-import requests
 
-try:
-    iexec_out = os.environ["IEXEC_OUT"]
+# Retrieve the output directory path
+iexec_out = os.environ.get("IEXEC_OUT")
+print(iexec_out)
 
-    # get the secret endpoint from requester secrets
+# Get the app secret containing coefficients
+app_secret = os.environ.get("IEXEC_APP_DEVELOPER_SECRET")
+a, b, c, d = 1, 1, 1, 1  # Default values
+if not app_secret:
+    print("Warning: Missing IEXEC_APP_DEVELOPER_SECRET. Using default coefficients.")
+else:
+    coefficients = app_secret.split(";")
+    if len(coefficients) != 4:
+        print("Warning: Problem with the length of IEXEC_APP_DEVELOPER_SECRET")
+    else:
+        a, b, c, d = map(float, coefficients)
+
+# Get the input value from the requester secret
+req_secret = os.environ.get("IEXEC_REQUESTER_SECRET_1")
+x = 1  # Default value
+if not req_secret:
+    print("Warning: Missing IEXEC_REQUESTER_SECRET_1. Using default input value.")
+else:
     try:
-        secret_namespace = os.environ["IEXEC_REQUESTER_SECRET_1"]
-    except Exception:
-        print("missing requester secret 1 (namespace)")
-        exit(1)
-    try:
-        secret_key = os.environ["IEXEC_REQUESTER_SECRET_2"]
-    except Exception:
-        print("missing requester secret 2 (key)")
+        x = float(req_secret)
+    except ValueError as e:
+        print("Invalid value for IEXEC_REQUESTER_SECRET_1:", e)
         exit(1)
 
-    # get the hit count from countapi
-    response = requests.request("GET", "https://api.countapi.xyz/hit/" + secret_namespace + "/" + secret_key)
-    json_response = response.json()
-    hit_count = json_response["value"]
+# Function to compute f(x)
+def cubic_polynomial(x):
+    return a * x**3 + b * x**2 + c * x + d
 
-    result = "endpoint hit " + str(hit_count) + " times"
-    print(result)
+# Compute f(x)
+result = cubic_polynomial(x)
+print("compute")
 
-    # write the result
-    with open(iexec_out + "/result.txt", "w+") as fout:
-        fout.write(result)
+# Create result object
+result_obj = {
+    "x": x,
+    "result": result
+}
 
-    # declare everything is computed
-    with open(iexec_out + "/computed.json", "w+") as f:
-        json.dump({ "deterministic-output-path" : iexec_out + "/result.txt" }, f)
+# Convert result object to JSON string
+result_json = json.dumps(result_obj)
 
-except Exception:
-    # do not log anything that could reveal the requester developer secret!
-    print("something went wrong")
-    exit(1)
+# Write result to file
+with open(f"{iexec_out}/result.txt", "w+") as f:
+    f.write(result_json)
+
+# Declare computation complete
+computed_json_obj = {
+    "deterministic-output-path": f"{iexec_out}/result.txt",
+}
+with open(f"{iexec_out}/computed.json", "w+") as f:
+    json.dump(computed_json_obj, f)
 ```
 
 {% endcode %}
@@ -198,7 +239,7 @@ Create the `Dockerfile`
 FROM node:14-alpine3.11
 
 # install your dependencies
-RUN mkdir /app && cd /app && npm install axios
+RUN mkdir /app && cd /app
 
 COPY ./src /app
 
@@ -210,17 +251,15 @@ ENTRYPOINT [ "node", "/app/app.js"]
 ```bash
 FROM python:3.7.3-alpine3.10
 
-RUN pip3 install requests
-
+### install python dependencies if you have some
 COPY ./src /app
-
 ENTRYPOINT ["python3", "/app/app.py"]
 ```
 
 Build the docker image.
 
 ```bash
-docker build . --tag <docker-hub-user>/count-api:1.0.0
+docker build . --tag <docker-hub-user>/secret-function:1.0.0
 ```
 
 Follow the steps described in [Build Scone app > Build the TEE docker image](create-your-first-sgx-app.md#build-the-tee-docker-image).
@@ -229,8 +268,8 @@ Update the `sconify.sh` script with the variables as follow:
 
 ```bash
 # Declare image related variables
-IMG_NAME=tee-scone-count-api
-IMG_FROM=<docker-hub-user>/count-api:1.0.0
+IMG_NAME=tee-scone-secret-function
+IMG_FROM=<docker-hub-user>/secret-function:1.0.0
 IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0-debug
 ```
 
@@ -243,7 +282,7 @@ Run the `sconify.sh` script to build the Scone TEE application:
 ### Push the image on Docker Hub
 
 ```bash
-docker push <docker-hub-user>/tee-scone-count-api:1.0.0-debug
+docker push <docker-hub-user>/tee-scone-secret-function:1.0.0-debug
 ```
 
 ## Test your app on iExec
@@ -256,18 +295,25 @@ At this stage, your application is ready to be tested on iExec with the followin
 
 For simplicity, we will use secrets in a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the requester secrets to this SMS (this is fine for debugging but do not use to store production secrets).
 
+In this example, the app developer's secret must be strictly defined in the following format `a;b;c;d`.
+For example set your secret to `1;1;1;1` for coeficients a,b,c,d.
+For details, go to [Use app secret](app-developer-secret.md####Push-an-application-developer-secret-to-the-SMS)
+
+```bash
+iexec app  push-secret <appAddress>
+iexec app  check-secret <appAddress>
+```
+
 ### Push some requester secrets to the SMS
 
 ```bash
-iexec requester push-secret my-namespace
-iexec requester push-secret my-key
+iexec requester push-secret x1 --secret-value 1
 ```
 
 ### Check secrets availability in the SMS
 
 ```bash
-iexec requester check-secret my-namespace
-iexec requester check-secret my-key
+iexec requester check-secret x1
 ```
 
 ### Run the TEE app
@@ -280,14 +326,13 @@ Specify the `--secret` and `--tag tee,scone` options in `iexec app run` command 
 iexec app run <appAddress> \
   --tag tee,scone \
   --workerpool debug-v8-bellecour.main.pools.iexec.eth \
-  --secret 1=my-namespace \
-  --secret 2=my-key \
+  --secret 1=x1 \
   --watch
 ```
 
 {% hint style="info" %}
 
-The option `--secret <secretMapping...>` allow the requester to provision any number of secrets with the mapping syntax `<key>=<name>`.
+The option `--secret <secretMapping...>` allows the requester to provision any number of secrets with the mapping syntax `<key>=<name>`.
 
 example:
 
