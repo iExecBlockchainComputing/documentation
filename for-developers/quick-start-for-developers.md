@@ -89,7 +89,7 @@ You can now check your wallet content:
 iexec wallet show
 ```
 
-### Initialize your remote storage
+### Initialize result encrytion
 
 iExec enables running apps producing output files, you will need a place for storing your apps outputs.
 
