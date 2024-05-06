@@ -134,13 +134,7 @@ For more information, please refer to [Manage you datasetorders](../for-develope
 
 ### Requester migration
 
-Requesters must log in to the v8 Result Proxy to store their results. To use the result encryption feature, they must also push their public key to the v8 SMS.
-
-Login to the v8 Result proxy:
-
-```bash
-iexec storage init
-```
+To use the result encryption feature, requesters must push their public key to the v8 SMS.
 
 Push your encryption key to the v8 SMS:
 

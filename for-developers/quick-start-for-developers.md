@@ -93,12 +93,6 @@ iexec wallet show
 
 iExec enables running apps producing output files, you will need a place for storing your apps outputs.
 
-Initialize your default remote storage:
-
-```text
-iexec storage init
-```
-
 {% hint style="info" %}
 
 iExec provides a default storage solution based on [IPFS](https://ipfs.io/). This solution ensures your result to be publicly accessible through a decentralized network.
