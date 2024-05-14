@@ -262,13 +262,6 @@ Specify the tag `--tag tee,scone` in `iexec app run` command to run a tee app.
 
 One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `debug-v8-bellecour.main.pools.iexec.eth`.
 
-The debug workerpool is connected to a debug Secret Management Service (this is fine for debugging but do not use to store production secrets), we will need to init the storage token on this SMS.
-
-```bash
-# initialize the storage
-iexec storage init --tee-framework scone
-```
-
 You are now ready to run the app
 
 ```bash
