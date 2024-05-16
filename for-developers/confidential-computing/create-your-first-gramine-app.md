@@ -210,14 +210,9 @@ iexec app deploy
 
 ### Run the TEE app
 
-Specify the tag `--tag tee,gramine` in `iexec app run` command to run a tee app.
-
-```bash
-# initialize the storage
-iexec storage init --tee-framework gramine
-```
-
 You are now ready to run the app
+
+Specify the tag `--tag tee,gramine` in `iexec app run` command to run a tee app.
 
 ```bash
 iexec app run --tag tee,gramine --workerpool debug-v8-bellecour.main.pools.iexec.eth --watch
