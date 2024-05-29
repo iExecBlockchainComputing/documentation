@@ -89,15 +89,9 @@ You can now check your wallet content:
 iexec wallet show
 ```
 
-### Initialize your remote storage
+## Manage your app's output
 
 iExec enables running apps producing output files, you will need a place for storing your apps outputs.
-
-Initialize your default remote storage:
-
-```text
-iexec storage init
-```
 
 {% hint style="info" %}
 
