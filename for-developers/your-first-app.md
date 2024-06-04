@@ -195,9 +195,9 @@ iExec expects your Docker container to be built for the `linux/amd64` platform. 
 ```bash
 brew install buildkit
 # ARM64 variant for local testing only
-docker buildx build --platform linux/arm64 -t <docker-hub-user>/hello-world .
+docker buildx build --platform linux/arm64 --tag <docker-hub-user>/hello-world .
 # AMD64 variant to deploy on iExec
-docker buildx build --platform linux/amd64 -t <docker-hub-user>/hello-world .
+docker buildx build --platform linux/amd64 --tag <docker-hub-user>/hello-world .
 ```
 
 {% endhint %}
