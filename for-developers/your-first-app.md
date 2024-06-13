@@ -384,6 +384,22 @@ iexec task show <taskid> --download my-app-result  \
 
 **Congratulations your app successfully ran on iExec!**
 
+
+## Manage your app's output
+
+iExec enables running apps producing output files, you will need a place for storing your apps outputs.
+
+{% hint style="info" %}
+
+iExec provides a default storage solution based on [IPFS](https://ipfs.io/). This solution ensures your result to be publicly accessible through a decentralized network.
+
+To ensure your business data remains secure and private, iExec offers optional RSA result encryption and the ability to push results to private storage providers.
+For more information, refer to `iexec storage --help` and the[iExec SDK](for-developers/toolbox/iexec-sdk.md).
+
+{% endhint %}
+
+
+
 ## Access to app and task logs on iExec
 
 Sometimes things don't work out right the first time and you may need to [Debug your tasks](advanced/task-feedback.md).

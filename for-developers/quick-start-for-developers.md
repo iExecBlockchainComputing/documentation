@@ -89,18 +89,6 @@ You can now check your wallet content:
 iexec wallet show
 ```
 
-## Manage your app's output
-
-iExec enables running apps producing output files, you will need a place for storing your apps outputs.
-
-{% hint style="info" %}
-
-iExec provides a default storage solution based on [IPFS](https://ipfs.io/). This solution ensures your result to be publicly accessible through a decentralized network.
-
-As you may not want all your business to be exposed to the world, iExec enables both optional **RSA result encryption** and pushing results to **private storage providers**.
-
-{% endhint %}
-
 ## Deploy your app on iExec
 
 iExec enables decentralized deployment of dockerized applications. The applications deployed on iExec are Smart Contracts identified by their Ethereum address and referencing a public docker image. Each iExec application has an owner who can set the execution permissions on iExec platform.
