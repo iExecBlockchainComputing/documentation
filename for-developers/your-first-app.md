@@ -221,16 +221,16 @@ docker build --tag hello-world .
 Create local volumes to simulate input and output directories.
 
 ```bash
-mkdir /tmp/iexec_in
-mkdir /tmp/iexec_out
+mkdir -p ./tmp/iexec_in
+mkdir -p ./tmp/iexec_out
 ```
 
 Run your application locally \(container volumes bound with local volumes\).
 
 ```bash
 docker run --rm \
-    -v /tmp/iexec_in:/iexec_in \
-    -v /tmp/iexec_out:/iexec_out \
+    -v ./tmp/iexec_in:/iexec_in \
+    -v ./tmp/iexec_out:/iexec_out \
     -e IEXEC_IN=/iexec_in \
     -e IEXEC_OUT=/iexec_out \
     hello-world arg1 arg2 arg3
@@ -268,11 +268,11 @@ Add `-e IEXEC_INPUT_FILES_NUMBER=n` to docker run options \(`n` is the total num
 Example with two inputs files:
 
 ```bash
-touch /tmp/iexec_in/file1 && \
-touch /tmp/iexec_in/file2 && \
+touch ./tmp/iexec_in/file1 && \
+touch ./tmp/iexec_in/file2 && \
 docker run \
-    -v /tmp/iexec_in:/iexec_in \
-    -v /tmp/iexec_out:/iexec_out \
+    -v ./tmp/iexec_in:/iexec_in \
+    -v ./tmp/iexec_out:/iexec_out \
     -e IEXEC_IN=/iexec_in \
     -e IEXEC_OUT=/iexec_out \
     -e IEXEC_INPUT_FILE_NAME_1=file1 \
