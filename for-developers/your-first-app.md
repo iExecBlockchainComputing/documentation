@@ -73,7 +73,6 @@ The following examples only feature Javascript and Python use cases for simplici
 
 ```javascript
 const fsPromises = require("fs").promises;
-const figlet = require("figlet");
 
 (async () => {
   try {
@@ -81,7 +80,7 @@ const figlet = require("figlet");
     // Do whatever you want (let's write hello world here)
     const message = process.argv.length > 2 ? process.argv[2] : "World";
 
-    const text = figlet.textSync(`Hello, ${message}!`); // Let's add some art for e.g.
+    const text = `Hello, ${message}!`;
     console.log(text);
     // Append some results in /iexec_out/
     await fsPromises.writeFile(`${iexecOut}/result.txt`, text);
@@ -112,13 +111,11 @@ const figlet = require("figlet");
 import os
 import sys
 import json
-from pyfiglet import Figlet
 
 iexec_out = os.environ['IEXEC_OUT']
 
 # Do whatever you want (let's write hello world here)
 text = 'Hello, {}!'.format(sys.argv[1] if len(sys.argv) > 1 else "World")
-text = Figlet().renderText(text) # Let's add some art for e.g.
 print(text)
 
 # Append some results in /iexec_out/
@@ -159,7 +156,7 @@ As a developer, make it a rule to never log sensitive information in your applic
 ```bash
 FROM node:14-alpine3.11
 ### install your dependencies if you have some
-RUN mkdir /app && cd /app && npm install figlet@1.x
+RUN mkdir /app && cd /app 
 COPY ./src /app
 ENTRYPOINT [ "node", "/app/app.js"]
 ```
@@ -175,7 +172,6 @@ ENTRYPOINT [ "node", "/app/app.js"]
 ```bash
 FROM python:3.7.3-alpine3.10
 ### install python dependencies if you have some
-RUN pip3 install pyfiglet
 COPY ./src /app
 ENTRYPOINT ["python3", "/app/app.py"]
 ```
