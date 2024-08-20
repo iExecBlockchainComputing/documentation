@@ -1,6 +1,6 @@
 # Update Secrets in SMS [2023/12/04]
 
-iExec is rolling out an upgraded version of iExec SMS (Secret Management Service). 
+iExec is rolling out an upgraded version of iExec SMS (Secret Management Service).
 
 Any assets (such as Apps or Datasets) that are using secrets created prior to this date will no longer be supported after the migration. Requesters will also be affected and will need to take certain actions to retrieve results and generate encrypted results.
 
@@ -12,11 +12,11 @@ The update will take place on December 4, between 13:00 and 16:00 UTC.
 
 {% endhint %}
 
-- [Push secrets with CLI](#cli-users)
+- [Push secrets with CLI](#push-secrets-with-cli)
   - [Application](#application)
   - [Dataset](#dataset)
-  - [Requester ](#requester)
-- [Push secrets with JS library](#js-library)
+  - [Requester](#requester)
+- [Push secrets with JS library](#push-secrets-with-cli)
 
 ## Push secrets with CLI
 
@@ -66,6 +66,4 @@ iexec requester push-secret [options]
 
 ## Push secrets with JS library
 
-You should proceed to push all associated secrets to your assets in the Secret Management Service using methods similar to the ones employed with the CLI, which were previously presented on this page. 
-
-
+You should proceed to push all associated secrets to your assets in the Secret Management Service using methods similar to the ones employed with the CLI, which were previously presented on this page.

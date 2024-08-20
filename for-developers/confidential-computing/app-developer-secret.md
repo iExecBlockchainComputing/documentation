@@ -46,11 +46,9 @@ Make sure to check your field's best practices before going to production.
 
 {% endhint %}
 
-Let's develop an application designed to evaluate the function:
-$$f(x) = ax^3 + bx^2 + cx + d$$ 
+Let's develop an application designed to evaluate the function: $$f(x) = ax^3 + bx^2 + cx + d$$
 
-where the coefficients a, b, c and d are kept confidential using an application secret,
-and the input x is given as argument of the app.
+where the coefficients a, b, c and d are kept confidential using an application secret, and the input x is given as argument of the app.
 
 Let's create a directory tree for this app in `~/iexec-projects/`.
 
@@ -82,8 +80,11 @@ const fsPromises = require("fs").promises;
     const iexecOut = process.env.IEXEC_OUT;
     // get the secret endpoint from app developer secret
     const secret = process.env.IEXEC_APP_DEVELOPER_SECRET;
-    
-    let a = 1, b = 1, c = 1, d = 1; // Default values
+
+    let a = 1,
+      b = 1,
+      c = 1,
+      d = 1; // Default values
     if (!secret) {
       console.log("missing IEXEC_APP_DEVELOPER_SECRET");
     } else {
@@ -104,7 +105,9 @@ const fsPromises = require("fs").promises;
     // Get the value of x from command-line arguments
     let x;
     if (process.argv.length !== 3) {
-      console.log("Usage: exactly one argument required for this dapp: x ; to compute f(x)=a.x^3 + b.x^2 + c.x + d , x=1 by default");
+      console.log(
+        "Usage: exactly one argument required for this dapp: x ; to compute f(x)=a.x^3 + b.x^2 + c.x + d , x=1 by default"
+      );
       x = 1;
     } else {
       x = parseFloat(process.argv[2]);
@@ -112,11 +115,11 @@ const fsPromises = require("fs").promises;
 
     // Compute f(x)
     let result = cubicPolynomial(x);
-    
+
     // Create result object
     const resultObj = {
-      "x": x,
-      "result": result
+      x: x,
+      result: result,
     };
     // Convert result object to JSON string
     const resultJson = JSON.stringify(resultObj);
@@ -178,10 +181,10 @@ try:
     if len(sys.argv) != 2:
         result="Usage: exactly one argument required for this dapp: x ; to compute f(x)=a.x^3 + b.x^2 + c.x + d , x=1 by default"
         print(result)
-        _x=1     
-    else:  
-        _x=sys.argv[1]     
-    
+        _x=1
+    else:
+        _x=sys.argv[1]
+
     x = float(_x)
 
     # Compute f(x)
@@ -286,14 +289,14 @@ At this stage, your application is ready to be tested on iExec with the followin
 ```bash
 iexec app push-secret
 ```
+
 In this example, the app developer's secret must be strictly defined in the following format `a;b;c;d`.
 
 For example set your secret to `1;1;1;1` for coeficients a,b,c,d.
 
 {% hint style="warning" %}
 
-For Secret Management Service security reasons, the app secret cannot be updated. Use with caution.
-{% endhint %}
+For Secret Management Service security reasons, the app secret cannot be updated. Use with caution. {% endhint %}
 
 ### Check the secret exists in the SMS
 

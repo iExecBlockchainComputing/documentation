@@ -49,12 +49,9 @@ Make sure to check your field's best practices before going to production.
 
 {% endhint %}
 
-Let's develop an application designed to evaluate the function:
-$$f(x) = ax^3 + bx^2 + cx + d$$ 
+Let's develop an application designed to evaluate the function: $$f(x) = ax^3 + bx^2 + cx + d$$
 
-where the coefficients a, b, c and d are kept confidential using an application secret, 
-and the input x is kept confidential using the requester's secret.
-
+where the coefficients a, b, c and d are kept confidential using an application secret, and the input x is kept confidential using the requester's secret.
 
 Let's create a directory tree for this app in `~/iexec-projects/`.
 
@@ -88,9 +85,12 @@ const fsPromises = require("fs").promises;
     const iexecOut = process.env.IEXEC_OUT;
     // get the secret endpoint from app developer secret
     const app_secret = process.env.IEXEC_APP_DEVELOPER_SECRET;
-    let a = 1, b = 1, c = 1, d = 1; // Default values
+    let a = 1,
+      b = 1,
+      c = 1,
+      d = 1; // Default values
     const req_secret = process.env.IEXEC_REQUESTER_SECRET_1;
-    let x = 1 
+    let x = 1;
 
     if (!app_secret) {
       console.log("missing IEXEC_APP_DEVELOPER_SECRET");
@@ -107,7 +107,7 @@ const fsPromises = require("fs").promises;
     if (!req_secret) {
       console.log("missing IEXEC_REQUESTER_SECRET_1");
     } else {
-      x = parseFloat(req_secret); 
+      x = parseFloat(req_secret);
     }
 
     // Function to compute f(x)
@@ -119,10 +119,10 @@ const fsPromises = require("fs").promises;
     let result = cubicPolynomial(x);
     // Create result object
     const resultObj = {
-      "x": x,
-      "result": result
+      x: x,
+      result: result,
     };
-    
+
     // Convert result object to JSON string
     const resultJson = JSON.stringify(resultObj);
     // Write result to file
@@ -295,9 +295,7 @@ At this stage, your application is ready to be tested on iExec with the followin
 
 For simplicity, we will use secrets in a TEE-debug app on a debug workerpool. The debug workerpool is connected to a debug Secret Management Service so we will send the requester secrets to this SMS (this is fine for debugging but do not use to store production secrets).
 
-In this example, the app developer's secret must be strictly defined in the following format `a;b;c;d`.
-For example set your secret to `1;1;1;1` for coeficients a,b,c,d.
-For details, go to [Use app secret](app-developer-secret.md####Push-an-application-developer-secret-to-the-SMS)
+In this example, the app developer's secret must be strictly defined in the following format `a;b;c;d`. For example set your secret to `1;1;1;1` for coeficients a,b,c,d. For details, go to [Use app secret](app-developer-secret.md####Push-an-application-developer-secret-to-the-SMS)
 
 ```bash
 iexec app  push-secret <appAddress>
