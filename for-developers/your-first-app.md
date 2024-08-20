@@ -73,7 +73,6 @@ The following examples only feature Javascript and Python use cases for simplici
 
 ```javascript
 const fsPromises = require("fs").promises;
-const figlet = require("figlet");
 
 (async () => {
   try {
@@ -81,7 +80,7 @@ const figlet = require("figlet");
     // Do whatever you want (let's write hello world here)
     const message = process.argv.length > 2 ? process.argv[2] : "World";
 
-    const text = figlet.textSync(`Hello, ${message}!`); // Let's add some art for e.g.
+    const text = `Hello, ${message}!`;
     console.log(text);
     // Append some results in /iexec_out/
     await fsPromises.writeFile(`${iexecOut}/result.txt`, text);
@@ -112,13 +111,11 @@ const figlet = require("figlet");
 import os
 import sys
 import json
-from pyfiglet import Figlet
 
 iexec_out = os.environ['IEXEC_OUT']
 
 # Do whatever you want (let's write hello world here)
 text = 'Hello, {}!'.format(sys.argv[1] if len(sys.argv) > 1 else "World")
-text = Figlet().renderText(text) # Let's add some art for e.g.
 print(text)
 
 # Append some results in /iexec_out/
@@ -159,7 +156,7 @@ As a developer, make it a rule to never log sensitive information in your applic
 ```bash
 FROM node:14-alpine3.11
 ### install your dependencies if you have some
-RUN mkdir /app && cd /app && npm install figlet@1.x
+RUN mkdir /app && cd /app
 COPY ./src /app
 ENTRYPOINT [ "node", "/app/app.js"]
 ```
@@ -175,7 +172,6 @@ ENTRYPOINT [ "node", "/app/app.js"]
 ```bash
 FROM python:3.7.3-alpine3.10
 ### install python dependencies if you have some
-RUN pip3 install pyfiglet
 COPY ./src /app
 ENTRYPOINT ["python3", "/app/app.py"]
 ```
@@ -195,9 +191,9 @@ iExec expects your Docker container to be built for the `linux/amd64` platform. 
 ```bash
 brew install buildkit
 # ARM64 variant for local testing only
-docker buildx build --platform linux/arm64 -t <docker-hub-user>/hello-world .
+docker buildx build --platform linux/arm64 --tag <docker-hub-user>/hello-world .
 # AMD64 variant to deploy on iExec
-docker buildx build --platform linux/amd64 -t <docker-hub-user>/hello-world .
+docker buildx build --platform linux/amd64 --tag <docker-hub-user>/hello-world .
 ```
 
 {% endhint %}
@@ -221,16 +217,16 @@ docker build --tag hello-world .
 Create local volumes to simulate input and output directories.
 
 ```bash
-mkdir /tmp/iexec_in
-mkdir /tmp/iexec_out
+mkdir -p ./tmp/iexec_in
+mkdir -p ./tmp/iexec_out
 ```
 
 Run your application locally \(container volumes bound with local volumes\).
 
 ```bash
 docker run --rm \
-    -v /tmp/iexec_in:/iexec_in \
-    -v /tmp/iexec_out:/iexec_out \
+    -v ./tmp/iexec_in:/iexec_in \
+    -v ./tmp/iexec_out:/iexec_out \
     -e IEXEC_IN=/iexec_in \
     -e IEXEC_OUT=/iexec_out \
     hello-world arg1 arg2 arg3
@@ -268,11 +264,11 @@ Add `-e IEXEC_INPUT_FILES_NUMBER=n` to docker run options \(`n` is the total num
 Example with two inputs files:
 
 ```bash
-touch /tmp/iexec_in/file1 && \
-touch /tmp/iexec_in/file2 && \
+touch ./tmp/iexec_in/file1 && \
+touch ./tmp/iexec_in/file2 && \
 docker run \
-    -v /tmp/iexec_in:/iexec_in \
-    -v /tmp/iexec_out:/iexec_out \
+    -v ./tmp/iexec_in:/iexec_in \
+    -v ./tmp/iexec_out:/iexec_out \
     -e IEXEC_IN=/iexec_in \
     -e IEXEC_OUT=/iexec_out \
     -e IEXEC_INPUT_FILE_NAME_1=file1 \
@@ -384,7 +380,6 @@ iexec task show <taskid> --download my-app-result  \
 
 **Congratulations your app successfully ran on iExec!**
 
-
 ## Manage your app's output
 
 iExec enables running apps producing output files, you will need a place for storing your apps outputs.
@@ -393,12 +388,9 @@ iExec enables running apps producing output files, you will need a place for sto
 
 iExec provides a default storage solution based on [IPFS](https://ipfs.io/). This solution ensures your result to be publicly accessible through a decentralized network.
 
-To ensure your business data remains secure and private, iExec offers optional RSA result encryption and the ability to push results to private storage providers.
-For more information, refer to `iexec storage --help` and the[iExec SDK](for-developers/toolbox/iexec-sdk.md).
+To ensure your business data remains secure and private, iExec offers optional RSA result encryption and the ability to push results to private storage providers. For more information, refer to `iexec storage --help` and the[iExec SDK](for-developers/toolbox/iexec-sdk.md).
 
 {% endhint %}
-
-
 
 ## Access to app and task logs on iExec
 
