@@ -24,8 +24,6 @@ For security reason, it is **highly recommended** to launch your worker in a vir
 
 After having loaded some RLC and deposited them to your iExec account, you can start your worker.
 
-![dashboard](../.gitbook/assets/my-workerpool-dashboard.png)
-
 When the worker initialization process is complete, the worker will be started and you will get something like: **You worker is all set**. Your worker will now be able to compute some tasks coming from the iExec network to earn some RLCs.
 
 ## Wallet restriction
