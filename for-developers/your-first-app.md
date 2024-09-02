@@ -186,7 +186,7 @@ Build the docker image.
 
 {% hint style="warning" %}
 
-iExec expects your Docker container to be built for the `linux/amd64` platform. However, if you develop on a **MacBook Pro** with the M1 processor, the platform is `linux/arm64`, which is different. To prepare your application, you will need to install `buildkit` and then prepare your docker image for both platforms.
+iExec expects your Docker container to be built for the `linux/amd64` platform. However, if you develop on a **Mac** with Apple **M processor**, the platform is `linux/arm64`, which is different. To prepare your application, you will need to install `buildkit` and then prepare your docker image for both platforms.
 
 ```bash
 brew install buildkit
