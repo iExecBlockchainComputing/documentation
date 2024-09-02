@@ -53,8 +53,6 @@ Pool manager, while not doing the actual computation, receives a fee for the man
 
 Head to the [How to Become a pool manager](for-workers/manage-a-pool-of-workers.md) section to learn how to deploy your worker pool service.
 
-You may also check out the list of worker pools currently available on the iExec Marketplace in the [Pools Catalog](https://pools.iex.ec).
-
 ### Data providers
 
 Data providers that own valuable datasets can make them available for use by applications through the iExec Data Store.

@@ -32,7 +32,7 @@ iexec app run <0x-your-app-address> \
 
 ## Standard application
 
-If you are developing a standard application, then you are already set. To reach more audience, you can [publish your app to the Dapps store](#publish-your-app-to-the-dapps-store).
+If you are developing a standard application, then you are already set.
 
 ## Confidential Computing application
 
@@ -128,7 +128,3 @@ With that pattern, no one, even an administrator or someone with root privileges
 Always keep a local copy of your secrets. For security reasons, it is not possible to extract your secret from the SMS. In other words, the SMS only allows you to share secrets securely in order to process confidential computing tasks.
 
 {% endhint %}
-
-## Publish your app to the Dapps store
-
-To get more visibility for your application, make your application available on the [Dapps store](https://dapps.iex.ec/). To get there, follow instructions inside the [iexec-dapps-registry](https://github.com/iExecBlockchainComputing/iexec-dapps-registry) repository. For any trouble, contact the [iExec Help Center](https://iexecproject.atlassian.net/servicedesk/customer/portal/4).
