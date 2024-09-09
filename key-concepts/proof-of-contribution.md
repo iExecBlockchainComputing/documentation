@@ -571,7 +571,7 @@ Results are identified by their `taskid` and can be pulled through the `resultFo
 
 **Push:**
 
-In order to use the push approach, the requester can use the `callback` field to specify the address of a smart contract that implements the `receiveResult` method specified in [[EIP-1154]](proof-of-contribution.md#references-1). This method will be called during the finalization with a minimum of 100000 nanoRLC gas to proceed [[*]](proof-of-contribution.md#references-1).
+In order to use the push approach, the requester can use the `callback` field to specify the address of a smart contract that implements the `receiveResult` method specified in [[EIP-1154]](proof-of-contribution.md#references-1). This method will be called during the finalization with a minimum of 200000 nanoRLC gas to proceed [[*]](proof-of-contribution.md#references-1).
 
 In order to protect the scheduler and the workers, any error raised during this callback will be disregarded and will not prevent the finalization from happening. The same mechanism goes for the callback running out of gas.
 
