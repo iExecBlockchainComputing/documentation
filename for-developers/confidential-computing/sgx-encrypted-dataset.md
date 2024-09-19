@@ -270,7 +270,7 @@ with open(iexec_out + '/computed.json', 'w+') as f:
 
 Create the `Dockerfile` as described in [Build your first application](../your-first-app.md#dockerize-your-app).
 
-Build the Docker iamge:
+Build the Docker image:
 
 ```bash
 docker build . --tag <docker-hub-user>/hello-world-with-dataset:1.0.0
