@@ -16,10 +16,7 @@
 
 ### Product Links
 
-- [iExec Dapp Store](https://dapps.iex.ec)
-- [iExec Marketplace](https://market.iex.ec)
 - [iExec Explorer](https://explorer.iex.ec)
-- [iExec Pools registry](https://pools.iex.ec)
 - [iExec Oracle Factory](https://oracle-factory.iex.ec/gallery)
 
 ### Social Links
