@@ -197,6 +197,7 @@ const fsPromises = require("fs").promises;
       const confidentialFile = await fsPromises.readFile(
         `${iexecIn}/${datasetFileName}`
       );
+    text = confidentialFile.toString();
     } catch (e) {
       console.log("confidential file does not exist");
     }
@@ -240,6 +241,7 @@ text = ''
 try:
     dataset_file = open(iexec_in + '/' + dataset_filename, 'r')
     dataset = dataset_file.read()
+    text = dataset
 except OSError:
     print('confidential file does not exists')
     exit(1)
