@@ -174,7 +174,7 @@ chmod +x sconify.sh
 
 In the folder `src/` create the file `app.js` or `app.py` then copy this code inside:
 
-The application reads the content of the dataset and writes it into the result's folder (in an artistic way using **Figlet**):
+The application reads the content of the dataset and writes it into the result's folder:
 
 {% tabs %}
 
