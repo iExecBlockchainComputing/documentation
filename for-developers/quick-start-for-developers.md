@@ -177,7 +177,7 @@ Currently, iExec sponsors applications running on Bellecour, and you won't have 
 Everything is ready to run your application!
 
 ```text
-iexec app run --args <your-name-here> --workerpool debug-v8-learn.main.pools.iexec.eth --watch
+iexec app run --args <your-name-here> --workerpool prod-v8-learn.main.pools.iexec.eth --watch
 ```
 
 {% hint style="info" %}
@@ -188,7 +188,7 @@ Useful options:
 
 - `--args <args>` specify the app execution arguments
 - `--watch` watch execution status changes
-- `--workerpool <address>` specify the workerpool to use (eg: `--workerpool debug-v8-learn.main.pools.iexec.eth`)
+- `--workerpool <address>` specify the workerpool to use (eg: `--workerpool prod-v8-learn.main.pools.iexec.eth`)
 
 Discover more option with `iexec app run --help`
 
@@ -295,7 +295,7 @@ iexec orderbook app <your app address>
 
 Congratulation you just created a decentralized application! Anyone can now trigger an execution of your application on the iExec decentralized infrastructure.
 
-- With the iexec SDK CLI `iexec app run <app address> --workerpool debug-v8-learn.main.pools.iexec.eth`
+- With the iexec SDK CLI `iexec app run <app address> --workerpool prod-v8-learn.main.pools.iexec.eth`
 - On iExec marketplace
 
 ## What's next?
