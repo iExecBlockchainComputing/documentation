@@ -260,17 +260,17 @@ iexec app deploy
 
 Specify the tag `--tag tee,scone` in `iexec app run` command to run a tee app.
 
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `debug-v8-bellecour.main.pools.iexec.eth`.
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `debug-v8-learn.main.pools.iexec.eth`.
 
 You are now ready to run the app
 
 ```bash
-iexec app run --tag tee,scone --workerpool debug-v8-bellecour.main.pools.iexec.eth --watch
+iexec app run --tag tee,scone --workerpool debug-v8-learn.main.pools.iexec.eth --watch
 ```
 
 {% hint style="info" %}
 
-You noticed we used `debug-v8-bellecour.main.pools.iexec.eth` instead of an ethereum address, this is an ENS name.
+You noticed we used `debug-v8-learn.main.pools.iexec.eth` instead of an ethereum address, this is an ENS name.
 
 The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables associating decentralized naming to ethereum addresses.
 
