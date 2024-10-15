@@ -174,7 +174,7 @@ chmod +x sconify.sh
 
 In the folder `src/` create the file `app.js` or `app.py` then copy this code inside:
 
-The application reads the content of the dataset and writes it into the result's folder (in an artistic way using **Figlet**):
+The application reads the content of the dataset and writes it into the result's folder:
 
 {% tabs %}
 
@@ -184,7 +184,6 @@ The application reads the content of the dataset and writes it into the result's
 
 ```javascript
 const fsPromises = require("fs").promises;
-const figlet = require("figlet");
 
 (async () => {
   try {
@@ -198,7 +197,7 @@ const figlet = require("figlet");
       const confidentialFile = await fsPromises.readFile(
         `${iexecIn}/${datasetFileName}`
       );
-      text = figlet.textSync(confidentialFile.toString());
+    text = confidentialFile.toString();
     } catch (e) {
       console.log("confidential file does not exist");
     }
@@ -232,8 +231,6 @@ const figlet = require("figlet");
 import json
 import os
 
-from pyfiglet import Figlet
-
 iexec_out = os.environ['IEXEC_OUT']
 iexec_in = os.environ['IEXEC_IN']
 dataset_filename = os.environ['IEXEC_DATASET_FILENAME']
@@ -244,7 +241,7 @@ text = ''
 try:
     dataset_file = open(iexec_in + '/' + dataset_filename, 'r')
     dataset = dataset_file.read()
-    text = Figlet().renderText(dataset)
+    text = dataset
 except OSError:
     print('confidential file does not exists')
     exit(1)
