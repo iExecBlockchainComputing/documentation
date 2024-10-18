@@ -9,7 +9,7 @@
 ### Important Links
 
 - [Website iExec](https://iex.ec/)
-- [Whitepaper](https://iex.ec/wp-content/uploads/2022/09/iexec_whitepaper.pdf)
+- [Whitepaper](https://www.iex.ec/whitepaper)
 - [iExec Technical Documentation](../)
 - [SDK](https://github.com/iExecBlockchainComputing/iexec-sdk/blob/master/README.md)
 - [Github iExec](https://github.com/iExecBlockchainComputing)
