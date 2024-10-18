@@ -323,7 +323,7 @@ Specify the `--secret` and `--tag tee,scone` options in `iexec app run` command 
 ```bash
 iexec app run <appAddress> \
   --tag tee,scone \
-  --workerpool debug-v8-bellecour.main.pools.iexec.eth \
+  --workerpool debug-v8-learn.main.pools.iexec.eth \
   --secret 1=x1 \
   --watch
 ```

@@ -349,7 +349,7 @@ iexec app show
 ### Run your app on iExec
 
 ```bash
-iexec app run --workerpool debug-v8-bellecour.main.pools.iexec.eth --watch
+iexec app run --workerpool debug-v8-learn.main.pools.iexec.eth --watch
 ```
 
 {% hint style="info" %}

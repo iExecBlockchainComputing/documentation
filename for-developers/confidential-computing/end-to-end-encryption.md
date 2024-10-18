@@ -60,7 +60,7 @@ Now to see that in action, you'd need to trigger a task and specify yourself as 
 
 ```bash
 iexec app run <0x-your-app-address> \
-    --workerpool debug-v8-bellecour.main.pools.iexec.eth \
+    --workerpool debug-v8-learn.main.pools.iexec.eth \
     --tag tee,scone \
     --encrypt-result \
     --watch

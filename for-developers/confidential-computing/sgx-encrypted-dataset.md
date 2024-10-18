@@ -306,7 +306,7 @@ Deploy the application as described in [Build Scone app](create-your-first-sgx-a
 
 Specify the tag `--tag tee,scone` and the dataset to use `--dataset <datasetAddress>` in `iexec app run` command to run a tee app with a dataset.
 
-One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `debug-v8-bellecour.main.pools.iexec.eth`.
+One last thing, in order to run a **TEE-debug** app you will also need to select a debug workerpool, use the debug workerpool `debug-v8-learn.main.pools.iexec.eth`.
 
 You are now ready to run the app
 
@@ -314,7 +314,7 @@ You are now ready to run the app
 iexec app run <appAddress> \
   --tag tee,scone \
   --dataset <datasetAddress> \
-  --workerpool debug-v8-bellecour.main.pools.iexec.eth \
+  --workerpool debug-v8-learn.main.pools.iexec.eth \
   --watch
 ```
 
