@@ -1,0 +1,24 @@
+{
+  "name": "documentation",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "check-format": "prettier --ignore-path .gitignore --check .",
+    "format": "prettier --ignore-path .gitignore --write ."
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "tailwindcss": "^4.1.11",
+    "turndown": "^7.2.0",
+    "vitepress-plugin-google-analytics": "^1.0.2",
+    "vue": "^3.5.17"
+  },
+  "devDependencies": {
+    "@iconify/vue": "^5.0.0",
+    "@shikijs/vitepress-twoslash": "^3.8.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
+    "vitepress": "^1.6.3"
+  }
+}
