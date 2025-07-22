@@ -12,4 +12,5 @@ description: DataProtector Guides
 
 ## Contenu à développer
 
-Cette section sera développée avec des guides pratiques pour utiliser DataProtector. 
+Cette section sera développée avec des guides pratiques pour utiliser
+DataProtector.

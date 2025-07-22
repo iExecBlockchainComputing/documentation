@@ -7,4 +7,4 @@ description: Autres tendances émergentes
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter les autres tendances émergentes --> 
+<!-- TODO: Ajouter les autres tendances émergentes -->

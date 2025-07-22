@@ -7,4 +7,4 @@ description: SDK iExec
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter le contenu SDK --> 
+<!-- TODO: Ajouter le contenu SDK -->

@@ -7,4 +7,4 @@ description: Intégration IA
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter le contenu d'intégration IA --> 
+<!-- TODO: Ajouter le contenu d'intégration IA -->

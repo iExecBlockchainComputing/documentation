@@ -7,4 +7,4 @@ description: Comment fonctionnent et gérer les commandes
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter le guide des commandes --> 
+<!-- TODO: Ajouter le guide des commandes -->

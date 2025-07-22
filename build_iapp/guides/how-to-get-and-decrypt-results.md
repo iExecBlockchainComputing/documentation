@@ -7,4 +7,4 @@ description: Comment obtenir et décrypter les résultats
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter le guide pour obtenir et décrypter les résultats --> 
+<!-- TODO: Ajouter le guide pour obtenir et décrypter les résultats -->

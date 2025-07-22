@@ -7,4 +7,4 @@ description: Démarrage avec les iApps
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter le guide de démarrage iApps --> 
+<!-- TODO: Ajouter le guide de démarrage iApps -->

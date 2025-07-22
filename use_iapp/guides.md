@@ -7,4 +7,4 @@ description: Guides d'utilisation des iApps
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter les guides --> 
+<!-- TODO: Ajouter les guides -->

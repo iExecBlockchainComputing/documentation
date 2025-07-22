@@ -7,4 +7,4 @@ description: Gérer les schémas et types de datasets
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter le guide des schémas et types de datasets avec liens vers iApps --> 
+<!-- TODO: Ajouter le guide des schémas et types de datasets avec liens vers iApps -->

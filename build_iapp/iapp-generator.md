@@ -7,4 +7,4 @@ description: Générateur d'iApp
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter le contenu du générateur --> 
+<!-- TODO: Ajouter le contenu du générateur -->

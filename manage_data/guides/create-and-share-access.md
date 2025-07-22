@@ -7,4 +7,4 @@ description: Créer et partager l'accès aux données protégées
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter le guide de création et partage d'accès --> 
+<!-- TODO: Ajouter le guide de création et partage d'accès -->

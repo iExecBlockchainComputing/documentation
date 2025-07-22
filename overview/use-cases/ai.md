@@ -7,4 +7,4 @@ description: Applications de l'IA avec iExec
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter les cas d'usage IA --> 
+<!-- TODO: Ajouter les cas d'usage IA -->

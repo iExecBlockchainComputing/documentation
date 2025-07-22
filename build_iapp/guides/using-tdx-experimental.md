@@ -7,4 +7,4 @@ description: Utiliser TDX (Exécution de Confiance) [EXPÉRIMENTAL]
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter le guide TDX --> 
+<!-- TODO: Ajouter le guide TDX -->

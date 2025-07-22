@@ -7,4 +7,4 @@ description: Autres tendances émergentes à ajouter
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter les autres tendances émergentes pour iApps --> 
+<!-- TODO: Ajouter les autres tendances émergentes pour iApps -->

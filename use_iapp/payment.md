@@ -7,4 +7,4 @@ description: Comment payer pour les iApps
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter le guide de paiement --> 
+<!-- TODO: Ajouter le guide de paiement -->

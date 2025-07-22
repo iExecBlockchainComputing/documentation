@@ -7,4 +7,4 @@ description: Introduction à l'utilisation des iApps
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter l'introduction aux iApps --> 
+<!-- TODO: Ajouter l'introduction aux iApps -->

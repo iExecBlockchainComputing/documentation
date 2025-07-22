@@ -7,4 +7,4 @@ description: Workers et pools de workers
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter le contenu sur les workers --> 
+<!-- TODO: Ajouter le contenu sur les workers -->

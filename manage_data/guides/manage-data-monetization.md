@@ -7,4 +7,4 @@ description: Gérer la monétisation des données
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter le guide de monétisation des données --> 
+<!-- TODO: Ajouter le guide de monétisation des données -->

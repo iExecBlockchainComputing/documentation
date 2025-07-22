@@ -7,4 +7,4 @@ description: Types, différences et formats des entrées et sorties
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter le guide des inputs/outputs --> 
+<!-- TODO: Ajouter le guide des inputs/outputs -->

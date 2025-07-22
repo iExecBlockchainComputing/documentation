@@ -7,4 +7,4 @@ description: Différentes façons d'exécuter une iApp
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter le guide des différentes façons d'exécuter --> 
+<!-- TODO: Ajouter le guide des différentes façons d'exécuter -->

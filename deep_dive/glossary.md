@@ -7,4 +7,4 @@ description: Glossaire des termes iExec
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter le glossaire --> 
+<!-- TODO: Ajouter le glossaire -->

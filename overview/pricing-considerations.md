@@ -7,4 +7,4 @@ description: Considérations de prix
 
 Cette page est en cours de développement.
 
-<!-- TODO: Ajouter les considérations de prix --> 
+<!-- TODO: Ajouter les considérations de prix -->
