@@ -1,6 +1,7 @@
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vitepress';
+import { getSidebar } from './sidebar';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -76,25 +77,17 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      {
-        text: 'Markdown Examples',
-        link: '/markdown-examples',
-      },
+      { text: 'Overview', link: '/overview/what-we-do' },
+      { text: 'Protect Data', link: '/manage_data/guides' },
+      { text: 'Build iApp', link: '/build_iapp/iapp-generator/what-is-iapp' },
+      { text: 'Use iApp', link: '/use_iapp/introduction' },
+      { text: 'Deep Dive', link: '/deep_dive/sdk' },
     ],
     outline: {
       level: [2, 3],
     },
 
-    sidebar: [
-      {
-        text: 'Home',
-        link: '/index',
-      },
-      {
-        text: 'Markdown Examples',
-        link: '/markdown-examples',
-      },
-    ],
+    sidebar: getSidebar(),
 
     search: {
       provider: 'local',
