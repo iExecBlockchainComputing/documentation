@@ -6,7 +6,10 @@ export function getSidebar() {
       {
         text: 'OVERVIEW',
         items: [
-          { text: '💡&nbsp;&nbsp;What We Do', link: '/overview/what-we-do' },
+          {
+            text: '⚡&nbsp;&nbsp;Speedrun iExec',
+            link: '/overview/speedrun-iexec',
+          },
           {
             text: '👋&nbsp;&nbsp; Hello World',
             link: '/overview/helloWorld',
