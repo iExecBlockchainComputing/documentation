@@ -430,12 +430,8 @@ export function getSidebar() {
         text: 'USE AN iAPP',
         items: [
           {
-            text: '📝&nbsp;&nbsp;Introduction',
-            link: '/use_iapp/introduction',
-          },
-          {
             text: '🚀&nbsp;&nbsp;Getting Started',
-            link: '/use_iapp/getting-started',
+            link: '/use_iapp/introduction',
           },
           {
             text: '📖&nbsp;&nbsp;Guides',
