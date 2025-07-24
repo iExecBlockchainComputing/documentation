@@ -8,6 +8,7 @@
 node_modules
 auto-imports.d.ts
 components.d.ts
+.cursor
 
 #mac
 .DS_Store

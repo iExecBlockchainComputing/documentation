@@ -6,7 +6,10 @@ export function getSidebar() {
       {
         text: 'OVERVIEW',
         items: [
-          { text: '💡&nbsp;&nbsp;What We Do', link: '/overview/what-we-do' },
+          {
+            text: '⚡&nbsp;&nbsp;Speedrun iExec',
+            link: '/overview/speedrun-iexec',
+          },
           {
             text: '👋&nbsp;&nbsp; Hello World',
             link: '/overview/helloWorld',
@@ -427,12 +430,8 @@ export function getSidebar() {
         text: 'USE AN iAPP',
         items: [
           {
-            text: '📝&nbsp;&nbsp;Introduction',
-            link: '/use_iapp/introduction',
-          },
-          {
             text: '🚀&nbsp;&nbsp;Getting Started',
-            link: '/use_iapp/getting-started',
+            link: '/use_iapp/introduction',
           },
           {
             text: '📖&nbsp;&nbsp;Guides',

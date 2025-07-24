@@ -77,7 +77,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Overview', link: '/overview/what-we-do' },
+      { text: 'Overview', link: '/overview/speedrun-iexec' },
       { text: 'Protect Data', link: '/manage_data/guides' },
       { text: 'Build iApp', link: '/build_iapp/iapp-generator/what-is-iapp' },
       { text: 'Use iApp', link: '/use_iapp/introduction' },
