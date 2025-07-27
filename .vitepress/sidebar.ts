@@ -361,18 +361,15 @@ export function getSidebar() {
           },
           {
             text: '📖&nbsp;&nbsp;Guides',
+            link: '/build_iapp/guides',
             collapsed: true,
             items: [
               {
-                text: 'Manage Your iApps',
-                link: '/build_iapp/iapp-generator/manage-iapps',
-              },
-              {
-                text: 'Orders (how they work, how to manage them)',
+                text: 'App Access Control and Pricing',
                 link: '/build_iapp/guides/orders',
               },
               {
-                text: 'Inputs and Outputs (types, differences, formats)',
+                text: 'Inputs and Outputs',
                 link: '/build_iapp/guides/inputs-and-outputs',
               },
               {
@@ -380,20 +377,12 @@ export function getSidebar() {
                 link: '/build_iapp/guides/debugging-your-iapp',
               },
               {
-                text: 'Using TDX (Trusted Execution) [EXPERIMENTAL]',
-                link: '/build_iapp/guides/using-tdx-experimental',
-              },
-              {
                 text: 'How to Get and Decrypt Results',
                 link: '/build_iapp/guides/how-to-get-and-decrypt-results',
               },
               {
-                text: 'AI Frameworks',
-                link: '/build_iapp/iapp-generator/ai-frameworks',
-              },
-              {
-                text: 'Other Emerging Trends',
-                link: '/build_iapp/guides/other-emerging-trends',
+                text: 'Using TDX (Experimental)',
+                link: '/build_iapp/guides/using-tdx-experimental',
               },
             ],
           },
