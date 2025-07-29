@@ -78,11 +78,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Overview', link: '/overview/what-we-do' },
       { text: 'Protect Data', link: '/manage-data/guides' },
       { text: 'Build iApp', link: '/build-iapp/iapp-generator/what-is-iapp' },
       { text: 'Use iApp', link: '/use-iapp/introduction' },
-      { text: 'Deep Dive', link: '/deep-dive/sdk' },
     ],
     outline: {
       level: [2, 3],
