@@ -78,169 +78,169 @@ export function getSidebar() {
         items: [
           {
             text: '❓&nbsp;&nbsp;What Is Protected Data?',
-            link: '/manage_data/dataProtector/what-is-protected-data',
+            link: '/manage-data/dataProtector/what-is-protected-data',
           },
           {
             text: '📖&nbsp;&nbsp;Guides',
-            link: '/manage_data/guides',
+            link: '/manage-data/guides',
             collapsed: true,
             items: [
               {
                 text: 'Create and Share Access to Protected Data',
-                link: '/manage_data/guides/create-and-share-access',
+                link: '/manage-data/guides/create-and-share-access',
               },
               {
                 text: 'Handle Schemas and Dataset Types',
-                link: '/manage_data/guides/handle-schemas-dataset-types',
+                link: '/manage-data/guides/handle-schemas-dataset-types',
               },
               {
                 text: 'Manage Data Monetization',
-                link: '/manage_data/guides/manage-data-monetization',
+                link: '/manage-data/guides/manage-data-monetization',
               },
             ],
           },
           {
             text: '🔐&nbsp;&nbsp;DataProtector <span class="VPBadge warning" style="margin-left: 8px; margin-bottom: -1px; transform: translateY(-1px);">beta</span>',
-            link: '/manage_data/dataProtector',
+            link: '/manage-data/dataProtector',
             collapsed: true,
             items: [
               {
                 text: 'Getting Started',
-                link: '/manage_data/dataProtector/getting-started',
+                link: '/manage-data/dataProtector/getting-started',
               },
               {
                 text: 'DataProtector Core',
-                link: '/manage_data/dataProtector/dataProtectorCore',
+                link: '/manage-data/dataProtector/dataProtectorCore',
                 collapsed: true,
                 items: [
                   {
                     text: 'protectData',
-                    link: '/manage_data/dataProtector/dataProtectorCore/protectData',
+                    link: '/manage-data/dataProtector/dataProtectorCore/protectData',
                   },
                   {
                     text: 'getProtectedData',
-                    link: '/manage_data/dataProtector/dataProtectorCore/getProtectedData',
+                    link: '/manage-data/dataProtector/dataProtectorCore/getProtectedData',
                   },
                   {
                     text: 'transferOwnership',
-                    link: '/manage_data/dataProtector/dataProtectorCore/transferOwnership',
+                    link: '/manage-data/dataProtector/dataProtectorCore/transferOwnership',
                   },
                   {
                     text: 'grantAccess',
-                    link: '/manage_data/dataProtector/dataProtectorCore/grantAccess',
+                    link: '/manage-data/dataProtector/dataProtectorCore/grantAccess',
                   },
                   {
                     text: 'getGrantedAccess',
-                    link: '/manage_data/dataProtector/dataProtectorCore/getGrantedAccess',
+                    link: '/manage-data/dataProtector/dataProtectorCore/getGrantedAccess',
                   },
                   {
                     text: 'revokeOneAccess',
-                    link: '/manage_data/dataProtector/dataProtectorCore/revokeOneAccess',
+                    link: '/manage-data/dataProtector/dataProtectorCore/revokeOneAccess',
                   },
                   {
                     text: 'revokeAllAccess',
-                    link: '/manage_data/dataProtector/dataProtectorCore/revokeAllAccess',
+                    link: '/manage-data/dataProtector/dataProtectorCore/revokeAllAccess',
                   },
                   {
                     text: 'processProtectedData',
-                    link: '/manage_data/dataProtector/dataProtectorCore/processProtectedData',
+                    link: '/manage-data/dataProtector/dataProtectorCore/processProtectedData',
                   },
                   {
                     text: 'getResultFromCompletedTask',
-                    link: '/manage_data/dataProtector/dataProtectorCore/getResultFromCompletedTask',
+                    link: '/manage-data/dataProtector/dataProtectorCore/getResultFromCompletedTask',
                   },
                 ],
               },
               {
                 text: 'DataProtector Sharing',
-                link: '/manage_data/dataProtector/dataProtectorSharing',
+                link: '/manage-data/dataProtector/dataProtectorSharing',
                 collapsed: true,
                 items: [
                   {
                     text: 'Collection',
-                    link: '/manage_data/dataProtector/dataProtectorSharing/collection',
+                    link: '/manage-data/dataProtector/dataProtectorSharing/collection',
                     collapsed: true,
                     items: [
                       {
                         text: 'createCollection',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/collection/createCollection',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/collection/createCollection',
                       },
                       {
                         text: 'removeCollection',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/collection/removeCollection',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/collection/removeCollection',
                       },
                       {
                         text: 'addToCollection',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/collection/addToCollection',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/collection/addToCollection',
                       },
                       {
                         text: 'removeProtectedDataFromCollection',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/collection/removeProtectedDataFromCollection',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/collection/removeProtectedDataFromCollection',
                       },
                     ],
                   },
                   {
                     text: 'Renting',
-                    link: '/manage_data/dataProtector/dataProtectorSharing/renting',
+                    link: '/manage-data/dataProtector/dataProtectorSharing/renting',
                     collapsed: true,
                     items: [
                       {
                         text: 'setProtectedDataToRenting',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/renting/setProtectedDataToRenting',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/renting/setProtectedDataToRenting',
                       },
                       {
                         text: 'setProtectedDataRentingParams',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/renting/setProtectedDataRentingParams',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/renting/setProtectedDataRentingParams',
                       },
                       {
                         text: 'rentProtectedData',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/renting/rentProtectedData',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/renting/rentProtectedData',
                       },
                       {
                         text: 'removeProtectedDataFromRenting',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/renting/removeProtectedDataFromRenting',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/renting/removeProtectedDataFromRenting',
                       },
                     ],
                   },
                   {
                     text: 'Selling',
-                    link: '/manage_data/dataProtector/dataProtectorSharing/selling',
+                    link: '/manage-data/dataProtector/dataProtectorSharing/selling',
                     collapsed: true,
                     items: [
                       {
                         text: 'setProtectedDataForSale',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/selling/setProtectedDataForSale',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/selling/setProtectedDataForSale',
                       },
                       {
                         text: 'buyProtectedData',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/selling/buyProtectedData',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/selling/buyProtectedData',
                       },
                       {
                         text: 'removeProtectedDataForSale',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/selling/removeProtectedDataForSale',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/selling/removeProtectedDataForSale',
                       },
                     ],
                   },
                   {
                     text: 'Subscription',
-                    link: '/manage_data/dataProtector/dataProtectorSharing/subscription',
+                    link: '/manage-data/dataProtector/dataProtectorSharing/subscription',
                     collapsed: true,
                     items: [
                       {
                         text: 'setProtectedDataToSubscription',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/subscription/setProtectedDataToSubscription',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/subscription/setProtectedDataToSubscription',
                       },
                       {
                         text: 'setSubscriptionParams',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/subscription/setSubscriptionParams',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/subscription/setSubscriptionParams',
                       },
                       {
                         text: 'subscribeToCollection',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/subscription/subscribeToCollection',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/subscription/subscribeToCollection',
                       },
                       {
                         text: 'removeProtectedDataFromSubscription',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/subscription/removeProtectedDataFromSubscription',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/subscription/removeProtectedDataFromSubscription',
                       },
                     ],
                   },
@@ -250,7 +250,7 @@ export function getSidebar() {
                     items: [
                       {
                         text: 'consumeProtectedData',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/consume/consumeProtectedData',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/consume/consumeProtectedData',
                       },
                     ],
                   },
@@ -260,27 +260,27 @@ export function getSidebar() {
                     items: [
                       {
                         text: 'getProtectedDataInCollections',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/read/getProtectedDataInCollections',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/read/getProtectedDataInCollections',
                       },
                       {
                         text: 'getProtectedDataPricingParams',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/read/getProtectedDataPricingParams',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/read/getProtectedDataPricingParams',
                       },
                       {
                         text: 'getCollectionOwners',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/read/getCollectionOwners',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/read/getCollectionOwners',
                       },
                       {
                         text: 'getCollectionsByOwner',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/read/getCollectionsByOwner',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/read/getCollectionsByOwner',
                       },
                       {
                         text: 'getCollectionSubscriptions',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/read/getCollectionSubscriptions',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/read/getCollectionSubscriptions',
                       },
                       {
                         text: 'getRentals',
-                        link: '/manage_data/dataProtector/dataProtectorSharing/read/getRentals',
+                        link: '/manage-data/dataProtector/dataProtectorSharing/read/getRentals',
                       },
                     ],
                   },
@@ -288,7 +288,7 @@ export function getSidebar() {
               },
               {
                 text: 'Types',
-                link: '/manage_data/dataProtector/types',
+                link: '/manage-data/dataProtector/types',
               },
               {
                 text: 'Advanced',
@@ -296,44 +296,44 @@ export function getSidebar() {
                 items: [
                   {
                     text: 'Advanced Configuration',
-                    link: '/manage_data/dataProtector/advanced/advanced-configuration',
+                    link: '/manage-data/dataProtector/advanced/advanced-configuration',
                   },
                   {
                     text: 'Sharing smart contract',
-                    link: '/manage_data/dataProtector/advanced/dps-smart-contract',
+                    link: '/manage-data/dataProtector/advanced/dps-smart-contract',
                   },
                   {
                     text: 'Apps whitelist',
-                    link: '/manage_data/dataProtector/advanced/apps-whitelist',
+                    link: '/manage-data/dataProtector/advanced/apps-whitelist',
                     collapsed: true,
                     items: [
                       {
                         text: 'createAddOnlyAppWhitelist',
-                        link: '/manage_data/dataProtector/advanced/apps-whitelist/createAddOnlyAppWhitelist',
+                        link: '/manage-data/dataProtector/advanced/apps-whitelist/createAddOnlyAppWhitelist',
                       },
                       {
                         text: 'addAppToAddOnlyAppWhitelist',
-                        link: '/manage_data/dataProtector/advanced/apps-whitelist/addAppToAddOnlyAppWhitelist',
+                        link: '/manage-data/dataProtector/advanced/apps-whitelist/addAppToAddOnlyAppWhitelist',
                       },
                       {
                         text: 'getUserAddOnlyAppWhitelist',
-                        link: '/manage_data/dataProtector/advanced/apps-whitelist/getUserAddOnlyAppWhitelist',
+                        link: '/manage-data/dataProtector/advanced/apps-whitelist/getUserAddOnlyAppWhitelist',
                       },
                     ],
                   },
                   {
                     text: 'iApp',
-                    link: '/manage_data/dataProtector/advanced/iApp',
+                    link: '/manage-data/dataProtector/advanced/iApp',
                     collapsed: true,
                     items: [
                       {
                         text: 'DataProtector Deserializer',
-                        link: '/manage_data/dataProtector/advanced/iApp/deserializer',
+                        link: '/manage-data/dataProtector/advanced/iApp/deserializer',
                         collapsed: true,
                         items: [
                           {
                             text: 'getValue',
-                            link: '/manage_data/dataProtector/advanced/iApp/deserializer/getValue',
+                            link: '/manage-data/dataProtector/advanced/iApp/deserializer/getValue',
                           },
                         ],
                       },
@@ -343,7 +343,7 @@ export function getSidebar() {
               },
               {
                 text: 'Migrate from v1 to v2',
-                link: '/manage_data/dataProtector/migrate-from-v1',
+                link: '/manage-data/dataProtector/migrate-from-v1',
               },
             ],
           },
@@ -354,7 +354,7 @@ export function getSidebar() {
         items: [
           {
             text: '❓&nbsp;&nbsp;What Is an iApp?',
-            link: '/build_iapp/iapp-generator/what-is-iapp',
+            link: '/build-iapp/iapp-generator/what-is-iapp',
           },
           {
             text: '📖&nbsp;&nbsp;Guides',
@@ -362,64 +362,64 @@ export function getSidebar() {
             items: [
               {
                 text: 'Manage Your iApps',
-                link: '/build_iapp/iapp-generator/manage-iapps',
+                link: '/build-iapp/iapp-generator/manage-iapps',
               },
               {
                 text: 'Orders (how they work, how to manage them)',
-                link: '/build_iapp/guides/orders',
+                link: '/build-iapp/guides/orders',
               },
               {
                 text: 'Inputs and Outputs (types, differences, formats)',
-                link: '/build_iapp/guides/inputs-and-outputs',
+                link: '/build-iapp/guides/inputs-and-outputs',
               },
               {
                 text: 'Debugging Your iApp',
-                link: '/build_iapp/guides/debugging-your-iapp',
+                link: '/build-iapp/guides/debugging-your-iapp',
               },
               {
                 text: 'Using TDX (Trusted Execution) [EXPERIMENTAL]',
-                link: '/build_iapp/guides/using-tdx-experimental',
+                link: '/build-iapp/guides/using-tdx-experimental',
               },
               {
                 text: 'How to Get and Decrypt Results',
-                link: '/build_iapp/guides/how-to-get-and-decrypt-results',
+                link: '/build-iapp/guides/how-to-get-and-decrypt-results',
               },
               {
                 text: 'AI Frameworks',
-                link: '/build_iapp/iapp-generator/ai-frameworks',
+                link: '/build-iapp/iapp-generator/ai-frameworks',
               },
               {
                 text: 'Other Emerging Trends',
-                link: '/build_iapp/guides/other-emerging-trends',
+                link: '/build-iapp/guides/other-emerging-trends',
               },
             ],
           },
           {
             text: '🤖&nbsp;&nbsp;iApp Generator',
-            link: '/build_iapp/iapp-generator',
+            link: '/build-iapp/iapp-generator',
             collapsed: true,
             items: [
               {
                 text: 'Getting Started',
-                link: '/build_iapp/iapp-generator/getting-started',
+                link: '/build-iapp/iapp-generator/getting-started',
               },
               {
                 text: 'Building Your iApp',
-                link: '/build_iapp/iapp-generator/building-your-iexec-app',
+                link: '/build-iapp/iapp-generator/building-your-iexec-app',
               },
               {
                 text: 'References',
-                link: '/build_iapp/iapp-generator/references',
+                link: '/build-iapp/iapp-generator/references',
               },
               {
                 text: 'Advanced Creation',
-                link: '/build_iapp/iapp-generator/advanced-creation',
+                link: '/build-iapp/iapp-generator/advanced-creation',
               },
             ],
           },
           {
             text: '🔧&nbsp;&nbsp;Protocol-Level Guides',
-            link: '/build_iapp/iapp-generator/protocol-level-guides',
+            link: '/build-iapp/iapp-generator/protocol-level-guides',
           },
         ],
       },
@@ -428,42 +428,42 @@ export function getSidebar() {
         items: [
           {
             text: '📝&nbsp;&nbsp;Introduction',
-            link: '/use_iapp/introduction',
+            link: '/use-iapp/introduction',
           },
           {
             text: '🚀&nbsp;&nbsp;Getting Started',
-            link: '/use_iapp/getting-started',
+            link: '/use-iapp/getting-started',
           },
           {
             text: '📖&nbsp;&nbsp;Guides',
-            link: '/use_iapp/guides',
+            link: '/use-iapp/guides',
             collapsed: true,
             items: [
               {
                 text: 'Different ways to execute an iApp',
-                link: '/use_iapp/guides/different-ways-to-execute',
+                link: '/use-iapp/guides/different-ways-to-execute',
               },
               {
                 text: 'Add inputs to the execution',
-                link: '/use_iapp/guides/add-inputs-to-execution',
+                link: '/use-iapp/guides/add-inputs-to-execution',
               },
               {
                 text: 'Use iApp with Protected Data',
-                link: '/use_iapp/use-iapp-with-protected-data',
+                link: '/use-iapp/use-iapp-with-protected-data',
               },
               {
                 text: 'Find iApps to Use',
-                link: '/use_iapp/find-iapps',
+                link: '/use-iapp/find-iapps',
               },
               {
                 text: 'How to pay the executions',
-                link: '/use_iapp/guides/how-to-pay-executions',
+                link: '/use-iapp/guides/how-to-pay-executions',
               },
             ],
           },
           {
             text: '💰&nbsp;&nbsp;How to Pay',
-            link: '/use_iapp/payment',
+            link: '/use-iapp/payment',
             collapsed: true,
             items: [
               {
@@ -472,7 +472,7 @@ export function getSidebar() {
               },
               {
                 text: 'How to Pay for Web3telegram',
-                link: '/use_iapp/web3telegram/how-to-pay-for-web3telegram',
+                link: '/use-iapp/web3telegram/how-to-pay-for-web3telegram',
               },
               {
                 text: 'Pricing Considerations',
@@ -480,18 +480,18 @@ export function getSidebar() {
               },
               {
                 text: 'Voucher Authorization Guide',
-                link: '/use_iapp/voucher-guide',
+                link: '/use-iapp/voucher-guide',
               },
             ],
           },
           {
             text: '✉&nbsp;&nbsp;Web3Mail',
-            link: '/use_iapp/web3mail',
+            link: '/use-iapp/web3mail',
             collapsed: true,
             items: [
               {
                 text: 'Getting Started',
-                link: '/use_iapp/web3mail/getting-started',
+                link: '/use-iapp/web3mail/getting-started',
               },
               {
                 text: 'Methods',
@@ -499,32 +499,32 @@ export function getSidebar() {
                 items: [
                   {
                     text: 'fetchMyContacts',
-                    link: '/use_iapp/web3mail/methods/fetchMyContacts',
+                    link: '/use-iapp/web3mail/methods/fetchMyContacts',
                   },
                   {
                     text: 'fetchUserContacts',
-                    link: '/use_iapp/web3mail/methods/fetchUserContacts',
+                    link: '/use-iapp/web3mail/methods/fetchUserContacts',
                   },
                   {
                     text: 'sendEmail',
-                    link: '/use_iapp/web3mail/methods/sendEmail',
+                    link: '/use-iapp/web3mail/methods/sendEmail',
                   },
                 ],
               },
               {
                 text: 'Advanced Configuration',
-                link: '/use_iapp/web3mail/advanced-configuration',
+                link: '/use-iapp/web3mail/advanced-configuration',
               },
             ],
           },
           {
             text: '💬&nbsp;&nbsp;Web3Telegram <span class="VPBadge warning" style="margin-left: 8px; margin-bottom: -1px; transform: translateY(-1px);">alpha</span>',
-            link: '/use_iapp/web3telegram',
+            link: '/use-iapp/web3telegram',
             collapsed: true,
             items: [
               {
                 text: 'Getting Started',
-                link: '/use_iapp/web3telegram/getting-started',
+                link: '/use-iapp/web3telegram/getting-started',
               },
               {
                 text: 'Methods',
@@ -532,36 +532,36 @@ export function getSidebar() {
                 items: [
                   {
                     text: 'fetchMyContacts',
-                    link: '/use_iapp/web3telegram/methods/fetchMyContacts',
+                    link: '/use-iapp/web3telegram/methods/fetchMyContacts',
                   },
                   {
                     text: 'fetchUserContacts',
-                    link: '/use_iapp/web3telegram/methods/fetchUserContacts',
+                    link: '/use-iapp/web3telegram/methods/fetchUserContacts',
                   },
                   {
                     text: 'sendTelegram',
-                    link: '/use_iapp/web3telegram/methods/sendTelegram',
+                    link: '/use-iapp/web3telegram/methods/sendTelegram',
                   },
                 ],
               },
               {
                 text: 'Integration Guide',
-                link: '/use_iapp/web3telegram/integration-guide',
+                link: '/use-iapp/web3telegram/integration-guide',
               },
               {
                 text: 'Advanced Configuration',
-                link: '/use_iapp/web3telegram/advanced-configuration',
+                link: '/use-iapp/web3telegram/advanced-configuration',
               },
             ],
           },
           {
             text: '🧙&nbsp;&nbsp;Oracle Factory',
-            link: '/use_iapp/oracle-factory',
+            link: '/use-iapp/oracle-factory',
             collapsed: true,
             items: [
               {
                 text: 'Getting Started',
-                link: '/use_iapp/oracle-factory/getting-started',
+                link: '/use-iapp/oracle-factory/getting-started',
               },
               {
                 text: 'Methods',
@@ -569,21 +569,21 @@ export function getSidebar() {
                 items: [
                   {
                     text: 'createOracle',
-                    link: '/use_iapp/oracle-factory/methods/createOracle',
+                    link: '/use-iapp/oracle-factory/methods/createOracle',
                   },
                   {
                     text: 'readOracle',
-                    link: '/use_iapp/oracle-factory/methods/readOracle',
+                    link: '/use-iapp/oracle-factory/methods/readOracle',
                   },
                   {
                     text: 'updateOracle',
-                    link: '/use_iapp/oracle-factory/methods/updateOracle',
+                    link: '/use-iapp/oracle-factory/methods/updateOracle',
                   },
                 ],
               },
               {
                 text: 'Advanced Configuration',
-                link: '/use_iapp/oracle-factory/advanced-configuration',
+                link: '/use-iapp/oracle-factory/advanced-configuration',
               },
             ],
           },
@@ -594,15 +594,15 @@ export function getSidebar() {
         items: [
           {
             text: '🔧&nbsp;&nbsp;iExec SDK',
-            link: '/deep_dive/sdk',
+            link: '/deep-dive/sdk',
           },
           {
             text: '⚙️&nbsp;&nbsp;Workers & Workerpools',
-            link: '/deep_dive/workers',
+            link: '/deep-dive/workers',
           },
           {
             text: '📖&nbsp;&nbsp;Glossary',
-            link: '/deep_dive/glossary',
+            link: '/deep-dive/glossary',
           },
         ],
       },

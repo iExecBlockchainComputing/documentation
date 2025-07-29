@@ -49,8 +49,8 @@ it without exposing the raw information.
 
 Ready to protect your data? Check out:
 
-- [Getting Started with DataProtector](/manage_data/dataProtector/getting-started)
-- [DataProtector Guides](/manage_data/guides)
+- [Getting Started with DataProtector](/manage-data/dataProtector/getting-started)
+- [DataProtector Guides](/manage-data/guides)
 
 ---
 
