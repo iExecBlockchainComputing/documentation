@@ -7,6 +7,8 @@ import Layout from './Layout.vue';
 import type { EnhanceAppContext } from 'vitepress';
 import googleAnalytics from 'vitepress-plugin-google-analytics';
 import 'virtual:group-icons.css'
+import '@shikijs/vitepress-twoslash/style.css';
+
 
 export default {
   extends: DefaultTheme,
