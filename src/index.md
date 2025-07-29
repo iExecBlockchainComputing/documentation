@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: 'iExec Documentation'
+  name: 'Build on iExec Privacy Layer'
   text: 'Build decentralized applications that combine ownership, privacy, and monetization.'
   tagline: 'Discover how to protect data, build iApps, and leverage confidential computing on the iExec protocol'
   actions:
