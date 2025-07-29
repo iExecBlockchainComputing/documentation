@@ -1,10 +1,10 @@
 ---
 title: Introduction to Using iApps
-description: Introduction à l'utilisation des iApps
+description: Introduction to using iApps
 ---
 
 # 📝 Introduction
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter l'introduction aux iApps -->
+<!-- TODO: Add the introduction to iApps -->

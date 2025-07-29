@@ -1,10 +1,10 @@
 ---
 title: Debugging Your iApp
-description: Déboguer votre iApp
+description: Debugging Your iApp
 ---
 
 # Debugging Your iApp
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le guide de débogage -->
+<!-- TODO: Add the debugging guide -->

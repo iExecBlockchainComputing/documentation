@@ -1,10 +1,10 @@
 ---
 title: Other Emerging Trends (to be added)
-description: Autres tendances émergentes à ajouter
+description: Other emerging trends to be added
 ---
 
 # Other Emerging Trends (to be added)
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter les autres tendances émergentes pour iApps -->
+<!-- TODO: Add other emerging trends for iApps -->

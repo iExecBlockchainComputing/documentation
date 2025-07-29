@@ -1,10 +1,10 @@
 ---
 title: Handle Schemas and Dataset Types
-description: Gérer les schémas et types de datasets
+description: Handle schemas and dataset types
 ---
 
 # Handle Schemas and Dataset Types
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le guide des schémas et types de datasets avec liens vers iApps -->
+<!-- TODO: Add the guide for schemas and dataset types with links to iApps -->

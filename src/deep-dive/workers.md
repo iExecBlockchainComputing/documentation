@@ -1,10 +1,10 @@
 ---
 title: Workers & Workerpools
-description: Workers et pools de workers
+description: Workers and worker pools
 ---
 
 # ⚙️ Workers & Workerpools
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le contenu sur les workers -->
+<!-- TODO: Add content about workers -->

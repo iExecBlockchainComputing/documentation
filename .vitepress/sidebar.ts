@@ -354,7 +354,7 @@ export function getSidebar() {
         items: [
           {
             text: '❓&nbsp;&nbsp;What Is an iApp?',
-            link: '/build-iapp/iapp-generator/what-is-iapp',
+            link: '/build-iapp/what-is-iapp',
           },
           {
             text: '📖&nbsp;&nbsp;Guides',

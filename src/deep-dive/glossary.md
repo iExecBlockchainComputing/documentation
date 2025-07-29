@@ -1,10 +1,10 @@
 ---
 title: Glossary
-description: Glossaire des termes iExec
+description: iExec terms glossary
 ---
 
 # 📖 Glossary
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le glossaire -->
+<!-- TODO: Add the glossary -->

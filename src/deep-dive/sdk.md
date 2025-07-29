@@ -1,10 +1,10 @@
 ---
 title: iExec SDK
-description: SDK iExec
+description: iExec SDK
 ---
 
 # 🔧 iExec SDK
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le contenu SDK -->
+<!-- TODO: Add SDK content -->

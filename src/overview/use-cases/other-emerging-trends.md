@@ -1,10 +1,10 @@
 ---
 title: Other Emerging Trends
-description: Autres tendances émergentes
+description: Other emerging trends
 ---
 
 # 🚀 Other Emerging Trends
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter les autres tendances émergentes -->
+<!-- TODO: Add other emerging trends -->

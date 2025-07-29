@@ -1,10 +1,10 @@
 ---
 title: Guides
-description: Guides d'utilisation des iApps
+description: iApps usage guides
 ---
 
 # 📖 Guides
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter les guides -->
+<!-- TODO: Add the guides -->

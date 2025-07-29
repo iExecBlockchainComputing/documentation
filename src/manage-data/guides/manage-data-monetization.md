@@ -1,10 +1,10 @@
 ---
 title: Manage Data Monetization
-description: Gérer la monétisation des données
+description: Manage data monetization
 ---
 
 # Manage Data Monetization
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le guide de monétisation des données -->
+<!-- TODO: Add the data monetization guide -->

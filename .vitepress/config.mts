@@ -79,7 +79,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Protect Data', link: '/manage-data/guides' },
-      { text: 'Build iApp', link: '/build-iapp/iapp-generator/what-is-iapp' },
+      { text: 'Build iApp', link: '/build-iapp/what-is-iapp' },
       { text: 'Use iApp', link: '/use-iapp/introduction' },
     ],
     outline: {
