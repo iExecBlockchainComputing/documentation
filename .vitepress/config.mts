@@ -14,6 +14,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  srcDir: './src',
   markdown: {
     codeTransformers: [transformerTwoslash()],
   },
