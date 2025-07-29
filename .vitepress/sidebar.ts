@@ -362,7 +362,7 @@ export function getSidebar() {
             items: [
               {
                 text: 'Manage Your iApps',
-                link: '/build-iapp/iapp-generator/manage-iapps',
+                link: '/build-iapp/guides/manage-iapps',
               },
               {
                 text: 'Orders (how they work, how to manage them)',
@@ -386,7 +386,7 @@ export function getSidebar() {
               },
               {
                 text: 'AI Frameworks',
-                link: '/build-iapp/iapp-generator/ai-frameworks',
+                link: '/build-iapp/guides/ai-frameworks',
               },
               {
                 text: 'Other Emerging Trends',
@@ -436,7 +436,6 @@ export function getSidebar() {
           },
           {
             text: '📖&nbsp;&nbsp;Guides',
-            link: '/use-iapp/guides',
             collapsed: true,
             items: [
               {
