@@ -2,6 +2,10 @@ import { transformerTwoslash } from '@shikijs/vitepress-twoslash';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vitepress';
 import { getSidebar } from './sidebar';
+import {
+  groupIconMdPlugin,
+  groupIconVitePlugin,
+} from 'vitepress-plugin-group-icons';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -12,11 +16,14 @@ export default defineConfig({
   lastUpdated: true,
   ignoreDeadLinks: true,
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), groupIconVitePlugin()],
   },
   srcDir: './src',
   markdown: {
     codeTransformers: [transformerTwoslash()],
+    config(md) {
+      md.use(groupIconMdPlugin);
+    },
   },
 
   head: [
