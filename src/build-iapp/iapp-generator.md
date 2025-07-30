@@ -1,10 +1,10 @@
 ---
 title: iApp Generator
-description: Générateur d'iApp
+description: iApp Generator
 ---
 
 # 🤖 iApp Generator
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le contenu du générateur -->
+<!-- TODO: Add the generator content -->

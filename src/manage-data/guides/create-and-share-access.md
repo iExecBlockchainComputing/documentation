@@ -1,10 +1,10 @@
 ---
 title: Create and Share Access to Protected Data
-description: Créer et partager l'accès aux données protégées
+description: Create and share access to protected data
 ---
 
 # Create and Share Access to Protected Data
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le guide de création et partage d'accès -->
+<!-- TODO: Add the guide for creating and sharing access -->

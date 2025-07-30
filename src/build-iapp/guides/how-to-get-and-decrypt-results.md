@@ -1,10 +1,10 @@
 ---
 title: How to Get and Decrypt Results
-description: Comment obtenir et décrypter les résultats
+description: How to get and decrypt results
 ---
 
 # How to Get and Decrypt Results
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le guide pour obtenir et décrypter les résultats -->
+<!-- TODO: Add the guide to get and decrypt results -->

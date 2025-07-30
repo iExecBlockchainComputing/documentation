@@ -1,10 +1,10 @@
 ---
 title: How to pay the executions
-description: Comment payer les exécutions
+description: How to pay for executions
 ---
 
 # How to pay the executions
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le guide de paiement des exécutions avec sous-sections RLC et Voucher -->
+<!-- TODO: Add the execution payment guide with RLC and Voucher subsections -->

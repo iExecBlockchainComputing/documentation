@@ -1,10 +1,10 @@
 ---
 title: Getting Started with iApps
-description: Démarrage avec les iApps
+description: Getting started with iApps
 ---
 
 # 🚀 Getting Started
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le guide de démarrage iApps -->
+<!-- TODO: Add the iApps getting started guide -->

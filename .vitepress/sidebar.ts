@@ -2,15 +2,14 @@ import type { DefaultTheme } from 'vitepress';
 
 export function getSidebar() {
   return {
-    '/': [
+    '/overview/': [
       {
         text: 'OVERVIEW',
         items: [
-          { text: '💡&nbsp;&nbsp;What We Do', link: '/overview/what-we-do' },
+          { text: '💡 Welcome iExec', link: '/overview/welcome' },
           {
-            text: '👋&nbsp;&nbsp; Hello World',
+            text: '👋 Hello World',
             link: '/overview/helloWorld',
-            collapsed: true,
             items: [
               {
                 text: 'iExec Overview',
@@ -20,10 +19,7 @@ export function getSidebar() {
                 text: 'Protect data',
                 link: '/overview/helloWorld/2-protectData',
               },
-              {
-                text: 'Build iApp',
-                link: '/overview/helloWorld/3-buildIApp',
-              },
+              { text: 'Build iApp', link: '/overview/helloWorld/3-buildIApp' },
               {
                 text: 'Manage data access',
                 link: '/overview/helloWorld/4-manageDataAccess',
@@ -35,13 +31,9 @@ export function getSidebar() {
             ],
           },
           {
-            text: '📋&nbsp;&nbsp;Use Cases',
-            collapsed: true,
+            text: '📋 Use Cases',
             items: [
-              {
-                text: 'AI',
-                link: '/overview/use-cases/ai',
-              },
+              { text: 'AI', link: '/overview/use-cases/ai' },
               {
                 text: 'Other Emerging Trends',
                 link: '/overview/use-cases/other-emerging-trends',
@@ -64,26 +56,40 @@ export function getSidebar() {
             ],
           },
           {
-            text: '🤖&nbsp;&nbsp;Use the docs in your AI',
+            text: '🤖 Use the docs in your AI',
             link: '/overview/ai-integration',
           },
+          { text: '🆘 Contact Us', link: '/overview/contact-us' },
+        ],
+      },
+      {
+        text: 'EXPLORERS',
+        items: [
           {
-            text: '🆘&nbsp;&nbsp;Contact Us',
-            link: '/overview/contact-us',
+            text: 'the Explorer',
+            collapsed: false,
+            items: [
+              { text: 'iExec Explorer', link: '/overview/iexec-explorer' },
+              {
+                text: 'The Graph Explorer',
+                link: '/overview/the-graph-explorer',
+              },
+            ],
           },
         ],
       },
+    ],
+    '/manage-data/': [
       {
         text: 'PROTECT AND MANAGE DATA',
         items: [
           {
             text: '❓&nbsp;&nbsp;What Is Protected Data?',
-            link: '/manage-data/dataProtector/what-is-protected-data',
+            link: '/manage-data/what-is-protected-data',
           },
           {
-            text: '📖&nbsp;&nbsp;Guides',
+            text: '📖 Guides',
             link: '/manage-data/guides',
-            collapsed: true,
             items: [
               {
                 text: 'Create and Share Access to Protected Data',
@@ -100,13 +106,17 @@ export function getSidebar() {
             ],
           },
           {
-            text: '🔐&nbsp;&nbsp;DataProtector <span class="VPBadge warning" style="margin-left: 8px; margin-bottom: -1px; transform: translateY(-1px);">beta</span>',
+            text: '🔐 DataProtector',
             link: '/manage-data/dataProtector',
             collapsed: true,
             items: [
               {
                 text: 'Getting Started',
                 link: '/manage-data/dataProtector/getting-started',
+              },
+              {
+                text: 'Guides',
+                link: '/manage-data/dataProtector/guides',
               },
               {
                 text: 'DataProtector Core',
@@ -349,20 +359,19 @@ export function getSidebar() {
           },
         ],
       },
+    ],
+    '/build-iapp/': [
       {
         text: 'BUILD YOUR iAPP',
         items: [
+          { text: '❓ What Is an iApp?', link: '/build-iapp/what-is-iapp' },
           {
-            text: '❓&nbsp;&nbsp;What Is an iApp?',
-            link: '/build-iapp/iapp-generator/what-is-iapp',
-          },
-          {
-            text: '📖&nbsp;&nbsp;Guides',
-            collapsed: true,
+            text: '📖 Guides',
+            link: '/build-iapp/guides',
             items: [
               {
                 text: 'Manage Your iApps',
-                link: '/build-iapp/iapp-generator/manage-iapps',
+                link: '/build-iapp/guides/manage-iapps',
               },
               {
                 text: 'Orders (how they work, how to manage them)',
@@ -386,7 +395,7 @@ export function getSidebar() {
               },
               {
                 text: 'AI Frameworks',
-                link: '/build-iapp/iapp-generator/ai-frameworks',
+                link: '/build-iapp/guides/ai-frameworks',
               },
               {
                 text: 'Other Emerging Trends',
@@ -395,7 +404,7 @@ export function getSidebar() {
             ],
           },
           {
-            text: '🤖&nbsp;&nbsp;iApp Generator',
+            text: '🤖 iApp Generator',
             link: '/build-iapp/iapp-generator',
             collapsed: true,
             items: [
@@ -418,26 +427,21 @@ export function getSidebar() {
             ],
           },
           {
-            text: '🔧&nbsp;&nbsp;Protocol-Level Guides',
+            text: '🔧 Protocol-Level Guides',
             link: '/build-iapp/iapp-generator/protocol-level-guides',
           },
         ],
       },
+    ],
+    '/use-iapp/': [
       {
         text: 'USE AN iAPP',
         items: [
+          { text: '📝 Introduction', link: '/use-iapp/introduction' },
+          { text: '🚀 Getting Started', link: '/use-iapp/getting-started' },
           {
-            text: '📝&nbsp;&nbsp;Introduction',
-            link: '/use-iapp/introduction',
-          },
-          {
-            text: '🚀&nbsp;&nbsp;Getting Started',
-            link: '/use-iapp/getting-started',
-          },
-          {
-            text: '📖&nbsp;&nbsp;Guides',
+            text: '📖 Guides',
             link: '/use-iapp/guides',
-            collapsed: true,
             items: [
               {
                 text: 'Different ways to execute an iApp',
@@ -462,9 +466,8 @@ export function getSidebar() {
             ],
           },
           {
-            text: '💰&nbsp;&nbsp;How to Pay',
+            text: '💰 How to Pay',
             link: '/use-iapp/payment',
-            collapsed: true,
             items: [
               {
                 text: 'How to Pay for Web3mail',
@@ -485,7 +488,7 @@ export function getSidebar() {
             ],
           },
           {
-            text: '✉&nbsp;&nbsp;Web3Mail',
+            text: '✉ Web3Mail',
             link: '/use-iapp/web3mail',
             collapsed: true,
             items: [
@@ -518,7 +521,7 @@ export function getSidebar() {
             ],
           },
           {
-            text: '💬&nbsp;&nbsp;Web3Telegram <span class="VPBadge warning" style="margin-left: 8px; margin-bottom: -1px; transform: translateY(-1px);">alpha</span>',
+            text: '💬 Web3Telegram <span class="VPBadge warning" style="margin-left: 8px; margin-bottom: -1px; transform: translateY(-1px);">alpha</span>',
             link: '/use-iapp/web3telegram',
             collapsed: true,
             items: [
@@ -555,7 +558,7 @@ export function getSidebar() {
             ],
           },
           {
-            text: '🧙&nbsp;&nbsp;Oracle Factory',
+            text: '🧙 Oracle Factory',
             link: '/use-iapp/oracle-factory',
             collapsed: true,
             items: [
@@ -589,20 +592,22 @@ export function getSidebar() {
           },
         ],
       },
+    ],
+    '/core-concept/': [
       {
-        text: 'KEY CONCEPTS',
+        text: 'CORE CONCEPTS',
         items: [
           {
             text: '🔧&nbsp;&nbsp;iExec SDK',
-            link: '/deep-dive/sdk',
+            link: '/core-concept/sdk',
           },
           {
             text: '⚙️&nbsp;&nbsp;Workers & Workerpools',
-            link: '/deep-dive/workers',
+            link: '/core-concept/workers',
           },
           {
             text: '📖&nbsp;&nbsp;Glossary',
-            link: '/deep-dive/glossary',
+            link: '/core-concept/glossary',
           },
         ],
       },

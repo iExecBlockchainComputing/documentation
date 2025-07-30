@@ -1,10 +1,10 @@
 ---
 title: Different ways to execute an iApp
-description: Différentes façons d'exécuter une iApp
+description: Different ways to execute an iApp
 ---
 
 # Different ways to execute an iApp
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le guide des différentes façons d'exécuter -->
+<!-- TODO: Add the guide for different ways to execute -->

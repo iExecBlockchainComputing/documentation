@@ -1,10 +1,10 @@
 ---
 title: How to Pay
-description: Comment payer pour les iApps
+description: How to pay for iApps
 ---
 
 # 💰 How to Pay
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le guide de paiement -->
+<!-- TODO: Add the payment guide -->

@@ -1,10 +1,10 @@
 ---
 title: Using TDX (Trusted Execution) [EXPERIMENTAL]
-description: Utiliser TDX (Exécution de Confiance) [EXPÉRIMENTAL]
+description: Using TDX (Trusted Execution) [EXPERIMENTAL]
 ---
 
 # Using TDX (Trusted Execution) [EXPERIMENTAL]
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le guide TDX -->
+<!-- TODO: Add the TDX guide -->

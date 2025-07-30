@@ -1,10 +1,10 @@
 ---
 title: Getting Started
-description: Guide de démarrage DataProtector
+description: DataProtector getting started guide
 ---
 
 # Getting Started
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le guide de démarrage -->
+<!-- TODO: Add the getting started guide -->

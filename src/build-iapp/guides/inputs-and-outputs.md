@@ -1,10 +1,10 @@
 ---
 title: Inputs and Outputs (types, differences, formats)
-description: Types, différences et formats des entrées et sorties
+description: Types, differences, and formats of inputs and outputs
 ---
 
 # Inputs and Outputs (types, differences, formats)
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le guide des inputs/outputs -->
+<!-- TODO: Add the inputs/outputs guide -->

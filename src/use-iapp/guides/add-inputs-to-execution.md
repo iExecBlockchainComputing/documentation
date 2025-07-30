@@ -1,10 +1,10 @@
 ---
 title: Add inputs to the execution
-description: Ajouter des entrées à l'exécution
+description: Add inputs to the execution
 ---
 
 # Add inputs to the execution
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le guide pour ajouter des inputs -->
+<!-- TODO: Add the guide for adding inputs -->

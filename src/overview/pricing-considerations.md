@@ -1,10 +1,10 @@
 ---
 title: Pricing Considerations
-description: Considérations de prix
+description: Pricing considerations
 ---
 
 # Pricing Considerations
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter les considérations de prix -->
+<!-- TODO: Add pricing considerations -->

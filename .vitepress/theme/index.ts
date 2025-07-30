@@ -5,6 +5,8 @@ import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client';
 import Layout from './Layout.vue';
 import type { EnhanceAppContext } from 'vitepress';
 import googleAnalytics from 'vitepress-plugin-google-analytics';
+import 'virtual:group-icons.css';
+import '@shikijs/vitepress-twoslash/style.css';
 import { QueryClient, VueQueryPlugin } from '@tanstack/vue-query';
 import { WagmiPlugin } from '@wagmi/vue';
 import { wagmiAdapter } from '../../src/utils/wagmiConfig';

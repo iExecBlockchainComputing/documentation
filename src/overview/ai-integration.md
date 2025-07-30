@@ -1,10 +1,10 @@
 ---
 title: Use the docs in your AI
-description: Intégration IA
+description: AI integration
 ---
 
 # 🤖 Use the docs in your AI
 
-Cette page est en cours de développement.
+This page is under development.
 
-<!-- TODO: Ajouter le contenu d'intégration IA -->
+<!-- TODO: Add AI integration content -->
