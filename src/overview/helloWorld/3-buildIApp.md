@@ -258,17 +258,17 @@ iapp deploy
 
 <div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <p class="m-0!">📝 Make sure to save your <span class="text-fuchsia-700 font-semibold">iApp address</span> after deployment - you'll need it later!</p>
-  <p>You can find your iApp address in the <code>iexec-app.json</code> file in your project folder.</p>
+  <p class="m-0!">You can find your iApp address in the <code>iexec-app.json</code> file in your project folder.</p>
   <br>
-  <p>⚠️  If you encounter issues during deployment, make sure Docker's BuildKit feature is enabled and supports AMD64 architecture:</p>
+  <p class="m-0!">⚠️  If you encounter issues during deployment, make sure Docker's BuildKit feature is enabled and supports AMD64 architecture:</p>
 
 ```sh
 docker buildx inspect --bootstrap | grep -i platforms
 ```
 
-  <p>The output should include <code>linux/amd64</code> in the list of supported platforms. If not, update to the latest Docker Desktop version which includes these requirements.</p>
+  <p class="m-0!">The output should include <code>linux/amd64</code> in the list of supported platforms. If not, update to the latest Docker Desktop version which includes these requirements.</p>
   <br>
-   <p>⚠️  If you set the wrong Docker username, you can change it by editing the <code>iapp.config.json</code> file</p>
+  <p class="m-0!">⚠️  If you set the wrong Docker username, you can change it by editing the <code>iapp.config.json</code> file</p>
 </div>
 
 ## 🏃 Run Your iApp
