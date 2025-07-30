@@ -59,7 +59,6 @@ export function getSidebar() {
             text: '🤖 Use the docs in your AI',
             link: '/overview/ai-integration',
           },
-          { text: '🆘 Contact Us', link: '/overview/contact-us' },
         ],
       },
       {
