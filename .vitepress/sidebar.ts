@@ -78,7 +78,7 @@ export function getSidebar() {
         items: [
           {
             text: '❓&nbsp;&nbsp;What Is Protected Data?',
-            link: '/manage-data/dataProtector/what-is-protected-data',
+            link: '/manage-data/what-is-protected-data',
           },
           {
             text: '📖&nbsp;&nbsp;Guides',
@@ -589,19 +589,19 @@ export function getSidebar() {
         ],
       },
       {
-        text: 'KEY CONCEPTS',
+        text: 'CORE CONCEPTS',
         items: [
           {
             text: '🔧&nbsp;&nbsp;iExec SDK',
-            link: '/deep-dive/sdk',
+            link: '/core-concept/sdk',
           },
           {
             text: '⚙️&nbsp;&nbsp;Workers & Workerpools',
-            link: '/deep-dive/workers',
+            link: '/core-concept/workers',
           },
           {
             text: '📖&nbsp;&nbsp;Glossary',
-            link: '/deep-dive/glossary',
+            link: '/core-concept/glossary',
           },
         ],
       },
