@@ -8,10 +8,16 @@
     "format": "prettier --ignore-path .gitignore --write ."
   },
   "dependencies": {
+    "@iexec/dataprotector": "^2.0.0-beta.17",
+    "@iexec/dataprotector-deserializer": "^0.1.1",
+    "@iexec/iexec-oracle-factory-wrapper": "^2.6.0",
+    "@iexec/web3mail": "^1.2.2",
+    "@iexec/web3telegram": "^0.1.0-alpha.1",
     "@tailwindcss/vite": "^4.1.11",
     "tailwindcss": "^4.1.11",
     "turndown": "^7.2.0",
     "vitepress-plugin-google-analytics": "^1.0.2",
+    "vitepress-plugin-group-icons": "^1.6.1",
     "vue": "^3.5.17"
   },
   "devDependencies": {

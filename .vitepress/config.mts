@@ -1,6 +1,11 @@
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vitepress';
+import { getSidebar } from './sidebar';
+import {
+  groupIconMdPlugin,
+  groupIconVitePlugin,
+} from 'vitepress-plugin-group-icons';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -11,10 +16,14 @@ export default defineConfig({
   lastUpdated: true,
   ignoreDeadLinks: true,
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), groupIconVitePlugin()],
   },
+  srcDir: './src',
   markdown: {
     codeTransformers: [transformerTwoslash()],
+    config(md) {
+      md.use(groupIconMdPlugin);
+    },
   },
 
   head: [
@@ -75,26 +84,17 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      {
-        text: 'Markdown Examples',
-        link: '/markdown-examples',
-      },
+      { text: 'Overview', link: '/overview/welcome' },
+      { text: 'Protect Data', link: '/manage-data/what-is-protected-data' },
+      { text: 'Build iApp', link: '/build-iapp/what-is-iapp' },
+      { text: 'Use iApp', link: '/use-iapp/introduction' },
+      { text: 'Core Concept', link: '/core-concept/glossary' },
     ],
     outline: {
       level: [2, 3],
     },
 
-    sidebar: [
-      {
-        text: 'Home',
-        link: '/index',
-      },
-      {
-        text: 'Markdown Examples',
-        link: '/markdown-examples',
-      },
-    ],
+    sidebar: getSidebar(),
 
     search: {
       provider: 'local',
