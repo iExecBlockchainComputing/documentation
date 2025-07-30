@@ -1,6 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "local>iExecBlockchainComputing/renovate-config"
-  ]
+  "extends": ["local>iExecBlockchainComputing/renovate-config"]
 }
