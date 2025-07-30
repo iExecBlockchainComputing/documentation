@@ -2,15 +2,14 @@ import type { DefaultTheme } from 'vitepress';
 
 export function getSidebar() {
   return {
-    '/': [
+    '/overview/': [
       {
         text: 'OVERVIEW',
         items: [
-          { text: '💡 What We Do', link: '/overview/what-we-do' },
+          { text: '💡 Welcome iExec', link: '/overview/welcome' },
           {
             text: '👋 Hello World',
             link: '/overview/helloWorld',
-            collapsed: true,
             items: [
               {
                 text: 'iExec Overview',
@@ -33,7 +32,6 @@ export function getSidebar() {
           },
           {
             text: '📋 Use Cases',
-            collapsed: true,
             items: [
               { text: 'AI', link: '/overview/use-cases/ai' },
               {
@@ -64,67 +62,20 @@ export function getSidebar() {
           { text: '🆘 Contact Us', link: '/overview/contact-us' },
         ],
       },
-    ],
-    '/overview/': [
       {
-        text: 'OVERVIEW',
+        text: 'EXPLORERS',
         items: [
-          { text: '💡 What We Do', link: '/overview/what-we-do' },
           {
-            text: '👋 Hello World',
-            link: '/overview/helloWorld',
-            collapsed: true,
+            text: 'the Explorer',
+            collapsed: false,
             items: [
+              { text: 'iExec explorer', link: '/overview/iexec-explorer' },
               {
-                text: 'iExec Overview',
-                link: '/overview/helloWorld/1-overview',
-              },
-              {
-                text: 'Protect data',
-                link: '/overview/helloWorld/2-protectData',
-              },
-              { text: 'Build iApp', link: '/overview/helloWorld/3-buildIApp' },
-              {
-                text: 'Manage data access',
-                link: '/overview/helloWorld/4-manageDataAccess',
-              },
-              {
-                text: 'Bonus chapter!',
-                link: '/overview/helloWorld/5-bonusChapter',
+                text: 'The Graph Explorer',
+                link: '/overview/the-graph-explorer',
               },
             ],
           },
-          {
-            text: '📋 Use Cases',
-            collapsed: true,
-            items: [
-              { text: 'AI', link: '/overview/use-cases/ai' },
-              {
-                text: 'Other Emerging Trends',
-                link: '/overview/use-cases/other-emerging-trends',
-              },
-              {
-                text: 'Use Case Demos',
-                link: '/overview/use-case-demo',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'Content Creator',
-                    link: '/overview/use-case-demo/content-creator',
-                  },
-                  {
-                    text: 'Web3 Messaging',
-                    link: '/overview/use-case-demo/web3messaging',
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            text: '🤖 Use the docs in your AI',
-            link: '/overview/ai-integration',
-          },
-          { text: '🆘 Contact Us', link: '/overview/contact-us' },
         ],
       },
     ],
@@ -139,7 +90,6 @@ export function getSidebar() {
           {
             text: '📖 Guides',
             link: '/manage-data/guides',
-            collapsed: true,
             items: [
               {
                 text: 'Create and Share Access to Protected Data',
@@ -418,7 +368,6 @@ export function getSidebar() {
           {
             text: '📖 Guides',
             link: '/build-iapp/guides',
-            collapsed: true,
             items: [
               {
                 text: 'Manage Your iApps',
@@ -493,7 +442,6 @@ export function getSidebar() {
           {
             text: '📖 Guides',
             link: '/use-iapp/guides',
-            collapsed: true,
             items: [
               {
                 text: 'Different ways to execute an iApp',
@@ -520,7 +468,6 @@ export function getSidebar() {
           {
             text: '💰 How to Pay',
             link: '/use-iapp/payment',
-            collapsed: true,
             items: [
               {
                 text: 'How to Pay for Web3mail',
