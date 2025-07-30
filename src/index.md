@@ -38,5 +38,5 @@ features:
   - icon: 🔧
     title: Developer Tools
     details: Access comprehensive SDKs, APIs, and tools to integrate with the iExec ecosystem
-    link: /deep-dive/sdk
+    link: /core-concept/sdk
 ---

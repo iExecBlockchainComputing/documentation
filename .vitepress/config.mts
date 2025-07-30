@@ -84,10 +84,11 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Protect Data', link: '/manage-data/guides' },
+      { text: 'Overview', link: '/overview/what-we-do' },
+      { text: 'Protect Data', link: '/manage-data/what-is-protected-data' },
       { text: 'Build iApp', link: '/build-iapp/what-is-iapp' },
       { text: 'Use iApp', link: '/use-iapp/introduction' },
+      { text: 'Core Concept', link: '/core-concept/glossary' },
     ],
     outline: {
       level: [2, 3],

@@ -6,9 +6,9 @@ export function getSidebar() {
       {
         text: 'OVERVIEW',
         items: [
-          { text: '💡&nbsp;&nbsp;What We Do', link: '/overview/what-we-do' },
+          { text: '💡 What We Do', link: '/overview/what-we-do' },
           {
-            text: '👋&nbsp;&nbsp; Hello World',
+            text: '👋 Hello World',
             link: '/overview/helloWorld',
             collapsed: true,
             items: [
@@ -20,10 +20,7 @@ export function getSidebar() {
                 text: 'Protect data',
                 link: '/overview/helloWorld/2-protectData',
               },
-              {
-                text: 'Build iApp',
-                link: '/overview/helloWorld/3-buildIApp',
-              },
+              { text: 'Build iApp', link: '/overview/helloWorld/3-buildIApp' },
               {
                 text: 'Manage data access',
                 link: '/overview/helloWorld/4-manageDataAccess',
@@ -35,13 +32,10 @@ export function getSidebar() {
             ],
           },
           {
-            text: '📋&nbsp;&nbsp;Use Cases',
+            text: '📋 Use Cases',
             collapsed: true,
             items: [
-              {
-                text: 'AI',
-                link: '/overview/use-cases/ai',
-              },
+              { text: 'AI', link: '/overview/use-cases/ai' },
               {
                 text: 'Other Emerging Trends',
                 link: '/overview/use-cases/other-emerging-trends',
@@ -64,24 +58,86 @@ export function getSidebar() {
             ],
           },
           {
-            text: '🤖&nbsp;&nbsp;Use the docs in your AI',
+            text: '🤖 Use the docs in your AI',
             link: '/overview/ai-integration',
           },
-          {
-            text: '🆘&nbsp;&nbsp;Contact Us',
-            link: '/overview/contact-us',
-          },
+          { text: '🆘 Contact Us', link: '/overview/contact-us' },
         ],
       },
+    ],
+    '/overview/': [
+      {
+        text: 'OVERVIEW',
+        items: [
+          { text: '💡 What We Do', link: '/overview/what-we-do' },
+          {
+            text: '👋 Hello World',
+            link: '/overview/helloWorld',
+            collapsed: true,
+            items: [
+              {
+                text: 'iExec Overview',
+                link: '/overview/helloWorld/1-overview',
+              },
+              {
+                text: 'Protect data',
+                link: '/overview/helloWorld/2-protectData',
+              },
+              { text: 'Build iApp', link: '/overview/helloWorld/3-buildIApp' },
+              {
+                text: 'Manage data access',
+                link: '/overview/helloWorld/4-manageDataAccess',
+              },
+              {
+                text: 'Bonus chapter!',
+                link: '/overview/helloWorld/5-bonusChapter',
+              },
+            ],
+          },
+          {
+            text: '📋 Use Cases',
+            collapsed: true,
+            items: [
+              { text: 'AI', link: '/overview/use-cases/ai' },
+              {
+                text: 'Other Emerging Trends',
+                link: '/overview/use-cases/other-emerging-trends',
+              },
+              {
+                text: 'Use Case Demos',
+                link: '/overview/use-case-demo',
+                collapsed: true,
+                items: [
+                  {
+                    text: 'Content Creator',
+                    link: '/overview/use-case-demo/content-creator',
+                  },
+                  {
+                    text: 'Web3 Messaging',
+                    link: '/overview/use-case-demo/web3messaging',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            text: '🤖 Use the docs in your AI',
+            link: '/overview/ai-integration',
+          },
+          { text: '🆘 Contact Us', link: '/overview/contact-us' },
+        ],
+      },
+    ],
+    '/manage-data/': [
       {
         text: 'PROTECT AND MANAGE DATA',
         items: [
           {
-            text: '❓&nbsp;&nbsp;What Is Protected Data?',
-            link: '/manage-data/dataProtector/what-is-protected-data',
+            text: '❓ What Is Protected Data?',
+            link: '/manage-data/what-is-protected-data',
           },
           {
-            text: '📖&nbsp;&nbsp;Guides',
+            text: '📖 Guides',
             link: '/manage-data/guides',
             collapsed: true,
             items: [
@@ -100,13 +156,17 @@ export function getSidebar() {
             ],
           },
           {
-            text: '🔐&nbsp;&nbsp;DataProtector <span class="VPBadge warning" style="margin-left: 8px; margin-bottom: -1px; transform: translateY(-1px);">beta</span>',
+            text: '🔐 DataProtector',
             link: '/manage-data/dataProtector',
             collapsed: true,
             items: [
               {
                 text: 'Getting Started',
                 link: '/manage-data/dataProtector/getting-started',
+              },
+              {
+                text: 'Guides',
+                link: '/manage-data/dataProtector/guides',
               },
               {
                 text: 'DataProtector Core',
@@ -349,15 +409,15 @@ export function getSidebar() {
           },
         ],
       },
+    ],
+    '/build-iapp/': [
       {
         text: 'BUILD YOUR iAPP',
         items: [
+          { text: '❓ What Is an iApp?', link: '/build-iapp/what-is-iapp' },
           {
-            text: '❓&nbsp;&nbsp;What Is an iApp?',
-            link: '/build-iapp/what-is-iapp',
-          },
-          {
-            text: '📖&nbsp;&nbsp;Guides',
+            text: '📖 Guides',
+            link: '/build-iapp/guides',
             collapsed: true,
             items: [
               {
@@ -395,7 +455,7 @@ export function getSidebar() {
             ],
           },
           {
-            text: '🤖&nbsp;&nbsp;iApp Generator',
+            text: '🤖 iApp Generator',
             link: '/build-iapp/iapp-generator',
             collapsed: true,
             items: [
@@ -418,24 +478,21 @@ export function getSidebar() {
             ],
           },
           {
-            text: '🔧&nbsp;&nbsp;Protocol-Level Guides',
+            text: '🔧 Protocol-Level Guides',
             link: '/build-iapp/iapp-generator/protocol-level-guides',
           },
         ],
       },
+    ],
+    '/use-iapp/': [
       {
         text: 'USE AN iAPP',
         items: [
+          { text: '📝 Introduction', link: '/use-iapp/introduction' },
+          { text: '🚀 Getting Started', link: '/use-iapp/getting-started' },
           {
-            text: '📝&nbsp;&nbsp;Introduction',
-            link: '/use-iapp/introduction',
-          },
-          {
-            text: '🚀&nbsp;&nbsp;Getting Started',
-            link: '/use-iapp/getting-started',
-          },
-          {
-            text: '📖&nbsp;&nbsp;Guides',
+            text: '📖 Guides',
+            link: '/use-iapp/guides',
             collapsed: true,
             items: [
               {
@@ -461,7 +518,7 @@ export function getSidebar() {
             ],
           },
           {
-            text: '💰&nbsp;&nbsp;How to Pay',
+            text: '💰 How to Pay',
             link: '/use-iapp/payment',
             collapsed: true,
             items: [
@@ -484,7 +541,7 @@ export function getSidebar() {
             ],
           },
           {
-            text: '✉&nbsp;&nbsp;Web3Mail',
+            text: '✉ Web3Mail',
             link: '/use-iapp/web3mail',
             collapsed: true,
             items: [
@@ -517,7 +574,7 @@ export function getSidebar() {
             ],
           },
           {
-            text: '💬&nbsp;&nbsp;Web3Telegram <span class="VPBadge warning" style="margin-left: 8px; margin-bottom: -1px; transform: translateY(-1px);">alpha</span>',
+            text: '💬 Web3Telegram <span class="VPBadge warning" style="margin-left: 8px; margin-bottom: -1px; transform: translateY(-1px);">alpha</span>',
             link: '/use-iapp/web3telegram',
             collapsed: true,
             items: [
@@ -554,7 +611,7 @@ export function getSidebar() {
             ],
           },
           {
-            text: '🧙&nbsp;&nbsp;Oracle Factory',
+            text: '🧙 Oracle Factory',
             link: '/use-iapp/oracle-factory',
             collapsed: true,
             items: [
@@ -588,21 +645,14 @@ export function getSidebar() {
           },
         ],
       },
+    ],
+    '/core-concept/': [
       {
-        text: 'KEY CONCEPTS',
+        text: 'CORE CONCEPTS',
         items: [
-          {
-            text: '🔧&nbsp;&nbsp;iExec SDK',
-            link: '/deep-dive/sdk',
-          },
-          {
-            text: '⚙️&nbsp;&nbsp;Workers & Workerpools',
-            link: '/deep-dive/workers',
-          },
-          {
-            text: '📖&nbsp;&nbsp;Glossary',
-            link: '/deep-dive/glossary',
-          },
+          { text: '🔧 iExec SDK', link: '/core-concept/sdk' },
+          { text: '⚙️ Workers & Workerpools', link: '/core-concept/workers' },
+          { text: '📖 Glossary', link: '/core-concept/glossary' },
         ],
       },
     ],
