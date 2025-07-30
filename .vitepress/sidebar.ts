@@ -6,7 +6,7 @@ export function getSidebar() {
       {
         text: 'OVERVIEW',
         items: [
-          { text: '💡 Welcome iExec', link: '/overview/welcome' },
+          { text: '💡 Welcome', link: '/overview/welcome' },
           {
             text: '👋 Hello World',
             link: '/overview/helloWorld',
