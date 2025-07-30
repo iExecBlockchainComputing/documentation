@@ -53,7 +53,7 @@
 
     <div
       v-if="protectedDataAddress"
-      class="mt-8 w-full rounded-md bg-gradient-to-br from-green-400/10 to-green-400/5 p-6 text-center"
+      class="mt-8 w-full rounded-md bg-gradient-to-r from-green-400/10 to-green-400/5 p-6 text-center"
     >
       <div
         class="mb-2 flex items-center justify-center gap-3 text-xl font-medium text-green-500"

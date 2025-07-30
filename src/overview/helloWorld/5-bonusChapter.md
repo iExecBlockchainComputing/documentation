@@ -8,7 +8,7 @@ import CouponCode from '../../modules/helloWorld/CouponCode.vue';
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 border-none">Congratulations!</h2>
-  <p>You've successfully completed the Hello World journey and learned how to protect data, deploy iApps, and manage data access. Now it's time to claim your rewards! 🏆</p>
+  <p class="m-0!">You've successfully completed the Hello World journey and learned how to protect data, deploy iApps, and manage data access. Now it's time to claim your rewards! 🏆</p>
 </div>
 
 ## 🏁 Any questions?
@@ -25,8 +25,8 @@ import CouponCode from '../../modules/helloWorld/CouponCode.vue';
   </div>
 </div>
 
-<div class="bg-gradient-to-br from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 my-6">
-  <p>Need help setting up or got some questions? Join our <a target="_blank" href="https://discord.gg/6yrgRH6ATD" class="text-green-700 underline hover:text-green-900">Discord Community</a> for support!</p>
+<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 my-6">
+  <p class="m-0!">Need help setting up or got some questions? Join our <a target="_blank" href="https://discord.gg/6yrgRH6ATD" class="text-green-700 underline hover:text-green-900">Discord Community</a> for support!</p>
 </div>
 
 ## 🎁 Claim your voucher
@@ -48,6 +48,6 @@ import CouponCode from '../../modules/helloWorld/CouponCode.vue';
   Claim your $20 voucher
 </a>
 
-<div class="bg-gradient-to-br from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mt-8 mb-6">
-  <p>Thank you for being part of the iExec journey! We can't wait to see what you'll build next! 🚀</p>
+<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mt-8 mb-6">
+  <p class="m-0!">Thank you for being part of the iExec journey! We can't wait to see what you'll build next! 🚀</p>
 </div>

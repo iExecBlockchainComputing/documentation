@@ -59,8 +59,8 @@ description:
   </div>
 </div>
 
-<div class="bg-gradient-to-br from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p>This is where <span class="text-fuchsia-700 font-semibold">iExec</span> comes in! We provide tools to easily add <span class="text-fuchsia-700 font-semibold">privacy</span> and <span class="text-fuchsia-700 font-semibold">monetization</span> features into your dApp.</p>
+<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!">This is where <span class="text-fuchsia-700 font-semibold">iExec</span> comes in! We provide tools to easily add <span class="text-fuchsia-700 font-semibold">privacy</span> and <span class="text-fuchsia-700 font-semibold">monetization</span> features into your dApp.</p>
 </div>
 
 ## 👷 How do we solve it?
@@ -75,8 +75,8 @@ Execution Environment (TEE)</a></span> and
 <span class="text-fuchsia-700 font-semibold"><a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">Confidential
 Computing</a></span> technologies.
 
-<div class="bg-gradient-to-br from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p>Our technology allows users to control the <span class="text-fuchsia-700 font-semibold">ownership</span>,
+<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!">Our technology allows users to control the <span class="text-fuchsia-700 font-semibold">ownership</span>,
   <span class="text-fuchsia-700 font-semibold">confidentiality</span>, and <span class="text-fuchsia-700 font-semibold">monetization</span> of their data and digital assets within the <span class="text-fuchsia-700 font-semibold">Web3</span> ecosystem.</p>
 </div>
 
@@ -103,8 +103,8 @@ iExec combines three fundamental elements that work together seamlessly:
 - Regain ownership of your data
 - Provides transparent governance rules for data access
 
-<div class="bg-gradient-to-br from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p>By merging <span class="text-fuchsia-700 font-semibold">blockchain technology</span> with <span class="text-fuchsia-700 font-semibold">confidential computing</span>, we've pioneered <span class="text-fuchsia-700 font-semibold"><a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">DeCC</a></span> (Decentralized Confidential Computing) to take <span class="text-fuchsia-700 font-semibold">privacy</span> and <span class="text-fuchsia-700 font-semibold">security</span> to the next level in <span class="text-fuchsia-700 font-semibold">Web3</span> ecosystems.</p>
+<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!">By merging <span class="text-fuchsia-700 font-semibold">blockchain technology</span> with <span class="text-fuchsia-700 font-semibold">confidential computing</span>, we've pioneered <span class="text-fuchsia-700 font-semibold"><a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">DeCC</a></span> (Decentralized Confidential Computing) to take <span class="text-fuchsia-700 font-semibold">privacy</span> and <span class="text-fuchsia-700 font-semibold">security</span> to the next level in <span class="text-fuchsia-700 font-semibold">Web3</span> ecosystems.</p>
 </div>
 
 ### 🧸 DeCC explained like you're 5
@@ -221,8 +221,8 @@ And many other use cases...
   </div>
 </div>
 
-<div class="bg-gradient-to-br from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p>In the next chapters, we'll follow Alice and Bob's journey step by step, starting with how Alice can <span class="text-fuchsia-700 font-semibold">protect her sensitive data</span> and then how Bob can <span class="text-fuchsia-700 font-semibold">build and deploy a confidential app</span> to process it.</p>
+<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!">In the next chapters, we'll follow Alice and Bob's journey step by step, starting with how Alice can <span class="text-fuchsia-700 font-semibold">protect her sensitive data</span> and then how Bob can <span class="text-fuchsia-700 font-semibold">build and deploy a confidential app</span> to process it.</p>
 </div>
 
 ## 🎯 Key takeaways
@@ -251,6 +251,6 @@ And many other use cases...
   </div>
 </div>
 
-<div class="bg-gradient-to-br from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-  <p>Now that you understand the fundamentals, let's dive into protecting your first piece of data! With Alice!</p>
+<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
+  <p class="m-0!">Now that you understand the fundamentals, let's dive into protecting your first piece of data! With Alice!</p>
 </div>

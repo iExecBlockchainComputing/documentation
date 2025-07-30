@@ -14,8 +14,8 @@ const { protectedDataAddress } = useWalletConnection();
   <p>Alice will learn how to grant access to her protected data and manage who can use it.</p>
 </div>
 
-<div class="bg-gradient-to-br from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p>When you protect your data, you can authorize specific <span class="text-fuchsia-700 font-semibold">users</span> and <span class="text-fuchsia-700 font-semibold">applications</span> to access it. This means an authorized user will be able to use an authorized iApp to compute your protected data.</p>
+<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!">When you protect your data, you can authorize specific <span class="text-fuchsia-700 font-semibold">users</span> and <span class="text-fuchsia-700 font-semibold">applications</span> to access it. This means an authorized user will be able to use an authorized iApp to compute your protected data.</p>
 </div>
 
 ## 🔐 The Authorization Flow
@@ -46,8 +46,8 @@ Here is a simple diagram to explain the process:
 
 ## 🔓 Grant the iApp Access to Your Data
 
-<div class="bg-gradient-to-br from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p>Remember the <span class="text-fuchsia-700 font-semibold">iApp address</span> you saved from the previous chapter? You'll need it now to grant access to your protected data.</p>
+<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!">Remember the <span class="text-fuchsia-700 font-semibold">iApp address</span> you saved from the previous chapter? You'll need it now to grant access to your protected data.</p>
 </div>
 
 <GrantAccess />
@@ -71,8 +71,8 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 - 💻 **authorizedApp**: The iApp address you want to authorize
 - 👤 **authorizedUser**: User's wallet address (0x... means all users)
 
-<div class="bg-gradient-to-br from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p>As we don't have the Bob's wallet address, we'll use the zero address to grant access to all users.</p>
+<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!">As we don't have the Bob's wallet address, we'll use the zero address to grant access to all users.</p>
 </div>
 
 ## 🏃 Time to run
@@ -83,8 +83,8 @@ You're now ready to process your protected data in a trusted environment:
 iapp run <my-iapp-address> --protectedData {{ protectedDataAddress }}
 ```
 
-<div class="bg-gradient-to-br from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-  <p>🎉 Congratulations! You've successfully completed the core workflow of protecting and processing data with iExec!</p>
+<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
+  <p class="m-0!">🎉 Congratulations! You've successfully completed the core workflow of protecting and processing data with iExec!</p>
 </div>
 
 ## What's next: Data Monetization
@@ -111,6 +111,6 @@ For more technical details, see the
 [DataProtector Sharing](../../tools/dataProtector/dataProtectorSharing.html)
 documentation.
 
-<div class="bg-gradient-to-br from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-    <p>You have one more step to complete the journey, and it's the easy one. Let's go to the bonus chapter!</p>
+<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
+    <p class="m-0!">You have one more step to complete the journey, and it's the easy one. Let's go to the bonus chapter!</p>
 </div>

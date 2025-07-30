@@ -11,8 +11,8 @@ import ProtectData from '../../modules/helloWorld/ProtectData.vue';
   <p>Let's follow Alice as she learns how to protect her data using DataProtector on Bob's dApp, our developer tool for protecting data creation and management.</p>
 </div>
 
-<div class="bg-gradient-to-br from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p><strong>Protected data</strong> is encrypted data that remains confidential throughout its entire lifecycle - during storage, transfer and processing.</p>
+<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!"><strong>Protected data</strong> is encrypted data that remains confidential throughout its entire lifecycle - during storage, transfer and processing.</p>
 </div>
 
 ## 🧩 DataProtector, key features
@@ -37,8 +37,8 @@ their dApps with these key features:
   Features an SDK for easy integration into your DApp, enhancing functionality
   and user experience.
 
-<div class="bg-gradient-to-br from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p> DataProtector interacts with iExec's <a href="https://chainlist.org/?search=bellecour" target="_blank">Bellecour sidechain</a>, which is gasless, meaning you can use it completely free without needing any tokens!</p>
+<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!">DataProtector interacts with iExec's <a href="https://chainlist.org/?search=bellecour" target="_blank">Bellecour sidechain</a>, which is gasless, meaning you can use it completely free without needing any tokens!</p>
 </div>
 
 ## 🧩 Let's create protected data
@@ -47,8 +47,8 @@ their dApps with these key features:
 
 ## 🧩 What happened under the hood
 
-<div class="bg-gradient-to-br from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p>You won't believe how easy it is to protect your data with DataProtector. Just a few lines of code, and you're done!</p>
+<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!">You won't believe how easy it is to protect your data with DataProtector. Just a few lines of code, and you're done!</p>
 </div>
 
 To use it, simply call the `protectData` method from the **DataProtector SDK**
@@ -149,8 +149,8 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
 });
 ```
 
-<div class="bg-gradient-to-br from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p>Check out our <a target="_blank" href="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main?file=%2Fsrc%2Fmain.tsx%3A18%2C7">code sandbox</a> for ready-to-use examples!</p>
+<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!">Check out our <a target="_blank" href="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main?file=%2Fsrc%2Fmain.tsx%3A18%2C7">code sandbox</a> for ready-to-use examples!</p>
 </div>
 
 ## 🎯 Key takeaways
@@ -163,6 +163,6 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
 
 - 🔌 **Integration** is simple with our developer tools
 
-<div class="bg-gradient-to-br from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-  <p>In the next chapter, we'll show you how to build, deploy, and run an iApp to process your protected data. Let's go! 🚀</p>
+<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
+  <p class="m-0!">In the next chapter, we'll show you how to build, deploy, and run an iApp to process your protected data. Let's go! 🚀</p>
 </div>

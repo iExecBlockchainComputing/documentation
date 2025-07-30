@@ -68,7 +68,7 @@ import InfoIcon from '../components/InfoIcon.vue'
     </div>
   </a>
   
-  <a href="helloWorld/5-bonusChapter" class="bg-gradient-to-br from-[#ce2c68] to-[#3f0d3f] text-white rounded-[6px] p-6 shadow-md hover:shadow-lg transition-all! duration-300 hover:-translate-y-1 flex gap-4 no-underline! relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-gradient-to-br before:from-[#ce2c68] before:to-[#3f0d3f] before:transform before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100">
+  <a href="helloWorld/5-bonusChapter" class="bg-gradient-to-r from-[#ce2c68] to-[#3f0d3f] text-white rounded-[6px] p-6 shadow-md hover:shadow-lg transition-all! duration-300 hover:-translate-y-1 flex gap-4 no-underline! relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-gradient-to-r before:from-[#ce2c68] before:to-[#3f0d3f] before:transform before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100">
     <div class="text-3xl">✨</div>
     <div class="flex flex-col h-full min-h-[120px]">
       <h3 class="m-0 text-lg leading-tight text-white">Bonus Chapter</h3>
@@ -116,6 +116,6 @@ Before you begin, make sure you have:
   </div>
 </div>
 
-<div class="bg-gradient-to-br from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-  <p class="m-0 font-medium">Need help setting up or got some questions? Join our <a target="_blank" href="https://discord.gg/6yrgRH6ATD">Discord Community</a> for support!</p>
+<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
+  <p class="m-0! font-medium">Need help setting up or got some questions? Join our <a target="_blank" href="https://discord.gg/6yrgRH6ATD">Discord Community</a> for support!</p>
 </div>
