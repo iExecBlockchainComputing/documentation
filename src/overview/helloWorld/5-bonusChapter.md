@@ -1,5 +1,6 @@
 <script setup>
-import CouponCode from '../../modules/helloWorld/CouponCode.vue';
+//TODO: Fix it
+// import CouponCode from '../../modules/helloWorld/CouponCode.vue';
 </script>
 
 # 🎉 Bonus chapter
