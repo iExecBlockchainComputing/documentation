@@ -2,12 +2,13 @@
 
 > Reading time 🕒 10 mins
 
-<div class="hero">
-  <div class="hero-content">
-    <h2>Time to build!</h2>
-    <p>Let's build an iApp that can process protected data in a secure environment using the <a href="../../tools/iapp-generator" target="_blank">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApps with just a few commands.</p>
+<script setup>
+import InfoIcon from '../../components/InfoIcon.vue'
+</script>
 
-  </div>
+<div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
+  <h2 class="text-2xl font-bold mt-0 border-none">Time to build!</h2>
+  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="../../tools/iapp-generator" target="_blank">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApps with just a few commands.</p>
 </div>
 
 If you wanna explore and deep dive in the CLI. You can check the
@@ -17,26 +18,31 @@ experience.
 
 ## 📋 Prerequisites
 
-Before getting started, ensure you have the following:
+Before getting started, make sure you have:
 
-<div class="requirements-list">
-  <div class="requirement-item">
-    <div class="requirement-title">📦 Node.js v20+</div>
-    <a target="_blank" href="https://nodejs.org/en/">Download →</a>
+<div class="flex flex-col gap-2 my-4 pl-0">
+  <div class="flex items-center gap-4 text-left">
+    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
+      📦 Node.js v20+
+    </div>
+    <a target="_blank" href="https://nodejs.org/en/" class="no-underline text-sm ml-auto hover:underline">Download →</a>
+  </div>
+   <div class="flex items-center gap-4 text-left">
+    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
+      🐳 Docker installed
+    </div>
+    <a target="_blank" href="https://docker.com/" class="no-underline text-sm ml-auto hover:underline">Download →</a>
   </div>
   
-  <div class="requirement-item">
-    <div class="requirement-title">🐳 Docker</div>
-    <a target="_blank" href="https://www.docker.com/">Download →</a>
-  </div>
-
-  <div class="requirement-item">
-    <div class="requirement-title">🐳 Docker Hub Account</div>
-    <a target="_blank" href="https://hub.docker.com/">Sign Up →</a>
+  <div class="flex items-center gap-4 text-left">
+    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
+      🐳 DockerHub Account
+    </div>
+    <a target="_blank" href="https://hub.docker.com/" class="no-underline text-sm ml-auto hover:underline">Sign Up →</a>
   </div>
 </div>
 
-<div class="solution-note purple">
+<div class="bg-gradient-to-br from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <p>Don't worry! All secrets used in this tutorial stay on your machine and aren’t shared with anyone. You’ll only need them to run the <code>iApp run</code> command.</p>
 </div>
 
@@ -65,7 +71,7 @@ Transfer, sell or rent protected content to authorized users.
 [Github](https://github.com/iExecBlockchainComputing/dataprotector-sdk/tree/main/packages/protected-data-delivery-dapp)
 | [Documentation](../../tools/dataProtector/dataProtectorSharing)
 
-<div class="solution-note">
+<div class="bg-gradient-to-br from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <p>These are just a few examples, the possibilities are endless. Want to explore iApp Generator? Check out our <a href="../../tools/iapp-generator" target="_blank">documentation</a> and see what you can build!</p>
 </div>
 
@@ -115,9 +121,9 @@ You will be prompted with the following message:
     advanced
 ```
 
-<div class="process-steps">
-  <div class="step">
-    <span class="step-number">1</span>
+<div class="flex flex-col gap-2.5 my-6">
+  <div class="flex items-center gap-3">
+    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">1</span>
     <span>Pick a name for your project</span>
   </div>
 </div>
@@ -126,9 +132,9 @@ You will be prompted with the following message:
 ? What's your project name? (A folder with this name will be created) ...
 ```
 
-<div class="process-steps">
-  <div class="step">
-    <span class="step-number">2</span>
+<div class="flex flex-col gap-2.5 my-6">
+  <div class="flex items-center gap-3">
+    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">2</span>
     <span>Select a programming language for your project</span>
   </div>
 </div>
@@ -139,9 +145,9 @@ You will be prompted with the following message:
     Python
 ```
 
-<div class="process-steps">
-  <div class="step">
-    <span class="step-number">3</span>
+<div class="flex flex-col gap-2.5 my-6">
+  <div class="flex items-center gap-3">
+    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">3</span>
     <span>Select the type of project you want to init</span>
   </div>
 </div>
@@ -152,8 +158,8 @@ You will be prompted with the following message:
     advanced
 ```
 
-<div class="solution-note">
-  <p>We recommend selecting <span class="highlight">"Hello World"</span> to quickly discover how iApp works! use <span class="highlight">advanced</span> only if you are familiar with iExec.</p>
+<div class="bg-gradient-to-br from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p>We recommend selecting <span class="text-fuchsia-700 font-semibold">"Hello World"</span> to quickly discover how iApp works! use <span class="text-fuchsia-700 font-semibold">advanced</span> only if you are familiar with iExec.</p>
 </div>
 
 ```txt
@@ -163,10 +169,8 @@ You will be prompted with the following message:
 ```
 
 - An iApp project is setup with the selected language
-
 - An ethereum wallet has been created (we use it to sign the iApp creation
   onchain)
-
 - A new folder has been created, it contains a very simple application, with the
   main code being located in `src/app.js` or `src/app.py`
 
@@ -180,7 +184,7 @@ iapp test
 
 It uses your local docker to build and execute the app.
 
-<div class="solution-note">
+<div class="bg-gradient-to-br from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <p>- If you have <code>Error: Docker daemon is not accessible</code> Make sure Docker is installed and running.</p>
   <br>
   <p>- If you have <code>Error: Failed to locate iApp project root</code> error:  Ensure you are in your project folder before proceeding.</p>
@@ -214,7 +218,7 @@ default protectedData mock.
 iapp test --protectedData default
 ```
 
-<div class="solution-note purple">
+<div class="bg-gradient-to-br from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <p>You can check how args and protectedData are processed in <code> src/app.js</code> or <code> src/app.py</code></p>
 </div>
 
@@ -222,25 +226,25 @@ iapp test --protectedData default
 
 Deploy your iApp on the iExec protocol.
 
-<div class="process-steps">
-  <div class="step">
-    <span class="step-number">1</span>
+<div class="flex flex-col gap-2.5 my-6">
+  <div class="flex items-center gap-3">
+    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">1</span>
     <span>Go to <a href="https://hub.docker.com/settings/security" target="_blank">Docker Hub Security Settings</a></span>
   </div>
-  <div class="step">
-    <span class="step-number">2</span>
+  <div class="flex items-center gap-3">
+    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">2</span>
     <span>Click <a href="https://app.docker.com/settings/personal-access-tokens" target="_blank">"Personal access tokens"</a> → "Generate new token"</span>
   </div>
-  <div class="step">
-    <span class="step-number">3</span>
+  <div class="flex items-center gap-3">
+    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">3</span>
     <span>Name it "Test iExec iApp CLI" (expiration date is optional)</span>
   </div>
-  <div class="step">
-    <span class="step-number">4</span>
+  <div class="flex items-center gap-3">
+    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">4</span>
     <span>Select "Read & Write" permissions</span>
   </div>
-  <div class="step">
-    <span class="step-number">5</span>
+  <div class="flex items-center gap-3">
+    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">5</span>
     <span>Save your token securely and your username</span>
   </div>
 </div>
@@ -252,8 +256,8 @@ Once you have your token, you can deploy your iApp using the following command:
 iapp deploy
 ```
 
-<div class="solution-note purple">
-  <p>📝 Make sure to save your <span class="highlight">iApp address</span> after deployment - you'll need it later!</p>
+<div class="bg-gradient-to-br from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p>📝 Make sure to save your <span class="text-fuchsia-700 font-semibold">iApp address</span> after deployment - you'll need it later!</p>
   <p>You can find your iApp address in the <code>iexec-app.json</code> file in your project folder.</p>
   <br>
   <p>⚠️  If you encounter issues during deployment, make sure Docker's BuildKit feature is enabled and supports AMD64 architecture:</p>
@@ -280,39 +284,18 @@ allowing it to run securely in a **Trusted Execution Environment (TEE)** for
 **confidential computing**. If you want to explore further, you can check the
 protocol documentation [here](https://protocol.docs.iex.ec/).
 
-<div class="solution-note green">
+<div class="bg-gradient-to-br from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
   <p>🎉 Congratulations! You've successfully deployed and run your first iApp on iExec. This is a significant milestone - your application is now ready to securely process confidential data in a trusted environment.</p>
 </div>
 
 ## 🎯 Key takeaways
 
-<div class="takeaways-list">
-  <div class="takeaway-item">
-    <span class="takeaway-icon">🔒</span>
-    <div class="takeaway-content">
-      <strong>iApps:</strong> Special applications that run in TEEs to process protected data
-    </div>
-  </div>
-  <div class="takeaway-item">
-    <span class="takeaway-icon">🛠️</span>
-    <div class="takeaway-content">
-      <strong>iApp CLI:</strong> Command-line tool for building, testing, and deploying iApps
-    </div>
-  </div>
-  <div class="takeaway-item">
-    <span class="takeaway-icon">🔐</span>
-    <div class="takeaway-content">
-      <strong>Protected Data:</strong> Can be integrated and processed securely in your iApp
-    </div>
-  </div>
-  <div class="takeaway-item">
-    <span class="takeaway-icon">⛓️</span>
-    <div class="takeaway-content">
-      <strong>Deployment:</strong> Apps are deployed on iExec protocol to run in trusted environments
-    </div>
-  </div>
-</div>
+- 🔒 **iApps:** Special applications that run in TEEs to process protected data
+- 🛠️ **iApp CLI:** Command-line tool for building, testing, and deploying iApps
+- 🔐 **Protected Data:** Can be integrated and processed securely in your iApp
+- ⛓️ **Deployment:** Apps are deployed on iExec protocol to run in trusted
+  environments
 
-<div class="solution-note green">
+<div class="bg-gradient-to-br from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
   <p>Next up: Alice will learn how to authorize the iApp and Bob to access and use her protected data!  🚀</p>
 </div>

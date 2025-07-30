@@ -4,75 +4,77 @@ description:
   privacy-focused dApps, protect sensitive data, and manage data access.
 ---
 
+<script setup>
+import InfoIcon from '../components/InfoIcon.vue'
+</script>
+
 # 👋 Welcome to iExec
 
 > Reading time 🕒 2 mins
 
-<div class="hero">
-  <div>
-    <h2>Start Your Web3 Privacy Journey</h2>
-    <p>And learn how to build Privacy-preserving decentralized applications (dApps) with iExec in this interactive guide.</p>
-    <div class="hero-time">
-      <span class="hero-time-badge">☕ 30 minutes journey</span>
-      <p>Perfect for hackathons 😊</p>
-    </div>
+<div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
+  <h2 class="text-2xl font-bold mt-0 border-none">Start Your Web3 Privacy Journey</h2>
+  <p>And learn how to build Privacy-preserving decentralized applications (dApps) with iExec in this interactive guide.</p>
+  <div class="mt-6 flex items-center gap-4">
+    <span class="bg-gray-900 text-white px-4 py-2 rounded-full font-medium">☕ 30 minutes journey</span>
+    <p>Perfect for hackathons 😊</p>
   </div>
 </div>
 
 ## What you'll learn and build
 
-<div class="journey-grid">
-  <a href="helloWorld/1-overview" class="journey-card">
-    <div class="card-icon">📚</div>
-    <div class="card-content">
-      <h3>1 - iExec Overview</h3>
-      <p>Discover how iExec technologies work and the problem they solves</p>
-      <div class="time-wrapper">
-        <span class="time-estimate">8 min read</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <a href="helloWorld/1-overview" class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 shadow-md hover:shadow-lg transition-all! duration-300 hover:-translate-y-1 flex gap-4 no-underline! relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-[#fcd15a] before:transform before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100">
+    <div class="text-3xl">📚</div>
+    <div class="flex flex-col h-full min-h-[120px]">
+      <h3 class="m-0! text-lg leading-tight text-[var(--vp-c-text-1)]">1 - iExec Overview</h3>
+      <p class="my-4 text-sm text-[var(--vp-c-text-2)]">Discover how iExec technologies work and the problem they solves</p>
+      <div class="mt-auto pt-3">
+        <span class="inline-block text-sm bg-[var(--vp-c-bg-soft)] rounded text-[var(--vp-c-text-4)]">8 min read</span>
       </div>
     </div>
   </a>
 
-  <a href="helloWorld/2-protectData" class="journey-card">
-    <div class="card-icon">🔒</div>
-    <div class="card-content">
-      <h3>2. Protect Your Data</h3>
-      <p>Learn to secure your sensitive data using our developer tools</p>
-      <div class="time-wrapper">
-        <span class="time-estimate">6 min read</span>
+  <a href="helloWorld/2-protectData" class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 shadow-md transition-all! hover:shadow-lg duration-300 hover:-translate-y-1 flex gap-4 no-underline! relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-[#fcd15a] before:transform before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100">
+    <div class="text-3xl">🔒</div>
+    <div class="flex flex-col h-full min-h-[120px]">
+      <h3 class="m-0! text-lg leading-tight text-[var(--vp-c-text-1)]">2. Protect Your Data</h3>
+      <p class="my-4 text-sm text-[var(--vp-c-text-2)]">Learn to secure your sensitive data using our developer tools</p>
+      <div class="mt-auto pt-3">
+        <span class="inline-block text-sm bg-[var(--vp-c-bg-soft)] rounded text-[var(--vp-c-text-4)]">6 min read</span>
       </div>
     </div>
   </a>
 
-  <a href="helloWorld/3-buildIApp" class="journey-card">
-    <div class="card-icon">💻</div>
-    <div class="card-content">
-      <h3>3. Build your iApp</h3>
-      <p>Build and run your first iExec App to work with protected data in a safe environment</p>
-      <div class="time-wrapper">
-        <span class="time-estimate">10 min read</span>
+  <a href="helloWorld/3-buildIApp" class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 shadow-md hover:shadow-lg transition-all! duration-300 hover:-translate-y-1 flex gap-4 no-underline! relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-[#fcd15a] before:transform before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100">
+    <div class="text-3xl">💻</div>
+    <div class="flex flex-col h-full min-h-[120px]">
+      <h3 class="m-0! text-lg leading-tight text-[var(--vp-c-text-1)]">3. Build your iApp</h3>
+      <p class="my-4 text-sm text-[var(--vp-c-text-2)]">Build and run your first iExec App to work with protected data in a safe environment</p>
+      <div class="mt-auto pt-3">
+        <span class="inline-block text-sm bg-[var(--vp-c-bg-soft)] rounded text-[var(--vp-c-text-4)]">10 min read</span>
       </div>
     </div>
   </a>
 
-  <a href="helloWorld/4-manageDataAccess" class="journey-card">
-    <div class="card-icon">🔑</div>
-    <div class="card-content">
-      <h3>4. Manage Data Access</h3>
-      <p>Learn advanced data access management, permissions and monetization</p>
-      <div class="time-wrapper">
-        <span class="time-estimate">6 min read</span>
+  <a href="helloWorld/4-manageDataAccess" class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 shadow-md hover:shadow-lg transition-all! duration-300 hover:-translate-y-1 flex gap-4 no-underline! relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-[#fcd15a] before:transform before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100">
+    <div class="text-3xl">🔑</div>
+    <div class="flex flex-col h-full min-h-[120px]">
+      <h3 class="m-0! text-lg leading-tight text-[var(--vp-c-text-1)]">4. Manage Data Access</h3>
+      <p class="my-4 text-sm text-[var(--vp-c-text-2)]">Learn advanced data access management, permissions and monetization</p>
+      <div class="mt-auto pt-3">
+        <span class="inline-block text-sm bg-[var(--vp-c-bg-soft)] rounded text-[var(--vp-c-text-4)]">6 min read</span>
       </div>
     </div>
   </a>
   
-  <a href="helloWorld/5-bonusChapter" class="journey-card special">
-    <div class="card-icon">✨</div>
-    <div class="card-content">
-      <h3>Bonus Chapter</h3>
-      <p>Finish the journey with a surprise bonus chapter!</p>
-      <div class="time-wrapper">
-        <span>Special Content</span>
+  <a href="helloWorld/5-bonusChapter" class="bg-gradient-to-br from-[#ce2c68] to-[#3f0d3f] text-white rounded-[6px] p-6 shadow-md hover:shadow-lg transition-all! duration-300 hover:-translate-y-1 flex gap-4 no-underline! relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-gradient-to-br before:from-[#ce2c68] before:to-[#3f0d3f] before:transform before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100">
+    <div class="text-3xl">✨</div>
+    <div class="flex flex-col h-full min-h-[120px]">
+      <h3 class="m-0 text-lg leading-tight text-white">Bonus Chapter</h3>
+      <p class="my-4 text-sm text-white">Finish the journey with a surprise bonus chapter!</p>
+      <div class="mt-auto pt-3">
+        <span class="text-white">Special Content</span>
       </div>
     </div>
   </a>
@@ -82,83 +84,38 @@ description:
 
 Before you begin, make sure you have:
 
-<div class="requirements-list">
-  <div class="requirement-item">
-    <div class="requirement-title">🦊 Ethereum Wallet <div class="tooltip-container"><svg class="info-icon" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M13 7.5a1 1 0 11-2 0 1 1 0 012 0zm-3 3.75a.75.75 0 01.75-.75h1.5a.75.75 0 01.75.75v4.25h.75a.75.75 0 010 1.5h-3a.75.75 0 010-1.5h.75V12h-.75a.75.75 0 01-.75-.75z"/><path fill="currentColor" fill-rule="evenodd" d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zM2.5 12a9.5 9.5 0 1119 0 9.5 9.5 0 01-19 0z"/></svg><span class="tooltip-text">Required to interact with iExec sidechain Bellecour features, manage your data access permissions, and handle transactions on the iExec platform</span></div></div>
-    <a target="_blank" href="https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn">Metamask Download →</a>
+<div class="flex flex-col gap-2 my-4 pl-0">
+  <div class="flex items-center gap-4 text-left">
+    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
+      🦊 Ethereum Wallet 
+      <InfoIcon tooltip="Required to interact with iExec sidechain Bellecour features, manage your data access permissions, and handle transactions on the iExec platform" />
+    </div>
+    <a target="_blank" href="https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" class="no-underline text-sm ml-auto hover:underline">Metamask Download →</a>
+  </div>
+  <div class="flex items-center gap-4 text-left">
+    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
+      📦 Node.js v20+ 
+      <InfoIcon tooltip="Required runtime environment for running JavaScript code and managing project dependencies" />
+    </div>
+    <a target="_blank" href="https://nodejs.org/en/" class="no-underline text-sm ml-auto hover:underline">Download →</a>
+  </div>
+   <div class="flex items-center gap-4 text-left">
+    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
+      🐳 Docker installed 
+      <InfoIcon tooltip="Docker is essential for creating isolated containers that package your iExec applications with all dependencies. This ensures consistent and secure execution across different environments, especially in TEEs (Trusted Execution Environments)" />
+    </div>
+    <a target="_blank" href="https://docker.com/" class="no-underline text-sm ml-auto hover:underline">Download →</a>
   </div>
   
-  <div class="requirement-item">
-    <div class="requirement-title">📦 Node.js v20+ <div class="tooltip-container"><svg class="info-icon" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M13 7.5a1 1 0 11-2 0 1 1 0 012 0zm-3 3.75a.75.75 0 01.75-.75h1.5a.75.75 0 01.75.75v4.25h.75a.75.75 0 010 1.5h-3a.75.75 0 010-1.5h.75V12h-.75a.75.75 0 01-.75-.75z"/><path fill="currentColor" fill-rule="evenodd" d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zM2.5 12a9.5 9.5 0 1119 0 9.5 9.5 0 01-19 0z"/></svg><span class="tooltip-text">Required runtime environment for running JavaScript code and managing project dependencies</span></div></div>
-    <a target="_blank" href="https://nodejs.org/en/">Download →</a>
+  <div class="flex items-center gap-4 text-left">
+    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
+      🐳 DockerHub Account 
+      <InfoIcon tooltip="Needed to publish and manage your iExec applications in containers for secure deployment" />
+    </div>
+    <a target="_blank" href="https://hub.docker.com/" class="no-underline text-sm ml-auto hover:underline">Sign Up →</a>
   </div>
-   <div class="requirement-item">
-    <div class="requirement-title">🐳 Docker installed <div class="tooltip-container"><svg class="info-icon" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M13 7.5a1 1 0 11-2 0 1 1 0 012 0zm-3 3.75a.75.75 0 01.75-.75h1.5a.75.75 0 01.75.75v4.25h.75a.75.75 0 010 1.5h-3a.75.75 0 010-1.5h.75V12h-.75a.75.75 0 01-.75-.75z"/><path fill="currentColor" fill-rule="evenodd" d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zM2.5 12a9.5 9.5 0 1119 0 9.5 9.5 0 01-19 0z"/></svg><span class="tooltip-text">Docker is essential for creating isolated containers that package your iExec applications with all dependencies. This ensures consistent and secure execution across different environments, especially in TEEs (Trusted Execution Environments)</span></div></div>
-    <a target="_blank" href="https://docker.com/">Download →</a>
-  </div>
-  
-  <div class="requirement-item">
-    <div class="requirement-title">🐳 DockerHub Account <div class="tooltip-container"><svg class="info-icon" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M13 7.5a1 1 0 11-2 0 1 1 0 012 0zm-3 3.75a.75.75 0 01.75-.75h1.5a.75.75 0 01.75.75v4.25h.75a.75.75 0 010 1.5h-3a.75.75 0 010-1.5h.75V12h-.75a.75.75 0 01-.75-.75z"/><path fill="currentColor" fill-rule="evenodd" d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zM2.5 12a9.5 9.5 0 1119 0 9.5 9.5 0 01-19 0z"/></svg><span class="tooltip-text">Needed to publish and manage your iExec applications in containers for secure deployment</span></div></div>
-    <a target="_blank" href="https://hub.docker.com/">Sign Up →</a>
-  </div>
-
 </div>
 
-<div class="solution-note green">
-  <p>Need help setting up or got some questions? Join our <a target="_blank" href="https://discord.gg/6yrgRH6ATD">Discord Community</a> for support!</p>
+<div class="bg-gradient-to-br from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
+  <p class="m-0 font-medium">Need help setting up or got some questions? Join our <a target="_blank" href="https://discord.gg/6yrgRH6ATD">Discord Community</a> for support!</p>
 </div>
-
-<style>
-.tooltip-container {
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-  cursor: help;
-}
-
-.tooltip-container .info-icon {
-  opacity: 0.6;
-  transition: opacity 0.2s;
-  color: #666;
-}
-
-.tooltip-container:hover .info-icon {
-  opacity: 1;
-  color: #333;
-}
-
-.tooltip-container .tooltip-text {
-  visibility: hidden;
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #2a2a2a;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 0.9em;
-  width: max-content;
-  max-width: 250px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  z-index: 100;
-  opacity: 0;
-  transition: opacity 0.2s, visibility 0.2s;
-}
-
-.tooltip-container .tooltip-text::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px;
-  border-style: solid;
-  border-color: #2a2a2a transparent transparent transparent;
-}
-
-.tooltip-container:hover .tooltip-text {
-  visibility: visible;
-  opacity: 1;
-}
-</style>

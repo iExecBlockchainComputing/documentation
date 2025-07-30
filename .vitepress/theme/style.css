@@ -136,3 +136,15 @@ html {
 .aside .aside-container {
   @apply overflow-visible;
 }
+
+html.dark .light-only {
+  display: none !important;
+}
+
+html:not(.dark) .dark-only {
+  display: none !important;
+}
+
+input {
+  @apply w-full rounded-md border border-[var(--vp-c-divider)] bg-[var(--vp-c-bg-soft)] px-4 py-3 text-base text-[var(--vp-c-text-1)] transition focus:border-[var(--vp-c-brand-2)] focus:outline-none disabled:cursor-not-allowed disabled:opacity-70;
+}
