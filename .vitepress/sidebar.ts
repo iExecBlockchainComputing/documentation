@@ -69,7 +69,7 @@ export function getSidebar() {
             text: 'the Explorer',
             collapsed: false,
             items: [
-              { text: 'iExec explorer', link: '/overview/iexec-explorer' },
+              { text: 'iExec Explorer', link: '/overview/iexec-explorer' },
               {
                 text: 'The Graph Explorer',
                 link: '/overview/the-graph-explorer',
