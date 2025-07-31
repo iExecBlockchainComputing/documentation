@@ -7,7 +7,7 @@ import InfoIcon from '../../components/InfoIcon.vue'
 </script>
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
-  <h2 class="text-2xl font-bold mt-0 border-none">Time to build!</h2>
+  <h2 class="text-2xl font-bold mt-0 border-none!">Time to build!</h2>
   <p>Let's build an iApp that can process protected data in a secure environment using the <a href="../../tools/iapp-generator" target="_blank">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApps with just a few commands.</p>
 </div>
 

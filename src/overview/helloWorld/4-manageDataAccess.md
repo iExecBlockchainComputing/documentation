@@ -11,7 +11,7 @@
 > Reading time 🕒 6 mins
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
-  <h2 class="text-2xl font-bold mt-0 border-none">Control Your Data</h2>
+  <h2 class="text-2xl font-bold mt-0 border-none!">Control Your Data</h2>
   <p>Alice will learn how to grant access to her protected data and manage who can use it.</p>
 </div>
 

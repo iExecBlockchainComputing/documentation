@@ -13,7 +13,7 @@ import InfoIcon from '../components/InfoIcon.vue'
 > Reading time 🕒 2 mins
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
-  <h2 class="text-2xl font-bold mt-0 border-none">Start Your Web3 Privacy Journey</h2>
+  <h2 class="text-2xl font-bold mt-0 border-none!">Start Your Web3 Privacy Journey</h2>
   <p>And learn how to build Privacy-preserving decentralized applications (dApps) with iExec in this interactive guide.</p>
   <div class="mt-6 flex items-center gap-4">
     <span class="bg-gray-900 text-white px-4 py-2 rounded-full font-medium">☕ 30 minutes journey</span>

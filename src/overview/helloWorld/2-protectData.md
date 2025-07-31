@@ -7,7 +7,7 @@
 > Reading time: 6 minutes
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
-  <h2 class="text-2xl font-bold mt-0 border-none">Time to get practical</h2>
+  <h2 class="text-2xl font-bold mt-0 border-none!">Time to get practical</h2>
   <p>Let's follow Alice as she learns how to protect her data using DataProtector on Bob's dApp, our developer tool for protecting data creation and management.</p>
 </div>
 
