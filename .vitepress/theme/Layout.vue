@@ -1,6 +1,6 @@
 <script setup>
 import DefaultTheme from 'vitepress/theme';
-import AskIaButton from './AskIaButton.vue';
+import AskIaButton from '../../src/components/AskIaButton.vue';
 
 const { Layout } = DefaultTheme;
 </script>
