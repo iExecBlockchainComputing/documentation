@@ -1,8 +1,9 @@
 <script setup>
-import GrantAccess from '../../modules/helloWorld/GrantAccess.vue';
-import { useWalletConnection } from '../../hooks/useWalletConnection.vue';
+//TODO: Fix it
+// import GrantAccess from '../../modules/helloWorld/GrantAccess.vue';
+// import { useWalletConnection } from '../../hooks/useWalletConnection.vue';
 
-const { protectedDataAddress } = useWalletConnection();
+// const { protectedDataAddress } = useWalletConnection();
 </script>
 
 # 🔑 Manage Data Access
