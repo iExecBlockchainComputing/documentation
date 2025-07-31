@@ -1,5 +1,6 @@
 <script setup>
 import CouponCode from '../../modules/helloWorld/CouponCode.vue';
+import Button from '../../components/ui/Button.vue';
 </script>
 
 # 🎉 Bonus chapter
@@ -44,9 +45,9 @@ import CouponCode from '../../modules/helloWorld/CouponCode.vue';
   </ClientOnly>
 </div>
 
-<a href="https://www.iex.ec/voucher" class="inline-block bg-[#fcd15a] hover:bg-[#ffb74d] text-[#1e1e1e] font-semibold rounded-lg px-6 py-3 text-base shadow transition-all duration-200 no-underline" target="_blank" data-track="claimVoucher">
+<Button as="a" href="https://www.iex.ec/voucher" target="_blank" data-track="claimVoucher">
   Claim your $20 voucher
-</a>
+</Button>
 
 <div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mt-8 mb-6">
   <p class="m-0!">Thank you for being part of the iExec journey! We can't wait to see what you'll build next! 🚀</p>
