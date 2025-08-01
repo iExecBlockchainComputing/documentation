@@ -4,7 +4,7 @@ export function getSidebar() {
   return {
     '/overview/': [
       {
-        text: 'OVERVIEW',
+        text: 'GET STARTED',
         items: [
           { text: '💡 Welcome', link: '/overview/welcome' },
           {
@@ -31,29 +31,12 @@ export function getSidebar() {
             ],
           },
           {
+            text: '🚀 Quick Start',
+            link: '/overview/quick-start',
+          },
+          {
             text: '📋 Use Cases',
-            items: [
-              { text: 'AI', link: '/overview/use-cases/ai' },
-              {
-                text: 'Other Emerging Trends',
-                link: '/overview/use-cases/other-emerging-trends',
-              },
-              {
-                text: 'Use Case Demos',
-                link: '/overview/use-case-demo',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'Content Creator',
-                    link: '/overview/use-case-demo/content-creator',
-                  },
-                  {
-                    text: 'Web3 Messaging',
-                    link: '/overview/use-case-demo/web3messaging',
-                  },
-                ],
-              },
-            ],
+            link: '/overview/use-cases',
           },
           {
             text: '🤖 Use the docs in your AI',
@@ -64,16 +47,10 @@ export function getSidebar() {
       {
         text: 'EXPLORERS',
         items: [
+          { text: 'iExec Explorer', link: '/overview/iexec-explorer' },
           {
-            text: 'the Explorer',
-            collapsed: false,
-            items: [
-              { text: 'iExec Explorer', link: '/overview/iexec-explorer' },
-              {
-                text: 'The Graph Explorer',
-                link: '/overview/the-graph-explorer',
-              },
-            ],
+            text: 'TheGraph Explorer',
+            link: '/overview/the-graph-explorer',
           },
         ],
       },
