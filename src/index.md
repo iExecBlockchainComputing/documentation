@@ -4,21 +4,22 @@ layout: home
 
 hero:
   name: 'Build on iExec Privacy Layer'
-  text:
+  tagline:
     'Build decentralized applications that combine ownership, privacy, and
     monetization.'
-  tagline:
-    'Discover how to protect data, build iApps, and leverage confidential
-    computing on the iExec protocol'
   actions:
     - theme: brand
       text: Get Started
-      link: /overview/what-we-do
+      link: /overview/welcome
     - theme: alt
       text: Hello World Tutorial
       link: /overview/helloWorld
 
 features:
+  - icon: 🚀
+    title: Quick Start
+    details: Jump in and start building on iExec in minutes.
+    link: /overview/helloWorld
   - icon: 🔐
     title: Protect & Manage Data
     details:
@@ -37,22 +38,16 @@ features:
       Execute existing iApps including Web3Mail, Web3Telegram, and Oracle
       Factory for your applications
     link: /use-iapp/introduction
-  - icon: 🧠
-    title: AI Integration
-    details:
-      Build AI-powered applications with privacy-preserving machine learning and
-      confidential computing
-    link: /overview/use-cases/ai
   - icon: 💰
     title: Monetize Data
     details:
       Create revenue streams from your data while maintaining full control and
       privacy
     link: /manage-data/guides/manage-data-monetization
-  - icon: 🔧
-    title: Developer Tools
+  - icon: 🧠
+    title: Core Concepts
     details:
-      Access comprehensive SDKs, APIs, and tools to integrate with the iExec
-      ecosystem
+      Deep dive into the core concepts of the protocol and understand how iExec
+      enables privacy, governance, and monetization
     link: /core-concept/sdk
 ---
