@@ -90,21 +90,21 @@ Before you begin, make sure you have:
       🦊 Ethereum Wallet 
       <InfoIcon tooltip="Required to interact with iExec sidechain Bellecour features, manage your data access permissions, and handle transactions on the iExec platform" />
     </div>
-    <a target="_blank" href="https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" class="no-underline text-sm ml-auto hover:underline">Metamask Download →</a>
+    <a target="_blank" href="https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" class="no-underline! text-sm ml-auto hover:underline!">Metamask Download →</a>
   </div>
   <div class="flex items-center gap-4 text-left">
     <div class="flex items-center gap-1 flex-1 text-sm font-medium">
       📦 Node.js v20+ 
       <InfoIcon tooltip="Required runtime environment for running JavaScript code and managing project dependencies" />
     </div>
-    <a target="_blank" href="https://nodejs.org/en/" class="no-underline text-sm ml-auto hover:underline">Download →</a>
+    <a target="_blank" href="https://nodejs.org/en/" class="no-underline! text-sm ml-auto hover:underline!">Download →</a>
   </div>
    <div class="flex items-center gap-4 text-left">
     <div class="flex items-center gap-1 flex-1 text-sm font-medium">
       🐳 Docker installed 
       <InfoIcon tooltip="Docker is essential for creating isolated containers that package your iExec applications with all dependencies. This ensures consistent and secure execution across different environments, especially in TEEs (Trusted Execution Environments)" />
     </div>
-    <a target="_blank" href="https://docker.com/" class="no-underline text-sm ml-auto hover:underline">Download →</a>
+    <a target="_blank" href="https://docker.com/" class="no-underline! text-sm ml-auto hover:underline!">Download →</a>
   </div>
   
   <div class="flex items-center gap-4 text-left">
@@ -112,7 +112,7 @@ Before you begin, make sure you have:
       🐳 DockerHub Account 
       <InfoIcon tooltip="Needed to publish and manage your iExec applications in containers for secure deployment" />
     </div>
-    <a target="_blank" href="https://hub.docker.com/" class="no-underline text-sm ml-auto hover:underline">Sign Up →</a>
+    <a target="_blank" href="https://hub.docker.com/" class="no-underline! text-sm ml-auto hover:underline!">Sign Up →</a>
   </div>
 </div>
 
