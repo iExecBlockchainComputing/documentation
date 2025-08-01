@@ -156,7 +156,7 @@ const grantAccess = async () => {
     grantedAccess.value = grantedAccessResult; // Store the result in the reactive variable
   } catch (error) {
     grantError.value = error.message;
-    console.error('Error granting access:', error);
+    console.error('Error granting access. Did you enter a correct app address?', error);
   } finally {
     isLoadingGrant.value = false;
   }
