@@ -1,20 +1,18 @@
 <script setup>
-// import ProtectData from '../../modules/helloWorld/ProtectData.vue';
+import ProtectData from '../../modules/helloWorld/ProtectData.vue';
 </script>
 
 # 🛡️ Let's protect data
 
 > Reading time: 6 minutes
 
-<div class="hero">
-  <div class="hero-content hero-overview">
-    <h2>Time to get practical</h2>
-    <p>Let's follow Alice as she learns how to protect her data using DataProtector on Bob's dApp, our developer tool for protecting data creation and management.</p>
-  </div>
+<div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
+  <h2 class="text-2xl font-bold mt-0 border-none!">Time to get practical</h2>
+  <p>Let's follow Alice as she learns how to protect her data using DataProtector on Bob's dApp, our developer tool for protecting data creation and management.</p>
 </div>
 
-<div class="solution-note purple">
-  <p><strong>Protected data</strong> is encrypted data that remains confidential throughout its entire lifecycle - during storage, transfer and processing.</p>
+<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!"><strong>Protected data</strong> is encrypted data that remains confidential throughout its entire lifecycle - during storage, transfer and processing.</p>
 </div>
 
 ## 🧩 DataProtector, key features
@@ -23,23 +21,24 @@ DataProtector is a developer tool built on top of our technology. It helps
 developers easily add data protection, management, and monetization features to
 their dApps with these key features:
 
-<div>
-  <p>🔐 <strong>Data Privacy and Security</strong></p>
-  <p>Utilizes end-to-end encryption and decentralized storage (<a href="https://ipfs.tech/" target="_blank">IPFS</a>) to ensure protection and confidentiality, leveraging advanced confidential computing technology.</p>
-</div>
+- 🔐 **Data Privacy and Security**
 
-<div>
-  <p>🎮 <strong>Dynamic Access Management</strong></p>
-  <p>Allows users to manage access, enabling flexible control and monetization of data assets.</p>
-</div>
+  Utilizes end-to-end encryption and decentralized storage
+  (<a href="https://ipfs.tech/" target="_blank">IPFS</a>) to ensure protection
+  and confidentiality, leveraging advanced confidential computing technology.
 
-<div>
-    <p>🔌 <strong>Seamless dApp Integration</strong></p>
-    <p>Features an SDK for easy integration into your DApp, enhancing functionality and user experience.</p>
-</div>
+- 🎮 **Dynamic Access Management**
 
-<div class="solution-note purple">
-  <p> DataProtector interacts with iExec's <a href="https://chainlist.org/?search=bellecour" target="_blank">Bellecour sidechain</a>, which is gasless, meaning you can use it completely free without needing any tokens!</p>
+  Allows users to manage access, enabling flexible control and monetization of
+  data assets.
+
+- 🔌 **Seamless dApp Integration**
+
+  Features an SDK for easy integration into your DApp, enhancing functionality
+  and user experience.
+
+<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!">DataProtector interacts with iExec's <a href="https://chainlist.org/?search=bellecour" target="_blank">Bellecour sidechain</a>, which is gasless, meaning you can use it completely free without needing any tokens!</p>
 </div>
 
 ## 🧩 Let's create protected data
@@ -48,8 +47,8 @@ their dApps with these key features:
 
 ## 🧩 What happened under the hood
 
-<div class="solution-note purple">
-  <p>You won't believe how easy it is to protect your data with DataProtector. Just a few lines of code, and you're done!</p>
+<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!">You won't believe how easy it is to protect your data with DataProtector. Just a few lines of code, and you're done!</p>
 </div>
 
 To use it, simply call the `protectData` method from the **DataProtector SDK**
@@ -81,29 +80,29 @@ button:
 ![alt](/assets/hello-world/dataprotector_light.png){.light-only}
 ![alt](/assets/hello-world/dataprotector_dark.png){.dark-only}
 
-<div class="process-steps">
-  <div class="step">
-    <span class="step-number">1</span>
+<div class="flex flex-col gap-2.5 my-6">
+  <div class="flex items-center gap-3">
+    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">1</span>
     <span>The DataProtector SDK is called</span>
   </div>
-  <div class="step">
-    <span class="step-number">2</span>
+  <div class="flex items-center gap-3">
+    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">2</span>
     <span>The data is encrypted with a symmetric key</span>
   </div>
-  <div class="step">
-    <span class="step-number">3</span>
+  <div class="flex items-center gap-3">
+    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">3</span>
     <span>The encrypted data is stored on IPFS</span>
   </div>
-  <div class="step">
-    <span class="step-number">4</span>
+  <div class="flex items-center gap-3">
+    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">4</span>
     <span>The symmetric key is stored in a secure enclave (TEE) in the Secret Management Service</span>
   </div>
-  <div class="step">
-    <span class="step-number">5</span>
+  <div class="flex items-center gap-3">
+    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">5</span>
     <span>The DataProtector smart contract is used to establish data ownership as an NFT</span>
   </div>
-  <div class="step">
-    <span class="step-number">6</span>
+  <div class="flex items-center gap-3">
+    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">6</span>
     <span>The protected data address is returned to the user</span>
   </div>
 </div>
@@ -113,7 +112,7 @@ button:
 Decentralized confidential computing might sound complex, but we've made it
 simple through our developer tools.
 
-<div>
+<div class="flex flex-col mb-4">
   <div>
     <p><strong>1. Install the Developer Tool</strong></p>
     <p>Run the install command:</p>
@@ -150,31 +149,20 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
 });
 ```
 
-<div class="solution-note purple">
-  <p>Check out our <a target="_blank" href="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main?file=%2Fsrc%2Fmain.tsx%3A18%2C7">code sandbox</a> for ready-to-use examples!</p>
+<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!">Check out our <a target="_blank" href="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main?file=%2Fsrc%2Fmain.tsx%3A18%2C7">code sandbox</a> for ready-to-use examples!</p>
 </div>
 
 ## 🎯 Key takeaways
 
-<div class="takeaways-list">
-  <div class="takeaway-item">
-    <span>🔒</span>
-    <p><strong>DataProtector</strong> ensures data protection, management, and confidentiality</p>
-  </div>
-  <div class="takeaway-item">
-    <span>📦</span>
-    <p><strong>Protected Data</strong> is encrypted and stored on decentralized storage</p>
-  </div>
-  <div class="takeaway-item">
-    <span>⛓️</span>
-    <p><strong>Ownership</strong> is stored on the blockchain and linked to your wallet</p>
-  </div>
-  <div class="takeaway-item">
-    <span>🔌</span>
-    <p><strong>Integration</strong> is simple with our developer tools</p>
-  </div>
-</div>
+- 🔒 **DataProtector** ensures data protection, management, and confidentiality
 
-<div class="solution-note green">
-  <p>In the next chapter, we'll show you how to build, deploy, and run an iApp to process your protected data. Let's go! 🚀</p>
+- 📦 **Protected Data** is encrypted and stored on decentralized storage
+
+- ⛓️ **Ownership** is stored on the blockchain and linked to your wallet
+
+- 🔌 **Integration** is simple with our developer tools
+
+<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
+  <p class="m-0!">In the next chapter, we'll show you how to build, deploy, and run an iApp to process your protected data. Let's go! 🚀</p>
 </div>

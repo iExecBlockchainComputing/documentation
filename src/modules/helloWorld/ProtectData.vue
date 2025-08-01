@@ -1,0 +1,165 @@
+<template>
+  <div class="my-8 w-full md:my-4">
+    <div
+      class="mb-6 flex items-center gap-2 font-medium text-[var(--vp-c-text-1)]"
+    >
+      Connect Your Wallet
+      <a
+        href="https://chainlist.org/?search=bellecour"
+        target="_blank"
+        class="text-fuchsia-700 underline hover:text-fuchsia-900"
+        >(iExec network)</a
+      >
+      :
+      <ReownButton />
+    </div>
+
+    <div>
+      <p>You will sign three things:</p>
+      <ol class="ml-4 list-inside list-decimal">
+        <li>A transaction to create the protected data</li>
+        <li>
+          A message signature to prove your identity to the production SMS
+        </li>
+        <li>
+          A message signature to prove your identity to the debug SMS (this
+          signature is only required during this Hello World tutorial)
+        </li>
+      </ol>
+    </div>
+
+    <div class="my-6 flex w-full flex-col gap-4">
+      <input
+        name="protected-data"
+        v-model="contentToProtect"
+        placeholder="Enter a secret data to protect (e.g. 'My private data / mail / phone / ...')"
+        :disabled="!isWalletConnected || isLoadingProtect"
+      />
+      <Button
+        :disabled="!isWalletConnected || isLoadingProtect"
+        @click="protectData"
+        data-track="protectData"
+      >
+        {{ isLoadingProtect ? 'Processing...' : 'Protect Data' }}
+      </Button>
+      <div
+        v-if="protectError"
+        class="rounded-md bg-red-50 px-4 py-3 text-sm text-red-500"
+      >
+        {{ protectError }}
+      </div>
+    </div>
+
+    <div
+      v-if="protectedDataAddress"
+      class="mt-8 w-full rounded-md bg-gradient-to-r from-green-400/10 to-green-400/5 p-6 text-center"
+    >
+      <div
+        class="mb-2 flex items-center justify-center gap-3 text-xl font-medium text-green-500"
+      >
+        <div
+          class="flex items-center justify-center rounded-full bg-green-500 p-1 text-white"
+        >
+          <Icon icon="mdi:check" height="24" />
+        </div>
+        Your data has been protected!
+      </div>
+      <p class="mt-4 mb-2 font-medium text-[var(--vp-c-text-1)]">
+        Your protected data address:
+      </p>
+      <div
+        class="rounded-md bg-[var(--vp-c-bg-soft)] px-4 py-3 font-mono text-sm break-all text-[var(--vp-c-text-2)]"
+      >
+        {{ protectedDataAddress }}
+      </div>
+      <p class="mt-4">
+        You can check it on
+        <a
+          :href="`https://explorer.iex.ec/bellecour/dataset/${protectedDataAddress}`"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-medium text-green-600 underline hover:text-green-800"
+        >
+          the iExec explorer
+        </a>
+      </p>
+      <p class="mt-2">
+        Or view your encrypted data on
+        <a
+          :href="'https://ipfs.io/ipfs/' + protectedDataIpfsAddress"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-medium text-green-600 underline hover:text-green-800"
+        >
+          IPFS
+        </a>
+        <br />
+        <span class="mt-2 block text-[0.9rem] text-[var(--vp-c-text-2)] italic">
+          😊 Ohh damn: you can download the data on IPFS but you can't see the
+          content 🔒
+        </span>
+      </p>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+import { Icon } from '@iconify/vue';
+import { IExecDataProtectorCore } from '@iexec/dataprotector';
+import Button from '../../components/ui/Button.vue';
+import ReownButton from './ReownButton.vue';
+import { useAccount } from '@wagmi/vue';
+import { useWalletConnection } from '../../hooks/useWalletConnection.vue';
+
+const { connector } = useAccount();
+const {
+  web3Provider,
+  isWalletConnected,
+  protectedDataAddress,
+  protectedDataIpfsAddress,
+} = useWalletConnection();
+
+const contentToProtect = ref('');
+const isLoadingProtect = ref(false);
+const protectError = ref(null);
+
+async function protectData() {
+  try {
+    if (!web3Provider.value) {
+      const provider = await connector.value.getProvider();
+      if (!provider) {
+        throw new Error('Wallet not connected');
+      }
+      web3Provider.value = provider;
+    }
+    if (!contentToProtect.value) {
+      throw new Error('Content is empty');
+    }
+    isLoadingProtect.value = true;
+    protectError.value = null;
+    const dataProtectorCore = new IExecDataProtectorCore(web3Provider.value);
+    const createdProtectedData = await dataProtectorCore.protectData({
+      data: {
+        secretText: contentToProtect.value,
+      },
+      name: 'helloWorld',
+      allowDebug: true,
+    });
+    console.log('createdProtectedData', createdProtectedData);
+
+    const ipfsCid = createdProtectedData.multiaddr.split('/').pop();
+
+    protectedDataAddress.value = createdProtectedData.address;
+    contentToProtect.value = '';
+    protectedDataIpfsAddress.value = ipfsCid;
+    localStorage.setItem('protectedDataAddress', createdProtectedData.address);
+    localStorage.setItem('protectedDataIpfsAddress', ipfsCid);
+  } catch (error) {
+    protectError.value = error.message;
+    console.error('Error protecting data:', error);
+  } finally {
+    isLoadingProtect.value = false;
+  }
+}
+</script>
