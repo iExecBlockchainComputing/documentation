@@ -25,7 +25,7 @@ features:
     details:
       Secure your data with advanced encryption and control access while
       maintaining privacy using DataProtector
-    link: /manage-data/dataProtector/what-is-protected-data
+    link: /manage-data/what-is-protected-data
   - icon: 🤖
     title: Build iApps
     details:

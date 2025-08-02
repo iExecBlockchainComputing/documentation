@@ -91,7 +91,7 @@ export default defineConfig({
       { text: 'Core Concept', link: '/core-concept/glossary' },
     ],
     outline: {
-      level: [2, 3],
+      level: [2, 4],
     },
 
     sidebar: getSidebar(),

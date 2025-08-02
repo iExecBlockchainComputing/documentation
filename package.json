@@ -5,7 +5,6 @@
     "dev": "vitepress dev",
     "build": "vitepress build",
     "preview": "vitepress preview",
-    "check-format": "prettier --ignore-path .gitignore --check .",
     "format": "prettier --ignore-path .gitignore --write ."
   },
   "dependencies": {

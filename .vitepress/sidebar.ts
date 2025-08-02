@@ -91,10 +91,6 @@ export function getSidebar() {
                 link: '/manage-data/dataProtector/getting-started',
               },
               {
-                text: 'Guides',
-                link: '/manage-data/dataProtector/guides',
-              },
-              {
                 text: 'DataProtector Core',
                 link: '/manage-data/dataProtector/dataProtectorCore',
                 collapsed: true,

@@ -1,90 +1,105 @@
 ---
 title: DataProtector Guides
-description: Step-by-step guides for using iExec DataProtector
+description:
+  Step-by-step guides for protecting, managing, and monetizing your data with
+  iExec DataProtector
 ---
 
 # 📖 DataProtector Guides
 
-Discover how to protect, share, and monetize your data using iExec's
-DataProtector technology through these comprehensive guides.
+**Master data protection, sharing, and monetization** with these comprehensive
+step-by-step guides. Each guide focuses on a specific aspect of building with
+DataProtector.
 
-## Getting Started Guides
+## Essential Guides
 
-### 🚀 [Quick Start Guide](/manage-data/dataProtector/getting-started)
+### 🛡️ [Create and Share Access to Protected Data](/manage-data/guides/create-and-share-access)
 
-Learn the basics of protecting your first dataset and granting access to others.
+**Start here if you're new to DataProtector.** Learn how to protect your data
+and control exactly who can access it.
 
-### 🔐 [Understanding Protected Data](/manage-data/dataProtector/what-is-protected-data)
-
-Deep dive into the concepts behind data protection and privacy-preserving
-computation.
-
-## Core Features Guides
-
-### 📊 Data Protection
-
-- [Protect Your Data](/manage-data/dataProtector/dataProtectorCore/protectData) -
-  Encrypt and register data
-- [Retrieve Protected Data](/manage-data/dataProtector/dataProtectorCore/getProtectedData) -
-  Access your protected datasets
-- [Transfer Ownership](/manage-data/dataProtector/dataProtectorCore/transferOwnership) -
-  Change data ownership
-
-### 🔑 Access Management
-
-- [Grant Access](/manage-data/dataProtector/dataProtectorCore/grantAccess) -
-  Give permissions to users
-- [View Granted Access](/manage-data/dataProtector/dataProtectorCore/getGrantedAccess) -
-  See who has access
-- [Revoke Access](/manage-data/dataProtector/dataProtectorCore/revokeAllAccess) -
-  Remove permissions
-
-### ⚡ Data Processing
-
-- [Process Protected Data](/manage-data/dataProtector/dataProtectorCore/processProtectedData) -
-  Run computations
-- [Get Results](/manage-data/dataProtector/dataProtectorCore/getResultFromCompletedTask) -
-  Retrieve computation outputs
-
-## Data Sharing & Monetization
-
-### 📦 Collections
-
-- [Create Collections](/manage-data/dataProtector/dataProtectorSharing/collection/createCollection) -
-  Group related datasets
-- [Manage Collections](/manage-data/dataProtector/dataProtectorSharing/collection/addToCollection) -
-  Add/remove data
-
-### 💰 Monetization Options
-
-- [Rent Your Data](/manage-data/dataProtector/dataProtectorSharing/renting) -
-  Time-based access
-- [Sell Your Data](/manage-data/dataProtector/dataProtectorSharing/selling) -
-  Permanent transfers
-- [Subscription Model](/manage-data/dataProtector/dataProtectorSharing/subscription) -
-  Recurring access
-
-## Advanced Topics
-
-### 🔧 [Advanced Configuration](/manage-data/dataProtector/advanced/advanced-configuration)
-
-Customize DataProtector for your specific needs.
-
-### 🏗️ [Smart Contracts](/manage-data/dataProtector/advanced/dps-smart-contract)
-
-Understand the underlying blockchain technology.
-
-### 📱 [App Whitelisting](/manage-data/dataProtector/advanced/apps-whitelist)
-
-Control which applications can access your data.
-
-## Migration Guide
-
-### 🔄 [Migrate from v1 to v2](/manage-data/dataProtector/migrate-from-v1)
-
-Upgrade from the previous version of DataProtector.
+- Protect data with client-side encryption
+- Grant access to specific users and apps
+- Set pricing and usage limits
+- Debug mode for development
 
 ---
 
-_These guides will help you master data protection and unlock the full potential
-of your datasets._
+### 🏷️ [Handle Schemas and Dataset Types](/manage-data/guides/handle-schemas-dataset-types)
+
+**Understand how your data structure works with iApps.** Learn about automatic
+schema generation and how to use data types effectively.
+
+- Auto-generated schemas from your JSON data
+- Supported data types and format conversion
+- Using schemas in iApp development
+- Type safety and error handling
+
+---
+
+### 💰 [Manage Data Monetization](/manage-data/guides/manage-data-monetization)
+
+**Turn your protected data into revenue.** Explore different monetization
+strategies from simple pay-per-use to advanced marketplace distribution.
+
+- Pay-per-use with DataProtector Core
+- DataProtector Sharing with collections
+- Rental, subscription, and sale models
+- Revenue optimization strategies
+
+## Quick Navigation
+
+::: tip What You'll Learn These guides cover the complete journey from
+protecting your first dataset to building a sustainable data business with
+automated monetization. :::
+
+### By Use Case
+
+- **🚀 Just getting started?** →
+  [Create and Share Access](/manage-data/guides/create-and-share-access)
+- **🔧 Building an iApp?** →
+  [Handle Schemas and Dataset Types](/manage-data/guides/handle-schemas-dataset-types)
+- **💡 Want to monetize data?** →
+  [Manage Data Monetization](/manage-data/guides/manage-data-monetization)
+
+### By Experience Level
+
+**Beginner**: Start with data protection basics  
+→ [Create and Share Access](/manage-data/guides/create-and-share-access)
+
+**Intermediate**: Learn about data structures and iApp integration  
+→ [Handle Schemas and Dataset Types](/manage-data/guides/handle-schemas-dataset-types)
+
+**Advanced**: Explore monetization strategies and business models  
+→ [Manage Data Monetization](/manage-data/guides/manage-data-monetization)
+
+## Additional Resources
+
+### 📚 **SDK Reference**
+
+- [DataProtector Core SDK](/manage-data/dataProtector/dataProtectorCore) -
+  Complete method reference
+- [DataProtector Sharing SDK](/manage-data/dataProtector/dataProtectorSharing) -
+  Advanced distribution features
+- [Type Definitions](/manage-data/dataProtector/types) - TypeScript interfaces
+  and types
+
+### 🎯 **Real Examples**
+
+- [Content Creator Demo](/overview/use-case-demo/content-creator) - Live example
+  of data monetization
+- [Hello World Tutorial](/overview/helloWorld) - End-to-end walkthrough
+
+### 🔧 **Advanced Topics**
+
+- [Apps Whitelist](/manage-data/dataProtector/advanced/apps-whitelist) - Control
+  which iApps can access data
+- [Smart Contract Details](/manage-data/dataProtector/advanced/dps-smart-contract) -
+  Blockchain implementation
+- [Migration Guide](/manage-data/dataProtector/migrate-from-v1) - Upgrade from
+  v1 to v2
+
+---
+
+**Ready to start?** Pick the guide that matches your current goal and dive in!
+🚀
