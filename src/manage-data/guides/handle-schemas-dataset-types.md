@@ -6,11 +6,12 @@ description:
 
 # 🏷️ Handle Schemas and Dataset Types
 
-**Schemas are like TypeScript for your protected data.** They define the
-structure and types of your data automatically when you protect it, making it
-easy for iApps to know what they're working with.
+**Schemas are like content labels that describe what's inside your protected data.**
 
-Think of schemas as **data labels** - they tell iApps "this protected data
+They define the structure and types of your data automatically when you protect
+it, making it easy for iApps to know what they're working with.
+
+Think of schemas as **data fingerprints** - they tell iApps "this protected data
 contains an email address and a phone number" without revealing the actual
 values.
 
@@ -20,12 +21,12 @@ When you protect data with DataProtector, the SDK automatically analyzes your
 JSON object and generates a schema. **No manual schema definition needed** -
 it's all handled for you.
 
-```ts
+```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-
+// ---cut---
 const protectedData = await dataProtectorCore.protectData({
   name: 'User Contact',
   data: {
@@ -38,19 +39,26 @@ const protectedData = await dataProtectorCore.protectData({
   },
 });
 
-// The schema is automatically generated:
-console.log(protectedData.schema);
-/* Output:
+console.log('✅ Protected data created!');
+console.log('📍 Address:', protectedData.address);
+```
+
+**🏷️ Generated Schema:**
+
+```json
 {
-  email: 'string',
-  phoneNumber: 'string', 
-  preferences: {
-    newsletter: 'bool',
-    notifications: 'bool'
+  "email": "string",
+  "phoneNumber": "string", 
+  "preferences": {
+    "newsletter": "bool",
+    "notifications": "bool"
   }
 }
-*/
 ```
+
+::: info Schema Structure
+The schema automatically maps your data structure to types that iApps can understand and validate.
+:::
 
 ## Supported Data Types
 
@@ -65,8 +73,10 @@ The schema automatically detects these types:
 | `application/octet-stream`      | Binary data    | File contents         |
 | `image/jpeg`, `image/png`, etc. | Media files    | Images, videos        |
 
-::: tip Auto-Detection The SDK automatically detects file types based on
-content. No need to specify MIME types manually. :::
+::: tip Auto-Detection
+The SDK automatically detects file types based on
+content. No need to specify MIME types manually.
+:::
 
 ## Why Schemas Matter
 
@@ -74,7 +84,11 @@ content. No need to specify MIME types manually. :::
 
 Schemas let your iApps validate and process data safely:
 
-```js
+```ts twoslash
+import { IExecDataProtectorDeserializer } from '@iexec/dataprotector-deserializer';
+
+const deserializer = new IExecDataProtectorDeserializer();
+// ---cut---
 // Inside your iApp
 const email = await deserializer.getValue('email', 'string');
 const preferences = await deserializer.getValue(
@@ -83,25 +97,37 @@ const preferences = await deserializer.getValue(
 );
 ```
 
+### 🛡️ **For Type Safety**
+
+Prevents your iApps from processing incompatible data types.
+
 ### 🔍 **For Data Discovery**
 
 Users can find relevant protected data without seeing the actual content:
 
-```ts
-// Find all protected data with email addresses
-const query = { schema: { email: 'string' } };
-// Returns metadata only, no actual emails revealed
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
+const listProtectedData = await dataProtectorCore.getProtectedData({
+  requiredSchema: {
+    email: 'string',
+  },
+});
 ```
-
-### 🛡️ **For Type Safety**
-
-Prevents your iApps from processing incompatible data types.
 
 ## Real Examples
 
 ### Simple User Profile
 
-```ts
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 const userData = await dataProtectorCore.protectData({
   data: {
     email: 'user@example.com',
@@ -109,12 +135,26 @@ const userData = await dataProtectorCore.protectData({
     isSubscribed: true,
   },
 });
-// Schema: { email: 'string', age: 'f64', isSubscribed: 'bool' }
+```
+
+**🏷️ Generated Schema:**
+
+```json
+{
+  "email": "string",
+  "age": "f64",
+  "isSubscribed": "bool"
+}
 ```
 
 ### Nested Contact Information
 
-```ts
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 const contactData = await dataProtectorCore.protectData({
   data: {
     personal: {
@@ -131,15 +171,43 @@ const contactData = await dataProtectorCore.protectData({
     },
   },
 });
-// Schema reflects the full nested structure
+```
+
+**🏷️ Generated Schema:**
+
+```json
+{
+  "personal": {
+    "firstName": "string",
+    "lastName": "string"
+  },
+  "contact": {
+    "email": "string",
+    "phone": "string"
+  },
+  "preferences": {
+    "marketing": "bool",
+    "notifications": "bool"
+  }
+}
 ```
 
 ### File Data
 
-```ts
-import { createArrayBufferFromFile } from '@iexec/dataprotector';
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const file = document.getElementById('fileInput').files[0];
+// Mock function for the example
+function createArrayBufferFromFile(file: File): Promise<ArrayBuffer> {
+  return Promise.resolve(new ArrayBuffer(0));
+}
+
+// Get file from input element
+const file = new File([""], "example.jpg", { type: "image/jpeg" });
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 const fileBuffer = await createArrayBufferFromFile(file);
 
 const fileData = await dataProtectorCore.protectData({
@@ -149,7 +217,16 @@ const fileData = await dataProtectorCore.protectData({
     uploadDate: Date.now(),
   },
 });
-// Schema: { fileName: 'string', fileContent: 'image/jpeg', uploadDate: 'f64' }
+```
+
+**🏷️ Schema for file upload:**
+
+```json
+{
+  "fileName": "string",
+  "fileContent": "image/jpeg",
+  "uploadDate": "f64"
+}
 ```
 
 ## Using Schemas in iApps
@@ -157,12 +234,14 @@ const fileData = await dataProtectorCore.protectData({
 Once you have protected data with a schema, you'll want to process it inside an
 iApp.
 
-::: warning Type Matching **Your iApp and frontend must use the same field names
+::: warning Type Matching
+**Your iApp and frontend must use the same field names
 and types.** If they don't match, you'll get runtime errors when processing the
-data. :::
+data.
+:::
 
 → **Ready to build an iApp?** Check out our detailed
-[Inputs and Outputs guide](/build_iapp/guides/inputs-and-outputs) to learn how
+[Inputs and Outputs guide](/build-iapp/guides/inputs-and-outputs) to learn how
 to access schema fields inside your iApp using the deserializer.
 
 ## Next Steps
@@ -171,16 +250,10 @@ to access schema fields inside your iApp using the deserializer.
 explore next:
 
 - **Build an iApp**: Check out the
-  [iApp Generator guide](/build_iapp/iapp-generator) to create your first data
+  [iApp Generator guide](/build-iapp/iapp-generator) to create your first data
   processor
 - **Process data**: Learn about
   [processProtectedData](/manage-data/dataProtector/dataProtectorCore/processProtectedData)
   for running computations
 - **See it in action**: Try our [Hello World tutorial](/overview/helloWorld) for
   a complete example
-
----
-
-**TL;DR**: Schemas = auto-generated data labels. Frontend protects data → Schema
-describes structure → iApp uses schema to access fields safely. Match your field
-names and types between frontend and iApp! 🏷️

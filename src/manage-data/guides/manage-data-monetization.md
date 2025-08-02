@@ -36,12 +36,12 @@ Let's explore both in detail.
 per access. Each time someone processes your data, they pay your specified fee
 automatically.
 
-```ts
+```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-
+// ---cut---
 // Grant paid access to your data
 const grantedAccess = await dataProtectorCore.grantAccess({
   protectedData: '0x123abc...', // Your data address
@@ -56,7 +56,16 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 
 ::: code-group
 
-```ts [API Access]
+```ts twoslash [API Access]
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+
+// Mock addresses for the example
+const myAIModelAddress = '0x123abc...';
+const clientAddress = '0x456def...';
+// ---cut---
 // Charge for AI model inference
 const grantedAccess = await dataProtectorCore.grantAccess({
   protectedData: myAIModelAddress,
@@ -67,7 +76,16 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 });
 ```
 
-```ts [Data Processing]
+```ts twoslash [Data Processing]
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+
+// Mock addresses for the example
+const healthDataAddress = '0x123abc...';
+const researcherAddress = '0x456def...';
+// ---cut---
 // Charge for data analysis
 const grantedAccess = await dataProtectorCore.grantAccess({
   protectedData: healthDataAddress,
@@ -78,7 +96,15 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 });
 ```
 
-```ts [Free Access]
+```ts twoslash [Free Access]
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+
+// Mock address for the example
+const publicDatasetAddress = '0x123abc...';
+// ---cut---
 // Grant free access (still controlled)
 const grantedAccess = await dataProtectorCore.grantAccess({
   protectedData: publicDatasetAddress,
@@ -118,11 +144,12 @@ smart contracts.
 [Content Creator demo](/overview/use-case-demo/content-creator) shows
 DataProtector Sharing in action with file monetization. While it uses
 content-delivery for file transfers, the same patterns work for any iApp - AI
-models, data processing, oracles, etc. :::
+models, data processing, oracles, etc.
+:::
 
 ### **Step 1: Create a Collection**
 
-```ts
+```ts twoslash
 import {
   IExecDataProtectorSharing,
   getWeb3Provider,
@@ -130,7 +157,7 @@ import {
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorSharing = new IExecDataProtectorSharing(web3Provider);
-
+// ---cut---
 // Create a collection to group your data
 const collection = await dataProtectorSharing.createCollection();
 console.log('Collection address:', collection.collectionId);
@@ -151,7 +178,15 @@ DataProtector Sharing offers four distribution models:
 
 Perfect for building audience, beta testing, or public datasets.
 
-```ts
+```ts twoslash
+import {
+  IExecDataProtectorSharing,
+  getWeb3Provider,
+} from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorSharing = new IExecDataProtectorSharing(web3Provider);
+// ---cut---
 // Make data freely available (but still controlled)
 await dataProtectorSharing.setProtectedDataToRenting({
   protectedData: '0x123abc...',
@@ -164,7 +199,15 @@ await dataProtectorSharing.setProtectedDataToRenting({
 
 Users pay once for temporary access to your data.
 
-```ts
+```ts twoslash
+import {
+  IExecDataProtectorSharing,
+  getWeb3Provider,
+} from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorSharing = new IExecDataProtectorSharing(web3Provider);
+// ---cut---
 // Set up rental terms
 await dataProtectorSharing.setProtectedDataToRenting({
   protectedData: '0x123abc...',
@@ -190,7 +233,18 @@ const rental = await dataProtectorSharing.rentProtectedData({
 
 Users pay for ongoing access to a bundle of data that you can expand over time.
 
-```ts
+```ts twoslash
+import {
+  IExecDataProtectorSharing,
+  getWeb3Provider,
+} from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorSharing = new IExecDataProtectorSharing(web3Provider);
+
+// Mock collection for the example
+const collection = { collectionId: 123 };
+// ---cut---
 // First, set subscription parameters for the collection
 await dataProtectorSharing.setSubscriptionParams({
   collectionId: collection.collectionId,
@@ -227,7 +281,15 @@ const subscription = await dataProtectorSharing.subscribeToCollection({
 
 Transfer permanent ownership of your data to the buyer.
 
-```ts
+```ts twoslash
+import {
+  IExecDataProtectorSharing,
+  getWeb3Provider,
+} from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorSharing = new IExecDataProtectorSharing(web3Provider);
+// ---cut---
 // List data for sale
 await dataProtectorSharing.setProtectedDataForSale({
   protectedData: '0x123abc...',
@@ -282,9 +344,11 @@ demo** that showcases DataProtector Sharing with real file transfers:
 app demonstrating collections, rentals, and subscriptions for content
 monetization.
 
-::: tip Live Example The Content Creator demo uses a content-delivery iApp for
+::: tip Live Example
+The Content Creator demo uses a content-delivery iApp for
 file transfers, but the same monetization patterns apply to **any iApp and use
-case** - AI model inference, data analysis, oracle feeds, Web3Mail, etc. :::
+case** - AI model inference, data analysis, oracle feeds, Web3Mail, etc.
+:::
 
 ## Next Steps
 
@@ -302,9 +366,3 @@ case** - AI model inference, data analysis, oracle feeds, Web3Mail, etc. :::
   [collection management](/manage-data/dataProtector/dataProtectorSharing/collection)
 - **Set up subscriptions**: Implement
   [recurring revenue models](/manage-data/dataProtector/dataProtectorSharing/subscription)
-
----
-
-**TL;DR**: Pay-per-use = Simple direct control. DataProtector Sharing = Smart
-contract automation with free/rent/subscription/sale models. Choose based on
-your distribution strategy and technical needs. 💰

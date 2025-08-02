@@ -150,6 +150,9 @@ Fork this repository and ensure you're working on the `main` branch:
 
 - Add Arbitrum support
 - Adapt hardcoded address to feat with new contracts deployed on arbitrum
+- Add link to the new explorer feature Asset_Types in the guide =>
+  `handle-schemas-dataset-types`
+- Move `manage-data/dataProtector/advanced/iApp` (Deserializer doc) in an other way to be more visible (may in build-iApp section)
 - complete `use-iapp` section
 - complete `explorer` section
 - complete `build-iapp` section

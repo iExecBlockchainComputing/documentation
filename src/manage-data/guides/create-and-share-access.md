@@ -229,8 +229,3 @@ steps:
   [schemas and dataset types](/manage-data/guides/handle-schemas-dataset-types)
 - **Monetize data**: Explore
   [data monetization strategies](/manage-data/guides/manage-data-monetization)
-
----
-
-**TL;DR**: Protect data → Grant access to specific app + user → Data stays
-encrypted except inside authorized secure enclaves. You keep full control. 🔒
