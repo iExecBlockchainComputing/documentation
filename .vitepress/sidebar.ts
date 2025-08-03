@@ -76,15 +76,14 @@ export function getSidebar() {
                 link: '/manage-data/guides/handle-schemas-dataset-types',
               },
               {
-                text: 'Manage Data Monetization',
-                link: '/manage-data/guides/manage-data-monetization',
+                text: 'Monetize Protected Data',
+                link: '/manage-data/guides/monetize-protected-data',
               },
             ],
           },
           {
             text: '🔐 DataProtector',
             link: '/manage-data/dataProtector',
-            collapsed: true,
             items: [
               {
                 text: 'Getting Started',

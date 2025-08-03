@@ -43,7 +43,7 @@ features:
     details:
       Create revenue streams from your data while maintaining full control and
       privacy
-    link: /manage-data/guides/manage-data-monetization
+    link: /manage-data/guides/monetize-protected-data
   - icon: 🧠
     title: Core Concepts
     details:

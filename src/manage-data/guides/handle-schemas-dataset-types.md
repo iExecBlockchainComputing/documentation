@@ -6,7 +6,8 @@ description:
 
 # 🏷️ Handle Schemas and Dataset Types
 
-**Schemas are like content labels that describe what's inside your protected data.**
+**Schemas are like content labels that describe what's inside your protected
+data.**
 
 They define the structure and types of your data automatically when you protect
 it, making it easy for iApps to know what they're working with.
@@ -48,7 +49,7 @@ console.log('📍 Address:', protectedData.address);
 ```json
 {
   "email": "string",
-  "phoneNumber": "string", 
+  "phoneNumber": "string",
   "preferences": {
     "newsletter": "bool",
     "notifications": "bool"
@@ -56,9 +57,8 @@ console.log('📍 Address:', protectedData.address);
 }
 ```
 
-::: info Schema Structure
-The schema automatically maps your data structure to types that iApps can understand and validate.
-:::
+::: info Schema Structure The schema automatically maps your data structure to
+types that iApps can understand and validate. :::
 
 ## Supported Data Types
 
@@ -73,10 +73,8 @@ The schema automatically detects these types:
 | `application/octet-stream`      | Binary data    | File contents         |
 | `image/jpeg`, `image/png`, etc. | Media files    | Images, videos        |
 
-::: tip Auto-Detection
-The SDK automatically detects file types based on
-content. No need to specify MIME types manually.
-:::
+::: tip Auto-Detection The SDK automatically detects file types based on
+content. No need to specify MIME types manually. :::
 
 ## Why Schemas Matter
 
@@ -203,7 +201,7 @@ function createArrayBufferFromFile(file: File): Promise<ArrayBuffer> {
 }
 
 // Get file from input element
-const file = new File([""], "example.jpg", { type: "image/jpeg" });
+const file = new File([''], 'example.jpg', { type: 'image/jpeg' });
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
@@ -234,11 +232,9 @@ const fileData = await dataProtectorCore.protectData({
 Once you have protected data with a schema, you'll want to process it inside an
 iApp.
 
-::: warning Type Matching
-**Your iApp and frontend must use the same field names
+::: warning Type Matching **Your iApp and frontend must use the same field names
 and types.** If they don't match, you'll get runtime errors when processing the
-data.
-:::
+data. :::
 
 → **Ready to build an iApp?** Check out our detailed
 [Inputs and Outputs guide](/build-iapp/guides/inputs-and-outputs) to learn how

@@ -149,10 +149,13 @@ Fork this repository and ensure you're working on the `main` branch:
 ## TODO
 
 - Add Arbitrum support
+- On arbitrum hide : Oracle Factory ? , DataProtector Sharing ??
 - Adapt hardcoded address to feat with new contracts deployed on arbitrum
 - Add link to the new explorer feature Asset_Types in the guide =>
   `handle-schemas-dataset-types`
-- Move `manage-data/dataProtector/advanced/iApp` (Deserializer doc) in an other way to be more visible (may in build-iApp section)
+- Add link to remix for deploying whitelist
+- Move `manage-data/dataProtector/advanced/iApp` (Deserializer doc) in an other
+  way to be more visible (may in build-iApp section)
 - complete `use-iapp` section
 - complete `explorer` section
 - complete `build-iapp` section

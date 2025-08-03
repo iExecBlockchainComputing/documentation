@@ -194,7 +194,7 @@ automatically.
 **Example**: `pricePerAccess: 1_000_000_000` = 1 RLC per access
 
 → **Want to learn more monetization capabilities?** See our detailed
-[Manage Data Monetization guide](/manage-data/guides/manage-data-monetization)
+[Monetize Protected Data guide](/manage-data/guides/monetize-protected-data)
 
 #### numberOfAccess <OptionalBadge />
 
@@ -228,4 +228,4 @@ steps:
 - **Learn data types**: Deep dive into
   [schemas and dataset types](/manage-data/guides/handle-schemas-dataset-types)
 - **Monetize data**: Explore
-  [data monetization strategies](/manage-data/guides/manage-data-monetization)
+  [data monetization strategies](/manage-data/guides/monetize-protected-data)
