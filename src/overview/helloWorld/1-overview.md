@@ -80,7 +80,7 @@ Computing</a></span> technologies.
   <span class="text-fuchsia-700 font-semibold">confidentiality</span>, and <span class="text-fuchsia-700 font-semibold">monetization</span> of their data and digital assets within the <span class="text-fuchsia-700 font-semibold">Web3</span> ecosystem.</p>
 </div>
 
-## 🔒 What are the three key elements?
+## 🔒 The three key elements?
 
 iExec combines three fundamental elements that work together seamlessly:
 
