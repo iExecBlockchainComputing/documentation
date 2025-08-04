@@ -6,13 +6,13 @@ description:
 
 # 💡 About iExec
 
-## Why iExec?
+## 🤔 Why iExec?
 
 In a world where data privacy is increasingly critical, developers need better
 tools to protect user information while building innovative applications. We
 believe privacy should be a fundamental right, not an afterthought.
 
-## how we make it happen
+## 🛠️ how we make it happen
 
 iExec provides a complete toolkit that makes privacy simple and actionable:
 
@@ -25,7 +25,7 @@ iExec provides a complete toolkit that makes privacy simple and actionable:
 - **Developer-First Experience**: Focus on building your application, not
   privacy plumbing
 
-## What we offer
+## 🎁 What we offer
 
 ### Privacy tools
 
@@ -46,15 +46,15 @@ Our tools power privacy-critical use cases like:
 - Protected healthcare data processing
 - Secure research computations
 
-## Start building
+## 🚀 Start building
 
 Ready to build privacy-first applications? Choose your path:
 
-🚀 **Quick Start**: Follow our [Hello World guide](/overview/helloWorld) to
-build your first confidential app in minutes
+**Quick Start**: Follow our [Hello World guide](/overview/helloWorld) to build
+your first confidential app in minutes
 
-🔍 **Explore Use Cases**: Browse [real-world examples](/overview/use-cases) to
-see what you can build with iExec
+**Explore Use Cases**: Browse [real-world examples](/overview/use-cases) to see
+what you can build with iExec
 
 Join our [Discord community](https://discord.gg/9h25DQFSCU) to connect with
 other builders and get support along the way.
