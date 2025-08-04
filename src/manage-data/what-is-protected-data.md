@@ -207,11 +207,3 @@ monetize their data within the Web3 ecosystem.
     </div>
   </div>
 </div>
-
-<div class="bg-gradient-to-r from-blue-400/10 to-blue-400/5 rounded-[6px] p-6 border-l-4 border-blue-600 mb-6">
-  <p class="m-0!">Protect your data, maintain control, and unlock its value with iExec's <span class="text-blue-700 font-semibold">DataProtector</span> - the complete solution for privacy-first data management.</p>
-</div>
-
----
-
-_Ready to take control of your data? Start protecting what matters most._
