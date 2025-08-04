@@ -26,7 +26,7 @@ iExec provides a complete toolkit that makes privacy simple and actionable:
 - **Developer-First Experience**: Focus on building your application, not
   privacy plumbing
 
-## 🔧 What we offer
+## 🔧 What we provide
 
 ### Privacy tools
 
