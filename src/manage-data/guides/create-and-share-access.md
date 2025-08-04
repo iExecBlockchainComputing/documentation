@@ -13,8 +13,8 @@ Here's how DataProtector works: first you encrypt your data, then manage your
 orders to control exactly who can access it, how many times, and at what price.
 
 Once data is protected, it's only accessible inside secure enclaves (TEEs) by
-the specific people and iApps you authorize through the orders you create. No
-exceptions.
+the specific users and iApps (iExec application running in TEE) you authorize
+through the orders you create. No exceptions.
 
 ## Installation
 
@@ -65,12 +65,12 @@ console.log('Protected data address:', protectedData.address);
 
 ### What You Can Protect
 
-**Data**: Any JSON object with custom keys. Think user profiles, API
-credentials, datasets, model parameters - anything you want to keep private but
-still use in computations.
+**Data**: Any kind of data you want to keep private and make available for
+computations by authorized users and iApps.
 
 **Supported types**: Strings, numbers, booleans, nested objects, files (convert
-to ArrayBuffer first), and arrays (convert to Record format).
+to ArrayBuffer first), and arrays (convert to Record format), you can find the
+full list [here](/manage-data/dataProtector/types)
 
 **Limits**: File size depends on your storage choice (IPFS or Arweave). For
 large datasets, consider using another IPFS node.

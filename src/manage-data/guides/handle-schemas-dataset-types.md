@@ -86,6 +86,11 @@ MIME types manually.
 
 ## Why Schemas Matter
 
+- **Clarity**: Makes your data easier to understand and reuse
+- **Safety**: Ensures iExec apps don’t process the wrong data
+- **Structure**: Facilitates structured communication between **front-end and
+  iApp logic**
+
 ### 🎯 **For iApp Development**
 
 Schemas let your iApps validate and process data safely:
