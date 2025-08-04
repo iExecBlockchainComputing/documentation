@@ -6,10 +6,13 @@ description:
 
 # 🛡️ Using TDX (Experimental)
 
-:::danger ⚠️ EXPERIMENTAL FEATURE **TDX support is currently experimental and
-should NOT be used in production.** This feature is provided for testing and
-development purposes only. Expect instabilities, limited compatibility, and
-potential outages. :::
+:::danger ⚠️ EXPERIMENTAL FEATURE
+
+**TDX support is currently experimental and should NOT be used in production.**
+This feature is provided for testing and development purposes only. Expect
+instabilities, limited compatibility, and potential outages.
+
+:::
 
 **Intel TDX (Trust Domain Extensions) is the next generation of TEE
 technology.** This guide shows you how to enable TDX in your iApps and
@@ -76,9 +79,12 @@ iexec app show <app-address>
 
 ## Protected Data Compatibility
 
-:::warning Protected Data Requirements **TDX iApps may require TDX-compatible
-protected data.** Check compatibility before using protected data with TDX
-iApps. :::
+:::warning Protected Data Requirements
+
+**TDX iApps may require TDX-compatible protected data.** Check compatibility
+before using protected data with TDX iApps.
+
+:::
 
 **Important**: The exact process for creating TDX-compatible protected data may
 differ from standard protected data creation. Consult the latest DataProtector
@@ -116,7 +122,9 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
 - **🚫 NOT for production use**
 - **🚫 Limited worker availability**
 - **🚫 Unstable execution** environment
-- **🚫 Breaking changes** without notice :::
+- **🚫 Breaking changes** without notice
+
+:::
 
 ## When to Use TDX
 
