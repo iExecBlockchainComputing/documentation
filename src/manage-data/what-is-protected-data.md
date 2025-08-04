@@ -5,13 +5,8 @@ description: Understanding iExec's data protection mechanisms
 
 # ❓ What Is Protected Data?
 
-<div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
-  <h2 class="text-2xl font-bold mt-0 border-none!">Data Protection Made Simple</h2>
-  <p>Learn how iExec's DataProtector keeps your sensitive information secure while enabling powerful computation and monetization.</p>
-</div>
-
-Protected Data refers to any data encrypted using the iExec Data Protector tool.
-This end-to-end encryption solution enables users to protect, manage and
+Protected Data refers to any data encrypted using the **iExec Data Protector
+tool**. This end-to-end encryption solution enables users to protect, manage and
 monetize their data within the Web3 ecosystem.
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
