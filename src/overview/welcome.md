@@ -90,7 +90,7 @@ Confidential Computing made easy
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
     <div class="flex items-baseline gap-2 text-lg">
       <span>💰</span>
-      <h3 class="font-semibold m-0!">Finance</h3>
+      <h3 class="font-semibold !m-0">Finance</h3>
     </div>
     <ul class="list-disc ml-6">
       <li>Analyze sensitive financial data</li>
