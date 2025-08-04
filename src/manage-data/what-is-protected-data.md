@@ -124,7 +124,7 @@ monetize their data within the Web3 ecosystem.
         <strong>Monetize:</strong> Earn from your data while keeping it private
       </div>
     </div>
-     <div class="flex items-center gap-3">
+    <div class="flex items-center gap-3">
       <span class="text-xl font-bold text-fuchsia-700">5.</span>
       <div>
         <strong>Compute:</strong> Authorized users can compute on your data with the authorized iApps
