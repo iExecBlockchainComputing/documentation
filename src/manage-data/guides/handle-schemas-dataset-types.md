@@ -57,8 +57,12 @@ console.log('📍 Address:', protectedData.address);
 }
 ```
 
-::: info Schema Structure The schema automatically maps your data structure to
-types that iApps can understand and validate. :::
+::: info Schema Structure
+
+The schema automatically maps your data structure to types that iApps can
+understand and validate.
+
+:::
 
 ## Supported Data Types
 
@@ -73,8 +77,12 @@ The schema automatically detects these types:
 | `application/octet-stream`      | Binary data    | File contents         |
 | `image/jpeg`, `image/png`, etc. | Media files    | Images, videos        |
 
-::: tip Auto-Detection The SDK automatically detects file types based on
-content. No need to specify MIME types manually. :::
+::: tip Auto-Detection
+
+The SDK automatically detects file types based on content. No need to specify
+MIME types manually.
+
+:::
 
 ## Why Schemas Matter
 
@@ -232,9 +240,12 @@ const fileData = await dataProtectorCore.protectData({
 Once you have protected data with a schema, you'll want to process it inside an
 iApp.
 
-::: warning Type Matching **Your iApp and frontend must use the same field names
-and types.** If they don't match, you'll get runtime errors when processing the
-data. :::
+::: warning Type Matching
+
+**Your iApp and frontend must use the same field names and types.** If they
+don't match, you'll get runtime errors when processing the data.
+
+:::
 
 → **Ready to build an iApp?** Check out our detailed
 [Inputs and Outputs guide](/build-iapp/guides/inputs-and-outputs) to learn how
