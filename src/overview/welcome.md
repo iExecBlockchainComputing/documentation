@@ -1,12 +1,12 @@
 ---
-title: Why iExec
+title: About iExec
 description:
   Discover how iExec empowers developers to build privacy-first applications
 ---
 
-# 💡 Why iExec
+# 💡 About iExec
 
-## Why We Exist
+## Why iExec?
 
 In a world where data privacy is increasingly critical, developers need better
 tools to protect user information while building innovative applications. We
@@ -33,8 +33,9 @@ Ready-to-use components to protect sensitive data and computation:
 
 - **DataProtector**: Secure and control access to sensitive information
 - **iApp Generator**: Create privacy-preserving applications in minutes
-- **Confidential Computing**: Process data in secure enclaves with TEE
-  technology
+- **Decentralized Confidential Computing**: Process data securely in secure and
+  confidential environments while controlling access and monetization through
+  blockchain
 
 ### Real-World Applications
 
