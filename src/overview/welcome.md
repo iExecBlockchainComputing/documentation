@@ -1,45 +1,57 @@
 ---
-title: What We Do
-description: Discover iExec's decentralized computing platform
+title: Why iExec
+description:
+  Discover how iExec empowers developers to build privacy-first applications
 ---
 
-# 💡 What We Do
+# 💡 Why iExec
 
-iExec is a decentralized marketplace for computing resources. We enable
-developers to build applications that combine **ownership**, **privacy**, and
-**monetization**.
+## Why We Exist
 
-## Our Mission
+In a world where data privacy is increasingly critical, developers need better
+tools to protect user information while building innovative applications. We
+believe privacy should be a fundamental right, not an afterthought.
 
-We believe in a future where:
+## How We Make It Happen
 
-- Data owners maintain control over their information
-- Developers can access powerful computing resources on-demand
-- Privacy is preserved through trusted execution environments
-- Anyone can monetize their data and computing power
+iExec provides a complete toolkit that makes privacy simple and actionable:
 
-## Key Technologies
+- **Plug & Play Privacy**: Integrate confidentiality features without managing
+  complex infrastructure
+- **Programmable Data Control**: Define who can access data, when, and how - all
+  through simple tools
+- **Native Interoperability**: Build once, deploy anywhere with EVM
+  compatibility
+- **Developer-First Experience**: Focus on building your application, not
+  privacy plumbing
 
-### Protected Data
+## What We Offer
 
-Secure your data while maintaining control over who can access and use it.
+### Privacy Tools
 
-### iApps (iExec Applications)
+Ready-to-use components to protect sensitive data and computation:
 
-Decentralized applications that run on the iExec network, ensuring privacy and
-verifiability.
+- **DataProtector**: Secure and control access to sensitive information
+- **iApp Generator**: Create privacy-preserving applications in minutes
+- **Confidential Computing**: Process data in secure enclaves with TEE
+  technology
 
-### Trusted Execution Environments (TEE)
+### Real-World Applications
 
-Computing in secure enclaves that guarantee privacy and integrity.
+Our tools power privacy-critical use cases like:
 
-## Get Started
+- Private AI model training and inference
+- Confidential DeFi operations
+- Protected healthcare data processing
+- Secure research computations
 
-Ready to build with iExec? Check out our
-[Hello World guide](/overview/helloWorld) or explore our
-[use cases](/overview/use-cases).
+## Start Building
+
+Ready to add privacy to your application? Begin with our
+[Hello World guide](/overview/helloWorld) or explore
+[real-world use cases](/overview/use-cases).
 
 ---
 
-_This documentation will help you understand and implement iExec's decentralized
-computing solutions._
+_This documentation will guide you through building privacy-first applications
+with iExec's developer tools._
