@@ -104,7 +104,7 @@ await dataProtectorSharing.addToCollection({
 
 ### **Step 2: Choose Your Distribution Model**
 
-**DataProtector Sharing offers tree distribution models:**
+**DataProtector Sharing offers three distribution models:**
 
 #### 🏠 **Time-Based Rental Model**
 
