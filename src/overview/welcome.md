@@ -77,7 +77,7 @@ Ready-to-use components to protect sensitive data and computation:
     <div class="flex items-start gap-3">
       <span class="text-xl">⚡</span>
       <div>
-        <strong>iApp Generator:</strong> Bootstrap your Privacy Apps on TEEs. 
+        <strong>iApp Generator:</strong> Bootstrap your Privacy Apps on TEEs.
 Confidential Computing made easy
       </div>
     </div>
