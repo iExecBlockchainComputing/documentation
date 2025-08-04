@@ -18,7 +18,7 @@ iExec provides a complete toolkit that makes privacy simple and actionable:
 
 - **Plug & Play Privacy**: Integrate confidentiality features without managing
   complex infrastructure
-- **Programmable Data Control**: Define who can access data, when, and how - all
+- **Programmable Data Control**: Define who can access data, when, and how, all
   through simple tools
 - **Native Interoperability**: Build once, deploy anywhere with EVM
   compatibility
@@ -48,9 +48,16 @@ Our tools power privacy-critical use cases like:
 
 ## Start building
 
-Ready to add privacy to your application? Begin with our
-[Hello World guide](/overview/helloWorld) or explore
-[real-world use cases](/overview/use-cases).
+Ready to build privacy-first applications? Choose your path:
+
+🚀 **Quick Start**: Follow our [Hello World guide](/overview/helloWorld) to
+build your first confidential app in minutes
+
+🔍 **Explore Use Cases**: Browse [real-world examples](/overview/use-cases) to
+see what you can build with iExec
+
+Join our [Discord community](https://discord.gg/9h25DQFSCU) to connect with
+other builders and get support along the way.
 
 ---
 
