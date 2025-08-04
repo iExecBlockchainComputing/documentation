@@ -65,7 +65,6 @@ export function getSidebar() {
           },
           {
             text: '📖 Guides',
-            link: '/manage-data/guides',
             items: [
               {
                 text: 'Create and Share Access to Protected Data',
