@@ -18,7 +18,7 @@ tough challenge: how to build innovative applications without compromising
 sensitive user data.
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">iExec solves this by providing a <span class="text-fuchsia-700 font-semibold">privacy-first toolkit</span> that makes it simple to protect, manage, and compute data securely, even in untrusted environments. We believe privacy should be a <span class="text-fuchsia-700 font-semibold">built-in right</span>, not an afterthought.</p>
+  <p class="!m-0">iExec solves this by providing a <span class="text-fuchsia-700 font-semibold">privacy-first toolkit</span> that makes it simple to protect, manage, and compute data securely, even in untrusted environments. We believe privacy should be a <span class="text-fuchsia-700 font-semibold">built-in right</span>, not an afterthought.</p>
 </div>
 
 ## 🛠️ How we make it happen
