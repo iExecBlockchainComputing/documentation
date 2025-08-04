@@ -1,11 +1,11 @@
 ---
-title: AI-Powered Development with iExec
+title: Develop with AI
 description:
   Learn how to leverage AI tools like Vibe Coding and Context7 to build
   privacy-first applications with iExec
 ---
 
-# 🤖 AI-Powered Development with iExec
+# 🤖 Develop with AI
 
 Building privacy-first applications with iExec can be accelerated using
 AI-powered development tools. This guide covers how to effectively use AI

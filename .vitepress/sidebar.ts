@@ -39,8 +39,8 @@ export function getSidebar() {
             link: '/overview/use-cases',
           },
           {
-            text: '🤖 Use the docs in your AI',
-            link: '/overview/ai-integration',
+            text: '🤖 Develop with AI',
+            link: '/overview/develop-with-ai',
           },
         ],
       },
