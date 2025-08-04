@@ -8,7 +8,7 @@ description:
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 border-none!">Welcome to iExec</h2>
-  <p>Your complete toolkit for building privacy-first applications that protect sensitive and use sensitive data</p>
+  <p>Your complete toolkit for building privacy-first Web3 applications that protect and use sensitive data</p>
 </div>
 
 ## 🤔 Why iExec?
@@ -63,6 +63,12 @@ Ready-to-use components to protect sensitive data and computation:
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-4">
     <div class="flex items-start gap-3">
+      <span class="text-xl">🛡️</span>
+      <div>
+        <strong>Decentralized Confidential Computing:</strong> Process data securely in secure and confidential environments while controlling access and monetization through blockchain
+      </div>
+    </div>
+    <div class="flex items-start gap-3">
       <span class="text-xl">🔒</span>
       <div>
         <strong>DataProtector:</strong> Secure and control access to sensitive information
@@ -71,13 +77,8 @@ Ready-to-use components to protect sensitive data and computation:
     <div class="flex items-start gap-3">
       <span class="text-xl">⚡</span>
       <div>
-        <strong>iApp Generator:</strong> Create privacy-preserving applications in minutes
-      </div>
-    </div>
-    <div class="flex items-start gap-3">
-      <span class="text-xl">🛡️</span>
-      <div>
-        <strong>Decentralized Confidential Computing:</strong> Process data securely in secure and confidential environments while controlling access and monetization through blockchain
+        <strong>iApp Generator:</strong> Bootstrap your Privacy Apps on TEEs. 
+Confidential Computing made easy
       </div>
     </div>
   </div>
@@ -153,7 +154,7 @@ Ready-to-use components to protect sensitive data and computation:
 </div>
 
 <div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-  <p class="m-0!">In the next chapters, we'll guide you through our <span class="text-green-700 font-semibold">Hello World journey</span> - a 30 minutes start that will teach you everything about iExec, from <span class="text-green-700 font-semibold">protecting sensitive data</span> to <span class="text-green-700 font-semibold">building and deploying confidential apps</span>.</p>
+  <p class="m-0!">In the next chapters, we'll guide you through our <span class="text-green-700 font-semibold">Hello World journey</span>, a 30 minutes start that will teach you everything about iExec, from <span class="text-green-700 font-semibold">protecting sensitive data</span> to <span class="text-green-700 font-semibold">building and deploying confidential apps</span>.</p>
 </div>
 
 ## 🚀 Start building
