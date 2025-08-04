@@ -12,7 +12,7 @@ In a world where data privacy is increasingly critical, developers need better
 tools to protect user information while building innovative applications. We
 believe privacy should be a fundamental right, not an afterthought.
 
-## How We Make It Happen
+## how we make it happen
 
 iExec provides a complete toolkit that makes privacy simple and actionable:
 
@@ -25,9 +25,9 @@ iExec provides a complete toolkit that makes privacy simple and actionable:
 - **Developer-First Experience**: Focus on building your application, not
   privacy plumbing
 
-## What We Offer
+## What we offer
 
-### Privacy Tools
+### Privacy tools
 
 Ready-to-use components to protect sensitive data and computation:
 
@@ -37,7 +37,7 @@ Ready-to-use components to protect sensitive data and computation:
   confidential environments while controlling access and monetization through
   blockchain
 
-### Real-World Applications
+### Real-world applications
 
 Our tools power privacy-critical use cases like:
 
@@ -46,7 +46,7 @@ Our tools power privacy-critical use cases like:
 - Protected healthcare data processing
 - Secure research computations
 
-## Start Building
+## Start building
 
 Ready to add privacy to your application? Begin with our
 [Hello World guide](/overview/helloWorld) or explore
