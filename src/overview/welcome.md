@@ -9,8 +9,9 @@ description:
 ## 🤔 Why iExec?
 
 In a world where data privacy is increasingly critical, developers need better
-tools to protect user information while building innovative applications. We
-believe privacy should be a fundamental right, not an afterthought.
+tools to protect and use user information while building innovative
+applications. We believe privacy should be a fundamental right, not an
+afterthought.
 
 ## 🛠️ how we make it happen
 
@@ -25,7 +26,7 @@ iExec provides a complete toolkit that makes privacy simple and actionable:
 - **Developer-First Experience**: Focus on building your application, not
   privacy plumbing
 
-## 🎁 What we offer
+## 🔧 What we offer
 
 ### Privacy tools
 
