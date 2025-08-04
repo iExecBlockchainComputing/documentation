@@ -16,7 +16,7 @@ iExec offers two fundamental approaches for monetizing your data:
 - **DataProtector Sharing**: **Time-based access** with period payments - users
   pay for unlimited access during specific time periods
 
-## Signed Orders (DataProtector Core)
+## 📝 Signed Orders (DataProtector Core)
 
 **How it works**: You create and publish signed orders that specify the exact
 conditions for accessing your protected data. Each order defines:
@@ -52,7 +52,7 @@ console.log('Signed order created:', grantedAccess);
 - Simple setup with specific partners
 - Exact counting of data usage
 
-## Time-Based Access Implementation (DataProtector Sharing)
+## 📅 Time-Based Access Implementation (DataProtector Sharing)
 
 **How it works**: Instead of counting individual uses, DataProtector Sharing
 provides **time-based access periods**. Users purchase access for specific
@@ -106,7 +106,7 @@ await dataProtectorSharing.addToCollection({
 
 **DataProtector Sharing offers three distribution models:**
 
-#### 🏠 **Time-Based Rental Model**
+#### **Time-Based Rental Model**
 
 Users pay once for **unlimited access during a specific time period** (not per
 use). For a specific protectedData of the created collection :
@@ -142,7 +142,7 @@ const rental = await dataProtectorSharing.rentProtectedData({
 - Content that loses value over time
 - Users who need to run multiple analyses during a period
 
-#### 📅 **Time-Based Subscription Model**
+#### **Time-Based Subscription Model**
 
 Users pay for **recurring time-based access** to a bundle of data. Unlimited
 usage during each subscription period.
@@ -191,7 +191,7 @@ const subscription = await dataProtectorSharing.subscribeToCollection({
 - Research datasets that expand over time
 - SaaS-style data access
 
-#### 💸 **Sale Model**
+#### **Sale Model**
 
 Transfer permanent ownership of your data to the buyer.
 
