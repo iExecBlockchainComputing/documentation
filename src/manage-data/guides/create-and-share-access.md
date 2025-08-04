@@ -10,7 +10,7 @@ description:
 applications?**
 
 DataProtector lets you encrypt data and control access through orders -
-specifying who can use it, how many times, and at what price.Protected data is
+specifying who can use it, how many times, and at what price. Protected data is
 only accessible in secure enclaves (TEEs) by authorized users and iApps.
 
 ## Installation
