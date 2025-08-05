@@ -148,7 +148,7 @@ Fork this repository and ensure you're working on the `main` branch:
 
 ## TODO
 
-- Add an audit section
+- Add an audit section for smart contracts
 - Add Arbitrum support
 - On arbitrum hide : Oracle Factory ? , DataProtector Sharing ??
 - Adapt hardcoded address to feat with new contracts deployed on arbitrum
