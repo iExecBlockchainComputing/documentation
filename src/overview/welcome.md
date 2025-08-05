@@ -18,7 +18,7 @@ tough challenge: how to build innovative applications without compromising
 sensitive user data.
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="!m-0">iExec solves this by providing a <span class="text-fuchsia-700 font-semibold">privacy-first toolkit</span> that makes it simple to protect, manage, and compute data securely, even in untrusted environments. We believe privacy should be a <span class="text-fuchsia-700 font-semibold">built-in right</span>, not an afterthought.</p>
+  <p class="!m-0">iExec solves this by providing a <span class="text-fuchsia-700 font-semibold">privacy-first toolkit</span> that makes it simple to protect, manage, and compute data securely, even in untrusted environments. We believe privacy should be a <span class="text-fuchsia-700 font-semibold">built-in feature</span>, not an afterthought.</p>
 </div>
 
 ## 🛠️ How we make it happen
@@ -33,22 +33,22 @@ iExec provides a complete toolkit that makes privacy simple and actionable:
         <strong>Plug & Play Privacy:</strong> Integrate confidentiality features without managing complex infrastructure
       </div>
     </div>
-    <div class="flex items-center gap-3">
+<div class="flex items-center gap-3">
       <span class="text-xl">🎮</span>
       <div>
-        <strong>Programmable Data Control:</strong> Define who can access data, when, and how through blockchain-powered tools
+        <strong>Governance and Ownership:</strong> Control your assets through orders, choose who can access your data, with which privacy applications, and at what price
       </div>
     </div>
     <div class="flex items-center gap-3">
       <span class="text-xl">⛓️</span>
       <div>
-        <strong>Native Interoperability:</strong> Build once and access iExec's EVM Layer partner network
+        <strong>Multi-Chain Interoperability:</strong> Deploy across multiple networks including Arbitrum and Bellecour sidechain with seamless EVM compatibility
       </div>
     </div>
     <div class="flex items-center gap-3">
-      <span class="text-xl">👨‍💻</span>
+      <span class="text-xl">�️</span>
       <div>
-        <strong>Developer-First Experience:</strong> Focus on building your application, not privacy plumbing
+        <strong>Complete Platform:</strong> Fluide experience with comprehensive toolkit, SDKs, and ready-to-use components for seamless development
       </div>
     </div>
   </div>
