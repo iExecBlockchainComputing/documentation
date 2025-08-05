@@ -97,6 +97,7 @@ Fork this repository and ensure you're working on the `main` branch:
    ```
 
 3. Start the development server:
+
    ```bash
    npm run dev
    ```
@@ -138,14 +139,24 @@ Fork this repository and ensure you're working on the `main` branch:
 > - All pull requests are reviewed by our team before being merged
 > - Feel free to ask questions in the pull request if you need clarification
 
-## 📄 License
-
-This project is part of the iExec ecosystem. Please refer to the main iExec
-repositories for licensing information.
-
 ## 🆘 Support
 
 - 📖 [Documentation](https://docs.iex.ec)
 - 💬 [Discord Community](https://discord.com/invite/pbt9m98wnU)
 - 🐛
   [Issue Tracker](https://github.com/iExecBlockchainComputing/documentation/issues)
+
+## TODO
+
+- Add Arbitrum support
+- On arbitrum hide : Oracle Factory ? , DataProtector Sharing ??
+- Adapt hardcoded address to feat with new contracts deployed on arbitrum
+- Add link to the new explorer feature Asset_Types in the guide =>
+  `handle-schemas-dataset-types`
+- Add link to remix for deploying whitelist
+- Move `manage-data/dataProtector/advanced/iApp` (Deserializer doc) in an other
+  way to be more visible (may in build-iApp section)
+- complete `use-iapp` section
+- complete `explorer` section
+- complete `build-iapp` section
+- complete `deep-dive`section
