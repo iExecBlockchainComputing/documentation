@@ -30,7 +30,7 @@ iExec provides a complete toolkit that makes privacy simple and actionable:
     <div class="flex items-center gap-3">
       <span class="text-xl">🔌</span>
       <div>
-        <strong>Plug & Play Privacy:</strong> Integrate confidentiality features without managing complex infrastructure
+        <strong>Privacy:</strong> Integrate confidentiality features without managing complex infrastructure
       </div>
     </div>
 <div class="flex items-center gap-3">
@@ -46,9 +46,9 @@ iExec provides a complete toolkit that makes privacy simple and actionable:
       </div>
     </div>
     <div class="flex items-center gap-3">
-      <span class="text-xl">�️</span>
+      <span class="text-xl">🔧</span>
       <div>
-        <strong>Complete Platform:</strong> Fluide experience with comprehensive toolkit, SDKs, and ready-to-use components for seamless development
+        <strong>Plug & Play tools:</strong> Fluide experience with comprehensive toolkit, SDKs, and ready-to-use components for seamless development
       </div>
     </div>
   </div>
