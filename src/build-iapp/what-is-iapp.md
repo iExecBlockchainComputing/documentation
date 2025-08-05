@@ -110,7 +110,7 @@ Here's why users will actually use your iApp with their private data:
 - ✅ New business models around privacy-preserving analytics
 - ✅ Competitive advantage through privacy guarantees
 
-### The Technical Reality
+### The Workflow
 
 ```
 User's Private Data → Encrypted → TEE Environment → Your iApp uses it → Actions Performed
@@ -147,27 +147,43 @@ transactions, or updates.
 
 ## ❓ Frequently Asked Questions
 
-::: details 📦 What can I build with iApps? Anything that runs in Docker! AI
-models, data processing scripts, web scrapers, image processing, financial
-calculations, etc. If it runs in a container, it can be an iApp. :::
+::: details 📦 What can I build with iApps?
 
-::: details ⚡ How fast are iApps? Initial task scheduling takes ~30 seconds
-(depending on the resources the worker download, congestion etc), then your code
-runs at normal speed depending on complexity. :::
+Anything that runs in Docker! AI models, data processing scripts, web scrapers,
+image processing, financial calculations, etc. If it runs in a container, it can
+be an iApp.
 
-::: details 🛡️ Are iApps really secure? Yes! Code runs in Intel SGX or TDX
-secure enclaves. Even the worker running your iApp can't see what's happening
-inside the enclave. :::
-
-::: details 🚀 How do I deploy my first iApp? Try our
-[Hello World](/overview/helloWorld) for a quick start, or check the
-[iApp Generator](/build_iapp/iapp-generator) section for detailed instructions.
 :::
 
-::: details 🔧 What programming languages are supported? iApps can be built in
-any language that runs in Docker (Python, JavaScript, R, Java, Go, etc.).
-However, **iApp Generator** currently supports only Python and Node.js for
-simplified development. :::
+::: details ⚡How fast are iApps?
+
+Initial task scheduling takes ~30 seconds (depending on the resources the worker
+download, congestion etc), then your code runs at normal speed depending on
+complexity.
+
+:::
+
+::: details 🛡️ Are iApps really secure?
+
+Yes! Code runs in Intel SGX or TDX secure enclaves. Even the worker running your
+iApp can't see what's happening inside the enclave.
+
+:::
+
+::: details 🚀 How do I deploy my first iApp?
+
+Try our [Hello World](/overview/helloWorld) for a quick start, or check the
+[iApp Generator](/build_iapp/iapp-generator) section for detailed instructions.
+
+:::
+
+::: details 🔧 What programming languages are supported?
+
+iApps can be built in any language that runs in Docker (Python, JavaScript, R,
+Java, Go, etc.). However, **iApp Generator** currently supports only Python and
+Node.js for simplified development.
+
+:::
 
 ## Why This Changes Everything
 
