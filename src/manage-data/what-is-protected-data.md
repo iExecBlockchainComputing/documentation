@@ -51,7 +51,7 @@ monetize their data within the Web3 ecosystem.
     <div class="flex items-center gap-3">
       <span>•</span>
       <div>
-        <strong>Encrypted processing:</strong> Data is encrypted during computation
+        <strong>Encrypted Processing:</strong> Maintains a complete chain of trust.
       </div>
     </div>
     <div class="flex items-center gap-3">
