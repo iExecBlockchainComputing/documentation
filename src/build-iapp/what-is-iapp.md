@@ -187,24 +187,17 @@ Node.js for simplified development.
 
 ## Why This Changes Everything
 
-### ✅ **True Privacy**
+✅ **True Privacy**: Users never expose their raw data. Your app processes it
+privately inside secure enclaves.
 
-Users never expose their raw data. Your app processes it privately inside secure
-enclaves.
+✅ **Verifiable Execution**: Cryptographic proof that your code ran exactly as
+intended. No black box execution.
 
-### ✅ **Verifiable Execution**
+✅ **Decentralized Infrastructure**: No single point of failure. Your app runs
+across a distributed network of workers.
 
-Cryptographic proof that your code ran exactly as intended. No black box
-execution.
-
-### ✅ **Decentralized Infrastructure**
-
-No single point of failure. Your app runs across a distributed network of
-workers.
-
-### ✅ **Zero Trust Architecture**
-
-Users don't need to trust you with their data. The protocol guarantees privacy.
+✅ **Zero Trust Architecture**: Users don't need to trust you with their data.
+The protocol guarantees privacy.
 
 ## Start Building
 
