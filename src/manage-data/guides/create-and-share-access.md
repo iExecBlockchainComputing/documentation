@@ -9,12 +9,9 @@ description:
 **Want to keep your data private while still using it in confidential
 applications?**
 
-Here's how DataProtector works: first you encrypt your data, then manage your
-orders to control exactly who can access it, how many times, and at what price.
-
-Once data is protected, it's only accessible inside secure enclaves (TEEs) by
-the specific people and iApps you authorize through the orders you create. No
-exceptions.
+DataProtector lets you encrypt data and control access through orders -
+specifying who can use it, how many times, and at what price. Protected data is
+only accessible in secure enclaves (TEEs) by authorized users and iApps.
 
 ## Installation
 
@@ -65,15 +62,14 @@ console.log('Protected data address:', protectedData.address);
 
 ### What You Can Protect
 
-**Data**: Any JSON object with custom keys. Think user profiles, API
-credentials, datasets, model parameters - anything you want to keep private but
-still use in computations.
+**Data**: Any kind of data you want to keep private and make available for
+computations by authorized users and iApps.
 
-**Supported types**: Strings, numbers, booleans, nested objects, files (convert
-to ArrayBuffer first), and arrays (convert to Record format).
+**Supported types**: Common data types like text, numbers, true/false values,
+and files. See the [full list here](/manage-data/dataProtector/types).
 
-**Limits**: File size depends on your storage choice (IPFS or Arweave). For
-large datasets, consider using another IPFS node.
+**Storage**: Store your data on IPFS or Arweave. For larger files, you can use
+your own IPFS node.
 
 ::: tip
 
@@ -106,12 +102,15 @@ const protectedData = await dataProtectorCore.protectData({
 
 ## Grant Access
 
-**Here's the key:** The protocol blocks all access to your protected data by
-default. You must explicitly grant permission for each app and user combination.
-By doing this, you publish signed orders that ensure your protected data stays
-private while controlling access to it.
+By default, your protected data is private. To let others use it, you need to
+grant access to both:
 
-Once you own protected data, here's how to share access:
+- An authorized user (who can trigger the processing)
+- An authorized iApp (the application that will process the data in the private
+  environment)
+
+This ensures that only specific users can use specific applications to process
+your data. Here's how to set it up:
 
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
