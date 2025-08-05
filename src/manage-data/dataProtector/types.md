@@ -84,7 +84,7 @@ Types in DataProtector.
 
 ## ❌ RevokedAccess
 
-### access: <span class="text-yellow">[`GrantedAccess`](./types.md#grantedaccess)</span>
+### access: <span class="text-yellow">[`GrantedAccess`](#🔑-grantedaccess)</span>
 
 - The granted access that was revoked.
 
