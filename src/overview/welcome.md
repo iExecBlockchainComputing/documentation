@@ -42,7 +42,7 @@ iExec provides a complete toolkit that makes privacy simple and actionable:
     <div class="flex items-center gap-3">
       <span class="text-xl">⛓️</span>
       <div>
-        <strong>Multi-Chain Interoperability:</strong> Deploy across multiple networks including Arbitrum and Bellecour sidechain with seamless EVM compatibility
+        <strong>Multi-Chain Interoperability:</strong> Build privacy-first applications on supported networks
       </div>
     </div>
     <div class="flex items-center gap-3">
@@ -56,18 +56,10 @@ iExec provides a complete toolkit that makes privacy simple and actionable:
 
 ## 🔧 What we provide
 
-### Privacy tools
-
 Ready-to-use components to protect sensitive data and computation:
 
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-4">
-    <div class="flex items-start gap-3">
-      <span class="text-xl">🛡️</span>
-      <div>
-        <strong>Decentralized Confidential Computing:</strong> Process data securely in secure and confidential environments while controlling access and monetization through blockchain
-      </div>
-    </div>
     <div class="flex items-start gap-3">
       <span class="text-xl">🔒</span>
       <div>
@@ -79,6 +71,12 @@ Ready-to-use components to protect sensitive data and computation:
       <div>
         <strong>iApp Generator:</strong> Bootstrap your Privacy Apps on TEEs.
 Confidential Computing made easy
+      </div>
+    </div>
+    <div class="flex items-start gap-3">
+      <span class="text-xl">🛡️</span>
+      <div>
+        <strong>Decentralized Confidential Computing:</strong> Process data securely in secure and confidential environments while controlling access and monetization through blockchain
       </div>
     </div>
   </div>
