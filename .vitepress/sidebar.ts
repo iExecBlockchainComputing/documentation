@@ -45,12 +45,23 @@ export function getSidebar() {
         ],
       },
       {
-        text: 'EXPLORERS',
+        text: 'TOOLING & EXPLORERS',
         items: [
-          { text: 'iExec Explorer', link: '/overview/iexec-explorer' },
           {
-            text: 'TheGraph Explorer',
-            link: '/overview/the-graph-explorer',
+            text: 'iExec Explorer',
+            link: '/overview/tooling-and-explorers/iexec-explorer',
+          },
+          {
+            text: 'Builder Dashboard',
+            link: '/overview/tooling-and-explorers/builder-dashboard',
+          },
+          {
+            text: 'Subgraph Explorer',
+            link: '/overview/tooling-and-explorers/subgraph-explorer',
+          },
+          {
+            text: 'Blockchain Explorer',
+            link: '/overview/tooling-and-explorers/blockchain-explorer',
           },
         ],
       },
