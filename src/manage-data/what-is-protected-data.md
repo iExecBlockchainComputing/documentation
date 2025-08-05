@@ -194,15 +194,15 @@ monetize their data within the Web3 ecosystem.
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-4">
     <div class="flex items-start gap-3">
-      <span class="text-xl">🚀</span>
-      <div>
-        <strong>Getting Started:</strong> <a href="/manage-data/dataProtector/getting-started" class="text-fuchsia-700 hover:text-fuchsia-600">DataProtector Quick Start Guide</a>
-      </div>
-    </div>
-    <div class="flex items-start gap-3">
       <span class="text-xl">📚</span>
       <div>
         <strong>Learn More:</strong> <a href="/manage-data/guides" class="text-fuchsia-700 hover:text-fuchsia-600">Complete DataProtector Documentation</a>
+      </div>
+    </div>
+    <div class="flex items-start gap-3">
+      <span class="text-xl">🚀</span>
+      <div>
+        <strong>Getting Started:</strong> <a href="/manage-data/dataProtector/getting-started" class="text-fuchsia-700 hover:text-fuchsia-600">DataProtector Quick Start Guide</a>
       </div>
     </div>
   </div>
