@@ -36,12 +36,16 @@ to the person running the app.
 
 ## iApp Generator: Your Development Tool
 
-Creating iApps used to be complex. **iApp Generator** simplifies this by:
+Generate and deploy iApps that will give you access to TEEs in just a few
+minutes.
 
-- **Simulating TEE environment locally** - Test your code in conditions close to
-  real execution
-- **Handling deployment** - Package and deploy with simple commands
-- **Managing dependencies** - Docker containers, environment setup, etc.
+- **Access to TEEs easily** - No need to dive into low-level requirements, build
+  iApps that connect to TEE in minutes
+- **Check and deploy iApps quickly** - iApp Generator checks that your iApp
+  complies with the iExec Framework and streamlines its deployment
+- **Select your project mode & language** - Select between basic or advanced
+  setup depending on your iExec level experience. You also have the choice
+  between Python or JavaScript
 
 ```bash
 # Create your iApp (Python or Node.js supported)
