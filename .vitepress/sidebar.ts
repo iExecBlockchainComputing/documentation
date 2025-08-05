@@ -563,21 +563,21 @@ export function getSidebar() {
         ],
       },
     ],
-    '/core-concept/': [
+    '/protocol/': [
       {
-        text: 'CORE CONCEPTS',
+        text: 'PROTOCOL',
         items: [
           {
             text: '🔧&nbsp;&nbsp;iExec SDK',
-            link: '/core-concept/sdk',
+            link: '/protocol/sdk',
           },
           {
             text: '⚙️&nbsp;&nbsp;Workers & Workerpools',
-            link: '/core-concept/workers',
+            link: '/protocol/workers',
           },
           {
             text: '📖&nbsp;&nbsp;Glossary',
-            link: '/core-concept/glossary',
+            link: '/protocol/glossary',
           },
         ],
       },

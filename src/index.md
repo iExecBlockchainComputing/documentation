@@ -45,9 +45,9 @@ features:
       privacy
     link: /manage-data/guides/monetize-protected-data
   - icon: 🧠
-    title: Core Concepts
+    title: Protocols
     details:
       Deep dive into the core concepts of the protocol and understand how iExec
       enables privacy, governance, and monetization
-    link: /core-concept/sdk
+    link: /protocol/sdk
 ---
