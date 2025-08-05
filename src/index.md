@@ -43,7 +43,7 @@ features:
     details:
       Create revenue streams from your data while maintaining full control and
       privacy
-    link: /manage-data/guides/monetize-protected-data
+    link: /use-iapp/how-to-pay/how-to-pay-for-web3mail
   - icon: 🧠
     title: Protocols
     details:
