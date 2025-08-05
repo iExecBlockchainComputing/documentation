@@ -196,7 +196,7 @@ monetize their data within the Web3 ecosystem.
     <div class="flex items-start gap-3">
       <span class="text-xl">📚</span>
       <div>
-        <strong>Learn More:</strong> <a href="/manage-data/guides" class="text-fuchsia-700 hover:text-fuchsia-600">Complete DataProtector Documentation</a>
+        <strong>Learn More:</strong> <a href="/manage-data/guides/create-and-share-access" class="text-fuchsia-700 hover:text-fuchsia-600">Complete DataProtector Documentation</a>
       </div>
     </div>
     <div class="flex items-start gap-3">
