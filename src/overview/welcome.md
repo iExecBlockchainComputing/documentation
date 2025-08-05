@@ -182,10 +182,6 @@ Ready to build privacy-first applications? Choose your path:
   </div>
 </div>
 
-<div class="bg-gradient-to-r from-blue-400/10 to-blue-400/5 rounded-[6px] p-6 border-l-4 border-blue-600 mb-6">
-  <p class="!m-0">This documentation will guide you through building <span class="text-blue-700 font-semibold">privacy-first applications</span> with iExec's developer tools, making complex privacy features simple and accessible.</p>
-</div>
-
 ---
 
 _Ready to transform how you handle sensitive data? Let's build something amazing
