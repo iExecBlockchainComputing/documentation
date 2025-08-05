@@ -25,7 +25,7 @@ features:
     details:
       Secure your data with advanced encryption and control access while
       maintaining privacy using DataProtector
-    link: /manage-data/dataProtector/what-is-protected-data
+    link: /manage-data/what-is-protected-data
   - icon: 🤖
     title: Build iApps
     details:
@@ -43,7 +43,7 @@ features:
     details:
       Create revenue streams from your data while maintaining full control and
       privacy
-    link: /manage-data/guides/manage-data-monetization
+    link: /manage-data/guides/monetize-protected-data
   - icon: 🧠
     title: Core Concepts
     details:

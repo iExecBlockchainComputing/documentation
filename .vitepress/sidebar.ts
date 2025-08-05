@@ -65,7 +65,6 @@ export function getSidebar() {
           },
           {
             text: '📖 Guides',
-            link: '/manage-data/guides',
             items: [
               {
                 text: 'Create and Share Access to Protected Data',
@@ -76,23 +75,18 @@ export function getSidebar() {
                 link: '/manage-data/guides/handle-schemas-dataset-types',
               },
               {
-                text: 'Manage Data Monetization',
-                link: '/manage-data/guides/manage-data-monetization',
+                text: 'Monetize Protected Data',
+                link: '/manage-data/guides/monetize-protected-data',
               },
             ],
           },
           {
             text: '🔐 DataProtector',
             link: '/manage-data/dataProtector',
-            collapsed: true,
             items: [
               {
                 text: 'Getting Started',
                 link: '/manage-data/dataProtector/getting-started',
-              },
-              {
-                text: 'Guides',
-                link: '/manage-data/dataProtector/guides',
               },
               {
                 text: 'DataProtector Core',
