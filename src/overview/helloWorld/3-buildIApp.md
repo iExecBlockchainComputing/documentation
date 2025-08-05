@@ -8,7 +8,7 @@ import InfoIcon from '../../components/InfoIcon.vue'
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 border-none!">Time to build!</h2>
-  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="../../tools/iapp-generator" target="_blank">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApps with just a few commands.</p>
+  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="../../build-iapp/iapp-generator" target="_blank">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApps with just a few commands.</p>
 </div>
 
 If you wanna explore and deep dive in the CLI. You can check the
@@ -56,32 +56,48 @@ Here are some popular use cases:
 Send privacy-preserving emails to registered Ethereum account holders without
 knowing or storing their email addresses.
 [Github](https://github.com/iExecBlockchainComputing/web3mail-sdk/tree/main/dapp)
-| [Documentation](../../tools/web3mail.md)
+| [Documentation](../../use-iapp/web3mail)
 
 ### 💬 Web3 Telegram
 
 Send privacy-preserving Telegram messages without knowing or storing their
 Telegram handles.
 [Github](https://github.com/iExecBlockchainComputing/web3telegram-sdk/tree/main/dapp)
-| [Documentation](../../tools/web3telegram.md)
+| [Documentation](../../use-iapp/web3telegram)
 
 ### 🌐 Content Delivery
 
 Transfer, sell or rent protected content to authorized users.
 [Github](https://github.com/iExecBlockchainComputing/dataprotector-sdk/tree/main/packages/protected-data-delivery-dapp)
-| [Documentation](../../tools/dataProtector/dataProtectorSharing)
+| [Documentation](../../manage-data/dataProtector/dataProtectorSharing)
 
 <div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">These are just a few examples, the possibilities are endless. Want to explore iApp Generator? Check out our <a href="../../tools/iapp-generator" target="_blank">documentation</a> and see what you can build!</p>
+  <p class="m-0!">These are just a few examples, the possibilities are endless. Want to explore iApp Generator? Check out our <a href="../../build-iapp/iapp-generator" target="_blank">documentation</a> and see what you can build!</p>
 </div>
 
 ## 💾 Installation (win / mac / linux)
 
 First, you need to install the `iapp` package. Open your terminal and run:
 
-```sh
+::: code-group
+
+```sh [npm]
 npm i -g @iexec/iapp
 ```
+
+```sh [yarn]
+yarn global add @iexec/iapp
+```
+
+```sh [pnpm]
+pnpm add -g @iexec/iapp
+```
+
+```sh [bun]
+bun add -g @iexec/iapp
+```
+
+:::
 
 You can check if the installation was successful by running:
 

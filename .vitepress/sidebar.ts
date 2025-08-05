@@ -411,7 +411,6 @@ export function getSidebar() {
           { text: '🚀 Getting Started', link: '/use-iapp/getting-started' },
           {
             text: '📖 Guides',
-            link: '/use-iapp/guides',
             items: [
               {
                 text: 'Different ways to execute an iApp',
@@ -423,11 +422,11 @@ export function getSidebar() {
               },
               {
                 text: 'Use iApp with Protected Data',
-                link: '/use-iapp/use-iapp-with-protected-data',
+                link: '/use-iapp/guides/use-iapp-with-protected-data',
               },
               {
                 text: 'Find iApps to Use',
-                link: '/use-iapp/find-iapps',
+                link: '/use-iapp/guides/find-iapps',
               },
               {
                 text: 'How to pay the executions',
@@ -437,23 +436,22 @@ export function getSidebar() {
           },
           {
             text: '💰 How to Pay',
-            link: '/use-iapp/payment',
             items: [
               {
                 text: 'How to Pay for Web3mail',
-                link: '/overview/how-to-pay-for-web3mail',
+                link: '/use-iapp/how-to-pay/how-to-pay-for-web3mail',
               },
               {
                 text: 'How to Pay for Web3telegram',
-                link: '/use-iapp/web3telegram/how-to-pay-for-web3telegram',
+                link: '/use-iapp/how-to-pay/how-to-pay-for-web3telegram',
               },
               {
                 text: 'Pricing Considerations',
-                link: '/overview/pricing-considerations',
+                link: '/use-iapp/how-to-pay/pricing-considerations',
               },
               {
-                text: 'Voucher Authorization Guide',
-                link: '/use-iapp/voucher-guide',
+                text: 'Voucher',
+                link: '/use-iapp/how-to-pay/voucher',
               },
             ],
           },
@@ -563,21 +561,21 @@ export function getSidebar() {
         ],
       },
     ],
-    '/core-concept/': [
+    '/protocol/': [
       {
-        text: 'CORE CONCEPTS',
+        text: 'PROTOCOL',
         items: [
           {
             text: '🔧&nbsp;&nbsp;iExec SDK',
-            link: '/core-concept/sdk',
+            link: '/protocol/sdk',
           },
           {
             text: '⚙️&nbsp;&nbsp;Workers & Workerpools',
-            link: '/core-concept/workers',
+            link: '/protocol/workers',
           },
           {
             text: '📖&nbsp;&nbsp;Glossary',
-            link: '/core-concept/glossary',
+            link: '/protocol/glossary',
           },
         ],
       },

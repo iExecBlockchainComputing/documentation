@@ -88,7 +88,7 @@ export default defineConfig({
       { text: 'Protect Data', link: '/manage-data/what-is-protected-data' },
       { text: 'Build iApp', link: '/build-iapp/what-is-iapp' },
       { text: 'Use iApp', link: '/use-iapp/introduction' },
-      { text: 'Core Concept', link: '/core-concept/glossary' },
+      { text: 'Protocol', link: '/protocol/sdk' },
     ],
     outline: {
       level: [2, 4],

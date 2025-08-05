@@ -118,9 +118,25 @@ simple through our developer tools.
     <p><strong>1. Install the Developer Tool</strong></p>
     <p>Run the install command:</p>
 
-```sh
+::: code-group
+
+```sh [npm]
 npm install @iexec/dataprotector
 ```
+
+```sh [yarn]
+yarn add @iexec/dataprotector
+```
+
+```sh [pnpm]
+pnpm add @iexec/dataprotector
+```
+
+```sh [bun]
+bun add @iexec/dataprotector
+```
+
+:::
 
   </div>
   <div>
