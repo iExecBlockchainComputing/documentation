@@ -63,7 +63,7 @@ monetize their data within the Web3 ecosystem.
     <div class="flex items-center gap-3">
       <span>•</span>
       <div>
-        <strong>Zero-knowledge:</strong> Compute on data without revealing it
+        <strong>Secret storage:</strong> Secrets stored in a TEE database.
       </div>
     </div>
   </div>
