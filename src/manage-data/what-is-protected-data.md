@@ -10,12 +10,12 @@ tool**. This end-to-end encryption solution enables users to protect, manage and
 monetize their data within the Web3 ecosystem.
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">Unlike standard datasets, Protected Data exposes only its <span class="text-fuchsia-700 font-semibold">data types on-chain</span> (for example, indicating that it contains an email address or a photo). This allows anyone to <span class="text-fuchsia-700 font-semibold">identify entries with specific types</span>.</p>
+  <p class="m-0!">Unlike standard datasets, Protected Data exposes its <span class="text-fuchsia-700 font-semibold">data types on-chain</span> (for example, indicating that it contains an email address or a photo). This allows anyone to <span class="text-fuchsia-700 font-semibold">identify entries with the corresponding types</span>.</p>
 </div>
 
 ## Key Concepts
 
-### 👑 Data Ownership
+### 👑 Data Governance
 
 <div class="mb-4"></div>
 
