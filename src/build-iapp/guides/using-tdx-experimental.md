@@ -62,6 +62,15 @@ iapp deploy
 iapp run <app-address>
 ```
 
+:::warning Environment Variable Declaration
+
+The syntax for setting environment variables differs between operating systems:
+
+- **Mac/Linux**: `export EXPERIMENTAL_TDX_APP=true`
+- **Windows**: `set EXPERIMENTAL_TDX_APP=true`
+
+:::
+
 ### Per-Command Method
 
 **Enable TDX for specific commands**:
