@@ -11,51 +11,45 @@ The **iExec Explorer** is your real-time window into the iExec confidential
 decentralized computing protocol. Track deals, monitor task execution, and
 explore apps and protectedData—all in one powerful dashboard.
 
-<div style="text-align: center; margin: 2rem 0;">
-  <a href="https://explorer.iex.ec/" target="_blank" rel="noreferrer">
-    <img src="/assets/tooling-&-explorers/iexec-explorer/explorer-global.png" alt="iExec Explorer" style="width: 100%; max-width: 800px; border-radius: 8px; border: 1px solid var(--vp-c-border); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);" />
-  </a>
-  <p style="margin-top: 1rem; font-weight: 500;">
-    <a href="https://explorer.iex.ec/" target="_blank" rel="noreferrer" style="text-decoration: none; color: var(--vp-c-brand-1);">
-      🔗 Explore the iExec Protocol
-    </a>
-  </p>
-</div>
+<ImageViewer
+  image-url="/assets/tooling-&-explorers/iexec-explorer/explorer-global.png"
+  image-alt="iExec Explorer"
+  link-url="https://explorer.iex.ec/"
+  caption="🔗 Explore the iExec Protocol"
+  link-icon="mdi:open-in-new"
+/>
 
 ## 🎯 What You Can Explore
 
-<div class="feature-grid">
-  <a href="#deals-tasks" class="feature-card-link">
-    <div class="feature-card">
-      <div class="feature-icon">💼</div>
-      <h3>Deals & Tasks</h3>
-      <p>Monitor deal orchestration and task execution with their asset relationships (app + dataset + workerpool) from initialization to result download, including pricing</p>
-    </div>
-  </a>
+<div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6 my-8">
+  <FeatureCard
+    icon="💼"
+    title="Deals & Tasks"
+    description="Monitor deal orchestration and task execution with their asset relationships (app + dataset + workerpool) from initialization to result download, including pricing"
+    link-url="#deals-tasks"
+  />
   
-  <a href="#iapps-listing" class="feature-card-link">
-    <div class="feature-card">
-      <div class="feature-icon">📱</div>
-      <h3>iApps Listing</h3>
-      <p>Explore the catalog of trusted execution environment (TEE) applications, including their use cases and ownership details</p>
-    </div>
-  </a>
+  <FeatureCard
+    icon="📱"
+    title="iApps Listing"
+    description="Explore the catalog of trusted execution environment (TEE) applications, including their use cases and ownership details"
+    link-url="#iapps-listing"
+  />
   
-  <a href="#protected-data-listing" class="feature-card-link">
-    <div class="feature-card">
-      <div class="feature-icon">🗄️</div>
-      <h3>Protected Data Listing</h3>
-      <p>Discover encrypted datasets with their asset types, including usage and ownership details</p>
-    </div>
-  </a>
+  <FeatureCard
+    icon="🗄️"
+    title="Protected Data Listing"
+    description="Discover encrypted datasets with their asset types, including usage and ownership details"
+    link-url="#protected-data-listing"
+  />
 
-  <a href="#workerpools" class="feature-card-link">
-    <div class="feature-card">
-      <div class="feature-icon">⚡</div>
-      <h3>Workerpools</h3>
-      <p>Explore the decentralized computing infrastructure, including usage and ownership details</p>
-    </div>
-  </a>
+<FeatureCard
+    icon="⚡"
+    title="Workerpools"
+    description="Explore the decentralized computing infrastructure, including usage and ownership details"
+    link-url="#workerpools"
+  />
+
 </div>
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
@@ -72,16 +66,13 @@ explore apps and protectedData—all in one powerful dashboard.
 
 ## 💼 Deals & Tasks {#deals-tasks}
 
-<div style="text-align: center; margin: 2rem 0;">
-  <a href="https://explorer.iex.ec/bellecour/deals" target="_blank" rel="noreferrer">
-    <img src="/assets/tooling-&-explorers/iexec-explorer/deal-view.png" alt="Deal View" style="width: 100%; border-radius: 8px; border: 1px solid var(--vp-c-border); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);" />
-  </a>
-  <p style="margin-top: 0.5rem; font-weight: 500;">
-    <a href="https://explorer.iex.ec/bellecour/deals" target="_blank" rel="noreferrer" style="text-decoration: none; color: var(--vp-c-brand-1);">
-      🔗 Explore Deals on iExec Explorer
-    </a>
-  </p>
-</div>
+<ImageViewer
+  image-url="/assets/tooling-&-explorers/iexec-explorer/deal-view.png"
+  image-alt="Deal View"
+  link-url="https://explorer.iex.ec/bellecour/deals"
+  caption="🔗 Explore Deals on iExec Explorer"
+  link-icon="mdi:open-in-new"
+/>
 
 > **💡 Understanding Deals**: A deal is a coordinated set of stakeholders that
 > brings together all the necessary components (app, dataset, workerpool) to
@@ -102,16 +93,13 @@ explore apps and protectedData—all in one powerful dashboard.
 
 ### Tasks Overview
 
-<div style="text-align: center; margin: 2rem 0;">
-  <a href="https://explorer.iex.ec/bellecour/tasks" target="_blank" rel="noreferrer">
-    <img src="/assets/tooling-&-explorers/iexec-explorer/task-view.png" alt="Task View" style="width: 100%; border-radius: 8px; border: 1px solid var(--vp-c-border); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);" />
-  </a>
-  <p style="margin-top: 0.5rem; font-weight: 500;">
-    <a href="https://explorer.iex.ec/bellecour/tasks" target="_blank" rel="noreferrer" style="text-decoration: none; color: var(--vp-c-brand-1);">
-      🔗 Browse All Tasks
-    </a>
-  </p>
-</div>
+<ImageViewer
+  image-url="/assets/tooling-&-explorers/iexec-explorer/task-view.png"
+  image-alt="Task View"
+  link-url="https://explorer.iex.ec/bellecour/tasks"
+  caption="🔗 Browse All Tasks"
+  link-icon="mdi:open-in-new"
+/>
 
 Browse and analyze all tasks across the iExec network:
 
@@ -122,30 +110,25 @@ Browse and analyze all tasks across the iExec network:
 
 ### Task Execution Monitoring
 
-<div class="image-grid">
-  <div class="image-container">
-    <a href="https://explorer.iex.ec/bellecour/tasks" target="_blank" rel="noreferrer">
-      <img src="/assets/tooling-&-explorers/iexec-explorer/task-details-started.png" alt="Task Started" />
-    </a>
-    <p>Task Initialization & Progress</p>
-    <p style="margin-top: 0.5rem; font-weight: 500;">
-      <a href="https://explorer.iex.ec/bellecour/tasks" target="_blank" rel="noreferrer" style="text-decoration: none; color: var(--vp-c-brand-1); font-size: 0.9rem;">
-        🔗 Explore Tasks
-      </a>
-    </p>
-  </div>
-  <div class="image-container">
-    <a href="https://explorer.iex.ec/bellecour/tasks" target="_blank" rel="noreferrer">
-      <img src="/assets/tooling-&-explorers/iexec-explorer/task-details-completed.png" alt="Task Completed" />
-    </a>
-    <p>Task Completion & Results</p>
-    <p style="margin-top: 0.5rem; font-weight: 500;">
-      <a href="https://explorer.iex.ec/bellecour/tasks" target="_blank" rel="noreferrer" style="text-decoration: none; color: var(--vp-c-brand-1); font-size: 0.9rem;">
-        🔗 Explore Tasks
-      </a>
-    </p>
-  </div>
-</div>
+<ImageViewer
+    image-url="/assets/tooling-&-explorers/iexec-explorer/task-details-started.png"
+    image-alt="Task Started"
+    link-url="https://explorer.iex.ec/bellecour/tasks"
+    caption="🔗 Explore Tasks"
+    link-icon="mdi:open-in-new"
+    :centered="true"
+    max-width="700px"
+/>
+
+<ImageViewer
+    image-url="/assets/tooling-&-explorers/iexec-explorer/task-details-completed.png"
+    image-alt="Task Completed"
+    link-url="https://explorer.iex.ec/bellecour/tasks"
+    caption="🔗 Explore Tasks"
+    link-icon="mdi:open-in-new"
+    :centered="true"
+    max-width="700px"
+/>
 
 > **🔗 Task Assets**: Each task involves four key assets working together: the
 > requester, the **iApp** (application logic), the **Dataset** (protected data),
@@ -169,16 +152,13 @@ Browse and analyze all tasks across the iExec network:
 
 ## 📱 iApps Listing {#iapps-listing}
 
-<div style="text-align: center; margin: 2rem 0;">
-  <a href="https://explorer.iex.ec/bellecour/apps" target="_blank" rel="noreferrer">
-    <img src="/assets/tooling-&-explorers/iexec-explorer/app-view.png" alt="App View" style="width: 100%; border-radius: 8px; border: 1px solid var(--vp-c-border); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);" />
-  </a>
-  <p style="margin-top: 0.5rem; font-weight: 500;">
-    <a href="https://explorer.iex.ec/bellecour/apps" target="_blank" rel="noreferrer" style="text-decoration: none; color: var(--vp-c-brand-1);">
-      🔗 Explore iApps Marketplace
-    </a>
-  </p>
-</div>
+<ImageViewer
+  image-url="/assets/tooling-&-explorers/iexec-explorer/app-view.png"
+  image-alt="App View"
+  link-url="https://explorer.iex.ec/bellecour/apps"
+  caption="🔗 Explore iApps Marketplace"
+  link-icon="mdi:open-in-new"
+/>
 
 Explore the iExec application marketplace:
 
@@ -188,16 +168,13 @@ Explore the iExec application marketplace:
 
 ## 🗄️ Protected Data Listing {#protected-data-listing}
 
-<div style="text-align: center; margin: 2rem 0;">
-  <a href="https://explorer.iex.ec/bellecour/datasets" target="_blank" rel="noreferrer">
-    <img src="/assets/tooling-&-explorers/iexec-explorer/dataset-view.png" alt="Dataset View" style="width: 100%; border-radius: 8px; border: 1px solid var(--vp-c-border); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);" />
-  </a>
-  <p style="margin-top: 0.5rem; font-weight: 500;">
-    <a href="https://explorer.iex.ec/bellecour/datasets" target="_blank" rel="noreferrer" style="text-decoration: none; color: var(--vp-c-brand-1);">
-      🔗 Explore Protected Datasets
-    </a>
-  </p>
-</div>
+<ImageViewer
+  image-url="/assets/tooling-&-explorers/iexec-explorer/dataset-view.png"
+  image-alt="Dataset View"
+  link-url="https://explorer.iex.ec/bellecour/datasets"
+  caption="🔗 Explore Protected Datasets"
+  link-icon="mdi:open-in-new"
+/>
 
 Navigate the protected data landscape:
 
@@ -209,16 +186,13 @@ Navigate the protected data landscape:
 
 ## ⚡ Workerpools {#workerpools}
 
-<div style="text-align: center; margin: 2rem 0;">
-  <a href="https://explorer.iex.ec/bellecour/workerpools" target="_blank" rel="noreferrer">
-    <img src="/assets/tooling-&-explorers/iexec-explorer/workerpool-view.png" alt="Workerpool View" style="width: 100%; border-radius: 8px; border: 1px solid var(--vp-c-border); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);" />
-  </a>
-  <p style="margin-top: 0.5rem; font-weight: 500;">
-    <a href="https://explorer.iex.ec/bellecour/workerpools" target="_blank" rel="noreferrer" style="text-decoration: none; color: var(--vp-c-brand-1);">
-      🔗 Explore Workerpools Infrastructure
-    </a>
-  </p>
-</div>
+<ImageViewer
+  image-url="/assets/tooling-&-explorers/iexec-explorer/workerpool-view.png"
+  image-alt="Workerpool View"
+  link-url="https://explorer.iex.ec/bellecour/workerpools"
+  caption="🔗 Explore Workerpools Infrastructure"
+  link-icon="mdi:open-in-new"
+/>
 
 Explore the decentralized computing infrastructure:
 
@@ -228,92 +202,7 @@ Explore the decentralized computing infrastructure:
 - **Resource Availability**: Check computational resources and capacity
 - **Usage Statistics**: Analyze workerpool utilization
 
-<style>
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.feature-card-link {
-  text-decoration: none !important;
-  color: inherit;
-  display: block;
-  height: 100%;
-}
-
-.feature-card-link:hover {
-  text-decoration: none !important;
-  color: inherit;
-}
-
-.feature-card-link:visited {
-  text-decoration: none !important;
-  color: inherit;
-}
-
-.feature-card-link:active {
-  text-decoration: none !important;
-  color: inherit;
-}
-
-.feature-card {
-  background: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-border);
-  border-radius: 8px;
-  padding: 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.feature-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.feature-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.feature-card h3 {
-  margin: 0 0 0.5rem 0;
-  color: var(--vp-c-text-1);
-}
-
-.feature-card p {
-  margin: 0;
-  color: var(--vp-c-text-2);
-  line-height: 1.6;
-  flex-grow: 1;
-}
-
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 3rem;
-  margin: 3rem 0;
-}
-
-.image-container {
-  text-align: center;
-}
-
-.image-container img {
-  width: 100%;
-  max-width: 700px;
-  border-radius: 8px;
-  border: 1px solid var(--vp-c-border);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-}
-
-.image-container p {
-  margin-top: 0.5rem;
-  font-weight: 500;
-  color: var(--vp-c-text-2);
-}
-</style>
+<script setup>
+import ImageViewer from '../../components/ImageViewer.vue';
+import FeatureCard from '../../components/FeatureCard.vue';
+</script>
