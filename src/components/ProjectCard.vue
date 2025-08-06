@@ -92,7 +92,7 @@ interface Props {
   githubLabel?: string;
 }
 
-const props = withDefaults(defineProps<Props>(), {});
+const props = defineProps<Props>();
 
 const statusIcon = computed(() => {
   switch (props.status) {
