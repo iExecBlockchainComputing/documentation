@@ -21,7 +21,7 @@ explore apps and protectedData—all in one powerful dashboard.
 
 ## 🎯 What You Can Explore
 
-<div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6 my-8">
+<CardGrid>
   <FeatureCard
     icon="💼"
     title="Deals & Tasks"
@@ -48,9 +48,7 @@ explore apps and protectedData—all in one powerful dashboard.
     title="Workerpools"
     description="Explore the decentralized computing infrastructure, including usage and ownership details"
     link-url="#workerpools"
-  />
-
-</div>
+  /> </CardGrid>
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <h4 class="!mt-0 !mb-2">🏗️ Understanding iExec Architecture</h4>
@@ -205,4 +203,5 @@ Explore the decentralized computing infrastructure:
 <script setup>
 import ImageViewer from '../../components/ImageViewer.vue';
 import FeatureCard from '../../components/FeatureCard.vue';
+import CardGrid from '../../components/CardGrid.vue';
 </script>
