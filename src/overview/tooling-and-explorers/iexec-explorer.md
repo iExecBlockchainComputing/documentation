@@ -16,7 +16,6 @@ explore apps and protectedData—all in one powerful dashboard.
   image-alt="iExec Explorer"
   link-url="https://explorer.iex.ec/"
   caption="🔗 Explore the iExec Protocol"
-  link-icon="mdi:open-in-new"
 />
 
 ## 🎯 What You Can Explore
@@ -69,7 +68,6 @@ explore apps and protectedData—all in one powerful dashboard.
   image-alt="Deal View"
   link-url="https://explorer.iex.ec/bellecour/deals"
   caption="🔗 Explore Deals on iExec Explorer"
-  link-icon="mdi:open-in-new"
 />
 
 > **💡 Understanding Deals**: A deal is a coordinated set of stakeholders that
@@ -96,7 +94,6 @@ explore apps and protectedData—all in one powerful dashboard.
   image-alt="Task View"
   link-url="https://explorer.iex.ec/bellecour/tasks"
   caption="🔗 Browse All Tasks"
-  link-icon="mdi:open-in-new"
 />
 
 Browse and analyze all tasks across the iExec network:
@@ -109,11 +106,10 @@ Browse and analyze all tasks across the iExec network:
 ### Task Execution Monitoring
 
 <ImageViewer
-    image-url="/assets/tooling-&-explorers/iexec-explorer/task-details-started.png"
-    image-alt="Task Started"
+    image-url="/assets/tooling-&-explorers/iexec-explorer/result-details.png"
+    image-alt="Result Decryption"
     link-url="https://explorer.iex.ec/bellecour/tasks"
     caption="🔗 Explore Tasks"
-    link-icon="mdi:open-in-new"
     :centered="true"
     max-width="700px"
 />
@@ -123,7 +119,6 @@ Browse and analyze all tasks across the iExec network:
     image-alt="Task Completed"
     link-url="https://explorer.iex.ec/bellecour/tasks"
     caption="🔗 Explore Tasks"
-    link-icon="mdi:open-in-new"
     :centered="true"
     max-width="700px"
 />
