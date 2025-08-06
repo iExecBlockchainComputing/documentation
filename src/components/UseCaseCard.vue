@@ -29,12 +29,19 @@
       </div>
 
       <!-- Actions -->
-      <div class="flex flex-wrap gap-4">
-        <Button as="a" :href="demoUrl" target="_blank" rel="noreferrer">
+      <div v-if="githubUrl || demoUrl" class="flex flex-wrap gap-4">
+        <Button
+          v-if="demoUrl"
+          as="a"
+          :href="demoUrl"
+          target="_blank"
+          rel="noreferrer"
+        >
           <Icon :icon="demoIcon" height="18" />
           Try Live Demo
         </Button>
         <Button
+          v-if="githubUrl"
           as="a"
           :href="githubUrl"
           target="_blank"
@@ -60,8 +67,8 @@ interface Props {
   imageUrl: string;
   imageAlt: string;
   features: string[];
-  demoUrl: string;
-  githubUrl: string;
+  demoUrl?: string;
+  githubUrl?: string;
   demoIcon: string;
 }
 

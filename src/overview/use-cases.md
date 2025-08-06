@@ -21,7 +21,7 @@ computing and decentralized data protection.
     description="Secure communication platform for Web3 users enabling privacy-preserving messaging through Web3Mail and Web3Telegram. Users maintain control over their data while enabling targeted communication and monetizing their engagement."
     imageUrl="/assets/use-cases/web3-messaging.png"
     imageAlt="Web3Messaging Demo Screenshot"
-    :features="['DataProtector Core', 'Web3Mail', 'Web3Telegram', ]"
+    :features="['DataProtector Core', 'Web3Mail', 'Web3Telegram']"
     demoUrl="https://demo.iex.ec/web3messaging"
     githubUrl="https://github.com/iExecBlockchainComputing/web3-messaging-usecase-demo"
     demoIcon="mdi:message-processing"
@@ -34,17 +34,15 @@ computing and decentralized data protection.
     imageAlt="OracleFactory Demo Screenshot"
     :features="['Oracle Factory']"
     demoUrl="https://oracle-factory.iex.ec/gallery"
-    githubUrl=""
     demoIcon="mdi:database-search"
   />
 
 <UseCaseCard
-    title="AI Applications"
+    title="AI Agent"
     description="Showcase of artificial intelligence applications running on iExec's confidential computing infrastructure. Experience privacy-preserving AI inference, machine learning model execution, and secure data analysis with TEE protection."
     imageUrl="/assets/use-cases/elizaos.png"
     imageAlt="AI Applications Demo Screenshot"
     :features="['AI', 'TEE', 'Confidential Computing']"
-    demoUrl=""
     githubUrl="https://github.com/iExecBlockchainComputing/iexec-elizaos-agent"
     demoIcon="mdi:brain"
   />
