@@ -112,6 +112,12 @@ with open(f"{os.environ['IEXEC_OUT']}/computed.json", 'w') as f:
     json.dump(computed, f)
 ```
 
+### ⚠️ **Dataset type unmatching**
+
+- **Cause**: The dataset type specified in the frontend (protectData) does not
+  match with the dataset type specified in the iApp
+- **Solution**: Check both dataset types
+
 ## Best Practices
 
 ### 🔍 **Input Validation**
