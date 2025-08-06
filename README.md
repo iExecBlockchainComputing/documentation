@@ -159,5 +159,6 @@ Fork this repository and ensure you're working on the `main` branch:
   way to be more visible (may in build-iApp section)
 - complete `use-iapp` section
 - complete `explorer` section
+- Maybe split input and output in two diff sub section in build your iapp guide
 - complete `build-iapp` section
 - complete `Protocol`section
