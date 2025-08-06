@@ -21,7 +21,7 @@ computing and decentralized data protection.
     description="Secure communication platform for Web3 users enabling privacy-preserving messaging through Web3Mail and Web3Telegram. Users maintain control over their data while enabling targeted communication and monetizing their engagement."
     imageUrl="/assets/web3messaging-screenshot.png"
     imageAlt="Web3Messaging Demo Screenshot"
-    :features="['Web3Mail', 'Web3Telegram', 'DataProtector Core']"
+    :features="['DataProtector Core', 'Web3Mail', 'Web3Telegram', ]"
     demoUrl="https://demo.iex.ec/web3messaging"
     githubUrl="https://github.com/iExecBlockchainComputing/web3-messaging-usecase-demo"
     demoIcon="mdi:message-processing"
