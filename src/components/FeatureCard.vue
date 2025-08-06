@@ -1,5 +1,5 @@
 <template>
-  <a :href="linkUrl" class="block h-full text-inherit no-underline!">
+  <a :href="linkUrl" class="block h-full text-inherit no-underline">
     <div
       class="bg-soft-bg border-border flex h-full cursor-pointer flex-col rounded-lg border p-6 transition-all duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-md"
     >
