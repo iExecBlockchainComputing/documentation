@@ -67,8 +67,12 @@ publicly auditable.
   </div>
 </div>
 
-::: tip 💡 Pro Tip Use **Bellecour** for development and testing with as it's a
-gasless blockchain, then deploy to **Arbitrum** for production workloads. :::
+::: tip 💡 Dev Tip
+
+Use **Bellecour** for development and testing with as it's a
+gasless blockchain, then deploy to **Arbitrum** for production workloads.
+
+:::
 
 <style scoped>
 .networks-grid {
