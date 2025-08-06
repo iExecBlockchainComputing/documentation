@@ -9,8 +9,8 @@ features.
 Bootstrap your project with our framework-specific templates and start building
 privacy-first applications.
 
-<QuickStartGrid>
-  <QuickStartCard
+<CardGrid>
+  <ProjectCard
     title="Next.js Starter"
     description="Full-featured Next.js template with iExec integration, TypeScript support, and example implementations."
     icon="logos:nextjs-icon"
@@ -21,7 +21,7 @@ privacy-first applications.
     buttonHref="https://github.com/iExecBlockchainComputing/iexec-nextjs-starter"
   />
 
-  <QuickStartCard
+  <ProjectCard
     title="React Starter"
     description="React application template with hooks, components, and utilities for seamless iExec integration."
     icon="logos:react"
@@ -32,7 +32,7 @@ privacy-first applications.
     buttonDisabled
   />
 
-  <QuickStartCard
+  <ProjectCard
     title="Vue.js Starter"
     description="Vue 3 Composition API template with TypeScript and optimized build configuration for iExec apps."
     icon="logos:vue"
@@ -42,15 +42,15 @@ privacy-first applications.
     buttonIcon="mdi:github"
     buttonDisabled
   />
-</QuickStartGrid>
+</CardGrid>
 
 ## Interactive Sandboxes
 
 Explore and experiment with iExec features directly in your browser. Perfect for
 learning and prototyping.
 
-<QuickStartGrid>
-  <QuickStartCard
+<CardGrid>
+  <ProjectCard
     title="DataProtector Core"
     description="Essential data protection features including encryption, access control, and secure storage."
     icon="mdi:shield-lock"
@@ -61,7 +61,7 @@ learning and prototyping.
     buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main"
   />
 
-  <QuickStartCard
+  <ProjectCard
     title="DataProtector Sharing"
     description="Advanced data sharing capabilities with granular permissions and monetization features."
     icon="mdi:share-variant"
@@ -72,7 +72,7 @@ learning and prototyping.
     buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sharing-sandbox/main"
   />
 
-  <QuickStartCard
+  <ProjectCard
     title="Web3 Telegram"
     description="Privacy-preserving Telegram messaging integration with user consent management."
     icon="mdi:message-lock"
@@ -83,7 +83,7 @@ learning and prototyping.
     buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/web3-telegram-sandbox/main"
   />
 
-  <QuickStartCard
+  <ProjectCard
     title="Web3 Mail"
     description="Secure email communication for Web3 users without revealing personal email addresses."
     icon="mdi:email-lock"
@@ -94,7 +94,7 @@ learning and prototyping.
     buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/web3mail-sandbox/main"
   />
 
-  <QuickStartCard
+  <ProjectCard
     title="Oracle Factory"
     description="Create and deploy custom oracles for bringing off-chain data into your Web3 applications."
     icon="mdi:database-cog"
@@ -104,7 +104,7 @@ learning and prototyping.
     buttonIcon="mdi:code-braces"
     buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/oracle-factory-sandbox/"
   />
-</QuickStartGrid>
+</CardGrid>
 
 ## Next Steps
 
@@ -117,6 +117,6 @@ After exploring our starters and sandboxes:
 4. **Deploy**: Use our deployment guides for production-ready applications
 
 <script setup>
-import QuickStartGrid from '../components/QuickStartGrid.vue';
-import QuickStartCard from '../components/QuickStartCard.vue';
+import CardGrid from '../components/CardGrid.vue';
+import ProjectCard from '../components/ProjectCard.vue';
 </script>

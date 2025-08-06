@@ -31,11 +31,38 @@
     </div>
     <!-- Actions -->
     <div class="mt-auto">
+      <div v-if="githubUrl" class="grid gap-3">
+        <Button
+          as="a"
+          :href="buttonHref"
+          :disabled="buttonDisabled"
+          :target="buttonTarget"
+          :rel="buttonRel"
+          class="flex-1"
+        >
+          <Icon :icon="buttonIcon" :height="16" />
+          {{ buttonLabel }}
+        </Button>
+        <Button
+          as="a"
+          :href="githubUrl"
+          target="_blank"
+          rel="noreferrer"
+          variant="secondary"
+          class="flex-1"
+        >
+          <Icon icon="mdi:github" :height="16" />
+          {{ githubLabel || 'View Code' }}
+        </Button>
+      </div>
       <Button
+        v-else
+        :as="buttonHref ? 'a' : 'button'"
+        :href="buttonHref"
         :disabled="buttonDisabled"
+        :target="buttonTarget"
+        :rel="buttonRel"
         class="w-full"
-        buttonTarget="_blank"
-        buttonRel="noreferrer"
       >
         <Icon :icon="buttonIcon" :height="16" />
         {{ buttonLabel }}
@@ -63,6 +90,8 @@ interface Props {
   buttonTarget?: string;
   buttonRel?: string;
   buttonDisabled?: boolean;
+  githubUrl?: string;
+  githubLabel?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {});
