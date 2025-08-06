@@ -11,7 +11,11 @@
       </div>
       <div>
         <h3 class="mt-0! mb-1! text-lg font-semibold">{{ title }}</h3>
-        <StatusBadge :status="status" :label="statusLabel" />
+        <Badge 
+          :label="statusLabel" 
+          :variant="badgeVariant" 
+          :icon="statusIcon" 
+        />
       </div>
      </div>
 
@@ -42,7 +46,8 @@
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
-import StatusBadge from './StatusBadge.vue';
+import { computed } from 'vue';
+import Badge from './Badge.vue';
 import Button from './ui/Button.vue';
 
 interface Props {
@@ -60,5 +65,31 @@ interface Props {
   buttonDisabled?: boolean;
 }
 
-withDefaults(defineProps<Props>(), {});
+const props = withDefaults(defineProps<Props>(), {});
+
+const statusIcon = computed(() => {
+  switch (props.status) {
+    case 'available':
+      return 'mdi:check-circle-outline';
+    case 'interactive':
+      return 'mdi:play-circle-outline';
+    case 'coming-soon':
+      return 'mdi:clock-outline';
+    default:
+      return 'mdi:check-circle-outline';
+  }
+});
+
+const badgeVariant = computed(() => {
+  switch (props.status) {
+    case 'available':
+      return 'success';
+    case 'coming-soon':
+      return 'warning';
+    case 'interactive':
+      return 'primary';
+    default:
+      return 'success';
+  }
+});
 </script>
