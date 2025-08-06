@@ -60,7 +60,7 @@ explore apps and protectedData—all in one powerful dashboard.
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <h4 class="!mt-0 !mb-2">🏗️ Understanding iExec Architecture</h4>
-  <p class="!mb-2"><strong>Deals</strong> are the fundamental orchestration unit - each deal coordinates a set of different stakeholders that share resources and execution parameters.</p>
+  <p class="!mb-2"><strong>Deals</strong> are the fundamental orchestration unit - each deal coordinates a set of different stakeholders that share resources and execution parameters to execute a confidential computation task.</p>
   <p class="!mb-0">Each <strong>Deal</strong> brings together one stakeholder and three essential assets:</p>
   <ul class="!mb-0">
     <li><strong>Requester</strong>: The entity requesting the computation</li>
