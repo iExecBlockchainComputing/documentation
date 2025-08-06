@@ -29,6 +29,7 @@ privacy-first applications.
     statusLabel="Coming Soon"
     buttonLabel="Coming Soon"
     buttonIcon="mdi:github"
+    buttonDisabled
   />
 
   <QuickStartCard
@@ -39,6 +40,7 @@ privacy-first applications.
     statusLabel="Coming Soon"
     buttonLabel="Coming Soon"
     buttonIcon="mdi:github"
+    buttonDisabled
   />
 </QuickStartGrid>
 
