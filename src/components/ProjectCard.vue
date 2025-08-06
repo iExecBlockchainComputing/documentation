@@ -81,7 +81,6 @@ interface Props {
   icon: string;
   status: 'available' | 'coming-soon' | 'interactive';
   statusLabel: string;
-  buttonVariant: 'primary' | 'disabled';
   buttonLabel: string;
   buttonIcon: string;
   buttonHref?: string;
