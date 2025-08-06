@@ -1,7 +1,7 @@
 <template>
   <component
-    :is="as || 'button'"
-    :type="as === 'button' || !as ? 'button' : undefined"
+    :is="as"
+    :type="as === 'button' ? 'button' : undefined"
     :class="buttonClasses"
     v-bind="$attrs"
   >

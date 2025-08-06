@@ -81,7 +81,6 @@ interface Props {
   icon: string;
   status: 'available' | 'coming-soon' | 'interactive';
   statusLabel: string;
-  buttonVariant: 'primary' | 'disabled';
   buttonLabel: string;
   buttonIcon: string;
   buttonHref?: string;
@@ -92,7 +91,7 @@ interface Props {
   githubLabel?: string;
 }
 
-const props = withDefaults(defineProps<Props>(), {});
+const props = defineProps<Props>();
 
 const statusIcon = computed(() => {
   switch (props.status) {

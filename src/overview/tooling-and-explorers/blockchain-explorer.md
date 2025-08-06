@@ -69,8 +69,8 @@ publicly auditable.
 
 ::: tip 💡 Dev Tip
 
-Use **Bellecour** for development and testing as it's a
-gasless blockchain, then deploy to **Arbitrum** for production workloads.
+Use **Bellecour** for development and testing as it's a gasless blockchain, then
+deploy to **Arbitrum** for production workloads.
 
 :::
 
