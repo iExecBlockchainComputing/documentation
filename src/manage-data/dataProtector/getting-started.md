@@ -216,26 +216,34 @@ discontinuity.
 
 ## Sandbox
 
-### Core methods
+<CardGrid>
+  <ProjectCard
+    title="DataProtector Core"
+    description="Essential data protection features including encryption, access control, and secure storage."
+    icon="mdi:shield-lock"
+    status="interactive"
+    statusLabel="Interactive"
+    buttonLabel="Open Sandbox"
+    buttonIcon="mdi:code-braces"
+    buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main"
+    githubUrl="https://github.com/iExecBlockchainComputing/dataprotector-sandbox"
+    githubLabel="GitHub repository sandbox"
+  />
 
-<a href="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main" target="_blank" rel="noreferrer" class="link-as-block" style="margin-top: 16px">
-  ⚡ &nbsp;Code Sandbox
-</a>
+<ProjectCard
+    title="DataProtector Sharing"
+    description="Advanced data sharing capabilities with granular permissions and monetization features."
+    icon="mdi:share-variant"
+    status="interactive"
+    statusLabel="Interactive"
+    buttonLabel="Open Sandbox"
+    buttonIcon="mdi:code-braces"
+    buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sharing-sandbox/main"
+    githubUrl="https://github.com/iExecBlockchainComputing/dataprotector-sharing-sandbox"
+    githubLabel="GitHub repository sandbox"
+  /> </CardGrid>
 
-Corresponding GitHub repository:
-
-<a href="https://github.com/iExecBlockchainComputing/dataprotector-sandbox" target="_blank" rel="noreferrer" class="link-as-block">
-  🔎 &nbsp;GitHub repository sandbox
-</a>
-
-### Sharing methods
-
-<a href="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sharing-sandbox/main" target="_blank" rel="noreferrer" class="link-as-block" style="margin-top: 16px">
-  ⚡ &nbsp;Code Sandbox
-</a>
-
-Corresponding GitHub repository:
-
-<a href="https://github.com/iExecBlockchainComputing/dataprotector-sharing-sandbox" target="_blank" rel="noreferrer" class="link-as-block">
-  🔎 &nbsp;GitHub repository sandbox
-</a>
+<script setup>
+import CardGrid from '../../components/CardGrid.vue';
+import ProjectCard from '../../components/ProjectCard.vue';
+</script>
