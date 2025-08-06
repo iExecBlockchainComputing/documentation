@@ -38,6 +38,15 @@ technology, different from the default SGX implementation.
 - ❌ **Limited worker availability**
 - ❌ **Not production ready**
 
+| Feature                  | Intel SGX                                                                           | Intel TDX                                    |
+| ------------------------ | ----------------------------------------------------------------------------------- | -------------------------------------------- |
+| Release Year             | 2015                                                                                | 2023                                         |
+| Enclave Scope            | Application level                                                                   | Virtual machine level                        |
+| Code Adaptation Required | Yes - needs redesign of app's logic                                                 | No - supports lift-and-shift of full systems |
+| Memory Size              | Limited                                                                             | Extensive (multi-GB+)                        |
+| Integration Complexity   | Higher (more dev work)                                                              | Lower (VM legacy code)                       |
+| Best Fit For             | Lightweight, high-assurance modules (e.g. wallets, crypto key ops, small AI models) | Heavier AI workloads, legacy apps, databases |
+
 ## Enabling TDX in iApp Generator
 
 ### Environment Variable Method
