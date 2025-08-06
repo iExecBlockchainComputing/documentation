@@ -6,7 +6,7 @@ Before using the iApp Generator, make sure you have:
 
 \- [**Node.js**](https://nodejs.org/en/) version 20 or higher
 
-\- **Docker**
+\- **Docker / Docker hub account**
 
 \- **Docker Buildx** _(for macOS users, check AMD64 compatibility)_
 
