@@ -43,11 +43,11 @@ features:
     details:
       Create revenue streams from your data while maintaining full control and
       privacy
-    link: /manage-data/guides/monetize-protected-data
+    link: /use-iapp/how-to-pay/how-to-pay-for-web3mail
   - icon: 🧠
-    title: Core Concepts
+    title: Protocols
     details:
       Deep dive into the core concepts of the protocol and understand how iExec
       enables privacy, governance, and monetization
-    link: /core-concept/sdk
+    link: /protocol/sdk
 ---

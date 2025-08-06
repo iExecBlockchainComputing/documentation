@@ -148,6 +148,7 @@ Fork this repository and ensure you're working on the `main` branch:
 
 ## TODO
 
+- Add an audit section
 - Add Arbitrum support
 - On arbitrum hide : Oracle Factory ? , DataProtector Sharing ??
 - Adapt hardcoded address to feat with new contracts deployed on arbitrum
@@ -159,4 +160,4 @@ Fork this repository and ensure you're working on the `main` branch:
 - complete `use-iapp` section
 - complete `explorer` section
 - complete `build-iapp` section
-- complete `deep-dive`section
+- complete `Protocol`section
