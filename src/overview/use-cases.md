@@ -16,7 +16,7 @@ computing and decentralized data protection.
     demoIcon="mdi:art"
   />
 
-  <UseCaseCard
+<UseCaseCard
     title="Web3Messaging"
     description="Secure communication platform for Web3 users enabling privacy-preserving messaging through Web3Mail and Web3Telegram. Users maintain control over their data while enabling targeted communication and monetizing their engagement."
     imageUrl="/assets/web3messaging-screenshot.png"
@@ -26,6 +26,7 @@ computing and decentralized data protection.
     githubUrl="https://github.com/iExecBlockchainComputing/web3-messaging-usecase-demo"
     demoIcon="mdi:message-processing"
   />
+
 </div>
 
 <script setup>

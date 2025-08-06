@@ -21,7 +21,7 @@ privacy-first applications.
     buttonHref="https://github.com/iExecBlockchainComputing/iexec-nextjs-starter"
   />
 
-  <ProjectCard
+<ProjectCard
     title="React Starter"
     description="React application template with hooks, components, and utilities for seamless iExec integration."
     icon="logos:react"
@@ -32,7 +32,7 @@ privacy-first applications.
     buttonDisabled
   />
 
-  <ProjectCard
+<ProjectCard
     title="Vue.js Starter"
     description="Vue 3 Composition API template with TypeScript and optimized build configuration for iExec apps."
     icon="logos:vue"
@@ -41,8 +41,7 @@ privacy-first applications.
     buttonLabel="Coming Soon"
     buttonIcon="mdi:github"
     buttonDisabled
-  />
-</CardGrid>
+  /> </CardGrid>
 
 ## Interactive Sandboxes
 
@@ -61,7 +60,7 @@ learning and prototyping.
     buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main"
   />
 
-  <ProjectCard
+<ProjectCard
     title="DataProtector Sharing"
     description="Advanced data sharing capabilities with granular permissions and monetization features."
     icon="mdi:share-variant"
@@ -72,7 +71,7 @@ learning and prototyping.
     buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sharing-sandbox/main"
   />
 
-  <ProjectCard
+<ProjectCard
     title="Web3 Telegram"
     description="Privacy-preserving Telegram messaging integration with user consent management."
     icon="mdi:message-lock"
@@ -83,7 +82,7 @@ learning and prototyping.
     buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/web3-telegram-sandbox/main"
   />
 
-  <ProjectCard
+<ProjectCard
     title="Web3 Mail"
     description="Secure email communication for Web3 users without revealing personal email addresses."
     icon="mdi:email-lock"
@@ -94,7 +93,7 @@ learning and prototyping.
     buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/web3mail-sandbox/main"
   />
 
-  <ProjectCard
+<ProjectCard
     title="Oracle Factory"
     description="Create and deploy custom oracles for bringing off-chain data into your Web3 applications."
     icon="mdi:database-cog"
@@ -103,8 +102,7 @@ learning and prototyping.
     buttonLabel="Open Sandbox"
     buttonIcon="mdi:code-braces"
     buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/oracle-factory-sandbox/"
-  />
-</CardGrid>
+  /> </CardGrid>
 
 ## Next Steps
 

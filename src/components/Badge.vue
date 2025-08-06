@@ -11,7 +11,13 @@ import { computed } from 'vue';
 
 interface Props {
   label: string;
-  variant?: 'success' | 'warning' | 'danger' | 'important' | 'primary' | 'default';
+  variant?:
+    | 'success'
+    | 'warning'
+    | 'danger'
+    | 'important'
+    | 'primary'
+    | 'default';
   icon?: string;
   iconSize?: number;
   size?: 'sm' | 'md';
@@ -20,17 +26,18 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   variant: 'default',
   iconSize: 14,
-  size: 'sm'
+  size: 'sm',
 });
 
 const badgeClasses = computed(() => {
   const baseClasses = 'inline-flex items-center rounded-2xl font-medium border';
-  
+
   // Size classes
-  const sizeClasses = props.size === 'md' 
-    ? 'gap-2 px-4 py-1.5 text-sm' 
-    : 'gap-1.5 px-3 py-1 text-xs';
-  
+  const sizeClasses =
+    props.size === 'md'
+      ? 'gap-2 px-4 py-1.5 text-sm'
+      : 'gap-1.5 px-3 py-1 text-xs';
+
   // Variant classes
   let variantClasses = '';
   switch (props.variant) {
@@ -52,7 +59,7 @@ const badgeClasses = computed(() => {
     default:
       variantClasses = 'bg-soft-bg text-text2 border-border';
   }
-  
+
   return `${baseClasses} ${sizeClasses} ${variantClasses}`;
 });
 </script>

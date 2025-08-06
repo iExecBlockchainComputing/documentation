@@ -216,7 +216,6 @@ discontinuity.
 
 ## Sandbox
 
-
 <CardGrid>
   <ProjectCard
     title="DataProtector Core"
@@ -231,7 +230,7 @@ discontinuity.
     githubLabel="GitHub repository sandbox"
   />
 
-  <ProjectCard
+<ProjectCard
     title="DataProtector Sharing"
     description="Advanced data sharing capabilities with granular permissions and monetization features."
     icon="mdi:share-variant"
@@ -242,8 +241,7 @@ discontinuity.
     buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sharing-sandbox/main"
     githubUrl="https://github.com/iExecBlockchainComputing/dataprotector-sharing-sandbox"
     githubLabel="GitHub repository sandbox"
-  />
-</CardGrid>
+  /> </CardGrid>
 
 <script setup>
 import CardGrid from '../../components/CardGrid.vue';

@@ -1,47 +1,44 @@
 <template>
-  <div class="bg-soft-bg border group border-border rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary shadow-md">
+  <div
+    class="bg-soft-bg group border-border hover:border-primary overflow-hidden rounded-xl border shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+  >
     <!-- Image -->
-    <div class="relative overflow-hidden group">
+    <div class="group relative overflow-hidden">
       <a :href="demoUrl" target="_blank" rel="noreferrer">
-        <img 
-          :src="imageUrl" 
+        <img
+          :src="imageUrl"
           :alt="imageAlt"
-          class="w-full max-h-48 object-cover object-top transition-transform duration-300 group-hover:scale-105"
-        >
+          class="max-h-48 w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+        />
       </a>
     </div>
-    
+
     <!-- Content -->
     <div class="p-6">
-      <h3 class="text-text1 text-2xl font-semibold mb-4 mt-0!">{{ title }}</h3>
-      <p class="text-text2 leading-relaxed mb-6 text-sm">{{ description }}</p>
-      
+      <h3 class="text-text1 mt-0! mb-4 text-2xl font-semibold">{{ title }}</h3>
+      <p class="text-text2 mb-6 text-sm leading-relaxed">{{ description }}</p>
+
       <!-- Feature Tags -->
-      <div class="flex flex-wrap gap-2 mb-6">
-        <Badge 
-          v-for="feature in features" 
-          :key="feature" 
-          :label="feature" 
+      <div class="mb-6 flex flex-wrap gap-2">
+        <Badge
+          v-for="feature in features"
+          :key="feature"
+          :label="feature"
           variant="primary"
         />
       </div>
-      
+
       <!-- Actions -->
-      <div class="flex gap-4 flex-wrap">
-        <Button 
-          as="a"
-          :href="demoUrl" 
-          target="_blank" 
-          rel="noreferrer"
-        >
+      <div class="flex flex-wrap gap-4">
+        <Button as="a" :href="demoUrl" target="_blank" rel="noreferrer">
           <Icon :icon="demoIcon" height="18" />
           Try Live Demo
         </Button>
-        <Button 
+        <Button
           as="a"
-          :href="githubUrl" 
-          target="_blank" 
-          rel="noreferrer" 
+          :href="githubUrl"
+          target="_blank"
+          rel="noreferrer"
           variant="secondary"
         >
           <Icon icon="mdi:github" height="18" />
