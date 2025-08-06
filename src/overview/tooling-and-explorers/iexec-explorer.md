@@ -83,17 +83,16 @@ explore apps and protectedData—all in one powerful dashboard.
   </p>
 </div>
 
-> **💡 Understanding Deals**: A deal is a coordinated set of tasks that brings
-> together all the necessary components (app, dataset, workerpool) to execute
-> confidential computation requests. Each deal can contain one or multiple
-> related tasks.
+> **💡 Understanding Deals**: A deal is a coordinated set of stakeholders that
+> brings together all the necessary components (app, dataset, workerpool) to
+> execute confidential computation requests.
 
 ### Deal Management Dashboard
 
-- **Deal Architecture**: Visualize how deals orchestrate multiple tasks with
-  shared resources and parameters
-- **Task Composition**: See which tasks belong to each deal and their execution
-  dependencies
+- **Deal Architecture**: Visualize how deals orchestrate multiple stakeholders
+  with shared resources and parameters
+- **Stakeholder Composition**: See which stakeholders belong to each deal and
+  their execution dependencies
 - **Asset Coordination**: Monitor how apps, datasets, and workerpools are
   allocated across deal tasks
 - **Deal Lifecycle**: Track deals from initiation through task execution to
@@ -148,10 +147,10 @@ Browse and analyze all tasks across the iExec network:
   </div>
 </div>
 
-> **🔗 Task Assets**: Each task involves three key assets working together: the
-> **iApp** (application logic), the **Dataset** (protected data), and the
-> **Workerpool** (execution infrastructure). The Explorer shows how these
-> components interact.
+> **🔗 Task Assets**: Each task involves four key assets working together: the
+> requester, the **iApp** (application logic), the **Dataset** (protected data),
+> and the **Workerpool** (execution infrastructure). The Explorer shows how
+> these components interact.
 
 - **Asset Relationships**: Visualize the connections between iApp, dataset, and
   workerpool for each task
