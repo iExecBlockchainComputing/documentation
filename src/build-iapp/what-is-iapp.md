@@ -12,14 +12,32 @@ Environment).
 
 ## Why iApps Matter?
 
-Simple: **to process sensitive data that users won't normally share.**
+<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!"><strong>iApps let you process sensitive data while keeping it private and secure.</strong></p>
+</div>
 
 Imagine you want to build:
 
-- An AI that analyzes personal health data
-- An email tool that needs access to contact lists
-- A financial advisor that processes bank statements
-- A content filter that reads private messages
+<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
+  <div class="flex flex-col gap-2.5">
+    <div class="flex items-center gap-2 text-base">
+      <span>🤖</span>
+      <span>An AI that analyzes personal health data</span>
+    </div>
+    <div class="flex items-center gap-2 text-base">
+      <span>📧</span>
+      <span>An email tool that needs access to contact lists</span>
+    </div>
+    <div class="flex items-center gap-2 text-base">
+      <span>💰</span>
+      <span>A financial advisor that processes bank statements</span>
+    </div>
+    <div class="flex items-center gap-2 text-base">
+      <span>🛡️</span>
+      <span>A content filter that reads private messages</span>
+    </div>
+  </div>
+</div>
 
 Users have this data, but they won't give it to your regular app. **With iApps,
 they will.**
@@ -30,14 +48,14 @@ Your code runs in a Trusted Execution Environment (TEE) a secure area inside
 specific processors (Intel SGX/TDX chipset). Everything that happens there stays
 private and protected, even from the operating system.
 
-An authorized user can trigger an iApp that processes someone’s protected data
-inside this private environment. The data is used, but never exposed, not even
-to the person running the app.
+<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!">An authorized user can trigger an iApp that processes someone's protected data inside this private environment. The data is used, but never exposed, not even to the person running the app.</p>
+</div>
 
 ## iApp Generator: Your Development Tool
 
-Generate and deploy iApps that will give you access to TEEs in just a few
-minutes.
+Bootstrap TEE-compatible applications in minutes without any hardcoding skills,
+iApp Generator handles all the low-level complexity for you.
 
 - **Access to TEEs easily** - No need to dive into low-level requirements, build
   iApps that connect to TEE in minutes
@@ -58,8 +76,9 @@ iapp test
 iapp deploy
 ```
 
-_Note: iApp Generator currently supports Python and Node.js, but iApps can be
-built in any language that runs in Docker._
+<div class="bg-gradient-to-r from-blue-400/10 to-blue-400/5 rounded-[6px] p-4 border-l-4 border-blue-600 mb-6">
+  <p class="m-0! text-sm"><strong>Note:</strong> iApp Generator currently supports Python and Node.js, but iApps can be built in any language that runs in Docker.</p>
+</div>
 
 ## Real Examples
 
@@ -112,11 +131,34 @@ Here's why users will actually use your iApp with their private data:
 
 ### The Workflow
 
-```
-User's Private Data → Encrypted → TEE Environment → Your iApp uses it → Actions Performed
-```
+<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
+  <div class="flex flex-col gap-3">
+    <div class="flex items-center gap-3">
+      <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">1</span>
+      <span>User provides personal data</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">2</span>
+      <span>Data is protected with DataProtector</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">3</span>
+      <span>Protected data transferred to Trusted Execution Environment (TEE)</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">4</span>
+      <span>Your iApp runs inside TEE and processes protected data</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">5</span>
+      <span>Actions performed while maintaining privacy</span>
+    </div>
+  </div>
+</div>
 
-**Nobody sees the raw data except your code running inside the secure enclave.**
+<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!"><strong>Nobody sees the raw data except your code running inside the secure enclave.</strong></p>
+</div>
 
 Your iApp can send emails, update contracts, make transactions, trigger
 notifications - anything your code needs to do with the protected data. This
@@ -125,25 +167,39 @@ preserved.
 
 ## What This Enables
 
-### 📧 **Private Communication**
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
+    <div class="flex items-baseline gap-2 text-lg">
+      <span>📧</span>
+      <h3 class="font-semibold m-0!">Private Communication</h3>
+    </div>
+    <p class="text-sm m-0!">Users send emails, notifications, or messages using their protected contact lists without exposing recipient information.</p>
+  </div>
 
-Users send emails, notifications, or messages using their protected contact
-lists without exposing recipient information.
+  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
+    <div class="flex items-baseline gap-2 text-lg">
+      <span>🔮</span>
+      <h3 class="font-semibold m-0!">Trustworthy Oracles</h3>
+    </div>
+    <p class="text-sm m-0!">Users contribute real data to oracles while keeping their private information confidential.</p>
+  </div>
 
-### 🔮 **Trustworthy Oracles**
+  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
+    <div class="flex items-baseline gap-2 text-lg">
+      <span>🤖</span>
+      <h3 class="font-semibold m-0!">Personal AI Assistants</h3>
+    </div>
+    <p class="text-sm m-0!">Users let AI models perform actions based on their private data - trading, scheduling, recommendations.</p>
+  </div>
 
-Users contribute real data to oracles while keeping their private information
-confidential.
-
-### 🤖 **Personal AI Assistants**
-
-Users let AI models perform actions based on their private data - trading,
-scheduling, recommendations.
-
-### ⚡ **Automated Actions**
-
-Users set up automated workflows that use their private data to trigger actions,
-transactions, or updates.
+  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
+    <div class="flex items-baseline gap-2 text-lg">
+      <span>⚡</span>
+      <h3 class="font-semibold m-0!">Automated Actions</h3>
+    </div>
+    <p class="text-sm m-0!">Users set up automated workflows that use their private data to trigger actions, transactions, or updates.</p>
+  </div>
+</div>
 
 ## ❓ Frequently Asked Questions
 
@@ -187,17 +243,24 @@ Node.js for simplified development.
 
 ## Why This Changes Everything
 
-✅ **True Privacy**: Users never expose their raw data. Your app processes it
-privately inside secure enclaves.
-
-✅ **Verifiable Execution**: Cryptographic proof that your code ran exactly as
-intended. No black box execution.
-
-✅ **Decentralized Infrastructure**: No single point of failure. Your app runs
-across a distributed network of workers.
-
-✅ **Zero Trust Architecture**: Users don't need to trust you with their data.
-The protocol guarantees privacy.
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+  <div class="flex items-center gap-3">
+    <span class="text-green-500 text-xl">✅</span>
+    <p class="m-0"><strong>True Privacy:</strong> Users never expose their raw data. Your app processes it privately inside secure enclaves.</p>
+  </div>
+  <div class="flex items-center gap-3">
+    <span class="text-green-500 text-xl">✅</span>
+    <p class="m-0"><strong>Verifiable Execution:</strong> Cryptographic proof that your code ran exactly as intended. No black box execution.</p>
+  </div>
+  <div class="flex items-center gap-3">
+    <span class="text-green-500 text-xl">✅</span>
+    <p class="m-0"><strong>Decentralized Infrastructure:</strong> No single point of failure. Your app runs across a distributed network of workers.</p>
+  </div>
+  <div class="flex items-center gap-3">
+    <span class="text-green-500 text-xl">✅</span>
+    <p class="m-0"><strong>Zero Trust Architecture:</strong> Users don't need to trust you with their data. The protocol guarantees privacy.</p>
+  </div>
+</div>
 
 ## Start Building
 
