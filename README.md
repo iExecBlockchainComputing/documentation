@@ -164,3 +164,5 @@ Fork this repository and ensure you're working on the `main` branch:
 - What about Bridge ?
 - Made a page on RLC
 - Add Dune dashboard
+- Add a Development workflow
+- Update context7 when doc will be deployed
