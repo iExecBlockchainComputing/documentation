@@ -95,6 +95,30 @@ EXPERIMENTAL_TDX_APP=true iapp debug <taskId>
 iexec app show <app-address>
 ```
 
+###
+
+⚠️ **To use** the iExec DataProtector SDK with TDX support, you must configure
+the SDK with the right SMS endpoint.
+
+```jsx
+const dataProtector = new IExecDataProtector(web3Provider, {
+  iexecOptions: {
+    smsURL: 'https://sms.labs.iex.ec',
+  },
+});
+```
+
+⚠️**You need** to change the default worker pool in your protected Data
+declaration
+
+```jsx
+await dataProtector.core.processProtectedData({
+  protectedData: protectedData.address,
+  workerpool: 'tdx-labs.pools.iexec.eth',
+  app: '0x1919ceb0c6e60f3B497936308B58F9a6aDf071eC',
+});
+```
+
 ## Protected Data Compatibility
 
 :::warning Protected Data Requirements
