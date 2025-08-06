@@ -1,11 +1,15 @@
 ---
 title: Blockchain Explorers
-description: Explore iExec smart contracts on verified blockchain explorers for both Arbitrum mainnet and Bellecour network.
+description:
+  Explore iExec smart contracts on verified blockchain explorers for both
+  Arbitrum mainnet and Bellecour network.
 ---
 
 # 🔍 Blockchain Explorers
 
-Monitor iExec protocol smart contracts on both supported networks through verified blockchain explorers. All protocol contracts have been verified and are publicly auditable.
+Monitor iExec protocol smart contracts on both supported networks through
+verified blockchain explorers. All protocol contracts have been verified and are
+publicly auditable.
 
 ## 🌐 Supported Networks
 
@@ -63,9 +67,8 @@ Monitor iExec protocol smart contracts on both supported networks through verifi
   </div>
 </div>
 
-::: tip 💡 Pro Tip
-Use **Bellecour** for development and testing with as it's a gasless blockchain, then deploy to **Arbitrum** for production workloads.
-:::
+::: tip 💡 Pro Tip Use **Bellecour** for development and testing with as it's a
+gasless blockchain, then deploy to **Arbitrum** for production workloads. :::
 
 <style scoped>
 .networks-grid {

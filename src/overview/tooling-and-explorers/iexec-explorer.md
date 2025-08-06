@@ -1,11 +1,15 @@
 ---
 title: iExec Explorer
-description: Explore and analyze transactions on the iExec decentralized computing platform. Monitor deals, tasks, apps, and datasets in real-time.
+description:
+  Explore and analyze transactions on the iExec decentralized computing
+  platform. Monitor deals, tasks, apps, and datasets in real-time.
 ---
 
 # 🔍 iExec Explorer
 
-The **iExec Explorer** is your real-time window into the iExec confidential decentralized computing protocol. Track deals, monitor task execution, and explore apps and protectedData—all in one powerful dashboard.
+The **iExec Explorer** is your real-time window into the iExec confidential
+decentralized computing protocol. Track deals, monitor task execution, and
+explore apps and protectedData—all in one powerful dashboard.
 
 <div style="text-align: center; margin: 2rem 0;">
   <a href="https://explorer.iex.ec/" target="_blank" rel="noreferrer">
@@ -73,15 +77,23 @@ The **iExec Explorer** is your real-time window into the iExec confidential dece
   </p>
 </div>
 
-> **💡 Understanding Deals**: A deal is a coordinated set of tasks that brings together all the necessary components (app, dataset, workerpool) to execute confidential computation requests. Each deal can contain one or multiple related tasks.
+> **💡 Understanding Deals**: A deal is a coordinated set of tasks that brings
+> together all the necessary components (app, dataset, workerpool) to execute
+> confidential computation requests. Each deal can contain one or multiple
+> related tasks.
 
 ### Deal Management Dashboard
 
-- **Deal Architecture**: Visualize how deals orchestrate multiple tasks with shared resources and parameters
-- **Task Composition**: See which tasks belong to each deal and their execution dependencies
-- **Asset Coordination**: Monitor how apps, datasets, and workerpools are allocated across deal tasks
-- **Deal Lifecycle**: Track deals from initiation through task execution to final completion
-- **Pricing Analysis**: View payment distributions across the different assets of a deal (workerpool, dataset, app)
+- **Deal Architecture**: Visualize how deals orchestrate multiple tasks with
+  shared resources and parameters
+- **Task Composition**: See which tasks belong to each deal and their execution
+  dependencies
+- **Asset Coordination**: Monitor how apps, datasets, and workerpools are
+  allocated across deal tasks
+- **Deal Lifecycle**: Track deals from initiation through task execution to
+  final completion
+- **Pricing Analysis**: View payment distributions across the different assets
+  of a deal (workerpool, dataset, app)
 
 ### Tasks Overview
 
@@ -130,15 +142,24 @@ Browse and analyze all tasks across the iExec network:
   </div>
 </div>
 
-> **🔗 Task Assets**: Each task involves three key assets working together: the **iApp** (application logic), the **Dataset** (protected data), and the **Workerpool** (execution infrastructure). The Explorer shows how these components interact.
+> **🔗 Task Assets**: Each task involves three key assets working together: the
+> **iApp** (application logic), the **Dataset** (protected data), and the
+> **Workerpool** (execution infrastructure). The Explorer shows how these
+> components interact.
 
-- **Asset Relationships**: Visualize the connections between iApp, dataset, and workerpool for each task
-- **Real-time Progress**: Monitor task status from queued → running → completed with detailed state transitions
-- **Execution Environment**: See which workerpool nodes are processing your tasks and their TEE capabilities (TDX, SGX)
-- **Data Flow**: Track which protected datasets are securely accessed by authorized iApps
+- **Asset Relationships**: Visualize the connections between iApp, dataset, and
+  workerpool for each task
+- **Real-time Progress**: Monitor task status from queued → running → completed
+  with detailed state transitions
+- **Execution Environment**: See which workerpool nodes are processing your
+  tasks and their TEE capabilities (TDX, SGX)
+- **Data Flow**: Track which protected datasets are securely accessed by
+  authorized iApps
 - **Result Management**:
-  - **Download Results**: Access completed task outputs directly from the Explorer interface
-  - **Encryption Status**: Understand if results are encrypted based on requester specifications
+  - **Download Results**: Access completed task outputs directly from the
+    Explorer interface
+  - **Encryption Status**: Understand if results are encrypted based on
+    requester specifications
   - **Result Verification**: Validate computation correctness and integrity
 
 ## 📱 iApps Listing {#iapps-listing}
@@ -175,9 +196,11 @@ Explore the iExec application marketplace:
 
 Navigate the protected data landscape:
 
-- **Data Catalog**: Discover available datasets with their metadata and asset type
+- **Data Catalog**: Discover available datasets with their metadata and asset
+  type
 - **Usage Patterns**: Analyze dataset popularity and user adoption
-- **Schema Validation**: Ensure data structure compatibility with your applications
+- **Schema Validation**: Ensure data structure compatibility with your
+  applications
 
 ## ⚡ Workerpools {#workerpools}
 
@@ -194,7 +217,8 @@ Navigate the protected data landscape:
 
 Explore the decentralized computing infrastructure:
 
-- **Infrastructure Overview**: Monitor the distributed network of computing nodes
+- **Infrastructure Overview**: Monitor the distributed network of computing
+  nodes
 - **Worker Metrics**: Analyze execution success rates
 - **Resource Availability**: Check computational resources and capacity
 - **Usage Statistics**: Analyze workerpool utilization
