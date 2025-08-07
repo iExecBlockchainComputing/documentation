@@ -7,14 +7,12 @@ description: Privacy-first applications that run on decentralized infrastructure
 
 An iExec Application (iApp) is your regular application code (Python script, AI
 model, data processor) that can securely process protected data (created by
-DataProtector) inside a privacy-safe environment called TEE (a Trusted Execution
-Environment).
+DataProtector) inside a confidential computing environment called TEE (a Trusted
+Execution Environment).
 
 ## Why iApps Matter?
 
-<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!"><strong>iApps let you process sensitive data while keeping it private and secure.</strong></p>
-</div>
+iApps let you process sensitive data while keeping it private and secure.
 
 Imagine you want to build:
 
@@ -42,94 +40,30 @@ Imagine you want to build:
 Users have this data, but they won't give it to your regular app. **With iApps,
 they will.**
 
+## Key Concepts
+
+//TODO
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+  <div class="flex items-center gap-3">
+    <span class="text-green-500 text-xl">✅</span>
+    <p class="m-0"><strong>True Privacy:</strong> Users never expose their raw data. Your app processes it privately inside secure enclaves.</p>
+  </div>
+  <div class="flex items-center gap-3">
+    <span class="text-green-500 text-xl">✅</span>
+    <p class="m-0"><strong>Verifiable Execution:</strong> Cryptographic proof that your code ran exactly as intended. No black box execution.</p>
+  </div>
+  <div class="flex items-center gap-3">
+    <span class="text-green-500 text-xl">✅</span>
+    <p class="m-0"><strong>Decentralized Infrastructure:</strong> No single point of failure. Your app runs across a distributed network of workers.</p>
+  </div>
+  <div class="flex items-center gap-3">
+    <span class="text-green-500 text-xl">✅</span>
+    <p class="m-0"><strong>Zero Trust Architecture:</strong> Users don't need to trust you with their data. The protocol guarantees privacy.</p>
+  </div>
+</div>
+
 ## How It Works
-
-Your code runs in a Trusted Execution Environment (TEE) a secure area inside
-specific processors (Intel SGX/TDX chipset). Everything that happens there stays
-private and protected, even from the operating system.
-
-<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">An authorized user can trigger an iApp that processes someone's protected data inside this private environment. The data is used, but never exposed, not even to the person running the app.</p>
-</div>
-
-## iApp Generator: Your Development Tool
-
-Bootstrap TEE-compatible applications in minutes without any hardcoding skills,
-iApp Generator handles all the low-level complexity for you.
-
-- **Access to TEEs easily** - No need to dive into low-level requirements, build
-  iApps that connect to TEE in minutes
-- **Check and deploy iApps quickly** - iApp Generator checks that your iApp
-  complies with the iExec Framework and streamlines its deployment
-- **Select your project mode & language** - Select between basic or advanced
-  setup depending on your iExec level experience. You also have the choice
-  between Python or JavaScript
-
-```bash
-# Create your iApp (Python or Node.js supported)
-iapp init my-sentiment-analyzer
-cd my-sentiment-analyzer
-
-# Develop and test locally (simulates TEE environment)
-iapp test
-# Deploy to the network
-iapp deploy
-```
-
-<div class="bg-gradient-to-r from-blue-400/10 to-blue-400/5 rounded-[6px] p-4 border-l-4 border-blue-600 mb-6">
-  <p class="m-0! text-sm"><strong>Note:</strong> iApp Generator currently supports Python and Node.js, but iApps can be built in any language that runs in Docker.</p>
-</div>
-
-## Real Examples
-
-**Email Notification iApp**
-
-```python
-# User runs: "Send updates to my contacts about my project"
-contacts = load_protecteddata()  # User's protected contact list
-for contact in contacts:
-    send_email(contact, project_update_message)
-# → Emails sent directly, you never see the addresses
-```
-
-**Oracle Update iApp**
-
-```python
-# User runs: "Update price oracle with my private trading data"
-trading_data = load_protecteddata()  # User's protected trading history
-average_price = calculate_weighted_average(trading_data)
-update_oracle_contract(average_price)
-# → Oracle updated with real data, trading history stays private
-```
-
-**Automated Transactions iApp**
-
-```python
-# User runs: "Buy tokens when my portfolio meets certain conditions"
-portfolio = load_protecteddata()  # User's protected portfolio data
-if should_buy_tokens(portfolio):
-    execute_trade(token_address, amount)
-# → Trade executed based on private data, portfolio details stay hidden
-```
-
-## The Trust Model
-
-Here's why users will actually use your iApp with their private data:
-
-### What Users See
-
-- ✅ "This code runs in a secure enclave, not on the developer's servers"
-- ✅ "My data gets used privately for actions I want"
-- ✅ "Even iExec workers can't see my data during execution"
-- ✅ "I can revoke access anytime"
-
-### What You Get
-
-- ✅ Users willing to use your services with their sensitive data
-- ✅ New business models around privacy-preserving analytics
-- ✅ Competitive advantage through privacy guarantees
-
-### The Workflow
 
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-3">
@@ -151,7 +85,7 @@ Here's why users will actually use your iApp with their private data:
     </div>
     <div class="flex items-center gap-3">
       <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">5</span>
-      <span>Actions performed while maintaining privacy</span>
+      <span>Confidential computing performed while maintaining privacy</span>
     </div>
   </div>
 </div>
@@ -165,7 +99,66 @@ notifications - anything your code needs to do with the protected data. This
 isn't about trust - it's about **mathematical guarantees** that privacy is
 preserved.
 
-## What This Enables
+## The Trust Model
+
+Here's why users will actually use your iApp with their private data:
+
+### What Users See
+
+- ✅ "This code runs in a secure enclave, not on the developer's servers"
+- ✅ "My data gets used privately for actions I want"
+- ✅ "Even iExec workers can't see my data during execution"
+- ✅ "I can revoke access anytime"
+
+### What You Get
+
+- ✅ Users willing to use your services with their sensitive data
+- ✅ New business models around privacy-preserving analytics
+- ✅ Competitive advantage through privacy guarantees
+
+## How It Works
+
+Your code runs in a Trusted Execution Environment (TEE) a secure area inside
+specific processors (Intel SGX/TDX chipset). Everything that happens there stays
+private and protected, even from the operating system.
+
+An authorized user can trigger an iApp that processes someone's protected data inside this private environment. The data is used, but never exposed, not even to the person running the app.
+
+<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
+  <div class="flex flex-col gap-3">
+    <div class="flex items-center gap-3">
+      <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">1</span>
+      <span>User provides personal data</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">2</span>
+      <span>Data is protected with DataProtector</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">3</span>
+      <span>Protected data transferred to Trusted Execution Environment (TEE)</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">4</span>
+      <span>Your iApp runs inside TEE and processes protected data</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">5</span>
+      <span>Confidential computing performed while maintaining privacy</span>
+    </div>
+  </div>
+</div>
+
+<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!"><strong>Nobody sees the raw data except your code running inside the secure enclave.</strong></p>
+</div>
+
+Your iApp can send emails, update contracts, make transactions, trigger
+notifications - anything your code needs to do with the protected data. This
+isn't about trust - it's about **mathematical guarantees** that privacy is
+preserved.
+
+## Use Cases
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
@@ -240,27 +233,6 @@ Java, Go, etc.). However, **iApp Generator** currently supports only Python and
 Node.js for simplified development.
 
 :::
-
-## Why This Changes Everything
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-  <div class="flex items-center gap-3">
-    <span class="text-green-500 text-xl">✅</span>
-    <p class="m-0"><strong>True Privacy:</strong> Users never expose their raw data. Your app processes it privately inside secure enclaves.</p>
-  </div>
-  <div class="flex items-center gap-3">
-    <span class="text-green-500 text-xl">✅</span>
-    <p class="m-0"><strong>Verifiable Execution:</strong> Cryptographic proof that your code ran exactly as intended. No black box execution.</p>
-  </div>
-  <div class="flex items-center gap-3">
-    <span class="text-green-500 text-xl">✅</span>
-    <p class="m-0"><strong>Decentralized Infrastructure:</strong> No single point of failure. Your app runs across a distributed network of workers.</p>
-  </div>
-  <div class="flex items-center gap-3">
-    <span class="text-green-500 text-xl">✅</span>
-    <p class="m-0"><strong>Zero Trust Architecture:</strong> Users don't need to trust you with their data. The protocol guarantees privacy.</p>
-  </div>
-</div>
 
 ## Start Building
 
