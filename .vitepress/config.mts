@@ -1,6 +1,7 @@
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vitepress';
+import { fileURLToPath, URL } from 'node:url';
 import { getSidebar } from './sidebar';
 import {
   groupIconMdPlugin,
@@ -17,6 +18,11 @@ export default defineConfig({
   ignoreDeadLinks: true,
   vite: {
     plugins: [tailwindcss(), groupIconVitePlugin()],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('../src', import.meta.url))
+      }
+    }
   },
   srcDir: './src',
   markdown: {
