@@ -52,7 +52,7 @@ monitoring with detailed task execution history and real-time balance tracking.
 
 ### Current Voucher Balance & Management
 
-<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-700 mb-6">
+<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-700 my-6">
   <h4 class="!mt-0 !mb-2">💰 Voucher Balance Overview</h4>
   <ul class="!mb-0">
     <li><strong>Current Balance</strong>: View your remaining voucher credits and compute capacity</li>
@@ -107,7 +107,7 @@ deployed confidential iApps with detailed statistics and user insights.
 
 ### My Confidential iApps Overview
 
-<div class="bg-gradient-to-r from-blue-400/10 to-blue-400/5 rounded-[6px] p-6 border-l-4 border-blue-700 mb-6">
+<div class="bg-gradient-to-r from-blue-400/10 to-blue-400/5 rounded-[6px] p-6 border-l-4 border-blue-700 my-6">
   <h4 class="!mt-0 !mb-2">📱 iApp Portfolio Metrics</h4>
   <ul class="!mb-0">
     <li><strong>Deployed Applications</strong>: Complete list of all your confidential iApps currently deployed</li>
