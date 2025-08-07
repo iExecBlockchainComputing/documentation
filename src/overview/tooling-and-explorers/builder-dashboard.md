@@ -27,7 +27,6 @@ confidential iApps deployed on the protocol.
     icon="mdi:chart-line"
     title="Voucher consumption & Task History"
     description="View complete task execution history with status, pricing, deals, and comprehensive voucher consumption tracking"
-    link-url="#voucher-history"
     icon-color="text-blue-500"
   />
   
@@ -35,7 +34,6 @@ confidential iApps deployed on the protocol.
     icon="mdi:apps"
     title="Confidential iApp Monitoring"
     description="Monitor deployed iApps, track execution statistics, unique users"
-    link-url="#iapp-management"
     icon-color="text-green-500"
   />
 </CardGrid>
@@ -70,7 +68,6 @@ monitoring with detailed task execution history and real-time balance tracking.
     icon="mdi:history"
     title="Complete Task History"
     description="Chronological list of all executed tasks with detailed execution information"
-    link-url="#task-history"
     icon-color="text-blue-500"
   />
   
@@ -78,7 +75,6 @@ monitoring with detailed task execution history and real-time balance tracking.
     icon="mdi:chart-line"
     title="Task Status Tracking"
     description="Real-time status updates: Pending, Running, Completed, Failed"
-    link-url="#task-status"
     icon-color="text-green-500"
   />
   
@@ -86,7 +82,6 @@ monitoring with detailed task execution history and real-time balance tracking.
     icon="mdi:currency-usd"
     title="Pricing & Cost Analysis"
     description="Detailed cost breakdown per task and cumulative spending analytics"
-    link-url="#cost-analysis"
     icon-color="text-orange-500"
   />
   
@@ -94,7 +89,6 @@ monitoring with detailed task execution history and real-time balance tracking.
     icon="mdi:handshake"
     title="Deal Association"
     description="View which deal each task belongs to and track deal performance"
-    link-url="#deal-tracking"
     icon-color="text-purple-500"
   />
 </CardGrid>
@@ -130,7 +124,6 @@ deployed confidential iApps with detailed statistics and user insights.
     icon="mdi:apps"
     title="Deployed iApps"
     description="View all your confidential applications with deployment status, versions, and metadata"
-    link-url="#deployed-iapps"
     icon-color="text-blue-500"
   />
   
@@ -138,7 +131,6 @@ deployed confidential iApps with detailed statistics and user insights.
     icon="mdi:counter"
     title="Execution Count"
     description="Track how many times each iApp has been executed since deployment"
-    link-url="#execution-count"
     icon-color="text-green-500"
   />
   
@@ -146,7 +138,6 @@ deployed confidential iApps with detailed statistics and user insights.
     icon="mdi:account-group"
     title="Unique Users"
     description="Monitor total unique users who have interacted with each application"
-    link-url="#unique-users"
     icon-color="text-orange-500"
   />
   
@@ -154,7 +145,6 @@ deployed confidential iApps with detailed statistics and user insights.
     icon="mdi:trending-up"
     title="Usage Trends"
     description="Analyze usage patterns, peak times, and growth trends for each iApp"
-    link-url="#usage-trends"
     icon-color="text-purple-500"
   />
 </CardGrid>
