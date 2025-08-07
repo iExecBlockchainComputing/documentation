@@ -141,23 +141,6 @@ preserved.
   </div>
 </div>
 
-## The Trust benefits
-
-Why users actually trust iApps with their private data
-
-### For Users – You stay in control
-
-- Your data stays private, even from the iApp creator or iExec.
-- Your code runs in a secure enclave, not on someone else’s server.
-- You define what happens to your data, and you can revoke access anytime.
-
-### For Builders – Trust becomes your best feature
-
-- Users are confident sharing sensitive data with your app.
-- Unlock new business models with privacy-preserving features.
-- Stand out with built-in privacy, programmable access, and verifiable
-  execution.
-
 ## ❓ Frequently Asked Questions
 
 ::: details 📦 What can I build with iApps?
