@@ -65,7 +65,7 @@ Ethereum mainnet and the Bellecour sidechain in both directions.
 
 1. **Connect Wallet**: Visit
    [Bellecour Bridge](https://bridge-bellecour.iex.ec/) and connect your wallet
-2. **Select Direction**: Choose "Ethereum → Bellecour"
+2. **Switch to Ethereum**: Ensure your wallet is connected to Ethereum mainnet
 3. **Select Amount**: Choose the amount of RLC you want to bridge
 4. **Confirm Transaction**: Approve the bridge transaction on Ethereum mainnet
 5. **Receive xRLC**: Your xRLC tokens will be available on Bellecour network
@@ -78,7 +78,7 @@ Ethereum mainnet and the Bellecour sidechain in both directions.
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 my-6">
   <h4 class="!mt-0 !mb-2">🔄 Bidirectional Bridge</h4>
-  <p class="!mb-0">The bridge interface automatically detects your wallet's network and available tokens. The process is similar in both directions - simply select the appropriate source and destination networks, and the bridge will handle the conversion between RLC and xRLC seamlessly.</p>
+  <p class="!mb-0">The bridge interface automatically detects your wallet's network and available tokens. The process is similar in both directions - simply switch to the appropriate network (source chain) in your wallet and refresh the page to update the bridge direction, then the bridge will handle the conversion between RLC and xRLC seamlessly.</p>
 </div>
 
 ## ⚡ Stargate Bridge
