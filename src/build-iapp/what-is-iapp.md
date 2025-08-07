@@ -63,42 +63,6 @@ they will.**
   </div>
 </div>
 
-## How It Works
-
-<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
-  <div class="flex flex-col gap-3">
-    <div class="flex items-center gap-3">
-      <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">1</span>
-      <span>User provides personal data</span>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">2</span>
-      <span>Data is protected with DataProtector</span>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">3</span>
-      <span>Protected data transferred to Trusted Execution Environment (TEE)</span>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">4</span>
-      <span>Your iApp runs inside TEE and processes protected data</span>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">5</span>
-      <span>Confidential computing performed while maintaining privacy</span>
-    </div>
-  </div>
-</div>
-
-<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!"><strong>Nobody sees the raw data except your code running inside the secure enclave.</strong></p>
-</div>
-
-Your iApp can send emails, update contracts, make transactions, trigger
-notifications - anything your code needs to do with the protected data. This
-isn't about trust - it's about **mathematical guarantees** that privacy is
-preserved.
-
 ## The Trust Model
 
 Here's why users will actually use your iApp with their private data:
