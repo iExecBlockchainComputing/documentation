@@ -80,7 +80,7 @@ protocol.
     button-rel="noreferrer"
   />
 
-  <ProjectCard
+<ProjectCard
     title="iExec DataProtector - Bellecour Mainnet"
     description="Indexes DataProtector protocol data on Bellecour mainnet, including protected data, access grants, and sharing mechanisms"
     icon-image="/assets/icons/iexec-logo.png"
@@ -92,7 +92,7 @@ protocol.
     button-target="_blank"
     button-rel="noreferrer"
   />
-  
+
   </CardGrid>
 
 ## 🔍 GraphQL Explorer Interface
