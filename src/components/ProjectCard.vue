@@ -5,13 +5,13 @@
     <!-- Icon -->
     <div class="flex items-start gap-2">
       <div
-        class="border-border bg-bg flex h-14 w-14 items-center justify-center overflow-hidden rounded-xl border p-2"
+        class="border-border bg-bg flex size-10 flex-none items-center justify-center overflow-hidden rounded-xl border p-2"
       >
         <img
           v-if="iconImage"
           :src="iconImage"
           :alt="title"
-          class="h-full w-full object-contain"
+          class="size-8 object-contain"
         />
         <Icon v-else :icon="icon" height="24" />
       </div>
