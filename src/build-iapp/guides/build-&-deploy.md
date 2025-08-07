@@ -1,8 +1,10 @@
 ---
-title: Build and Deploy an iApp?
+title: Build and Deploy an iApp
 description:
-  How to build an confidential iexec application and deploy it on iexec protocol
+  How to build a confidential iExec application and deploy it on iExec protocol
 ---
+
+# Build And Deploy your iApp
 
 ## iApp Generator: Your Development Tool
 

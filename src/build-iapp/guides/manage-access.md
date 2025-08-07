@@ -3,7 +3,7 @@ title: App Access Control and Pricing
 description: Control who can use your iApp and set pricing with app orders
 ---
 
-# 💰 App Access Control and Pricing
+# 💰 Manage Access
 
 **Orders control who can use your iApp and under what conditions.** Once your
 iApp is deployed with iApp Generator, you need to create app orders to make it

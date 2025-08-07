@@ -1,10 +1,10 @@
 ---
-title: Create and Share Access to Protected Data
+title: Manage Access to Your ProtectedData
 description:
   Learn how to protect data and grant secure access for specific apps and users
 ---
 
-# 🛡️ Create and Share Access to Protected Data
+# 🛡️ Manage Access
 
 **Want to keep your data private while still using it in confidential
 applications?**

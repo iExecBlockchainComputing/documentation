@@ -4,7 +4,7 @@ description:
   Troubleshoot and optimize your iApp execution in the TEE environment
 ---
 
-# 🐛 Debugging Your iApp
+# 🐛 Debugging
 
 **When your iApp doesn't work as expected, debugging in the TEE environment
 requires specific techniques.** This guide helps you identify issues and

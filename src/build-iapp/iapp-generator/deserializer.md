@@ -1,4 +1,4 @@
-# DataProtector Deserializer
+# Deserialize a ProtectedData
 
 If you want to build your own iApp (iExec TEE Dapp), you may need to access
 protected data that your wallet and iApp are authorized to use. To achieve this,
