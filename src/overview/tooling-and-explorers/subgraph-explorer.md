@@ -25,6 +25,12 @@ It enables developers to build and publish open APIs called **subgraphs** that
 applications can query using GraphQL. This makes it easy to access blockchain
 data without having to run your own indexing infrastructure.
 
+<ImageViewer
+  image-url-dark="/assets/tooling-&-explorers/the-graph/protocol-view.jpg"
+  image-alt="The Graph Protocol"
+  link-url="https://thegraph.com/docs/en/subgraphs/quick-start/"
+/>
+
 ### Key Benefits for iExec
 
 - **Decentralized Indexing**: Data is indexed by a network of decentralized
@@ -42,7 +48,7 @@ protocol.
 
 <CardGrid>
   <ProjectCard
-    title="iExec PoCo - Arbitrum Mainnet"
+    title="iExec PoCo - Arbitrum"
     description="Indexes Proof of Contribution (PoCo) data on Arbitrum mainnet, including apps, deals, tasks, and workerpools"
     icon-image="/assets/icons/arbitrum.svg"
     status="available"
@@ -55,7 +61,7 @@ protocol.
   />
   
   <ProjectCard
-    title="iExec DataProtector - Arbitrum Mainnet"
+    title="iExec DataProtector - Arbitrum"
     description="Indexes DataProtector protocol data on Arbitrum mainnet, including protected data, access grants, and sharing mechanisms"
     icon-image="/assets/icons/arbitrum.svg"
     status="available"
@@ -68,7 +74,7 @@ protocol.
   />
 
 <ProjectCard
-    title="iExec PoCo - Bellecour Mainnet"
+    title="iExec PoCo - Bellecour"
     description="Indexes Proof of Contribution (PoCo) data on Bellecour mainnet, including apps, deals, tasks, and workerpools"
     icon-image="/assets/icons/iexec-logo.png"
     status="available"
@@ -81,7 +87,7 @@ protocol.
   />
 
 <ProjectCard
-    title="iExec DataProtector - Bellecour Mainnet"
+    title="iExec DataProtector - Bellecour"
     description="Indexes DataProtector protocol data on Bellecour mainnet, including protected data, access grants, and sharing mechanisms"
     icon-image="/assets/icons/iexec-logo.png"
     status="available"

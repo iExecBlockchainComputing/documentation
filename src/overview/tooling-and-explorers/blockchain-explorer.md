@@ -15,7 +15,7 @@ publicly auditable.
 
 <div class="grid grid-cols-1 gap-8 my-8">
   <UseCaseCard
-    title="🔷 Arbitrum Mainnet"
+    title="🔷 Arbitrum One"
     description="Production network for mainnet operations with verified smart contracts and comprehensive transaction tracking."
     image-url="/assets/tooling-&-explorers/blockchain-explorer/arbitrum-explorer.png"
     image-alt="Arbitrum Explorer"
@@ -26,7 +26,7 @@ publicly auditable.
   />
   
   <UseCaseCard
-    title="⚡ Bellecour Network"
+    title="⚡ Bellecour"
     description="iExec's dedicated sidechain for optimized performance with native integration and enhanced protocol analytics."
     image-url="/assets/tooling-&-explorers/blockchain-explorer/bellecour-explorer.png"
     image-alt="Bellecour Explorer"
