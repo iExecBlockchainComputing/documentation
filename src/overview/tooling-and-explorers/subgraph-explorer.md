@@ -33,7 +33,6 @@ data without having to run your own indexing infrastructure.
   and protected data
 - **GraphQL Interface**: Powerful query language for flexible data retrieval
 - **Multi-network Support**: Access data across different blockchain networks
-- **Cost-effective**: No need to run your own indexing infrastructure
 
 ## 🗂️ Available Subgraphs
 
@@ -45,7 +44,7 @@ protocol.
   <ProjectCard
     title="iExec PoCo - Arbitrum Mainnet"
     description="Indexes Proof of Contribution (PoCo) data on Arbitrum mainnet, including apps, deals, tasks, and workerpools"
-    icon="mdi:database-network"
+    icon-image="/assets/icons/arbitrum-logo.png"
     status="available"
     status-label="Live"
     button-label="Explore Subgraph"
@@ -58,7 +57,7 @@ protocol.
   <ProjectCard
     title="iExec DataProtector - Arbitrum Mainnet"
     description="Indexes DataProtector protocol data on Arbitrum mainnet, including protected data, access grants, and sharing mechanisms"
-    icon="mdi:shield-lock"
+    icon-image="/assets/icons/arbitrum-logo.png"
     status="available"
     status-label="Live"
     button-label="Explore Subgraph"
@@ -71,7 +70,7 @@ protocol.
 <ProjectCard
     title="iExec PoCo - Bellecour Mainnet"
     description="Indexes Proof of Contribution (PoCo) data on Bellecour mainnet, including apps, deals, tasks, and workerpools"
-    icon="mdi:database-network"
+    icon-image="/assets/icons/iexec-logo.png"
     status="available"
     status-label="Live"
     button-label="Explore Subgraph"
@@ -81,10 +80,10 @@ protocol.
     button-rel="noreferrer"
   />
 
-<ProjectCard
+  <ProjectCard
     title="iExec DataProtector - Bellecour Mainnet"
     description="Indexes DataProtector protocol data on Bellecour mainnet, including protected data, access grants, and sharing mechanisms"
-    icon="mdi:shield-lock"
+    icon-image="/assets/icons/iexec-logo.png"
     status="available"
     status-label="Live"
     button-label="Explore Subgraph"
@@ -92,7 +91,9 @@ protocol.
     button-href="https://thegraph.iex.ec/subgraphs/name/bellecour/dataProtector-v2/graphql?query=query+MyQuery+%7B%0A++protectedDatas+%7B%0A++++id%0A++++name%0A++++owner+%7B%0A++++++id%0A++++%7D%0A++%7D%0A%7D"
     button-target="_blank"
     button-rel="noreferrer"
-  /> </CardGrid>
+  />
+  
+  </CardGrid>
 
 ## 🔍 GraphQL Explorer Interface
 
@@ -108,7 +109,7 @@ explore the available data and construct complex queries.
 
 ### How to Use the GraphQL Explorer
 
-1. **Navigate to a Subgraph**: Click on any of the subgraph links above tos
+1. **Navigate to a Subgraph**: Click on any of the subgraph links above to
    access the GraphQL explorer
 2. **Explore the Schema**: Use the "Schema" tab to browse available entities and
    their fields
