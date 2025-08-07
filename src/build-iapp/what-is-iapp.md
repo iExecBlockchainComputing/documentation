@@ -42,43 +42,24 @@ they will.**
 
 ## Key Concepts
 
-//TODO
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-  <div class="flex items-center gap-3">
+<div class="grid grid-cols-1 gap-4 mb-6">
+  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4 flex items-center gap-3">
     <span class="text-green-500 text-xl">✅</span>
     <p class="m-0"><strong>True Privacy:</strong> Users never expose their raw data. Your app processes it privately inside secure enclaves.</p>
   </div>
-  <div class="flex items-center gap-3">
+  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4 flex items-center gap-3">
     <span class="text-green-500 text-xl">✅</span>
     <p class="m-0"><strong>Verifiable Execution:</strong> Cryptographic proof that your code ran exactly as intended. No black box execution.</p>
   </div>
-  <div class="flex items-center gap-3">
+  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4 flex items-center gap-3">
     <span class="text-green-500 text-xl">✅</span>
     <p class="m-0"><strong>Decentralized Infrastructure:</strong> No single point of failure. Your app runs across a distributed network of workers.</p>
   </div>
-  <div class="flex items-center gap-3">
+  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4 flex items-center gap-3">
     <span class="text-green-500 text-xl">✅</span>
     <p class="m-0"><strong>Zero Trust Architecture:</strong> Users don't need to trust you with their data. The protocol guarantees privacy.</p>
   </div>
 </div>
-
-## The Trust Model
-
-Here's why users will actually use your iApp with their private data:
-
-### What Users See
-
-- ✅ "This code runs in a secure enclave, not on the developer's servers"
-- ✅ "My data gets used privately for actions I want"
-- ✅ "Even iExec workers can't see my data during execution"
-- ✅ "I can revoke access anytime"
-
-### What You Get
-
-- ✅ Users willing to use your services with their sensitive data
-- ✅ New business models around privacy-preserving analytics
-- ✅ Competitive advantage through privacy guarantees
 
 ## How It Works
 
@@ -86,7 +67,9 @@ Your code runs in a Trusted Execution Environment (TEE) a secure area inside
 specific processors (Intel SGX/TDX chipset). Everything that happens there stays
 private and protected, even from the operating system.
 
-An authorized user can trigger an iApp that processes someone's protected data inside this private environment. The data is used, but never exposed, not even to the person running the app.
+An authorized user can trigger an iApp that processes someone's protected data
+inside this private environment. The data is used, but never exposed, not even
+to the person running the app.
 
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-3">
@@ -157,6 +140,23 @@ preserved.
     <p class="text-sm m-0!">Users set up automated workflows that use their private data to trigger actions, transactions, or updates.</p>
   </div>
 </div>
+
+## The Trust benefits
+
+Why users actually trust iApps with their private data
+
+### For Users – You stay in control
+
+- Your data stays private, even from the iApp creator or iExec.
+- Your code runs in a secure enclave, not on someone else’s server.
+- You define what happens to your data, and you can revoke access anytime.
+
+### For Builders – Trust becomes your best feature
+
+- Users are confident sharing sensitive data with your app.
+- Unlock new business models with privacy-preserving features.
+- Stand out with built-in privacy, programmable access, and verifiable
+  execution.
 
 ## ❓ Frequently Asked Questions
 
