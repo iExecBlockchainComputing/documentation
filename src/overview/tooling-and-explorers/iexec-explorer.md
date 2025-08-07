@@ -12,7 +12,7 @@ decentralized computing protocol. Track deals, monitor task execution, and
 explore apps and protectedData—all in one powerful dashboard.
 
 <ImageViewer
-  image-url-dark="/assets/tooling-&-explorers/iexec-explorer/explorer-global.png"
+  :image-url-dark="explorerGlobalImage"
   image-alt="iExec Explorer"
   link-url="https://explorer.iex.ec/"
   caption="🔗 Explore the iExec Protocol"
@@ -70,7 +70,7 @@ explore apps and protectedData—all in one powerful dashboard.
 ## 💼 Deals & Tasks {#deals-tasks}
 
 <ImageViewer
-  image-url-dark="/assets/tooling-&-explorers/iexec-explorer/deal-view.png"
+  :image-url-dark="dealViewImage"
   image-alt="Deal View"
   link-url="https://explorer.iex.ec/bellecour/deals"
   caption="🔗 Explore Deals"
@@ -96,7 +96,7 @@ explore apps and protectedData—all in one powerful dashboard.
 ### Tasks Overview
 
 <ImageViewer
-  image-url-dark="/assets/tooling-&-explorers/iexec-explorer/task-view.png"
+  :image-url-dark="taskViewImage"
   image-alt="Task View"
   link-url="https://explorer.iex.ec/bellecour/tasks"
   caption="🔗 Explore Tasks"
@@ -112,14 +112,14 @@ Browse and analyze all tasks across the iExec network:
 ### Task Execution Monitoring
 
 <ImageViewer
-    image-url-dark="/assets/tooling-&-explorers/iexec-explorer/task-details-started.png"
+    :image-url-dark="taskDetailsStartedImage"
     image-alt="Result Decryption"
     link-url="https://explorer.iex.ec/bellecour/tasks"
     caption="🔗 Explore Tasks"
 />
 
 <ImageViewer
-    image-url-dark="/assets/tooling-&-explorers/iexec-explorer/task-details-completed.png"
+    :image-url-dark="taskDetailsCompletedImage"
     image-alt="Task Completed"
     link-url="https://explorer.iex.ec/bellecour/tasks"
     caption="🔗 Explore Tasks"
@@ -148,7 +148,7 @@ Browse and analyze all tasks across the iExec network:
 ## 📱 iApps Listing {#iapps-listing}
 
 <ImageViewer
-  image-url-dark="/assets/tooling-&-explorers/iexec-explorer/app-view.png"
+  :image-url-dark="appViewImage"
   image-alt="App View"
   link-url="https://explorer.iex.ec/bellecour/apps"
   caption="🔗 Explore iApps Marketplace"
@@ -163,7 +163,7 @@ Explore the iExec application marketplace:
 ## 🗄️ Protected Data Listing {#protected-data-listing}
 
 <ImageViewer
-  image-url-dark="/assets/tooling-&-explorers/iexec-explorer/dataset-view.png"
+  :image-url-dark="datasetViewImage"
   image-alt="Dataset View"
   link-url="https://explorer.iex.ec/bellecour/datasets"
   caption="🔗 Explore Protected Datasets"
@@ -180,7 +180,7 @@ Navigate the protected data landscape:
 ## ⚡ Workerpools {#workerpools}
 
 <ImageViewer
-  image-url-dark="/assets/tooling-&-explorers/iexec-explorer/workerpool-view.png"
+  :image-url-dark="workerpoolViewImage"
   image-alt="Workerpool View"
   link-url="https://explorer.iex.ec/bellecour/workerpools"
   caption="🔗 Explore Workerpools Infrastructure"
@@ -198,4 +198,14 @@ Explore the decentralized computing infrastructure:
 import ImageViewer from '../../components/ImageViewer.vue';
 import FeatureCard from '../../components/FeatureCard.vue';
 import CardGrid from '../../components/CardGrid.vue';
+
+// Assets
+import explorerGlobalImage from '../../assets/tooling-&-explorers/iexec-explorer/explorer-global.png';
+import dealViewImage from '../../assets/tooling-&-explorers/iexec-explorer/deal-view.png';
+import taskViewImage from '../../assets/tooling-&-explorers/iexec-explorer/task-view.png';
+import taskDetailsStartedImage from '../../assets/tooling-&-explorers/iexec-explorer/task-details-started.png';
+import taskDetailsCompletedImage from '../../assets/tooling-&-explorers/iexec-explorer/task-details-completed.png';
+import appViewImage from '../../assets/tooling-&-explorers/iexec-explorer/app-view.png';
+import datasetViewImage from '../../assets/tooling-&-explorers/iexec-explorer/dataset-view.png';
+import workerpoolViewImage from '../../assets/tooling-&-explorers/iexec-explorer/workerpool-view.png';
 </script>

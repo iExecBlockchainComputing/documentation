@@ -17,7 +17,7 @@ publicly auditable.
   <UseCaseCard
     title="🔷 Arbitrum One"
     description="Production network for mainnet operations with verified smart contracts and comprehensive transaction tracking."
-    image-url="/assets/tooling-&-explorers/blockchain-explorer/arbitrum-explorer.png"
+    :image-url="arbitrumExplorerImage"
     image-alt="Arbitrum Explorer"
     :features="['Verified Contracts', 'Transaction History', 'Token Tracking', 'Contract Interactions']"
     demo-url="https://arbiscan.io/"
@@ -28,7 +28,7 @@ publicly auditable.
   <UseCaseCard
     title="⚡ Bellecour"
     description="iExec's dedicated sidechain for optimized performance with native integration and enhanced protocol analytics."
-    image-url="/assets/tooling-&-explorers/blockchain-explorer/bellecour-explorer.png"
+    :image-url="bellecourExplorerImage"
     image-alt="Bellecour Explorer"
     :features="['Verified Contracts', 'Transaction History', 'Token Tracking', 'Contract Interactions']"
     demo-url="https://blockscout-bellecour.iex.ec/"
@@ -46,4 +46,8 @@ deploy to **Arbitrum** for production workloads.
 
 <script setup>
 import UseCaseCard from '../../components/UseCaseCard.vue';
+
+// Assets
+import arbitrumExplorerImage from '../../assets/tooling-&-explorers/blockchain-explorer/arbitrum-explorer.png';
+import bellecourExplorerImage from '../../assets/tooling-&-explorers/blockchain-explorer/bellecour-explorer.png';
 </script>

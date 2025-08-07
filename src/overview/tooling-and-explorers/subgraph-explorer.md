@@ -13,7 +13,7 @@ tool allows developers and users to efficiently retrieve and analyze on-chain
 data through GraphQL queries.
 
 <ImageViewer
-  image-url-dark="/assets/tooling-&-explorers/the-graph/image-logo.jpg"
+  :image-url-dark="theGraphLogoImage"
   image-alt="The Graph Protocol"
   link-url="https://thegraph.com/docs/en/subgraphs/quick-start/"
 />
@@ -26,7 +26,7 @@ applications can query using GraphQL. This makes it easy to access blockchain
 data without having to run your own indexing infrastructure.
 
 <ImageViewer
-  image-url-dark="/assets/tooling-&-explorers/the-graph/protocol-view.jpg"
+  :image-url-dark="theGraphProtocolImage"
   image-alt="The Graph Protocol"
   link-url="https://thegraph.com/docs/en/subgraphs/quick-start/"
 />
@@ -50,7 +50,7 @@ protocol.
   <ProjectCard
     title="iExec PoCo - Arbitrum"
     description="Indexes Proof of Contribution (PoCo) data on Arbitrum mainnet, including apps, deals, tasks, and workerpools"
-    icon-image="/assets/icons/arbitrum.svg"
+    :icon-image="arbitrumIcon"
     status="available"
     status-label="Live"
     button-label="Explore Subgraph"
@@ -63,7 +63,7 @@ protocol.
   <ProjectCard
     title="iExec DataProtector - Arbitrum"
     description="Indexes DataProtector protocol data on Arbitrum mainnet, including protected data, access grants, and sharing mechanisms"
-    icon-image="/assets/icons/arbitrum.svg"
+    :icon-image="arbitrumIcon"
     status="available"
     status-label="Live"
     button-label="Explore Subgraph"
@@ -76,7 +76,7 @@ protocol.
 <ProjectCard
     title="iExec PoCo - Bellecour"
     description="Indexes Proof of Contribution (PoCo) data on Bellecour mainnet, including apps, deals, tasks, and workerpools"
-    icon-image="/assets/icons/iexec-logo.png"
+    :icon-image="iexecLogoIcon"
     status="available"
     status-label="Live"
     button-label="Explore Subgraph"
@@ -89,7 +89,7 @@ protocol.
 <ProjectCard
     title="iExec DataProtector - Bellecour"
     description="Indexes DataProtector protocol data on Bellecour mainnet, including protected data, access grants, and sharing mechanisms"
-    icon-image="/assets/icons/iexec-logo.png"
+    :icon-image="iexecLogoIcon"
     status="available"
     status-label="Live"
     button-label="Explore Subgraph"
@@ -108,7 +108,7 @@ test queries directly in your browser. This powerful interface makes it easy to
 explore the available data and construct complex queries.
 
 <ImageViewer
-  image-url-dark="/assets/tooling-&-explorers/the-graph/graphql-explorer.png"
+  :image-url-dark="graphqlExplorerImage"
   image-alt="GraphQL Explorer Interface"
   link-url="https://thegraph.com/explorer/subgraphs/Ep5zs5zVr4tDiVuQJepUu51e5eWYJpka624X4DMBxe3u?view=Query&chain=arbitrum-one"
 />
@@ -194,4 +194,11 @@ query {
 import ImageViewer from '../../components/ImageViewer.vue';
 import CardGrid from '../../components/CardGrid.vue';
 import ProjectCard from '../../components/ProjectCard.vue';
+
+// Assets
+import theGraphLogoImage from '../../assets/tooling-&-explorers/the-graph/image-logo.jpg';
+import theGraphProtocolImage from '../../assets/tooling-&-explorers/the-graph/protocol-view.jpg';
+import arbitrumIcon from '../../assets/icons/arbitrum.svg';
+import iexecLogoIcon from '../../assets/icons/iexec-logo.png';
+import graphqlExplorerImage from '../../assets/tooling-&-explorers/the-graph/graphql-explorer.png';
 </script>
