@@ -31,8 +31,8 @@ networks:
 <CardGrid>
   <ProjectCard
     title="Bellecour Bridge"
-    description="Bridge RLC from Ethereum mainnet to Bellecour sidechain (xRLC)"
-    icon-image="/assets/icons/iexec-logo.png"
+    description="Bridge RLC tokens between Ethereum mainnet and Bellecour sidechain (xRLC) in both directions"
+    :icon-image="iexecLogoIcon"
     status="available"
     status-label="Live"
     button-label="Access Bridge"
@@ -44,8 +44,8 @@ networks:
   
   <ProjectCard
     title="Stargate Bridge"
-    description="Bridge RLC to Arbitrum mainnet using LayerZero's Stargate protocol"
-    icon-image="/assets/icons/arbitrum-logo.png"
+    description="Bridge RLC tokens between Ethereum and Arbitrum mainnet in both directions using LayerZero protocol"
+    :icon-image="arbitrumLogoIcon"
     status="available"
     status-label="Live"
     button-label="Access Bridge"
@@ -56,27 +56,37 @@ networks:
   />
 </CardGrid>
 
-## 🔄 How to Bridge to Bellecour
+## 🔄 Bellecour Bridge
 
-The **Bellecour Bridge** enables seamless transfer of RLC tokens from Ethereum
-mainnet to the Bellecour sidechain, where they become **xRLC** tokens.
+The **Bellecour Bridge** enables seamless transfer of RLC tokens between
+Ethereum mainnet and the Bellecour sidechain in both directions.
+
+### From Ethereum to Bellecour (RLC → xRLC)
 
 1. **Connect Wallet**: Visit
    [Bellecour Bridge](https://bridge-bellecour.iex.ec/) and connect your wallet
-2. **Select Amount**: Choose the amount of RLC you want to bridge
-3. **Confirm Transaction**: Approve the bridge transaction on Ethereum mainnet
-4. **Receive xRLC**: Your xRLC tokens will be available on Bellecour network
+2. **Select Direction**: Choose "Ethereum → Bellecour"
+3. **Select Amount**: Choose the amount of RLC you want to bridge
+4. **Confirm Transaction**: Approve the bridge transaction on Ethereum mainnet
+5. **Receive xRLC**: Your xRLC tokens will be available on Bellecour network
 
 <ImageViewer
-  image-url-dark="/assets/tooling-&-explorers/bridge/bellecour-bridge.png"
+  :image-url-dark="bellecourBridgeImage"
   image-alt="Bellecour Bridge Process"
   link-url="https://bridge-bellecour.iex.ec/"
 />
 
-## How to Bridge to Arbitrum
+<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 my-6">
+  <h4 class="!mt-0 !mb-2">🔄 Bidirectional Bridge</h4>
+  <p class="!mb-0">The bridge interface automatically detects your wallet's network and available tokens. The process is similar in both directions - simply select the appropriate source and destination networks, and the bridge will handle the conversion between RLC and xRLC seamlessly.</p>
+</div>
+
+## ⚡ Stargate Bridge
 
 The **Stargate Bridge** powered by LayerZero enables cross-chain transfers of
-RLC tokens to Arbitrum mainnet.
+RLC tokens between Ethereum and Arbitrum mainnet in both directions.
+
+### From Ethereum to Arbitrum
 
 1. **Visit Stargate**: Go to [Stargate](https://stargate.finance/bridge)
 2. **Connect Wallet**: Connect your wallet to the Stargate interface
@@ -86,13 +96,24 @@ RLC tokens to Arbitrum mainnet.
 6. **Confirm Transaction**: Approve the bridge transaction
 
 <ImageViewer
-  image-url-dark="/assets/tooling-&-explorers/bridge/stargate-bridge.png"
+  :image-url-dark="stargateBridgeImage"
   image-alt="Stargate Bridge Interface"
   link-url="https://stargate.finance/bridge"
 />
+
+<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 my-6">
+  <h4 class="!mt-0 !mb-2">🔄 Bidirectional Bridge</h4>
+  <p class="!mb-0">The Stargate bridge interface automatically detects your wallet's network and available RLC tokens. The process is similar in both directions - simply select the appropriate source and destination networks to transfer RLC between Ethereum and Arbitrum seamlessly.</p>
+</div>
 
 <script setup>
 import ImageViewer from '../../components/ImageViewer.vue';
 import CardGrid from '../../components/CardGrid.vue';
 import ProjectCard from '../../components/ProjectCard.vue';
+
+// Assets
+import iexecLogoIcon from '../../assets/icons/iexec-logo.png';
+import arbitrumLogoIcon from '../../assets/icons/arbitrum.svg';
+import bellecourBridgeImage from '../../assets/tooling-&-explorers/bridge/bellecour-bridge.png';
+import stargateBridgeImage from '../../assets/tooling-&-explorers/bridge/stargate-bridge.png';
 </script>
