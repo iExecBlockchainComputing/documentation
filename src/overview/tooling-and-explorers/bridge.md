@@ -81,7 +81,7 @@ The **Stargate Bridge** powered by LayerZero enables cross-chain transfers of RL
 <ImageViewer
   image-url-dark="/assets/tooling-&-explorers/bridge/stargate-bridge.png"
   image-alt="Stargate Bridge Interface"
-  link-url="https://stargateprotocol.com/"
+  link-url="https://stargate.finance/bridge"
 />
 
 <script setup>
