@@ -38,6 +38,15 @@ technology, different from the default SGX implementation.
 - ❌ **Limited worker availability**
 - ❌ **Not production ready**
 
+| Feature                  | Intel SGX                                                                           | Intel TDX                                    |
+| ------------------------ | ----------------------------------------------------------------------------------- | -------------------------------------------- |
+| Release Year             | 2015                                                                                | 2023                                         |
+| Enclave Scope            | Application level                                                                   | Virtual machine level                        |
+| Code Adaptation Required | Yes - needs redesign of app's logic                                                 | No - supports lift-and-shift of full systems |
+| Memory Size              | Limited                                                                             | Extensive (multi-GB+)                        |
+| Integration Complexity   | Higher (more dev work)                                                              | Lower (VM legacy code)                       |
+| Best Fit For             | Lightweight, high-assurance modules (e.g. wallets, crypto key ops, small AI models) | Heavier AI workloads, legacy apps, databases |
+
 ## Enabling TDX in iApp Generator
 
 ### Environment Variable Method
@@ -52,6 +61,15 @@ export EXPERIMENTAL_TDX_APP=true
 iapp deploy
 iapp run <app-address>
 ```
+
+:::warning Environment Variable Declaration
+
+The syntax for setting environment variables differs between operating systems:
+
+- **Mac/Linux**: `export EXPERIMENTAL_TDX_APP=true`
+- **Windows**: `set EXPERIMENTAL_TDX_APP=true`
+
+:::
 
 ### Per-Command Method
 
@@ -75,6 +93,30 @@ EXPERIMENTAL_TDX_APP=true iapp debug <taskId>
 ```bash
 # Your deployed iApp should show TDX-related tags
 iexec app show <app-address>
+```
+
+###
+
+⚠️ **To use** the iExec DataProtector SDK with TDX support, you must configure
+the SDK with the right SMS endpoint.
+
+```jsx
+const dataProtector = new IExecDataProtector(web3Provider, {
+  iexecOptions: {
+    smsURL: 'https://sms.labs.iex.ec',
+  },
+});
+```
+
+⚠️**You need** to change the default worker pool in your protected Data
+declaration
+
+```jsx
+await dataProtector.core.processProtectedData({
+  protectedData: protectedData.address,
+  workerpool: 'tdx-labs.pools.iexec.eth',
+  app: '0x1919ceb0c6e60f3B497936308B58F9a6aDf071eC',
+});
 ```
 
 ## Protected Data Compatibility

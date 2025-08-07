@@ -275,23 +275,6 @@ environment.
 **When to use:** Processing user's sensitive information like personal data,
 financial records, health data.
 
-### How Users Provide Protected Data
-
-Users specify the protected data address when executing your iApp:
-
-```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-// User provides their protected data for processing
-const response = await dataProtectorCore.processProtectedData({
-  protectedData: '0x123abc...', // Address of their protected data
-  app: '0x456def...', // Your iApp address
-});
-```
-
 ### How to Access Protected Data
 
 Protected data is available in the `IEXEC_IN` directory as decrypted files:
@@ -344,6 +327,23 @@ try {
 ```
 
 :::
+
+### How Users Provide Protected Data
+
+Users specify the protected data address when executing your iApp:
+
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
+// User provides their protected data for processing
+const response = await dataProtectorCore.processProtectedData({
+  protectedData: '0x123abc...', // Address of their protected data
+  app: '0x456def...', // Your iApp address
+});
+```
 
 ### Working with Multiple Protected Datasets
 

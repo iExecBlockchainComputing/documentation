@@ -345,7 +345,11 @@ export function getSidebar() {
             text: '📖 Guides',
             items: [
               {
-                text: 'Manage Your iApps',
+                text: 'Build and Deploy your iApps',
+                link: '/build-iapp/guides/build-&-deploy-iapp',
+              },
+              {
+                text: 'Manage your iApps',
                 link: '/build-iapp/guides/manage-iapp',
               },
               {
