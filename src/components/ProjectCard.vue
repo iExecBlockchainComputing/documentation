@@ -5,9 +5,15 @@
     <!-- Icon -->
     <div class="flex items-start gap-2">
       <div
-        class="border-border bg-bg flex h-14 w-14 items-center justify-center rounded-xl border"
+        class="border-border bg-bg flex size-10 flex-none items-center justify-center overflow-hidden rounded-xl border p-2"
       >
-        <Icon :icon="icon" height="24" />
+        <img
+          v-if="iconImage"
+          :src="iconImage"
+          :alt="title"
+          class="size-8 object-contain"
+        />
+        <Icon v-else :icon="icon" height="24" />
       </div>
       <div>
         <h3 class="mt-0! mb-1! text-lg font-semibold">{{ title }}</h3>
@@ -78,7 +84,8 @@ import Button from './ui/Button.vue';
 interface Props {
   title: string;
   description: string;
-  icon: string;
+  icon?: string;
+  iconImage?: string;
   status: 'available' | 'coming-soon' | 'interactive';
   statusLabel: string;
   buttonLabel: string;
@@ -91,7 +98,10 @@ interface Props {
   githubLabel?: string;
 }
 
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+  icon: '',
+  iconImage: '',
+});
 
 const statusIcon = computed(() => {
   switch (props.status) {
