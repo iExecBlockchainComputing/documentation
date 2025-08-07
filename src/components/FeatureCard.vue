@@ -32,5 +32,6 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
   iconColor: 'text-blue-500',
+  linkUrl: '',
 });
 </script>

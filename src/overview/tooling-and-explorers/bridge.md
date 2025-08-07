@@ -7,9 +7,13 @@ description:
 
 # RLC Bridge
 
-**RLC** (RLC Token) is the essential cryptocurrency for interacting with the iExec protocol. Whether you are executing tasks, accessing protected data, or participating in the iExec decentralized confidential computing network, you will need RLC tokens on the appropriate network.
+**RLC** (RLC Token) is the essential cryptocurrency for interacting with the
+iExec protocol. Whether you are executing tasks, accessing protected data, or
+participating in the iExec decentralized confidential computing network, you
+will need RLC tokens on the appropriate network.
 
-This guide helps you bridge RLC tokens to **Bellecour** (becoming xRLC) and **Arbitrum** networks using dedicated bridge solutions.
+This guide helps you bridge RLC tokens to **Bellecour** (becoming xRLC) and
+**Arbitrum** networks using dedicated bridge solutions.
 
 ## 🎯 Why Bridge RLC?
 
@@ -21,7 +25,8 @@ RLC tokens are required for various iExec protocol interactions:
 
 ## 🗂️ Available Bridges
 
-iExec provides dedicated bridge solutions for seamless token transfers across networks:
+iExec provides dedicated bridge solutions for seamless token transfers across
+networks:
 
 <CardGrid>
   <ProjectCard
@@ -53,9 +58,11 @@ iExec provides dedicated bridge solutions for seamless token transfers across ne
 
 ## 🔄 How to Bridge to Bellecour
 
-The **Bellecour Bridge** enables seamless transfer of RLC tokens from Ethereum mainnet to the Bellecour sidechain, where they become **xRLC** tokens.
+The **Bellecour Bridge** enables seamless transfer of RLC tokens from Ethereum
+mainnet to the Bellecour sidechain, where they become **xRLC** tokens.
 
-1. **Connect Wallet**: Visit [Bellecour Bridge](https://bridge-bellecour.iex.ec/) and connect your wallet
+1. **Connect Wallet**: Visit
+   [Bellecour Bridge](https://bridge-bellecour.iex.ec/) and connect your wallet
 2. **Select Amount**: Choose the amount of RLC you want to bridge
 3. **Confirm Transaction**: Approve the bridge transaction on Ethereum mainnet
 4. **Receive xRLC**: Your xRLC tokens will be available on Bellecour network
@@ -66,10 +73,10 @@ The **Bellecour Bridge** enables seamless transfer of RLC tokens from Ethereum m
   link-url="https://bridge-bellecour.iex.ec/"
 />
 
-
 ## How to Bridge to Arbitrum
 
-The **Stargate Bridge** powered by LayerZero enables cross-chain transfers of RLC tokens to Arbitrum mainnet.
+The **Stargate Bridge** powered by LayerZero enables cross-chain transfers of
+RLC tokens to Arbitrum mainnet.
 
 1. **Visit Stargate**: Go to [Stargate](https://stargate.finance/bridge)
 2. **Connect Wallet**: Connect your wallet to the Stargate interface
