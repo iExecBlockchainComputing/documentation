@@ -28,16 +28,6 @@ computing and decentralized data protection.
   />
 
 <UseCaseCard
-    title="Oracle Factory"
-    description="Decentralized oracle platform providing secure and verifiable data feeds for smart contracts. Data are fetched through iApps that run on a decentralized confidential computing layer, ensuring privacy-preserving computation and access to verified external data sources for your DeFi and Web3 applications."
-    imageUrl="/assets/use-cases/oracle-factory.png"
-    imageAlt="OracleFactory Demo Screenshot"
-    :features="['Oracle Factory']"
-    demoUrl="https://oracle-factory.iex.ec/gallery"
-    demoIcon="mdi:database-search"
-  />
-
-<UseCaseCard
     title="AI Agent"
     description="Showcase of artificial intelligence applications running on iExec's confidential computing infrastructure. Experience privacy-preserving AI inference, machine learning model execution, and secure data analysis with TEE protection."
     imageUrl="/assets/use-cases/elizaos.png"

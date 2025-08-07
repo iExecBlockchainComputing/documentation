@@ -93,17 +93,6 @@ learning and prototyping.
     buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/web3mail-sandbox/main"
   />
 
-<ProjectCard
-    title="Oracle Factory"
-    description="Create and deploy custom oracles for bringing off-chain data into your Web3 applications."
-    icon="mdi:database-cog"
-    status="interactive"
-    statusLabel="Interactive"
-    buttonLabel="Open Sandbox"
-    buttonIcon="mdi:code-braces"
-    buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/oracle-factory-sandbox/"
-  /> </CardGrid>
-
 ## Next Steps
 
 After exploring our starters and sandboxes:
