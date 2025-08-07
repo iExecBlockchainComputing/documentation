@@ -93,20 +93,9 @@ learning and prototyping.
     buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/web3mail-sandbox/main"
   />
 
-<ProjectCard
-    title="Oracle Factory"
-    description="Create and deploy custom oracles for bringing off-chain data into your Web3 applications."
-    icon="mdi:database-cog"
-    status="interactive"
-    statusLabel="Interactive"
-    buttonLabel="Open Sandbox"
-    buttonIcon="mdi:code-braces"
-    buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/oracle-factory-sandbox/"
-  /> </CardGrid>
+</CardGrid>
 
-## Next Steps
-
-After exploring our starters and sandboxes:
+## Next StepsAfter exploring our starters and sandboxes
 
 1. **Choose Your Framework**: Start with our Next.js template or wait for
    React/Vue options

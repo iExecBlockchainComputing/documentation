@@ -150,7 +150,7 @@ Fork this repository and ensure you're working on the `main` branch:
 
 - Add an audit section for smart contracts
 - Add Arbitrum support
-- On arbitrum hide : Oracle Factory ? , DataProtector Sharing ??
+- On arbitrum hide : DataProtector Sharing ??
 - Adapt hardcoded address to feat with new contracts deployed on arbitrum
 - Add link to the new explorer feature Asset_Types in the guide =>
   `handle-schemas-dataset-types`

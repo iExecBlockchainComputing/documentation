@@ -35,8 +35,8 @@ features:
   - icon: ⚡
     title: Use iApps
     details:
-      Execute existing iApps including Web3Mail, Web3Telegram, and Oracle
-      Factory for your applications
+      Execute existing iApps including Web3Mail, Web3Telegram for your
+      applications
     link: /use-iapp/introduction
   - icon: 💰
     title: Monetize Data
