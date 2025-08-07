@@ -153,9 +153,9 @@ be an iApp.
 
 ::: details ⚡How fast are iApps?
 
-Initial task scheduling takes ~30 seconds (depending on the resources the worker
-download, congestion etc), then your code runs at normal speed depending on
-complexity.
+Initial task scheduling takes a few seconds (depending on the resources the
+worker download, congestion etc), then your code runs at normal speed depending
+on complexity.
 
 :::
 
@@ -169,7 +169,7 @@ iApp can't see what's happening inside the enclave.
 ::: details 🚀 How do I deploy my first iApp?
 
 Try our [Hello World](/overview/helloWorld) for a quick start, or check the
-[iApp Generator](/build_iapp/iapp-generator) section for detailed instructions.
+[iApp Generator](/build-iapp/iapp-generator) section for detailed instructions.
 
 :::
 
@@ -181,31 +181,28 @@ Node.js for simplified development.
 
 :::
 
-## Start Building
+## Next Steps
 
-Ready to build privacy-first applications?
+<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
 
-### 🚀 **Try iApp Generator**
+<div class="flex flex-col gap-4">
+  <div class="flex items-start gap-3">
+    <div>📚</div>
+    <div>
+      Learn More - iApp Generator:
+      <a href="/build-iapp/iapp-generator">Complete DataProtector Documentation</a>
+    </div>
+  </div>
+  <div class="flex items-start gap-3">
+    <div>🚀</div>
+    <div>
+      Getting Started - deploy your first iApp:
+      <a href="/build-iapp/guides/build-&-deploy-iapp">DataProtector Quick Start Guide</a>
+    </div>
+  </div>
+</div>
 
-- [Getting Started](/build_iapp/iapp-generator/getting-started) - Deploy your
-  first iApp in 15 minutes
-- [Building Your iExec App](/build_iapp/iapp-generator/building-your-iexec-app) -
-  Complete development guide
-
-### 📖 **Learn with Guides**
-
-- [Orders](/build_iapp/guides/orders) - How iApp execution works
-- [Inputs and Outputs](/build_iapp/guides/inputs-and-outputs) - Handle data flow
-- [Debugging Your iApp](/build_iapp/guides/debugging-your-iapp) - Troubleshoot
-  issues
-
-### 🎯 **See iApps in Action**
-
-Real iApps you can use today:
-
-- [Web3Mail](/use_iapp/web3mail) - Private emailing iApp SDK
-- [Web3Telegram](/use_iapp/web3telegram) Private messaging iApp SDK
-- [Oracle Factory](/use_iapp/oracle-factory) - Decentralized oracles
+</div>
 
 ---
 
