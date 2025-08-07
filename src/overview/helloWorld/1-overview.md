@@ -15,7 +15,7 @@ description:
   <p>and explore how iExec can help you build Privacy-preserving applications and securely manage sensitive data.</p>
 </div>
 
-## 👨‍💻 Why build Privacy-preserving dApps with iExec
+## 👨‍💻 Building Privacy-preserving dApps with iExec
 
 <p>Imagine you're building a decentralized application (dApp) that needs to <strong> handle sensitive user data</strong>, for example:</p>
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
@@ -80,13 +80,13 @@ Computing</a></span> technologies.
   <span class="text-fuchsia-700 font-semibold">confidentiality</span>, and <span class="text-fuchsia-700 font-semibold">monetization</span> of their data and digital assets within the <span class="text-fuchsia-700 font-semibold">Web3</span> ecosystem.</p>
 </div>
 
-## 🔒 What are the three key elements?
+## 🔒 The three key elements?
 
 iExec combines three fundamental elements that work together seamlessly:
 
-#### 1. Protect data with our devtool [DataProtector](../../tools/dataProtector/getting-started)
+#### 1. Protect data with our devtool [DataProtector](../../manage-data/dataProtector/getting-started)
 
-- Encrypt your sensitive data and store it securely on IPFS
+- Encrypt your sensitive data and store it securely on Arweave or IPFS
 - Only you control who can access it and when
 - Perfect for private information like research data, business analytics, or
   personal records
@@ -151,79 +151,6 @@ Depending on the dApp's use case, Alice could:
 - Ask questions to AI models about her data and get answers confidentially
 
 And many other use cases...
-
-## 💡 Possible use cases
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
-    <div class="flex items-baseline gap-2 text-lg">
-      <span>💰</span>
-      <h3 class="font-semibold m-0!">Finance</h3>
-    </div>
-    <ul class="list-disc ml-6">
-      <li>Analyze sensitive financial data</li>
-      <li>Process credit scores without exposing personal information</li>
-    </ul>
-  </div>
-
-  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
-    <div class="flex items-baseline gap-2 text-lg">
-      <span>🤖</span>
-      <h3 class="font-semibold m-0!">AI/ML</h3>
-    </div>
-    <ul class="list-disc ml-6">
-      <li>Train models on private datasets</li>
-      <li>Perform confidential predictions</li>
-    </ul>
-  </div>
-
-  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
-    <div class="flex items-baseline gap-2 text-lg">
-      <span>🔬</span>
-      <h3 class="font-semibold m-0!">Research</h3>
-    </div>
-    <ul class="list-disc ml-6">
-      <li>Share and analyze research data securely</li>
-      <li>Collaborate while protecting intellectual property</li>
-    </ul>
-  </div>
-
-  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
-    <div class="flex items-baseline gap-2 text-lg">
-      <span>📊</span>
-      <h3 class="font-semibold m-0!">Business Analytics</h3>
-    </div>
-    <ul class="list-disc ml-6">
-      <li>Process competitive market data</li>
-      <li>Analyze business metrics confidentially</li>
-    </ul>
-  </div>
-
-  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
-    <div class="flex items-baseline gap-2 text-lg">
-      <span>🎮</span>
-      <h3 class="font-semibold m-0!">Gaming</h3>
-    </div>
-    <ul class="list-disc ml-6">
-      <li>Protect player data and game assets</li>
-      <li>Process in-game transactions securely</li>
-    </ul>
-  </div>
-  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
-    <div class="flex items-baseline gap-2 text-lg">
-      <span>🏥</span>
-      <h3 class="font-semibold m-0!">Healthcare</h3>
-    </div>
-    <ul class="list-disc ml-6">
-      <li>Process patient records privately</li>
-      <li>Run medical analyses while preserving patient confidentiality</li>
-    </ul>
-  </div>
-</div>
-
-<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">In the next chapters, we'll follow Alice and Bob's journey step by step, starting with how Alice can <span class="text-fuchsia-700 font-semibold">protect her sensitive data</span> and then how Bob can <span class="text-fuchsia-700 font-semibold">build and deploy a confidential app</span> to process it.</p>
-</div>
 
 ## 🎯 Key takeaways
 

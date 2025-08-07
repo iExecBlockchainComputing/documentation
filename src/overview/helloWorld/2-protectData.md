@@ -24,8 +24,9 @@ their dApps with these key features:
 - 🔐 **Data Privacy and Security**
 
   Utilizes end-to-end encryption and decentralized storage
-  (<a href="https://ipfs.tech/" target="_blank">IPFS</a>) to ensure protection
-  and confidentiality, leveraging advanced confidential computing technology.
+  (<a href="https://ipfs.tech/" target="_blank">IPFS</a> or
+  <a href="https://ar.io/" target="_blank">AR.io</a>) to ensure protection and
+  confidentiality, leveraging advanced confidential computing technology.
 
 - 🎮 **Dynamic Access Management**
 
@@ -117,9 +118,25 @@ simple through our developer tools.
     <p><strong>1. Install the Developer Tool</strong></p>
     <p>Run the install command:</p>
 
-```sh
+::: code-group
+
+```sh [npm]
 npm install @iexec/dataprotector
 ```
+
+```sh [yarn]
+yarn add @iexec/dataprotector
+```
+
+```sh [pnpm]
+pnpm add @iexec/dataprotector
+```
+
+```sh [bun]
+bun add @iexec/dataprotector
+```
+
+:::
 
   </div>
   <div>

@@ -11,7 +11,6 @@
   "dependencies": {
     "@iexec/dataprotector": "^2.0.0-beta.17",
     "@iexec/dataprotector-deserializer": "^0.1.1",
-    "@iexec/iexec-oracle-factory-wrapper": "^2.6.0",
     "@iexec/web3mail": "^1.2.2",
     "@iexec/web3telegram": "^0.1.0-alpha.1",
     "@reown/appkit": "^1.7.17",

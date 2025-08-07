@@ -39,18 +39,29 @@ export function getSidebar() {
             link: '/overview/use-cases',
           },
           {
-            text: '🤖 Use the docs in your AI',
-            link: '/overview/ai-integration',
+            text: '🤖 Develop with AI',
+            link: '/overview/develop-with-ai',
           },
         ],
       },
       {
-        text: 'EXPLORERS',
+        text: 'TOOLING & EXPLORERS',
         items: [
-          { text: 'iExec Explorer', link: '/overview/iexec-explorer' },
           {
-            text: 'TheGraph Explorer',
-            link: '/overview/the-graph-explorer',
+            text: 'iExec Explorer',
+            link: '/overview/tooling-and-explorers/iexec-explorer',
+          },
+          {
+            text: 'Builder Dashboard',
+            link: '/overview/tooling-and-explorers/builder-dashboard',
+          },
+          {
+            text: 'Subgraph Explorer',
+            link: '/overview/tooling-and-explorers/subgraph-explorer',
+          },
+          {
+            text: 'Blockchain Explorer',
+            link: '/overview/tooling-and-explorers/blockchain-explorer',
           },
         ],
       },
@@ -65,7 +76,6 @@ export function getSidebar() {
           },
           {
             text: '📖 Guides',
-            link: '/manage-data/guides',
             items: [
               {
                 text: 'Create and Share Access to Protected Data',
@@ -76,23 +86,18 @@ export function getSidebar() {
                 link: '/manage-data/guides/handle-schemas-dataset-types',
               },
               {
-                text: 'Manage Data Monetization',
-                link: '/manage-data/guides/manage-data-monetization',
+                text: 'Monetize Protected Data',
+                link: '/manage-data/guides/monetize-protected-data',
               },
             ],
           },
           {
             text: '🔐 DataProtector',
             link: '/manage-data/dataProtector',
-            collapsed: true,
             items: [
               {
                 text: 'Getting Started',
                 link: '/manage-data/dataProtector/getting-started',
-              },
-              {
-                text: 'Guides',
-                link: '/manage-data/dataProtector/guides',
               },
               {
                 text: 'DataProtector Core',
@@ -395,7 +400,6 @@ export function getSidebar() {
           { text: '🚀 Getting Started', link: '/use-iapp/getting-started' },
           {
             text: '📖 Guides',
-            link: '/use-iapp/guides',
             items: [
               {
                 text: 'Different ways to execute an iApp',
@@ -407,11 +411,11 @@ export function getSidebar() {
               },
               {
                 text: 'Use iApp with Protected Data',
-                link: '/use-iapp/use-iapp-with-protected-data',
+                link: '/use-iapp/guides/use-iapp-with-protected-data',
               },
               {
                 text: 'Find iApps to Use',
-                link: '/use-iapp/find-iapps',
+                link: '/use-iapp/guides/find-iapps',
               },
               {
                 text: 'How to pay the executions',
@@ -421,23 +425,22 @@ export function getSidebar() {
           },
           {
             text: '💰 How to Pay',
-            link: '/use-iapp/payment',
             items: [
               {
                 text: 'How to Pay for Web3mail',
-                link: '/overview/how-to-pay-for-web3mail',
+                link: '/use-iapp/how-to-pay/how-to-pay-for-web3mail',
               },
               {
                 text: 'How to Pay for Web3telegram',
-                link: '/use-iapp/web3telegram/how-to-pay-for-web3telegram',
+                link: '/use-iapp/how-to-pay/how-to-pay-for-web3telegram',
               },
               {
                 text: 'Pricing Considerations',
-                link: '/overview/pricing-considerations',
+                link: '/use-iapp/how-to-pay/pricing-considerations',
               },
               {
-                text: 'Voucher Authorization Guide',
-                link: '/use-iapp/voucher-guide',
+                text: 'Voucher',
+                link: '/use-iapp/how-to-pay/voucher',
               },
             ],
           },
@@ -511,57 +514,24 @@ export function getSidebar() {
               },
             ],
           },
-          {
-            text: '🧙 Oracle Factory',
-            link: '/use-iapp/oracle-factory',
-            collapsed: true,
-            items: [
-              {
-                text: 'Getting Started',
-                link: '/use-iapp/oracle-factory/getting-started',
-              },
-              {
-                text: 'Methods',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'createOracle',
-                    link: '/use-iapp/oracle-factory/methods/createOracle',
-                  },
-                  {
-                    text: 'readOracle',
-                    link: '/use-iapp/oracle-factory/methods/readOracle',
-                  },
-                  {
-                    text: 'updateOracle',
-                    link: '/use-iapp/oracle-factory/methods/updateOracle',
-                  },
-                ],
-              },
-              {
-                text: 'Advanced Configuration',
-                link: '/use-iapp/oracle-factory/advanced-configuration',
-              },
-            ],
-          },
         ],
       },
     ],
-    '/core-concept/': [
+    '/protocol/': [
       {
-        text: 'CORE CONCEPTS',
+        text: 'PROTOCOL',
         items: [
           {
             text: '🔧&nbsp;&nbsp;iExec SDK',
-            link: '/core-concept/sdk',
+            link: '/protocol/sdk',
           },
           {
             text: '⚙️&nbsp;&nbsp;Workers & Workerpools',
-            link: '/core-concept/workers',
+            link: '/protocol/workers',
           },
           {
             text: '📖&nbsp;&nbsp;Glossary',
-            link: '/core-concept/glossary',
+            link: '/protocol/glossary',
           },
         ],
       },

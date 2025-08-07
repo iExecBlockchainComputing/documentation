@@ -7,7 +7,7 @@ description:
 
 # How to pay for Web3telegram
 
-[Web3Telegram](../tools/web3telegram) dev tool offers secure, blockchain-based
+[Web3Telegram](../web3telegram) dev tool offers secure, blockchain-based
 communication by encrypting emails and protecting user privacy.
 
 The `sendTelegram` function uses confidential computing power to encrypt and
@@ -31,7 +31,7 @@ This guide explains how to pay for Web3Telegram's computing power using
 ### Step 2: Use the Builder Dashboard
 
 <a href="https://builder.iex.ec/" target="_blank" rel="noreferrer" style="display: inline-block; margin-top: 20px">
-  <img src="/assets/builder-dashboard.png" alt="Builder dashboard screenshot">
+  <img src="/assets/tooling-&-explorers/builder-dashboard/builder-dashboard.png" alt="Builder dashboard screenshot">
 </a>
 
 The iExec Builder Dashboard is a comprehensive tool for managing vouchers and

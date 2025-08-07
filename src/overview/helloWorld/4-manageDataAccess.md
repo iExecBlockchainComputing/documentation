@@ -108,7 +108,7 @@ Want to see it in action? Check out our
 - Track your earnings
 
 For more technical details, see the
-[DataProtector Sharing](../../tools/dataProtector/dataProtectorSharing.html)
+[DataProtector Sharing](../../manage-data/dataProtector/dataProtectorSharing)
 documentation.
 
 <div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">

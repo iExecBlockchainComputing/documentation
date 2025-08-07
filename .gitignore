@@ -2,6 +2,7 @@
 **/tailwind-output.css
 .vercel
 **/.vitepress/cache
+**/.vitepress/.temp
 **/.vitepress/dist
 
 **/.vscode

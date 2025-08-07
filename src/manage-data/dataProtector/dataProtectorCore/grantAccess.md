@@ -44,7 +44,8 @@ import { type GrantAccessParams } from '@iexec/dataprotector';
 
 **Type:** `AddressOrENS`
 
-The ethereum address of the protected data supplied by the user.
+The ethereum address of the protected data supplied by the user (returned when
+you created it). **You must own this data** to grant access.
 
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
@@ -68,9 +69,9 @@ The address of the application you wish to authorize to process the
 single application or an application whitelist. To specify a whitelist, you
 provide the ETH address of an
 [iExec Whitelist Smart Contract](https://github.com/iExecBlockchainComputing/whitelist-smart-contract/tree/main).
-This smart contract aggregates multiple application versions. This allows you to
-introduce new versions of your application without needing to grant access for
-the `protectedData` each time you do so.
+This smart contract should aggregates multiple application versions. This allows
+you to introduce new versions of your application without needing to grant
+access for the `protectedData` each time you do so.
 
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
@@ -180,12 +181,14 @@ used.
 It is not technically possible to set an unlimited number of accesses, but you
 can set `numberOfAccess` to `10000` for example.
 
-::: info Important Notes: If you attempt to process the protected data more
-times than specified in `numberOfAccess`, you will encounter a **"no dataset
-orders"** error.
+::: info
+
+If you attempt to process the protected data more times than specified in
+`numberOfAccess`, you will encounter a **"no dataset orders"** error.
 
 To prevent this error, ensure the `numberOfAccess` is properly set when calling
-the `grantAccess` method.  
+the `grantAccess` method.
+
 :::
 
 ```ts twoslash
