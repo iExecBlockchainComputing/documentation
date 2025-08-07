@@ -169,3 +169,4 @@ Fork this repository and ensure you're working on the `main` branch:
 - Add Dune dashboard
 - Add a Development workflow
 - Update context7 when doc will be deployed
+- Add section iexec-explorer.md file to talk about: available chain + SRLC/RLC feature of the protocol
