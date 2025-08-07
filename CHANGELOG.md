@@ -1,0 +1,95 @@
+# Changelog
+
+## 1.0.0 (2025-08-07)
+
+
+### 🚀 Features
+
+* add check-format script to package.json for code formatting checks ([9224606](https://github.com/iExecBlockchainComputing/documentation/commit/922460659aecdff8a582d725dbb0e9e1af44b082))
+* add initial drafts for payment and voucher authorization guides ([2c43ee3](https://github.com/iExecBlockchainComputing/documentation/commit/2c43ee367de01dfd520f1fe70ac3041595233a72))
+* build an iapp ([#13](https://github.com/iExecBlockchainComputing/documentation/issues/13)) ([8892b56](https://github.com/iExecBlockchainComputing/documentation/commit/8892b565313c7f00f7291d88a86038499b37c3dc))
+* build iapp by martin ([#15](https://github.com/iExecBlockchainComputing/documentation/issues/15)) ([332e7ad](https://github.com/iExecBlockchainComputing/documentation/commit/332e7adae77ea57c1c78f3565c45145e7e011ce5))
+* explorer part 2 ([#23](https://github.com/iExecBlockchainComputing/documentation/issues/23)) ([ddceadf](https://github.com/iExecBlockchainComputing/documentation/commit/ddceadface630cd051615af1eae602f980eb9699))
+* get started ([#11](https://github.com/iExecBlockchainComputing/documentation/issues/11)) ([a7c961f](https://github.com/iExecBlockchainComputing/documentation/commit/a7c961fd3f83360f653ef1de2d6fae76fdd3dd42))
+* init ([55cf006](https://github.com/iExecBlockchainComputing/documentation/commit/55cf006c99edf019eff8147ee692177c123803a6))
+* integrate vitepress-plugin-group-icons for enhanced icon management ([dc08166](https://github.com/iExecBlockchainComputing/documentation/commit/dc08166d0d309c5f3339acb87c843cadff82541b))
+* migrate  explorer pages  to component ([#21](https://github.com/iExecBlockchainComputing/documentation/issues/21)) ([ce1daae](https://github.com/iExecBlockchainComputing/documentation/commit/ce1daaec1f8d066f5c8b3a795da95a71475f4ff5))
+* migrate existing content from old doc, add placeholder pages based on new architecture ([672d3cd](https://github.com/iExecBlockchainComputing/documentation/commit/672d3cddd9f75a496d9fc47dfd714825ce54fa0f))
+* protect and manage data ([#9](https://github.com/iExecBlockchainComputing/documentation/issues/9)) ([c0eb23d](https://github.com/iExecBlockchainComputing/documentation/commit/c0eb23d1b8787e77db4a41da0f030ba41d366081))
+* rename core-concept to protocol ([#14](https://github.com/iExecBlockchainComputing/documentation/issues/14)) ([2375b8f](https://github.com/iExecBlockchainComputing/documentation/commit/2375b8fd519a66f823fb530f8f45115a76d2db45))
+* tooling & explorer pages ([#16](https://github.com/iExecBlockchainComputing/documentation/issues/16)) ([1892ceb](https://github.com/iExecBlockchainComputing/documentation/commit/1892ceba35fa0ce3f2b2db99d8ae32023277a863))
+* update "Quick Start" & "use Cases" page ([#18](https://github.com/iExecBlockchainComputing/documentation/issues/18)) ([9df705a](https://github.com/iExecBlockchainComputing/documentation/commit/9df705aee44e259a2c4ff5178afa5cc9d2750c94))
+* Update documentation and guides for DataProtector ([1a4107b](https://github.com/iExecBlockchainComputing/documentation/commit/1a4107b9d32300d57977f69a49b3c1c9c59da5b6))
+
+
+### 🐞 Bug Fixes
+
+* add clarification on dataset type mismatches in iApp documentation ([c644a91](https://github.com/iExecBlockchainComputing/documentation/commit/c644a910745232db6c0b20cc5d23624d60e139e0))
+* assets-preview ([#26](https://github.com/iExecBlockchainComputing/documentation/issues/26)) ([20d8011](https://github.com/iExecBlockchainComputing/documentation/commit/20d8011f5ee328788cbcd13492f985dc2a377d94))
+* clarify definition of iApp and its secure processing environment ([2b806e7](https://github.com/iExecBlockchainComputing/documentation/commit/2b806e7937be29177486b7d84e17ee868e04ecdd))
+* enhance clarity on iApp's secure processing and its significance ([7e06e9d](https://github.com/iExecBlockchainComputing/documentation/commit/7e06e9d54be622cc3a3b70d4bbe467061fdcc39c))
+* enhance iApp documentation for improved clarity and user experience ([6f44adf](https://github.com/iExecBlockchainComputing/documentation/commit/6f44adff8e4594eca74d76cce1ded9a6f62e4202))
+* enhance iApp documentation with improved formatting and clarity ([d531ddf](https://github.com/iExecBlockchainComputing/documentation/commit/d531ddf6c132c6b63acfcf249d084e02d11cb251))
+* enhance iApp documentation with new trust benefits section ([5aad044](https://github.com/iExecBlockchainComputing/documentation/commit/5aad0440dd2ac4cde838a9285c1b715e2f1ebd44))
+* enhance iApp Generator documentation for improved usability and clarity ([6ae8832](https://github.com/iExecBlockchainComputing/documentation/commit/6ae88327d0cc264e921009e10d04d464199404aa))
+* fix helloword page ([#5](https://github.com/iExecBlockchainComputing/documentation/issues/5)) ([eaecd19](https://github.com/iExecBlockchainComputing/documentation/commit/eaecd19e9c40a154234e4a78b57eb8aaab5c5546))
+* improve clarity in iApp documentation ([0febd40](https://github.com/iExecBlockchainComputing/documentation/commit/0febd405c0b8683d7000c1064e4535486916e7f9))
+* improve formatting and clarity in TDX experimental guide ([33613a1](https://github.com/iExecBlockchainComputing/documentation/commit/33613a1e37abc9960b6715560575a4fac1ccf10f))
+* oracle factory ([#24](https://github.com/iExecBlockchainComputing/documentation/issues/24)) ([60f635c](https://github.com/iExecBlockchainComputing/documentation/commit/60f635c7db2a2a992e97892d3296aa437b65ffef))
+* remove outdated guides for AI frameworks, managing iApps, orders, and emerging trends ([a6e5872](https://github.com/iExecBlockchainComputing/documentation/commit/a6e5872f95b4056d6e3dc0d15c8a052884361897))
+* remove redundant "How It Works" section from iApp documentation ([7b228c6](https://github.com/iExecBlockchainComputing/documentation/commit/7b228c69b63a0e003e951ad6de6aa912bd97c8cd))
+* remove trust benefits section from iApp documentation ([3f56df6](https://github.com/iExecBlockchainComputing/documentation/commit/3f56df60ebd1fbeef754dcfd8f51729f472e404b))
+* update iApp documentation for clarity and structure ([28a655e](https://github.com/iExecBlockchainComputing/documentation/commit/28a655ea1e22e677dac9296616a1359abd1f8461))
+* update iApp documentation for improved accuracy and clarity ([4de4349](https://github.com/iExecBlockchainComputing/documentation/commit/4de4349c542a2b58ff0b4965e0a68898859447e6))
+* update iApp documentation to enhance clarity on privacy and execution features ([09190eb](https://github.com/iExecBlockchainComputing/documentation/commit/09190eb75c8b6d99a99672fa2c853d73b7903018))
+* update iApp documentation to enhance clarity on user-provided protected data ([43a3433](https://github.com/iExecBlockchainComputing/documentation/commit/43a3433407bc267a0ef088d7cc5c88a26b3054d0))
+* update iApp documentation to improve workflow clarity and FAQ structure ([6f969c1](https://github.com/iExecBlockchainComputing/documentation/commit/6f969c104addac61dd9d40812675529186e8441c))
+* update iApp Generator documentation to clarify Docker requirements ([1fc56a9](https://github.com/iExecBlockchainComputing/documentation/commit/1fc56a99a2ad97c65cd27c76c1edd947f85681bd))
+* update link in 'RevokedAccess' section to correctly reference 'GrantedAccess' ([d7c6ea8](https://github.com/iExecBlockchainComputing/documentation/commit/d7c6ea8ef95b64f22403377c37388541b3e1ab43))
+* update link in 'What Is Protected Data?' section to direct users to the complete DataProtector documentation ([e18c3a0](https://github.com/iExecBlockchainComputing/documentation/commit/e18c3a0141afbf33de6e0060ae84aa169e7c7950))
+* update TDX experimental guide with DataProtector SDK configuration details ([fbe926a](https://github.com/iExecBlockchainComputing/documentation/commit/fbe926a4587b5d59ad1670576e4eb4844f3befb8))
+* update TDX experimental guide with environment variable declaration ([46c65c5](https://github.com/iExecBlockchainComputing/documentation/commit/46c65c5f293ed74e5b3a1a4d01cddce797836b73))
+* update TDX experimental guide with feature comparisons and integration details ([240f3b8](https://github.com/iExecBlockchainComputing/documentation/commit/240f3b8c76a0ae696813aac7562444142751c19e))
+
+
+### ✨ Polish
+
+* add missing import for twoslash style in theme index ([c9ad91e](https://github.com/iExecBlockchainComputing/documentation/commit/c9ad91e55d033e12f7793e0bbc57db79a49f7635))
+* add robots.txt to allow all web crawlers during development ([cacbfb1](https://github.com/iExecBlockchainComputing/documentation/commit/cacbfb11413347d280c6b7be293e38245de52f2b))
+* clarify data protection and schema documentation for improved understanding and usability ([b795fdf](https://github.com/iExecBlockchainComputing/documentation/commit/b795fdf3ccc08c90903e87e7f07ebac3c9ab7b01))
+* comment out unused imports in documentation files ([d992b4e](https://github.com/iExecBlockchainComputing/documentation/commit/d992b4ed2b74eeb4d79ee2df90c4eb1a71f94229))
+* enhance 'What Is Protected Data?' documentation with improved structure and visual elements ([e9950ad](https://github.com/iExecBlockchainComputing/documentation/commit/e9950add805cfc4c74637549d9897d0b6b64d702))
+* enhance clarity and conciseness in DataProtector access management documentation ([52bf30d](https://github.com/iExecBlockchainComputing/documentation/commit/52bf30da45e13cde82a32f9a693f97552c61ade7))
+* enhance documentation for guides and improve visibility of features ([71eaa82](https://github.com/iExecBlockchainComputing/documentation/commit/71eaa829d459041f609fda1fd8b8a4a9fcb42378))
+* enhance section headers with emojis for better visual distinction ([4b540d9](https://github.com/iExecBlockchainComputing/documentation/commit/4b540d92bb8062e836e2aec3df6d5cc5b9f17ffa))
+* improve formatting and readability of schema documentation ([d1ac3ec](https://github.com/iExecBlockchainComputing/documentation/commit/d1ac3ecfbb8f4e64a3990423a0576cfce89746bc))
+* improve formatting and readability of text in documentation files ([2e4239b](https://github.com/iExecBlockchainComputing/documentation/commit/2e4239bf3e2443bc9f26884e01317360d7f7cb18))
+* move documentation and assets in src file ([9f51511](https://github.com/iExecBlockchainComputing/documentation/commit/9f51511ab9926a1854155c17c50e2aa4339f353b))
+* remove 'Contact Us' section from sidebar and documentation ([afe5563](https://github.com/iExecBlockchainComputing/documentation/commit/afe55632aadb94cf710d527ffed7dcbfa37bd751))
+* remove deprecated guides and update sidebar links ([3e3b598](https://github.com/iExecBlockchainComputing/documentation/commit/3e3b598ce87e0aeb9f698494afbbaf7457557a5a))
+* remove outdated navigation links from config ([decf6f3](https://github.com/iExecBlockchainComputing/documentation/commit/decf6f3b5da9a689176b92d3ec59e1dd98dae888))
+* remove promotional content from 'What Is Protected Data?' section to enhance focus on data management ([8edf3be](https://github.com/iExecBlockchainComputing/documentation/commit/8edf3be00cede281d1b5d9ab6000a61819a41607))
+* remove robots.txt to allow all web crawlers ([417f559](https://github.com/iExecBlockchainComputing/documentation/commit/417f559a1347396a52947c4d7daf0e728b171d6d))
+* rename and update links for data monetization guides, remove deprecated guide ([705456f](https://github.com/iExecBlockchainComputing/documentation/commit/705456f3f85c0de5efeae6ec61d3044aa49b9e01))
+* reorganize sidebar structure and add new overview pages for iExec Explorer and The Graph Explorer ([9392c55](https://github.com/iExecBlockchainComputing/documentation/commit/9392c5548da137571c9d0c656b8bf6d3bb0f99b8))
+* simplify and enhance 'What Is Protected Data?' section for clarity and readability ([e62d754](https://github.com/iExecBlockchainComputing/documentation/commit/e62d754f762993befc342917353fe12774d2b238))
+* simplify sidebar item text for overview section ([58a152e](https://github.com/iExecBlockchainComputing/documentation/commit/58a152ecbd05ad8d2c3390d57310b02ec9a96454))
+* streamline DataProtector types documentation with enhanced clarity and structure ([013a196](https://github.com/iExecBlockchainComputing/documentation/commit/013a196138afae829b19eb1f5eb8f4cb0d73a0f0))
+* swap headings in DataProtector documentation for improved clarity and user navigation ([fc3d438](https://github.com/iExecBlockchainComputing/documentation/commit/fc3d43873cb095edf32c6ce662c01295b93e82d0))
+* update hero section title for clarity and relevance ([cc91d94](https://github.com/iExecBlockchainComputing/documentation/commit/cc91d944e853ecd61324a8b4407cfa4bd63c9bb6))
+* update homepage content and features for clarity and detail ([4add72b](https://github.com/iExecBlockchainComputing/documentation/commit/4add72b5bd695f6f33bcfe419ff49a254acd0e6b))
+* update navigation and sidebar links for improved clarity and organization; add new glossary, SDK, and workers documentation ([bd1f09c](https://github.com/iExecBlockchainComputing/documentation/commit/bd1f09cc307ce58b88edf20e9ba7ac36241286b1))
+* update navigation links and add core concept pages for improved structure ([cc0000f](https://github.com/iExecBlockchainComputing/documentation/commit/cc0000f8dbb02450ee5f6ffecf902ce884ccacaa))
+* update navigation links and improve documentation descriptions ([7d45613](https://github.com/iExecBlockchainComputing/documentation/commit/7d4561370684f90111f5ef65fd8104cc305ca330))
+* update navigation links for overview and sidebar items for consistency ([d50fa64](https://github.com/iExecBlockchainComputing/documentation/commit/d50fa6480849d0f7c5fbd6ca05da651680b2d01f))
+* update navigation links to use "-" instead of "_" ([5a9a6d4](https://github.com/iExecBlockchainComputing/documentation/commit/5a9a6d4c019d58ff9e4e44fc43a3f26db636fb60))
+* update sidebar and navigation labels, remove unused pages, … ([#8](https://github.com/iExecBlockchainComputing/documentation/issues/8)) ([78db297](https://github.com/iExecBlockchainComputing/documentation/commit/78db29723b7f9e135bc4577a64f69fac99cbdf26))
+* update sidebar links and add new guides for iApps and DataProtector ([0f135d4](https://github.com/iExecBlockchainComputing/documentation/commit/0f135d412f50875a6bbc4cbcbc2bbc82ccd38952))
+* update terminology in 'What Is Protected Data?' section to enhance clarity on secret storage ([ce4f7b9](https://github.com/iExecBlockchainComputing/documentation/commit/ce4f7b9a8582af4f3f3ec56ff7af373858a2b3fe))
+
+
+### 🧰 Other
+
+* add robots.txt to disallow all web crawlers ([6f63854](https://github.com/iExecBlockchainComputing/documentation/commit/6f6385406bb08716adc83c24c6c94d8a280a9953))
+* update package-lock.json with new dependencies and versions ([3484303](https://github.com/iExecBlockchainComputing/documentation/commit/3484303e9f0679bef191ae937750840bccfe0a72))
+* update package.json and package-lock.json with new dependencies for iexec ([dcc98c3](https://github.com/iExecBlockchainComputing/documentation/commit/dcc98c393ec075459d7b44d39fef1657635b3193))
