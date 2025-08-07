@@ -22,32 +22,37 @@ explore apps and protectedData—all in one powerful dashboard.
 
 <CardGrid>
   <FeatureCard
-    icon="💼"
+    icon="mdi:briefcase"
     title="Deals & Tasks"
     description="Monitor deal orchestration and task execution with their asset relationships (app + dataset + workerpool) from initialization to result download, including pricing"
     link-url="#deals-tasks"
+    icon-color="text-blue-500"
   />
   
   <FeatureCard
-    icon="📱"
+    icon="mdi:apps"
     title="iApps Listing"
     description="Explore the catalog of trusted execution environment (TEE) applications, including their use cases and ownership details"
     link-url="#iapps-listing"
+    icon-color="text-green-500"
   />
   
   <FeatureCard
-    icon="🗄️"
+    icon="mdi:database"
     title="Protected Data Listing"
     description="Discover encrypted datasets with their asset types, including usage and ownership details"
     link-url="#protected-data-listing"
+    icon-color="text-orange-500"
   />
 
-<FeatureCard
-    icon="⚡"
+  <FeatureCard
+    icon="mdi:lightning-bolt"
     title="Workerpools"
     description="Explore the decentralized computing infrastructure, including usage and ownership details"
     link-url="#workerpools"
-  /> </CardGrid>
+    icon-color="text-purple-500"
+  />
+</CardGrid>
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <h4 class="!mt-0 !mb-2">🏗️ Understanding iExec Architecture</h4>
@@ -106,7 +111,7 @@ Browse and analyze all tasks across the iExec network:
 ### Task Execution Monitoring
 
 <ImageViewer
-    image-url="/assets/tooling-&-explorers/iexec-explorer/result-details.png"
+    image-url="/assets/tooling-&-explorers/iexec-explorer/task-details-started.png"
     image-alt="Result Decryption"
     link-url="https://explorer.iex.ec/bellecour/tasks"
     caption="🔗 Explore Tasks"

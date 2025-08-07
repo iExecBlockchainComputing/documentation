@@ -24,7 +24,7 @@ and **xRLC**, detailing the steps for each method.
 ### Step 2: Use the Builder Dashboard
 
 <a href="https://builder.iex.ec/" target="_blank" rel="noreferrer" style="display: inline-block; margin-top: 20px">
-  <img src="/assets/builder-dashboard.png" alt="Builder dashboard screenshot">
+  <img src="/assets/tooling-&-explorers/builder-dashboard/builder-dashboard.png" alt="Builder dashboard screenshot">
 </a>
 
 The iExec Builder Dashboard is a comprehensive tool for managing vouchers and
