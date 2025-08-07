@@ -4,19 +4,18 @@ description:
   How to build an confidential iexec application and deploy it on iexec protocol
 ---
 
-
 ## iApp Generator: Your Development Tool
 
 Bootstrap TEE-compatible applications in minutes without any hardcoding skills,
 iApp Generator handles all the low-level complexity for you.
 
 - **Access to TEEs easily** - No need to dive into low-level requirements, build
-  iApps that connect to TEE in minutes
+  iApps that connect to TEEs in minutes.
 - **Check and deploy iApps quickly** - iApp Generator checks that your iApp
-  complies with the iExec Framework and streamlines its deployment
-- **Select your project mode & language** - Select between basic or advanced
-  setup depending on your iExec level experience. You also have the choice
-  between Python or JavaScript
+  complies with the iExec Framework and streamlines its deployment.
+- **Select your project mode & language** - Get started with either a basic or
+  advanced setup, depending on your experience with the iExec framework. You can
+  use Python or JavaScript—whichever you prefer!
 
 ```bash
 # Create your iApp (Python or Node.js supported)
