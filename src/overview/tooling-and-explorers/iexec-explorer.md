@@ -110,8 +110,6 @@ Browse and analyze all tasks across the iExec network:
     image-alt="Result Decryption"
     link-url="https://explorer.iex.ec/bellecour/tasks"
     caption="🔗 Explore Tasks"
-    :centered="true"
-    max-width="700px"
 />
 
 <ImageViewer
@@ -119,8 +117,6 @@ Browse and analyze all tasks across the iExec network:
     image-alt="Task Completed"
     link-url="https://explorer.iex.ec/bellecour/tasks"
     caption="🔗 Explore Tasks"
-    :centered="true"
-    max-width="700px"
 />
 
 > **🔗 Task Assets**: Each task involves four key assets working together: the
