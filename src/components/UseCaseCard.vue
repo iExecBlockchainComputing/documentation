@@ -38,7 +38,7 @@
           rel="noreferrer"
         >
           <Icon :icon="demoIcon" height="18" />
-          Try Live Demo
+          {{ demoLabel }}
         </Button>
         <Button
           v-if="githubUrl"
@@ -49,7 +49,7 @@
           variant="secondary"
         >
           <Icon icon="mdi:github" height="18" />
-          View Code
+          {{ githubLabel }}
         </Button>
       </div>
     </div>
@@ -70,7 +70,12 @@ interface Props {
   demoUrl?: string;
   githubUrl?: string;
   demoIcon: string;
+  demoLabel?: string;
+  githubLabel?: string;
 }
 
-defineProps<Props>();
+withDefaults(defineProps<Props>(), {
+  demoLabel: 'Try Live Demo',
+  githubLabel: 'View Code',
+});
 </script>
