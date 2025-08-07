@@ -14,7 +14,7 @@ streamlines your development workflow and provides deep insights on your
 confidential iApps deployed on the protocol.
 
 <ImageViewer
-  image-url-dark="/assets/tooling-&-explorers/builder-dashboard/builder-dashboard.png"
+  :image-url-dark="builderDashboardImage"
   image-alt="Builder Dashboard Overview"
   link-url="https://builder.iex.ec/"
   caption="🔗 Access the Builder Dashboard"
@@ -44,7 +44,7 @@ The first screen of the Builder Dashboard provides comprehensive voucher
 monitoring with detailed task execution history and real-time balance tracking.
 
 <ImageViewer
-  image-url-dark="/assets/tooling-&-explorers/builder-dashboard/build-voucher-view.png"
+  :image-url-dark="buildVoucherViewImage"
   image-alt="Voucher Consumption Dashboard"
   link-url="https://builder.iex.ec/vouchers"
   caption="🔗 Access Voucher Dashboard"
@@ -99,7 +99,7 @@ The second screen provides comprehensive management and analytics for your
 deployed confidential iApps with detailed statistics and user insights.
 
 <ImageViewer
-  image-url-dark="/assets/tooling-&-explorers/builder-dashboard/my-iapps-view.png"
+  :image-url-dark="myIappsViewImage"
   image-alt="My Confidential iApps Dashboard"
   link-url="https://builder.iex.ec/iapps"
   caption="🔗 Manage Your iApps"
@@ -162,4 +162,9 @@ import { Icon } from '@iconify/vue';
 import ImageViewer from '../../components/ImageViewer.vue';
 import FeatureCard from '../../components/FeatureCard.vue';
 import CardGrid from '../../components/CardGrid.vue';
+
+// Assets
+import builderDashboardImage from '../../assets/tooling-&-explorers/builder-dashboard/builder-dashboard.png';
+import buildVoucherViewImage from '../../assets/tooling-&-explorers/builder-dashboard/build-voucher-view.png';
+import myIappsViewImage from '../../assets/tooling-&-explorers/builder-dashboard/my-iapps-view.png';
 </script>
