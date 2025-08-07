@@ -536,39 +536,6 @@ export function getSidebar() {
               },
             ],
           },
-          {
-            text: '🧙 Oracle Factory',
-            link: '/use-iapp/oracle-factory',
-            collapsed: true,
-            items: [
-              {
-                text: 'Getting Started',
-                link: '/use-iapp/oracle-factory/getting-started',
-              },
-              {
-                text: 'Methods',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'createOracle',
-                    link: '/use-iapp/oracle-factory/methods/createOracle',
-                  },
-                  {
-                    text: 'readOracle',
-                    link: '/use-iapp/oracle-factory/methods/readOracle',
-                  },
-                  {
-                    text: 'updateOracle',
-                    link: '/use-iapp/oracle-factory/methods/updateOracle',
-                  },
-                ],
-              },
-              {
-                text: 'Advanced Configuration',
-                link: '/use-iapp/oracle-factory/advanced-configuration',
-              },
-            ],
-          },
         ],
       },
     ],
