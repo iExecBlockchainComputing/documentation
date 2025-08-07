@@ -104,7 +104,7 @@ explore the available data and construct complex queries.
 <ImageViewer
   image-url-dark="/assets/tooling-&-explorers/the-graph/graphql-explorer.png"
   image-alt="GraphQL Explorer Interface"
-  link-url="https://thegraph.com/explorer/subgraphs/Ep5zs5zVr4tDiVuQJepUu51e5eWYJpka624X4"
+  link-url="https://thegraph.com/explorer/subgraphs/Ep5zs5zVr4tDiVuQJepUu51e5eWYJpka624X4DMBxe3u?view=Query&chain=arbitrum-one"
 />
 
 ### How to Use the GraphQL Explorer
@@ -121,7 +121,7 @@ explore the available data and construct complex queries.
 
 Here are some example queries you can try in the GraphQL explorer:
 
-#### Query Apps on Arbitrum
+#### Query iApps
 
 ```graphql
 query {
@@ -137,7 +137,7 @@ query {
 }
 ```
 
-#### Query Protected Data on Bellecour
+#### Query Protected Data
 
 ```graphql
 query {
