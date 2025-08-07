@@ -432,5 +432,10 @@ To further check your data was correctly created, you can inspect it on the
 [iExec explorer](https://explorer.iex.ec/).
 
 <a href="https://explorer.iex.ec/" target="_blank" rel="noreferrer" style="display: inline-block">
-  <img src="/assets/explorer-dataset-example.png" alt="iExec explorer - Dataset example">
+  <img :src="explorerDatasetImage" alt="iExec explorer - Dataset example">
 </a>
+
+<script setup>
+// Assets
+import explorerDatasetImage from '../../../assets/explorer-dataset-example.png';
+</script>

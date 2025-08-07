@@ -180,7 +180,7 @@ Navigate the protected data landscape:
 ## ⚡ Workerpools {#workerpools}
 
 <ImageViewer
-  image-url-dark="/assets/tooling-&-explorers/iexec-explorer/workerpool-view.png"
+  :image-url-dark="workerpoolViewImage"
   image-alt="Workerpool View"
   link-url="https://explorer.iex.ec/bellecour/workerpools"
   caption="🔗 Explore Workerpools Infrastructure"

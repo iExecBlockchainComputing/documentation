@@ -8,7 +8,7 @@ computing and decentralized data protection.
   <UseCaseCard
     title="Content Creator"
     description="A comprehensive demo showcasing iExec's DataProtector Sharing module. Experience privacy-first data sharing where content creators can securely share their work while maintaining full control over access permissions and monetization."
-    imageUrl="/assets/use-cases/content-creator.png"
+    :imageUrl="contentCreatorImage"
     imageAlt="Content Creator Demo Screenshot"
     :features="['DataProtector Core', 'DataProtector Sharing']"
     demoUrl="https://demo.iex.ec/content-creator/"
@@ -19,7 +19,7 @@ computing and decentralized data protection.
 <UseCaseCard
     title="Web3 Messaging"
     description="Secure communication platform for Web3 users enabling privacy-preserving messaging through Web3Mail and Web3Telegram. Users maintain control over their data while enabling targeted communication and monetizing their engagement."
-    imageUrl="/assets/use-cases/web3-messaging.png"
+    :imageUrl="web3MessagingImage"
     imageAlt="Web3Messaging Demo Screenshot"
     :features="['DataProtector Core', 'Web3Mail', 'Web3Telegram']"
     demoUrl="https://demo.iex.ec/web3messaging"
@@ -30,7 +30,7 @@ computing and decentralized data protection.
 <UseCaseCard
     title="AI Agent"
     description="Showcase of artificial intelligence applications running on iExec's confidential computing infrastructure. Experience privacy-preserving AI inference, machine learning model execution, and secure data analysis with TEE protection."
-    imageUrl="/assets/use-cases/elizaos.png"
+    :imageUrl="elizaosImage"
     imageAlt="AI Applications Demo Screenshot"
     :features="['AI', 'TEE', 'Confidential Computing']"
     githubUrl="https://github.com/iExecBlockchainComputing/iexec-elizaos-agent"
@@ -41,4 +41,9 @@ computing and decentralized data protection.
 
 <script setup>
 import UseCaseCard from '../components/UseCaseCard.vue';
+
+// Assets
+import contentCreatorImage from '../assets/use-cases/content-creator.png';
+import web3MessagingImage from '../assets/use-cases/web3-messaging.png';
+import elizaosImage from '../assets/use-cases/elizaos.png';
 </script>
