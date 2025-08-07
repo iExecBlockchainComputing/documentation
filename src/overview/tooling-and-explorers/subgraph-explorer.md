@@ -16,7 +16,6 @@ data through GraphQL queries.
   image-url-dark="/assets/tooling-&-explorers/the-graph/image-logo.jpg"
   image-alt="The Graph Protocol"
   link-url="https://thegraph.com/docs/en/subgraphs/quick-start/"
-  caption="🔗 Learn more about The Graph Protocol"
 />
 
 ## 🎯 What is The Graph?
@@ -104,13 +103,12 @@ explore the available data and construct complex queries.
 <ImageViewer
   image-url-dark="/assets/tooling-&-explorers/the-graph/graphql-explorer.png"
   image-alt="GraphQL Explorer Interface"
-  link-url="https://thegraph.com/explorer/subgraphs/B1comLe9SANBLrjdnoNTJSubbeC7cY7EoNu6zD82HeKy?view=Query&chain=arbitrum-one"
-  caption="🔗 Try the GraphQL Explorer"
+  link-url="https://thegraph.com/explorer/subgraphs/Ep5zs5zVr4tDiVuQJepUu51e5eWYJpka624X4"
 />
 
 ### How to Use the GraphQL Explorer
 
-1. **Navigate to a Subgraph**: Click on any of the subgraph links above to
+1. **Navigate to a Subgraph**: Click on any of the subgraph links above tos
    access the GraphQL explorer
 2. **Explore the Schema**: Use the "Schema" tab to browse available entities and
    their fields
