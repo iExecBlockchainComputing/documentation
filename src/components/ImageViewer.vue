@@ -1,46 +1,46 @@
 <template>
-  <div :class="['my-8', { 'text-center': centered }]">
+  <div class="my-8">
     <a :href="linkUrl" target="_blank" rel="noreferrer">
+      <!-- Light theme image -->
       <img
-        :src="imageUrl"
+        v-if="imageUrlLight"
+        :src="imageUrlLight"
         :alt="imageAlt"
-        :style="{
-          width: '100%',
-          maxWidth: maxWidth,
-          borderRadius: borderRadius,
-          border: '1px solid var(--vp-c-border)',
-          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-        }"
-        class="transition-transform duration-200 ease-in-out hover:scale-[1.02]"
+        class="light-only border-border w-full rounded-lg border shadow-lg transition-transform duration-200 ease-in-out hover:-translate-y-1 hover:shadow-xl"
+      />
+      <!-- Dark theme image (also used as default) -->
+      <img
+        v-if="imageUrlDark"
+        :src="imageUrlDark"
+        :alt="imageAlt"
+        :class="imageUrlLight ? 'dark-only' : ''"
+        class="border-border w-full rounded-lg border shadow-lg transition-transform duration-200 ease-in-out hover:-translate-y-1 hover:shadow-xl"
       />
     </a>
     <p v-if="caption" class="mt-4 font-medium">
-      <a
+      <Button
+        as="a"
         :href="linkUrl"
         target="_blank"
         rel="noreferrer"
-        class="text-primary hover:text-primary2 inline-flex items-center gap-2 no-underline transition-colors duration-200"
+        class="text-primary hover:text-primary2 inline-flex items-center gap-2 rounded-lg no-underline transition-colors duration-200"
       >
         {{ caption }}
-      </a>
+      </Button>
     </p>
   </div>
 </template>
 
 <script setup lang="ts">
+import Button from './ui/Button.vue';
+
 interface Props {
-  imageUrl: string;
+  imageUrlLight?: string;
+  imageUrlDark: string;
   imageAlt: string;
   linkUrl: string;
   caption?: string;
-  centered?: boolean;
-  maxWidth?: string;
-  borderRadius?: string;
 }
 
-withDefaults(defineProps<Props>(), {
-  centered: true,
-  maxWidth: '800px',
-  borderRadius: '8px',
-});
+defineProps<Props>();
 </script>

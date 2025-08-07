@@ -33,6 +33,6 @@ const buttonClasses = computed(() => {
   }
 
   // Primary variant (default)
-  return `${baseClasses} border-none bg-primary! text-[#1e1e1e]! focus:shadow-[0_0_0_2px_rgba(252,209,90,0.3)]`;
+  return `${baseClasses} border-none bg-[#fcd15a]! text-[#1e1e1e]! focus:shadow-[0_0_0_2px_rgba(252,209,90,0.3)]`;
 });
 </script>

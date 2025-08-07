@@ -12,7 +12,7 @@ decentralized computing protocol. Track deals, monitor task execution, and
 explore apps and protectedData—all in one powerful dashboard.
 
 <ImageViewer
-  image-url="/assets/tooling-&-explorers/iexec-explorer/explorer-global.png"
+  image-url-dark="/assets/tooling-&-explorers/iexec-explorer/explorer-global.png"
   image-alt="iExec Explorer"
   link-url="https://explorer.iex.ec/"
   caption="🔗 Explore the iExec Protocol"
@@ -51,7 +51,9 @@ explore apps and protectedData—all in one powerful dashboard.
     description="Explore the decentralized computing infrastructure, including usage and ownership details"
     link-url="#workerpools"
     icon-color="text-purple-500"
-  /> </CardGrid>
+  />
+
+</CardGrid>
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <h4 class="!mt-0 !mb-2">🏗️ Understanding iExec Architecture</h4>
@@ -68,10 +70,10 @@ explore apps and protectedData—all in one powerful dashboard.
 ## 💼 Deals & Tasks {#deals-tasks}
 
 <ImageViewer
-  image-url="/assets/tooling-&-explorers/iexec-explorer/deal-view.png"
+  image-url-dark="/assets/tooling-&-explorers/iexec-explorer/deal-view.png"
   image-alt="Deal View"
   link-url="https://explorer.iex.ec/bellecour/deals"
-  caption="🔗 Explore Deals on iExec Explorer"
+  caption="🔗 Explore Deals"
 />
 
 > **💡 Understanding Deals**: A deal is a coordinated set of stakeholders that
@@ -94,10 +96,10 @@ explore apps and protectedData—all in one powerful dashboard.
 ### Tasks Overview
 
 <ImageViewer
-  image-url="/assets/tooling-&-explorers/iexec-explorer/task-view.png"
+  image-url-dark="/assets/tooling-&-explorers/iexec-explorer/task-view.png"
   image-alt="Task View"
   link-url="https://explorer.iex.ec/bellecour/tasks"
-  caption="🔗 Browse All Tasks"
+  caption="🔗 Explore Tasks"
 />
 
 Browse and analyze all tasks across the iExec network:
@@ -110,21 +112,17 @@ Browse and analyze all tasks across the iExec network:
 ### Task Execution Monitoring
 
 <ImageViewer
-    image-url="/assets/tooling-&-explorers/iexec-explorer/task-details-started.png"
+    image-url-dark="/assets/tooling-&-explorers/iexec-explorer/task-details-started.png"
     image-alt="Result Decryption"
     link-url="https://explorer.iex.ec/bellecour/tasks"
     caption="🔗 Explore Tasks"
-    :centered="true"
-    max-width="700px"
 />
 
 <ImageViewer
-    image-url="/assets/tooling-&-explorers/iexec-explorer/task-details-completed.png"
+    image-url-dark="/assets/tooling-&-explorers/iexec-explorer/task-details-completed.png"
     image-alt="Task Completed"
     link-url="https://explorer.iex.ec/bellecour/tasks"
     caption="🔗 Explore Tasks"
-    :centered="true"
-    max-width="700px"
 />
 
 > **🔗 Task Assets**: Each task involves four key assets working together: the
@@ -150,11 +148,10 @@ Browse and analyze all tasks across the iExec network:
 ## 📱 iApps Listing {#iapps-listing}
 
 <ImageViewer
-  image-url="/assets/tooling-&-explorers/iexec-explorer/app-view.png"
+  image-url-dark="/assets/tooling-&-explorers/iexec-explorer/app-view.png"
   image-alt="App View"
   link-url="https://explorer.iex.ec/bellecour/apps"
   caption="🔗 Explore iApps Marketplace"
-  link-icon="mdi:open-in-new"
 />
 
 Explore the iExec application marketplace:
@@ -166,11 +163,10 @@ Explore the iExec application marketplace:
 ## 🗄️ Protected Data Listing {#protected-data-listing}
 
 <ImageViewer
-  image-url="/assets/tooling-&-explorers/iexec-explorer/dataset-view.png"
+  image-url-dark="/assets/tooling-&-explorers/iexec-explorer/dataset-view.png"
   image-alt="Dataset View"
   link-url="https://explorer.iex.ec/bellecour/datasets"
   caption="🔗 Explore Protected Datasets"
-  link-icon="mdi:open-in-new"
 />
 
 Navigate the protected data landscape:
@@ -184,11 +180,10 @@ Navigate the protected data landscape:
 ## ⚡ Workerpools {#workerpools}
 
 <ImageViewer
-  image-url="/assets/tooling-&-explorers/iexec-explorer/workerpool-view.png"
+  image-url-dark="/assets/tooling-&-explorers/iexec-explorer/workerpool-view.png"
   image-alt="Workerpool View"
   link-url="https://explorer.iex.ec/bellecour/workerpools"
   caption="🔗 Explore Workerpools Infrastructure"
-  link-icon="mdi:open-in-new"
 />
 
 Explore the decentralized computing infrastructure:
