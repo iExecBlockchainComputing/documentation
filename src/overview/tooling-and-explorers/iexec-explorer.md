@@ -45,14 +45,13 @@ explore apps and protectedData—all in one powerful dashboard.
     icon-color="text-orange-500"
   />
 
-  <FeatureCard
+<FeatureCard
     icon="mdi:lightning-bolt"
     title="Workerpools"
     description="Explore the decentralized computing infrastructure, including usage and ownership details"
     link-url="#workerpools"
     icon-color="text-purple-500"
-  />
-</CardGrid>
+  /> </CardGrid>
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <h4 class="!mt-0 !mb-2">🏗️ Understanding iExec Architecture</h4>
