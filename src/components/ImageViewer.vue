@@ -11,7 +11,7 @@
           border: '1px solid var(--vp-c-border)',
           boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
         }"
-        class="transition-transform duration-200 ease-in-out hover:scale-[1.02]"
+        class="transition-transform duration-200 ease-in-out hover:-translate-y-1 hover:shadow-xl"
       />
     </a>
     <p v-if="caption" class="mt-4 font-medium">
