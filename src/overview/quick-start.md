@@ -91,7 +91,9 @@ learning and prototyping.
     buttonLabel="Open Sandbox"
     buttonIcon="mdi:code-braces"
     buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/web3mail-sandbox/main"
-  /> </CardGrid>
+  />
+
+</CardGrid>
 
 ## Next StepsAfter exploring our starters and sandboxes
 
