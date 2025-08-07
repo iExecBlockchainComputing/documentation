@@ -44,7 +44,7 @@ protocol.
   <ProjectCard
     title="iExec PoCo - Arbitrum Mainnet"
     description="Indexes Proof of Contribution (PoCo) data on Arbitrum mainnet, including apps, deals, tasks, and workerpools"
-    icon-image="/assets/icons/arbitrum-logo.png"
+    icon-image="/assets/icons/arbitrum.svg"
     status="available"
     status-label="Live"
     button-label="Explore Subgraph"
@@ -57,7 +57,7 @@ protocol.
   <ProjectCard
     title="iExec DataProtector - Arbitrum Mainnet"
     description="Indexes DataProtector protocol data on Arbitrum mainnet, including protected data, access grants, and sharing mechanisms"
-    icon-image="/assets/icons/arbitrum-logo.png"
+    icon-image="/assets/icons/arbitrum.svg"
     status="available"
     status-label="Live"
     button-label="Explore Subgraph"
