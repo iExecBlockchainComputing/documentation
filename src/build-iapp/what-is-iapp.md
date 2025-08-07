@@ -49,7 +49,7 @@ they will.**
   </div>
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4 flex items-center gap-3">
     <span class="text-green-500 text-xl">✅</span>
-    <p class="m-0"><strong>Verifiable Execution:</strong> Cryptographic proof that your code ran exactly as intended. No black box execution.</p>
+    <p class="m-0"><strong>Trusted Execution:</strong> iExec ensures that your code runs inside a Trusted Execution Environment (TEE), which guarantees that only the specified Docker image is executed in a secure and isolated environment.</p>
   </div>
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4 flex items-center gap-3">
     <span class="text-green-500 text-xl">✅</span>
@@ -57,7 +57,7 @@ they will.**
   </div>
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4 flex items-center gap-3">
     <span class="text-green-500 text-xl">✅</span>
-    <p class="m-0"><strong>Zero Trust Architecture:</strong> Users don't need to trust you with their data. The protocol guarantees privacy.</p>
+    <p class="m-0"><strong>Zero Trust Architecture:</strong> User data is protected by hardware-based TEEs, which keep data confidential and inaccessible to the host, cloud provider, or operating system during execution.</p>
   </div>
 </div>
 
@@ -75,7 +75,7 @@ to the person running the app.
   <div class="flex flex-col gap-3">
     <div class="flex items-center gap-3">
       <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">1</span>
-      <span>User provides personal data</span>
+      <span>User provides private data</span>
     </div>
     <div class="flex items-center gap-3">
       <span class="bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">2</span>
@@ -129,7 +129,7 @@ preserved.
       <span>🤖</span>
       <h3 class="font-semibold m-0!">Personal AI Assistants</h3>
     </div>
-    <p class="text-sm m-0!">Users let AI models perform actions based on their private data - trading, scheduling, recommendations.</p>
+    <p class="text-sm m-0!">Users let AI models perform actions based on their private data - trading, scheduling, recommendations...</p>
   </div>
 
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
@@ -137,7 +137,7 @@ preserved.
       <span>⚡</span>
       <h3 class="font-semibold m-0!">Automated Actions</h3>
     </div>
-    <p class="text-sm m-0!">Users set up automated workflows that use their private data to trigger actions, transactions, or updates.</p>
+      <p class="text-sm m-0!">Users let AI models perform actions based on their private data - trading, scheduling, recommendations...</p>
   </div>
 </div>
 
