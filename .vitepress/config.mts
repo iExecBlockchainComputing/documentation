@@ -95,6 +95,12 @@ export default defineConfig({
       { text: 'Build iApp', link: '/build-iapp/what-is-iapp' },
       { text: 'Use iApp', link: '/use-iapp/introduction' },
       { text: 'Protocol', link: '/protocol/sdk' },
+      {
+        component: 'ChainSelector',
+        props: {
+          className: 'w-48',
+        },
+      },
     ],
     outline: {
       level: [2, 4],
