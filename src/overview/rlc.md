@@ -13,7 +13,7 @@ description:
 
 **RLC** (**R**un on **L**ots of **C**omputers) serves as the primary medium of exchange for
 all interactions within the protocol, enabling users to access confidential
-computing services and rewarding providers for their contributions.
+computing services, and rewarding providers for their contributions.
 
 ## 🎯 What RLC Enables
 
