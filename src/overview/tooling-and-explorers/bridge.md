@@ -59,16 +59,21 @@ networks:
 ## 🔄 Bellecour Bridge
 
 The **Bellecour Bridge** enables seamless transfer of RLC tokens between
-Ethereum mainnet and the Bellecour sidechain in both directions.
+Ethereum mainnet and the Bellecour sidechain in both directions. When bridged to
+Bellecour, RLC becomes xRLC, the native asset of the Bellecour network.
 
 ### Ethereum <> Bellecour (RLC <> xRLC)
 
 1. **Connect Wallet**: Visit
-   [Bellecour Bridge UI](https://bridge-bellecour.iex.ec/) and connect your wallet
-2. **Select Source Network**: The bridge automatically detects your current network and available tokens (RLC on Ethereum or xRLC on Bellecour)
-3. **Choose Destination**: The bridge will show the opposite network as destination automatically
+   [Bellecour Bridge UI](https://bridge-bellecour.iex.ec/) and connect your
+   wallet
+2. **Select Source Network**: The bridge automatically detects your current
+   network and available tokens (RLC on Ethereum or xRLC on Bellecour)
+3. **Choose Destination**: The bridge will show the opposite network as
+   destination automatically
 4. **Select Amount**: Choose the amount of tokens you want to bridge
-5. **Confirm Transaction**: Approve the bridge transaction and wait for confirmation
+5. **Confirm Transaction**: Approve the bridge transaction and wait for
+   confirmation
 6. **Receive Tokens**: Your tokens will be available on the destination network
 
 <ImageViewer
@@ -91,10 +96,12 @@ RLC tokens between Ethereum and Arbitrum mainnet in both directions.
 
 1. **Visit Stargate**: Go to [Stargate UI](https://stargate.finance/bridge)
 2. **Connect Wallet**: Connect your wallet to the Stargate interface
-3. **Select Networks**: Choose your source network (Ethereum or Arbitrum) and destination network
+3. **Select Networks**: Choose your source network (Ethereum or Arbitrum) and
+   destination network
 4. **Select Token**: Choose RLC as the token to bridge
 5. **Enter Amount**: Specify the amount of RLC to transfer
-6. **Confirm Transaction**: Approve the bridge transaction and wait for confirmation
+6. **Confirm Transaction**: Approve the bridge transaction and wait for
+   confirmation
 
 <ImageViewer
   :image-url-dark="stargateBridgeImage"
