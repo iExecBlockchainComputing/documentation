@@ -424,20 +424,20 @@ export function getSidebar() {
             text: '📖 Guides',
             items: [
               {
-                text: 'Different ways to execute an iApp',
-                link: '/use-iapp/guides/different-ways-to-execute',
+                text: 'Find iApps to Use',
+                link: '/use-iapp/guides/find-iapps',
               },
               {
-                text: 'Add inputs to the execution',
-                link: '/use-iapp/guides/add-inputs-to-execution',
+                text: 'Different ways to execute an iApp',
+                link: '/use-iapp/guides/different-ways-to-execute',
               },
               {
                 text: 'Use iApp with Protected Data',
                 link: '/use-iapp/guides/use-iapp-with-protected-data',
               },
               {
-                text: 'Find iApps to Use',
-                link: '/use-iapp/guides/find-iapps',
+                text: 'Add inputs to the execution',
+                link: '/use-iapp/guides/add-inputs-to-execution',
               },
               {
                 text: 'How to pay the executions',
@@ -467,7 +467,7 @@ export function getSidebar() {
             ],
           },
           {
-            text: '✉ Web3Mail',
+            text: '📨 Web3Mail',
             link: '/use-iapp/web3mail',
             collapsed: true,
             items: [
