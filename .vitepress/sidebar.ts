@@ -31,6 +31,10 @@ export function getSidebar() {
             ],
           },
           {
+            text: '🪙 RLC Token',
+            link: '/overview/rlc',
+          },
+          {
             text: '🚀 Quick Start',
             link: '/overview/quick-start',
           },

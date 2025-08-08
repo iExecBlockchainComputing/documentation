@@ -170,3 +170,6 @@ Fork this repository and ensure you're working on the `main` branch:
 - Add a Development workflow
 - Update context7 when doc will be deployed
 - Check theGraph Images with design Team
+- Update the Dune Dashboard to the final version
+- Update or add design illustrations based on the new design system (coordinate
+  with Emily)
