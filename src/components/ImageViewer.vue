@@ -19,6 +19,7 @@
     </a>
     <p v-if="caption" class="mt-4 font-medium">
       <Button
+        as="a"
         :href="linkUrl"
         target="_blank"
         rel="noreferrer"
