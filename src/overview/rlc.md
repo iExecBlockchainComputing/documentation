@@ -73,6 +73,7 @@ You can acquire RLC tokens through several methods:
   <FeatureCard
     title="Centralized Exchanges"
     icon="mdi:store"
+    icon-color="text-indigo-500"
     :features="[
       { text: 'View all available CEX on CoinMarketCap', link: 'https://coinmarketcap.com/fr/currencies/rlc/' },
       'High liquidity markets',
@@ -83,6 +84,7 @@ You can acquire RLC tokens through several methods:
   <FeatureCard
     title="Decentralized Exchanges"
     icon="mdi:waves"
+    icon-color="text-purple-500"
     :features="[
       { text: 'ETH: RLC/ETH on Uniswap', link: 'https://app.uniswap.org/explore/pools/ethereum/0x56Ea002B411FD5887E55329852D5777EcB170713' },
       'ARB: RLC/ETH (coming soon)',
@@ -93,6 +95,7 @@ You can acquire RLC tokens through several methods:
   <FeatureCard
     title="Cross-Chain Bridging"
     icon="mdi:bridge"
+    icon-color="text-teal-500"
     :features="[
       'Bellecour Bridge',
       'Stargate Bridge (Arbitrum)',
@@ -102,6 +105,7 @@ You can acquire RLC tokens through several methods:
   <FeatureCard
     title="Earn RLC"
     icon="mdi:diamond"
+    icon-color="text-pink-500"
     :features="[
       'Develop confidential apps',
       'Monetize protected datasets',
