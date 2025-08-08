@@ -6,9 +6,9 @@
 
 <script setup lang="ts">
 interface Props {
-  value: string | number
-  className?: string
+  value: string | number;
+  className?: string;
 }
 
-defineProps<Props>()
+defineProps<Props>();
 </script>

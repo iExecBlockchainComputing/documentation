@@ -20,9 +20,9 @@ export default defineConfig({
     plugins: [tailwindcss(), groupIconVitePlugin()],
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('../src', import.meta.url))
-      }
-    }
+        '@': fileURLToPath(new URL('../src', import.meta.url)),
+      },
+    },
   },
   srcDir: './src',
   markdown: {
