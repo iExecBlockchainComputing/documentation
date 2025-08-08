@@ -30,7 +30,7 @@ transparently distributed to all iExec protocol participants:
   
   **1. App Provider** - Gets paid for providing the confidential application
   
-  **2. Protected Data Provider** - Gets paid for providing access to protected datasets
+  **2. Protected Data Provider** - Gets paid for providing access to protected confidential datasets
   
   **3. Worker** - Gets paid for running the confidential computation on their decentralized machine
   
