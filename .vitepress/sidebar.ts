@@ -56,6 +56,10 @@ export function getSidebar() {
             link: '/overview/tooling-and-explorers/builder-dashboard',
           },
           {
+            text: 'RLC Bridge',
+            link: '/overview/tooling-and-explorers/bridge',
+          },
+          {
             text: 'Subgraph Explorer',
             link: '/overview/tooling-and-explorers/subgraph-explorer',
           },
