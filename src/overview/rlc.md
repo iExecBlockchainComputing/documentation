@@ -6,7 +6,7 @@ description:
 ---
 
 <div class="flex flex-col items-center mb-8">
-  <img :src="rlcGif" alt="RLC Token Animation" class="w-80 h-80 mb-4" />
+  <img :src="rlcGif" alt="RLC Token Animation" class="w-80 h-80 mb-0" />
   <h1 class="text-3xl font-bold text-center mb-2">RLC Token</h1>
   <p class="text-lg text-center text-gray-600 max-w-2xl">The native cryptocurrency that powers the entire iExec decentralized confidential computing ecosystem</p>
 </div>
