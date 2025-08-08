@@ -20,7 +20,7 @@ computing services and rewarding providers for their contributions.
 RLC is essential for interacting with the iExec protocol and accessing its
 decentralized confidential computing services:
 
-### 💰 Transparent Payment Flow
+## 💰 Transparent Payment Flow
 
 When you pay for a task execution with RLC, your payment is automatically and
 transparently distributed to all iExec protocol participants:
@@ -39,6 +39,8 @@ transparently distributed to all iExec protocol participants:
 **💡 Transparent:** Payments are distributed based on orders defined by each
 provider (iApp, Protected Data, Worker) with their specific pricing and
 conditions.
+
+**🔒 RLC Staking:** To run a task on the protocol (executing an application with protected data on a decentralized workerpool), you need to **lock RLC** in the protocol during the task period. In exchange, you receive **sRLC (stacked RLC)**. Once the task is completed, you can recover the RLC that wasn't consumed for the task payment.
 
 ## 💰 Tokenomics & Ecosystem Metrics
 
