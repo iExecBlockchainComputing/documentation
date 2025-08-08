@@ -25,7 +25,7 @@ RLC tokens are required for various iExec protocol interactions:
 
 ## 🗂️ Available Bridges
 
-iExec provides dedicated bridge solutions for seamless token transfers across
+iExec provides officially supported bridges for seamless token transfer across
 networks:
 
 <CardGrid>
