@@ -6,12 +6,22 @@
     </div>
     <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
       <li
-        v-for="feature in features"
-        :key="feature"
+        v-for="feature in processedFeatures"
+        :key="feature.key"
         class="flex items-start gap-2"
       >
         <span :class="bulletClasses">•</span>
-        <span>{{ feature }}</span>
+        <span v-if="feature.link">
+          <a
+            :href="feature.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-600 underline transition-colors hover:text-blue-800 hover:no-underline dark:text-blue-400 dark:hover:text-blue-300"
+          >
+            {{ feature.text }}
+          </a>
+        </span>
+        <span v-else>{{ feature.text }}</span>
       </li>
     </ul>
   </div>
@@ -20,10 +30,15 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
+interface FeatureItem {
+  text: string;
+  link?: string;
+}
+
 interface Props {
   title: string;
   icon: string;
-  features: string[];
+  features: (string | FeatureItem)[];
   color?:
     | 'blue'
     | 'purple'
@@ -40,6 +55,16 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   color: 'blue',
   size: 'md',
+});
+
+const processedFeatures = computed(() => {
+  return props.features.map((feature, index) => {
+    if (typeof feature === 'string') {
+      return { key: index, text: feature };
+    } else {
+      return { key: index, text: feature.text, link: feature.link };
+    }
+  });
 });
 
 const colorClasses = {

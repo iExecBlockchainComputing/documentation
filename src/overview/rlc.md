@@ -101,9 +101,9 @@ RLC is available on multiple blockchain networks to serve different use cases:
     color="blue"
     :features="[
       'Layer 2 scaling solution',
+      'DeFi integrations available',
       'Reduced transaction costs',
       'Ethereum ecosystem access',
-      'Growing DeFi opportunities'
     ]"
   />
 </div>
@@ -114,13 +114,27 @@ You can acquire RLC tokens through several methods:
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
   <FeatureGridCard
-    title="Exchanges"
+    title="Centralized Exchanges"
     icon="🏪"
     color="indigo"
     :features="[
-      'Centralized exchanges (CEX)',
-      'Decentralized exchanges (DEX)',
-      'High liquidity markets'
+      { text: 'Binance: RLC/BTC, RLC/USDT', link: 'https://www.binance.com/en/trade/RLC_BTC' },
+      { text: 'Coinbase: RLC/USD', link: 'https://www.coinbase.com/price/rlc' },
+      { text: 'Kraken: RLC/USD', link: 'https://pro.kraken.com/app/trade/rlc-usd' },
+      { text: 'MEXC: RLC/USDT', link: 'https://www.mexc.com/exchange/RLC_USDT' },
+      { text: 'BitGet: RLC/USDT', link: 'https://www.bitget.com/spot/RLCUSDT' },
+      '...'
+    ]"
+  />
+  
+  <FeatureGridCard
+    title="Decentralized Exchanges"
+    icon="🌊"
+    color="purple"
+    :features="[
+      { text: 'ETH: RLC/ETH on Uniswap', link: 'https://app.uniswap.org/explore/pools/ethereum/0x56Ea002B411FD5887E55329852D5777EcB170713' },
+      'ARB: RLC/ETH (coming soon)',
+      'High liquidity DEX trading'
     ]"
   />
   
@@ -145,6 +159,23 @@ You can acquire RLC tokens through several methods:
     ]"
   />
 </div>
+
+### 🏪 Centralized Exchanges
+
+- **Binance**: [RLC/BTC](https://www.binance.com/en/trade/RLC_BTC),
+  [RLC/USDT](https://www.binance.com/en/trade/RLC_USDT)
+- **Coinbase**: [RLC/USD](https://www.coinbase.com/price/rlc)
+- **Kraken**: [RLC/USD](https://www.kraken.com/prices/rlc)
+- **MEXC**: [RLC/USDT](https://www.mexc.com/exchange/RLC_USDT)
+- **BitGet**: [RLC/USDT](https://www.bitget.com/spot/RLCUSDT)
+- And many others...
+
+### 🌊 Decentralized Exchanges
+
+- **Ethereum**:
+  [RLC/ETH on Uniswap](https://app.uniswap.org/explore/pools/ethereum/0x56Ea002B411FD5887E55329852D5777EcB170713)
+- **Arbitrum**: RLC/ETH (coming soon)
+- **Other DEX**: High liquidity trading available
 
 ## 🚀 Ready to get started?
 
