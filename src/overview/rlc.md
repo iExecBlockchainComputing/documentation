@@ -68,7 +68,7 @@ demand for RLC increases, driving token value through network effects.
 RLC is available on multiple blockchain networks to serve different use cases:
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <FeatureGridCard
+  <DescriptionCard
     title="Ethereum Mainnet"
     icon="⟠"
     color="gray"
@@ -79,7 +79,7 @@ RLC is available on multiple blockchain networks to serve different use cases:
     ]"
   />
   
-  <FeatureGridCard
+  <DescriptionCard
     title="Bellecour Sidechain"
     icon="⚡"
     color="yellow"
@@ -89,7 +89,7 @@ RLC is available on multiple blockchain networks to serve different use cases:
     ]"
   />
   
-  <FeatureGridCard
+  <DescriptionCard
     title="Arbitrum"
     icon="🔷"
     color="blue"
@@ -107,7 +107,7 @@ RLC is available on multiple blockchain networks to serve different use cases:
 You can acquire RLC tokens through several methods:
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <FeatureGridCard
+  <DescriptionCard
     title="Centralized Exchanges"
     icon="🏪"
     color="indigo"
@@ -121,7 +121,7 @@ You can acquire RLC tokens through several methods:
     ]"
   />
   
-  <FeatureGridCard
+  <DescriptionCard
     title="Decentralized Exchanges"
     icon="🌊"
     color="purple"
@@ -132,7 +132,7 @@ You can acquire RLC tokens through several methods:
     ]"
   />
   
-  <FeatureGridCard
+  <DescriptionCard
     title="Cross-Chain Bridging"
     icon="🌉"
     color="teal"
@@ -142,7 +142,7 @@ You can acquire RLC tokens through several methods:
     ]"
   />
   
-  <FeatureGridCard
+  <DescriptionCard
     title="Earn RLC"
     icon="💎"
     color="pink"
@@ -167,7 +167,7 @@ Ready to dive into the iExec ecosystem? Here are the next steps:
 
 <script setup>
 import ImageViewer from '../components/ImageViewer.vue';
-import FeatureGridCard from '../components/FeatureGridCard.vue';
+import DescriptionCard from '../components/DescriptionCard.vue';
 
 // Assets
 import rlcGif from '../assets/rlc/rlc.gif';
