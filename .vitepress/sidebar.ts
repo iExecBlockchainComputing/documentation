@@ -39,6 +39,10 @@ export function getSidebar() {
             link: '/overview/use-cases',
           },
           {
+            text: '🪙 RLC Token',
+            link: '/overview/rlc',
+          },
+          {
             text: '🤖 Develop with AI',
             link: '/overview/develop-with-ai',
           },
