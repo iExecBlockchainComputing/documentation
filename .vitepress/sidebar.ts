@@ -31,16 +31,16 @@ export function getSidebar() {
             ],
           },
           {
-            text: '🪙 RLC Token',
-            link: '/overview/rlc',
-          },
-          {
             text: '🚀 Quick Start',
             link: '/overview/quick-start',
           },
           {
             text: '📋 Use Cases',
             link: '/overview/use-cases',
+          },
+          {
+            text: '🪙 RLC Token',
+            link: '/overview/rlc',
           },
           {
             text: '🤖 Develop with AI',
