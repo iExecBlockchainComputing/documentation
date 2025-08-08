@@ -59,7 +59,7 @@ demand for RLC increases, driving token value through network effects.
     class="rounded-lg shadow-lg"
   />
   <p class="text-center text-sm text-gray-600 mt-2">
-    📊 <a href="https://dune.com/datawarlock/arbitrum-economics" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">View live RLC analytics on Dune Dashboard</a>
+    <a href="https://dune.com/datawarlock/arbitrum-economics" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">View live RLC analytics on Dune Dashboard</a>
   </p>
 </div>
 
