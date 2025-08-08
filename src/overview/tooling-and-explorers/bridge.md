@@ -1,5 +1,5 @@
 ---
-title: RLC Bridge
+title: iExec RLC Bridge
 description:
   Bridge RLC tokens between networks to interact with the iExec protocol.
   Transfer RLC to Bellecour (xRLC) and Arbitrum networks using dedicated bridges
