@@ -64,7 +64,7 @@ Ethereum mainnet and the Bellecour sidechain in both directions.
 ### From Ethereum to Bellecour (RLC → xRLC)
 
 1. **Connect Wallet**: Visit
-   [Bellecour Bridge](https://bridge-bellecour.iex.ec/) and connect your wallet
+   [Bellecour Bridge UI](https://bridge-bellecour.iex.ec/) and connect your wallet
 2. **Switch to Ethereum**: Ensure your wallet is connected to Ethereum mainnet
 3. **Select Amount**: Choose the amount of RLC you want to bridge
 4. **Confirm Transaction**: Approve the bridge transaction on Ethereum mainnet
