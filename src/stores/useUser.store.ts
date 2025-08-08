@@ -17,11 +17,6 @@ export const useUserStore = defineStore('user', () => {
     chainId.value = chain.id;
   }
 
-  function clearChain() {
-    chainId.value = undefined;
-    selectedChain.value = undefined;
-  }
-
   // Getters
   const getCurrentChainId = () => chainId.value;
   const getCurrentChain = () => selectedChain.value;
@@ -33,7 +28,6 @@ export const useUserStore = defineStore('user', () => {
     // Actions
     setChainId,
     setSelectedChain,
-    clearChain,
     // Getters
     getCurrentChainId,
     getCurrentChain,

@@ -18,7 +18,7 @@
 
       <SelectContent>
         <SelectItem
-          v-for="chain in filteredChains"
+          v-for="chain in supportedChains"
           :key="chain.id"
           :value="chain.id.toString()"
         >
@@ -66,7 +66,7 @@ const { requestChainChange } = useChainSwitch();
 const userStore = useUserStore();
 
 // Data
-const filteredChains = getSupportedChains();
+const supportedChains = getSupportedChains();
 
 // Computed
 const selectedChain = computed(() => {
