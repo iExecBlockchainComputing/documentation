@@ -76,6 +76,15 @@
   --color-danger-2: var(--vp-c-red-2);
   --color-danger-3: var(--vp-c-red-3);
   --color-danger-soft: var(--vp-c-red-soft);
+
+  /* ShadCN */
+  --color-muted-foreground: var(--vp-c-text-3);
+  --color-ring: var(--vp-c-brand-2);
+  --color-destructive: var(--vp-c-red-2);
+  --color-popover: var(--vp-c-bg);
+  --color-popover-foreground: var(--vp-c-text-1);
+  --color-accent: var(--vp-c-bg-soft);
+  --color-accent-foreground: var(--vp-c-text-1);
 }
 
 :root {
