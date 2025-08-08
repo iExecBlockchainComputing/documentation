@@ -88,7 +88,7 @@ RLC tokens between Ethereum and Arbitrum mainnet in both directions.
 
 ### From Ethereum to Arbitrum
 
-1. **Visit Stargate**: Go to [Stargate](https://stargate.finance/bridge)
+1. **Visit Stargate**: Go to [Stargate UI](https://stargate.finance/bridge)
 2. **Connect Wallet**: Connect your wallet to the Stargate interface
 3. **Select Networks**: Choose Ethereum as source and Arbitrum as destination
 4. **Select Token**: Choose RLC as the token to bridge
