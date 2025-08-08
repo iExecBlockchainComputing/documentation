@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 import { ref } from 'vue';
 import type { Chain } from '@/utils/chain.utils';
 
-export const useUserStore = defineStore('user', () => {
+const useUserStore = defineStore('user', () => {
   // State
   const chainId = ref<number | undefined>(undefined);
   const selectedChain = ref<Chain | undefined>(undefined);
