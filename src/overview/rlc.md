@@ -48,12 +48,6 @@ computing services drives token value:
 **Fixed Supply**: RLC has a maximum supply of 87 million tokens, ensuring
 scarcity and value preservation.
 
-**Deflationary Mechanism**: A portion of transaction fees is burned, reducing
-the total supply over time and creating deflationary pressure.
-
-**Staking Rewards**: Compute providers can stake RLC to earn additional rewards,
-incentivizing network participation and security.
-
 **Network Effects**: As more users and providers join the iExec ecosystem, the
 demand for RLC increases, driving token value through network effects.
 
@@ -160,23 +154,6 @@ You can acquire RLC tokens through several methods:
   />
 </div>
 
-### 🏪 Centralized Exchanges
-
-- **Binance**: [RLC/BTC](https://www.binance.com/en/trade/RLC_BTC),
-  [RLC/USDT](https://www.binance.com/en/trade/RLC_USDT)
-- **Coinbase**: [RLC/USD](https://www.coinbase.com/price/rlc)
-- **Kraken**: [RLC/USD](https://www.kraken.com/prices/rlc)
-- **MEXC**: [RLC/USDT](https://www.mexc.com/exchange/RLC_USDT)
-- **BitGet**: [RLC/USDT](https://www.bitget.com/spot/RLCUSDT)
-- And many others...
-
-### 🌊 Decentralized Exchanges
-
-- **Ethereum**:
-  [RLC/ETH on Uniswap](https://app.uniswap.org/explore/pools/ethereum/0x56Ea002B411FD5887E55329852D5777EcB170713)
-- **Arbitrum**: RLC/ETH (coming soon)
-- **Other DEX**: High liquidity trading available
-
 ## 🚀 Ready to get started?
 
 Ready to dive into the iExec ecosystem? Here are the next steps:
@@ -185,7 +162,7 @@ Ready to dive into the iExec ecosystem? Here are the next steps:
   networks
 - **[Start Using iExec](./quick-start.md)** - Begin your confidential computing
   journey
-- **[Earn RLC](../manage-data/dataProtector/getting-started.md)** - Become a
+- **[Earn RLC](../manage-data/guides/create-and-share-access.md)** - Become a
   provider and monetize your resources
 
 <script setup>
