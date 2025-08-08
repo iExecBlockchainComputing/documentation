@@ -65,10 +65,9 @@ demand for RLC increases, driving token value through network effects.
 You can acquire RLC tokens through several methods:
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <DescriptionCard
+  <FeatureCard
     title="Centralized Exchanges"
-    icon="🏪"
-    color="indigo"
+    icon="mdi:store"
     :features="[
       { text: 'View all available CEX on CoinMarketCap', link: 'https://coinmarketcap.com/fr/currencies/rlc/' },
       'High liquidity markets',
@@ -76,10 +75,9 @@ You can acquire RLC tokens through several methods:
     ]"
   />
   
-  <DescriptionCard
+  <FeatureCard
     title="Decentralized Exchanges"
-    icon="🌊"
-    color="purple"
+    icon="mdi:waves"
     :features="[
       { text: 'ETH: RLC/ETH on Uniswap', link: 'https://app.uniswap.org/explore/pools/ethereum/0x56Ea002B411FD5887E55329852D5777EcB170713' },
       'ARB: RLC/ETH (coming soon)',
@@ -87,20 +85,18 @@ You can acquire RLC tokens through several methods:
     ]"
   />
   
-  <DescriptionCard
+  <FeatureCard
     title="Cross-Chain Bridging"
-    icon="🌉"
-    color="teal"
+    icon="mdi:bridge"
     :features="[
       'Bellecour Bridge',
       'Stargate Bridge (Arbitrum)',
     ]"
   />
   
-  <DescriptionCard
+  <FeatureCard
     title="Earn RLC"
-    icon="💎"
-    color="pink"
+    icon="mdi:diamond"
     :features="[
       'Develop confidential apps',
       'Monetize protected datasets',
@@ -122,7 +118,7 @@ Ready to dive into the iExec ecosystem? Here are the next steps:
 
 <script setup>
 import ImageViewer from '../components/ImageViewer.vue';
-import DescriptionCard from '../components/DescriptionCard.vue';
+import FeatureCard from '../components/FeatureCard.vue';
 
 // Assets
 import rlcGif from '../assets/rlc/rlc.gif';
