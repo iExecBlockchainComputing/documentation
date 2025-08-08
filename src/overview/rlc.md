@@ -1,7 +1,7 @@
 ---
 title: RLC Token
 description:
-  The RLC token is the native cryptocurrency that powers the iExec decentralized
+  The RLC token is the cryptocurrency that powers the iExec decentralized
   computing ecosystem
 ---
 
