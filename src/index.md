@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: 'Build on iExec Privacy Layer'
+  name: 'Privacy Made Easy'
   tagline:
-    'Build decentralized applications that combine ownership, privacy, and
+    'Build decentralized applications that combine governance, privacy, and
     monetization.'
   actions:
     - theme: brand

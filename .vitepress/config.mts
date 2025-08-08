@@ -1,12 +1,15 @@
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash';
 import tailwindcss from '@tailwindcss/vite';
-import { defineConfig } from 'vitepress';
+import { defineConfig, loadEnv } from 'vitepress';
 import { fileURLToPath, URL } from 'node:url';
 import { getSidebar } from './sidebar';
 import {
   groupIconMdPlugin,
   groupIconVitePlugin,
 } from 'vitepress-plugin-group-icons';
+
+// Charger les variables d'environnement
+const env = loadEnv('', process.cwd());
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -22,6 +25,10 @@ export default defineConfig({
       alias: {
         '@': fileURLToPath(new URL('../src', import.meta.url)),
       },
+    },
+    // Expose environment variables to the client
+    define: {
+      'import.meta.env.VITE_REOWN_PROJECT_ID': JSON.stringify(env.VITE_REOWN_PROJECT_ID),
     },
   },
   srcDir: './src',

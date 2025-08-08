@@ -86,8 +86,8 @@ export function getSidebar() {
             text: '📖 Guides',
             items: [
               {
-                text: 'Create and Share Access to Protected Data',
-                link: '/manage-data/guides/create-and-share-access',
+                text: 'Manage Access',
+                link: '/manage-data/guides/manage-access',
               },
               {
                 text: 'Handle Schemas and Dataset Types',
@@ -320,24 +320,6 @@ export function getSidebar() {
                       },
                     ],
                   },
-                  {
-                    text: 'iApp',
-                    link: '/manage-data/dataProtector/advanced/iApp',
-                    collapsed: true,
-                    items: [
-                      {
-                        text: 'DataProtector Deserializer',
-                        link: '/manage-data/dataProtector/advanced/iApp/deserializer',
-                        collapsed: true,
-                        items: [
-                          {
-                            text: 'getValue',
-                            link: '/manage-data/dataProtector/advanced/iApp/deserializer/getValue',
-                          },
-                        ],
-                      },
-                    ],
-                  },
                 ],
               },
               {
@@ -358,28 +340,28 @@ export function getSidebar() {
             text: '📖 Guides',
             items: [
               {
-                text: 'Build and Deploy your iApps',
-                link: '/build-iapp/guides/build-&-deploy-iapp',
+                text: 'Build and Deploy',
+                link: '/build-iapp/guides/build-&-deploy',
               },
               {
-                text: 'Manage your iApps',
-                link: '/build-iapp/guides/manage-iapp',
+                text: 'Manage Access',
+                link: '/build-iapp/guides/manage-access',
               },
               {
-                text: 'Inputs and Outputs (types, differences, formats)',
+                text: 'Inputs and Outputs',
                 link: '/build-iapp/guides/inputs-and-outputs',
               },
               {
-                text: 'Debugging Your iApp',
-                link: '/build-iapp/guides/debugging-your-iapp',
-              },
-              {
-                text: 'Using TDX (Trusted Execution) [EXPERIMENTAL]',
-                link: '/build-iapp/guides/using-tdx-experimental',
+                text: 'Using TDX',
+                link: '/build-iapp/guides/using-tdx',
               },
               {
                 text: 'How to Get and Decrypt Results',
                 link: '/build-iapp/guides/how-to-get-and-decrypt-results',
+              },
+              {
+                text: 'Debugging',
+                link: '/build-iapp/guides/debugging',
               },
             ],
           },
@@ -394,6 +376,17 @@ export function getSidebar() {
               {
                 text: 'Building Your iApp',
                 link: '/build-iapp/iapp-generator/building-your-iexec-app',
+              },
+              {
+                text: 'Deserialize ProtectedData',
+                link: '/build-iapp/iapp-generator/deserializer',
+                collapsed: true,
+                items: [
+                  {
+                    text: 'getValue',
+                    link: '/build-iapp/iapp-generator/deserializer/getValue',
+                  },
+                ],
               },
             ],
           },
