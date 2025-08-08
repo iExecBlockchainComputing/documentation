@@ -31,7 +31,7 @@ networks:
 <CardGrid>
   <ProjectCard
     title="Bellecour Bridge"
-    description="Bridge RLC tokens between Ethereum mainnet and Bellecour sidechain (xRLC) in both directions"
+    description="Bridge RLC tokens between Ethereum mainnet and Bellecour sidechain"
     :icon-image="iexecLogoIcon"
     status="available"
     status-label="Live"
@@ -44,7 +44,7 @@ networks:
   
   <ProjectCard
     title="Stargate Bridge"
-    description="Bridge RLC tokens between Ethereum and Arbitrum mainnet in both directions using LayerZero protocol"
+    description="Bridge RLC tokens between Ethereum and Arbitrum using LayerZero protocol"
     :icon-image="arbitrumLogoIcon"
     status="available"
     status-label="Live"
