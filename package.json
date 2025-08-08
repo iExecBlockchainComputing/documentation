@@ -34,6 +34,8 @@
   "devDependencies": {
     "@iconify/vue": "^5.0.0",
     "@shikijs/vitepress-twoslash": "^3.8.0",
+    "@types/prop-types": "^15.7.15",
+    "@types/react": "^18.3.23",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "vitepress": "^1.6.3"
