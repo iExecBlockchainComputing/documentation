@@ -15,14 +15,6 @@ will need RLC tokens on the appropriate network.
 This guide helps you bridge RLC tokens to **Bellecour** (becoming xRLC) and
 **Arbitrum** networks using dedicated bridge solutions.
 
-## 🎯 Why Bridge RLC?
-
-RLC tokens are required for various iExec protocol interactions:
-
-- **Task Execution**: Pay for confidential computing tasks
-- **Data Access**: Purchase access to protected datasets
-- **Application Usage**: Pay for iApp executions
-
 ## 🗂️ Available Bridges
 
 iExec provides officially supported bridges for seamless token transfer across
