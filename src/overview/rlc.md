@@ -11,9 +11,10 @@ description:
   <p class="text-lg text-center text-gray-600 max-w-2xl">The native cryptocurrency that powers the entire iExec decentralized confidential computing ecosystem</p>
 </div>
 
-**RLC** (**R**un on **L**ots of **C**omputers) serves as the primary medium of exchange for
-all interactions within the protocol, enabling users to access confidential
-computing services, and rewarding providers for their contributions.
+**RLC** (**R**un on **L**ots of **C**omputers) serves as the primary medium of
+exchange for all interactions within the protocol, enabling users to access
+confidential computing services, and rewarding providers for their
+contributions.
 
 ## 🎯 What RLC Enables
 
@@ -36,11 +37,15 @@ transparently distributed to all iExec protocol participants:
   
 </div>
 
-**💡 Transparent:** Payments are distributed based on pricing and
-conditions defined by each
-provider (iApp, Protected Data, Worker) in their marketplace orders.
+**💡 Transparent:** Payments are distributed based on pricing and conditions
+defined by each provider (iApp, Protected Data, Worker) in their marketplace
+orders.
 
-**🔒 RLC Staking:** To run a task on the protocol (executing an application with protected data on a decentralized workerpool), you need to **lock RLC** in the protocol during the task period. In exchange, you receive **sRLC (staked RLC)**. Once the task is completed, you can recover the RLC that wasn't consumed for the task payment.
+**🔒 RLC Staking:** To run a task on the protocol (executing an application with
+protected data on a decentralized workerpool), you need to **lock RLC** in the
+protocol during the task period. In exchange, you receive **sRLC (staked RLC)**.
+Once the task is completed, you can recover the RLC that wasn't consumed for the
+task payment.
 
 ## 💰 Tokenomics & Ecosystem Metrics
 
