@@ -176,6 +176,44 @@ iexec order publish --app
 
 Your iApp is now accessible according to the conditions you defined!
 
+## Managing Orders
+
+### View Published Orders
+
+Check active orders for your app:
+
+```bash
+iexec orderbook app <your-app-address>
+```
+
+### Modify an Order
+
+To change conditions, create a new order with new parameters.
+
+### Cancel an Order
+
+Remove an order from the marketplace:
+
+```bash
+iexec order unpublish --app <orderHash>
+```
+
+Completely invalidate an order:
+
+```bash
+iexec order cancel --app <orderHash>
+```
+
+### 🛡️ **Confidential App (TEE required)**
+
+```json
+{
+  "appprice": "2000000000",
+  "volume": "500",
+  "tag": "0x0000000000000000000000000000000000000000000000000000000000000003"
+}
+```
+
 ## App Order Parameters
 
 Here's the detailed description of each parameter:
@@ -247,76 +285,6 @@ restriction)
 
 **Typical usage:** `"0x0000000000000000000000000000000000000000"` (open to all)
 
-## Managing Orders
-
-### View Published Orders
-
-Check active orders for your app:
-
-```bash
-iexec orderbook app <your-app-address>
-```
-
-### Modify an Order
-
-To change conditions, create a new order with new parameters.
-
-### Cancel an Order
-
-Remove an order from the marketplace:
-
-```bash
-iexec order unpublish --app <orderHash>
-```
-
-Completely invalidate an order:
-
-```bash
-iexec order cancel --app <orderHash>
-```
-
-## Common Use Cases
-
-### 🆓 **Free and Open App**
-
-```json
-{
-  "appprice": "0",
-  "volume": "10000",
-  "tag": "0x0000000000000000000000000000000000000000000000000000000000000000"
-}
-```
-
-### 💰 **Paid App (1 RLC per use)**
-
-```json
-{
-  "appprice": "1000000000",
-  "volume": "1000",
-  "tag": "0x0000000000000000000000000000000000000000000000000000000000000003"
-}
-```
-
-### 🔒 **Private App (specific user only)**
-
-```json
-{
-  "appprice": "0",
-  "volume": "50",
-  "requesterrestrict": "0xSpecificUserAddress"
-}
-```
-
-### 🛡️ **Confidential App (TEE required)**
-
-```json
-{
-  "appprice": "2000000000",
-  "volume": "500",
-  "tag": "0x0000000000000000000000000000000000000000000000000000000000000003"
-}
-```
-
 ## What's Next?
 
 **Your iApp is now accessible with custom conditions!**
@@ -327,20 +295,8 @@ Next steps:
 - **Adjust pricing**: Create new orders based on demand
 - **Manage revenue**: Check your earnings with `iexec account show`
 
-### Explore More iExec Guides
-
-- **[Input and Outputs](/build_iapp/guides/inputs-and-outputs)** - Handle data
-  in your iApps
-- **[Getting and Decrypting Results](/build_iapp/guides/how-to-get-and-decrypt-results)** -
-  Process execution results
-- **[Debugging Your iApp](/build_iapp/guides/debugging-your-iapp)** -
-  Troubleshoot your applications
-- **[Using TDX (Experimental)](/build_iapp/guides/using-tdx-experimental)** -
-  Advanced TEE features
-
 ### Technical Deep Dive
 
-- **[SDK Deep Dive](/deep_dive/sdk)** - Advanced SDK concepts and usage
 - **[iExec SDK Documentation](https://github.com/iExecBlockchainComputing/iexec-sdk)** -
   Complete CLI reference
 - **[Official Orders Documentation](https://protocol.docs.iex.ec/for-developers/advanced/manage-your-apporders)** -
