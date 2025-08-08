@@ -11,7 +11,7 @@ description:
   <p class="text-lg text-center text-gray-600 max-w-2xl">The native cryptocurrency that powers the entire iExec decentralized confidential computing ecosystem</p>
 </div>
 
-**RLC** (Run on Lots of Computers) serves as the primary medium of exchange for
+**RLC** (**R**un on **L**ots of **C**omputers) serves as the primary medium of exchange for
 all interactions within the protocol, enabling users to access confidential
 computing services and rewarding providers for their contributions.
 
