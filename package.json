@@ -20,7 +20,6 @@
     "@vueuse/core": "^13.6.0",
     "@wagmi/vue": "^0.1.24",
     "clsx": "^2.1.1",
-    "lucide-vue-next": "^0.539.0",
     "pinia": "^3.0.3",
     "reka-ui": "^2.4.1",
     "tailwind-merge": "^3.3.1",
