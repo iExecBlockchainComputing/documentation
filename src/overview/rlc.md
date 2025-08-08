@@ -26,8 +26,8 @@ decentralized confidential computing services.
 When you pay for a task execution with RLC, your payment is automatically and
 transparently distributed to all iExec protocol participants:
 
-<div class="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-lg p-4 border border-blue-200 dark:border-blue-700 my-0">
-  <h4 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-9">🔍 How Your RLC Payment is Distributed</h4>
+<div class="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-lg px-4 border border-blue-200 dark:border-blue-700 my-0">
+  <h4 class="text-lg font-semibold text-blue-800 dark:text-blue-200">🔍 How Your RLC Payment is Distributed</h4>
   
   **1. App Provider** - Gets paid for providing the confidential application
   
