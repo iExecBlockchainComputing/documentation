@@ -1,5 +1,7 @@
 import { arbitrum } from 'viem/chains';
 import { bellecour } from './bellecourChainConfig';
+import arbitrumLogo from '@/assets/icons/arbitrum.svg';
+import iexecLogo from '@/assets/icons/iexec-logo.png';
 
 export interface Chain {
   id: number;
@@ -28,7 +30,7 @@ export function getSupportedChains(): Chain[] {
     {
       id: arbitrum.id,
       name: arbitrum.name,
-      icon: '/assets/icons/arbitrum.svg',
+      icon: arbitrumLogo,
       nativeCurrency: arbitrum.nativeCurrency,
       rpcUrls: arbitrum.rpcUrls,
       blockExplorers: arbitrum.blockExplorers,
@@ -36,7 +38,7 @@ export function getSupportedChains(): Chain[] {
     {
       id: bellecour.id,
       name: bellecour.name,
-      icon: '/assets/icons/iexec-logo.png',
+      icon: iexecLogo,
       nativeCurrency: bellecour.nativeCurrency,
       rpcUrls: bellecour.rpcUrls,
       blockExplorers: bellecour.blockExplorers,

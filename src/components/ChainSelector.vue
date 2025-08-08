@@ -1,21 +1,21 @@
 <template>
-  <Select
-    v-model="selectedChainId"
-    :placeholder="'Select Chain'"
-    :class="className"
-    @update:model-value="handleChainChange"
-  >
-    <SelectItem
-      v-for="chain in filteredChains"
-      :key="chain.id"
-      :value="chain.id.toString()"
-      :class="className"
-    >
-      <div class="flex items-center gap-2">
-        <img :src="chain.icon" class="size-4" :alt="chain.name" />
-        {{ chain.name }}
-      </div>
-    </SelectItem>
+  <Select>
+    <SelectTrigger>
+      <SelectValue placeholder="Select Chain" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectGroup
+        v-for="chain in filteredChains"
+        :key="chain.id"
+        :value="chain.id.toString()"
+        :class="className"
+      >
+        <SelectItem :value="chain.id.toString()">
+          <img :src="chain.icon" class="size-4" :alt="chain.name" />
+          {{ chain.name }}
+        </SelectItem>
+      </SelectGroup>
+    </SelectContent>
   </Select>
 </template>
 
@@ -25,8 +25,14 @@ import { useAccount } from '@wagmi/vue';
 import { useChainSwitch } from '@/hooks/useChainSwitch';
 import { getSupportedChains, getChainById } from '@/utils/chain.utils';
 import useUserStore from '@/stores/useUser.store';
-import Select from '@/components/ui/Select.vue';
-import SelectItem from '@/components/ui/SelectItem.vue';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 interface Props {
   className?: string;
