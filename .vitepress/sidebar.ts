@@ -56,7 +56,7 @@ export function getSidebar() {
             link: '/overview/tooling-and-explorers/builder-dashboard',
           },
           {
-            text: 'Bridge',
+            text: 'iExec RLC Bridge',
             link: '/overview/tooling-and-explorers/bridge',
           },
           {
