@@ -36,9 +36,9 @@ transparently distributed to all iExec protocol participants:
   
 </div>
 
-**💡 Transparent:** Payments are distributed based on orders defined by each
-provider (iApp, Protected Data, Worker) with their specific pricing and
-conditions.
+**💡 Transparent:** Payments are distributed based on pricing and
+conditions defined by each
+provider (iApp, Protected Data, Worker) in their marketplace orders.
 
 **🔒 RLC Staking:** To run a task on the protocol (executing an application with protected data on a decentralized workerpool), you need to **lock RLC** in the protocol during the task period. In exchange, you receive **sRLC (staked RLC)**. Once the task is completed, you can recover the RLC that wasn't consumed for the task payment.
 
