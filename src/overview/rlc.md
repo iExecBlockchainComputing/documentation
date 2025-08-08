@@ -18,7 +18,7 @@ computing services, and rewarding providers for their contributions.
 ## 🎯 What RLC Enables
 
 RLC is essential for interacting with the iExec protocol and accessing its
-decentralized confidential computing services:
+decentralized confidential computing services.
 
 ## 💰 Transparent Payment Flow
 
