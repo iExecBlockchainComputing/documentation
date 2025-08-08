@@ -55,7 +55,6 @@ demand for RLC increases, driving token value through network effects.
     :image-url-dark="duneDashboard"
     image-alt="RLC Token Economics Dashboard"
     link-url="https://dune.com/datawarlock/arbitrum-economics"
-    class="rounded-lg shadow-lg"
     caption="🔗 Access iExec Dune Dashboard"
   />
 
