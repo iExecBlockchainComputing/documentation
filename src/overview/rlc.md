@@ -68,12 +68,9 @@ You can acquire RLC tokens through several methods:
     icon="🏪"
     color="indigo"
     :features="[
-      { text: 'Binance: RLC/BTC, RLC/USDT', link: 'https://www.binance.com/en/trade/RLC_BTC' },
-      { text: 'Coinbase: RLC/USD', link: 'https://www.coinbase.com/price/rlc' },
-      { text: 'Kraken: RLC/USD', link: 'https://pro.kraken.com/app/trade/rlc-usd' },
-      { text: 'MEXC: RLC/USDT', link: 'https://www.mexc.com/exchange/RLC_USDT' },
-      { text: 'BitGet: RLC/USDT', link: 'https://www.bitget.com/spot/RLCUSDT' },
-      '...'
+      { text: 'View all available CEX on CoinMarketCap', link: 'https://coinmarketcap.com/fr/currencies/rlc/' },
+      'High liquidity markets',
+      'Fiat to RLC purchase options'
     ]"
   />
   
