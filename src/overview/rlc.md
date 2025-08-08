@@ -51,17 +51,13 @@ scarcity and value preservation.
 **Network Effects**: As more users and providers join the iExec ecosystem, the
 demand for RLC increases, driving token value through network effects.
 
-<div class="mt-8">
-  <ImageViewer
+<ImageViewer
     :image-url-dark="duneDashboard"
     image-alt="RLC Token Economics Dashboard"
     link-url="https://dune.com/datawarlock/arbitrum-economics"
     class="rounded-lg shadow-lg"
+    caption="🔗 Access iExec Dune Dashboard"
   />
-  <p class="text-center text-sm text-gray-600 mt-2">
-    <a href="https://dune.com/datawarlock/arbitrum-economics" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">View live RLC analytics on Dune Dashboard</a>
-  </p>
-</div>
 
 ## 🌐 RLC Across Networks
 
