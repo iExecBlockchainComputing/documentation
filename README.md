@@ -173,5 +173,4 @@ Fork this repository and ensure you're working on the `main` branch:
 - Update the Dune Dashboard to the final version
 - Add new section in `iexec-explorer.md` file to talk about: available chain on
   the UI + SRLC/RLC on account section feature of the protocol
-- Update or add design illustrations based on the new design system (coordinate
-  with Emily)
+- Update or add design illustrations based on the new design system
