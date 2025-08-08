@@ -40,7 +40,7 @@ transparently distributed to all iExec protocol participants:
 provider (iApp, Protected Data, Worker) with their specific pricing and
 conditions.
 
-## 💰 Tokenomics
+## 💰 Tokenomics & Ecosystem Metrics
 
 RLC operates on a utility-driven economic model where demand for confidential
 computing services drives token value:
@@ -57,45 +57,6 @@ demand for RLC increases, driving token value through network effects.
     link-url="https://dune.com/datawarlock/arbitrum-economics"
     caption="🔗 Access iExec Dune Dashboard"
   />
-
-## 🌐 RLC Across Networks
-
-RLC is available on multiple blockchain networks to serve different use cases:
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <DescriptionCard
-    title="Ethereum Mainnet"
-    icon="⟠"
-    color="gray"
-    :features="[
-      'Original ERC-20 RLC token',
-      'DeFi integrations available',
-      'High liquidity markets'
-    ]"
-  />
-  
-  <DescriptionCard
-    title="Bellecour Sidechain"
-    icon="⚡"
-    color="yellow"
-    :features="[
-      'xRLC native asset',
-      'Gasless blockchain',
-    ]"
-  />
-  
-  <DescriptionCard
-    title="Arbitrum"
-    icon="🔷"
-    color="blue"
-    :features="[
-      'Layer 2 scaling solution',
-      'DeFi integrations available',
-      'Reduced transaction costs',
-      'Ethereum ecosystem access',
-    ]"
-  />
-</div>
 
 ## 🔄 Getting RLC
 
