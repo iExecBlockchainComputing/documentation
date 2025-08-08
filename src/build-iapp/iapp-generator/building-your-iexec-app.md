@@ -41,10 +41,11 @@ You'll set up:
 - **Protected Data** – Encrypted data accessible only inside the TEE.
 - **App Secret** – Immutable secret provisioned by the iApp owner.
 
-::: warning 💡 The Secret Management Service (SMS) securely stores application
+::: warning 💡
 
-developer secrets. Once set, the App Secret is immutable and cannot be updated.
-Use with caution.
+The Secret Management Service (SMS) securely stores application developer
+secrets. Once set, the App Secret is immutable and cannot be updated. Use with
+caution.
 
 For more information on **App Secrets**, refer to
 [Access confidential assets from your app](https://protocol.docs.iex.ec/for-developers/confidential-computing/access-confidential-assets)

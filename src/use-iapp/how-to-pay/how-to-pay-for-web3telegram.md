@@ -31,7 +31,7 @@ This guide explains how to pay for Web3Telegram's computing power using
 ### Step 2: Use the Builder Dashboard
 
 <a href="https://builder.iex.ec/" target="_blank" rel="noreferrer" style="display: inline-block; margin-top: 20px">
-  <img src="/assets/tooling-&-explorers/builder-dashboard/builder-dashboard.png" alt="Builder dashboard screenshot">
+  <img :src="builderDashboardImage" alt="Builder dashboard screenshot">
 </a>
 
 The iExec Builder Dashboard is a comprehensive tool for managing vouchers and
@@ -170,3 +170,8 @@ Convert sRLC back to xRLC and withdraw to your wallet using:
 ```javascript
 iexec.account.withdraw(RLC_amount);
 ```
+
+<script setup>
+// Assets
+import builderDashboardImage from '../../assets/tooling-&-explorers/builder-dashboard/builder-dashboard.png';
+</script>

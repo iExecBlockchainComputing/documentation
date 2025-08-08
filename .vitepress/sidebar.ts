@@ -39,6 +39,10 @@ export function getSidebar() {
             link: '/overview/use-cases',
           },
           {
+            text: '🪙 RLC Token',
+            link: '/overview/rlc',
+          },
+          {
             text: '🤖 Develop with AI',
             link: '/overview/develop-with-ai',
           },
@@ -54,6 +58,10 @@ export function getSidebar() {
           {
             text: 'Builder Dashboard',
             link: '/overview/tooling-and-explorers/builder-dashboard',
+          },
+          {
+            text: 'RLC Bridge',
+            link: '/overview/tooling-and-explorers/bridge',
           },
           {
             text: 'Subgraph Explorer',
@@ -348,15 +356,14 @@ export function getSidebar() {
           { text: '❓ What Is an iApp?', link: '/build-iapp/what-is-iapp' },
           {
             text: '📖 Guides',
-            link: '/build-iapp/guides',
             items: [
               {
-                text: 'Manage Your iApps',
-                link: '/build-iapp/guides/manage-iapps',
+                text: 'Build and Deploy your iApps',
+                link: '/build-iapp/guides/build-&-deploy-iapp',
               },
               {
-                text: 'Orders (how they work, how to manage them)',
-                link: '/build-iapp/guides/orders',
+                text: 'Manage your iApps',
+                link: '/build-iapp/guides/manage-iapp',
               },
               {
                 text: 'Inputs and Outputs (types, differences, formats)',
@@ -374,20 +381,11 @@ export function getSidebar() {
                 text: 'How to Get and Decrypt Results',
                 link: '/build-iapp/guides/how-to-get-and-decrypt-results',
               },
-              {
-                text: 'AI Frameworks',
-                link: '/build-iapp/guides/ai-frameworks',
-              },
-              {
-                text: 'Other Emerging Trends',
-                link: '/build-iapp/guides/other-emerging-trends',
-              },
             ],
           },
           {
             text: '🤖 iApp Generator',
             link: '/build-iapp/iapp-generator',
-            collapsed: true,
             items: [
               {
                 text: 'Getting Started',
@@ -397,19 +395,7 @@ export function getSidebar() {
                 text: 'Building Your iApp',
                 link: '/build-iapp/iapp-generator/building-your-iexec-app',
               },
-              {
-                text: 'References',
-                link: '/build-iapp/iapp-generator/references',
-              },
-              {
-                text: 'Advanced Creation',
-                link: '/build-iapp/iapp-generator/advanced-creation',
-              },
             ],
-          },
-          {
-            text: '🔧 Protocol-Level Guides',
-            link: '/build-iapp/iapp-generator/protocol-level-guides',
           },
         ],
       },

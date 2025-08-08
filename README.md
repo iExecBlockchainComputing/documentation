@@ -170,3 +170,7 @@ Fork this repository and ensure you're working on the `main` branch:
 - Add a Development workflow
 - Update context7 when doc will be deployed
 - Check theGraph Images with design Team
+- Update the Dune Dashboard to the final version
+- Add new section in `iexec-explorer.md` file to talk about: available chain on
+  the UI + SRLC/RLC on account section feature of the protocol
+- Update or add design illustrations based on the new design system
