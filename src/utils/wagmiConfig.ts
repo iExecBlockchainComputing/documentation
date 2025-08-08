@@ -2,21 +2,17 @@ import { createAppKit } from '@reown/appkit/vue';
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
 import { http, CreateConnectorFn } from '@wagmi/vue';
 import { injected } from '@wagmi/vue/connectors';
-import { bellecour } from './bellecourChainConfig.ts';
+import wagmiNetworks from './wagmiNetworks.ts';
 import { InjectedWalletProvider } from './injected-wallet-provider/injected-wallet-provider.ts';
 import { EIP6963ProviderDetail } from './injected-wallet-provider/types.ts';
+import { AppKitNetwork } from '@reown/appkit/networks';
 
-const projectId = import.meta.env.VITE_REOWN_PROJECT_ID;
+export const projectId = import.meta.env.VITE_REOWN_PROJECT_ID as string;
 
-// WalletConnect metadata
-const metadata = {
-  name: 'iExec Documentation',
-  description: 'iExec Documentation',
-  url: 'https://tools.docs.iex.ec/',
-  icons: [
-    'https://cdn.prod.website-files.com/6646148828eddb19c172bf2a/665db3ba85a625628c353a64_Logo-RLC-Yellow.png',
-  ],
-};
+// Wagmi Client initialization
+if (!projectId) {
+  throw new Error('You need to provide VITE_REOWN_PROJECT_ID env variable');
+}
 
 // Connectors initialization
 const connectors: CreateConnectorFn[] = [];
@@ -38,6 +34,7 @@ const preservedId = [
   'io.metamask.flask', // Metamask Flask
   'com.coinbase.wallet', // Coinbase Wallet
   'com.brave.wallet', // Brave Wallet
+  'walletConnect', // WalletConnect
   'io.zerion.wallet', // Zerion
 ];
 
@@ -50,26 +47,31 @@ const preservedAvailableProviderDetails = availableProviderDetails.filter(
 preservedAvailableProviderDetails.forEach((providerDetails) => {
   connectors.push(
     injected({
-      target() {
+      target: (() => {
         return {
           id: providerDetails.info.rdns,
           name: providerDetails.info.name,
           icon: providerDetails.info.icon,
           provider: providerDetails.provider,
         };
-      },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      }) as unknown as () => any,
     })
   );
 });
 
+const networks = Object.values(wagmiNetworks) as [
+  AppKitNetwork,
+  ...AppKitNetwork[],
+];
+
 export const wagmiAdapter = new WagmiAdapter({
-  networks: [bellecour],
+  networks: networks,
   multiInjectedProviderDiscovery: false,
+  transports: Object.fromEntries(
+    Object.values(wagmiNetworks).map((network) => [network.id, http()])
+  ),
   projectId,
-  ssr: true,
-  transports: {
-    [bellecour.id]: http(),
-  },
   connectors,
 });
 
@@ -82,20 +84,16 @@ const featuredWalletIds = [
   'ecc4036f814562b41a5268adc86270fba1365471402006302e70169465b7ac18', // Zerion
 ];
 
-// 5. Create the modal
 createAppKit({
   adapters: [wagmiAdapter],
-  networks: [bellecour],
+  networks: networks,
   projectId,
-  metadata,
   featuredWalletIds,
   features: {
-    analytics: true,
     socials: false,
     email: false,
-    emailShowWallets: false,
   },
   allWallets: 'HIDE',
   allowUnsupportedChain: false,
-  defaultNetwork: bellecour,
+  enableWalletGuide: false,
 });

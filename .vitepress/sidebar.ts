@@ -39,6 +39,10 @@ export function getSidebar() {
             link: '/overview/use-cases',
           },
           {
+            text: '🪙 RLC Token',
+            link: '/overview/rlc',
+          },
+          {
             text: '🤖 Develop with AI',
             link: '/overview/develop-with-ai',
           },
@@ -54,6 +58,10 @@ export function getSidebar() {
           {
             text: 'Builder Dashboard',
             link: '/overview/tooling-and-explorers/builder-dashboard',
+          },
+          {
+            text: 'RLC Bridge',
+            link: '/overview/tooling-and-explorers/bridge',
           },
           {
             text: 'Subgraph Explorer',

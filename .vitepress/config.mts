@@ -1,6 +1,7 @@
 import { transformerTwoslash } from '@shikijs/vitepress-twoslash';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vitepress';
+import { fileURLToPath, URL } from 'node:url';
 import { getSidebar } from './sidebar';
 import {
   groupIconMdPlugin,
@@ -17,6 +18,11 @@ export default defineConfig({
   ignoreDeadLinks: true,
   vite: {
     plugins: [tailwindcss(), groupIconVitePlugin()],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('../src', import.meta.url)),
+      },
+    },
   },
   srcDir: './src',
   markdown: {
@@ -89,6 +95,12 @@ export default defineConfig({
       { text: 'Build iApp', link: '/build-iapp/what-is-iapp' },
       { text: 'Use iApp', link: '/use-iapp/introduction' },
       { text: 'Protocol', link: '/protocol/sdk' },
+      {
+        component: 'ChainSelector',
+        props: {
+          className: 'w-48',
+        },
+      },
     ],
     outline: {
       level: [2, 4],
