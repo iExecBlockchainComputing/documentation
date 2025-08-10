@@ -279,7 +279,7 @@ const sendTelegram = await web3telegram.sendTelegram({
 });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type SendTelegramResponse } from '@iexec/web3telegram';

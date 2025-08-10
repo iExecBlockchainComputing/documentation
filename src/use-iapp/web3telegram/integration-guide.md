@@ -21,7 +21,7 @@ The integration process consists of the following steps:
    messages.**
 4. **Send messages securely using the Web3Telegram SDK.**
 
-## 1. Get your users to retrieve their chat ID
+## 1. Get your Users to Retrieve their Chat ID
 
 To enable messaging via Web3Telegram, you need to retrieve the recipient's Chat
 ID.
@@ -48,7 +48,7 @@ senders** can contact you.
 
 :::
 
-## 2. Create the protected data with data protector SDK
+## 2. Create the Protected Data with Data Protector SDK
 
 After obtaining your user's Chat ID, you need to protect it using iExec’s Data
 Protector to ensure privacy and security.
@@ -64,7 +64,7 @@ const protectedData = await dataProtectorCore.protectData({
 });
 ```
 
-## 3. Grant access via data protector SDK
+## 3. Grant Access via Data Protector SDK
 
 To allow users to send messages, you must explicitly grant access to specific
 users.
@@ -85,7 +85,7 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 });
 ```
 
-## 4. Send messages via Web3Telegram SDK
+## 4. Send Messages via Web3Telegram SDK
 
 Once authorized, a user can send messages via Web3Telegram SDK.
 

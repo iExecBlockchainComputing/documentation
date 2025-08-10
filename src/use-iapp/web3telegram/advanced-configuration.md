@@ -5,7 +5,7 @@ description:
   for secure Telegram communication on the iExec blockchain.
 ---
 
-# Advanced configuration
+# Advanced Configuration
 
 The `IExecWeb3Telegram` constructor accepts configuration options object. As
 these options are very specific, you won't need to use them for a standard usage

@@ -73,7 +73,7 @@ const contactsList = await web3telegram.fetchUserContacts({
 });
 ```
 
-## Return value
+## Return Value
 
 The result object contains a list of `contact` objects. Each `contact`
 represents one user who previously granted authorization for the user identified

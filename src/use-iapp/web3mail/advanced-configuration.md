@@ -5,7 +5,7 @@ description:
   communication.
 ---
 
-# Advanced configuration
+# Advanced Configuration
 
 The `IExecWeb3mail` constructor accepts configuration options object. As these
 options are very specific, you won't need to use them for a standard usage of

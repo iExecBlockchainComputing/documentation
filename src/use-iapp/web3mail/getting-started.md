@@ -49,7 +49,7 @@ If you use it with **Webpack**, some polyfills will be needed. You can find a
 working project
 [here](https://github.com/iExecBlockchainComputing/web3mail-sdk/tree/main/demo/browser-webpack).
 
-### Instantiate with a Web3 provider
+### Instantiate with a Web3 Provider
 
 ::: code-group
 
@@ -78,7 +78,7 @@ const web3mail = new IExecWeb3mail(web3Provider);
 
 :::
 
-### Instantiate without a Web3 provider
+### Instantiate Without a Web3 Provider
 
 For projects that only require read functions, you can instantiate the SDK
 without a Web3 provider.
