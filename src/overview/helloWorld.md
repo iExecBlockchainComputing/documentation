@@ -21,7 +21,7 @@ import InfoIcon from '../components/InfoIcon.vue'
   </div>
 </div>
 
-## What you'll learn and build
+## What you'll Learn and Build
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
   <a href="helloWorld/1-overview" class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 shadow-md hover:shadow-lg transition-all! duration-300 hover:-translate-y-1 flex gap-4 no-underline! relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-[#fcd15a] before:transform before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100">
@@ -80,7 +80,7 @@ import InfoIcon from '../components/InfoIcon.vue'
   </a>
 </div>
 
-## Getting started
+## Getting Started
 
 Before you begin, make sure you have:
 

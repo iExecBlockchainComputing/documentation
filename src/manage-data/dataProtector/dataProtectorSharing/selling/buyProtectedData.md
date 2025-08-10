@@ -154,7 +154,7 @@ For more details on how to create and manage appsWhitelist, see
 
 :::
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';

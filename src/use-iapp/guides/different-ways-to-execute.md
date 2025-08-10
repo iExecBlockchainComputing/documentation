@@ -1,9 +1,9 @@
 ---
-title: Different ways to execute an iApp
+title: Different Ways to Execute an iApp
 description: Different ways to execute an iApp
 ---
 
-# Different ways to execute an iApp
+# Different Ways to Execute an iApp
 
 This page is under development.
 

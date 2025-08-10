@@ -107,7 +107,7 @@ const setForRentingResult =
   });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';

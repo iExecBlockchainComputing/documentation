@@ -4,7 +4,7 @@ description:
   Discover how iExec empowers developers to build privacy-first applications
 ---
 
-# 💡 The Privacy toolkit
+# 💡 The Privacy Toolkit
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 !border-none">Welcome to iExec</h2>
@@ -21,7 +21,7 @@ sensitive user data.
   <p class="!m-0">iExec solves this by providing a <span class="text-fuchsia-700 font-semibold">privacy-first toolkit</span> that makes it simple to protect, manage, and compute data securely, even in untrusted environments. We believe privacy should be a <span class="text-fuchsia-700 font-semibold">built-in feature</span>, not an afterthought.</p>
 </div>
 
-## 🛠️ How we make it happen
+## 🛠️ How we Make it Happen
 
 iExec provides a complete toolkit that makes privacy simple and actionable:
 
@@ -54,7 +54,7 @@ iExec provides a complete toolkit that makes privacy simple and actionable:
   </div>
 </div>
 
-## 🔧 What we provide
+## 🔧 What we Provide
 
 Ready-to-use components to protect sensitive data and computation:
 
@@ -82,7 +82,7 @@ Confidential Computing made easy
   </div>
 </div>
 
-## 💡 Real-world use cases
+## 💡 Real-world Use Cases
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
@@ -155,7 +155,7 @@ Confidential Computing made easy
   <p class="m-0!">In the next chapters, we'll guide you through our <span class="text-green-700 font-semibold">Hello World journey</span>, a 30 minutes start that will teach you everything about iExec, from <span class="text-green-700 font-semibold">protecting sensitive data</span> to <span class="text-green-700 font-semibold">building and deploying confidential apps</span>.</p>
 </div>
 
-## 🚀 Start building
+## 🚀 Start Building
 
 Ready to build privacy-first applications? Choose your path:
 

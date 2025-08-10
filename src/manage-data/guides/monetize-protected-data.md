@@ -102,7 +102,7 @@ await dataProtectorSharing.addToCollection({
 });
 ```
 
-### **Step 2: Choose Your Distribution Model**
+### **Step 2: Choose your Distribution Model**
 
 **DataProtector Sharing offers three distribution models:**
 

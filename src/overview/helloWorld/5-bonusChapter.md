@@ -3,7 +3,7 @@ import CouponCode from '../../modules/helloWorld/CouponCode.vue';
 import Button from '../../components/ui/Button.vue';
 </script>
 
-# 🎉 Bonus chapter
+# 🎉 Bonus Chapter
 
 > Reading time 🕒 4 mins
 
@@ -12,7 +12,7 @@ import Button from '../../components/ui/Button.vue';
   <p class="m-0!">You've successfully completed the Hello World journey and learned how to protect data, deploy iApps, and manage data access. Now it's time to claim your rewards! 🏆</p>
 </div>
 
-## 🏁 Any questions?
+## 🏁 Any Questions?
 
 <div class="flex flex-col md:flex-row items-center gap-8">
   <p class="flex-1">
@@ -30,7 +30,7 @@ import Button from '../../components/ui/Button.vue';
   <p class="m-0!">Need help setting up or got some questions? Join our <a target="_blank" href="https://discord.gg/6yrgRH6ATD" class="text-green-700 underline hover:text-green-900">Discord Community</a> for support!</p>
 </div>
 
-## 🎁 Claim your voucher
+## 🎁 Claim your Voucher
 
 <div class="mb-6">
   <h3 class="text-xl font-semibold mb-2">What is a Voucher?</h3>

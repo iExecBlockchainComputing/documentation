@@ -44,7 +44,7 @@ Here is a simple diagram to explain the process:
   </div>
 </div>
 
-## 🔓 Grant the iApp Access to Your Data
+## 🔓 Grant the iApp Access to your Data
 
 <div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <p class="m-0!">Remember the <span class="text-fuchsia-700 font-semibold">iApp address</span> you saved from the previous chapter? You'll need it now to grant access to your protected data.</p>
@@ -75,7 +75,7 @@ const grantedAccess = await dataProtectorCore.grantAccess({
   <p class="m-0!">As we don't have the Bob's wallet address, we'll use the zero address to grant access to all users.</p>
 </div>
 
-## 🏃 Time to run
+## 🏃 Time to Run
 
 You're now ready to process your protected data in a trusted environment:
 
@@ -87,7 +87,7 @@ iapp run <my-iapp-address> --protectedData {{ protectedDataAddress }}
   <p class="m-0!">🎉 Congratulations! You've successfully completed the core workflow of protecting and processing data with iExec!</p>
 </div>
 
-## What's next: Data Monetization
+## What's Next: Data Monetization
 
 We've completed the first step of the journey! You can now integrate the
 **DataProtector SDK** into your dApp, **secure your data**, **grant access** to

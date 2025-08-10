@@ -18,7 +18,7 @@ data through GraphQL queries.
   link-url="https://thegraph.com/docs/en/subgraphs/quick-start/"
 />
 
-## 🎯 What is The Graph?
+## 🎯 What is the Graph?
 
 The Graph is a decentralized protocol for indexing and querying blockchain data.
 It enables developers to build and publish open APIs called **subgraphs** that

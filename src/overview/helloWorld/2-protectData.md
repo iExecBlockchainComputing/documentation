@@ -2,7 +2,7 @@
 import ProtectData from '../../modules/helloWorld/ProtectData.vue';
 </script>
 
-# 🛡️ Let's protect data
+# 🛡️ Let's Protect Data
 
 > Reading time: 6 minutes
 
@@ -15,7 +15,7 @@ import ProtectData from '../../modules/helloWorld/ProtectData.vue';
   <p class="m-0!"><strong>Protected data</strong> is encrypted data that remains confidential throughout its entire lifecycle - during storage, transfer and processing.</p>
 </div>
 
-## 🧩 DataProtector, key features
+## 🧩 DataProtector, Key Features
 
 DataProtector is a developer tool built on top of our technology. It helps
 developers easily add data protection, management, and monetization features to
@@ -42,11 +42,11 @@ their dApps with these key features:
   <p class="m-0!">DataProtector interacts with iExec's <a href="https://chainlist.org/?search=bellecour" target="_blank">Bellecour sidechain</a>, which is gasless, meaning you can use it completely free without needing any tokens!</p>
 </div>
 
-## 🧩 Let's create protected data
+## 🧩 Let's Create Protected Data
 
 <ProtectData />
 
-## 🧩 What happened under the hood
+## 🧩 What Happened Under the Hood
 
 <div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <p class="m-0!">You won't believe how easy it is to protect your data with DataProtector. Just a few lines of code, and you're done!</p>
@@ -108,7 +108,7 @@ button:
   </div>
 </div>
 
-## 🧩 How to install and use DataProtector
+## 🧩 How to Install and Use DataProtector
 
 Decentralized confidential computing might sound complex, but we've made it
 simple through our developer tools.
@@ -170,7 +170,7 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
   <p class="m-0!">Check out our <a target="_blank" href="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main?file=%2Fsrc%2Fmain.tsx%3A18%2C7">code sandbox</a> for ready-to-use examples!</p>
 </div>
 
-## 🎯 Key takeaways
+## 🎯 Key Takeaways
 
 - 🔒 **DataProtector** ensures data protection, management, and confidentiality
 

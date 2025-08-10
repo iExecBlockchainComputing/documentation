@@ -1,5 +1,5 @@
 ---
-title: Manage Access to Your ProtectedData
+title: Manage Access to your ProtectedData
 description:
   Learn how to protect data and grant secure access for specific apps and users
 ---
@@ -37,7 +37,7 @@ bun add @iexec/dataprotector
 
 :::
 
-## Protect Your Data
+## Protect your Data
 
 **Here's what happens:** Your data gets encrypted client-side and stored as an
 NFT. Only you control who can decrypt and use it.
@@ -60,7 +60,7 @@ const protectedData = await dataProtectorCore.protectData({
 console.log('Protected data address:', protectedData.address);
 ```
 
-### What You Can Protect
+### What you Can Protect
 
 **Data**: Any kind of data you want to keep private and make available for
 computations by authorized users and iApps.

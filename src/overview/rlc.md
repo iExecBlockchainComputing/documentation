@@ -113,7 +113,7 @@ You can acquire RLC tokens through several methods:
   />
 </div>
 
-## 🚀 Ready to get started?
+## 🚀 Ready to Get Started?
 
 Ready to dive into the iExec ecosystem? Here are the next steps:
 

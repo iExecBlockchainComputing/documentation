@@ -79,7 +79,7 @@ const setForSaleResult = await dataProtectorSharing.setProtectedDataForSale({
 });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';

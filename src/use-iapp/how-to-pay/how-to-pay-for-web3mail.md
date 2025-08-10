@@ -1,4 +1,4 @@
-# How to pay for Web3mail
+# How to Pay for Web3Mail
 
 [Web3Mail](../web3mail) dev tool offers secure, blockchain-based communication
 by encrypting emails and protecting user privacy.
@@ -48,7 +48,7 @@ remaining balance is automatically deducted from your account.
 For additional information on using xRLC for fallback payment in Web3Mail, refer
 to the **Using xRLC with Web3Mail** section.
 
-### Step 4: Execute Web3Mail's sendEmail Function
+### Step 4: Execute Web3Mail's SendEmail Function
 
 When using a voucher for payment, set the `useVoucher` parameter to `true`:
 
@@ -66,7 +66,7 @@ const sendEmail = await web3mail.sendEmail({
 });
 ```
 
-## Using xRlC for Web3Mail
+## Using xRLC for Web3Mail
 
 If you choose to use xRLC to cover the computational cost of Web3Mail (or if you
 need to cover data access costs such as retrieving the recipient's email

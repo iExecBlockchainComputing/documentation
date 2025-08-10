@@ -38,7 +38,7 @@ confidential iApps deployed on the protocol.
   />
 </CardGrid>
 
-## 📊 Voucher Consumption & Task History {#voucher-history}
+## 📊 Voucher Consumption & Task History
 
 The first screen of the Builder Dashboard provides comprehensive voucher
 monitoring with detailed task execution history and real-time balance tracking.
@@ -93,7 +93,7 @@ monitoring with detailed task execution history and real-time balance tracking.
   />
 </CardGrid>
 
-## 📱 Confidential iApp Management {#iapp-management}
+## 📱 Confidential iApp Management
 
 The second screen provides comprehensive management and analytics for your
 deployed confidential iApps with detailed statistics and user insights.
