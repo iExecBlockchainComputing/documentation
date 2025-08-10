@@ -309,7 +309,7 @@ You can expect this callback function to be called with the following titles:
 'CONSUME_RESULT_DECRYPT';
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type ConsumeProtectedDataResponse } from '@iexec/dataprotector';

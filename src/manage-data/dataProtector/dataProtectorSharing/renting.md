@@ -6,7 +6,7 @@ description:
   terms, even if modified by the owner.
 ---
 
-# Data sharing - Renting
+# Data Sharing - Renting
 
 Rental agreements are one of the options given for distributing a collection
 owner's protected data. A rental agreement has the following attributes:
@@ -21,14 +21,14 @@ This is a one-time up-front cost.
 The collection owner allows the renter access to the data for a set period of
 time.
 
-## Renter protection
+## Renter Protection
 
 The Data Sharing smart contract ensures the renter maintains access for the
 duration of their rental term. Once the rental term is up, the renter loses
 access to the protected data. This assurance is critical to the renting paradigm
 to ensure trust between the data owner and the renter.
 
-## Modifying rental terms
+## Modifying Rental Terms
 
 The collection owner has a few options once they list protected data for rent:
 

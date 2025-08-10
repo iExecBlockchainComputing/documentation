@@ -50,7 +50,7 @@ const pricingParams = await dataProtectorSharing.getProtectedDataPricingParams({
 });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import type { GetProtectedDataPricingParamsResponse } from '@iexec/dataprotector';

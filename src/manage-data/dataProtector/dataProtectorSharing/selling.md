@@ -1,4 +1,4 @@
-# Data sharing - Selling
+# Data Sharing - Selling
 
 The owner of protected data may list the data for sale. Upon completion of a
 sale, ownership of the protected data transfers to the buyer. This is a

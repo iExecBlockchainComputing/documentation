@@ -211,7 +211,7 @@ const protectedData = await dataProtectorSharing.getProtectedDataInCollections({
 });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import type { GetProtectedDataInCollectionsResponse } from '@iexec/dataprotector';

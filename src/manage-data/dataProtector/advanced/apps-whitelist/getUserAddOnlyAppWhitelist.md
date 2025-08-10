@@ -44,7 +44,7 @@ const allUserAddOnlyAppWhitelist =
   });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type GetUserAppWhitelistResponse } from '@iexec/dataprotector';

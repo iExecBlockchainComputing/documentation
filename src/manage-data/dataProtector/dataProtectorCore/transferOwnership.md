@@ -75,7 +75,7 @@ const transferResponse = await dataProtectorCore.transferOwnership({
 });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type TransferResponse } from '@iexec/dataprotector';

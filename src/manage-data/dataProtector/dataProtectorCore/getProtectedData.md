@@ -183,7 +183,7 @@ const listProtectedData = await dataProtectorCore.getProtectedData({
 });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type ProtectedData } from '@iexec/dataprotector';

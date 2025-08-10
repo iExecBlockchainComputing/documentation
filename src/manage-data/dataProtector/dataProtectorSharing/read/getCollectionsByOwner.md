@@ -63,7 +63,7 @@ const userCollectionsWithAllProtectedData =
   });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import type { GetCollectionsByOwnerResponse } from '@iexec/dataprotector';

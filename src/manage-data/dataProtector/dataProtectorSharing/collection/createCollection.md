@@ -28,7 +28,7 @@ const dataProtectorSharing = new IExecDataProtectorSharing(web3Provider);
 const createCollectionResult = await dataProtectorSharing.createCollection();
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type CreateCollectionResponse } from '@iexec/dataprotector';

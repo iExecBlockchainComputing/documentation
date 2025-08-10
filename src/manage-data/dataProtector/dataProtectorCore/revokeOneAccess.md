@@ -81,7 +81,7 @@ data).
 
 :::
 
-## Result value
+## Result Value
 
 ```ts twoslash
 import { type RevokedAccess } from '@iexec/dataprotector';

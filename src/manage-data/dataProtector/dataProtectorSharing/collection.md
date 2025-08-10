@@ -5,7 +5,7 @@ description:
   or selling to control how your data is shared and monetized.
 ---
 
-# Data sharing - Collection methods
+# Data Sharing - Collection Methods
 
 A collection is a way to group protected data for sharing by the Data Sharing
 module. The Data Sharing smart contract operates on data contained within a
@@ -15,7 +15,7 @@ diagram illustrates all the options for protected data within a collection:
 
 ![Data Sharing collection](inside-a-collection.png)
 
-## Distribution options
+## Distribution Options
 
 The distribution choice impacts the visibility of the protected data when a
 potential consumer is browsing the collection. Inside a collection, a data owner

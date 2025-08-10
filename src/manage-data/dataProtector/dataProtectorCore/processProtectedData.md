@@ -438,7 +438,7 @@ You can expect this callback function to be called with the following titles:
 
 Once with `isDone: false`, and then with `isDone: true`
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type ProcessProtectedDataResponse } from '@iexec/dataprotector';

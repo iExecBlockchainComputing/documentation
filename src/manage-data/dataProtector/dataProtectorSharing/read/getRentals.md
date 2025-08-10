@@ -89,7 +89,7 @@ const userRentals = await dataProtectorSharing.getRentals({
 });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type GetRentalsResponse } from '@iexec/dataprotector';

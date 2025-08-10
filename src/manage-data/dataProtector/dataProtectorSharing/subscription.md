@@ -5,7 +5,7 @@ description:
   modifying terms and protecting subscribers' access.
 ---
 
-# Data sharing - Subscription
+# Data Sharing - Subscription
 
 Subscription agreements are one of the options for distributing a collection
 owner's protected data. Similar to the rental distribution terms, a subscription
@@ -22,7 +22,7 @@ do not auto-renew.
 The collection owner allows the subscriber access to the data for a set period
 of time.
 
-## The subscription bundle
+## The Subscription Bundle
 
 Where subscriptions differ from rental distribution terms is that a subscription
 may cover more than one protected data. We use the term `subscription bundle`
@@ -33,7 +33,7 @@ data in the bundle until their subscription term expires. The owner may add new
 data to the bundle but may not remove protected data from the bundle as long as
 there remains at least one subscriber to it.
 
-## Subscriber protection
+## Subscriber Protection
 
 The Data Sharing smart contract ensures the subscriber maintains access for the
 duration of their subscription term. Once the subscription expires, the consumer
@@ -43,7 +43,7 @@ subscription fee and duration, but any data included in the subscription remains
 available. This assurance is critical to the subscription paradigm to ensure
 trust between the data owner and the subscriber.
 
-## Modifying subscription terms
+## Modifying Subscription Terms
 
 The collection owner has a few options to manage their subscription bundles:
 

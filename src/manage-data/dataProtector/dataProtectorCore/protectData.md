@@ -302,7 +302,7 @@ You can expect this callback function to be called with the following titles:
 
 Once with `isDone: false`, and then with `isDone: true`
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import type {
@@ -426,7 +426,7 @@ You can access your encrypted IPFS data with the link:
 
 :::
 
-## Created protected data
+## Created Protected Data
 
 To further check your data was correctly created, you can inspect it on the
 [iExec explorer](https://explorer.iex.ec/).

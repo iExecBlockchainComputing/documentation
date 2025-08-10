@@ -19,7 +19,7 @@ const isAddedToAddAppToAddOnlyAppWhitelist =
   await dataProtectorSharing.createAddOnlyAppWhitelist();
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type CreateAppWhitelistResponse } from '@iexec/dataprotector';
