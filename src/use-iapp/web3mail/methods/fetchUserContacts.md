@@ -1,4 +1,5 @@
 ---
+title: fetchUserContacts
 description:
   Use fetchUserContacts from iExec Web3Mail to get users who authorized a
   specific address to email them.

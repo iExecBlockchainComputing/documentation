@@ -1,4 +1,5 @@
 ---
+title: How to Pay for Web3Telegram
 description:
   Learn how to pay for Web3Telegram using vouchers or xRLC. This guide walks you
   through obtaining vouchers, managing RLC to xRLC conversion, and using both

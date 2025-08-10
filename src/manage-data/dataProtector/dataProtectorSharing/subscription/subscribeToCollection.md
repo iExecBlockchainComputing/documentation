@@ -1,4 +1,5 @@
 ---
+title: subscribeToCollection
 description:
   Subscribe to a collection on iExec and gain access to both current and future
   protected data. Manage your subscription with a fixed price and duration, with

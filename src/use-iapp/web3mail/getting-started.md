@@ -1,4 +1,5 @@
 ---
+title: Getting Started
 description:
   Get started with the iExec Web3Mail SDK. Learn how to install, configure, and
   instantiate it with or without a Web3 provider to enable blockchain-based

@@ -1,3 +1,8 @@
+---
+title: Bonus Chapter
+description: Explore additional features and advanced concepts in this bonus chapter of the Hello World tutorial series.
+---
+
 <script setup>
 import CouponCode from '../../modules/helloWorld/CouponCode.vue';
 import Button from '../../components/ui/Button.vue';

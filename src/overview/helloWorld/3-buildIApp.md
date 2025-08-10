@@ -1,3 +1,8 @@
+---
+title: Build and Deploy Your First iApp
+description: Learn how to build and deploy your first iExec application (iApp) for processing protected data in this comprehensive tutorial.
+---
+
 # 🛠️ Build and Deploy your First iApp
 
 > Reading time 🕒 10 mins

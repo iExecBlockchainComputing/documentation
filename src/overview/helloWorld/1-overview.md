@@ -1,4 +1,5 @@
 ---
+title: iExec Overview
 description:
   Explore how iExec enables developers to build privacy-preserving dApps using
   confidential computing, blockchain, and secure data management. Learn how

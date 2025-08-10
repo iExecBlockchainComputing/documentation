@@ -1,8 +1,8 @@
 ---
+title: removeProtectedDataFromSubscription
 description:
-  Remove a protected data from your iExec subscription. This method ensures that
-  the data is no longer accessible to subscribers once removed, as long as there
-  are no active subscriptions.
+  Remove a protected data from your subscription in iExec. Stop providing the
+  data to current and future subscribers, removing it from subscription access.
 ---
 
 # removeProtectedDataFromSubscription

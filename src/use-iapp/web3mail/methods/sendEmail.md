@@ -1,4 +1,5 @@
 ---
+title: sendEmail
 description:
   Send secure, permissioned emails using iExec Web3Mail's sendEmail method—no
   need to know the user's email, just their authorized protectedData address.

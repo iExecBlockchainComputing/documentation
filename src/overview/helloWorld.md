@@ -1,4 +1,5 @@
 ---
+title: Hello World Tutorial
 description:
   Kickstart your Web3 journey with iExec. In just 30 minutes, learn how to build
   privacy-focused dApps, protect sensitive data, and manage data access.

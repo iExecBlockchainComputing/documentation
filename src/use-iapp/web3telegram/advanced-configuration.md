@@ -1,4 +1,5 @@
 ---
+title: Advanced Configuration
 description:
   Explore the advanced configuration options for integrating Web3Telegram. Learn
   how to customize the dApp address, whitelist, subgraph, IPFS node, and more

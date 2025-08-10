@@ -1,3 +1,8 @@
+---
+title: Manage Data Access
+description: Learn how to grant and manage access to protected data using iExec's DataProtector SDK in this tutorial step.
+---
+
 <script setup>
 import GrantAccess from '../../modules/helloWorld/GrantAccess.vue';
 import { useWalletConnection } from '../../hooks/useWalletConnection.vue';

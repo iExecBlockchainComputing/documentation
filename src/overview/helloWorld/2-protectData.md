@@ -1,3 +1,8 @@
+---
+title: Let's Protect Data
+description: Learn how to protect your data using iExec's DataProtector SDK in this hands-on tutorial step.
+---
+
 <script setup>
 import ProtectData from '../../modules/helloWorld/ProtectData.vue';
 </script>
