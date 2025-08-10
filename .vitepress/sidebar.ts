@@ -16,16 +16,16 @@ export function getSidebar() {
                 link: '/overview/helloWorld/1-overview',
               },
               {
-                text: 'Protect data',
+                text: 'Protect Data',
                 link: '/overview/helloWorld/2-protectData',
               },
               { text: 'Build iApp', link: '/overview/helloWorld/3-buildIApp' },
               {
-                text: 'Manage data access',
+                text: 'Manage Data Access',
                 link: '/overview/helloWorld/4-manageDataAccess',
               },
               {
-                text: 'Bonus chapter!',
+                text: 'Bonus Chapter !',
                 link: '/overview/helloWorld/5-bonusChapter',
               },
             ],
@@ -79,7 +79,7 @@ export function getSidebar() {
         text: 'PROTECT AND MANAGE DATA',
         items: [
           {
-            text: '❓&nbsp;&nbsp;What Is Protected Data?',
+            text: '❓&nbsp;&nbsp;What is Protected Data?',
             link: '/manage-data/what-is-protected-data',
           },
           {
@@ -254,7 +254,7 @@ export function getSidebar() {
                     ],
                   },
                   {
-                    text: 'Read data',
+                    text: 'Read Data',
                     collapsed: true,
                     items: [
                       {
@@ -335,7 +335,7 @@ export function getSidebar() {
       {
         text: 'BUILD YOUR iAPP',
         items: [
-          { text: '❓ What Is an iApp?', link: '/build-iapp/what-is-iapp' },
+          { text: '❓ What is an iApp?', link: '/build-iapp/what-is-iapp' },
           {
             text: '📖 Guides',
             items: [
@@ -374,7 +374,7 @@ export function getSidebar() {
                 link: '/build-iapp/iapp-generator/getting-started',
               },
               {
-                text: 'Building Your iApp',
+                text: 'Building your iApp',
                 link: '/build-iapp/iapp-generator/building-your-iexec-app',
               },
               {
@@ -403,11 +403,11 @@ export function getSidebar() {
             text: '📖 Guides',
             items: [
               {
-                text: 'Different ways to execute an iApp',
+                text: 'Different Ways to Execute an iApp',
                 link: '/use-iapp/guides/different-ways-to-execute',
               },
               {
-                text: 'Add inputs to the execution',
+                text: 'Add Inputs to the Execution',
                 link: '/use-iapp/guides/add-inputs-to-execution',
               },
               {
@@ -419,7 +419,7 @@ export function getSidebar() {
                 link: '/use-iapp/guides/find-iapps',
               },
               {
-                text: 'How to pay the executions',
+                text: 'How to Pay the Executions',
                 link: '/use-iapp/guides/how-to-pay-executions',
               },
             ],
@@ -428,11 +428,11 @@ export function getSidebar() {
             text: '💰 How to Pay',
             items: [
               {
-                text: 'How to Pay for Web3mail',
+                text: 'How to Pay for Web3Mail',
                 link: '/use-iapp/how-to-pay/how-to-pay-for-web3mail',
               },
               {
-                text: 'How to Pay for Web3telegram',
+                text: 'How to Pay for Web3Telegram',
                 link: '/use-iapp/how-to-pay/how-to-pay-for-web3telegram',
               },
               {
