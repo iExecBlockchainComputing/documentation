@@ -1,4 +1,5 @@
 ---
+title: Migrate from V1 to V2
 description:
   Follow this guide to migrate your DataProtector project from v1 to v2beta with
   the latest npm package

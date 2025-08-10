@@ -1,4 +1,5 @@
 ---
+title: buyProtectedData
 description:
   Allows a user to purchase protected data that is listed for sale. Upon
   successful purchase, the buyer gains full ownership and can distribute or keep

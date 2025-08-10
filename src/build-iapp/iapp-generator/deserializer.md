@@ -1,3 +1,8 @@
+---
+title: Deserialize a ProtectedData
+description: Learn how to deserialize protected data in your iApp using the @iexec/dataprotector-deserializer utility package for accessing authorized data.
+---
+
 # Deserialize a ProtectedData
 
 If you want to build your own iApp (iExec TEE Dapp), you may need to access

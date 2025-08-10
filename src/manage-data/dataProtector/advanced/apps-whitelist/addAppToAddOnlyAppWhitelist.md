@@ -1,3 +1,8 @@
+---
+title: addAppToAddOnlyAppWhitelist
+description: Method to add an app (iExec TEE dApp) into the AddOnlyAppWhitelist for secure data access control.
+---
+
 # addAppToAddOnlyAppWhitelist
 
 Method to add an app (iExec TEE dApp) into the `AddOnlyAppWhitelist`.

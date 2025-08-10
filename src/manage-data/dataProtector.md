@@ -1,6 +1,7 @@
 ---
+title: DataProtector
 description:
-  Discover DataProtector, iExec’s secure data management solution. Encrypt,
+  Discover DataProtector, iExec's secure data management solution. Encrypt,
   share, and monetize your data with DataProtector Core and Sharing modules, all
   powered by blockchain technology.
 ---

@@ -1,6 +1,7 @@
 ---
+title: getResultFromCompletedTask
 description:
-  Retrieve the result of a completed task with iExec’s
+  Retrieve the result of a completed task with iExec's
   getResultFromCompletedTask method. Easily access task outcomes by providing
   the task ID.
 ---

@@ -1,4 +1,5 @@
 ---
+title: grantAccess
 description:
   Grant secure access to encrypted data with iExec's grantAccess method.
   Authorize specific applications or users to process protected data, with

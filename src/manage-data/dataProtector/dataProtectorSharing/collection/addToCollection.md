@@ -1,4 +1,5 @@
 ---
+title: addToCollection
 description:
   Transfer a protected data to one of your collections in the Data Sharing smart
   contract. The method approves the contract to manage the data and adds it to

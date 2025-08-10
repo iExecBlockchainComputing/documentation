@@ -1,3 +1,8 @@
+---
+title: Data Sharing - Selling
+description: Learn how to list protected data for sale, transfer ownership permanently through blockchain transactions, and manage data listing operations.
+---
+
 # Data Sharing - Selling
 
 The owner of protected data may list the data for sale. Upon completion of a

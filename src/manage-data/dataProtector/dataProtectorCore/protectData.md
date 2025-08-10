@@ -1,4 +1,5 @@
 ---
+title: protectData
 description:
   Use the protectData method from iExec DataProtector to encrypt user data
   client-side and ensure full privacy. Easily secure emails, credentials, or

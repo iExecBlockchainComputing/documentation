@@ -1,4 +1,5 @@
 ---
+title: getProtectedData
 description:
   Retrieve all protected data for a specific owner or schema with the
   getProtectedData method in iExec DataProtector. Easily access encrypted data

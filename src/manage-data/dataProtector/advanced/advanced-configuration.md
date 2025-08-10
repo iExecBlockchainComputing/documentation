@@ -1,4 +1,5 @@
 ---
+title: Advanced Configuration
 description:
   Explore advanced configuration options for the IExecDataProtector constructor
   in the iExec DataProtector SDK. Customize Ethereum contract addresses,

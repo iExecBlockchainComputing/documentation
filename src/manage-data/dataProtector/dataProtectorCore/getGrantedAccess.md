@@ -1,6 +1,7 @@
 ---
+title: getGrantedAccess
 description:
-  Retrieve all granted access details for a protected data object with iExec’s
+  Retrieve all granted access details for a protected data object with iExec's
   getGrantedAccess method. Filter access by user, application, or both, and
   manage access with pagination.
 ---

@@ -1,4 +1,5 @@
 ---
+title: Apps Whitelist
 description:
   Understand the Apps Whitelist mechanism for consuming protected data in the
   iExec DataProtector Sharing module. Learn about the Trusted Execution

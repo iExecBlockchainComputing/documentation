@@ -1,4 +1,5 @@
 ---
+title: Data Sharing - Subscription
 description:
   Learn how to manage subscription agreements for protected data on the iExec
   platform. Understand subscription pricing and duration, along with options for
