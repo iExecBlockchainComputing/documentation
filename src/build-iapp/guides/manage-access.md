@@ -123,7 +123,7 @@ generated private key. You can use this existing private key to initialize your
 wallet:
 
 ```bash
-# Extract the private key from your iexecconfig.json
+# Extract the private key from your `iexecconfig.json`
 iexec wallet import <your-private-key-from-iexecconfig>
 ```
 
@@ -204,7 +204,7 @@ Completely invalidate an order:
 iexec order cancel --app <orderHash>
 ```
 
-### 🛡️ **Confidential App (TEE required)**
+### 🛡️ **Confidential App (TEE Required)**
 
 ```json
 {

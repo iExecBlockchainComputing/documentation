@@ -1,16 +1,16 @@
 ---
-title: What Is an iApp?
+title: What is an iApp?
 description: Privacy-first applications that run on decentralized infrastructure
 ---
 
-# 🚀 What Is an iApp?
+# 🚀 What is an iApp?
 
 An iExec Application (iApp) is your regular application code (Python script, AI
 model, data processor, ...) that can securely process protected data (created by
 [DataProtector](/manage-data/dataProtector)) inside a confidential computing
 environment called TEE (a Trusted Execution Environment).
 
-## Why iApps Matter?
+## Why iApps Matter ?
 
 iApps let you process sensitive data while keeping it private and secure.
 
@@ -61,7 +61,7 @@ they will.**
   </div>
 </div>
 
-## How It Works
+## How it Works
 
 Your code runs in a Trusted Execution Environment (TEE), a secure area inside
 specific processors (Intel SGX/TDX chipset). Everything that happens there stays

@@ -5,7 +5,7 @@ description:
   subgraph URLs, IPFS nodes, and more for specific needs.
 ---
 
-# Advanced configuration
+# Advanced Configuration
 
 The `IExecDataProtector` constructor accepts additional configuration
 parameters. As these parameters are very specific, they are not needed for a

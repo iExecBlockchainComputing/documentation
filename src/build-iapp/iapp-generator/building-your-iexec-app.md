@@ -1,4 +1,4 @@
-# 🧑‍🏭 Build Your iApp
+# 🧑‍🏭 Build your iApp
 
 ## 🧰 Initialize your iApp
 
@@ -7,7 +7,7 @@ guiding you through a step-by-step initialization process. This ensures your
 iApp is correctly configured and compatible with iExec’s confidential computing
 environment.
 
-### 🏗 Define Your Project
+### 🏗 Define your Project
 
 Run:
 

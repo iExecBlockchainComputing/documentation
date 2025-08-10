@@ -13,7 +13,7 @@ minutes, not months.
 (iApps)** - applications that run inside **Trusted Execution Environments
 (TEE)** for maximum privacy and security.
 
-### What You Can Build
+### What you Can Build
 
 - **AI models** that process sensitive data privately
 - **Data analysis** tools that protect user information

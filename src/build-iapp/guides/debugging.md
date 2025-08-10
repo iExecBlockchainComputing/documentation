@@ -1,5 +1,5 @@
 ---
-title: Debugging Your iApp
+title: Debugging your iApp
 description:
   Troubleshoot and optimize your iApp execution in the TEE environment
 ---
@@ -24,7 +24,7 @@ Understanding how your task progresses through the iExec network:
 
 **Most failures happen during stages 2-4**
 
-## Monitoring Your Tasks
+## Monitoring your Tasks
 
 ### iExec Explorer
 
@@ -112,7 +112,7 @@ with open(f"{os.environ['IEXEC_OUT']}/computed.json", 'w') as f:
     json.dump(computed, f)
 ```
 
-### ⚠️ **Dataset type unmatching**
+### ⚠️ **Dataset Type Unmatching**
 
 - **Cause**: The dataset type specified in the frontend (protectData) does not
   match with the dataset type specified in the iApp

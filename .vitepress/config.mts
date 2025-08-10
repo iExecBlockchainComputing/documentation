@@ -28,7 +28,9 @@ export default defineConfig({
     },
     // Expose environment variables to the client
     define: {
-      'import.meta.env.VITE_REOWN_PROJECT_ID': JSON.stringify(env.VITE_REOWN_PROJECT_ID),
+      'import.meta.env.VITE_REOWN_PROJECT_ID': JSON.stringify(
+        env.VITE_REOWN_PROJECT_ID
+      ),
     },
   },
   srcDir: './src',

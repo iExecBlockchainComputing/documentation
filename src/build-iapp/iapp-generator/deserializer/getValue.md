@@ -56,6 +56,6 @@ const value1 = await deserializer.getValue(
 );
 ```
 
-## Return value
+## Return Value
 
 The recovered original value.

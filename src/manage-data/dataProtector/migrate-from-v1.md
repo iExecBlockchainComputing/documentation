@@ -4,7 +4,7 @@ description:
   the latest npm package
 ---
 
-# Migrate from v1 to v2 <span style="margin-left: 12px; position: absolute; top: -2px;"><Badge type="warning" text="beta" /></span>
+# Migrate from V1 to V2 <span style="margin-left: 12px; position: absolute; top: -2px;"><Badge type="warning" text="beta" /></span>
 
 ::: tip
 
@@ -44,7 +44,7 @@ const dataProtector = new IExecDataProtectorCore(web3Provider); // [!code ++]
 Some methods were renamed in order to standardize the SDK, they still provide
 the same functionalities as before.
 
-### Rename `fetchProtectedData` & add new filtering param
+### Rename `fetchProtectedData` & Add New Filtering Param
 
 ```js
 await dataProtector.fetchProtectedData({ // [!code --]

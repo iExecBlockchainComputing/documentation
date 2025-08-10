@@ -30,7 +30,7 @@ The story goes as follow:
    &nbsp;`app` parameter). This chosen application must be in the whitelist
    defined by the collection owner.
 
-## Protected data delivery dApp
+## Protected Data Delivery iApp
 
 Built for the needs of
 [Content Creator usecase-demo](/overview/use-case-demo/content-creator.html),

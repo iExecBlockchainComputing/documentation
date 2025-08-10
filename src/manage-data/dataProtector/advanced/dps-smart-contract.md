@@ -5,7 +5,7 @@ description:
   Solidity code and features in iExec’s implementation.
 ---
 
-# DataProtector Sharing smart contract
+# DataProtector Sharing Smart Contracts
 
 A specific smart contract has been developed to support all of the "Sharing"
 module features.

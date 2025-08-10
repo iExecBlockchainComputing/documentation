@@ -22,7 +22,7 @@ methods allow interaction with the protected data. The application designer uses
 these methods to securely retrieve data from IPFS and decrypt it on the client
 side. This ensures only the consumer gains access to the data.
 
-## How does it work?
+## How Does it Work?
 
 The user's protected data is managed by a special Data Sharing smart contract.
 This smart contract enforces the user's desired sharing paradigm. Protected data
@@ -42,7 +42,7 @@ rents access to a video clip, for example, even if the owner of the video clip
 removes the rental option, the renter maintains their access for the duration of
 the rental period.
 
-## How does this differ from `DataProtector Core`?
+## How Does this Differ from `DataProtector Core`?
 
 With `DataProtector Core` you must grant each consumer individual access to your
 protected data. This has several prerequisites:

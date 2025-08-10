@@ -146,7 +146,7 @@ result.zip
 └── metadata.json       # Optional metadata
 ```
 
-### computed.json Structure
+### `computed.json` Structure
 
 **Always present in every result**:
 
