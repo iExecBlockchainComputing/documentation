@@ -1,6 +1,8 @@
 ---
 title: Introduction to Using iApps
-description: Learn how to discover, execute, and interact with iExec applications for privacy-preserving computation
+description:
+  Learn how to discover, execute, and interact with iExec applications for
+  privacy-preserving computation
 ---
 
 # 📝 Introduction

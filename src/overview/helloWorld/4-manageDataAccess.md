@@ -1,6 +1,8 @@
 ---
 title: Manage Data Access
-description: Learn how to grant and manage access to protected data using iExec's DataProtector SDK in this tutorial step.
+description:
+  Learn how to grant and manage access to protected data using iExec's
+  DataProtector SDK in this tutorial step.
 ---
 
 <script setup>

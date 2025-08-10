@@ -1,6 +1,8 @@
 ---
 title: getValue
-description: Method to deserialize a value given a provided type using the IExecDataProtectorDeserializer.
+description:
+  Method to deserialize a value given a provided type using the
+  IExecDataProtectorDeserializer.
 ---
 
 # getValue

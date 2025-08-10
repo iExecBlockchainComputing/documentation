@@ -1,6 +1,8 @@
 ---
 title: Quick Start
-description: Get started quickly with iExec's privacy-preserving technologies and explore our project starters and interactive sandboxes
+description:
+  Get started quickly with iExec's privacy-preserving technologies and explore
+  our project starters and interactive sandboxes
 ---
 
 # Quick Start

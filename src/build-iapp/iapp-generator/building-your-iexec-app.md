@@ -1,6 +1,8 @@
 ---
 title: Build Your iApp
-description: Learn how to initialize, configure, and build your iExec application using the iApp Generator CLI with step-by-step guidance.
+description:
+  Learn how to initialize, configure, and build your iExec application using the
+  iApp Generator CLI with step-by-step guidance.
 ---
 
 # 🧑‍🏭 Build your iApp

@@ -1,8 +1,9 @@
 ---
 title: getProtectedDataPricingParams
 description:
-  Get pricing parameters for renting a specific protected data in iExec. Retrieve
-  rental price and duration to determine the cost and terms for data access.
+  Get pricing parameters for renting a specific protected data in iExec.
+  Retrieve rental price and duration to determine the cost and terms for data
+  access.
 ---
 
 # getProtectedDataPricingParams

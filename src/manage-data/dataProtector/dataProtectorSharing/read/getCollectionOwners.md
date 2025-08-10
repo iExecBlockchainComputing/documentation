@@ -1,6 +1,8 @@
 ---
 title: getCollectionOwners
-description: Method to get all collection owners with results ordered by creation timestamp in descending order.
+description:
+  Method to get all collection owners with results ordered by creation timestamp
+  in descending order.
 ---
 
 # getCollectionOwners

@@ -1,6 +1,8 @@
 ---
 title: Bonus Chapter
-description: Explore additional features and advanced concepts in this bonus chapter of the Hello World tutorial series.
+description:
+  Explore additional features and advanced concepts in this bonus chapter of the
+  Hello World tutorial series.
 ---
 
 <script setup>

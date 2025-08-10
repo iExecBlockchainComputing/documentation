@@ -1,6 +1,8 @@
 ---
 title: Use Cases
-description: Explore real-world applications and demo showcases of iExec's privacy-preserving technologies in action
+description:
+  Explore real-world applications and demo showcases of iExec's
+  privacy-preserving technologies in action
 ---
 
 # Use Cases Showcase

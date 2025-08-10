@@ -1,6 +1,8 @@
 ---
 title: getCollectionsByOwner
-description: Method to get all collections for a specific user with filtering and pagination options.
+description:
+  Method to get all collections for a specific user with filtering and
+  pagination options.
 ---
 
 # getCollectionsByOwner

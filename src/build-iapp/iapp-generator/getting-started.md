@@ -1,6 +1,8 @@
 ---
 title: Getting Started
-description: Learn how to set up and start using the iApp Generator with prerequisites, installation, and first steps.
+description:
+  Learn how to set up and start using the iApp Generator with prerequisites,
+  installation, and first steps.
 ---
 
 # 🛠 Getting Started

@@ -1,6 +1,8 @@
 ---
 title: Types
-description: Complete reference for DataProtector types including GrantedAccess, ProtectedData, Collection, and other essential data structures.
+description:
+  Complete reference for DataProtector types including GrantedAccess,
+  ProtectedData, Collection, and other essential data structures.
 ---
 
 # Types

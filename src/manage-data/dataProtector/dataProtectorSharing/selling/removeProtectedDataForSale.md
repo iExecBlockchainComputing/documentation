@@ -1,6 +1,8 @@
 ---
 title: removeProtectedDataForSale
-description: Method to remove a protected data from sale listing, preventing further purchase transactions.
+description:
+  Method to remove a protected data from sale listing, preventing further
+  purchase transactions.
 ---
 
 # removeProtectedDataForSale

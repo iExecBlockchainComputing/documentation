@@ -1,6 +1,8 @@
 ---
 title: Let's Protect Data
-description: Learn how to protect your data using iExec's DataProtector SDK in this hands-on tutorial step.
+description:
+  Learn how to protect your data using iExec's DataProtector SDK in this
+  hands-on tutorial step.
 ---
 
 <script setup>

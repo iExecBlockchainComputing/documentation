@@ -1,6 +1,8 @@
 ---
 title: How to Pay for Web3Mail
-description: Learn how to pay for Web3Mail's confidential computing power using vouchers and xLC for secure, blockchain-based email communication.
+description:
+  Learn how to pay for Web3Mail's confidential computing power using vouchers
+  and xLC for secure, blockchain-based email communication.
 ---
 
 # How to Pay for Web3Mail

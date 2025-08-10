@@ -1,6 +1,7 @@
 ---
 title: Getting Started with iApps
-description: Your first steps to discover and execute existing iApps on the iExec platform
+description:
+  Your first steps to discover and execute existing iApps on the iExec platform
 ---
 
 # 🚀 Getting Started

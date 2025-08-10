@@ -1,6 +1,9 @@
 ---
 title: iApp Generator
-description: Build privacy-first applications that run in secure TEE environments. Your complete toolkit for creating, testing, and deploying confidential iApps on the iExec network.
+description:
+  Build privacy-first applications that run in secure TEE environments. Your
+  complete toolkit for creating, testing, and deploying confidential iApps on
+  the iExec network.
 ---
 
 # 🤖 iApp Generator

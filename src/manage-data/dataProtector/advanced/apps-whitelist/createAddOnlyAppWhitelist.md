@@ -1,6 +1,8 @@
 ---
 title: createAddOnlyAppWhitelist
-description: Method to create an AddOnlyAppWhitelist for controlling app access. The caller becomes the owner by default, with transferable ownership as an ERC721.
+description:
+  Method to create an AddOnlyAppWhitelist for controlling app access. The caller
+  becomes the owner by default, with transferable ownership as an ERC721.
 ---
 
 # createAddOnlyAppWhitelist

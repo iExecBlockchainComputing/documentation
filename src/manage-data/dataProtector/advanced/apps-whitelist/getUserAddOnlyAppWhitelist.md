@@ -1,6 +1,8 @@
 ---
 title: getUserAddOnlyAppWhitelist
-description: Method to get AddOnlyAppWhitelist with filtering by user ethereum address for app access control management.
+description:
+  Method to get AddOnlyAppWhitelist with filtering by user ethereum address for
+  app access control management.
 ---
 
 # getUserAddOnlyAppWhitelist
