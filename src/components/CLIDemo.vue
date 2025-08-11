@@ -217,7 +217,6 @@ const terminalContent = ref<HTMLElement | null>(null);
 const typedAnswers = ref<Record<number, string>>({});
 
 // Timers
-let animationTimer: NodeJS.Timeout | null = null;
 let animationTimer: number | null = null;
 let typingTimer: number | null = null;
 
@@ -314,7 +313,6 @@ const animate = () => {
       } else {
         // No typing, just update completion and continue
         updateStepCompletion();
-        scrollToBottom();
 
         if (currentStep < totalSteps.value) {
           // Fixed delay for non-typing steps
