@@ -107,7 +107,7 @@
 import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
 import { IExecDataProtectorCore } from '@iexec/dataprotector';
-import Button from '../../components/ui/Button.vue';
+import Button from '@/components/ui/Button.vue';
 import ReownButton from './ReownButton.vue';
 import { useAccount } from '@wagmi/vue';
 import { useWalletConnection } from '../../hooks/useWalletConnection.vue';

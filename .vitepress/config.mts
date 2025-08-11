@@ -18,7 +18,6 @@ export default defineConfig({
     'Build decentralized applications that combine ownership, privacy, and monetization.',
   cleanUrls: true,
   lastUpdated: true,
-  ignoreDeadLinks: true,
   vite: {
     plugins: [tailwindcss(), groupIconVitePlugin()],
     resolve: {
@@ -99,11 +98,9 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Get Started', link: '/overview/welcome' },
-      { text: 'Protect Data', link: '/manage-data/what-is-protected-data' },
-      { text: 'Build iApp', link: '/build-iapp/what-is-iapp' },
-      { text: 'Use iApp', link: '/use-iapp/introduction' },
-      { text: 'Protocol', link: '/protocol/sdk' },
+      { text: 'Documentation', link: '/documentation/welcome' },
+      { text: 'Guides', link: '/' },
+      { text: 'References', link: '/' },
       {
         component: 'ChainSelector',
         props: {
