@@ -62,7 +62,7 @@ Here's an example app order for a sentiment analysis iApp:
 }
 ```
 
-## Creating an App Order from an iApp Generator Project
+## Creating an App Order
 
 ### Step 1: Install the iExec SDK
 

@@ -4,7 +4,7 @@ description:
   Discover how iExec empowers developers to build privacy-first applications
 ---
 
-# 💡 The Privacy Toolkit
+# 💡 Privacy Made Easy
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 !border-none">Welcome to iExec</h2>
