@@ -1,4 +1,5 @@
 ---
+title: fetchMyContacts
 description:
   Use the fetchMyContacts method from iExec Web3Mail to retrieve contact infos
   of users who authorized you to email them.
@@ -53,7 +54,7 @@ const contactsList = await web3mail.fetchMyContacts({
 });
 ```
 
-## Return value
+## Return Value
 
 The result object contains a list of `contact` objects. Each `contact`
 represents one user who previously granted you authorization to send them

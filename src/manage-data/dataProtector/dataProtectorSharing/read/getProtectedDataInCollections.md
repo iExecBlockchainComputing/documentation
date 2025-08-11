@@ -1,4 +1,5 @@
 ---
+title: getProtectedDataInCollections
 description:
   Retrieve protected data from collections in iExec. Each protected data can
   belong to only one collection at a time, with results ordered by creation
@@ -211,7 +212,7 @@ const protectedData = await dataProtectorSharing.getProtectedDataInCollections({
 });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import type { GetProtectedDataInCollectionsResponse } from '@iexec/dataprotector';

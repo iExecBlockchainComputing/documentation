@@ -1,4 +1,11 @@
-# 🛠️ Build and deploy your first iApp
+---
+title: Build and Deploy Your First iApp
+description:
+  Learn how to build and deploy your first iExec application (iApp) for
+  processing protected data in this comprehensive tutorial.
+---
+
+# 🛠️ Build and Deploy your First iApp
 
 > Reading time 🕒 10 mins
 
@@ -46,7 +53,7 @@ Before getting started, make sure you have:
   <p class="m-0!">Don't worry! All secrets used in this tutorial stay on your machine and aren’t shared with anyone. You’ll only need them to run the <code>iapp run</code> command.</p>
 </div>
 
-## 🚀 Types of iApps You Can Build
+## 🚀 Types of iApps you Can Build
 
 iExec enables you to build various types of Privacy-preserving applications.
 Here are some popular use cases:
@@ -75,7 +82,7 @@ Transfer, sell or rent protected content to authorized users.
   <p class="m-0!">These are just a few examples, the possibilities are endless. Want to explore iApp Generator? Check out our <a href="../../build-iapp/iapp-generator" target="_blank">documentation</a> and see what you can build!</p>
 </div>
 
-## 💾 Installation (win / mac / linux)
+## 💾 Installation (Win / Mac / Linux)
 
 First, you need to install the `iapp` package. Open your terminal and run:
 
@@ -190,7 +197,7 @@ You will be prompted with the following message:
 - A new folder has been created, it contains a very simple application, with the
   main code being located in `src/app.js` or `src/app.py`
 
-## 🧪 Test Your iApp
+## 🧪 Test your iApp
 
 To test your iApp, run `iapp test` command
 
@@ -238,7 +245,7 @@ iapp test --protectedData default
   <p class="m-0!">You can check how args and protectedData are processed in <code> src/app.js</code> or <code> src/app.py</code></p>
 </div>
 
-## 🚀 Deploy Your iApp
+## 🚀 Deploy your iApp
 
 Deploy your iApp on the iExec protocol.
 
@@ -268,7 +275,7 @@ Deploy your iApp on the iExec protocol.
 Once you have your token, you can deploy your iApp using the following command:
 
 ```sh
-# you need your username and the access token (it can take a few minutes to deploy)
+# You need your username and the access token (it can take a few minutes to deploy)
 iapp deploy
 ```
 
@@ -287,7 +294,7 @@ docker buildx inspect --bootstrap | grep -i platforms
   <p class="m-0!">⚠️  If you set the wrong Docker username, you can change it by editing the <code>iapp.config.json</code> file</p>
 </div>
 
-## 🏃 Run Your iApp
+## 🏃 Run your iApp
 
 Now you can run your application:
 
@@ -304,7 +311,7 @@ protocol documentation [here](https://protocol.docs.iex.ec/).
   <p class="m-0!">🎉 Congratulations! You've successfully deployed and run your first iApp on iExec. This is a significant milestone - your application is now ready to securely process confidential data in a trusted environment.</p>
 </div>
 
-## 🎯 Key takeaways
+## 🎯 Key Takeaways
 
 - 🔒 **iApps:** Special applications that run in TEEs to process protected data
 - 🛠️ **iApp CLI:** Command-line tool for building, testing, and deploying iApps

@@ -1,6 +1,8 @@
 ---
-title: Workers & Workerpools
-description: Workers and worker pools
+title: Workers and Workerpools
+description:
+  Understanding the compute infrastructure of iExec and how workers and
+  workerpools function
 ---
 
 # ⚙️ Workers & Workerpools

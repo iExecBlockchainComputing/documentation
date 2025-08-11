@@ -1,4 +1,5 @@
 ---
+title: setSubscriptionParams
 description:
   Set subscription parameters for your data collection on the iExec platform.
   Define pricing, duration, and manage access to your protected data efficiently
@@ -104,7 +105,7 @@ const setSubscriptionParamsResult =
   });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';

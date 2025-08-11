@@ -1,3 +1,10 @@
+---
+title: Use Cases
+description:
+  Explore real-world applications and demo showcases of iExec's
+  privacy-preserving technologies in action
+---
+
 # Use Cases Showcase
 
 Explore our demo applications showcasing iExec's privacy-preserving technologies

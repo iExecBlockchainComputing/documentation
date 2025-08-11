@@ -1,11 +1,12 @@
 ---
+title: Advanced Configuration
 description:
   Explore advanced configuration options for the IExecDataProtector constructor
   in the iExec DataProtector SDK. Customize Ethereum contract addresses,
   subgraph URLs, IPFS nodes, and more for specific needs.
 ---
 
-# Advanced configuration
+# Advanced Configuration
 
 The `IExecDataProtector` constructor accepts additional configuration
 parameters. As these parameters are very specific, they are not needed for a

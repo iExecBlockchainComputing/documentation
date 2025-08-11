@@ -155,18 +155,11 @@ Fork this repository and ensure you're working on the `main` branch:
 - Add link to the new explorer feature Asset_Types in the guide =>
   `handle-schemas-dataset-types`
 - Add link to remix for deploying whitelist
-- Move `manage-data/dataProtector/advanced/iApp` (Deserializer doc) in an other
-  way to be more visible (may in build-iApp section)
 - complete `use-iapp` section
-- complete `explorer` section
 - Maybe split input and output in two diff sub section in build your iapp guide
 - SGX vs TDX need review
 - Explorer l'intégration de codeSpace
-- complete `build-iapp` section
 - complete `Protocol`section
-- What about Bridge ?
-- Made a page on RLC
-- Add Dune dashboard
 - Add a Development workflow
 - Update context7 when doc will be deployed
 - Check theGraph Images with design Team
@@ -174,3 +167,4 @@ Fork this repository and ensure you're working on the `main` branch:
 - Add new section in `iexec-explorer.md` file to talk about: available chain on
   the UI + SRLC/RLC on account section feature of the protocol
 - Update or add design illustrations based on the new design system
+- Check how to pay guide to update with the launch on Arbitrum (RLC vs xRLC)

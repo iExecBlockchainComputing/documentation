@@ -403,7 +403,7 @@ result_data = {
 with open(f"{iexec_out}/result.json", 'w') as f:
     json.dump(result_data, f)
 
-# REQUIRED: Create computed.json metadata
+# REQUIRED: Create `computed.json` metadata
 computed_metadata = {
     "deterministic-output-path": f"{iexec_out}/result.json",
     "execution-timestamp": "2024-01-15T10:30:00Z",

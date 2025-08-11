@@ -1,4 +1,5 @@
 ---
+title: setProtectedDataToSubscription
 description:
   Add your protected data to a subscription on the iExec platform. Allow active
   subscribers to access your data easily by linking it to your subscribers to
@@ -56,7 +57,7 @@ const setToSubscriptionResult =
   });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';

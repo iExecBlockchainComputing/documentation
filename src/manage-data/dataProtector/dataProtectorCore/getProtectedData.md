@@ -1,4 +1,5 @@
 ---
+title: getProtectedData
 description:
   Retrieve all protected data for a specific owner or schema with the
   getProtectedData method in iExec DataProtector. Easily access encrypted data
@@ -183,7 +184,7 @@ const listProtectedData = await dataProtectorCore.getProtectedData({
 });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type ProtectedData } from '@iexec/dataprotector';

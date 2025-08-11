@@ -1,4 +1,5 @@
 ---
+title: grantAccess
 description:
   Grant secure access to encrypted data with iExec's grantAccess method.
   Authorize specific applications or users to process protected data, with
@@ -239,7 +240,7 @@ You can expect this callback function to be called with the following titles:
 
 Once with `isDone: false`, and then with `isDone: true`
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type GrantedAccess } from '@iexec/dataprotector';

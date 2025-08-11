@@ -1,11 +1,12 @@
 ---
+title: How to Pay for Web3Telegram
 description:
   Learn how to pay for Web3Telegram using vouchers or xRLC. This guide walks you
   through obtaining vouchers, managing RLC to xRLC conversion, and using both
   methods for secure Telegram communication.
 ---
 
-# How to pay for Web3telegram
+# How to Pay for Web3Telegram
 
 [Web3Telegram](../web3telegram) dev tool offers secure, blockchain-based
 communication by encrypting emails and protecting user privacy.
@@ -55,7 +56,7 @@ remaining balance is automatically deducted from your account.
 For additional information on using xRLC for fallback payment in Web3Telegram,
 refer to the **Using xRLC with Web3Telegram** section.
 
-### Step 4: Execute Web3Telegram's sendTelegram Function
+### Step 4: Execute Web3Telegram's `sendTelegram` Function
 
 When using a voucher for payment, set the `useVoucher` parameter to `true`:
 
@@ -79,7 +80,7 @@ const sendTelegram = await web3telegram.sendTelegram({
 });
 ```
 
-## Using xRlC for Web3Telegram
+## Using xRLC for Web3Telegram
 
 If you choose to use xRLC to cover the computational cost of Web3Telegram (or if
 you need to cover data access costs such as retrieving the recipient's Chat Id),
@@ -138,7 +139,7 @@ Use the command below to check your balance:
 iexec.account.show();
 ```
 
-### Execute sendTelegram
+### Execute `sendTelegram`
 
 Set the `useVoucher` parameter to `false` when using Web3Telegram's sendTelegram
 function to pay with xRLC:

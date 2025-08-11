@@ -1,6 +1,7 @@
 ---
+title: createCollection
 description:
-  Create a new NFT collection with iExec’s createCollection method. Organize and
+  Create a new NFT collection with iExec's createCollection method. Organize and
   manage your protected data for seamless distribution and monetization through
   DataProtector Sharing.
 ---
@@ -28,7 +29,7 @@ const dataProtectorSharing = new IExecDataProtectorSharing(web3Provider);
 const createCollectionResult = await dataProtectorSharing.createCollection();
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type CreateCollectionResponse } from '@iexec/dataprotector';

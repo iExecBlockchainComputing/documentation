@@ -1,4 +1,5 @@
 ---
+title: Apps Whitelist
 description:
   Understand the Apps Whitelist mechanism for consuming protected data in the
   iExec DataProtector Sharing module. Learn about the Trusted Execution
@@ -30,7 +31,7 @@ The story goes as follow:
    &nbsp;`app` parameter). This chosen application must be in the whitelist
    defined by the collection owner.
 
-## Protected data delivery dApp
+## Protected Data Delivery iApp
 
 Built for the needs of
 [Content Creator usecase-demo](/overview/use-case-demo/content-creator.html),
