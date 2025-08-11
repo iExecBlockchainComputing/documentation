@@ -627,8 +627,8 @@ guide for the complete user workflow.
 
 Continue building with these guides:
 
-- **[App Access Control and Pricing](/documentation/build-iapp/guides/manage-access)** - Control who
-  can use your iApp
+- **[App Access Control and Pricing](/documentation/build-iapp/guides/manage-access)** -
+  Control who can use your iApp
 - **[Debugging Your iApp](/documentation/build-iapp/guides/debugging)** -
   Troubleshoot execution issues
 - **[How to Get and Decrypt Results](/documentation/build-iapp/guides/how-to-get-and-decrypt-results)** -

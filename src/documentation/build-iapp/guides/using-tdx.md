@@ -186,7 +186,7 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
 
 - **[Debugging Your iApp](/documentation/build-iapp/guides/debugging)** -
   Troubleshoot execution issues
-- **[Inputs and Outputs](/documentation/build-iapp/guides/inputs-and-outputs)** - Handle data
-  in TEE environment
-- **[App Access Control and Pricing](/documentation/build-iapp/guides/manage-access)** - Deploy
-  production-ready iApps
+- **[Inputs and Outputs](/documentation/build-iapp/guides/inputs-and-outputs)** -
+  Handle data in TEE environment
+- **[App Access Control and Pricing](/documentation/build-iapp/guides/manage-access)** -
+  Deploy production-ready iApps

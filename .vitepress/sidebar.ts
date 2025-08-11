@@ -534,15 +534,39 @@ export function getSidebar() {
         text: 'PROTOCOL',
         items: [
           {
-            text: '🔧&nbsp;&nbsp;iExec SDK',
+            text: '🔧 iExec SDK',
             link: '/documentation/protocol/sdk',
           },
           {
-            text: '⚙️&nbsp;&nbsp;Workers & Workerpools',
-            link: '/documentation/protocol/workers',
+            text: '⚙️ Workers & Workerpools',
+            collapsed: true,
+            items: [
+              {
+                text: '🚀 Worker Quick Start',
+                link: '/documentation/protocol/worker/quick-start',
+              },
+              {
+                text: '🔒 Manage Workerpool Access',
+                link: '/documentation/protocol/worker/manage-access',
+              },
+            ],
           },
           {
-            text: '📖&nbsp;&nbsp;Glossary',
+            text: '⚙️ PoCo',
+            collapsed: true,
+            items: [
+              {
+                text: '� Pay Per Task Model',
+                link: '/documentation/protocol/poco/pay-per-task',
+              },
+              {
+                text: '🛡️ Proof of Contribution',
+                link: '/documentation/protocol/poco/proof-of-contribution',
+              },
+            ],
+          },
+          {
+            text: '�📖 Glossary',
             link: '/documentation/protocol/glossary',
           },
         ],

@@ -66,7 +66,8 @@ console.log('Protected data address:', protectedData.address);
 computations by authorized users and iApps.
 
 **Supported types**: Common data types like text, numbers, true/false values,
-and files. See the [full list here](/documentation/manage-data/dataProtector/types).
+and files. See the
+[full list here](/documentation/manage-data/dataProtector/types).
 
 **Storage**: Store your data on IPFS or Arweave. For larger files, you can use
 your own IPFS node.
@@ -221,7 +222,8 @@ steps:
   [processProtectedData](/documentation/manage-data/dataProtector/dataProtectorCore/processProtectedData)
   to run computations
 - **Manage access**:
-  [Revoke](/documentation/manage-data/dataProtector/dataProtectorCore/revokeOneAccess) or
+  [Revoke](/documentation/manage-data/dataProtector/dataProtectorCore/revokeOneAccess)
+  or
   [modify permissions](/documentation/manage-data/dataProtector/dataProtectorCore/grantAccess)
   anytime
 - **Learn data types**: Deep dive into

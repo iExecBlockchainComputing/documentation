@@ -169,7 +169,7 @@ except Exception as e:
 
 Continue improving your iApps:
 
-- **[Inputs and Outputs](/documentation/build-iapp/guides/inputs-and-outputs)** - Handle data
-  in TEE
+- **[Inputs and Outputs](/documentation/build-iapp/guides/inputs-and-outputs)** -
+  Handle data in TEE
 - **[How to Get and Decrypt Results](/documentation/build-iapp/guides/how-to-get-and-decrypt-results)** -
   Retrieve results

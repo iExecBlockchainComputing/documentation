@@ -12,7 +12,8 @@ In order to consume a protected data, an iExec TEE dApp needs to be provided.
 
 ::: tip
 
-**TEE** stands for Trusted Execution Environment. Find more details [here](https://protocol.docs.iex.ec/help/glossary#trusted-execution-environment-tee)
+**TEE** stands for Trusted Execution Environment. Find more details
+[here](https://protocol.docs.iex.ec/help/glossary#trusted-execution-environment-tee)
 
 :::
 
@@ -33,8 +34,8 @@ The story goes as follow:
 ## Protected Data Delivery iApp
 
 Built for the needs of
-[Content Creator use case](https://demo.iex.ec/content-creator/),
-this iExec TEE dApp is simple:
+[Content Creator use case](https://demo.iex.ec/content-creator/), this iExec TEE
+dApp is simple:
 
 1. Download the protected data from IPFS. It expects to find a property named
    `file` in the protected data.

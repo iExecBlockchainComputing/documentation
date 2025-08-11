@@ -7,8 +7,8 @@ description: Privacy-first applications that run on decentralized infrastructure
 
 An iExec Application (iApp) is your regular application code (Python script, AI
 model, data processor, ...) that can securely process protected data (created by
-[DataProtector](/documentation/manage-data/dataProtector)) inside a confidential computing
-environment called TEE (a Trusted Execution Environment).
+[DataProtector](/documentation/manage-data/dataProtector)) inside a confidential
+computing environment called TEE (a Trusted Execution Environment).
 
 ## Why iApps Matter ?
 
@@ -161,7 +161,8 @@ iApp can't see what's happening inside the enclave.
 ::: details 🚀 How do I deploy my first iApp?
 
 Try our [Hello World](/documentation/helloWorld) for a quick start, or check the
-[iApp Generator](/documentation/build-iapp/iapp-generator) section for detailed instructions.
+[iApp Generator](/documentation/build-iapp/iapp-generator) section for detailed
+instructions.
 
 :::
 
