@@ -18,7 +18,7 @@ explore apps and protectedData—all in one powerful dashboard.
   caption="🔗 Explore the iExec Protocol"
 />
 
-## 🎯 What You Can Explore
+## 🎯 What you Can Explore
 
 <CardGrid>
   <FeatureCard
@@ -67,7 +67,7 @@ explore apps and protectedData—all in one powerful dashboard.
   </ul>
 </div>
 
-## 💼 Deals & Tasks {#deals-tasks}
+## 💼 Deals & Tasks
 
 <ImageViewer
   :image-url-dark="dealViewImage"
@@ -145,7 +145,7 @@ Browse and analyze all tasks across the iExec network:
     requester specifications
   - **Result Verification**: Validate computation correctness and integrity
 
-## 📱 iApps Listing {#iapps-listing}
+## 📱 iApps Listing
 
 <ImageViewer
   :image-url-dark="appViewImage"
@@ -160,7 +160,7 @@ Explore the iExec application marketplace:
 - **Usage Analytics**: View execution counts, and user adoption
 - **Performance Metrics**: Analyze execution success rates
 
-## 🗄️ Protected Data Listing {#protected-data-listing}
+## 🗄️ Protected Data Listing
 
 <ImageViewer
   :image-url-dark="datasetViewImage"
@@ -177,7 +177,7 @@ Navigate the protected data landscape:
 - **Schema Validation**: Ensure data structure compatibility with your
   applications
 
-## ⚡ Workerpools {#workerpools}
+## ⚡ Workerpools
 
 <ImageViewer
   :image-url-dark="workerpoolViewImage"

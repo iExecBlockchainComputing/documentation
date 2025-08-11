@@ -1,4 +1,5 @@
 ---
+title: sendTelegram
 description:
   Use the sendTelegram method from Web3Telegram to send secure Telegram messages
   without knowing the recipient's username or chat ID.
@@ -279,7 +280,7 @@ const sendTelegram = await web3telegram.sendTelegram({
 });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type SendTelegramResponse } from '@iexec/web3telegram';

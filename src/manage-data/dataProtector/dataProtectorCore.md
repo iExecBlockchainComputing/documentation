@@ -1,4 +1,5 @@
 ---
+title: DataProtector Core
 description:
   Learn how DataProtector Core gives developers powerful tools to encrypt data,
   manage ownership with NFTs, and control access using smart contracts and

@@ -1,3 +1,10 @@
+---
+title: getCollectionsByOwner
+description:
+  Method to get all collections for a specific user with filtering and
+  pagination options.
+---
+
 # getCollectionsByOwner
 
 Method to get all collections for a specific user.
@@ -63,7 +70,7 @@ const userCollectionsWithAllProtectedData =
   });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import type { GetCollectionsByOwnerResponse } from '@iexec/dataprotector';

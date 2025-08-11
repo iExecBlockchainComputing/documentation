@@ -1,4 +1,5 @@
 ---
+title: rentProtectedData
 description:
   The rentProtectedData method allows you to rent a protected data item by
   specifying the price and duration. If the parameters don't match the current
@@ -129,7 +130,7 @@ To get the renting duration of the given protected data, you can use
 
 :::
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';

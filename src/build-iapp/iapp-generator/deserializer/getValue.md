@@ -1,3 +1,10 @@
+---
+title: getValue
+description:
+  Method to deserialize a value given a provided type using the
+  IExecDataProtectorDeserializer.
+---
+
 # getValue
 
 Method to deserialize a value given a provided type.
@@ -56,6 +63,6 @@ const value1 = await deserializer.getValue(
 );
 ```
 
-## Return value
+## Return Value
 
 The recovered original value.

@@ -1,4 +1,5 @@
 ---
+title: removeProtectedDataFromRenting
 description:
   The removeProtectedDataFromRenting method allows the collection owner to
   remove a protected data item from being rented. Active rentals will still be
@@ -56,7 +57,7 @@ const notForRentingAnymoreResult =
   });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';

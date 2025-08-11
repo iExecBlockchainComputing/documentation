@@ -1,3 +1,10 @@
+---
+title: Quick Start
+description:
+  Get started quickly with iExec's privacy-preserving technologies and explore
+  our project starters and interactive sandboxes
+---
+
 # Quick Start
 
 Get started quickly with iExec's privacy-preserving technologies. Choose from
@@ -95,7 +102,7 @@ learning and prototyping.
 
 </CardGrid>
 
-## Next StepsAfter exploring our starters and sandboxes
+## Next StepsAfter Exploring our Starters and Sandboxes
 
 1. **Choose Your Framework**: Start with our Next.js template or wait for
    React/Vue options

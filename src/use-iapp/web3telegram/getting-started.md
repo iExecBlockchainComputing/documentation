@@ -1,4 +1,5 @@
 ---
+title: Getting Started
 description:
   Get started with Web3Telegram, a secure blockchain-based tool for sending
   Telegram messages. Install the SDK and integrate it with your Web3 project.

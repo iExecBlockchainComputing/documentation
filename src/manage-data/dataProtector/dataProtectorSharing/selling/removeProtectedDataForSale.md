@@ -1,3 +1,10 @@
+---
+title: removeProtectedDataForSale
+description:
+  Method to remove a protected data from sale listing, preventing further
+  purchase transactions.
+---
+
 # removeProtectedDataForSale
 
 Method to remove a protected data for sale.
@@ -46,7 +53,7 @@ const notForSaleAnymoreResult =
   });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';

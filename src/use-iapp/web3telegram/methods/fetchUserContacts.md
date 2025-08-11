@@ -1,4 +1,5 @@
 ---
+title: fetchUserContacts
 description:
   Use fetchUserContacts method from iExec web3telegram to get users who
   authorized a specific Ethereum address to message them
@@ -73,7 +74,7 @@ const contactsList = await web3telegram.fetchUserContacts({
 });
 ```
 
-## Return value
+## Return Value
 
 The result object contains a list of `contact` objects. Each `contact`
 represents one user who previously granted authorization for the user identified

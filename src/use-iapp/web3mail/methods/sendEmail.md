@@ -1,4 +1,5 @@
 ---
+title: sendEmail
 description:
   Send secure, permissioned emails using iExec Web3Mail's sendEmail method—no
   need to know the user's email, just their authorized protectedData address.
@@ -308,7 +309,7 @@ const sendEmail = await web3mail.sendEmail({
 });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type SendEmailResponse } from '@iexec/web3mail';
@@ -322,9 +323,9 @@ This uniquely identifies the email task on the iExec side chain. You can view
 the status of the `sendEmail` method by monitoring the task on the
 [iExec Explorer](https://explorer.iex.ec/bellecour).
 
-## Error handling
+## Error Handling
 
-### Validation errors
+### Validation Errors
 
 We use [yup](https://github.com/jquense/yup) to validate input parameters.
 
@@ -352,7 +353,7 @@ try {
 }
 ```
 
-### Email schema error
+### Email Schema Error
 
 To be able to send an email to a protected data, it needs to contain, well, an
 email address.
@@ -366,7 +367,7 @@ If not, you'll get a `WorkflowError` in the form of:
 }
 ```
 
-### iExec protocol errors
+### iExec Protocol Errors
 
 In case the iExec stack is to blame, we'll make it clear and you'll get a
 specific `WorkflowError`:
@@ -379,7 +380,7 @@ specific `WorkflowError`:
 }
 ```
 
-### Workflow errors
+### Workflow Errors
 
 For any other errors, you'll get a `WorkflowError` error in the form of:
 

@@ -1,4 +1,5 @@
 ---
+title: setProtectedDataForSale
 description:
   Allows a data owner to list their protected data for sale by setting a price.
   Upon successful sale, ownership is transferred to the buyer, who can choose
@@ -79,7 +80,7 @@ const setForSaleResult = await dataProtectorSharing.setProtectedDataForSale({
 });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';

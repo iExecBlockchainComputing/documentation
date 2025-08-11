@@ -1,4 +1,5 @@
 ---
+title: iExec Overview
 description:
   Explore how iExec enables developers to build privacy-preserving dApps using
   confidential computing, blockchain, and secure data management. Learn how
@@ -6,7 +7,7 @@ description:
   monetize sensitive data across Web3 applications.
 ---
 
-# 🧐 iExec overview
+# 🧐 iExec Overview
 
 > Reading time 🕒 8 mins
 
@@ -63,7 +64,7 @@ description:
   <p class="m-0!">This is where <span class="text-fuchsia-700 font-semibold">iExec</span> comes in! We provide tools to easily add <span class="text-fuchsia-700 font-semibold">privacy</span> and <span class="text-fuchsia-700 font-semibold">monetization</span> features into your dApp.</p>
 </div>
 
-## 👷 How do we solve it?
+## 👷 How do we Solve it?
 
 Unlike traditional security solutions, iExec protects your data throughout its
 entire lifecycle, during storage, transfer, and even while **being processed by
@@ -80,24 +81,24 @@ Computing</a></span> technologies.
   <span class="text-fuchsia-700 font-semibold">confidentiality</span>, and <span class="text-fuchsia-700 font-semibold">monetization</span> of their data and digital assets within the <span class="text-fuchsia-700 font-semibold">Web3</span> ecosystem.</p>
 </div>
 
-## 🔒 The three key elements?
+## 🔒 The Three Key Elements?
 
 iExec combines three fundamental elements that work together seamlessly:
 
-#### 1. Protect data with our devtool [DataProtector](../../manage-data/dataProtector/getting-started)
+#### 1. Protect Data with our Devtool [DataProtector](../../manage-data/dataProtector/getting-started)
 
 - Encrypt your sensitive data and store it securely on Arweave or IPFS
 - Only you control who can access it and when
 - Perfect for private information like research data, business analytics, or
   personal records
 
-#### 2. Compute data with iExec apps (iApps) running in secure environment
+#### 2. Compute Data with iExec Apps (iApps) Running in Secure Environment
 
 - Special applications that can work with protected data
 - Run in secure environments (called TEEs) that keep your data private
 - Process data without exposing sensitive information
 
-#### 3. Set the rules with the blockchain layer
+#### 3. Set the Rules with the Blockchain Layer
 
 - Enables tokenization of data
 - Regain ownership of your data
@@ -107,7 +108,7 @@ iExec combines three fundamental elements that work together seamlessly:
   <p class="m-0!">By merging <span class="text-fuchsia-700 font-semibold">blockchain technology</span> with <span class="text-fuchsia-700 font-semibold">confidential computing</span>, we've pioneered <span class="text-fuchsia-700 font-semibold"><a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">DeCC</a></span> (Decentralized Confidential Computing) to take <span class="text-fuchsia-700 font-semibold">privacy</span> and <span class="text-fuchsia-700 font-semibold">security</span> to the next level in <span class="text-fuchsia-700 font-semibold">Web3</span> ecosystems.</p>
 </div>
 
-### 🧸 DeCC explained like you're 5
+### 🧸 DeCC Explained Like You're 5
 
 Imagine a **secure room**, like a private bank vault for data, where everything
 inside stays **safe** and **private**.
@@ -120,12 +121,12 @@ environments) can enter the room to work with your data. You stay in **control**
 by setting **access rules** that only you can modify about who can access it and
 when.
 
-## 🔍 Building your first Privacy-preserving dApp
+## 🔍 Building your First Privacy-preserving dApp
 
 Let's meet Bob and Alice to understand how iExec enables Privacy-preserving
 applications:
 
-### 1. Meet Bob: the dApp developer 👨‍💻
+### 1. Meet Bob: the dApp Developer 👨‍💻
 
 Bob is building a decentralized application that leverages iExec's technology.
 His platform consists of:
@@ -135,7 +136,7 @@ His platform consists of:
 - Thanks to DataProtector, end users can protect their data, manage access, and
   process it seamlessly.
 
-### 2. Meet Alice: the dApp user 👩‍💼
+### 2. Meet Alice: the dApp User 👩‍💼
 
 When using Bob's platform, Alice can:
 
@@ -152,7 +153,7 @@ Depending on the dApp's use case, Alice could:
 
 And many other use cases...
 
-## 🎯 Key takeaways
+## 🎯 Key Takeaways
 
 <div class="flex flex-col my-6">
 <p>In this chapter, we covered the core concepts of iExec:</p>

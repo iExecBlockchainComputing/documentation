@@ -1,4 +1,5 @@
 ---
+title: buyProtectedData
 description:
   Allows a user to purchase protected data that is listed for sale. Upon
   successful purchase, the buyer gains full ownership and can distribute or keep
@@ -154,7 +155,7 @@ For more details on how to create and manage appsWhitelist, see
 
 :::
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';

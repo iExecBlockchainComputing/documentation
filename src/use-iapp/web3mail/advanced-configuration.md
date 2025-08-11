@@ -1,11 +1,12 @@
 ---
+title: Advanced Configuration
 description:
   Customize iExec Web3Mail with advanced options like custom iApp address, iApp
   whitelist, IPFS node, and subgraph URL for tailored blockchain email
   communication.
 ---
 
-# Advanced configuration
+# Advanced Configuration
 
 The `IExecWeb3mail` constructor accepts configuration options object. As these
 options are very specific, you won't need to use them for a standard usage of

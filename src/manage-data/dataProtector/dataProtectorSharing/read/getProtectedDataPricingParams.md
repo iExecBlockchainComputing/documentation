@@ -1,7 +1,9 @@
 ---
+title: getProtectedDataPricingParams
 description:
-  Get all distribution parameters for a protected data in iExec. Retrieve
-  detailed pricing information for a specific protected data using its address.
+  Get pricing parameters for renting a specific protected data in iExec.
+  Retrieve rental price and duration to determine the cost and terms for data
+  access.
 ---
 
 # getProtectedDataPricingParams
@@ -50,7 +52,7 @@ const pricingParams = await dataProtectorSharing.getProtectedDataPricingParams({
 });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import type { GetProtectedDataPricingParamsResponse } from '@iexec/dataprotector';

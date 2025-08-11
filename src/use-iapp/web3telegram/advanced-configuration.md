@@ -1,11 +1,12 @@
 ---
+title: Advanced Configuration
 description:
   Explore the advanced configuration options for integrating Web3Telegram. Learn
   how to customize the dApp address, whitelist, subgraph, IPFS node, and more
   for secure Telegram communication on the iExec blockchain.
 ---
 
-# Advanced configuration
+# Advanced Configuration
 
 The `IExecWeb3Telegram` constructor accepts configuration options object. As
 these options are very specific, you won't need to use them for a standard usage

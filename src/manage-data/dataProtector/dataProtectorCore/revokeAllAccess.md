@@ -1,6 +1,7 @@
 ---
+title: revokeAllAccess
 description:
-  Revoke all or specific access permissions to protected data with iExec’s
+  Revoke all or specific access permissions to protected data with iExec's
   revokeAllAccess method. Efficiently manage data security by removing access
   from users or smart contract.
 ---
@@ -133,7 +134,7 @@ You can expect this callback function to be called with the following titles:
 
 Once with `isDone: false`, and then with `isDone: true`
 
-## Result
+## Return Value
 
 ```ts twoslash
 import { type RevokedAccess } from '@iexec/dataprotector';

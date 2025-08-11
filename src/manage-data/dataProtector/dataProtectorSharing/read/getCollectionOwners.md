@@ -1,3 +1,10 @@
+---
+title: getCollectionOwners
+description:
+  Method to get all collection owners with results ordered by creation timestamp
+  in descending order.
+---
+
 # getCollectionOwners
 
 Method to get all collection owners.
@@ -45,7 +52,7 @@ const collectionOwners = await dataProtectorSharing.getCollectionOwners({
 });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import type { GetCollectionOwnersResponse } from '@iexec/dataprotector';

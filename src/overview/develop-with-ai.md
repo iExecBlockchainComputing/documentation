@@ -11,7 +11,7 @@ Building privacy-first applications with iExec can be accelerated using
 AI-powered development tools. This guide covers how to effectively use AI
 assistants while maintaining security best practices.
 
-## 📚 Documentation for LLMs and AI code editors
+## 📚 Documentation for LLMs and AI Code Editors
 
 You can use some MCP (Model Control Protocol) servers like
 [Context7](https://context7.com/iexecblockchaincomputing/documentation-tools) to

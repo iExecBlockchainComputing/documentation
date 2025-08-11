@@ -1,6 +1,7 @@
 ---
+title: revokeOneAccess
 description:
-  Revoke specific access permissions to protected data with iExec’s
+  Revoke specific access permissions to protected data with iExec's
   revokeOneAccess method. Manage and remove access granted to users or
   applications through blockchain transactions.
 ---
@@ -81,7 +82,7 @@ data).
 
 :::
 
-## Result value
+## Result Value
 
 ```ts twoslash
 import { type RevokedAccess } from '@iexec/dataprotector';

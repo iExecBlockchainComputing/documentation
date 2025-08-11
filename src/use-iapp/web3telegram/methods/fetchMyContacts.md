@@ -1,4 +1,5 @@
 ---
+title: fetchMyContacts
 description:
   Use the fetchMyContacts method from iExec web3telegram to retrieve contact
   infos of users who authorized you to message them
@@ -53,7 +54,7 @@ const contactsList = await web3telegram.fetchMyContacts({
 });
 ```
 
-## Return value
+## Return Value
 
 The result object contains a list of `contact` objects. Each `contact`
 represents one user who previously granted you authorization to send them

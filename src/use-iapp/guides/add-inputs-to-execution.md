@@ -1,9 +1,9 @@
 ---
-title: Add inputs to the execution
+title: Add Inputs to the Execution
 description: Add inputs to the execution
 ---
 
-# Add inputs to the execution
+# Add Inputs to the Execution
 
 This page is under development.
 

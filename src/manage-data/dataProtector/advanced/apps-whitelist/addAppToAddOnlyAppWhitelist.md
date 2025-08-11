@@ -1,3 +1,10 @@
+---
+title: addAppToAddOnlyAppWhitelist
+description:
+  Method to add an app (iExec TEE dApp) into the AddOnlyAppWhitelist for secure
+  data access control.
+---
+
 # addAppToAddOnlyAppWhitelist
 
 Method to add an app (iExec TEE dApp) into the `AddOnlyAppWhitelist`.
@@ -82,7 +89,7 @@ const isAddedToAddAppToAddOnlyAppWhitelist =
   });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';

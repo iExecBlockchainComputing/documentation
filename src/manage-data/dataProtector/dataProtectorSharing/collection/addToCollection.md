@@ -1,4 +1,5 @@
 ---
+title: addToCollection
 description:
   Transfer a protected data to one of your collections in the Data Sharing smart
   contract. The method approves the contract to manage the data and adds it to
@@ -156,7 +157,7 @@ You can expect this callback function to be called with the following titles:
 
 Once with `isDone: false`, and then with `isDone: true`
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';

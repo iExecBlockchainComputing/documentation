@@ -1,6 +1,7 @@
 ---
+title: transferOwnership
 description:
-  Transfer ownership of protected data to a new owner with iExec’s
+  Transfer ownership of protected data to a new owner with iExec's
   transferOwnership method. Securely update data ownership and automatically
   revoke previous access permissions.
 ---
@@ -75,7 +76,7 @@ const transferResponse = await dataProtectorCore.transferOwnership({
 });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type TransferResponse } from '@iexec/dataprotector';

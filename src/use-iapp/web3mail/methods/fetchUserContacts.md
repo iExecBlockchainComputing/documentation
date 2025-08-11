@@ -1,4 +1,5 @@
 ---
+title: fetchUserContacts
 description:
   Use fetchUserContacts from iExec Web3Mail to get users who authorized a
   specific address to email them.
@@ -73,7 +74,7 @@ const contactsList = await web3mail.fetchUserContacts({
 });
 ```
 
-## Return value
+## Return Value
 
 The result object contains a list of `contact` objects. Each `contact`
 represents one user who previously granted authorization for the user identified

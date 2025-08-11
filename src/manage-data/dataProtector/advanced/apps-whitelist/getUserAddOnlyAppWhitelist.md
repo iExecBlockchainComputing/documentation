@@ -1,3 +1,10 @@
+---
+title: getUserAddOnlyAppWhitelist
+description:
+  Method to get AddOnlyAppWhitelist with filtering by user ethereum address for
+  app access control management.
+---
+
 # getUserAddOnlyAppWhitelist
 
 Method to get `AddOnlyAppWhitelist`, you can filter by user ethereum address.
@@ -44,7 +51,7 @@ const allUserAddOnlyAppWhitelist =
   });
 ```
 
-## Return value
+## Return Value
 
 ```ts twoslash
 import { type GetUserAppWhitelistResponse } from '@iexec/dataprotector';

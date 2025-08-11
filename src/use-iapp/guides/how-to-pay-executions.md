@@ -1,9 +1,9 @@
 ---
-title: How to pay the executions
+title: How to Pay the Executions
 description: How to pay for executions
 ---
 
-# How to pay the executions
+# How to Pay the Executions
 
 This page is under development.
 
