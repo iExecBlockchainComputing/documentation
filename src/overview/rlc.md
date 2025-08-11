@@ -12,14 +12,34 @@ description:
 </div>
 
 **RLC** (**R**un on **L**ots of **C**omputers) serves as the primary medium of
-exchange for all interactions within the protocol, enabling users to access
-confidential computing services, and rewarding providers for their
-contributions.
+exchange for all interactions within the protocol. This **Privacy Plug & Play**
+token enables users to access confidential computing services and rewards
+providers for their contributions, creating a sustainable ecosystem where
+**stack adoption drives token utility**.
 
 ## 🎯 What RLC Enables
 
-RLC is essential for interacting with the iExec protocol and accessing its
-decentralized confidential computing services.
+RLC powers the entire **Privacy Plug & Play** ecosystem. Every
+privacy-preserving computation, data protection, and confidential application
+interaction requires RLC, creating consistent demand as the ecosystem grows.
+
+### For Users
+
+- Access to privacy-preserving applications (iApps)
+- Protection and monetization of personal data
+- Confidential computing services across multiple chains
+
+### For Providers
+
+- Earn RLC by offering computing resources
+- Monetize applications and datasets
+- Participate in decentralized infrastructure governance
+
+### For Holders
+
+- Benefit from ecosystem growth through increased token utility
+- Participate in protocol governance and direction
+- Access exclusive features and early opportunities
 
 ## 💰 Transparent Payment Flow
 
@@ -57,12 +77,49 @@ scarcity and value preservation.
 **Network Effects**: As more users and providers join the iExec ecosystem, the
 demand for RLC increases, driving token value through network effects.
 
+**Utility-Driven Growth**: Every interaction in the **Privacy Plug & Play**
+ecosystem requires RLC:
+
+- iApp executions consume RLC for computation
+- Data protection services use RLC for encryption and access control
+- Cross-chain operations require RLC for bridge fees
+- Staking mechanisms lock RLC, reducing circulating supply
+
+### 📊 Ecosystem Growth Metrics
+
 <ImageViewer
     :image-url-dark="duneDashboard"
     image-alt="RLC Token Economics Dashboard"
     link-url="https://dune.com/datawarlock/arbitrum-economics"
     caption="🔗 Access iExec Dune Dashboard"
   />
+
+**Key Growth Indicators:**
+
+- **Task Volume**: Increasing daily/monthly iApp executions
+- **Developer Adoption**: Growing number of deployed iApps
+- **Data Provider Growth**: More protected datasets entering the ecosystem
+- **Cross-Chain Expansion**: Multi-chain deployment driving broader adoption
+- **Enterprise Integration**: Real-world adoption in finance, healthcare, and AI
+  sectors
+
+### 🚀 Strategic Roadmap & Token Utility Expansion
+
+**2024-2025 Growth Drivers:**
+
+- **Multi-Chain Expansion**: Ethereum, Arbitrum, and Polygon integrations
+- **Enterprise Partnerships**: Fortune 500 confidential computing adoption
+- **AI Integration**: Privacy-preserving AI model execution at scale
+- **DeFi Integration**: Confidential financial applications and protocols
+- **Web3 Communication**: Mass adoption of Web3Mail and Web3Telegram
+
+**Long-term Vision (2025+):**
+
+- **Global Privacy Infrastructure**: Becoming the standard for confidential
+  computing
+- **Regulatory Compliance**: GDPR, HIPAA, and SOX-compliant data processing
+- **Consumer Applications**: Privacy-first apps for everyday users
+- **IoT & Edge Computing**: Confidential processing at the network edge
 
 ## 🔄 Getting RLC
 

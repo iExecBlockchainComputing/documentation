@@ -9,11 +9,11 @@ description:
 # 🤖 iApp Generator
 
 **Build privacy-first applications that run in secure TEE environments.** iApp
-Generator is your complete toolkit for creating, testing, and deploying
-confidential iApps on the iExec network.
+Generator is your complete Privacy Plug & Play toolkit for creating, testing,
+and deploying reusable confidential iApps on the iExec network.
 
-Transform your ideas into production-ready privacy-preserving applications in
-minutes, not months.
+Transform your ideas into production-ready, composable privacy-preserving
+applications in minutes, not months.
 
 ## What is iApp Generator?
 
@@ -41,33 +41,33 @@ minutes, not months.
 
 Start here to understand what iApps are and how they work:
 
-- **[What Is an iApp?](/build_iapp/iapp-generator/what-is-iapp)** - Core
+- **[What Is an iApp?](/build-iapp/iapp-generator/what-is-iapp)** - Core
   concepts and TEE overview
-- **[Getting Started](/build_iapp/iapp-generator/getting-started)** - Your first
+- **[Getting Started](/build-iapp/iapp-generator/getting-started)** - Your first
   iApp in 15 minutes
-- **[Building Your iApp](/build_iapp/iapp-generator/building-your-iexec-app)** -
+- **[Building Your iApp](/build-iapp/iapp-generator/building-your-iexec-app)** -
   Complete development guide
 
 ### 2. **Master the Development Workflow**
 
 Once you've built your first iApp, level up with these practical guides:
 
-- **[Inputs and Outputs](/build_iapp/guides/inputs-and-outputs)** - Handle data
+- **[Inputs and Outputs](/build-iapp/guides/inputs-and-outputs)** - Handle data
   flow in TEE environment
-- **[Debugging Your iApp](/build_iapp/guides/debugging-your-iapp)** -
+- **[Debugging Your iApp](/build-iapp/guides/debugging-your-iapp)** -
   Troubleshoot execution issues
-- **[App Access Control and Pricing](/build_iapp/guides/orders)** - Control who
+- **[App Access Control and Pricing](/build-iapp/guides/orders)** - Control who
   can use your iApp
-- **[How to Get and Decrypt Results](/build_iapp/guides/how-to-get-and-decrypt-results)** -
+- **[How to Get and Decrypt Results](/build-iapp/guides/how-to-get-and-decrypt-results)** -
   Retrieve and use outputs
 
 ### 3. **Explore Advanced Features**
 
 Ready for production? Dive into specialized topics:
 
-- **[Using TDX (Experimental)](/build_iapp/guides/using-tdx-experimental)** -
+- **[Using TDX (Experimental)](/build-iapp/guides/using-tdx-experimental)** -
   Next-gen TEE technology
-- **[Complete Guides Overview](/build_iapp/guides)** - All development guides in
+- **[Complete Guides Overview](/build-iapp/guides)** - All development guides in
   one place
 
 ## Why Choose iApp Generator?
@@ -87,10 +87,10 @@ setup, deployment, and execution infrastructure.
 Deploy on a global network of TEE-enabled workers without managing servers or
 cloud infrastructure.
 
-### 🔧 **Complete Toolkit**
+### 🔧 **Complete Privacy Toolkit**
 
-From local development to production deployment, everything you need is included
-in one CLI tool.
+From local development to production deployment, all Privacy Plug & Play tools
+are included in one activable CLI toolkit.
 
 ## Ready to Build?
 
@@ -99,16 +99,16 @@ applications:
 
 ::: tip Quick Path
 
-1. **[Getting Started](/build_iapp/iapp-generator/getting-started)** - Build
+1. **[Getting Started](/build-iapp/iapp-generator/getting-started)** - Build
    your first iApp (15 minutes)
-2. **[Inputs and Outputs](/build_iapp/guides/inputs-and-outputs)** - Handle data
+2. **[Inputs and Outputs](/build-iapp/guides/inputs-and-outputs)** - Handle data
    properly
-3. **[Debugging](/build_iapp/guides/debugging-your-iapp)** - Fix issues quickly
-4. **[App Access Control](/build_iapp/guides/orders)** - Go to production :::
+3. **[Debugging](/build-iapp/guides/debugging-your-iapp)** - Fix issues quickly
+4. **[App Access Control](/build-iapp/guides/orders)** - Go to production :::
 
 ### Need Help?
 
-- **[Complete Guides](/build_iapp/guides)** - All development guides
+- **[Complete Guides](/build-iapp/guides)** - All development guides
 - **[iExec Discord](https://discord.com/invite/pbt9m98wnU)** - Community support
 - **[Protocol Documentation](https://protocol.docs.iex.ec)** - Technical deep
   dive

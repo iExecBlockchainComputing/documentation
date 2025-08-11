@@ -4,26 +4,28 @@ description:
   Discover how iExec empowers developers to build privacy-first applications
 ---
 
-# 💡 Privacy Made Easy
+# 💡 Privacy Plug & Play Toolkit
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 !border-none">Welcome to iExec</h2>
-  <p>Your complete toolkit for building privacy-first Web3 applications that protect and use sensitive data</p>
+  <p>**Empower your users** with plug-and-play privacy tools that protect sensitive data while **unlocking its full potential**. Build with confidence knowing privacy is guaranteed, not promised.</p>
 </div>
 
 ## 🤔 Why iExec?
 
-In a world where data privacy is more critical than ever, developers face a
-tough challenge: how to build innovative applications without compromising
-sensitive user data.
+You shouldn't have to choose between innovation and privacy. **Every developer
+deserves the power** to build groundbreaking applications while **keeping user
+data completely secure**. Your users deserve **absolute confidence** that their
+privacy is protected.
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="!m-0">iExec solves this by providing a <span class="text-fuchsia-700 font-semibold">privacy-first toolkit</span> that makes it simple to protect, manage, and compute data securely, even in untrusted environments. We believe privacy should be a <span class="text-fuchsia-700 font-semibold">built-in feature</span>, not an afterthought.</p>
+  <p class="!m-0">iExec solves this with <span class="text-fuchsia-700 font-semibold">Privacy Plug</span> - a toolkit that simplifies data protection, management, and secure computation, even in untrusted environments. We believe privacy should be <span class="text-fuchsia-700 font-semibold">plug-and-play simple</span>, not an afterthought.</p>
 </div>
 
 ## 🛠️ How we Make it Happen
 
-iExec provides a complete toolkit that makes privacy simple and actionable:
+iExec provides Privacy Plug & Play tools that make confidential computing simple
+and actionable:
 
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-3">
@@ -48,7 +50,7 @@ iExec provides a complete toolkit that makes privacy simple and actionable:
     <div class="flex items-center gap-3">
       <span class="text-xl">🔧</span>
       <div>
-        <strong>Plug & Play tools:</strong> Fluide experience with comprehensive toolkit, SDKs, and ready-to-use components for seamless development
+        <strong>Plug tools:</strong> Fluid experience with comprehensive toolkit, SDKs, and ready-to-use components for seamless development
       </div>
     </div>
   </div>
@@ -152,7 +154,7 @@ Confidential Computing made easy
 </div>
 
 <div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-  <p class="m-0!">In the next chapters, we'll guide you through our <span class="text-green-700 font-semibold">Hello World journey</span>, a 30 minutes start that will teach you everything about iExec, from <span class="text-green-700 font-semibold">protecting sensitive data</span> to <span class="text-green-700 font-semibold">building and deploying confidential apps</span>.</p>
+  <p class="m-0!">The next chapters guide you through our <span class="text-green-700 font-semibold">Hello World journey</span>. This 30-minute start teaches you everything about iExec. You'll learn <span class="text-green-700 font-semibold">protecting sensitive data</span> and <span class="text-green-700 font-semibold">building and deploying confidential apps</span>.</p>
 </div>
 
 ## 🚀 Start Building
@@ -184,5 +186,12 @@ Ready to build privacy-first applications? Choose your path:
 
 ---
 
-_Ready to transform how you handle sensitive data? Let's build something amazing
-together._
+_**Join thousands of developers** who are already transforming the future of
+privacy. **You have the power** to build the next generation of trust-first
+applications. Let's build something amazing together._ 🚀
+
+<div class="bg-gradient-to-r from-amber-400/10 to-amber-400/5 rounded-[6px] p-6 border-l-4 border-amber-600 mt-6">
+  <h4 class="!mt-0 !mb-2">🏆 Join the Privacy Pioneer Community</h4>
+  <p class="!mb-2">Be part of a growing movement of developers, data owners, and privacy advocates who are **reshaping how the world handles sensitive data**.</p>
+  <p class="!mb-0">When you build with iExec, you're not just solving a technical challenge—**you're championing user rights and digital sovereignty**. Every application you create makes the web more private, more secure, and more trustworthy for everyone.</p>
+</div>

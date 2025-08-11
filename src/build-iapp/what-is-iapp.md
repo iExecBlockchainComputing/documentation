@@ -5,14 +5,16 @@ description: Privacy-first applications that run on decentralized infrastructure
 
 # 🚀 What is an iApp?
 
-An iExec Application (iApp) is your regular application code (Python script, AI
-model, data processor, ...) that can securely process protected data (created by
+An iExec Application (iApp) brings Privacy Plug & Play to your regular
+application code (Python script, AI model, data processor, ...) enabling it to
+securely process protected data (created by
 [DataProtector](/manage-data/dataProtector)) inside a confidential computing
 environment called TEE (a Trusted Execution Environment).
 
 ## Why iApps Matter ?
 
-iApps let you process sensitive data while keeping it private and secure.
+iApps provide Privacy Plug & Play capabilities that let you process sensitive
+data while keeping it private and secure.
 
 Imagine you want to build:
 
@@ -37,8 +39,10 @@ Imagine you want to build:
   </div>
 </div>
 
-Users have this data, but they won't give it to your regular app. **With iApps,
-they will.**
+Users have this data, but they won't trust your regular app with it. **With
+Privacy Plug & Play iApps, they will.**
+
+**You gain their trust. They gain their privacy. Everyone wins.**
 
 ## Key Concepts
 
@@ -63,13 +67,12 @@ they will.**
 
 ## How it Works
 
-Your code runs in a Trusted Execution Environment (TEE), a secure area inside
-specific processors (Intel SGX/TDX chipset). Everything that happens there stays
-private and protected, even from the operating system.
+Your code runs in a Trusted Execution Environment (TEE). This secure area exists
+inside specific processors (Intel SGX/TDX chipset). Everything stays private and
+protected there, even from the operating system.
 
-An authorized user can trigger an iApp that processes someone's protected data
-inside this private environment. The data is used, but never exposed, not even
-to the person running the app.
+Authorized users trigger iApps that process protected data inside this private
+environment. Your iApp uses the data but never exposes it, not even to you.
 
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-3">
@@ -93,9 +96,9 @@ to the person running the app.
 </div>
 
 Your iApp can send emails, update contracts, make transactions, trigger
-notifications - anything your code needs to do with the protected data. This
-isn't about trust - it's about **cryptographic and hardware-enforced
-guarantees** that privacy is preserved within the TEE execution environment.
+notifications - anything your code needs. This isn't about trust. We provide
+**cryptographic and hardware-enforced guarantees** that preserve privacy within
+the TEE execution environment.
 
 ## Use Cases
 
@@ -143,7 +146,7 @@ be an iApp.
 
 :::
 
-::: details ⚡How fast are iApps?
+::: details ⚡ How fast are iApps?
 
 Initial task scheduling takes a few seconds (depending on the resources the
 worker download, congestion etc), then your code runs at normal speed depending
@@ -182,14 +185,14 @@ Node.js for simplified development.
     <div>📚</div>
     <div>
       Learn More - iApp Generator:
-      <a href="/build-iapp/iapp-generator">Complete DataProtector Documentation</a>
+      <a href="/build-iapp/iapp-generator">Complete iApp Generator Documentation</a>
     </div>
   </div>
   <div class="flex items-start gap-3">
     <div>🚀</div>
     <div>
       Getting Started - deploy your first iApp:
-      <a href="/build-iapp/guides/build-&-deploy-iapp">DataProtector Quick Start Guide</a>
+      <a href="/build-iapp/guides/build-&-deploy-iapp">iApp Quick Start Guide</a>
     </div>
   </div>
 </div>
@@ -199,4 +202,11 @@ Node.js for simplified development.
 ---
 
 **TL;DR**: iApps = Your code + Secure execution + User privacy + Verifiable
-results. Cloud computing, but nobody can spy on your stuff. 🔒
+results.
+
+**Cloud computing where privacy is guaranteed, not hoped for.** 🔒
+
+<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mt-6">
+  <h4 class="!mt-0 !mb-2">💪 You're Building the Future</h4>
+  <p class="!mb-0">Every iApp you create **empowers users to take control of their data** while still benefiting from powerful applications. You're not just building software—**you're building trust, privacy, and digital sovereignty for the next billion users**.</p>
+</div>

@@ -6,11 +6,11 @@ description: Understanding iExec's data protection mechanisms
 # ❓ What is Protected Data?
 
 Protected Data refers to any data encrypted using the **iExec Data Protector
-tool**. This end-to-end encryption solution enables users to protect, manage and
-monetize their data within the Web3 ecosystem.
+tool**. This Privacy Plug & Play encryption solution enables users to protect,
+manage and monetize their data within the Web3 ecosystem effortlessly.
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">Unlike standard datasets, Protected Data exposes its <span class="text-fuchsia-700 font-semibold">data types on-chain</span> (for example, indicating that it contains an email address or a photo). This allows anyone to <span class="text-fuchsia-700 font-semibold">identify entries with the corresponding types</span>.</p>
+  <p class="m-0!">Unlike standard datasets, Protected Data exposes its <span class="text-fuchsia-700 font-semibold">data types on-chain</span> (indicating email addresses or photos). This lets anyone <span class="text-fuchsia-700 font-semibold">identify entries with matching types</span>.</p>
 </div>
 
 ## Key Concepts
@@ -186,7 +186,7 @@ monetize their data within the Web3 ecosystem.
 </div>
 
 <div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-  <p class="m-0!">Ready to protect your data? Start with our <span class="text-green-700 font-semibold">DataProtector guides</span> and learn how to secure your sensitive information while unlocking its value.</p>
+  <p class="m-0!">Ready to protect your data? Start with our <span class="text-green-700 font-semibold">DataProtector guides</span>. Learn how to secure sensitive information while unlocking its value.</p>
 </div>
 
 ## Next Steps
