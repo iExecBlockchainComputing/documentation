@@ -552,11 +552,11 @@ export function getSidebar() {
             ],
           },
           {
-            text: '⚙️ PoCo',
+            text: '⛓️‍💥 PoCo',
             collapsed: true,
             items: [
               {
-                text: '� Pay Per Task Model',
+                text: '💸 Pay Per Task Model',
                 link: '/documentation/protocol/poco/pay-per-task',
               },
               {

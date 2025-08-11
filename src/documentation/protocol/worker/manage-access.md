@@ -68,8 +68,8 @@ The supported tags for workerpool orders are:
 
 1. Do not publish workerpool orders with a tag value out of the specified list.
    Such an order could produce undesirable and unpredictable behaviors. The
-   [iExec SDK](../for-developers/toolbox/iexec-sdk.md) implements all required
-   preflight checks to avoid erroneous orders publishing.
+   [iExec SDK](../sdk.md) implements all required preflight checks to avoid
+   erroneous orders publishing.
 2. Currently, TEE workflow do not support tasks replication on several workers.
    TEE workerpool orders must be published with `trust` value equal to `1`.
 3. TEE tasks with Gramine TEE framework are not supported yet. Do not publish
