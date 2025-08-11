@@ -39,35 +39,49 @@
           <!-- Question/Step -->
           <div
             v-if="showStep >= step.showAt"
-            class="animate-fade-in my-2 flex flex-wrap items-center gap-2"
+            class="animate-fade-in my-2 flex items-start gap-2"
           >
             <span
-              class="font-bold"
+              class="mt-0.5 flex-shrink-0 font-bold"
               :class="step.isComplete ? 'text-green-400' : 'text-blue-400'"
             >
               {{ step.isComplete ? '✔' : '?' }}
             </span>
-            <span class="text-white">{{ step.question }}</span>
-            <!-- Show typed text if currently typing -->
-            <span 
-              v-if="step.answer && step.showTyping && showStep > step.showAt && typedText.length < step.answer.length" 
-              class="ml-2 font-medium text-yellow-400"
-            >{{ typedText }}</span>
-            <!-- Show full answer if typing is done or no typing animation -->
-            <span 
-              v-else-if="step.answer && showStep > step.showAt && (!step.showTyping || typedText.length >= step.answer.length)" 
-              class="ml-2 font-medium text-yellow-400"
-            >{{ step.answer }}</span>
-            <!-- Typing cursor -->
-            <span
-              v-if="
-                step.showTyping &&
-                step.answer &&
-                showStep > step.showAt &&
-                typedText.length < step.answer.length
-              "
-              class="animate-blink ml-0.5 inline-block h-4 w-0.5 bg-yellow-400"
-            ></span>
+            <div class="flex-1">
+              <span class="text-white">{{ step.question }}</span>
+              <!-- Show typed text if currently typing -->
+              <span
+                v-if="
+                  step.answer &&
+                  step.showTyping &&
+                  showStep > step.showAt &&
+                  (typedAnswers[index] || '').length < step.answer.length
+                "
+                class="ml-2 font-medium text-yellow-400"
+                >{{ typedAnswers[index] || '' }}</span
+              >
+              <!-- Show full answer if typing is done or no typing animation -->
+              <span
+                v-else-if="
+                  step.answer &&
+                  showStep > step.showAt &&
+                  (!step.showTyping ||
+                    (typedAnswers[index] || '').length >= step.answer.length)
+                "
+                class="ml-2 font-medium text-yellow-400"
+                >{{ step.answer }}</span
+              >
+              <!-- Typing cursor -->
+              <span
+                v-if="
+                  step.showTyping &&
+                  step.answer &&
+                  showStep > step.showAt &&
+                  (typedAnswers[index] || '').length < step.answer.length
+                "
+                class="animate-blink ml-0.5 inline-block h-4 w-0.5 bg-yellow-400"
+              ></span>
+            </div>
           </div>
 
           <!-- Options for selection steps -->
@@ -100,7 +114,7 @@
         <!-- Completion Message -->
         <div
           v-if="showStep >= completionStep"
-          class="animate-fade-in mt-2 border-t border-gray-700 pt-2 mb-4"
+          class="animate-fade-in mt-2 mb-4 border-t border-gray-700 pt-2"
         >
           <div class="mb-2 flex items-center gap-2">
             <span class="font-bold text-green-400">✨</span>
@@ -130,7 +144,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed, watch } from 'vue';
+import { ref, onMounted, onUnmounted, computed, watch, nextTick } from 'vue';
 import figlet from 'figlet';
 
 // Props interface
@@ -171,7 +185,7 @@ const props = withDefaults(defineProps<CLIProps>(), {
   completionItems: () => [],
   successMessage: 'Ready!',
   autoStart: true,
-  autoRestart: true
+  autoRestart: true,
 });
 
 // Constants
@@ -200,40 +214,62 @@ const displayAsciiArt = computed(() => {
 // Reactive state
 const showStep = ref(0);
 const terminalContent = ref<HTMLElement | null>(null);
-const typedText = ref('');
+const typedAnswers = ref<Record<number, string>>({});
 
 // Timers
 let animationTimer: NodeJS.Timeout | null = null;
 let typingTimer: NodeJS.Timeout | null = null;
 
 // Typing animation
-const typeText = (text: string) => {
+const typeText = (text: string, stepIndex: number, onComplete?: () => void) => {
   let currentIndex = 0;
-  typedText.value = '';
+  typedAnswers.value[stepIndex] = '';
 
   const typeNextChar = () => {
     if (currentIndex < text.length) {
-      typedText.value = text.substring(0, currentIndex + 1);
+      typedAnswers.value[stepIndex] = text.substring(0, currentIndex + 1);
       currentIndex++;
+      scrollToBottom(); // Scroll after each character
       typingTimer = setTimeout(typeNextChar, TYPING_SPEED);
+    } else {
+      // Typing finished, update completion status and call callback
+      updateStepCompletion();
+      scrollToBottom(); // Scroll after typing completion
+      if (onComplete) {
+        setTimeout(onComplete, 500); // Small delay before next step
+      }
     }
   };
 
   typeNextChar();
 };
 
-// Auto-scroll to bottom (only if not at completion)
+// Auto-scroll to bottom (always scroll when content changes)
 const scrollToBottom = () => {
-  if (terminalContent.value && showStep.value < totalSteps.value) {
-    terminalContent.value.scrollTop = terminalContent.value.scrollHeight;
+  if (terminalContent.value) {
+    // Use nextTick to ensure DOM is updated before scrolling
+    nextTick(() => {
+      if (terminalContent.value) {
+        terminalContent.value.scrollTop = terminalContent.value.scrollHeight;
+      }
+    });
   }
 };
 
 // Update step completion status
 const updateStepCompletion = () => {
-  props.steps.forEach((step) => {
+  props.steps.forEach((step, index) => {
+    // For typing steps, only mark complete when typing is finished
     if (step.completeAt && showStep.value >= step.completeAt) {
-      step.isComplete = true;
+      if (step.showTyping && step.answer) {
+        // Only mark complete if typing is finished
+        const typedAnswer = typedAnswers.value[index] || '';
+        if (typedAnswer.length >= step.answer.length) {
+          step.isComplete = true;
+        }
+      } else {
+        step.isComplete = true;
+      }
     }
     if (step.highlighted !== undefined && step.options && step.completeAt) {
       step.highlighted = showStep.value >= step.completeAt - 1;
@@ -249,31 +285,50 @@ const animate = () => {
     if (currentStep < totalSteps.value) {
       showStep.value = currentStep + 1;
       currentStep++;
+      scrollToBottom(); // Scroll when new step is shown
 
-      // Start typing animation for steps that need it
+      // Find if this step needs typing animation
       const typingStep = props.steps.find(
         (s) => s.showTyping && s.answer && showStep.value === s.showAt + 1
       );
+
       if (typingStep && typingStep.answer) {
+        // Start typing animation with callback for next step
+        const stepIndex = props.steps.findIndex((s) => s === typingStep);
         setTimeout(() => {
-          typeText(typingStep.answer!);
+          typeText(typingStep.answer!, stepIndex, () => {
+            // Continue to next step after typing is complete
+            if (currentStep < totalSteps.value) {
+              animationTimer = setTimeout(nextStep, 1000);
+            } else if (props.autoRestart) {
+              // Auto-restart after completion
+              animationTimer = setTimeout(() => {
+                showStep.value = 0;
+                typedAnswers.value = {};
+                animate();
+              }, RESTART_DELAY);
+            }
+          });
         }, 200);
+      } else {
+        // No typing, just update completion and continue
+        updateStepCompletion();
+        scrollToBottom();
+
+        if (currentStep < totalSteps.value) {
+          // Fixed delay for non-typing steps
+          animationTimer = setTimeout(nextStep, 2000);
+        } else if (props.autoRestart) {
+          // Auto-restart after completion
+          animationTimer = setTimeout(() => {
+            showStep.value = 0;
+            typedAnswers.value = {};
+            animate();
+          }, RESTART_DELAY);
+        }
       }
 
-      updateStepCompletion();
       scrollToBottom();
-
-      if (currentStep < totalSteps.value) {
-        // Simple fixed delay for all steps
-        animationTimer = setTimeout(nextStep, 2000);
-      } else if (props.autoRestart) {
-        // Auto-restart after completion
-        animationTimer = setTimeout(() => {
-          showStep.value = 0;
-          typedText.value = '';
-          animate();
-        }, RESTART_DELAY);
-      }
     }
   };
 
@@ -293,7 +348,7 @@ watch(
     if (props.autoStart) {
       cleanup();
       showStep.value = 0;
-      typedText.value = '';
+      typedAnswers.value = {};
       animate();
     }
   }

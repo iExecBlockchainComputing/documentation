@@ -62,7 +62,8 @@ bun add -g @iexec/iapp
 ## Quick Start
 
 Once installed, you can create and deploy your first iApp. The CLI will guide
-you through an interactive setup process:
+you through an interactive setup process to configure your project name,
+programming language, and template:
 
 <CLIDemo
   initialCommand="iapp init"
@@ -70,6 +71,7 @@ you through an interactive setup process:
   :steps="[
     {
       showAt: 2,
+      completeAt: 4,
       question: 'What is your project name? (A folder with this name will be created)',
       answer: 'hello-world',
       showTyping: true,
@@ -115,78 +117,163 @@ After the interactive setup, continue with development and deployment:
 
 ## Development and Testing
 
-Navigate to your project and run tests locally to simulate the TEE environment:
+Navigate to your project and run tests locally to simulate the TEE environment.
+The CLI will build a Docker image, run your app, and show you the results:
 
 <CLIDemo
-  :initialCommand="'iapp test'"
+  initialCommand="iapp test"
   :steps="[
     {
       showAt: 2,
-      question: 'Running tests in simulated TEE environment...',
-      answer: '✅ All tests passed',
-      showTyping: true,
-      isComplete: false
+      question: 'No app secret is configured (from iapp.config.json)',
+      answer: '',
+      showTyping: false,
+      isComplete: true
+    },
+    {
+      showAt: 3,
+      question: 'App docker image built (sha256:9cc0de820aaaf8f86700a3ec4082fe69b9e9a48a117ebb0ade0d82d0879cbe41)',
+      answer: '',
+      showTyping: false,
+      isComplete: true
     },
     {
       showAt: 4,
-      question: 'Building package...',
-      answer: '📦 Package built successfully',
-      showTyping: true,
+      question: 'App docker image ran and exited successfully.',
+      answer: '',
+      showTyping: false,
+      isComplete: true
+    },
+    {
+      showAt: 5,
+      completeAt: 6,
+      question: 'Would you like to see the app logs? (12 lines)',
+      answer: 'no',
+      options: [
+        { label: 'yes', selected: false },
+        { label: 'no', selected: true }
+      ],
+      highlighted: false,
+      showTyping: false,
+      isComplete: false
+    },
+    {
+      showAt: 7,
+      question: 'Checked app output',
+      answer: '',
+      showTyping: false,
+      isComplete: true
+    },
+    {
+      showAt: 8,
+      completeAt: 10,
+      question: 'Would you like to see the result? (View ./output/)',
+      answer: 'yes',
+      options: [
+        { label: 'yes', selected: true },
+        { label: 'no', selected: false }
+      ],
+      highlighted: false,
+      showTyping: false,
       isComplete: false
     }
   ]"
-  :completionStep="6"
-  :completionMessage="'Running tests and building package...'"
+  :completionStep="11"
+  :completionMessage="'📁 output directory content:'"
   :completionItems="[
-    '🧪 Running unit tests...',
-    '✅ All tests passed',
-    '📦 Building package...',
-    '🔍 Code analysis complete',
-    '🚀 Ready for deployment'
+    '└ computed.json',
+    '└ result.txt'
   ]"
-  :successMessage="'Build successful! Ready for deployment.'"
-  :autoRestart="false"
+  :successMessage="'hello world'"
+  :autoRestart="true"
 />
 
 ## Deployment
 
-Once your tests pass and the package is built, deploy your iApp to the iExec
-network:
+After your tests pass and the package is built, you can deploy your iApp to a
+supported network. During deployment, you'll enter your DockerHub credentials,
+specify your app version, and push both standard and TEE-compatible images:
 
 <CLIDemo
   initialCommand="iapp deploy"
+  asciiText="Deploy"
   :steps="[
     {
       showAt: 2,
-      question: 'Connecting to iExec network...',
-      answer: '🌐 Connected to Arbitrum',
+      question: 'Using chain bellecour',
+      answer: '',
+      showTyping: false,
+      isComplete: true
+    },
+    {
+      showAt: 3,
+      question: 'Using saved walletPrivateKey (from iapp.config.json)',
+      answer: '',
+      showTyping: false,
+      isComplete: true
+    },
+    {
+      showAt: 4,
+      completeAt: 6,
+      question: 'What is your username on DockerHub? (It will be used to properly tag the Docker image)',
+      answer: 'bob',
       showTyping: true,
       isComplete: false
     },
     {
-      showAt: 4,
-      question: 'Uploading package...',
-      answer: '📤 Package uploaded',
+      showAt: 6,
+      completeAt: 8,
+      question: 'What is your DockerHub access token?',
+      answer: '**********************',
       showTyping: true,
       isComplete: false
+    },
+    {
+      showAt: 8,
+      completeAt: 10,
+      question: 'What is the version of your iApp?',
+      answer: '0.0.1',
+      showTyping: true,
+      isComplete: false
+    },
+    {
+      showAt: 10,
+      question: 'Docker image built (sha256:a53fc4c480f482c384a13266ea2cb6cc5572733c866c44a5f604f4bfab3a744a) and tagged bob/hello-world:0.0.1',
+      answer: '',
+      showTyping: false,
+      isComplete: true
+    },
+    {
+      showAt: 11,
+      question: 'Pushed image bob/hello-world:0.0.1 on dockerhub',
+      answer: '',
+      showTyping: false,
+      isComplete: true
+    },
+    {
+      showAt: 12,
+      question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7 on dockerhub',
+      answer: '',
+      showTyping: false,
+      isComplete: true
+    },
+    {
+      showAt: 13,
+      question: 'TEE app deployed',
+      answer: '',
+      showTyping: false,
+      isComplete: true
     }
   ]"
-  :completionStep="5"
-  :completionMessage="'Deploying to iExec network...'"
+  :completionStep="14"
+  :completionMessage="'Deployment of your iApp completed successfully:'"
   :completionItems="[
-    '🌐 Connecting to network...',
-    '🔐 Authenticating...',
-    '📤 Uploading package...',
-    '🔍 Verifying deployment...',
-    '📋 Contract deployed'
+    '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7',
+    '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
   ]"
-  :successMessage="'Successfully deployed to iExec network!'"
-  :autoRestart="false"
+  :successMessage="'Run iapp run 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923 to execute your iApp on an iExec TEE worker'"
+  :autoRestart="true"
 />
-
-<div class="bg-gradient-to-r from-blue-400/10 to-blue-400/5 rounded-[6px] p-4 border-l-4 border-blue-600 mb-6">
-  <p class="m-0! text-sm"><strong>Note:</strong> iApp Generator currently supports Python and Node.js, but iApps can be built in any language that runs in Docker.</p>
-</div>
 
 ## Real Examples
 
