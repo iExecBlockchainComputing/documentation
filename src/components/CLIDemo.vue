@@ -218,7 +218,8 @@ const typedAnswers = ref<Record<number, string>>({});
 
 // Timers
 let animationTimer: NodeJS.Timeout | null = null;
-let typingTimer: NodeJS.Timeout | null = null;
+let animationTimer: number | null = null;
+let typingTimer: number | null = null;
 
 // Typing animation
 const typeText = (text: string, stepIndex: number, onComplete?: () => void) => {
