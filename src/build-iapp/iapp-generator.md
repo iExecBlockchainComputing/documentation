@@ -8,18 +8,14 @@ description:
 
 # 🤖 iApp Generator
 
-**Build privacy-first applications that run in secure TEE environments.** iApp
-Generator is your complete Privacy Plug & Play toolkit for creating, testing,
-and deploying reusable confidential iApps on the iExec network.
-
-Transform your ideas into production-ready, composable privacy-preserving
-applications in minutes, not months.
+**Here's the tool, what it does, and how to use it.** iApp Generator is a CLI
+that builds applications running inside TEEs. You write code, we handle the
+confidential computing setup.
 
 ## What is iApp Generator?
 
-**iApp Generator** is a CLI tool that simplifies building **iExec Applications
-(iApps)** - applications that run inside **Trusted Execution Environments
-(TEE)** for maximum privacy and security.
+**iApp Generator** builds confidential applications. Your code runs in Intel
+SGX/TDX secure enclaves where data stays private during processing.
 
 ### What you Can Build
 
@@ -28,12 +24,12 @@ applications in minutes, not months.
 - **Custom algorithms** with confidential inputs and outputs
 - **Privacy-preserving services** for Web3 applications
 
-### What iApp Generator Provides
+### What you get
 
-- ✅ **Project scaffolding** - Complete iApp structure ready to deploy
-- ✅ **Local testing** - Debug and iterate quickly in simulation mode
-- ✅ **One-click deployment** - Deploy to TEE workers with a single command
-- ✅ **Input/output handling** - Seamless integration with protected data
+- **Project scaffolding** - Complete setup, ready to deploy
+- **Local testing** - Debug in simulation mode before going live
+- **Simple deployment** - One command deploys to TEE workers
+- **Data integration** - Works with encrypted datasets out of the box
 
 ## Quick Start Path
 
@@ -72,25 +68,25 @@ Ready for production? Dive into specialized topics:
 
 ## Why Choose iApp Generator?
 
-### 🔒 **Privacy by Design**
+### Privacy without infrastructure overhead
 
-Your applications run in hardware-secured enclaves where even the infrastructure
-provider can't access your data or code.
+Your code runs in Intel SGX/TDX enclaves. Even the worker running your app can't
+see what's happening inside.
 
-### ⚡ **Developer-Friendly**
+### You build, we handle the TEE complexity
 
-Focus on your application logic while iApp Generator handles the complex TEE
-setup, deployment, and execution infrastructure.
+Write normal application code. iApp Generator handles secure deployment, worker
+coordination, and result encryption.
 
-### 🌍 **Decentralized Infrastructure**
+### Runs everywhere TEEs exist
 
-Deploy on a global network of TEE-enabled workers without managing servers or
-cloud infrastructure.
+Deploy across Intel-enabled workers globally. No server management, no cloud
+provider lock-in.
 
-### 🔧 **Complete Privacy Toolkit**
+### Complete toolkit
 
-From local development to production deployment, all Privacy Plug & Play tools
-are included in one activable CLI toolkit.
+Development, testing, deployment, and execution - everything included in one
+CLI.
 
 ## Ready to Build?
 

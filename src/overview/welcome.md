@@ -4,11 +4,11 @@ description:
   Discover how iExec empowers developers to build privacy-first applications
 ---
 
-# 💡 Privacy Plug & Play Toolkit
+# 💡 Turnkey Privacy Toolkit
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 !border-none">Welcome to iExec</h2>
-  <p>**Empower your users** with plug-and-play privacy tools that protect sensitive data while **unlocking its full potential**. Build with confidence knowing privacy is guaranteed, not promised.</p>
+  <p>Your complete toolkit for building privacy-first Web3 applications that protect and use sensitive data</p>
 </div>
 
 ## 🤔 Why iExec?
@@ -19,13 +19,13 @@ data completely secure**. Your users deserve **absolute confidence** that their
 privacy is protected.
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="!m-0">iExec solves this with <span class="text-fuchsia-700 font-semibold">Privacy Plug</span> - a toolkit that simplifies data protection, management, and secure computation, even in untrusted environments. We believe privacy should be <span class="text-fuchsia-700 font-semibold">plug-and-play simple</span>, not an afterthought.</p>
+  <p class="!m-0">iExec solves this with <span class="text-fuchsia-700 font-semibold">Turnkey Privacy</span> - a toolkit that simplifies data protection, management, and secure computation, even in untrusted environments. We believe privacy should be <span class="text-fuchsia-700 font-semibold">plug-and-play simple</span>, not an afterthought.</p>
 </div>
 
 ## 🛠️ How we Make it Happen
 
-iExec provides Privacy Plug & Play tools that make confidential computing simple
-and actionable:
+iExec provides Turnkey Privacy tools that make confidential computing simple and
+actionable:
 
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-3">
@@ -50,7 +50,7 @@ and actionable:
     <div class="flex items-center gap-3">
       <span class="text-xl">🔧</span>
       <div>
-        <strong>Plug tools:</strong> Fluid experience with comprehensive toolkit, SDKs, and ready-to-use components for seamless development
+        <strong>Activable Tools:</strong> Composable toolkit, SDKs, and ready-to-use components for straightforward development
       </div>
     </div>
   </div>

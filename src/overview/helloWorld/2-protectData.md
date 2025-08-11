@@ -30,7 +30,7 @@ their dApps with these key features:
 
 - 🔐 **Data Privacy and Security**
 
-  Utilizes end-to-end encryption and decentralized storage
+  Uses end-to-end encryption and decentralized storage
   (<a href="https://ipfs.tech/" target="_blank">IPFS</a> or
   <a href="https://ar.io/" target="_blank">AR.io</a>) to ensure protection and
   confidentiality, leveraging advanced confidential computing technology.

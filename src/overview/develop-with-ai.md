@@ -1,8 +1,8 @@
 ---
 title: Develop with AI
 description:
-  Learn how to leverage AI tools like Vibe Coding and Context7 to build
-  privacy-first applications with iExec
+  Learn how to use AI tools like Vibe Coding and Context7 to build privacy-first
+  applications with iExec
 ---
 
 # 🤖 Develop with AI

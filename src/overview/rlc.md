@@ -11,35 +11,32 @@ description:
   <p class="text-lg text-center text-gray-600 max-w-2xl">The native cryptocurrency that powers the entire iExec decentralized confidential computing ecosystem</p>
 </div>
 
-**RLC** (**R**un on **L**ots of **C**omputers) serves as the primary medium of
-exchange for all interactions within the protocol. This **Privacy Plug & Play**
-token enables users to access confidential computing services and rewards
-providers for their contributions, creating a sustainable ecosystem where
-**stack adoption drives token utility**.
+**RLC** (**R**un on **L**ots of **C**omputers) is the crypto used to power all
+privacy apps on iExec. Here's what we're building: every confidential
+computation, data protection, and app execution uses RLC. More builders using
+our tools = more RLC utility in real applications.
 
-## 🎯 What RLC Enables
+## 🎯 Why RLC Matters
 
-RLC powers the entire **Privacy Plug & Play** ecosystem. Every
-privacy-preserving computation, data protection, and confidential application
-interaction requires RLC, creating consistent demand as the ecosystem grows.
+**Stack adoption = token usage.** Every time developers build with iExec tools,
+RLC gets used. More privacy apps deployed = more RLC demand. Here's the
+breakdown:
 
 ### For Users
 
-- Access to privacy-preserving applications (iApps)
-- Protection and monetization of personal data
-- Confidential computing services across multiple chains
+Every confidential computation you run uses RLC - that's how we keep your data
+private while making it usable.
 
 ### For Providers
 
-- Earn RLC by offering computing resources
-- Monetize applications and datasets
-- Participate in decentralized infrastructure governance
+Build apps, provide data, or run workers - all earn RLC when people use what you
+contribute.
 
 ### For Holders
 
-- Benefit from ecosystem growth through increased token utility
-- Participate in protocol governance and direction
-- Access exclusive features and early opportunities
+**Clear positioning:** More developers using iExec's privacy tools = more RLC
+utility in real applications. We're building activable privacy, not just
+protocols.
 
 ## 💰 Transparent Payment Flow
 
@@ -77,7 +74,7 @@ scarcity and value preservation.
 **Network Effects**: As more users and providers join the iExec ecosystem, the
 demand for RLC increases, driving token value through network effects.
 
-**Utility-Driven Growth**: Every interaction in the **Privacy Plug & Play**
+**Utility-Driven Growth**: Every interaction in the **Turnkey Privacy**
 ecosystem requires RLC:
 
 - iApp executions consume RLC for computation

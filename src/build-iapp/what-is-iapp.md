@@ -5,16 +5,16 @@ description: Privacy-first applications that run on decentralized infrastructure
 
 # 🚀 What is an iApp?
 
-An iExec Application (iApp) brings Privacy Plug & Play to your regular
-application code (Python script, AI model, data processor, ...) enabling it to
-securely process protected data (created by
-[DataProtector](/manage-data/dataProtector)) inside a confidential computing
-environment called TEE (a Trusted Execution Environment).
+An iExec Application (iApp) brings Turnkey Privacy to your regular application
+code (Python script, AI model, data processor, ...) enabling it to securely
+process protected data (created by [DataProtector](/manage-data/dataProtector))
+inside a confidential computing environment called TEE (a Trusted Execution
+Environment).
 
 ## Why iApps Matter ?
 
-iApps provide Privacy Plug & Play capabilities that let you process sensitive
-data while keeping it private and secure.
+iApps provide Turnkey Privacy capabilities that let you process sensitive data
+while keeping it private and secure.
 
 Imagine you want to build:
 
@@ -40,7 +40,7 @@ Imagine you want to build:
 </div>
 
 Users have this data, but they won't trust your regular app with it. **With
-Privacy Plug & Play iApps, they will.**
+Turnkey Privacy iApps, they will.**
 
 **You gain their trust. They gain their privacy. Everyone wins.**
 

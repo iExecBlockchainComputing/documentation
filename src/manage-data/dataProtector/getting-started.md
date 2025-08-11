@@ -7,15 +7,15 @@ description: DataProtector getting started
 
 [![GitHub package.json version (branch)](https://img.shields.io/badge/npm-2.0.0--beta-green)](https://www.npmjs.com/package/@iexec/dataprotector)
 
-**Experience Privacy Plug & Play data protection** in minutes. DataProtector
-makes it simple to encrypt, control, and monetize your sensitive data while
+**Experience Turnkey Privacy data protection** in minutes. DataProtector makes
+it simple to encrypt, control, and monetize your sensitive data while
 maintaining complete ownership and privacy.
 
 ## Overview
 
-DataProtector brings **Privacy Plug & Play** to data management. Instead of
-complex encryption schemes and access control systems, you get simple, powerful
-tools that **protect your data while unlocking its value**.
+DataProtector brings **Turnkey Privacy** to data management. Instead of complex
+encryption schemes and access control systems, you get simple, powerful tools
+that **protect your data while unlocking its value**.
 
 ### Prerequisites
 

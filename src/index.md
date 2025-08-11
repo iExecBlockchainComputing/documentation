@@ -3,10 +3,10 @@
 layout: home
 
 hero:
-  name: 'Privacy Plug'
+  name: 'Privacy Made Easy'
   tagline:
     'Build decentralized applications that combine governance, privacy, and
-    monetization with plug-and-play privacy tools.'
+    monetization.'
   actions:
     - theme: brand
       text: Get Started
@@ -23,20 +23,20 @@ features:
   - icon: 🔐
     title: Protect & Manage Data
     details:
-      Secure your data with plug-and-play encryption and access controls while
-      maintaining privacy using DataProtector
+      DataProtector encrypts and controls access to your sensitive data.
+      Ready-to-use privacy toolkit for developers.
     link: /manage-data/what-is-protected-data
   - icon: 🤖
     title: Build iApps
     details:
-      Create decentralized privacy-first applications with plug-and-play
-      confidential computing using our iApp Generator
+      iApp Generator creates confidential applications that run in secure TEEs.
+      Custom confidentiality integration without managing infrastructure.
     link: /build-iapp/what-is-iapp
   - icon: ⚡
     title: Use iApps
     details:
-      Execute existing iApps including Web3Mail, Web3Telegram for your
-      applications
+      Execute privacy-preserving apps like Web3Mail and Web3Telegram. Use what
+      others built, extend what you need.
     link: /use-iapp/introduction
   - icon: 💰
     title: Monetize Data
