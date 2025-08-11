@@ -309,6 +309,6 @@ Integrate result handling into your applications:
 
 ### Advanced Topics
 
-- **[DataProtector SDK](/manage_data/dataProtector)** - Complete SDK
+- **[DataProtector SDK](/manage-data/dataProtector)** - Complete SDK
   documentation
 - **[SDK Deep Dive](/deep_dive/sdk)** - Advanced result handling techniques

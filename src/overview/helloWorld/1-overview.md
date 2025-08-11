@@ -66,7 +66,7 @@ description:
 
 ## 👷 How do we Solve it?
 
-Unlike traditional security solutions, iExec protects your data throughout its
+Unlike traditional security tools, iExec protects your data throughout its
 entire lifecycle, during storage, transfer, and even while **being processed by
 applications.**
 
@@ -128,8 +128,8 @@ applications:
 
 ### 1. Meet Bob: the dApp Developer 👨‍💻
 
-Bob is building a decentralized application that leverages iExec's technology.
-His platform consists of:
+Bob is building a decentralized application that uses iExec's technology. His
+platform consists of:
 
 - A user-friendly interface for users.
 - A DataProtector SDK that's easy to integrate into any application.

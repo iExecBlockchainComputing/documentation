@@ -7,8 +7,8 @@ description:
 # Create and Deploy an iApp
 
 iApps (iExec Applications) are decentralized applications that run on the iExec
-network. They leverage confidential computing to ensure data privacy and
-security while providing scalable off-chain computation.
+network. They use confidential computing to ensure data privacy and security
+while providing scalable off-chain computation.
 
 ## About iApp Generator
 

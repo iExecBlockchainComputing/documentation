@@ -1,9 +1,32 @@
 ---
 title: RLC Token
 description:
-  The RLC token is the cryptocurrency that powers the iExec decentralized
-  computing ecosystem
+  RLC (Run on Lots of Computers) is the cryptocurrency powering iExec's
+  confidential computing ecosystem. Learn about RLC tokenomics, utility, and how
+  it drives privacy-first Web3 applications.
+keywords:
+  RLC token, RLC cryptocurrency, iExec token, confidential computing token, Web3
+  privacy token, blockchain tokenomics, decentralized computing economy, privacy
+  ecosystem token
 ---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "RLC Token - Cryptocurrency for Confidential Computing",
+  "description": "RLC (Run on Lots of Computers) is the cryptocurrency powering iExec's confidential computing ecosystem. Learn about RLC tokenomics, utility, and how it drives privacy-first Web3 applications.",
+  "author": {
+    "@type": "Organization",
+    "name": "iExec"
+  },
+  "mainEntity": {
+    "@type": "DigitalDocument",
+    "name": "RLC Token Guide",
+    "description": "Comprehensive guide to RLC token utility, tokenomics, and ecosystem"
+  }
+}
+</script>
 
 <div class="flex flex-col items-center mb-8">
   <img :src="rlcGif" alt="RLC Token Animation" class="w-80 h-80 mb-0" />
@@ -11,15 +34,31 @@ description:
   <p class="text-lg text-center text-gray-600 max-w-2xl">The native cryptocurrency that powers the entire iExec decentralized confidential computing ecosystem</p>
 </div>
 
-**RLC** (**R**un on **L**ots of **C**omputers) serves as the primary medium of
-exchange for all interactions within the protocol, enabling users to access
-confidential computing services, and rewarding providers for their
+**RLC** (**R**un on **L**ots of **C**omputers) powers all privacy apps on iExec.
+Every confidential computation uses RLC. Every data protection service uses RLC.
+Every app execution uses RLC. More builders using our tools = more RLC utility
+in real applications.
+
+## 🎯 Why RLC Matters
+
+**Stack adoption = token usage.** Developers build with iExec tools. RLC gets
+used. More privacy apps deployed = more RLC demand.
+
+### For Users
+
+Every confidential computation you run uses RLC. That's how we keep your data
+private while making it usable.
+
+### For Providers
+
+Build apps, provide data, or run workers. All earn RLC when people use your
 contributions.
 
-## 🎯 What RLC Enables
+### For Holders
 
-RLC is essential for interacting with the iExec protocol and accessing its
-decentralized confidential computing services.
+**Clear positioning:** More developers using iExec's privacy tools = more RLC
+utility in real applications. We're building activable privacy, not just
+protocols.
 
 ## 💰 Transparent Payment Flow
 
@@ -57,12 +96,49 @@ scarcity and value preservation.
 **Network Effects**: As more users and providers join the iExec ecosystem, the
 demand for RLC increases, driving token value through network effects.
 
+**Utility-Driven Growth**: Every interaction in the **Turnkey Privacy**
+ecosystem requires RLC:
+
+- iApp executions consume RLC for computation
+- Data protection services use RLC for encryption and access control
+- Cross-chain operations require RLC for bridge fees
+- Staking mechanisms lock RLC, reducing circulating supply
+
+### 📊 Ecosystem Growth Metrics
+
 <ImageViewer
     :image-url-dark="duneDashboard"
     image-alt="RLC Token Economics Dashboard"
     link-url="https://dune.com/datawarlock/arbitrum-economics"
     caption="🔗 Access iExec Dune Dashboard"
   />
+
+**Key Growth Indicators:**
+
+- **Task Volume**: Increasing daily/monthly iApp executions
+- **Developer Adoption**: Growing number of deployed iApps
+- **Data Provider Growth**: More protected datasets entering the ecosystem
+- **Cross-Chain Expansion**: Multi-chain deployment driving broader adoption
+- **Enterprise Integration**: Real-world adoption in finance, healthcare, and AI
+  sectors
+
+### 🚀 Strategic Roadmap & Token Utility Expansion
+
+**2024-2025 Growth Drivers:**
+
+- **Multi-Chain Expansion**: Ethereum, Arbitrum, and Polygon integrations
+- **Enterprise Partnerships**: Fortune 500 confidential computing adoption
+- **AI Integration**: Privacy-preserving AI model execution at scale
+- **DeFi Integration**: Confidential financial applications and protocols
+- **Web3 Communication**: Mass adoption of Web3Mail and Web3Telegram
+
+**Long-term Vision (2025+):**
+
+- **Global Privacy Infrastructure**: Becoming the standard for confidential
+  computing
+- **Regulatory Compliance**: GDPR, HIPAA, and SOX-compliant data processing
+- **Consumer Applications**: Privacy-first apps for everyday users
+- **IoT & Edge Computing**: Confidential processing at the network edge
 
 ## 🔄 Getting RLC
 

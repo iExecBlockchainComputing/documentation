@@ -1,13 +1,28 @@
 ---
 title: Getting Started
-description: DataProtector getting started
+description:
+  Get started with DataProtector - iExec's turnkey privacy toolkit for
+  encrypting, controlling, and monetizing sensitive data. Learn SDK setup, data
+  protection, and access controls in minutes.
+keywords:
+  DataProtector, data encryption SDK, privacy-preserving data, secure data
+  monetization, Web3 data protection, confidential data management, encrypted
+  data sharing
 ---
 
-# Getting Started
+# Getting Started with DataProtector
 
 [![GitHub package.json version (branch)](https://img.shields.io/badge/npm-2.0.0--beta-green)](https://www.npmjs.com/package/@iexec/dataprotector)
 
+**Experience Turnkey Privacy data protection** in minutes. DataProtector makes
+it simple to encrypt, control, and monetize your sensitive data while
+maintaining complete ownership and privacy.
+
 ## Overview
+
+DataProtector brings **Turnkey Privacy** to data management. Instead of complex
+encryption schemes and access control systems, you get simple, powerful tools
+that **protect your data while unlocking its value**.
 
 ### Prerequisites
 

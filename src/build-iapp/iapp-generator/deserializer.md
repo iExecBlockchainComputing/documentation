@@ -15,8 +15,8 @@ schema.
 
 To simplify this process, you can use our lightweight utility package,
 `@iexec/dataprotector-deserializer`, in your iApp. This package streamlines the
-deserialization of protected data, making it easy for you to access and utilize
-the information securely.
+deserialization of protected data, making it easy for you to access and use the
+information securely.
 
 ## Overview
 
