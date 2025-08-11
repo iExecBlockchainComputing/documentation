@@ -59,29 +59,130 @@ bun add -g @iexec/iapp
 
 :::
 
-<script setup>
-import CLIDemo from '../../components/CLIDemo.vue';
-</script>
-
 ## Quick Start
 
 Once installed, you can create and deploy your first iApp. The CLI will guide
 you through an interactive setup process:
 
-<CLIDemo />
+<CLIDemo
+  initialCommand="iapp init"
+  asciiText="iApp"
+  :steps="[
+    {
+      showAt: 2,
+      question: 'What is your project name? (A folder with this name will be created)',
+      answer: 'hello-world',
+      showTyping: true,
+      isComplete: false
+    },
+    {
+      showAt: 4,
+      completeAt: 6,
+      question: 'Which language do you want to use?',
+      answer: 'JavaScript',
+      options: [
+        { label: 'JavaScript', selected: true },
+        { label: 'Python', selected: false }
+      ],
+      highlighted: false,
+      isComplete: false
+    },
+    {
+      showAt: 6,
+      completeAt: 8,
+      question: 'What kind of project do you want to init?',
+      answer: 'Hello World',
+      options: [
+        { label: 'Hello World - iapp quick start', selected: true },
+        { label: 'advanced', selected: false }
+      ],
+      highlighted: false,
+      isComplete: false
+    }
+  ]"
+  :completionStep="8"
+  :completionMessage="'Generating your iApp...'"
+  :completionItems="[
+    '📁 Created hello-world/',
+    '📄 Added package.json',
+    '🐳 Added Dockerfile',
+    '⚙️ Added iExec configuration'
+  ]"
+  :successMessage="'Your iApp is ready!'"
+/>
 
 After the interactive setup, continue with development and deployment:
 
-```bash
-# Navigate to your project
-cd hello-world
+## Development and Testing
 
-# Develop and test locally (simulates TEE environment)
-iapp test
+Navigate to your project and run tests locally to simulate the TEE environment:
 
-# Deploy to the network
-iapp deploy
-```
+<CLIDemo
+  :initialCommand="'iapp test'"
+  :steps="[
+    {
+      showAt: 2,
+      question: 'Running tests in simulated TEE environment...',
+      answer: '✅ All tests passed',
+      showTyping: true,
+      isComplete: false
+    },
+    {
+      showAt: 4,
+      question: 'Building package...',
+      answer: '📦 Package built successfully',
+      showTyping: true,
+      isComplete: false
+    }
+  ]"
+  :completionStep="6"
+  :completionMessage="'Running tests and building package...'"
+  :completionItems="[
+    '🧪 Running unit tests...',
+    '✅ All tests passed',
+    '📦 Building package...',
+    '🔍 Code analysis complete',
+    '🚀 Ready for deployment'
+  ]"
+  :successMessage="'Build successful! Ready for deployment.'"
+  :autoRestart="false"
+/>
+
+## Deployment
+
+Once your tests pass and the package is built, deploy your iApp to the iExec
+network:
+
+<CLIDemo
+  initialCommand="iapp deploy"
+  :steps="[
+    {
+      showAt: 2,
+      question: 'Connecting to iExec network...',
+      answer: '🌐 Connected to Arbitrum',
+      showTyping: true,
+      isComplete: false
+    },
+    {
+      showAt: 4,
+      question: 'Uploading package...',
+      answer: '📤 Package uploaded',
+      showTyping: true,
+      isComplete: false
+    }
+  ]"
+  :completionStep="5"
+  :completionMessage="'Deploying to iExec network...'"
+  :completionItems="[
+    '🌐 Connecting to network...',
+    '🔐 Authenticating...',
+    '📤 Uploading package...',
+    '🔍 Verifying deployment...',
+    '📋 Contract deployed'
+  ]"
+  :successMessage="'Successfully deployed to iExec network!'"
+  :autoRestart="false"
+/>
 
 <div class="bg-gradient-to-r from-blue-400/10 to-blue-400/5 rounded-[6px] p-4 border-l-4 border-blue-600 mb-6">
   <p class="m-0! text-sm"><strong>Note:</strong> iApp Generator currently supports Python and Node.js, but iApps can be built in any language that runs in Docker.</p>
@@ -168,3 +269,7 @@ for month in range(12):
 ```
 
 :::
+
+<script setup>
+import CLIDemo from '../../components/CLIDemo.vue';
+</script>

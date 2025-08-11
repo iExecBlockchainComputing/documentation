@@ -1,8 +1,12 @@
 <template>
   <div class="my-8">
-    <div class="overflow-hidden rounded-lg bg-gray-900 font-mono shadow-2xl">
+    <div
+      class="h-96 w-full overflow-hidden rounded-lg bg-gray-900 font-mono shadow-2xl"
+    >
       <!-- Terminal Header -->
-      <div class="flex items-center gap-3 bg-gray-800 px-4 py-3">
+      <div
+        class="flex items-center gap-3 border-b border-gray-700 bg-gray-800 px-4 py-3"
+      >
         <div class="flex gap-2">
           <div class="h-3 w-3 rounded-full bg-red-500"></div>
           <div class="h-3 w-3 rounded-full bg-yellow-500"></div>
@@ -13,127 +17,111 @@
 
       <!-- Terminal Content -->
       <div
-        class="max-h-96 overflow-y-auto p-5 text-sm leading-relaxed text-white"
+        class="h-80 overflow-x-hidden overflow-y-auto p-5 text-sm leading-relaxed text-white"
         ref="terminalContent"
       >
         <!-- Initial Command -->
         <div class="mb-2">
           <span class="font-bold text-green-400">$ </span>
-          <span class="ml-1 text-white">iapp init</span>
+          <span class="ml-1 text-white">{{ initialCommand }}</span>
         </div>
 
         <!-- ASCII Art -->
-        <div v-if="showStep >= 1" class="my-4 font-mono text-xs text-blue-400">
-          <pre>{{ asciiArt }}</pre>
-        </div>
-
-        <!-- Project Name Question -->
         <div
-          v-if="showStep >= 2"
-          class="animate-fade-in my-4 flex flex-wrap items-center gap-2"
+          v-if="displayAsciiArt"
+          class="my-2 font-mono text-xs text-blue-400"
         >
-          <span class="font-bold text-green-400">✔</span>
-          <span class="text-white"
-            >What's your project name? (A folder with this name will be
-            created)</span
-          >
-          <span class="text-gray-500">…</span>
-          <span
-            v-if="showStep >= 3"
-            class="font-medium text-yellow-400"
-            >{{ typedProjectName }}</span
-          >
-          <span
-            v-if="showStep >= 3 && typedProjectName.length < 'hello-world'.length"
-            class="animate-blink inline-block h-4 w-0.5 bg-yellow-400 ml-0.5"
-          ></span>
+          <pre>{{ displayAsciiArt }}</pre>
         </div>
 
-        <!-- Language Question -->
-        <div
-          v-if="showStep >= 4"
-          class="animate-fade-in my-4 flex flex-wrap items-center gap-2"
-        >
-          <span class="font-bold" :class="showStep >= 6 ? 'text-green-400' : 'text-blue-400'">
-            {{ showStep >= 6 ? '✔' : '?' }}
-          </span>
-          <span class="text-white">Which language do you want to use?</span>
-          <span v-if="showStep >= 6" class="font-medium text-yellow-400 ml-2">JavaScript</span>
-        </div>
-
-        <div v-if="showStep >= 4 && showStep < 6" class="animate-fade-in mb-2 ml-5">
+        <!-- Dynamic Steps -->
+        <template v-for="(step, index) in steps" :key="index">
+          <!-- Question/Step -->
           <div
-            class="flex items-center gap-1 py-0.5 transition-all duration-200"
-            :class="{
-              '-mx-2 animate-pulse rounded bg-blue-400/10 px-2':
-                showStep >= 5 && selectedLanguage === 'JavaScript',
-            }"
+            v-if="showStep >= step.showAt"
+            class="animate-fade-in my-2 flex flex-wrap items-center gap-2"
           >
-            <span class="w-3 font-bold text-blue-400">❯</span>
-            <span class="text-white">JavaScript</span>
+            <span
+              class="font-bold"
+              :class="step.isComplete ? 'text-green-400' : 'text-blue-400'"
+            >
+              {{ step.isComplete ? '✔' : '?' }}
+            </span>
+            <span class="text-white">{{ step.question }}</span>
+            <!-- Show typed text if currently typing -->
+            <span 
+              v-if="step.answer && step.showTyping && showStep > step.showAt && typedText.length < step.answer.length" 
+              class="ml-2 font-medium text-yellow-400"
+            >{{ typedText }}</span>
+            <!-- Show full answer if typing is done or no typing animation -->
+            <span 
+              v-else-if="step.answer && showStep > step.showAt && (!step.showTyping || typedText.length >= step.answer.length)" 
+              class="ml-2 font-medium text-yellow-400"
+            >{{ step.answer }}</span>
+            <!-- Typing cursor -->
+            <span
+              v-if="
+                step.showTyping &&
+                step.answer &&
+                showStep > step.showAt &&
+                typedText.length < step.answer.length
+              "
+              class="animate-blink ml-0.5 inline-block h-4 w-0.5 bg-yellow-400"
+            ></span>
           </div>
-          <div class="flex items-center gap-1 py-0.5">
-            <span class="w-3 font-bold text-blue-400">&nbsp;</span>
-            <span class="text-white">Python</span>
-          </div>
-        </div>
 
-        <!-- Project Type Question -->
-        <div
-          v-if="showStep >= 6"
-          class="animate-fade-in my-4 flex flex-wrap items-center gap-2"
-        >
-          <span class="font-bold" :class="showStep >= 8 ? 'text-green-400' : 'text-blue-400'">
-            {{ showStep >= 8 ? '✔' : '?' }}
-          </span>
-          <span class="text-white"
-            >What kind of project do you want to init?</span
-          >
-          <span v-if="showStep >= 8" class="font-medium text-yellow-400 ml-2">Hello World</span>
-        </div>
-
-        <div v-if="showStep >= 6 && showStep < 8" class="animate-fade-in mb-4 ml-5">
+          <!-- Options for selection steps -->
           <div
-            class="flex items-center gap-1 py-0.5 transition-all duration-200"
-            :class="{
-              '-mx-2 animate-pulse rounded bg-blue-400/10 px-2': showStep >= 7,
-            }"
+            v-if="
+              step.options &&
+              showStep >= step.showAt &&
+              step.completeAt &&
+              showStep < step.completeAt
+            "
+            class="animate-fade-in mb-1 ml-5"
           >
-            <span class="w-3 font-bold text-blue-400">❯</span>
-            <span class="text-white">Hello World - iapp quick start</span>
+            <div
+              v-for="(option, optIndex) in step.options"
+              :key="optIndex"
+              class="flex items-center gap-1 py-0.5 transition-all duration-200"
+              :class="{
+                '-mx-2 animate-pulse rounded bg-blue-400/10 px-2':
+                  step.highlighted && option.selected,
+              }"
+            >
+              <span class="w-3 font-bold text-blue-400">{{
+                option.selected ? '❯' : '\u00A0'
+              }}</span>
+              <span class="text-white">{{ option.label }}</span>
+            </div>
           </div>
-          <div class="flex items-center gap-1 py-0.5">
-            <span class="w-3 font-bold text-blue-400">&nbsp;</span>
-            <span class="text-white">advanced</span>
-          </div>
-        </div>
+        </template>
 
         <!-- Completion Message -->
         <div
-          v-if="showStep >= 8"
-          class="animate-fade-in mt-4 border-t border-gray-700 pt-3"
+          v-if="showStep >= completionStep"
+          class="animate-fade-in mt-2 border-t border-gray-700 pt-2 mb-4"
         >
           <div class="mb-2 flex items-center gap-2">
             <span class="font-bold text-green-400">✨</span>
-            <span class="font-medium text-green-400"
-              >Generating your iApp...</span
-            >
+            <span class="font-medium text-green-400">{{
+              completionMessage
+            }}</span>
           </div>
-          <div class="ml-5 space-y-1 text-xs text-gray-400">
-            <div>📁 Created hello-world/</div>
-            <div>📄 Added package.json</div>
-            <div>🐳 Added Dockerfile</div>
-            <div>⚙️ Added iExec configuration</div>
+          <div class="ml-5 space-y-0.5 text-xs text-gray-400">
+            <div v-for="(item, index) in completionItems" :key="index">
+              {{ item }}
+            </div>
           </div>
           <div class="mt-2 flex items-center gap-2">
             <span class="font-bold text-green-400">✅</span>
-            <span class="font-medium text-green-400">Your iApp is ready!</span>
+            <span class="font-medium text-green-400">{{ successMessage }}</span>
           </div>
         </div>
 
-        <!-- Cursor -->
+        <!-- Cursor (only show if not completed) -->
         <div
-          v-if="showStep < TOTAL_STEPS"
+          v-if="showStep < totalSteps && showStep < completionStep"
           class="animate-blink ml-1 inline-block h-4 w-2 bg-green-400"
         ></div>
       </div>
@@ -142,52 +130,115 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed, watch } from 'vue';
+import figlet from 'figlet';
+
+// Props interface
+interface CLIProps {
+  initialCommand?: string;
+  asciiText?: string;
+  steps?: CLIStep[];
+  completionStep?: number;
+  completionMessage?: string;
+  completionItems?: string[];
+  successMessage?: string;
+  autoStart?: boolean;
+  autoRestart?: boolean;
+}
+
+interface CLIStep {
+  showAt: number;
+  completeAt?: number;
+  question: string;
+  answer?: string;
+  options?: CLIOption[];
+  highlighted?: boolean;
+  showTyping?: boolean;
+  isComplete?: boolean;
+}
+
+interface CLIOption {
+  label: string;
+  selected: boolean;
+}
+
+// Props with defaults
+const props = withDefaults(defineProps<CLIProps>(), {
+  initialCommand: 'iapp init',
+  steps: () => [],
+  completionStep: 8,
+  completionMessage: 'Process completed',
+  completionItems: () => [],
+  successMessage: 'Ready!',
+  autoStart: true,
+  autoRestart: true
+});
 
 // Constants
-const STEP_DELAY = 1200;
-const TOTAL_STEPS = 9;
-const RESTART_DELAY = 3000;
 const TYPING_SPEED = 120;
+const RESTART_DELAY = 3000;
 
-const asciiArt = `
-  ___    _    ____  ____
- |_ _|  / \  |  _ \|  _ \\
-  | |  / _ \ | |_) | |_) |
-  | | / ___ \|  __/|  __/
- |___/_/   \_\\_|   |_|`;
+// Computed values
+const totalSteps = computed(
+  () => Math.max(...props.steps.map((s) => s.showAt), props.completionStep) + 1
+);
+
+// Generate ASCII art using figlet
+const displayAsciiArt = computed(() => {
+  // Only generate ASCII art if asciiText prop is provided and not empty
+  if (props.asciiText && props.asciiText.trim()) {
+    try {
+      return figlet.textSync(props.asciiText.trim(), { font: 'Standard' });
+    } catch (error) {
+      console.warn('Figlet error:', error);
+      return ''; // Return empty string on error
+    }
+  }
+  return ''; // Return empty string if no asciiText provided
+});
 
 // Reactive state
 const showStep = ref(0);
-const selectedLanguage = ref('JavaScript');
 const terminalContent = ref<HTMLElement | null>(null);
-const typedProjectName = ref('');
+const typedText = ref('');
 
 // Timers
 let animationTimer: NodeJS.Timeout | null = null;
 let typingTimer: NodeJS.Timeout | null = null;
 
-// Typing animation for project name
-const typeProjectName = () => {
-  const fullName = 'hello-world';
+// Typing animation
+const typeText = (text: string) => {
   let currentIndex = 0;
-  
+  typedText.value = '';
+
   const typeNextChar = () => {
-    if (currentIndex < fullName.length) {
-      typedProjectName.value = fullName.substring(0, currentIndex + 1);
+    if (currentIndex < text.length) {
+      typedText.value = text.substring(0, currentIndex + 1);
       currentIndex++;
       typingTimer = setTimeout(typeNextChar, TYPING_SPEED);
     }
   };
-  
+
   typeNextChar();
 };
 
-// Auto-scroll to bottom
+// Auto-scroll to bottom (only if not at completion)
 const scrollToBottom = () => {
-  if (terminalContent.value) {
+  if (terminalContent.value && showStep.value < totalSteps.value) {
     terminalContent.value.scrollTop = terminalContent.value.scrollHeight;
   }
+};
+
+// Update step completion status
+const updateStepCompletion = () => {
+  props.steps.forEach((step) => {
+    if (step.completeAt && showStep.value >= step.completeAt) {
+      step.isComplete = true;
+    }
+    if (step.highlighted !== undefined && step.options && step.completeAt) {
+      step.highlighted = showStep.value >= step.completeAt - 1;
+    }
+  });
 };
 
 // Main animation loop
@@ -195,31 +246,38 @@ const animate = () => {
   let currentStep = 0;
 
   const nextStep = () => {
-    if (currentStep < TOTAL_STEPS) {
+    if (currentStep < totalSteps.value) {
       showStep.value = currentStep + 1;
       currentStep++;
 
-      // Start typing animation at step 3
-      if (currentStep === 3) {
-        typeProjectName();
+      // Start typing animation for steps that need it
+      const typingStep = props.steps.find(
+        (s) => s.showTyping && s.answer && showStep.value === s.showAt + 1
+      );
+      if (typingStep && typingStep.answer) {
+        setTimeout(() => {
+          typeText(typingStep.answer!);
+        }, 200);
       }
 
+      updateStepCompletion();
       scrollToBottom();
 
-      if (currentStep < TOTAL_STEPS) {
-        animationTimer = setTimeout(nextStep, STEP_DELAY);
-      } else {
+      if (currentStep < totalSteps.value) {
+        // Simple fixed delay for all steps
+        animationTimer = setTimeout(nextStep, 2000);
+      } else if (props.autoRestart) {
         // Auto-restart after completion
         animationTimer = setTimeout(() => {
           showStep.value = 0;
-          typedProjectName.value = '';
+          typedText.value = '';
           animate();
         }, RESTART_DELAY);
       }
     }
   };
 
-  animationTimer = setTimeout(nextStep, STEP_DELAY);
+  animationTimer = setTimeout(nextStep, 1000);
 };
 
 // Cleanup timers
@@ -228,8 +286,23 @@ const cleanup = () => {
   if (typingTimer) clearTimeout(typingTimer);
 };
 
+// Watch for prop changes to restart animation
+watch(
+  () => props.initialCommand,
+  () => {
+    if (props.autoStart) {
+      cleanup();
+      showStep.value = 0;
+      typedText.value = '';
+      animate();
+    }
+  }
+);
+
 onMounted(() => {
-  animate();
+  if (props.autoStart) {
+    animate();
+  }
 });
 
 onUnmounted(cleanup);
