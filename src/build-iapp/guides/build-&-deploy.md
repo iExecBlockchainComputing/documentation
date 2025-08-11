@@ -6,6 +6,12 @@ description:
 
 # Create and Deploy an iApp
 
+iApps (iExec Applications) are decentralized applications that run on the iExec
+network. They leverage confidential computing to ensure data privacy and
+security while providing scalable off-chain computation.
+
+## About iApp Generator
+
 Bootstrap TEE-compatible applications in minutes without any hardcoding skills,
 iApp Generator handles all the low-level complexity for you.
 
@@ -20,13 +26,59 @@ iApp Generator handles all the low-level complexity for you.
 - **Check and deploy iApps quickly** - iApp Generator checks that your iApp
   complies with the iExec Framework and streamlines its deployment.
 
+## Prerequisites
+
+Before getting started, make sure you have the following installed:
+
+- **Node.js** (version 18 or higher) - [Download here](https://nodejs.org/)
+- **Docker** - [Download here](https://www.docker.com/get-started)
+- **Docker Hub account** - [Sign up here](https://hub.docker.com/) (required for
+  deployment)
+
+## Installation
+
+First, install the iApp Generator CLI tool using your preferred package manager:
+
+::: code-group
+
+```sh [npm]
+npm install -g @iexec/iapp
+```
+
+```sh [yarn]
+yarn global add @iexec/iapp
+```
+
+```sh [pnpm]
+pnpm add -g @iexec/iapp
+```
+
+```sh [bun]
+bun add -g @iexec/iapp
+```
+
+:::
+
+<script setup>
+import CLIDemo from '../../components/CLIDemo.vue';
+</script>
+
+## Quick Start
+
+Once installed, you can create and deploy your first iApp. The CLI will guide
+you through an interactive setup process:
+
+<CLIDemo />
+
+After the interactive setup, continue with development and deployment:
+
 ```bash
-# Create your iApp (Python or Node.js supported)
-iapp init my-privacy-app
-cd my-privacy-app
+# Navigate to your project
+cd hello-world
 
 # Develop and test locally (simulates TEE environment)
 iapp test
+
 # Deploy to the network
 iapp deploy
 ```
@@ -91,7 +143,7 @@ update_oracle_contract(average_price)
 
 :::
 
-**Automated Transactions iApp**
+### Automated Transactions iApp
 
 This iApp automates monthly payments using protected payment details, so
 financial information remains private.
