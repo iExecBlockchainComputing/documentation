@@ -11,26 +11,25 @@ description:
   <p class="text-lg text-center text-gray-600 max-w-2xl">The native cryptocurrency that powers the entire iExec decentralized confidential computing ecosystem</p>
 </div>
 
-**RLC** (**R**un on **L**ots of **C**omputers) is the crypto used to power all
-privacy apps on iExec. Here's what we're building: every confidential
-computation, data protection, and app execution uses RLC. More builders using
-our tools = more RLC utility in real applications.
+**RLC** (**R**un on **L**ots of **C**omputers) powers all privacy apps on iExec.
+Every confidential computation uses RLC. Every data protection service uses RLC.
+Every app execution uses RLC. More builders using our tools = more RLC utility
+in real applications.
 
 ## 🎯 Why RLC Matters
 
-**Stack adoption = token usage.** Every time developers build with iExec tools,
-RLC gets used. More privacy apps deployed = more RLC demand. Here's the
-breakdown:
+**Stack adoption = token usage.** Developers build with iExec tools. RLC gets
+used. More privacy apps deployed = more RLC demand.
 
 ### For Users
 
-Every confidential computation you run uses RLC - that's how we keep your data
+Every confidential computation you run uses RLC. That's how we keep your data
 private while making it usable.
 
 ### For Providers
 
-Build apps, provide data, or run workers - all earn RLC when people use what you
-contribute.
+Build apps, provide data, or run workers. All earn RLC when people use your
+contributions.
 
 ### For Holders
 

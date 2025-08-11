@@ -29,7 +29,7 @@ features:
   - icon: 🤖
     title: Build iApps
     details:
-      iApp Generator creates confidential applications that run in secure TEEs.
+      iApp Generator builds confidential applications that run in secure TEEs.
       Custom confidentiality integration without managing infrastructure.
     link: /build-iapp/what-is-iapp
   - icon: ⚡
@@ -47,7 +47,7 @@ features:
   - icon: 🧠
     title: Protocols
     details:
-      Deep dive into the core concepts of the protocol and understand how iExec
-      enables privacy, governance, and monetization
+      Deep dive into core protocol concepts. Understand how iExec enables
+      privacy, governance, and monetization.
     link: /protocol/sdk
 ---

@@ -9,7 +9,7 @@ description:
 
 **Your protected data can generate revenue automatically.**
 
-iExec offers two fundamental approaches for monetizing your data:
+iExec provides two fundamental approaches for monetizing your data:
 
 - **DataProtector Core**: **Signed orders** with pay-per-use counting - specify
   exact conditions, users pay for each individual data processing
