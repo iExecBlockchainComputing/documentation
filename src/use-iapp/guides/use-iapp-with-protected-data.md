@@ -1,15 +1,20 @@
 ---
 title: Use iApps with Protected Data
-description: Learn how to securely process protected data using iApps on the iExec network
+description:
+  Learn how to securely process protected data using iApps on the iExec network
 ---
 
 # 🔒 Use iApps with Protected Data
 
-Protected data is the cornerstone of privacy-preserving computation on iExec. This guide shows you how to use iApps with protected data, from granting access to processing and retrieving results.
+Protected data is the cornerstone of privacy-preserving computation on iExec.
+This guide shows you how to use iApps with protected data, from granting access
+to processing and retrieving results.
 
 ## Understanding Protected Data and iApps
 
-Protected data is encrypted information that can only be processed by authorized iApps within Trusted Execution Environments (TEEs). The data remains confidential throughout the entire computation process.
+Protected data is encrypted information that can only be processed by authorized
+iApps within Trusted Execution Environments (TEEs). The data remains
+confidential throughout the entire computation process.
 
 ### The Workflow
 
@@ -38,8 +43,8 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
     apiKey: 'secret-api-key-12345',
     preferences: {
       theme: 'dark',
-      notifications: true
-    }
+      notifications: true,
+    },
   },
 });
 ```
@@ -54,8 +59,8 @@ const { address: contactListAddress } = await dataProtectorCore.protectData({
     contacts: {
       '0x123abc...': 'john@example.com',
       '0x456def...': 'jane@example.com',
-      '0x789ghi...': 'bob@example.com'
-    }
+      '0x789ghi...': 'bob@example.com',
+    },
   },
 });
 
@@ -66,8 +71,8 @@ const { address: tradingDataAddress } = await dataProtectorCore.protectData({
     trades: {
       '2024-01-01': { price: 50000, volume: 100 },
       '2024-01-02': { price: 51000, volume: 150 },
-      '2024-01-03': { price: 49000, volume: 200 }
-    }
+      '2024-01-03': { price: 49000, volume: 200 },
+    },
   },
 });
 
@@ -77,7 +82,7 @@ const { address: paymentDataAddress } = await dataProtectorCore.protectData({
   data: {
     bankAccount: '1234567890',
     routingNumber: '987654321',
-    accountHolder: 'John Doe'
+    accountHolder: 'John Doe',
   },
 });
 ```
@@ -116,7 +121,6 @@ console.log('Granted access:', grantedAccessList);
 
 Once access is granted, you can execute the iApp with your protected data.
 
-
 ### Using DataProtector
 
 ```typescript
@@ -131,7 +135,11 @@ const result = await dataProtectorCore.processProtectedData({
 ### Using SDK Library
 
 ```typescript
-import { IExecConfig, IExecOrderModule, IExecOrderbookModule } from '@iexec/sdk';
+import {
+  IExecConfig,
+  IExecOrderModule,
+  IExecOrderbookModule,
+} from '@iexec/sdk';
 
 // create the configuration
 const config = new IExecConfig({ ethProvider: window.ethereum });
@@ -180,7 +188,6 @@ iexec app run 0x456def... --dataset 0x123abc... --maxPrice 10
 ## Step 4: Retrieve Results
 
 After execution completes, retrieve the results from the task.
-
 
 ### Using DataProtector
 
@@ -252,7 +259,7 @@ const { address: datasetAddress } = await dataProtectorCore.protectData({
       { id: 1, purchases: 1500, category: 'premium' },
       { id: 2, purchases: 800, category: 'standard' },
       { id: 3, purchases: 2200, category: 'premium' },
-    ]
+    ],
   },
 });
 
@@ -284,7 +291,7 @@ const { address: tradingDataAddress } = await dataProtectorCore.protectData({
     trades: {
       '2024-01-01': { price: 50000, volume: 100 },
       '2024-01-02': { price: 51000, volume: 150 },
-    }
+    },
   },
 });
 
@@ -354,7 +361,7 @@ const datasets = [
 ];
 
 const batchResults = await Promise.all(
-  datasets.map(dataset => 
+  datasets.map((dataset) =>
     dataProtectorCore.processProtectedData({
       protectedData: dataset.address,
       app: '0x456def...',
@@ -384,10 +391,11 @@ const taskResult = await dataProtectorCore.getResultFromCompletedTask({
 const processedData = await processResult(taskResult);
 
 // Protect the processed data
-const { address: newProtectedDataAddress } = await dataProtectorCore.protectData({
-  name: 'Processed Data',
-  data: processedData,
-});
+const { address: newProtectedDataAddress } =
+  await dataProtectorCore.protectData({
+    name: 'Processed Data',
+    data: processedData,
+  });
 ```
 
 ## Best Practices

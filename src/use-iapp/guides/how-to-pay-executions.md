@@ -1,11 +1,14 @@
 ---
 title: How to Pay for iApp Executions
-description: Learn about payment methods, pricing, and cost management for iApp executions
+description:
+  Learn about payment methods, pricing, and cost management for iApp executions
 ---
 
 # 💰 How to Pay for iApp Executions
 
-Understanding how to pay for iApp executions is crucial for using the iExec network effectively. This guide covers all payment methods, pricing structures, and cost management strategies.
+Understanding how to pay for iApp executions is crucial for using the iExec
+network effectively. This guide covers all payment methods, pricing structures,
+and cost management strategies.
 
 ## Payment Methods Overview
 
@@ -17,13 +20,15 @@ iExec supports multiple payment methods for executing iApps:
 
 ## Method 1: Paying with RLC Tokens
 
-RLC tokens are the native currency of the iExec network. You need to have RLC in your wallet to pay for executions.
+RLC tokens are the native currency of the iExec network. You need to have RLC in
+your wallet to pay for executions.
 
 ### Setting Up RLC Payment
 
 #### Step 1: Get RLC Tokens
 
 You can obtain RLC tokens from various exchanges:
+
 - **Centralized Exchanges**: Binance, Coinbase, Kraken
 - **Decentralized Exchanges**: Uniswap, SushiSwap
 - **Direct Purchase**: Through iExec's official channels
@@ -81,11 +86,13 @@ iexec account deposit 100
 
 ## Method 2: Paying with Vouchers
 
-Vouchers are pre-funded payment instruments that simplify the payment process and can be shared with others.
+Vouchers are pre-funded payment instruments that simplify the payment process
+and can be shared with others.
 
 ### Understanding Vouchers
 
-Vouchers are ERC-20 tokens that represent pre-funded computation credits on the iExec network. They offer several advantages:
+Vouchers are ERC-20 tokens that represent pre-funded computation credits on the
+iExec network. They offer several advantages:
 
 - **Simplified Payment**: No need to manage RLC transfers
 - **Sharing**: Can be shared with team members or users
@@ -107,7 +114,10 @@ const result = await dataProtectorCore.processProtectedData({
 
 ::: tip
 
-If your voucher doesn't have enough xRLC to cover the deal, the SDK will automatically get the required amount to your iExec account. Ensure that your voucher is authorized to access your iExec account and that your account has sufficient funds for this transfer to proceed.
+If your voucher doesn't have enough xRLC to cover the deal, the SDK will
+automatically get the required amount to your iExec account. Ensure that your
+voucher is authorized to access your iExec account and that your account has
+sufficient funds for this transfer to proceed.
 
 :::
 
@@ -125,7 +135,8 @@ const result = await dataProtectorCore.processProtectedData({
 
 ::: warning
 
-Make sure the voucher's owner has authorized you to use it. This parameter must be used in combination with `useVoucher: true`.
+Make sure the voucher's owner has authorized you to use it. This parameter must
+be used in combination with `useVoucher: true`.
 
 :::
 
@@ -138,8 +149,6 @@ iexec app run 0x456def... --protectedData 0x123abc... --useVoucher
 # Use someone else's voucher
 iexec app run 0x456def... --protectedData 0x123abc... --useVoucher --voucherOwner 0x5714eB...
 ```
-
-
 
 ## Understanding Pricing
 
@@ -160,19 +169,18 @@ You can control costs by setting maximum prices for each component:
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
   app: '0x456def...',
-  dataMaxPrice: 5,    // Maximum amount (in nRLC) to pay the protected data owner
-  appMaxPrice: 3,     // Maximum amount (in nRLC) to pay the iApp provider
+  dataMaxPrice: 5, // Maximum amount (in nRLC) to pay the protected data owner
+  appMaxPrice: 3, // Maximum amount (in nRLC) to pay the iApp provider
   workerpoolMaxPrice: 2, // Maximum amount (in nRLC) to pay the workerpool provider
 });
 ```
 
 ::: info
 
-All price parameters are in **nRLC** (nano RLC). The default value for all price parameters is `0`, which means no maximum price limit is set.
+All price parameters are in **nRLC** (nano RLC). The default value for all price
+parameters is `0`, which means no maximum price limit is set.
 
 :::
-
-
 
 ## Cost Management Strategies
 
@@ -199,8 +207,8 @@ Always set maximum prices to avoid unexpected costs:
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
   app: '0x456def...',
-  dataMaxPrice: 5,    // Maximum for data access
-  appMaxPrice: 3,     // Maximum for app usage
+  dataMaxPrice: 5, // Maximum for data access
+  appMaxPrice: 3, // Maximum for app usage
   workerpoolMaxPrice: 2, // Maximum for computation
 });
 ```
@@ -231,7 +239,7 @@ const tasks = [
 ];
 
 const results = await Promise.all(
-  tasks.map(task => 
+  tasks.map((task) =>
     dataProtectorCore.processProtectedData({
       ...task,
       dataMaxPrice: 5,
@@ -317,18 +325,20 @@ try {
 ## Best Practices
 
 ### 1. Always Set Price Limits
+
 ```typescript
 // Never execute without price limits
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
   app: '0x456def...',
-  dataMaxPrice: 5,    // Always set price limits
+  dataMaxPrice: 5, // Always set price limits
   appMaxPrice: 3,
   workerpoolMaxPrice: 2,
 });
 ```
 
 ### 2. Use Vouchers for Production
+
 ```typescript
 // Use vouchers for production applications
 const result = await dataProtectorCore.processProtectedData({
@@ -340,6 +350,7 @@ const result = await dataProtectorCore.processProtectedData({
 ```
 
 ### 3. Monitor Costs Regularly
+
 ```typescript
 // Check costs before and after execution
 const balanceBefore = await iexec.account.show();
@@ -355,6 +366,7 @@ console.log('Cost:', balanceBefore - balanceAfter);
 ```
 
 ### 4. Handle Payment Errors Gracefully
+
 ```typescript
 const executeWithPaymentRetry = async (params, maxRetries = 3) => {
   for (let i = 0; i < maxRetries; i++) {
@@ -367,7 +379,7 @@ const executeWithPaymentRetry = async (params, maxRetries = 3) => {
       }
       if (i === maxRetries - 1) throw error;
       console.log(`Payment retry ${i + 1}/${maxRetries}`);
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
     }
   }
 };
@@ -379,4 +391,6 @@ Now that you understand payment methods:
 
 - Learn about [Adding Inputs to Execution](./add-inputs-to-execution.md)
 - Explore [Using iApps with Protected Data](./use-iapp-with-protected-data.md)
-- Check out our [Pricing Considerations](../how-to-pay/pricing-considerations.md) for detailed cost analysis
+- Check out our
+  [Pricing Considerations](../how-to-pay/pricing-considerations.md) for detailed
+  cost analysis

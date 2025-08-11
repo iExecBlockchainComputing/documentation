@@ -1,17 +1,24 @@
 ---
 title: Add Inputs to iApp Execution
-description: Learn how to provide arguments, files, secrets, and other inputs to iApp executions
+description:
+  Learn how to provide arguments, files, secrets, and other inputs to iApp
+  executions
 ---
 
 # 📥 Add Inputs to iApp Execution
 
-iApps can accept various types of inputs to customize their behavior and provide necessary data for processing. This guide covers all the different ways to add inputs to your iApp executions using various iExec tools and SDKs.
+iApps can accept various types of inputs to customize their behavior and provide
+necessary data for processing. This guide covers all the different ways to add
+inputs to your iApp executions using various iExec tools and SDKs.
 
-::: tip ENS Addresses
-**ENS (Ethereum Name Service)** is a naming system for Ethereum addresses that allows you to use human-readable names instead of long hexadecimal addresses. For example, instead of using `0x1234567890abcdef...`, you can use `debug-v8-learn.main.pools.iexec.eth`.
+::: tip ENS Addresses **ENS (Ethereum Name Service)** is a naming system for
+Ethereum addresses that allows you to use human-readable names instead of long
+hexadecimal addresses. For example, instead of using `0x1234567890abcdef...`,
+you can use `debug-v8-learn.main.pools.iexec.eth`.
 
-In the examples below, we use `debug-v8-learn.main.pools.iexec.eth` which is iExec's official debug workerpool ENS address. This workerpool is specifically designed for testing and development purposes on the Bellecour testnet.
-:::
+In the examples below, we use `debug-v8-learn.main.pools.iexec.eth` which is
+iExec's official debug workerpool ENS address. This workerpool is specifically
+designed for testing and development purposes on the Bellecour testnet. :::
 
 ## Types of Inputs
 
@@ -24,12 +31,17 @@ iExec supports several types of inputs for iApp executions:
 
 ## Method 1: Adding Command-Line Arguments
 
-Command-line arguments are passed as a string to the iApp and are visible on the blockchain.
+Command-line arguments are passed as a string to the iApp and are visible on the
+blockchain.
 
 ### Using SDK Library
 
 ```typescript
-import { IExecConfig, IExecOrderModule, IExecOrderbookModule } from '@iexec/sdk';
+import {
+  IExecConfig,
+  IExecOrderModule,
+  IExecOrderbookModule,
+} from '@iexec/sdk';
 
 // create the configuration
 const config = new IExecConfig({ ethProvider: window.ethereum });
@@ -133,18 +145,21 @@ const result = await dataProtector.processProtectedData({
   args: '--input-path data/input.csv --output-format json --verbose',
   maxPrice: 10,
 });
-
-
 ```
 
 ## Method 2: Adding Input Files
 
-Input files are URLs to public files that the iApp can download during execution.
+Input files are URLs to public files that the iApp can download during
+execution.
 
 ### Using SDK Library
 
 ```typescript
-import { IExecConfig, IExecOrderModule, IExecOrderbookModule } from '@iexec/sdk';
+import {
+  IExecConfig,
+  IExecOrderModule,
+  IExecOrderbookModule,
+} from '@iexec/sdk';
 
 // create the configuration
 const config = new IExecConfig({ ethProvider: window.ethereum });
@@ -191,7 +206,7 @@ const taskId = await orderModule.matchOrders({
   inputFiles: [
     'https://example.com/config.json',
     'https://example.com/template.html',
-    'https://example.com/data.csv'
+    'https://example.com/data.csv',
   ],
 });
 
@@ -223,7 +238,7 @@ const taskId = await orderModule.matchOrders({
   workerpoolorder: workerpoolOrders[0],
   inputFiles: [
     'https://raw.githubusercontent.com/user/repo/main/config.json',
-    'https://example.com/public-data.csv'
+    'https://example.com/public-data.csv',
   ],
 });
 ```
@@ -254,22 +269,26 @@ const result = await dataProtector.processProtectedData({
   app: '0x456def...',
   inputFiles: [
     'https://raw.githubusercontent.com/user/repo/main/config.json',
-    'https://example.com/public-data.csv'
+    'https://example.com/public-data.csv',
   ],
   maxPrice: 10,
 });
-
-
 ```
 
 ## Method 3: Adding Secrets
 
-Secrets are sensitive data like API keys, passwords, or tokens that are stored securely and made available to the iApp as environment variables.
+Secrets are sensitive data like API keys, passwords, or tokens that are stored
+securely and made available to the iApp as environment variables.
 
 ### Using SDK Library
 
 ```typescript
-import { IExecConfig, IExecOrderModule, IExecOrderbookModule, IExecSecretsModule } from '@iexec/sdk';
+import {
+  IExecConfig,
+  IExecOrderModule,
+  IExecOrderbookModule,
+  IExecSecretsModule,
+} from '@iexec/sdk';
 
 // create the configuration
 const config = new IExecConfig({ ethProvider: window.ethereum });
@@ -387,17 +406,22 @@ const result = await dataProtector.processProtectedData({
   },
   maxPrice: 10,
 });
-
 ```
 
 ## Method 4: Specifying File Paths in Protected Data
 
-When working with protected data that contains multiple files, you can specify which file to process.
+When working with protected data that contains multiple files, you can specify
+which file to process.
 
 ### Using SDK Library
 
 ```typescript
-import { IExecConfig, IExecOrderModule, IExecOrderbookModule, IExecResultModule } from '@iexec/sdk';
+import {
+  IExecConfig,
+  IExecOrderModule,
+  IExecOrderbookModule,
+  IExecResultModule,
+} from '@iexec/sdk';
 
 // create the configuration
 const config = new IExecConfig({ ethProvider: window.ethereum });
@@ -503,7 +527,12 @@ You can combine different types of inputs for complex executions.
 ### Using SDK Library
 
 ```typescript
-import { IExecConfig, IExecOrderModule, IExecOrderbookModule, IExecSecretsModule } from '@iexec/sdk';
+import {
+  IExecConfig,
+  IExecOrderModule,
+  IExecOrderbookModule,
+  IExecSecretsModule,
+} from '@iexec/sdk';
 
 // create the configuration
 const config = new IExecConfig({ ethProvider: window.ethereum });
@@ -542,7 +571,7 @@ const taskId = await orderModule.matchOrders({
   workerpoolorder: workerpoolOrders[0],
   inputFiles: [
     'https://example.com/config.json',
-    'https://example.com/template.html'
+    'https://example.com/template.html',
   ],
   secrets: {
     1: 'api-key-12345',
@@ -580,7 +609,7 @@ const result = await dataProtector.processProtectedData({
   args: '--mode production --output-format json',
   inputFiles: [
     'https://example.com/config.json',
-    'https://example.com/template.html'
+    'https://example.com/template.html',
   ],
   secrets: {
     1: 'api-key-12345',
@@ -605,8 +634,8 @@ db_password = os.environ.get('IEXEC_SECRET_2')  # 'database-password'
 
 ```javascript
 // JavaScript iApp example
-const apiKey = process.env.IEXEC_SECRET_1;  // 'api-key-12345'
-const dbPassword = process.env.IEXEC_SECRET_2;  // 'database-password'
+const apiKey = process.env.IEXEC_SECRET_1; // 'api-key-12345'
+const dbPassword = process.env.IEXEC_SECRET_2; // 'database-password'
 ```
 
 ## Input Validation and Error Handling
@@ -616,12 +645,12 @@ const dbPassword = process.env.IEXEC_SECRET_2;  // 'database-password'
 ```typescript
 const validateInputs = (params) => {
   const errors = [];
-  
+
   // Validate arguments
   if (params.args && params.args.length > 1000) {
     errors.push('Arguments too long (max 1000 characters)');
   }
-  
+
   // Validate input files
   if (params.inputFiles) {
     params.inputFiles.forEach((url, index) => {
@@ -630,16 +659,16 @@ const validateInputs = (params) => {
       }
     });
   }
-  
+
   // Validate secrets
   if (params.secrets) {
-    Object.keys(params.secrets).forEach(key => {
+    Object.keys(params.secrets).forEach((key) => {
       if (!/^\d+$/.test(key)) {
         errors.push('Secret keys must be numeric');
       }
     });
   }
-  
+
   return errors;
 };
 
@@ -706,7 +735,7 @@ const result = await dataProtectorCore.processProtectedData({
 // ✅ Ensure input files are accessible
 const inputFiles = [
   'https://raw.githubusercontent.com/user/repo/main/config.json',
-  'https://example.com/public-data.csv'
+  'https://example.com/public-data.csv',
 ];
 
 // Test file accessibility before execution
@@ -722,13 +751,13 @@ const testFileAccess = async (url) => {
 const accessibleFiles = await Promise.all(
   inputFiles.map(async (url) => ({
     url,
-    accessible: await testFileAccess(url)
+    accessible: await testFileAccess(url),
   }))
 );
 
 const validFiles = accessibleFiles
-  .filter(file => file.accessible)
-  .map(file => file.url);
+  .filter((file) => file.accessible)
+  .map((file) => file.url);
 ```
 
 ### 3. Use Descriptive Arguments
@@ -751,10 +780,10 @@ const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
   app: '0x456def...',
   secrets: {
-    1: 'primary-api-key',    // Main API key
-    2: 'backup-api-key',     // Backup API key
-    3: 'database-password',  // Database credentials
-    4: 'encryption-key',     // Encryption key
+    1: 'primary-api-key', // Main API key
+    2: 'backup-api-key', // Backup API key
+    3: 'database-password', // Database credentials
+    4: 'encryption-key', // Encryption key
   },
   maxPrice: 10,
 });
@@ -764,6 +793,7 @@ const result = await dataProtectorCore.processProtectedData({
 
 Now that you understand how to add inputs to iApp executions:
 
-- Learn about [Using iApps with Protected Data](./use-iapp-with-protected-data.md)
+- Learn about
+  [Using iApps with Protected Data](./use-iapp-with-protected-data.md)
 - Explore [Different Ways to Execute](./different-ways-to-execute.md) iApps
 - Check out our [How to Pay for Executions](./how-to-pay-executions.md) guide

@@ -1,24 +1,34 @@
 ---
 title: Different Ways to Execute iApps
-description: Learn about various methods for executing iApps on the iExec network
+description:
+  Learn about various methods for executing iApps on the iExec network
 ---
 
 # ⚡ Different Ways to Execute iApps
 
-There are multiple ways to execute iApps on the iExec network. This guide covers the basic execution methods. For advanced features like protected data, arguments, and input files, see the dedicated guides.
+There are multiple ways to execute iApps on the iExec network. This guide covers
+the basic execution methods. For advanced features like protected data,
+arguments, and input files, see the dedicated guides.
 
-::: tip ENS Addresses
-**ENS (Ethereum Name Service)** is a naming system for Ethereum addresses that allows you to use human-readable names instead of long hexadecimal addresses. For example, instead of using `0x1234567890abcdef...`, you can use `debug-v8-learn.main.pools.iexec.eth`.
+::: tip ENS Addresses **ENS (Ethereum Name Service)** is a naming system for
+Ethereum addresses that allows you to use human-readable names instead of long
+hexadecimal addresses. For example, instead of using `0x1234567890abcdef...`,
+you can use `debug-v8-learn.main.pools.iexec.eth`.
 
-In the examples below, we use `debug-v8-learn.main.pools.iexec.eth` which is iExec's official debug workerpool ENS address. This workerpool is specifically designed for testing and development purposes on the Bellecour testnet.
-:::
+In the examples below, we use `debug-v8-learn.main.pools.iexec.eth` which is
+iExec's official debug workerpool ENS address. This workerpool is specifically
+designed for testing and development purposes on the Bellecour testnet. :::
 
 ## Method 1: Using the iExec SDK Library
 
 The iExec SDK provides a modular JavaScript interface for executing iApps.
 
 ```typescript
-import { IExecConfig, IExecOrderModule, IExecOrderbookModule } from '@iexec/sdk';
+import {
+  IExecConfig,
+  IExecOrderModule,
+  IExecOrderbookModule,
+} from '@iexec/sdk';
 
 // create the configuration
 const config = new IExecConfig({ ethProvider: window.ethereum });
@@ -73,7 +83,8 @@ iexec app run 0x456def... --maxPrice 10
 
 ## Method 3: Using the iApp Generator CLI
 
-The iApp Generator CLI provides a streamlined way to execute iApps, especially for developers who have built their own iApps.
+The iApp Generator CLI provides a streamlined way to execute iApps, especially
+for developers who have built their own iApps.
 
 ### Installation
 
@@ -103,6 +114,7 @@ iapp test
 
 ## Next Steps
 
-- Learn how to [use iApps with protected data](./use-iapp-with-protected-data.md)
+- Learn how to
+  [use iApps with protected data](./use-iapp-with-protected-data.md)
 - Discover how to [add inputs to execution](./add-inputs-to-execution.md)
 - Understand [how to pay for executions](./how-to-pay-executions.md)
