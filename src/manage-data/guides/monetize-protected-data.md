@@ -1,8 +1,13 @@
 ---
 title: Monetize Protected Data
 description:
-  Explore different ways to monetize your protected data with signed orders
-  (usage-based) and time-based access (time-period payments)
+  Monetize your encrypted data with iExec's DataProtector. Learn usage-based
+  payments with signed orders and time-based access subscriptions. Turn your
+  data into revenue streams securely.
+keywords:
+  data monetization, DataProtector monetization, encrypted data revenue, Web3
+  data marketplace, secure data sharing, privacy-preserving monetization, data
+  licensing, blockchain data economy
 ---
 
 # 💰 Monetize Protected Data

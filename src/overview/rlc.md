@@ -1,9 +1,32 @@
 ---
 title: RLC Token
 description:
-  The RLC token is the cryptocurrency that powers the iExec decentralized
-  computing ecosystem
+  RLC (Run on Lots of Computers) is the cryptocurrency powering iExec's
+  confidential computing ecosystem. Learn about RLC tokenomics, utility, and how
+  it drives privacy-first Web3 applications.
+keywords:
+  RLC token, RLC cryptocurrency, iExec token, confidential computing token, Web3
+  privacy token, blockchain tokenomics, decentralized computing economy, privacy
+  ecosystem token
 ---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "RLC Token - Cryptocurrency for Confidential Computing",
+  "description": "RLC (Run on Lots of Computers) is the cryptocurrency powering iExec's confidential computing ecosystem. Learn about RLC tokenomics, utility, and how it drives privacy-first Web3 applications.",
+  "author": {
+    "@type": "Organization",
+    "name": "iExec"
+  },
+  "mainEntity": {
+    "@type": "DigitalDocument",
+    "name": "RLC Token Guide",
+    "description": "Comprehensive guide to RLC token utility, tokenomics, and ecosystem"
+  }
+}
+</script>
 
 <div class="flex flex-col items-center mb-8">
   <img :src="rlcGif" alt="RLC Token Animation" class="w-80 h-80 mb-0" />

@@ -1,20 +1,24 @@
 ---
 title: What is an iApp?
-description: Privacy-first applications that run on decentralized infrastructure
+description:
+  Learn about iExec Applications (iApps) - confidential computing apps that
+  process sensitive data in secure TEE environments. Build privacy-preserving
+  AI, data analysis, and Web3 apps.
+keywords:
+  iApp, iExec application, confidential computing, TEE, trusted execution
+  environment, privacy-preserving apps, secure data processing, Web3 development
 ---
 
 # 🚀 What is an iApp?
 
 An iExec Application (iApp) brings Turnkey Privacy to your regular application
-code (Python script, AI model, data processor, ...) enabling it to securely
-process protected data (created by [DataProtector](/manage-data/dataProtector))
-inside a confidential computing environment called TEE (a Trusted Execution
-Environment).
+code. Your Python scripts, AI models, or data processors can securely process
+protected data inside a TEE (Trusted Execution Environment).
 
 ## Why iApps Matter ?
 
-iApps provide Turnkey Privacy capabilities that let you process sensitive data
-while keeping it private and secure.
+iApps provide Turnkey Privacy capabilities. Process sensitive data while keeping
+it private and secure.
 
 Imagine you want to build:
 
@@ -170,9 +174,11 @@ Try our [Hello World](/overview/helloWorld) for a quick start, or check the
 
 ::: details 🔧 What programming languages are supported?
 
-iApps can be built in any language that runs in Docker (Python, JavaScript, R,
+You can build iApps in any language that runs in Docker (Python, JavaScript, R,
 Java, Go, etc.). However, **iApp Generator** currently supports only Python and
-Node.js for simplified development.
+uns in Docker (Python, JavaScript, R, Java, Go, etc.). However, **iApp
+Generator** currently supports only Python and Node.js for simplified
+development.
 
 :::
 

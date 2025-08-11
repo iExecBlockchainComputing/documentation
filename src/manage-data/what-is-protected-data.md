@@ -1,6 +1,13 @@
 ---
 title: What is Protected Data?
-description: Understanding iExec's data protection mechanisms
+description:
+  Learn about iExec's Protected Data - encrypted datasets that enable
+  privacy-preserving computation. Understand DataProtector encryption, access
+  controls, and secure data monetization.
+keywords:
+  protected data, DataProtector, data encryption, privacy-preserving data,
+  secure data sharing, Web3 data protection, encrypted datasets, confidential
+  data processing
 ---
 
 # ❓ What is Protected Data?

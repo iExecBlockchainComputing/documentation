@@ -1,9 +1,13 @@
 ---
 title: iApp Generator
 description:
-  Build privacy-first applications that run in secure TEE environments. Your
-  complete toolkit for creating, testing, and deploying confidential iApps on
-  the iExec network.
+  iApp Generator CLI toolkit for building confidential computing applications.
+  Create privacy-preserving AI, data analysis, and Web3 apps that run in secure
+  TEE environments. Deploy in minutes.
+keywords:
+  iApp Generator, confidential computing CLI, TEE applications,
+  privacy-preserving development, secure AI development, Web3 privacy tools,
+  trusted execution environment, iExec development
 ---
 
 # 🤖 iApp Generator

@@ -1,8 +1,47 @@
 ---
 title: About iExec
 description:
-  Discover how iExec empowers developers to build privacy-first applications
+  Build privacy-first Web3 applications with iExec's turnkey privacy toolkit.
+  Confidential computing, TEE technology, and blockchain data protection made
+  simple for developers.
+keywords:
+  iExec, confidential computing, TEE, privacy-first applications, Web3 privacy,
+  blockchain data protection, trusted execution environment, turnkey privacy
 ---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "iExec Turnkey Privacy Toolkit - Build Privacy-First Web3 Applications",
+  "description": "Build privacy-first Web3 applications with iExec's turnkey privacy toolkit. Confidential computing, TEE technology, and blockchain data protection made simple for developers.",
+  "author": {
+    "@type": "Organization",
+    "name": "iExec",
+    "url": "https://iex.ec"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "iExec",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://iex.ec/logo.png"
+    }
+  },
+  "mainEntity": {
+    "@type": "SoftwareApplication",
+    "name": "iExec",
+    "applicationCategory": "Developer Tools",
+    "operatingSystem": "Cross-platform",
+    "description": "Turnkey privacy toolkit for building confidential computing applications",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+}
+</script>
 
 # 💡 Turnkey Privacy Toolkit
 

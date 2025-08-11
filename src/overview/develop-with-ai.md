@@ -1,8 +1,13 @@
 ---
 title: Develop with AI
 description:
-  Learn how to use AI tools like Vibe Coding and Context7 to build privacy-first
-  applications with iExec
+  Accelerate privacy-first development with AI tools. Learn to use Vibe Coding,
+  Context7, and AI assistants to build confidential computing applications with
+  iExec faster and more efficiently.
+keywords:
+  AI-assisted development, Vibe Coding, Context7, privacy-first AI development,
+  confidential computing with AI, AI code generation, Web3 AI development,
+  secure AI development
 ---
 
 # 🤖 Develop with AI
