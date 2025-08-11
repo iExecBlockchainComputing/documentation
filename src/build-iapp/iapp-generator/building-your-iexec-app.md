@@ -16,11 +16,53 @@ environment.
 
 ### 🏗 Define your Project
 
-Run:
-
-```sh
-iapp init
-```
+<CLIDemo
+  initialCommand="iapp init"
+  asciiText="iApp"
+  :steps="[
+    {
+      showAt: 2,
+      completeAt: 4,
+      question: 'What is your project name? (A folder with this name will be created)',
+      answer: 'hello-world',
+      showTyping: true,
+      isComplete: false
+    },
+    {
+      showAt: 4,
+      completeAt: 6,
+      question: 'Which language do you want to use?',
+      answer: 'JavaScript',
+      options: [
+        { label: 'JavaScript', selected: true },
+        { label: 'Python', selected: false }
+      ],
+      highlighted: false,
+      isComplete: false
+    },
+    {
+      showAt: 6,
+      completeAt: 8,
+      question: 'What kind of project do you want to init?',
+      answer: 'Hello World',
+      options: [
+        { label: 'Hello World - iapp quick start', selected: true },
+        { label: 'advanced', selected: false }
+      ],
+      highlighted: false,
+      isComplete: false
+    }
+  ]"
+  :completionStep="8"
+  :completionMessage="'Generating your iApp...'"
+  :completionItems="[
+    '📁 Created hello-world/',
+    '📄 Added package.json',
+    '🐳 Added Dockerfile',
+    '⚙️ Added iExec configuration'
+  ]"
+  :successMessage="'Your iApp is ready!'"
+/>
 
 Follow the prompts to specify:
 
@@ -156,3 +198,7 @@ Once your application is **stable** and **functional**, you can:
 - 🔗
   [Order Management](https://protocol.docs.iex.ec/for-developers/advanced/manage-your-apporders)
 - 🔗 [iExec Protocol Documentation](https://protocol.docs.iex.ec/)
+
+<script setup>
+import CLIDemo from '../../components/CLIDemo.vue';
+</script>
