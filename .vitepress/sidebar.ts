@@ -10,6 +10,7 @@ export function getSidebar() {
           {
             text: '👋 Hello World',
             link: '/documentation/helloWorld',
+            collapsed: true,
             items: [
               {
                 text: 'iExec Overview',
@@ -19,7 +20,10 @@ export function getSidebar() {
                 text: 'Protect Data',
                 link: '/documentation/helloWorld/2-protectData',
               },
-              { text: 'Build iApp', link: '/documentation/helloWorld/3-buildIApp' },
+              {
+                text: 'Build iApp',
+                link: '/documentation/helloWorld/3-buildIApp',
+              },
               {
                 text: 'Manage Data Access',
                 link: '/documentation/helloWorld/4-manageDataAccess',
@@ -49,39 +53,15 @@ export function getSidebar() {
         ],
       },
       {
-        text: 'TOOLING & EXPLORERS',
-        items: [
-          {
-            text: 'iExec Explorer',
-            link: '/documentation/tooling-and-explorers/iexec-explorer',
-          },
-          {
-            text: 'Builder Dashboard',
-            link: '/documentation/tooling-and-explorers/builder-dashboard',
-          },
-          {
-            text: 'RLC Bridge',
-            link: '/documentation/tooling-and-explorers/bridge',
-          },
-          {
-            text: 'Subgraph Explorer',
-            link: '/documentation/tooling-and-explorers/subgraph-explorer',
-          },
-          {
-            text: 'Blockchain Explorer',
-            link: '/documentation/tooling-and-explorers/blockchain-explorer',
-          },
-        ],
-      },
-      {
         text: 'PROTECT AND MANAGE DATA',
         items: [
           {
-            text: '❓&nbsp;&nbsp;What is Protected Data?',
+            text: '❓&nbsp;&nbsp;What is Protected Data ?',
             link: '/documentation/manage-data/what-is-protected-data',
           },
           {
             text: '📖 Guides',
+            collapsed: true,
             items: [
               {
                 text: 'Manage Access',
@@ -100,6 +80,7 @@ export function getSidebar() {
           {
             text: '🔐 DataProtector',
             link: '/documentation/manage-data/dataProtector',
+            collapsed: true,
             items: [
               {
                 text: 'Getting Started',
@@ -331,9 +312,13 @@ export function getSidebar() {
       {
         text: 'BUILD YOUR iAPP',
         items: [
-          { text: '❓ What is an iApp?', link: '/documentation/build-iapp/what-is-iapp' },
+          {
+            text: '❓ What is an iApp ?',
+            link: '/documentation/build-iapp/what-is-iapp',
+          },
           {
             text: '📖 Guides',
+            collapsed: true,
             items: [
               {
                 text: 'Build and Deploy',
@@ -364,6 +349,7 @@ export function getSidebar() {
           {
             text: '🤖 iApp Generator',
             link: '/documentation/build-iapp/iapp-generator',
+            collapsed: true,
             items: [
               {
                 text: 'Getting Started',
@@ -391,10 +377,17 @@ export function getSidebar() {
       {
         text: 'USE AN iAPP',
         items: [
-          { text: '📝 Introduction', link: '/documentation/use-iapp/introduction' },
-          { text: '🚀 Getting Started', link: '/documentation/use-iapp/getting-started' },
+          {
+            text: '📝 Introduction',
+            link: '/documentation/use-iapp/introduction',
+          },
+          {
+            text: '🚀 Getting Started',
+            link: '/documentation/use-iapp/getting-started',
+          },
           {
             text: '📖 Guides',
+            collapsed: true,
             items: [
               {
                 text: 'Different Ways to Execute an iApp',
@@ -420,6 +413,7 @@ export function getSidebar() {
           },
           {
             text: '💰 How to Pay',
+            collapsed: true,
             items: [
               {
                 text: 'How to Pay for Web3Mail',
@@ -508,6 +502,31 @@ export function getSidebar() {
                 link: '/documentation/use-iapp/web3telegram/advanced-configuration',
               },
             ],
+          },
+        ],
+      },
+      {
+        text: 'TOOLING & EXPLORERS',
+        items: [
+          {
+            text: 'iExec Explorer',
+            link: '/documentation/tooling-and-explorers/iexec-explorer',
+          },
+          {
+            text: 'Builder Dashboard',
+            link: '/documentation/tooling-and-explorers/builder-dashboard',
+          },
+          {
+            text: 'RLC Bridge',
+            link: '/documentation/tooling-and-explorers/bridge',
+          },
+          {
+            text: 'Subgraph Explorer',
+            link: '/documentation/tooling-and-explorers/subgraph-explorer',
+          },
+          {
+            text: 'Blockchain Explorer',
+            link: '/documentation/tooling-and-explorers/blockchain-explorer',
           },
         ],
       },
