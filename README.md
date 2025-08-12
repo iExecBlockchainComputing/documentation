@@ -168,3 +168,4 @@ Fork this repository and ensure you're working on the `main` branch:
   the UI + SRLC/RLC on account section feature of the protocol
 - Update or add design illustrations based on the new design system
 - Check how to pay guide to update with the launch on Arbitrum (RLC vs xRLC)
+- framework AI supporté TDX vs SGX
