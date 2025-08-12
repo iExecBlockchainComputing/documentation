@@ -11,8 +11,10 @@ available iApps on the iExec network.
 
 ## Using the iExec Explorer
 
-The [iExec Explorer](/overview/tooling-and-explorers/iexec-explorer) is the primary tool for
-discovering iApps. For detailed instructions on how to browse and filter iApps, see the [📱 iApps Listing section](/overview/tooling-and-explorers/iexec-explorer#📱-iapps-listing).
+The [iExec Explorer](/overview/tooling-and-explorers/iexec-explorer) is the
+primary tool for discovering iApps. For detailed instructions on how to browse
+and filter iApps, see the
+[📱 iApps Listing section](/overview/tooling-and-explorers/iexec-explorer#📱-iapps-listing).
 
 ### What to Look For
 
@@ -23,7 +25,9 @@ When evaluating an iApp, check these key details:
 - **Usage Statistics**: How often is it used?
 - **Orders Availability**: Are there active orders available for execution?
 
-> **Note**: Detailed descriptions and specific requirements are not available in the iExec explorer. You may need to check the developer's documentation, community forums, or contact the developer directly for this information.
+> **Note**: Detailed descriptions and specific requirements are not available in
+> the iExec explorer. You may need to check the developer's documentation,
+> community forums, or contact the developer directly for this information.
 
 ## Using the iExec CLI
 

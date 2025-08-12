@@ -11,7 +11,8 @@ iApps can accept various types of inputs to customize their behavior and provide
 necessary data for processing. This guide covers all the different ways to add
 inputs to your iApp executions using various iExec tools and SDKs.
 
-::: tip ENS Addresses 
+<!-- prettier-ignore-start -->
+::: tip ENS Addresses
 **ENS (Ethereum Name Service)** is a naming system for
 Ethereum addresses that allows you to use human-readable names instead of long
 hexadecimal addresses. For example, instead of using `0x1234567890abcdef...`,
@@ -19,8 +20,9 @@ you can use `debug-v8-learn.main.pools.iexec.eth`.
 
 In the examples below, we use `debug-v8-learn.main.pools.iexec.eth` which is
 iExec's official debug workerpool ENS address. This workerpool is specifically
-designed for testing and development purposes on the Bellecour testnet. 
+designed for testing and development purposes on the Bellecour testnet.
 :::
+<!-- prettier-ignore-end -->
 
 ## Types of Inputs
 
@@ -230,21 +232,18 @@ const datasetOrders = await orderbookModule.fetchDatasetOrderbook({
   dataset: '0x123abc...', // Filter by specific dataset
 });
 ```
-const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook({
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // Filter by specific workerpool ENS
-});
 
-const taskId = await orderModule.matchOrders({
-  requestorder: requestOrder,
-  apporder: appOrders[0],
-  datasetorder: datasetOrders[0],
-  workerpoolorder: workerpoolOrders[0],
-  inputFiles: [
-    'https://raw.githubusercontent.com/user/repo/main/config.json',
-    'https://example.com/public-data.csv',
-  ],
-});
-```
+const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook({
+workerpool: 'debug-v8-learn.main.pools.iexec.eth', // Filter by specific
+workerpool ENS });
+
+const taskId = await orderModule.matchOrders({ requestorder: requestOrder,
+apporder: appOrders[0], datasetorder: datasetOrders[0], workerpoolorder:
+workerpoolOrders[0], inputFiles: [
+'https://raw.githubusercontent.com/user/repo/main/config.json',
+'https://example.com/public-data.csv', ], });
+
+````
 
 ### Using SDK CLI
 
@@ -257,7 +256,7 @@ iexec app run 0x456def... --protectedData 0x123abc... --inputFiles "https://exam
 
 # Multiple input files (space-separated)
 iexec app run 0x456def... --protectedData 0x123abc... --inputFiles "https://example.com/config.json" --inputFiles "https://example.com/template.html"
-```
+````
 
 ### Using DataProtector
 

@@ -10,7 +10,8 @@ There are multiple ways to execute iApps on the iExec network. This guide covers
 the basic execution methods. For advanced features like protected data,
 arguments, and input files, see the dedicated guides.
 
-::: tip ENS Addresses 
+<!-- prettier-ignore-start -->
+::: tip ENS Addresses
 **ENS (Ethereum Name Service)** is a naming system for
 Ethereum addresses that allows you to use human-readable names instead of long
 hexadecimal addresses. For example, instead of using `0x1234567890abcdef...`,
@@ -18,8 +19,9 @@ you can use `debug-v8-learn.main.pools.iexec.eth`.
 
 In the examples below, we use `debug-v8-learn.main.pools.iexec.eth` which is
 iExec's official debug workerpool ENS address. This workerpool is specifically
-designed for testing and development purposes on the Bellecour testnet. 
+designed for testing and development purposes on the Bellecour testnet.
 :::
+<!-- prettier-ignore-end -->
 
 ## Method 1: Using the iExec SDK Library
 
@@ -77,7 +79,8 @@ iexec app run 0x456def...
 The iApp Generator CLI provides a streamlined way to execute iApps, especially
 for developers who have built their own iApps.
 
-> **Note**: For installation instructions, see the [iApp Generator Getting Started guide](/build-iapp/iapp-generator/getting-started).
+> **Note**: For installation instructions, see the
+> [iApp Generator Getting Started guide](/build-iapp/iapp-generator/getting-started).
 
 ### Basic Execution
 
