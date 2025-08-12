@@ -7,44 +7,56 @@ description:
 
 # 📝 Introduction to Using iApps
 
-iExec Applications (iApps) are your gateway to secure, privacy-preserving
-computation on the iExec network. These applications run inside Trusted
-Execution Environments (TEEs) like Intel SGX or Intel TDX, ensuring your data
-remains confidential even during processing.
+In the iExec network, multiple actors work together in a coordinated process to ensure secure, decentralized computation. Here's how the ecosystem operates:
 
-## What are iApps?
+### Key Actors in the Network
 
-iApps are regular applications (Python scripts, AI models, data processors,
-etc.) that have been adapted to run securely on the iExec network. They can
-process protected data without ever seeing the raw information, making them
-perfect for scenarios where data privacy is crucial.
+- **👤 Requesters**: Users who need computation performed on protected data
+- **🏭 Workerpool Managers**: Operators who manage groups of workers and coordinate task execution
+- **⚙️ Workers**: Individual machines that execute the actual computations
+- **👨‍💻 iApp Developers**: Developers who create and deploy applications to the iExec marketplace
+- **🔐 Data Providers**: Users who own and protect the data being processed
 
-## Key Benefits
+### Network Assets
 
-- **🔒 Privacy-First**: Your data never leaves the secure TEE environment
-- **⚡ Trusted Execution**: Applications run in hardware-protected environments
-- **🌐 Decentralized**: No single point of failure or control
-- **💰 Cost-Effective**: Pay only for the computation you need
-- **🔧 Developer-Friendly**: Use familiar programming languages and tools
+- **📱 iApps**: Applications that process the data securely
+- **💾 Data**: Protected information that needs to be processed
+- **⚡ Computational Power**: Processing resources provided by workers
+- **💰 PoCo**: Proof of Contribution system that matches all actors through marketplace
 
-## How iApps Work
+### Network Coordination
 
-1. **Data Protection**: Users protect their sensitive data using the
-   [Data Protector](/manage-data/dataProtector/dataProtectorCore/protectData)
-2. **Application Deployment**: Developers deploy their applications to the iExec
-   network
-3. **Secure Processing**: iApps process protected data inside TEEs without
-   accessing raw data
-4. **Result Delivery**: Only the computation results are returned, keeping
-   original data private
+The iExec network coordinates all actors through the PoCo (Proof of Contribution) system, which automatically matches requesters with the appropriate applications, data, and computational resources based on availability, requirements, and pricing.
 
-## Use Cases
+### Deal Execution Flow
 
-- **Email Notifications**: Send emails without seeing recipient addresses
-- **Oracle Updates**: Update price feeds using private trading data
-- **Automated Transactions**: Process payments with protected financial data
-- **AI Model Training**: Train models on sensitive datasets
-- **Data Analytics**: Analyze private data without exposing it
+When a deal is triggered, the following sequence occurs:
+
+1. **Request Creation**: Requester submits a computation request with parameters
+2. **Resource Matching**: PoCo system matches the request with available applications, data, and computational resources
+3. **Deal Creation**: When compatible resources are found, a deal is created containing multiple tasks
+4. **Task Distribution**: Selected workerpool manager distributes tasks to their workers
+5. **Secure Execution**: Workers download the iApp and execute it in TEE environments
+6. **Data Processing**: iApp processes protected data without accessing raw content
+7. **Result Generation**: Computation results are generated
+8. **Result Delivery**: Results are returned to the requester through the network
+9. **Payment Settlement**: RLC tokens are distributed to all participants
+
+### Network Architecture Diagram
+
+![iExec Network Actors](/assets/use-iapp/iexec-actors-diagram.svg)
+
+### Detailed Interaction Flow
+
+1. **Request Submission**: Requester creates a request specifying the iApp, Protected Data, etc.
+2. **PoCo Processing**: PoCo system validates the request and matches resources
+3. **Deal Creation**: When resources are matched, PoCo creates a deal
+4. **Secure Environment Setup**: Workers initialize TEE environments and download the iApp
+5. **Data Access**: iApp requests access to protected data through secure channels
+6. **Computation**: iApp processes data within the TEE, maintaining privacy
+7. **Payment Distribution**: RLC tokens are distributed to all participants based on completed tasks
+
+This decentralized architecture ensures that no single entity has control over the entire process, while the use of TEEs guarantees that sensitive data remains protected throughout the computation.
 
 ## Getting Started
 

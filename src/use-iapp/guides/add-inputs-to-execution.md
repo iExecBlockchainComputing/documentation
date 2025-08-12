@@ -11,14 +11,16 @@ iApps can accept various types of inputs to customize their behavior and provide
 necessary data for processing. This guide covers all the different ways to add
 inputs to your iApp executions using various iExec tools and SDKs.
 
-::: tip ENS Addresses **ENS (Ethereum Name Service)** is a naming system for
+::: tip ENS Addresses 
+**ENS (Ethereum Name Service)** is a naming system for
 Ethereum addresses that allows you to use human-readable names instead of long
 hexadecimal addresses. For example, instead of using `0x1234567890abcdef...`,
 you can use `debug-v8-learn.main.pools.iexec.eth`.
 
 In the examples below, we use `debug-v8-learn.main.pools.iexec.eth` which is
 iExec's official debug workerpool ENS address. This workerpool is specifically
-designed for testing and development purposes on the Bellecour testnet. :::
+designed for testing and development purposes on the Bellecour testnet. 
+:::
 
 ## Types of Inputs
 
@@ -36,7 +38,7 @@ blockchain.
 
 ### Using SDK Library
 
-```typescript
+```ts twoslash
 import {
   IExecConfig,
   IExecOrderModule,
@@ -49,7 +51,7 @@ const config = new IExecConfig({ ethProvider: window.ethereum });
 // instantiate modules sharing the same configuration
 const orderModule = IExecOrderModule.fromConfig(config);
 const orderbookModule = IExecOrderbookModule.fromConfig(config);
-
+// ---cut---
 // Basic arguments
 const requestOrder = await orderModule.createRequestOrder({
   app: '0x456def...',
@@ -133,11 +135,11 @@ iexec app run 0x456def... --protectedData 0x123abc... --args "--message \"Hello 
 
 ### Using DataProtector
 
-```typescript
+```ts twoslash
 import { IExecDataProtectorCore } from '@iexec/dataprotector';
 
 const dataProtector = new IExecDataProtectorCore(web3Provider);
-
+// ---cut---
 // Process protected data with arguments
 const result = await dataProtector.processProtectedData({
   protectedData: '0x123abc...',
@@ -154,7 +156,7 @@ execution.
 
 ### Using SDK Library
 
-```typescript
+```ts twoslash
 import {
   IExecConfig,
   IExecOrderModule,
@@ -167,7 +169,7 @@ const config = new IExecConfig({ ethProvider: window.ethereum });
 // instantiate modules sharing the same configuration
 const orderModule = IExecOrderModule.fromConfig(config);
 const orderbookModule = IExecOrderbookModule.fromConfig(config);
-
+// ---cut---
 // Single input file
 const requestOrder = await orderModule.createRequestOrder({
   app: '0x456def...',
@@ -227,6 +229,7 @@ const appOrders = await orderbookModule.fetchAppOrderbook({
 const datasetOrders = await orderbookModule.fetchDatasetOrderbook({
   dataset: '0x123abc...', // Filter by specific dataset
 });
+```
 const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook({
   workerpool: 'debug-v8-learn.main.pools.iexec.eth', // Filter by specific workerpool ENS
 });
@@ -258,11 +261,11 @@ iexec app run 0x456def... --protectedData 0x123abc... --inputFiles "https://exam
 
 ### Using DataProtector
 
-```typescript
+```ts twoslash
 import { IExecDataProtectorCore } from '@iexec/dataprotector';
 
 const dataProtector = new IExecDataProtectorCore(web3Provider);
-
+// ---cut---
 // Process protected data with input files
 const result = await dataProtector.processProtectedData({
   protectedData: '0x123abc...',
@@ -282,7 +285,7 @@ securely and made available to the iApp as environment variables.
 
 ### Using SDK Library
 
-```typescript
+```ts twoslash
 import {
   IExecConfig,
   IExecOrderModule,
@@ -297,7 +300,7 @@ const config = new IExecConfig({ ethProvider: window.ethereum });
 const orderModule = IExecOrderModule.fromConfig(config);
 const orderbookModule = IExecOrderbookModule.fromConfig(config);
 const secretsModule = IExecSecretsModule.fromConfig(config);
-
+// ---cut---
 // Basic secrets
 const requestOrder = await orderModule.createRequestOrder({
   app: '0x456def...',
@@ -391,11 +394,11 @@ iexec app run 0x456def... --protectedData 0x123abc...
 
 ### Using DataProtector
 
-```typescript
+```ts twoslash
 import { IExecDataProtectorCore } from '@iexec/dataprotector';
 
 const dataProtector = new IExecDataProtectorCore(web3Provider);
-
+// ---cut---
 // Process protected data with secrets
 const result = await dataProtector.processProtectedData({
   protectedData: '0x123abc...',
@@ -415,7 +418,7 @@ which file to process.
 
 ### Using SDK Library
 
-```typescript
+```ts twoslash
 import {
   IExecConfig,
   IExecOrderModule,
@@ -430,7 +433,7 @@ const config = new IExecConfig({ ethProvider: window.ethereum });
 const orderModule = IExecOrderModule.fromConfig(config);
 const orderbookModule = IExecOrderbookModule.fromConfig(config);
 const resultModule = IExecResultModule.fromConfig(config);
-
+// ---cut---
 // Basic path specification (with protected data)
 const requestOrder = await orderModule.createRequestOrder({
   app: '0x456def...',
@@ -500,11 +503,11 @@ iexec task show 0x7ac398... --path "computed.json"
 
 ### Using DataProtector
 
-```typescript
+```ts twoslash
 import { IExecDataProtectorCore } from '@iexec/dataprotector';
 
 const dataProtector = new IExecDataProtectorCore(web3Provider);
-
+// ---cut---
 // Process protected data with specific path
 const result = await dataProtector.processProtectedData({
   protectedData: '0x123abc...',
@@ -526,7 +529,7 @@ You can combine different types of inputs for complex executions.
 
 ### Using SDK Library
 
-```typescript
+```ts twoslash
 import {
   IExecConfig,
   IExecOrderModule,
@@ -541,7 +544,7 @@ const config = new IExecConfig({ ethProvider: window.ethereum });
 const orderModule = IExecOrderModule.fromConfig(config);
 const orderbookModule = IExecOrderbookModule.fromConfig(config);
 const secretsModule = IExecSecretsModule.fromConfig(config);
-
+// ---cut---
 // Complete example with all input types
 const requestOrder = await orderModule.createRequestOrder({
   app: '0x456def...',
@@ -589,19 +592,18 @@ iexec app run 0x456def... \
   --protectedData 0x123abc... \
   --args "--mode production --output-format json" \
   --inputFiles "https://example.com/config.json,https://example.com/template.html" \
-  --path "data/input.csv" \
-  --maxPrice 10
+  --path "data/input.csv"
 
 # Note: Secrets must be handled via SDK due to CLI limitations
 ```
 
 ### Using DataProtector
 
-```typescript
+```ts twoslash
 import { IExecDataProtectorCore } from '@iexec/dataprotector';
 
 const dataProtector = new IExecDataProtectorCore(web3Provider);
-
+// ---cut---
 // Process protected data with multiple input types
 const result = await dataProtector.processProtectedData({
   protectedData: '0x123abc...',
@@ -642,7 +644,7 @@ const dbPassword = process.env.IEXEC_SECRET_2; // 'database-password'
 
 ### Validate Inputs Before Execution
 
-```typescript
+```ts twoslash
 const validateInputs = (params) => {
   const errors = [];
 
@@ -693,7 +695,7 @@ const result = await dataProtectorCore.processProtectedData(params);
 
 ### Handle Input-Related Errors
 
-```typescript
+```ts twoslash
 try {
   const result = await dataProtectorCore.processProtectedData({
     protectedData: '0x123abc...',
@@ -718,7 +720,7 @@ try {
 
 ### 1. Use Appropriate Input Types
 
-```typescript
+```ts twoslash
 // ✅ Use secrets for sensitive data
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
@@ -731,7 +733,7 @@ const result = await dataProtectorCore.processProtectedData({
 
 ### 2. Validate URLs and Files
 
-```typescript
+```ts twoslash
 // ✅ Ensure input files are accessible
 const inputFiles = [
   'https://raw.githubusercontent.com/user/repo/main/config.json',
@@ -762,7 +764,7 @@ const validFiles = accessibleFiles
 
 ### 3. Use Descriptive Arguments
 
-```typescript
+```ts twoslash
 // ✅ Clear, descriptive arguments
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
@@ -774,7 +776,7 @@ const result = await dataProtectorCore.processProtectedData({
 
 ### 4. Organize Secrets Logically
 
-```typescript
+```ts twoslash
 // ✅ Logical secret numbering
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',

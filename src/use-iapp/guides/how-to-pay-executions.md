@@ -37,7 +37,7 @@ You can obtain RLC tokens from various exchanges:
 
 RLC tokens need to be on the iExec sidechain (Bellecour) for payments:
 
-```typescript
+```ts twoslash
 import { IExecConfig, IExecAccountModule } from '@iexec/sdk';
 
 // create the configuration
@@ -45,7 +45,7 @@ const config = new IExecConfig({ ethProvider: window.ethereum });
 
 // instantiate account module
 const accountModule = IExecAccountModule.fromConfig(config);
-
+// ---cut---
 // Check your balance
 const balance = await accountModule.show();
 console.log('Current balance:', balance);
@@ -56,12 +56,12 @@ await accountModule.deposit(100); // Deposit 100 RLC
 
 #### Step 3: Execute with RLC Payment
 
-```typescript
+```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
 const web3Provider = getWeb3Provider(window.ethereum);
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-
+// ---cut---
 // Execute with RLC payment (default)
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
@@ -75,7 +75,7 @@ const result = await dataProtectorCore.processProtectedData({
 
 ```bash
 # Execute with RLC payment
-iexec app run 0x456def... --protectedData 0x123abc... --maxPrice 10
+iexec app run 0x456def... --protectedData 0x123abc...
 
 # Check your balance
 iexec account show
@@ -103,7 +103,7 @@ iExec network. They offer several advantages:
 
 #### Basic Voucher Usage
 
-```typescript
+```ts twoslash
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
   app: '0x456def...',
@@ -123,7 +123,7 @@ sufficient funds for this transfer to proceed.
 
 #### Using Someone Else's Voucher
 
-```typescript
+```ts twoslash
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
   app: '0x456def...',
@@ -165,7 +165,7 @@ iApp execution costs consist of several components:
 
 You can control costs by setting maximum prices for each component:
 
-```typescript
+```ts twoslash
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
   app: '0x456def...',
@@ -188,7 +188,7 @@ parameters is `0`, which means no maximum price limit is set.
 
 Regularly check your RLC balance and voucher status:
 
-```typescript
+```ts twoslash
 // Check RLC balance
 const balance = await iexec.account.show();
 console.log('RLC Balance:', balance);
@@ -202,7 +202,7 @@ console.log('Voucher Balance:', voucherBalance);
 
 Always set maximum prices to avoid unexpected costs:
 
-```typescript
+```ts twoslash
 // Good practice: Set explicit price limits
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
@@ -217,7 +217,7 @@ const result = await dataProtectorCore.processProtectedData({
 
 For frequent executions, consider using vouchers:
 
-```typescript
+```ts twoslash
 // Use vouchers for regular operations
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
@@ -231,7 +231,7 @@ const result = await dataProtectorCore.processProtectedData({
 
 Group multiple executions to optimize costs:
 
-```typescript
+```ts twoslash
 // Execute multiple tasks efficiently
 const tasks = [
   { protectedData: '0x123abc...', app: '0x456def...' },
@@ -257,7 +257,7 @@ const results = await Promise.all(
 
 If you encounter insufficient balance errors:
 
-```typescript
+```ts twoslash
 try {
   const result = await dataProtectorCore.processProtectedData({
     protectedData: '0x123abc...',
@@ -278,7 +278,7 @@ try {
 
 If voucher payment fails:
 
-```typescript
+```ts twoslash
 try {
   const result = await dataProtectorCore.processProtectedData({
     protectedData: '0x123abc...',
@@ -298,7 +298,7 @@ try {
 
 If execution fails due to price constraints:
 
-```typescript
+```ts twoslash
 try {
   const result = await dataProtectorCore.processProtectedData({
     protectedData: '0x123abc...',
@@ -326,7 +326,7 @@ try {
 
 ### 1. Always Set Price Limits
 
-```typescript
+```ts twoslash
 // Never execute without price limits
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
@@ -339,7 +339,7 @@ const result = await dataProtectorCore.processProtectedData({
 
 ### 2. Use Vouchers for Production
 
-```typescript
+```ts twoslash
 // Use vouchers for production applications
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
@@ -351,7 +351,7 @@ const result = await dataProtectorCore.processProtectedData({
 
 ### 3. Monitor Costs Regularly
 
-```typescript
+```ts twoslash
 // Check costs before and after execution
 const balanceBefore = await iexec.account.show();
 const result = await dataProtectorCore.processProtectedData({
@@ -367,7 +367,7 @@ console.log('Cost:', balanceBefore - balanceAfter);
 
 ### 4. Handle Payment Errors Gracefully
 
-```typescript
+```ts twoslash
 const executeWithPaymentRetry = async (params, maxRetries = 3) => {
   for (let i = 0; i < maxRetries; i++) {
     try {

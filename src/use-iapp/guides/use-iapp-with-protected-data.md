@@ -29,12 +29,12 @@ Before using an iApp, you need to protect your sensitive data.
 
 ### Basic Data Protection
 
-```typescript
+```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
 const web3Provider = getWeb3Provider(window.ethereum);
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-
+// ---cut---
 // Protect your data
 const { address: protectedDataAddress } = await dataProtectorCore.protectData({
   name: 'My Sensitive Data',
@@ -51,7 +51,7 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
 
 ### Protecting Different Data Types
 
-```typescript
+```ts twoslash
 // Protect contact list for email applications
 const { address: contactListAddress } = await dataProtectorCore.protectData({
   name: 'Email Contact List',
@@ -93,7 +93,7 @@ iApps need explicit authorization to access your protected data.
 
 ### Grant Access to a Specific iApp
 
-```typescript
+```ts twoslash
 // Grant access to an iApp
 const grantedAccess = await dataProtectorCore.grantAccess({
   protectedData: protectedDataAddress,
@@ -106,7 +106,7 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 
 ### Check Granted Access
 
-```typescript
+```ts twoslash
 // Check what access you've granted
 const grantedAccessList = await dataProtectorCore.getGrantedAccess({
   protectedData: protectedDataAddress,
@@ -123,7 +123,7 @@ Once access is granted, you can execute the iApp with your protected data.
 
 ### Using DataProtector
 
-```typescript
+```ts twoslash
 // Execute iApp with protected data
 const result = await dataProtectorCore.processProtectedData({
   protectedData: protectedDataAddress,
@@ -134,7 +134,7 @@ const result = await dataProtectorCore.processProtectedData({
 
 ### Using SDK Library
 
-```typescript
+```ts twoslash
 import {
   IExecConfig,
   IExecOrderModule,
@@ -147,7 +147,7 @@ const config = new IExecConfig({ ethProvider: window.ethereum });
 // instantiate modules sharing the same configuration
 const orderModule = IExecOrderModule.fromConfig(config);
 const orderbookModule = IExecOrderbookModule.fromConfig(config);
-
+// ---cut---
 // Create a request order with protected data
 const requestOrder = await orderModule.createRequestOrder({
   app: '0x456def...', // The iApp address
@@ -178,11 +178,11 @@ const taskId = await orderModule.matchOrders({
 });
 ```
 
-### Using CLI with Protected Data
+### Using iExec CLI with Protected Data
 
 ```bash
 # Execute with protected data
-iexec app run 0x456def... --dataset 0x123abc... --maxPrice 10
+iexec app run 0x456def... --dataset 0x123abc...
 ```
 
 ## Step 4: Retrieve Results
@@ -191,7 +191,7 @@ After execution completes, retrieve the results from the task.
 
 ### Using DataProtector
 
-```typescript
+```ts twoslash
 // Get the task ID from the execution result
 const taskId = result.taskId;
 
@@ -209,7 +209,7 @@ const taskResult = await dataProtectorCore.getResultFromCompletedTask({
 
 ### Using SDK Library
 
-```typescript
+```ts twoslash
 import { IExecConfig, IExecResultModule } from '@iexec/sdk';
 
 // create the configuration
@@ -217,7 +217,7 @@ const config = new IExecConfig({ ethProvider: window.ethereum });
 
 // instantiate result module
 const resultModule = IExecResultModule.fromConfig(config);
-
+// ---cut---
 // Get the task ID from the execution result
 const taskId = result.taskId; // or taskId from SDK library execution
 
@@ -233,7 +233,7 @@ const specificFile = await resultModule.getTaskResult({
 });
 ```
 
-### Using CLI
+### Using iExec CLI
 
 ```bash
 # Get the task ID from the execution result
@@ -250,7 +250,7 @@ iexec task show $TASK_ID --path "computed.json"
 
 ### Example 1: Data Analysis System
 
-```typescript
+```ts twoslash
 // 1. Protect sensitive dataset
 const { address: datasetAddress } = await dataProtectorCore.protectData({
   name: 'Customer Analytics Data',
@@ -283,7 +283,7 @@ const analysisResult = await dataProtectorCore.processProtectedData({
 
 ### Example 2: Oracle Price Update
 
-```typescript
+```ts twoslash
 // 1. Protect trading data
 const { address: tradingDataAddress } = await dataProtectorCore.protectData({
   name: 'Trading Data',
@@ -315,7 +315,7 @@ const oracleResult = await dataProtectorCore.processProtectedData({
 
 ### Example 3: Automated Payment Processing
 
-```typescript
+```ts twoslash
 // 1. Protect payment data
 const { address: paymentDataAddress } = await dataProtectorCore.protectData({
   name: 'Payment Data',
@@ -352,7 +352,7 @@ const paymentResult = await dataProtectorCore.processProtectedData({
 
 ### Pattern 1: Batch Processing
 
-```typescript
+```ts twoslash
 // Process multiple protected datasets
 const datasets = [
   { address: '0x123abc...', name: 'Dataset 1' },
@@ -374,7 +374,7 @@ const batchResults = await Promise.all(
 
 ### Pattern 2: Result Processing Pipeline
 
-```typescript
+```ts twoslash
 // Process results and use them for further computation
 const initialResult = await dataProtectorCore.processProtectedData({
   protectedData: protectedDataAddress,
@@ -402,7 +402,7 @@ const { address: newProtectedDataAddress } =
 
 ### 1. Always Grant Access Before Execution
 
-```typescript
+```ts twoslash
 // ✅ Good: Grant access first
 await dataProtectorCore.grantAccess({
   protectedData: protectedDataAddress,
@@ -421,7 +421,7 @@ const result = await dataProtectorCore.processProtectedData({
 
 ### 2. Monitor Access Usage
 
-```typescript
+```ts twoslash
 // Check access usage regularly
 const grantedAccess = await dataProtectorCore.getGrantedAccess({
   protectedData: protectedDataAddress,
@@ -435,7 +435,7 @@ console.log('Used access:', grantedAccess.usedAccess);
 
 ### 3. Use Appropriate Price Limits
 
-```typescript
+```ts twoslash
 // Set reasonable price limits
 const result = await dataProtectorCore.processProtectedData({
   protectedData: protectedDataAddress,
@@ -446,7 +446,7 @@ const result = await dataProtectorCore.processProtectedData({
 
 ### 4. Handle Results Properly
 
-```typescript
+```ts twoslash
 // Store task ID and retrieve results later
 const result = await dataProtectorCore.processProtectedData({
   protectedData: protectedDataAddress,

@@ -10,20 +10,22 @@ There are multiple ways to execute iApps on the iExec network. This guide covers
 the basic execution methods. For advanced features like protected data,
 arguments, and input files, see the dedicated guides.
 
-::: tip ENS Addresses **ENS (Ethereum Name Service)** is a naming system for
+::: tip ENS Addresses 
+**ENS (Ethereum Name Service)** is a naming system for
 Ethereum addresses that allows you to use human-readable names instead of long
 hexadecimal addresses. For example, instead of using `0x1234567890abcdef...`,
 you can use `debug-v8-learn.main.pools.iexec.eth`.
 
 In the examples below, we use `debug-v8-learn.main.pools.iexec.eth` which is
 iExec's official debug workerpool ENS address. This workerpool is specifically
-designed for testing and development purposes on the Bellecour testnet. :::
+designed for testing and development purposes on the Bellecour testnet. 
+:::
 
 ## Method 1: Using the iExec SDK Library
 
 The iExec SDK provides a modular JavaScript interface for executing iApps.
 
-```typescript
+```ts twoslash
 import {
   IExecConfig,
   IExecOrderModule,
@@ -36,7 +38,7 @@ const config = new IExecConfig({ ethProvider: window.ethereum });
 // instantiate modules sharing the same configuration
 const orderModule = IExecOrderModule.fromConfig(config);
 const orderbookModule = IExecOrderbookModule.fromConfig(config);
-
+// ---cut---
 // Create a request order
 const requestOrder = await orderModule.createRequestOrder({
   app: '0x456def...', // The iApp address
@@ -65,20 +67,9 @@ const taskId = await orderModule.matchOrders({
 
 The iExec CLI is perfect for quick executions and automation scripts.
 
-### Installation
-
-```bash
-npm install -g @iexec/iexec
-```
-
-### Basic CLI Execution
-
 ```bash
 # Execute an iApp
 iexec app run 0x456def...
-
-# Set maximum price
-iexec app run 0x456def... --maxPrice 10
 ```
 
 ## Method 3: Using the iApp Generator CLI
@@ -86,11 +77,7 @@ iexec app run 0x456def... --maxPrice 10
 The iApp Generator CLI provides a streamlined way to execute iApps, especially
 for developers who have built their own iApps.
 
-### Installation
-
-```bash
-npm install -g @iexec/iapp
-```
+> **Note**: For installation instructions, see the [iApp Generator Getting Started guide](/build-iapp/iapp-generator/getting-started).
 
 ### Basic Execution
 

@@ -11,37 +11,24 @@ available iApps on the iExec network.
 
 ## Using the iExec Explorer
 
-The [iExec Explorer](https://explorer.iex.ec) is the primary tool for
-discovering iApps.
-
-### Step-by-Step Discovery
-
-1. **Visit the Explorer**: Go to [explorer.iex.ec](https://explorer.iex.ec)
-2. **Navigate to Apps**: Click on the "Apps" section in the navigation
-3. **Search by Name**: Use the search function to find specific applications
-4. **View Details**: Click on any app to see detailed information
+The [iExec Explorer](/overview/tooling-and-explorers/iexec-explorer) is the primary tool for
+discovering iApps. For detailed instructions on how to browse and filter iApps, see the [📱 iApps Listing section](/overview/tooling-and-explorers/iexec-explorer#📱-iapps-listing).
 
 ### What to Look For
 
 When evaluating an iApp, check these key details:
 
-- **Description**: What does the app do?
-- **Requirements**: What type of data or inputs does it need?
 - **Pricing**: How much does execution cost?
 - **Developer**: Who created the app?
 - **Usage Statistics**: How often is it used?
 - **Orders Availability**: Are there active orders available for execution?
 
+> **Note**: Detailed descriptions and specific requirements are not available in the iExec explorer. You may need to check the developer's documentation, community forums, or contact the developer directly for this information.
+
 ## Using the iExec CLI
 
 For developers who prefer command-line tools, the iExec CLI provides
 programmatic access to app discovery.
-
-### Installation
-
-```bash
-npm install -g @iexec/iexec
-```
 
 ### Basic Commands
 
