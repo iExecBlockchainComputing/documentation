@@ -5,11 +5,12 @@
     >
       Connect Your Wallet
       <a
-        href="https://chainlist.org/?search=bellecour"
+        :href="`https://chainlist.org/chain/${userStore.getCurrentChainId() || 134}`"
         target="_blank"
         class="text-fuchsia-700 underline hover:text-fuchsia-900"
-        >(iExec network)</a
       >
+        ({{ networkName }})
+      </a>
       :
       <ReownButton />
     </div>
@@ -75,12 +76,16 @@
       <p class="mt-4">
         You can check it on
         <a
-          :href="`https://explorer.iex.ec/bellecour/dataset/${protectedDataAddress}`"
+          :href="explorerUrl"
           target="_blank"
           rel="noopener noreferrer"
           class="font-medium text-green-600 underline hover:text-green-800"
         >
-          the iExec explorer
+          {{
+            userStore.getCurrentChainId() === 42161
+              ? 'the Arbitrum explorer'
+              : 'the iExec explorer'
+          }}
         </a>
       </p>
       <p class="mt-2">
@@ -104,13 +109,14 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { Icon } from '@iconify/vue';
 import { IExecDataProtectorCore } from '@iexec/dataprotector';
 import Button from '@/components/ui/Button.vue';
 import ReownButton from './ReownButton.vue';
 import { useAccount } from '@wagmi/vue';
 import { useWalletConnection } from '../../hooks/useWalletConnection.vue';
+import useUserStore from '@/stores/useUser.store';
 
 const { connector } = useAccount();
 const {
@@ -119,10 +125,49 @@ const {
   protectedDataAddress,
   protectedDataIpfsAddress,
 } = useWalletConnection();
+const userStore = useUserStore();
 
 const contentToProtect = ref('');
 const isLoadingProtect = ref(false);
 const protectError = ref(null);
+
+// Computed property for explorer URL based on selected chain
+const explorerUrl = computed(() => {
+  const currentChainId = userStore.getCurrentChainId();
+  const networkPath =
+    currentChainId === 42161 ? 'arbitrum-mainnet' : 'bellecour';
+  return `https://explorer.iex.ec/${networkPath}/dataset/${protectedDataAddress.value}`;
+});
+
+// Computed property for network name
+const networkName = computed(() => {
+  const currentChain = userStore.getCurrentChain();
+  return currentChain?.name || 'Unknown network';
+});
+
+// Watch to clear protected data when chain changes
+watch(
+  () => userStore.getCurrentChainId(),
+  (newChainId, oldChainId) => {
+    if (oldChainId && newChainId && oldChainId !== newChainId) {
+      console.log(
+        'Chain changed, clearing protected data:',
+        oldChainId,
+        '->',
+        newChainId
+      );
+      // Clear protected data
+      protectedDataAddress.value = '';
+      protectedDataIpfsAddress.value = '';
+      // Clear localStorage
+      localStorage.removeItem('protectedDataAddress');
+      localStorage.removeItem('protectedDataIpfsAddress');
+      // Reset form
+      contentToProtect.value = '';
+      protectError.value = null;
+    }
+  }
+);
 
 async function protectData() {
   try {

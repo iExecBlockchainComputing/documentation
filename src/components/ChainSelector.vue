@@ -68,8 +68,26 @@ const userStore = useUserStore();
 // Data
 const supportedChains = getSupportedChains();
 
+// Default initialization: check first if wallet is connected
+if (!userStore.chainId) {
+  if (chainId.value) {
+    // If wallet is connected, use its chain
+    const walletChain = getChainById(chainId.value);
+    if (walletChain) {
+      userStore.setSelectedChain(walletChain);
+    }
+  } else {
+    // Otherwise, use Bellecour as default
+    const defaultChain = getChainById(0x86); // Bellecour
+    if (defaultChain) {
+      userStore.setSelectedChain(defaultChain);
+    }
+  }
+}
+
 // Computed
 const selectedChain = computed(() => {
+  // Priority: 1. Connected wallet chain, 2. Selected chain in store
   const currentChainId = chainId.value || userStore.chainId;
   return currentChainId ? getChainById(currentChainId) : undefined;
 });
@@ -91,6 +109,7 @@ const selectedChainId = computed({
   },
 });
 
+// Watch to synchronize store with wallet chain
 watch(chainId, (newChainId) => {
   if (newChainId) {
     const chain = getChainById(newChainId);

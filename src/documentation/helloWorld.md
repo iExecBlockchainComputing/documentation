@@ -7,11 +7,23 @@ description:
 
 <script setup>
 import InfoIcon from '@/components/InfoIcon.vue'
+import ChainSelector from '@/components/ChainSelector.vue'
 </script>
 
 # 👋 Welcome to iExec
 
 > Reading time 🕒 2 mins
+
+<div class="mb-6 p-4 bg-[var(--vp-c-bg-soft)] rounded-lg border border-[var(--vp-c-divider)]">
+  <div class="flex items-center gap-3 mb-3">
+    <span class="text-lg">🌐</span>
+    <h3 class="m-0 text-lg font-medium">Select Your Network</h3>
+  </div>
+  <div class="flex items-center gap-3">
+    <span class="text-sm font-medium">Network:</span>
+    <ChainSelector />
+  </div>
+</div>
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 border-none!">Start Your Web3 Privacy Journey</h2>

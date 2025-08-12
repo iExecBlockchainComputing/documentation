@@ -104,13 +104,14 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { Icon } from '@iconify/vue';
 import { IExecDataProtectorCore } from '@iexec/dataprotector';
 import Button from '@/components/ui/Button.vue';
 import ReownButton from './ReownButton.vue';
 import { useAccount } from '@wagmi/vue';
 import { useWalletConnection } from '../../hooks/useWalletConnection.vue';
+import useUserStore from '@/stores/useUser.store';
 
 const { connector } = useAccount();
 const {
@@ -119,11 +120,32 @@ const {
   protectedDataAddress,
   onWalletConnected,
 } = useWalletConnection();
+const userStore = useUserStore();
 
 const authorizedApp = ref('');
 const isLoadingGrant = ref(false);
 const grantError = ref(null);
 const grantedAccess = ref(null);
+
+// Watch to clear data when chain changes
+watch(
+  () => userStore.getCurrentChainId(),
+  (newChainId, oldChainId) => {
+    if (oldChainId && newChainId && oldChainId !== newChainId) {
+      console.log(
+        'Chain changed, clearing grant access data:',
+        oldChainId,
+        '->',
+        newChainId
+      );
+      // Clear granted access data
+      grantedAccess.value = null;
+      // Reset form
+      authorizedApp.value = '';
+      grantError.value = null;
+    }
+  }
+);
 
 const grantAccess = async () => {
   try {
@@ -141,11 +163,8 @@ const grantAccess = async () => {
     }
     isLoadingGrant.value = true;
     grantError.value = null;
-    const dataProtectorCore = new IExecDataProtectorCore(web3Provider.value, {
-      iexecOptions: {
-        smsURL: 'https://sms.scone-debug.v8-bellecour.iex.ec',
-      },
-    });
+
+    const dataProtectorCore = new IExecDataProtectorCore(web3Provider.value);
 
     const grantedAccessResult = await dataProtectorCore.grantAccess({
       protectedData: protectedDataAddress?.value,
