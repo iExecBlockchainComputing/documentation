@@ -45,10 +45,6 @@ their dApps with these key features:
   Features an SDK for easy integration into your DApp, enhancing functionality
   and user experience.
 
-<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">DataProtector interacts with iExec's <a href="https://chainlist.org/chain/134" target="_blank">Bellecour sidechain</a>, which is gasless, meaning you can use it completely free without needing any tokens!</p>
-</div>
-
 ## 🧩 Let's Create Protected Data
 
 <ProtectData />

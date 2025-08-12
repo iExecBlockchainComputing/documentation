@@ -5,11 +5,6 @@ description:
   Hello World tutorial series.
 ---
 
-<script setup>
-import CouponCode from '../../modules/helloWorld/CouponCode.vue';
-import Button from '@/components/ui/Button.vue';
-</script>
-
 # 🎉 Bonus Chapter
 
 > Reading time 🕒 4 mins
@@ -37,7 +32,8 @@ import Button from '@/components/ui/Button.vue';
   <p class="m-0!">Need help setting up or got some questions? Join our <a target="_blank" href="https://discord.gg/6yrgRH6ATD" class="text-green-700 underline hover:text-green-900">Discord Community</a> for support!</p>
 </div>
 
-## 🎁 Claim your Voucher
+<template v-if="selectedChain !== 42161">
+<h2>🎁 Claim your Voucher</h2>
 
 <div class="mb-6">
   <h3 class="text-xl font-semibold mb-2">What is a Voucher?</h3>
@@ -59,3 +55,14 @@ import Button from '@/components/ui/Button.vue';
 <div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mt-8 mb-6">
   <p class="m-0!">Thank you for being part of the iExec journey! We can't wait to see what you'll build next! 🚀</p>
 </div>
+</template>
+
+<script setup>
+import CouponCode from '../../modules/helloWorld/CouponCode.vue';
+import Button from '@/components/ui/Button.vue';
+import useUserStore from '@/stores/useUser.store';
+import { computed } from 'vue';
+
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+</script>

@@ -9,10 +9,6 @@ description:
 
 > Reading time 🕒 10 mins
 
-<script setup>
-import InfoIcon from '@/components/InfoIcon.vue'
-</script>
-
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 border-none!">Time to build!</h2>
   <p>Let's build an iApp that can process protected data in a secure environment using the <a href="/documentation/build-iapp/iapp-generator" target="_blank" class="!text-gray-900 !font-bold underline hover:!text-black">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApps with just a few commands.</p>
@@ -130,19 +126,53 @@ iapp init
 
 You will be prompted with the following message:
 
-```txt
-  ___    _    ____  ____
- |_ _|  / \  |  _ \|  _ \
-  | |  / _ \ | |_) | |_) |
-  | | / ___ \|  __/|  __/
- |___/_/   \_\_|   |_|
-
-✔ What's your project name? (A folder with this name will be created) … hello-world
-✔ Which language do you want to use? › JavaScript
-? What kind of project do you want to init? › - Use arrow-keys. Return to submit.
-❯   Hello World - iapp quick start
-    advanced
-```
+<CLIDemo
+  initialCommand="iapp init"
+  asciiText="iApp"
+  :steps="[
+    {
+      showAt: 2,
+      completeAt: 4,
+      question: 'What is your project name? (A folder with this name will be created)',
+      answer: 'hello-world',
+      showTyping: true,
+      isComplete: false
+    },
+    {
+      showAt: 4,
+      completeAt: 6,
+      question: 'Which language do you want to use?',
+      answer: 'JavaScript',
+      options: [
+        { label: 'JavaScript', selected: true },
+        { label: 'Python', selected: false }
+      ],
+      highlighted: false,
+      isComplete: false
+    },
+    {
+      showAt: 6,
+      completeAt: 8,
+      question: 'What kind of project do you want to init?',
+      answer: 'Hello World',
+      options: [
+        { label: 'Hello World - iapp quick start', selected: true },
+        { label: 'advanced', selected: false }
+      ],
+      highlighted: false,
+      isComplete: false
+    }
+  ]"
+  :completionStep="8"
+  :completionMessage="'Generating your iApp...'"
+  :completionItems="[
+    '📁 Created hello-world/',
+    '📄 Added package.json',
+    '🐳 Added Dockerfile',
+    '⚙️ Added iExec configuration'
+  ]"
+  :successMessage="'Your iApp is ready!'"
+/>
 
 <div class="flex flex-col gap-2.5 my-6">
   <div class="flex items-center gap-3">
@@ -151,22 +181,12 @@ You will be prompted with the following message:
   </div>
 </div>
 
-```txt
-? What's your project name? (A folder with this name will be created) ...
-```
-
 <div class="flex flex-col gap-2.5 my-6">
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">2</span>
     <span>Select a programming language for your project</span>
   </div>
 </div>
-
-```txt
-? Which language do you want to use? › - Use arrow-keys. Return to submit.
-❯   JavaScript
-    Python
-```
 
 <div class="flex flex-col gap-2.5 my-6">
   <div class="flex items-center gap-3">
@@ -175,21 +195,9 @@ You will be prompted with the following message:
   </div>
 </div>
 
-```txt
-? What kind of project do you want to init? › - Use arrow-keys. Return to submit.
-❯   Hello World - iapp quick start
-    advanced
-```
-
 <div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <p class="m-0!">We recommend selecting <span class="text-fuchsia-700 font-semibold">"Hello World"</span> to quickly discover how iApp works! use <span class="text-fuchsia-700 font-semibold">advanced</span> only if you are familiar with iExec.</p>
 </div>
-
-```txt
-✔ [Chosen language] app setup complete.
-✔ Generated ethereum wallet (0xD4A28d.........................)
-
-```
 
 - An iApp project is setup with the selected language
 - An ethereum wallet has been created (we use it to sign the iApp creation
@@ -199,25 +207,86 @@ You will be prompted with the following message:
 
 ## 🧪 Test your iApp
 
-To test your iApp, run `iapp test` command
+To test your iApp, run the `iapp test` command. This will build a Docker image
+and run your application locally to simulate the TEE environment. You'll see the
+following steps:
 
-```sh
-iapp test
-```
+<CLIDemo
+  initialCommand="iapp test"
+  :steps="[
+    {
+      showAt: 2,
+      question: 'No app secret is configured (from iapp.config.json)',
+      answer: '',
+      showTyping: false,
+      isComplete: true
+    },
+    {
+      showAt: 3,
+      question: 'App docker image built (sha256:9cc0de820aaaf8f86700a3ec4082fe69b9e9a48a117ebb0ade0d82d0879cbe41)',
+      answer: '',
+      showTyping: false,
+      isComplete: true
+    },
+    {
+      showAt: 4,
+      question: 'App docker image ran and exited successfully.',
+      answer: '',
+      showTyping: false,
+      isComplete: true
+    },
+    {
+      showAt: 5,
+      completeAt: 6,
+      question: 'Would you like to see the app logs? (12 lines)',
+      answer: 'no',
+      options: [
+        { label: 'yes', selected: false },
+        { label: 'no', selected: true }
+      ],
+      highlighted: false,
+      showTyping: false,
+      isComplete: false
+    },
+    {
+      showAt: 7,
+      question: 'Checked app output',
+      answer: '',
+      showTyping: false,
+      isComplete: true
+    },
+    {
+      showAt: 8,
+      completeAt: 10,
+      question: 'Would you like to see the result? (View ./output/)',
+      answer: 'yes',
+      options: [
+        { label: 'yes', selected: true },
+        { label: 'no', selected: false }
+      ],
+      highlighted: false,
+      showTyping: false,
+      isComplete: false
+    }
+  ]"
+  :completionStep="11"
+  :completionMessage="'📁 output directory content:'"
+  :completionItems="[
+    '└ computed.json',
+    '└ result.txt'
+  ]"
+  :successMessage="'hello world'"
+  :autoRestart="true"
+/>
 
-It uses your local docker to build and execute the app.
+The `iapp test` command uses your local Docker to build and execute the app,
+simulating how it will run in the iExec network's TEE environment.
 
 <div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">- If you have <code>Error: Docker daemon is not accessible</code> Make sure Docker is installed and running.</p>
-  <br>
-  <p class="m-0!">- If you have <code>Error: Failed to locate iApp project root</code> error:  Ensure you are in your project folder before proceeding.</p>
+  <p class="m-0!"><strong>Common Issues:</strong></p>
+  <p class="m-0!">- If you get <code>Error: Docker daemon is not accessible</code>: Make sure Docker is installed and running.</p>
+  <p class="m-0!">- If you get <code>Error: Failed to locate iApp project root</code>: Ensure you are in your project folder before proceeding.</p>
 </div>
-
-You can see the output of the computation by saying yes to the question:
-
-```txt
-? Would you like to see the result? (View ./output/) (Y/n)
-```
 
 ### 🧩 Using Arguments
 
@@ -272,12 +341,33 @@ Deploy your iApp on the iExec protocol.
   </div>
 </div>
 
-Once you have your token, you can deploy your iApp using the following command:
+Once you have your token, you can deploy your iApp.
 
-```sh
-# You need your username and the access token (it can take a few minutes to deploy)
-iapp deploy
-```
+<template v-if="selectedChain === 42161">
+  <CLIDemo
+    initialCommand="iapp deploy --chain arbitrum-mainnet"
+    asciiText="Deploy"
+    :steps="arbitrumSteps"
+    :completionStep="15"
+    :completionMessage="'Deployment of your iApp completed successfully:'"
+    :completionItems="arbitrumCompletionItems"
+    :successMessage="'Run iapp run 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923 to execute your iApp on an iExec TEE worker'"
+    :autoRestart="true"
+  />
+</template>
+
+<template v-else>
+  <CLIDemo
+    initialCommand="iapp deploy"
+    asciiText="Deploy"
+    :steps="bellecourSteps"
+    :completionStep="14"
+    :completionMessage="'Deployment of your iApp completed successfully:'"
+    :completionItems="bellecourCompletionItems"
+    :successMessage="'Run iapp run 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923 to execute your iApp on an iExec TEE worker'"
+    :autoRestart="true"
+  />
+</template>
 
 <div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <p class="m-0!">📝 Make sure to save your <span class="text-fuchsia-700 font-semibold">iApp address</span> after deployment - you'll need it later!</p>
@@ -322,3 +412,173 @@ protocol documentation [here](https://protocol.docs.iex.ec/).
 <div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
   <p class="m-0!">Next up: Alice will learn how to authorize the iApp and Bob to access and use her protected data!  🚀</p>
 </div>
+
+<script setup>
+import InfoIcon from '@/components/InfoIcon.vue'
+import CLIDemo from '@/components/CLIDemo.vue';
+import { computed } from 'vue';
+import useUserStore from '@/stores/useUser.store';
+
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const arbitrumSteps = [
+  {
+    showAt: 2,
+    question: 'Using chain arbitrum-mainnet',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 3,
+    question: 'This method requires sending blockchain transactions, transaction fees will be applied. Would you like to continue?',
+    answer: 'Yes',
+    options: [
+      { label: 'Yes', selected: true },
+      { label: 'no', selected: false }
+    ],
+    highlighted: false,
+    showTyping: false,
+    isComplete: false
+  },
+  {
+    showAt: 4,
+    question: 'Using saved walletPrivateKey (from iapp.config.json)',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 5,
+    completeAt: 7,
+    question: 'What is your username on DockerHub? (It will be used to properly tag the Docker image)',
+    answer: 'bob',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 7,
+    completeAt: 9,
+    question: 'What is your DockerHub access token?',
+    answer: '**********************',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 9,
+    completeAt: 11,
+    question: 'What is the version of your iApp?',
+    answer: '0.0.1',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 11,
+    question: 'Docker image built (sha256:a53fc4c480f482c384a13266ea2cb6cc5572733c866c44a5f604f4bfab3a744a) and tagged bob/hello-world:0.0.1',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 12,
+    question: 'Pushed image bob/hello-world:0.0.1 on dockerhub',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 13,
+    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7 on dockerhub',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 14,
+    question: 'TEE app deployed',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  }
+];
+
+const bellecourSteps = [
+  {
+    showAt: 2,
+    question: 'Using chain bellecour',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 3,
+    question: 'Using saved walletPrivateKey (from iapp.config.json)',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 4,
+    completeAt: 6,
+    question: 'What is your username on DockerHub? (It will be used to properly tag the Docker image)',
+    answer: 'bob',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 6,
+    completeAt: 8,
+    question: 'What is your DockerHub access token?',
+    answer: '**********************',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 8,
+    completeAt: 10,
+    question: 'What is the version of your iApp?',
+    answer: '0.0.1',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 10,
+    question: 'Docker image built (sha256:a53fc4c480f482c384a13266ea2cb6cc5572733c866c44a5f604f4bfab3a744a) and tagged bob/hello-world:0.0.1',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 11,
+    question: 'Pushed image bob/hello-world:0.0.1 on dockerhub',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 12,
+    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7 on dockerhub',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 13,
+    question: 'TEE app deployed',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  }
+];
+
+const arbitrumCompletionItems = [
+  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7',
+  '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
+];
+
+const bellecourCompletionItems = [
+  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7',
+  '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
+];
+</script>
