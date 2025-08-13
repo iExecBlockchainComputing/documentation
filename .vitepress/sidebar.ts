@@ -189,24 +189,20 @@ export function getSidebar() {
             link: '/guides/use-iapp/getting-started',
           },
           {
-            text: 'Find iApps to Use',
-            link: '/use-iapp/guides/find-iapps',
-          },
-          {
             text: 'Different Ways to Execute an iApp',
-            link: '/use-iapp/guides/different-ways-to-execute',
+            link: '/guides/use-iapp/different-ways-to-execute',
           },
           {
             text: 'Use iApp with Protected Data',
-            link: '/use-iapp/guides/use-iapp-with-protected-data',
+            link: '/guides/use-iapp/use-iapp-with-protected-data',
           },
           {
             text: 'Add Inputs to the Execution',
-            link: '/use-iapp/guides/add-inputs-to-execution',
+            link: '/guides/use-iapp/add-inputs-to-execution',
           },
           {
             text: 'How to Pay the Executions',
-            link: '/use-iapp/guides/how-to-pay-executions',
+            link: '/guides/use-iapp/how-to-pay-executions',
           },
           {
             text: '💰 How to Pay',

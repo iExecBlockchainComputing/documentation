@@ -67,26 +67,26 @@ orders:
 When you execute an iApp, the system matches your request with available orders
 from all three categories. For a deeper understanding of how orders work and how
 to manage them, see the
-[Build & Deploy guide](/build-iapp/guides/build-&-deploy) in the
-Build iApp section.
+[Build & Deploy guide](/build-iapp/guides/build-&-deploy) in the Build iApp
+section.
 
 ## Detailed Guides
 
 For step-by-step instructions, check out these guides:
 
-- **[Different Ways to Execute](./different-ways-to-execute.md)** - iExec
-  cli, lib, and other execution methods
+- **[Different Ways to Execute](./different-ways-to-execute.md)** - iExec cli,
+  lib, and other execution methods
 - **[Use iApps with Protected Data](./use-iapp-with-protected-data.md)** -
   Working with sensitive data securely
-- **[Add Inputs to Execution](./add-inputs-to-execution.md)** - How to
-  provide data and parameters to iApps
-- **[How to Pay for Executions](./how-to-pay-executions.md)** -
-  Understanding costs and payment options
+- **[Add Inputs to Execution](./add-inputs-to-execution.md)** - How to provide
+  data and parameters to iApps
+- **[How to Pay for Executions](./how-to-pay-executions.md)** - Understanding
+  costs and payment options
 
 ## Quick Start
 
-Ready to jump in? Follow the execution guides for detailed
-instructions on how to use iApps.
+Ready to jump in? Follow the execution guides for detailed instructions on how
+to use iApps.
 
 <script setup>
 import ImageViewer from '@/components/ImageViewer.vue';

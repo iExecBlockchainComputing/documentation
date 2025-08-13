@@ -227,7 +227,7 @@ import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-const taskId = '0x7ac398...'
+const taskId = '0x7ac398...';
 
 // ---cut---
 // Retrieve the result
