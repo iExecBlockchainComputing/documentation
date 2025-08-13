@@ -74,8 +74,6 @@ Build iApp section.
 
 For step-by-step instructions, check out these guides:
 
-- **[Find iApps](./find-iapps.md)** - How to discover and evaluate
-  available applications
 - **[Different Ways to Execute](./different-ways-to-execute.md)** - iExec
   cli, lib, and other execution methods
 - **[Use iApps with Protected Data](./use-iapp-with-protected-data.md)** -
@@ -87,9 +85,8 @@ For step-by-step instructions, check out these guides:
 
 ## Quick Start
 
-Ready to jump in? Start with our [Find iApps guide](./find-iapps.md) to
-discover what's available, then follow the execution guides for detailed
-instructions.
+Ready to jump in? Follow the execution guides for detailed
+instructions on how to use iApps.
 
 <script setup>
 import ImageViewer from '@/components/ImageViewer.vue';
