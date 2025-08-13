@@ -311,5 +311,4 @@ Integrate result handling into your applications:
 
 - **[DataProtector SDK](/references/dataProtector)** - Complete SDK
   documentation
-- **[SDK Deep Dive](/references/sdk)** - Advanced result handling
-  techniques
+- **[SDK Deep Dive](/references/sdk)** - Advanced result handling techniques

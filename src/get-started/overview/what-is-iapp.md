@@ -152,6 +152,10 @@ guarantees** that privacy is preserved within the TEE execution environment.
 
 ## Next Steps
 
-Ready to build your first privacy-preserving application? Start with our [Hello World tutorial](/get-started/helloWorld) or dive into the [iApp Generator documentation](/references/iapp-generator).
+Ready to build your first privacy-preserving application? Start with our
+[Hello World tutorial](/get-started/helloWorld) or dive into the
+[iApp Generator documentation](/references/iapp-generator).
 
-For more technical details, see the [DataProtector Sharing](/references/dataProtector/dataProtectorSharing) documentation.
+For more technical details, see the
+[DataProtector Sharing](/references/dataProtector/dataProtectorSharing)
+documentation.

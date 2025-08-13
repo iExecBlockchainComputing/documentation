@@ -41,8 +41,8 @@ minutes, not months.
 
 Start here to understand what iApps are and how they work:
 
-- **[What Is an iApp?](/get-started/overview/what-is-iapp)** - Core
-  concepts and TEE overview
+- **[What Is an iApp?](/get-started/overview/what-is-iapp)** - Core concepts and
+  TEE overview
 - **[Getting Started](/references/iapp-generator/getting-started)** - Your first
   iApp in 15 minutes
 - **[Building Your iApp](/references/iapp-generator/building-your-iexec-app)** -

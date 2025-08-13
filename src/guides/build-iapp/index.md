@@ -35,8 +35,8 @@ After mastering these guides, explore:
 
 - **[iApp Generator](/references/iapp-generator)** - Complete development
   toolkit
-- **[What is an iApp?](/get-started/overview/what-is-iapp)** - Core
-  concepts and TEE overview
+- **[What is an iApp?](/get-started/overview/what-is-iapp)** - Core concepts and
+  TEE overview
 
 Ready to build your first privacy-preserving application? Start with the
 [Build & Deploy](/guides/build-iapp/build-&-deploy) guide!
