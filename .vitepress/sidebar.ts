@@ -193,16 +193,12 @@ export function getSidebar() {
             link: '/guides/use-iapp/different-ways-to-execute',
           },
           {
-            text: 'Add Inputs to the Execution',
-            link: '/guides/use-iapp/add-inputs-to-execution',
-          },
-          {
             text: 'Use iApp with Protected Data',
             link: '/guides/use-iapp/use-iapp-with-protected-data',
           },
           {
-            text: 'Find iApps to Use',
-            link: '/guides/use-iapp/find-iapps',
+            text: 'Add Inputs to the Execution',
+            link: '/guides/use-iapp/add-inputs-to-execution',
           },
           {
             text: 'How to Pay the Executions',
