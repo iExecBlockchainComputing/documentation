@@ -94,10 +94,6 @@ export function getSidebar() {
         text: 'PROTOCOL',
         items: [
           {
-            text: '🔧 iExec SDK',
-            link: '/get-started/protocol/sdk',
-          },
-          {
             text: '⚙️ Workers & Workerpools',
             collapsed: true,
             items: [
@@ -239,54 +235,54 @@ export function getSidebar() {
         items: [
           {
             text: 'Getting Started',
-            link: '/references/manage-data/dataProtector/getting-started',
+            link: '/references/dataProtector/getting-started',
           },
           {
             text: 'DataProtector Core',
-            link: '/references/manage-data/dataProtector/dataProtectorCore',
+            link: '/references/dataProtector/dataProtectorCore',
             collapsed: true,
             items: [
               {
                 text: 'protectData',
-                link: '/references/manage-data/dataProtector/dataProtectorCore/protectData',
+                link: '/references/dataProtector/dataProtectorCore/protectData',
               },
               {
                 text: 'getProtectedData',
-                link: '/references/manage-data/dataProtector/dataProtectorCore/getProtectedData',
+                link: '/references/dataProtector/dataProtectorCore/getProtectedData',
               },
               {
                 text: 'transferOwnership',
-                link: '/references/manage-data/dataProtector/dataProtectorCore/transferOwnership',
+                link: '/references/dataProtector/dataProtectorCore/transferOwnership',
               },
               {
                 text: 'grantAccess',
-                link: '/references/manage-data/dataProtector/dataProtectorCore/grantAccess',
+                link: '/references/dataProtector/dataProtectorCore/grantAccess',
               },
               {
                 text: 'getGrantedAccess',
-                link: '/references/manage-data/dataProtector/dataProtectorCore/getGrantedAccess',
+                link: '/references/dataProtector/dataProtectorCore/getGrantedAccess',
               },
               {
                 text: 'revokeOneAccess',
-                link: '/references/manage-data/dataProtector/dataProtectorCore/revokeOneAccess',
+                link: '/references/dataProtector/dataProtectorCore/revokeOneAccess',
               },
               {
                 text: 'revokeAllAccess',
-                link: '/references/manage-data/dataProtector/dataProtectorCore/revokeAllAccess',
+                link: '/references/dataProtector/dataProtectorCore/revokeAllAccess',
               },
               {
                 text: 'processProtectedData',
-                link: '/references/manage-data/dataProtector/dataProtectorCore/processProtectedData',
+                link: '/references/dataProtector/dataProtectorCore/processProtectedData',
               },
               {
                 text: 'getResultFromCompletedTask',
-                link: '/references/manage-data/dataProtector/dataProtectorCore/getResultFromCompletedTask',
+                link: '/references/dataProtector/dataProtectorCore/getResultFromCompletedTask',
               },
             ],
           },
           {
             text: 'DataProtector Sharing',
-            link: '/references/manage-data/dataProtector/dataProtectorSharing',
+            link: '/references/dataProtector/dataProtectorSharing',
             collapsed: true,
             items: [
               {
@@ -421,7 +417,7 @@ export function getSidebar() {
           },
           {
             text: 'Types',
-            link: '/references/manage-data/dataProtector/types',
+            link: '/references/dataProtector/types',
           },
           {
             text: 'Advanced',
@@ -458,7 +454,7 @@ export function getSidebar() {
           },
           {
             text: 'Migrate from v1 to v2',
-            link: '/references/manage-data/dataProtector/migrate-from-v1',
+            link: '/references/dataProtector/migrate-from-v1',
           },
         ],
       },

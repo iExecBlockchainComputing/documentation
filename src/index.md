@@ -25,7 +25,7 @@ features:
     details:
       Secure your data with advanced encryption and control access while
       maintaining privacy using DataProtector
-    link: /get-started/what-is-iexec/what-is-protected-data
+    link: /get-started/overview/what-is-protected-data
   - icon: 🤖
     title: Build iApps
     details:
@@ -49,5 +49,5 @@ features:
     details:
       Deep dive into the core concepts of the protocol and understand how iExec
       enables privacy, governance, and monetization
-    link: /get-started/protocol/sdk
+    link: /references/sdk
 ---
