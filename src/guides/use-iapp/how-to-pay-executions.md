@@ -1,4 +1,4 @@
-<!-- ---
+---
 title: How to Pay for iApp Executions
 description:
   Learn about payment methods, pricing, and cost management for iApp executions
@@ -38,20 +38,23 @@ You can obtain RLC tokens from various exchanges:
 RLC tokens need to be on the iExec sidechain (Bellecour) for payments:
 
 ```ts twoslash
-import { IExecConfig, IExecAccountModule } from '@iexec/sdk';
+import { IExec, utils } from 'iexec';
 
-// create the configuration
-const config = new IExecConfig({ ethProvider: window.ethereum });
-
-// instantiate account module
-const accountModule = IExecAccountModule.fromConfig(config);
+const ethProvider = utils.getSignerFromPrivateKey(
+  'bellecour', // blockchain node URL
+  'PRIVATE_KEY'
+);
+const iexec = new IExec({
+  ethProvider,
+});
 // ---cut---
 // Check your balance
-const balance = await accountModule.show();
-console.log('Current balance:', balance);
+const balance = await iexec.account.checkBalance('0xa0c15e...');
+console.log('Nano RLC staked:', balance.stake.toString());
+console.log('Nano RLC locked:', balance.locked.toString());
 
 // Deposit RLC to the sidechain
-await accountModule.deposit(100); // Deposit 100 RLC
+await iexec.account.deposit(1_000_000_000); // Deposit 1 RLC
 ```
 
 #### Step 3: Execute with RLC Payment
@@ -59,14 +62,13 @@ await accountModule.deposit(100); // Deposit 100 RLC
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider(window.ethereum);
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 // Execute with RLC payment (default)
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
   app: '0x456def...',
-  maxPrice: 10, // Maximum price in nRLC
   useVoucher: false, // Explicitly use RLC payment
 });
 ```
@@ -75,7 +77,7 @@ const result = await dataProtectorCore.processProtectedData({
 
 ```bash
 # Execute with RLC payment
-iexec app run 0x456def... --protectedData 0x123abc...
+iexec app run 0x456def... --protectedData 0xa0c15e...
 
 # Check your balance
 iexec account show
@@ -104,10 +106,14 @@ iExec network. They offer several advantages:
 #### Basic Voucher Usage
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
   app: '0x456def...',
-  maxPrice: 10,
   useVoucher: true, // Use voucher for payment
 });
 ```
@@ -124,10 +130,14 @@ sufficient funds for this transfer to proceed.
 #### Using Someone Else's Voucher
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
   app: '0x456def...',
-  maxPrice: 10,
   useVoucher: true,
   voucherOwner: '0x5714eB...', // Voucher owner's address
 });
@@ -144,10 +154,10 @@ be used in combination with `useVoucher: true`.
 
 ```bash
 # Use your own voucher
-iexec app run 0x456def... --protectedData 0x123abc... --useVoucher
+iexec app run 0x456def... --protectedData 0xa0c15e... --useVoucher
 
 # Use someone else's voucher
-iexec app run 0x456def... --protectedData 0x123abc... --useVoucher --voucherOwner 0x5714eB...
+iexec app run 0x456def... --protectedData 0xa0c15e... --useVoucher --voucherOwner 0x5714eB...
 ```
 
 ## Understanding Pricing
@@ -166,6 +176,11 @@ iApp execution costs consist of several components:
 You can control costs by setting maximum prices for each component:
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
   app: '0x456def...',
@@ -189,13 +204,25 @@ parameters is `0`, which means no maximum price limit is set.
 Regularly check your RLC balance and voucher status:
 
 ```ts twoslash
-// Check RLC balance
-const balance = await iexec.account.show();
-console.log('RLC Balance:', balance);
+import { IExec, utils } from 'iexec';
+
+const ethProvider = utils.getSignerFromPrivateKey(
+  'bellecour', // blockchain node URL
+  'PRIVATE_KEY'
+);
+const iexec = new IExec({
+  ethProvider,
+});
+const protectedDataAddress = '0x123abc...';
+// ---cut---
+// Check your balance
+const balance = await iexec.account.checkBalance('0xa0c15e...');
+console.log('Nano RLC staked:', balance.stake.toString());
+console.log('Nano RLC locked:', balance.locked.toString());
 
 // Check voucher balance (if applicable)
-const voucherBalance = await iexec.voucher.show();
-console.log('Voucher Balance:', voucherBalance);
+const myVoucher = await iexec.voucher.showUserVoucher('0xa0c15e...');
+console.log('Voucher info:', myVoucher);
 ```
 
 ### 2. Set Reasonable Price Limits
@@ -203,6 +230,11 @@ console.log('Voucher Balance:', voucherBalance);
 Always set maximum prices to avoid unexpected costs:
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // Good practice: Set explicit price limits
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
@@ -218,11 +250,15 @@ const result = await dataProtectorCore.processProtectedData({
 For frequent executions, consider using vouchers:
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // Use vouchers for regular operations
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
   app: '0x456def...',
-  maxPrice: 10,
   useVoucher: true, // Simplify payment process
 });
 ```
@@ -232,10 +268,15 @@ const result = await dataProtectorCore.processProtectedData({
 Group multiple executions to optimize costs:
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // Execute multiple tasks efficiently
 const tasks = [
   { protectedData: '0x123abc...', app: '0x456def...' },
-  { protectedData: '0x789def...', app: '0x456def...' },
+  { protectedData: '0x124abc...', app: '0x456def...' },
 ];
 
 const results = await Promise.all(
@@ -258,18 +299,34 @@ const results = await Promise.all(
 If you encounter insufficient balance errors:
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+import { IExec, utils } from 'iexec';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+const ethProvider = utils.getSignerFromPrivateKey(
+  'bellecour', // blockchain node URL
+  'PRIVATE_KEY'
+);
+const iexec = new IExec({
+  ethProvider,
+});
+// ---cut---
 try {
   const result = await dataProtectorCore.processProtectedData({
     protectedData: '0x123abc...',
     app: '0x456def...',
-    maxPrice: 10,
   });
 } catch (error) {
-  if (error.message.includes('insufficient balance')) {
+  if (
+    error instanceof Error &&
+    error.message.includes('insufficient balance')
+  ) {
     console.log('Please add more RLC to your account');
     // Check balance and deposit more if needed
-    const balance = await iexec.account.show();
-    console.log('Current balance:', balance);
+    const balance = await iexec.account.checkBalance('0xa0c15e...');
+    console.log('Nano RLC staked:', balance.stake.toString());
+    console.log('Nano RLC locked:', balance.locked.toString());
   }
 }
 ```
@@ -279,16 +336,20 @@ try {
 If voucher payment fails:
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 try {
   const result = await dataProtectorCore.processProtectedData({
     protectedData: '0x123abc...',
     app: '0x456def...',
-    maxPrice: 10,
     useVoucher: true,
     voucherOwner: '0x5714eB...',
   });
 } catch (error) {
-  if (error.message.includes('voucher')) {
+  if (error instanceof Error && error.message.includes('voucher')) {
     console.log('Voucher authorization failed. Check voucher permissions.');
   }
 }
@@ -299,6 +360,11 @@ try {
 If execution fails due to price constraints:
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 try {
   const result = await dataProtectorCore.processProtectedData({
     protectedData: '0x123abc...',
@@ -308,7 +374,7 @@ try {
     workerpoolMaxPrice: 1,
   });
 } catch (error) {
-  if (error.message.includes('price')) {
+  if (error instanceof Error && error.message.includes('price')) {
     console.log('Increase price limits or wait for lower prices');
     // Retry with higher prices
     const retryResult = await dataProtectorCore.processProtectedData({
@@ -327,6 +393,11 @@ try {
 ### 1. Always Set Price Limits
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // Never execute without price limits
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
@@ -340,11 +411,15 @@ const result = await dataProtectorCore.processProtectedData({
 ### 2. Use Vouchers for Production
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // Use vouchers for production applications
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
   app: '0x456def...',
-  maxPrice: 10,
   useVoucher: true, // More reliable for production
 });
 ```
@@ -352,8 +427,21 @@ const result = await dataProtectorCore.processProtectedData({
 ### 3. Monitor Costs Regularly
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+import { IExec, utils } from 'iexec';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+const ethProvider = utils.getSignerFromPrivateKey(
+  'bellecour', // blockchain node URL
+  'PRIVATE_KEY'
+);
+const iexec = new IExec({
+  ethProvider,
+});
+// ---cut---
 // Check costs before and after execution
-const balanceBefore = await iexec.account.show();
+const balanceBefore = await iexec.account.checkBalance('0xa0c15e...');
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
   app: '0x456def...',
@@ -361,19 +449,32 @@ const result = await dataProtectorCore.processProtectedData({
   appMaxPrice: 3,
   workerpoolMaxPrice: 2,
 });
-const balanceAfter = await iexec.account.show();
-console.log('Cost:', balanceBefore - balanceAfter);
+const balanceAfter = await iexec.account.checkBalance('0xa0c15e...');
+console.log(
+  'Cost:',
+  balanceBefore.stake.toString(),
+  '->',
+  balanceAfter.stake.toString()
+);
 ```
 
 ### 4. Handle Payment Errors Gracefully
 
 ```ts twoslash
-const executeWithPaymentRetry = async (params, maxRetries = 3) => {
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
+const executeWithPaymentRetry = async (params: any, maxRetries = 3) => {
   for (let i = 0; i < maxRetries; i++) {
     try {
       return await dataProtectorCore.processProtectedData(params);
     } catch (error) {
-      if (error.message.includes('insufficient balance')) {
+      if (
+        error instanceof Error &&
+        error.message.includes('insufficient balance')
+      ) {
         console.log('Insufficient balance, please add more RLC');
         break;
       }
@@ -391,6 +492,4 @@ Now that you understand payment methods:
 
 - Learn about [Adding Inputs to Execution](./add-inputs-to-execution.md)
 - Explore [Using iApps with Protected Data](./use-iapp-with-protected-data.md)
-- Check out our
-  [Pricing Considerations](../how-to-pay/pricing-considerations.md) for detailed
-  cost analysis -->
+- Review the pricing information above for detailed cost analysis
