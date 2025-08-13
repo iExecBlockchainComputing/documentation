@@ -127,6 +127,13 @@ export function getSidebar() {
               },
             ],
           },
+          {
+            text: 'TEE Technology',
+            collapsed: true,
+            items: [
+              { text: 'Intel SGX Technology Overview', link: '/get-started/protocol/tee/intel-sgx-technology' },
+            ],
+          },
         ],
       },
     ],
@@ -174,6 +181,21 @@ export function getSidebar() {
           {
             text: 'Debugging',
             link: '/guides/build-iapp/debugging',
+          },
+          {
+            text: 'Advanced Low‑Level iApp Building',
+            collapsed: true,
+            items: [
+              { text: 'Overview', link: '/guides/build-iapp/advanced-low-level/' },
+              { text: 'Quick Start for Developers', link: '/guides/build-iapp/advanced-low-level/quick-start-for-developers' },
+              { text: 'Build your first application', link: '/guides/build-iapp/advanced-low-level/your-first-app' },
+              { text: 'Intel SGX Technology Overview', link: '/guides/build-iapp/advanced-low-level/intel-sgx-technology' },
+              { text: 'Build your first SGX app (SCONE)', link: '/guides/build-iapp/advanced-low-level/create-your-first-sgx-app' },
+              { text: 'End-to-end Encryption', link: '/guides/build-iapp/advanced-low-level/end-to-end-encryption' },
+              { text: 'SGX Encrypted Dataset', link: '/guides/build-iapp/advanced-low-level/sgx-encrypted-dataset' },
+              { text: 'Access Confidential Assets', link: '/guides/build-iapp/advanced-low-level/access-confidential-assets' },
+              { text: 'Build Intel TDX app', link: '/guides/build-iapp/advanced-low-level/create-your-first-tdx-app' },
+            ],
           },
         ],
       },
@@ -566,5 +588,5 @@ export function getSidebar() {
         link: '/references/glossary',
       },
     ],
-  } satisfies DefaultTheme.Sidebar;
+  } as DefaultTheme.Sidebar
 }
