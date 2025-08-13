@@ -5,8 +5,9 @@ the `IEXEC_DATASET_FILENAME` environment variable in your application.
 
 ::: tip Prerequisites:
 
-- Familiarity with the basic concepts of [Intel® SGX](/get-started/protocol/tee/intel-sgx-technology)
-  and [SCONE](https://scontain.com) framework.
+- Familiarity with the basic concepts of
+  [Intel® SGX](/get-started/protocol/tee/intel-sgx-technology) and
+  [SCONE](https://scontain.com) framework.
 - [Build With a Scone TEE application](create-your-first-sgx-app.md)
 
 :::
@@ -21,15 +22,15 @@ With iExec, it is possible to authorize only applications you trust to use your
 datasets and get paid for it. Data is encrypted using standard encryption
 mechanisms and the plain version never leaves your machine. The encrypted
 version is made available for usage and the encryption key is pushed into the
-[SMS](/get-started/protocol/tee/intel-sgx-technology#secret-management-service-sms). After you deploy
-the dataset on iExec it is you, and only you, who decides which application is
-allowed to get the secret to decrypt it.
+[SMS](/get-started/protocol/tee/intel-sgx-technology#secret-management-service-sms).
+After you deploy the dataset on iExec it is you, and only you, who decides which
+application is allowed to get the secret to decrypt it.
 
 ::: warning
 
 Datasets are only decrypted inside authorized
-[enclaves](/get-started/protocol/tee/intel-sgx-technology) and never leave them. The same thing applies
-to secrets.
+[enclaves](/get-started/protocol/tee/intel-sgx-technology) and never leave them.
+The same thing applies to secrets.
 
 :::
 
@@ -170,8 +171,9 @@ iexec dataset deploy
 ```
 
 You will get a hexadecimal address for your deployed dataset. Use that address
-to push the encryption key to the [SMS](/get-started/protocol/tee/intel-sgx-technology) so it is
-available for authorized applications.
+to push the encryption key to the
+[SMS](/get-started/protocol/tee/intel-sgx-technology) so it is available for
+authorized applications.
 
 For simplicity, we will use the dataset with a TEE-debug app on a debug
 workerpool. The debug workerpool is connected to a debug Secret Management
@@ -192,8 +194,8 @@ iexec dataset check-secret
 
 We saw in this section how to encrypt a dataset and deploy it on iExec. In
 addition, we learned how to push the encryption secret to the
-[SMS](/get-started/protocol/tee/intel-sgx-technology). Now we need to build the application that is
-going to consume this dataset.
+[SMS](/get-started/protocol/tee/intel-sgx-technology). Now we need to build the
+application that is going to consume this dataset.
 
 ## Prepare your application
 

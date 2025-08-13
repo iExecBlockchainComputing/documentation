@@ -33,8 +33,8 @@ need to be changed compared to the usual SGX workflow: `chain.json` and
 `iexec.json`.
 
 iApps for the TDX framework follow the same format as non-TEE applications;
-follow the instructions on [Build your first application](./your-first-app)
-to create and Dockerize your iApp.
+follow the instructions on [Build your first application](./your-first-app) to
+create and Dockerize your iApp.
 
 After this step, the Docker image of your iApp should be published on Docker Hub
 (e.g. `<docker-hub-user>/hello-world:1.0.0`).

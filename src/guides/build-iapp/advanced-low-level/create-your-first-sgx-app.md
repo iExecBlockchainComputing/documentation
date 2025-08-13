@@ -16,8 +16,9 @@ Before going any further, make sure you managed to
   client.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
   [Install the iExec SDK](./quick-start-for-developers.md#install-the-iexec-sdk)
-- Familiarity with the basic concepts of [Intel® SGX](/get-started/protocol/tee/intel-sgx-technology)
-  and [SCONE](https://scontain.com) framework.
+- Familiarity with the basic concepts of
+  [Intel® SGX](/get-started/protocol/tee/intel-sgx-technology) and
+  [SCONE](https://scontain.com) framework.
 
 :::
 
@@ -82,8 +83,8 @@ Make sure your `chain.json` content is as follows:
 If you start from a new firectory tree, you will need to replay the following
 steps from [Build your first application](./your-first-app):
 
-- [Write the app](./your-first-app.md#write-the-app) Javascript or Python
-  source code in `src/`
+- [Write the app](./your-first-app.md#write-the-app) Javascript or Python source
+  code in `src/`
 - [Dockerize your app](./your-first-app.md#dockerize-your-app)
 - [Push your app to Dockerhub](./your-first-app.md#push-your-app-to-dockerhub)
 
