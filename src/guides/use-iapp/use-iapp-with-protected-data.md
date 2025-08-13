@@ -32,7 +32,7 @@ Before using an iApp, you need to protect your sensitive data.
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider(window.ethereum);
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 // Protect your data
@@ -52,6 +52,11 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
 ### Protecting Different Data Types
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // Protect contact list for email applications
 const { address: contactListAddress } = await dataProtectorCore.protectData({
   name: 'Email Contact List',
@@ -94,9 +99,14 @@ iApps need explicit authorization to access your protected data.
 ### Grant Access to a Specific iApp
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // Grant access to an iApp
 const grantedAccess = await dataProtectorCore.grantAccess({
-  protectedData: protectedDataAddress,
+  protectedData: '0x123abc...',
   authorizedApp: '0x456def...', // The iApp address
   authorizedUser: '0x789abc...', // Your wallet address
   pricePerAccess: 5, // Price per access in nRLC
@@ -107,14 +117,17 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 ### Check Granted Access
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // Check what access you've granted
 const grantedAccessList = await dataProtectorCore.getGrantedAccess({
-  protectedData: protectedDataAddress,
+  protectedData: '0x123abc...',
   authorizedApp: '0x456def...',
   authorizedUser: '0x789abc...',
 });
-
-console.log('Granted access:', grantedAccessList);
 ```
 
 ## Step 3: Execute iApp with Protected Data
@@ -124,57 +137,75 @@ Once access is granted, you can execute the iApp with your protected data.
 ### Using DataProtector
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // Execute iApp with protected data
 const result = await dataProtectorCore.processProtectedData({
-  protectedData: protectedDataAddress,
+  protectedData: '0x123abc...',
   app: '0x456def...', // The iApp address
-  maxPrice: 10, // Maximum price in nRLC
 });
 ```
 
 ### Using SDK Library
 
 ```ts twoslash
-import {
-  IExecConfig,
-  IExecOrderModule,
-  IExecOrderbookModule,
-} from '@iexec/sdk';
+import { IExec, utils } from 'iexec';
 
-// create the configuration
-const config = new IExecConfig({ ethProvider: window.ethereum });
-
-// instantiate modules sharing the same configuration
-const orderModule = IExecOrderModule.fromConfig(config);
-const orderbookModule = IExecOrderbookModule.fromConfig(config);
+const ethProvider = utils.getSignerFromPrivateKey(
+  'bellecour', // blockchain node URL
+  'PRIVATE_KEY'
+);
+const iexec = new IExec({
+  ethProvider,
+});
+const protectedDataAddress = '0x123abc...';
 // ---cut---
-// Create a request order with protected data
-const requestOrder = await orderModule.createRequestOrder({
+// Create & Sign a request order with protected data
+const requestorderToSign = await iexec.order.createRequestorder({
   app: '0x456def...', // The iApp address
+  category: 0,
   appmaxprice: 10, // Maximum price in nRLC
   dataset: protectedDataAddress, // Protected data address
   datasetmaxprice: 5, // Maximum price for dataset access
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
-  // Other parameters have default values
+  workerpool: '0xa5de76...', // ENS address for iExec's debug workerpool
 });
+const requestOrder = await iexec.order.signRequestorder(requestorderToSign);
 
-// Fetch matching orders from orderbook with filters
-const appOrders = await orderbookModule.fetchAppOrderbook({
-  app: '0x456def...', // Filter by specific app
+// Fetch app orders
+const appOrders = await iexec.orderbook.fetchAppOrderbook(
+  '0x456def...' // Filter by specific app
+);
+if (appOrders.orders.length === 0) {
+  throw new Error('No app orders found for the specified app');
+}
+
+// Fetch protected data orders
+const datasetOrders = await iexec.orderbook.fetchDatasetOrderbook(
+  protectedDataAddress // Filter by specific dataset
+);
+if (datasetOrders.orders.length === 0) {
+  throw new Error(
+    'No protectedData orders found for the specified protectedData'
+  );
+}
+
+// Fetch workerpool orders
+const workerpoolOrders = await iexec.orderbook.fetchWorkerpoolOrderbook({
+  workerpool: '0xa5de76...', // Filter by specific workerpool
 });
-const datasetOrders = await orderbookModule.fetchDatasetOrderbook({
-  dataset: protectedDataAddress, // Filter by specific dataset
-});
-const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook({
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // Filter by specific workerpool ENS
-});
+if (workerpoolOrders.orders.length === 0) {
+  throw new Error('No workerpool orders found for the specified workerpool');
+}
 
 // Execute the task
-const taskId = await orderModule.matchOrders({
+const taskId = await iexec.order.matchOrders({
   requestorder: requestOrder,
-  apporder: appOrders[0],
-  datasetorder: datasetOrders[0],
-  workerpoolorder: workerpoolOrders[0],
+  apporder: appOrders.orders[0].order,
+  datasetorder: datasetOrders.orders[0].order,
+  workerpoolorder: workerpoolOrders.orders[0].order,
 });
 ```
 
@@ -192,44 +223,16 @@ After execution completes, retrieve the results from the task.
 ### Using DataProtector
 
 ```ts twoslash
-// Get the task ID from the execution result
-const taskId = result.taskId;
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-// Retrieve the result
-const taskResult = await dataProtectorCore.getResultFromCompletedTask({
-  taskId: taskId,
-});
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+const taskId = '0x7ac398...'
 
-// Retrieve a specific file from the result
-const taskResult = await dataProtectorCore.getResultFromCompletedTask({
-  taskId: taskId,
-  path: 'computed.json', // Extract specific file
-});
-```
-
-### Using SDK Library
-
-```ts twoslash
-import { IExecConfig, IExecResultModule } from '@iexec/sdk';
-
-// create the configuration
-const config = new IExecConfig({ ethProvider: window.ethereum });
-
-// instantiate result module
-const resultModule = IExecResultModule.fromConfig(config);
 // ---cut---
-// Get the task ID from the execution result
-const taskId = result.taskId; // or taskId from SDK library execution
-
 // Retrieve the result
-const taskResult = await resultModule.getTaskResult({
+const taskResult = await dataProtectorCore.getResultFromCompletedTask({
   taskId: taskId,
-});
-
-// Retrieve a specific file from the result
-const specificFile = await resultModule.getTaskResult({
-  taskId: taskId,
-  path: 'computed.json', // Extract specific file
 });
 ```
 
@@ -251,15 +254,20 @@ iexec task show $TASK_ID --path "computed.json"
 ### Example 1: Data Analysis System
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // 1. Protect sensitive dataset
 const { address: datasetAddress } = await dataProtectorCore.protectData({
   name: 'Customer Analytics Data',
   data: {
-    customers: [
-      { id: 1, purchases: 1500, category: 'premium' },
-      { id: 2, purchases: 800, category: 'standard' },
-      { id: 3, purchases: 2200, category: 'premium' },
-    ],
+    customers: {
+      '0': { id: 1, purchases: 1500, category: 'premium' },
+      '1': { id: 2, purchases: 800, category: 'standard' },
+      '2': { id: 3, purchases: 2200, category: 'premium' },
+    },
   },
 });
 
@@ -277,13 +285,18 @@ const analysisResult = await dataProtectorCore.processProtectedData({
   protectedData: datasetAddress,
   app: '0xanalytics...',
   args: '--analyze-customer-segments --output-format json',
-  maxPrice: 10,
+  appMaxPrice: 10,
 });
 ```
 
 ### Example 2: Oracle Price Update
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // 1. Protect trading data
 const { address: tradingDataAddress } = await dataProtectorCore.protectData({
   name: 'Trading Data',
@@ -309,13 +322,18 @@ const oracleResult = await dataProtectorCore.processProtectedData({
   protectedData: tradingDataAddress,
   app: '0xoracle...',
   args: '--update-price-feed --asset ETH',
-  maxPrice: 10,
+  appMaxPrice: 10,
 });
 ```
 
 ### Example 3: Automated Payment Processing
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // 1. Protect payment data
 const { address: paymentDataAddress } = await dataProtectorCore.protectData({
   name: 'Payment Data',
@@ -344,58 +362,8 @@ const paymentResult = await dataProtectorCore.processProtectedData({
   secrets: {
     1: 'bank-api-key',
   },
-  maxPrice: 8,
+  appMaxPrice: 8,
 });
-```
-
-## Advanced Patterns
-
-### Pattern 1: Batch Processing
-
-```ts twoslash
-// Process multiple protected datasets
-const datasets = [
-  { address: '0x123abc...', name: 'Dataset 1' },
-  { address: '0x456def...', name: 'Dataset 2' },
-  { address: '0x789ghi...', name: 'Dataset 3' },
-];
-
-const batchResults = await Promise.all(
-  datasets.map((dataset) =>
-    dataProtectorCore.processProtectedData({
-      protectedData: dataset.address,
-      app: '0x456def...',
-      args: `--dataset-name ${dataset.name}`,
-      maxPrice: 10,
-    })
-  )
-);
-```
-
-### Pattern 2: Result Processing Pipeline
-
-```ts twoslash
-// Process results and use them for further computation
-const initialResult = await dataProtectorCore.processProtectedData({
-  protectedData: protectedDataAddress,
-  app: '0x456def...',
-  maxPrice: 10,
-});
-
-// Get the result
-const taskResult = await dataProtectorCore.getResultFromCompletedTask({
-  taskId: initialResult.taskId,
-});
-
-// Use the result for further processing
-const processedData = await processResult(taskResult);
-
-// Protect the processed data
-const { address: newProtectedDataAddress } =
-  await dataProtectorCore.protectData({
-    name: 'Processed Data',
-    data: processedData,
-  });
 ```
 
 ## Best Practices
@@ -403,7 +371,13 @@ const { address: newProtectedDataAddress } =
 ### 1. Always Grant Access Before Execution
 
 ```ts twoslash
-// ✅ Good: Grant access first
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+const protectedDataAddress = '0x123abc...';
+// ---cut---
+// Grant access first
 await dataProtectorCore.grantAccess({
   protectedData: protectedDataAddress,
   authorizedApp: '0x456def...',
@@ -415,48 +389,61 @@ await dataProtectorCore.grantAccess({
 const result = await dataProtectorCore.processProtectedData({
   protectedData: protectedDataAddress,
   app: '0x456def...',
-  maxPrice: 10,
+  appMaxPrice: 10,
 });
 ```
 
 ### 2. Monitor Access Usage
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // Check access usage regularly
 const grantedAccess = await dataProtectorCore.getGrantedAccess({
-  protectedData: protectedDataAddress,
+  protectedData: '0x123abc...',
   authorizedApp: '0x456def...',
   authorizedUser: '0x789abc...',
 });
 
-console.log('Remaining access:', grantedAccess.remainingAccess);
-console.log('Used access:', grantedAccess.usedAccess);
+console.log('Remaining access:', grantedAccess.count);
 ```
 
 ### 3. Use Appropriate Price Limits
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // Set reasonable price limits
 const result = await dataProtectorCore.processProtectedData({
-  protectedData: protectedDataAddress,
+  protectedData: '0x123abc...',
   app: '0x456def...',
-  maxPrice: 10, // Set appropriate limit
+  appMaxPrice: 10, // Set appropriate limit
 });
 ```
 
 ### 4. Handle Results Properly
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // Store task ID and retrieve results later
 const result = await dataProtectorCore.processProtectedData({
-  protectedData: protectedDataAddress,
+  protectedData: '0x123abc...',
   app: '0x456def...',
-  maxPrice: 10,
+  appMaxPrice: 10,
 });
 
 // Store task ID for later retrieval
 const taskId = result.taskId;
-localStorage.setItem('lastTaskId', taskId);
 
 // Later, retrieve the result
 const taskResult = await dataProtectorCore.getResultFromCompletedTask({

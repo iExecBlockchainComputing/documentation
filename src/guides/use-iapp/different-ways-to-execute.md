@@ -10,58 +10,62 @@ There are multiple ways to execute iApps on the iExec network. This guide covers
 the basic execution methods. For advanced features like protected data,
 arguments, and input files, see the dedicated guides.
 
-<!-- prettier-ignore-start -->
 ::: tip ENS Addresses
-**ENS (Ethereum Name Service)** is a naming system for
-Ethereum addresses that allows you to use human-readable names instead of long
-hexadecimal addresses. For example, instead of using `0x1234567890abcdef...`,
-you can use `debug-v8-learn.main.pools.iexec.eth`.
+
+**ENS (Ethereum Name Service)** is a naming system for Ethereum addresses that
+allows you to use human-readable names instead of long hexadecimal addresses.
+For example, instead of using `0x1234567890abcdef...`, you can use
+`debug-v8-learn.main.pools.iexec.eth`.
 
 In the examples below, we use `debug-v8-learn.main.pools.iexec.eth` which is
 iExec's official debug workerpool ENS address. This workerpool is specifically
 designed for testing and development purposes on the Bellecour testnet.
+
 :::
-<!-- prettier-ignore-end -->
 
 ## Method 1: Using the iExec SDK Library
 
 The iExec SDK provides a modular JavaScript interface for executing iApps.
 
 ```ts twoslash
-import {
-  IExecConfig,
-  IExecOrderModule,
-  IExecOrderbookModule,
-} from 'iexec';
+import { IExec, utils } from 'iexec';
 
-// create the configuration
-const config = new IExecConfig({ ethProvider: window.ethereum });
-
-// instantiate modules sharing the same configuration
-const orderModule = IExecOrderModule.fromConfig(config);
-const orderbookModule = IExecOrderbookModule.fromConfig(config);
+const ethProvider = utils.getSignerFromPrivateKey(
+  'bellecour', // blockchain node URL
+  'PRIVATE_KEY'
+);
+const iexec = new IExec({
+  ethProvider,
+});
 // ---cut---
-// Create a request order
-const requestOrder = await orderModule.createRequestOrder({
+// Create & Sign a request order
+const requestorderToSign = await iexec.order.createRequestorder({
   app: '0x456def...', // The iApp address
-  appmaxprice: 10, // Maximum price in nRLC
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
-  // Other parameters have default values
+  category: 0,
 });
+const requestOrder = await iexec.order.signRequestorder(requestorderToSign);
 
-// Fetch matching orders from orderbook with filters
-const appOrders = await orderbookModule.fetchAppOrderbook({
-  app: '0x456def...', // Filter by specific app
+// Fetch app orders
+const appOrders = await iexec.orderbook.fetchAppOrderbook(
+  '0x456def...' // Filter by specific app
+);
+if (appOrders.orders.length === 0) {
+  throw new Error('No app orders found for the specified app');
+}
+
+// Fetch workerpool orders
+const workerpoolOrders = await iexec.orderbook.fetchWorkerpoolOrderbook({
+  workerpool: '0xa5de76...', // Filter by specific workerpool
 });
-const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook({
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // Filter by specific workerpool ENS
-});
+if (workerpoolOrders.orders.length === 0) {
+  throw new Error('No workerpool orders found for the specified workerpool');
+}
 
 // Execute the task
-const taskId = await orderModule.matchOrders({
+const taskId = await iexec.order.matchOrders({
   requestorder: requestOrder,
-  apporder: appOrders[0],
-  workerpoolorder: workerpoolOrders[0],
+  apporder: appOrders.orders[0].order,
+  workerpoolorder: workerpoolOrders.orders[0].order,
 });
 ```
 
@@ -80,7 +84,7 @@ The iApp Generator CLI provides a streamlined way to execute iApps, especially
 for developers who have built their own iApps.
 
 > **Note**: For installation instructions, see the
-> [iApp Generator Getting Started guide](/build-iapp/iapp-generator/getting-started).
+> [iApp Generator Getting Started guide](/references/iapp-generator/getting-started).
 
 ### Basic Execution
 

@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Add Inputs to iApp Execution
 description:
   Learn how to provide arguments, files, secrets, and other inputs to iApp
@@ -11,8 +11,8 @@ iApps can accept various types of inputs to customize their behavior and provide
 necessary data for processing. This guide covers all the different ways to add
 inputs to your iApp executions using various iExec tools and SDKs.
 
-<!-- prettier-ignore-start -->
 ::: tip ENS Addresses
+
 **ENS (Ethereum Name Service)** is a naming system for
 Ethereum addresses that allows you to use human-readable names instead of long
 hexadecimal addresses. For example, instead of using `0x1234567890abcdef...`,
@@ -21,8 +21,8 @@ you can use `debug-v8-learn.main.pools.iexec.eth`.
 In the examples below, we use `debug-v8-learn.main.pools.iexec.eth` which is
 iExec's official debug workerpool ENS address. This workerpool is specifically
 designed for testing and development purposes on the Bellecour testnet.
+
 :::
-<!-- prettier-ignore-end -->
 
 ## Types of Inputs
 
@@ -41,85 +41,75 @@ blockchain.
 ### Using SDK Library
 
 ```ts twoslash
-import {
-  IExecConfig,
-  IExecOrderModule,
-  IExecOrderbookModule,
-} from '@iexec/sdk';
+import { IExec, utils } from 'iexec';
 
-// create the configuration
-const config = new IExecConfig({ ethProvider: window.ethereum });
-
-// instantiate modules sharing the same configuration
-const orderModule = IExecOrderModule.fromConfig(config);
-const orderbookModule = IExecOrderbookModule.fromConfig(config);
+const ethProvider = utils.getSignerFromPrivateKey(
+  "bellecour", // blockchain node URL
+  "PRIVATE_KEY",
+);
+const iexec = new IExec({
+  ethProvider,
+});
 // ---cut---
 // Basic arguments
-const requestOrder = await orderModule.createRequestOrder({
+const requestOrder = await iexec.orderModule.createRequestorder({
   app: '0x456def...',
+  category: 0,
   appmaxprice: 10,
   workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
   params: 'arg1 arg2 arg3', // Command-line arguments
   // Other parameters have default values
 });
 
-// Fetch matching orders from orderbook with filters
-const appOrders = await orderbookModule.fetchAppOrderbook({
-  app: '0x456def...', // Filter by specific app
-});
-const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook({
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // Filter by specific workerpool ENS
-});
+// // Fetch matching orders from orderbook with filters
+// const appOrders = await orderbookModule.fetchAppOrderbook('0x456def...'); // Filter by specific app
+// const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook('debug-v8-learn.main.pools.iexec.eth'); // Filter by specific workerpool ENS
 
-const taskId = await orderModule.matchOrders({
-  requestorder: requestOrder,
-  apporder: appOrders[0], // Select appropriate app order
-  workerpoolorder: workerpoolOrders[0], // Select appropriate workerpool order
-});
+// const taskId = await orderModule.matchOrders({
+//   requestorder: requestOrder,
+//   apporder: appOrders.orders[0], // Select appropriate app order
+//   workerpoolorder: workerpoolOrders.orders[0], // Select appropriate workerpool order
+// });
 
-// Complex arguments with spaces and quotes
-const requestOrder = await orderModule.createRequestOrder({
-  app: '0x456def...',
-  appmaxprice: 10,
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
-  params: '--input-file data.csv --output-format json --message "Hello World"',
-  // Other parameters have default values
-});
+// // Complex arguments with spaces and quotes
+// const requestOrder2 = await orderModule.createRequestorder({
+//   app: '0x456def...',
+//   category: 0,
+//   appmaxprice: 10,
+//   workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
+//   params: '--input-file data.csv --output-format json --message "Hello World"',
+//   // Other parameters have default values
+// });
 
-const taskId = await orderModule.matchOrders({
-  requestorder: requestOrder,
-  apporder: appOrders[0],
-  workerpoolorder: workerpoolOrders[0],
-});
+// const taskId2 = await orderModule.matchOrders({
+//   requestorder: requestOrder2,
+//   apporder: appOrders.orders[0],
+//   workerpoolorder: workerpoolOrders.orders[0],
+// });
 
-// With protected data
-const requestOrder = await orderModule.createRequestOrder({
-  app: '0x456def...',
-  appmaxprice: 10,
-  dataset: '0x123abc...', // Protected data address
-  datasetmaxprice: 5,
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
-  params: '--input-path data/input.csv --output-format json --verbose',
-  // Other parameters have default values
-});
+// // With protected data
+// const requestOrder3 = await orderModule.createRequestorder({
+//   app: '0x456def...',
+//   category: 0, // Required: category for the request
+//   appmaxprice: 10,
+//   dataset: '0x123abc...', // Protected data address
+//   datasetmaxprice: 5,
+//   workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
+//   params: '--input-path data/input.csv --output-format json --verbose',
+//   // Other parameters have default values
+// });
 
-// Fetch matching orders from orderbook with filters
-const appOrders = await orderbookModule.fetchAppOrderbook({
-  app: '0x456def...', // Filter by specific app
-});
-const datasetOrders = await orderbookModule.fetchDatasetOrderbook({
-  dataset: '0x123abc...', // Filter by specific dataset
-});
-const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook({
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // Filter by specific workerpool ENS
-});
+// // Fetch matching orders from orderbook with filters
+// const appOrders2 = await orderbookModule.fetchAppOrderbook('0x456def...'); // Filter by specific app
+// const datasetOrders = await orderbookModule.fetchDatasetOrderbook('0x123abc...'); // Filter by specific dataset
+// const workerpoolOrders2 = await orderbookModule.fetchWorkerpoolOrderbook('debug-v8-learn.main.pools.iexec.eth'); // Filter by specific workerpool ENS
 
-const taskId = await orderModule.matchOrders({
-  requestorder: requestOrder,
-  apporder: appOrders[0],
-  datasetorder: datasetOrders[0], // Select appropriate dataset order
-  workerpoolorder: workerpoolOrders[0],
-});
+// const taskId3 = await orderModule.matchOrders({
+//   requestorder: requestOrder3,
+//   apporder: appOrders2.orders[0],
+//   datasetorder: datasetOrders.orders[0], // Select appropriate dataset order
+//   workerpoolorder: workerpoolOrders2.orders[0],
+// });
 ```
 
 ### Using SDK CLI
@@ -159,91 +149,86 @@ execution.
 ### Using SDK Library
 
 ```ts twoslash
-import {
-  IExecConfig,
-  IExecOrderModule,
-  IExecOrderbookModule,
-} from '@iexec/sdk';
+import { IExec, utils } from 'iexec';
 
-// create the configuration
-const config = new IExecConfig({ ethProvider: window.ethereum });
-
-// instantiate modules sharing the same configuration
-const orderModule = IExecOrderModule.fromConfig(config);
-const orderbookModule = IExecOrderbookModule.fromConfig(config);
+const ethProvider = utils.getSignerFromPrivateKey(
+  "bellecour", // blockchain node URL
+  "PRIVATE_KEY",
+);
+const iexec = new IExec({
+  ethProvider,
+});
 // ---cut---
 // Single input file
-const requestOrder = await orderModule.createRequestOrder({
+const requestOrder = await iexec.orderModule.createRequestorder({
   app: '0x456def...',
+  category: 0, // Required: category for the request
   appmaxprice: 10,
   workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
   // Other parameters have default values
 });
 
-// Fetch matching orders from orderbook with filters
-const appOrders = await orderbookModule.fetchAppOrderbook({
-  app: '0x456def...', // Filter by specific app
-});
-const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook({
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // Filter by specific workerpool ENS
-});
+// // Fetch matching orders from orderbook with filters
+// const appOrders = await orderbookModule.fetchAppOrderbook('0x456def...'); // Filter by specific app
+// const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook('debug-v8-learn.main.pools.iexec.eth'); // Filter by specific workerpool ENS
 
-const taskId = await orderModule.matchOrders({
-  requestorder: requestOrder,
-  apporder: appOrders[0],
-  workerpoolorder: workerpoolOrders[0],
-  inputFiles: ['https://example.com/config.json'],
-});
+// const taskId = await orderModule.matchOrders({
+//   requestorder: requestOrder,
+//   apporder: appOrders.orders[0],
+//   workerpoolorder: workerpoolOrders.orders[0],
+//   inputFiles: ['https://example.com/config.json'],
+// });
 
-// Multiple input files
-const requestOrder = await orderModule.createRequestOrder({
-  app: '0x456def...',
-  appmaxprice: 10,
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
-  // Other parameters have default values
-});
+// // Multiple input files
+// const requestOrder2 = await orderModule.createRequestorder({
+//   app: '0x456def...',
+//   category: 0, // Required: category for the request
+//   appmaxprice: 10,
+//   workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
+//   // Other parameters have default values
+// });
 
-const taskId = await orderModule.matchOrders({
-  requestorder: requestOrder,
-  apporder: appOrders[0],
-  workerpoolorder: workerpoolOrders[0],
-  inputFiles: [
-    'https://example.com/config.json',
-    'https://example.com/template.html',
-    'https://example.com/data.csv',
-  ],
-});
+// const taskId2 = await orderModule.matchOrders({
+//   requestorder: requestOrder2,
+//   apporder: appOrders.orders[0],
+//   workerpoolorder: workerpoolOrders.orders[0],
+//   inputFiles: [
+//     'https://example.com/config.json',
+//     'https://example.com/template.html',
+//     'https://example.com/data.csv',
+//   ],
+// });
 
-// With protected data and input files
-const requestOrder = await orderModule.createRequestOrder({
-  app: '0x456def...',
-  appmaxprice: 10,
-  dataset: '0x123abc...', // Protected data address
-  datasetmaxprice: 5,
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
-  // Other parameters have default values
-});
+// // With protected data and input files
+// const requestOrder3 = await orderModule.createRequestorder({
+//   app: '0x456def...',
+//   category: 0, // Required: category for the request
+//   appmaxprice: 10,
+//   dataset: '0x123abc...', // Protected data address
+//   datasetmaxprice: 5,
+//   workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
+//   // Other parameters have default values
+// });
 
-// Fetch matching orders from orderbook with filters
-const appOrders = await orderbookModule.fetchAppOrderbook({
-  app: '0x456def...', // Filter by specific app
-});
-const datasetOrders = await orderbookModule.fetchDatasetOrderbook({
-  dataset: '0x123abc...', // Filter by specific dataset
-});
+// // Fetch matching orders from orderbook with filters
+// const appOrders2 = await orderbookModule.fetchAppOrderbook({
+//   app: '0x456def...', // Filter by specific app
+// });
+// const datasetOrders = await orderbookModule.fetchDatasetOrderbook('0x123abc...'); // Filter by specific dataset
+
+// const workerpoolOrders2 = await orderbookModule.fetchWorkerpoolOrderbook('debug-v8-learn.main.pools.iexec.eth'); // Filter by specific workerpool ENS
+
+// const taskId3 = await orderModule.matchOrders({
+//   requestorder: requestOrder3,
+//   apporder: appOrders2.orders[0],
+//   datasetorder: datasetOrders.orders[0],
+//   workerpoolorder: workerpoolOrders2.orders[0],
+//   inputFiles: [
+//     'https://raw.githubusercontent.com/user/repo/main/config.json',
+//     'https://example.com/public-data.csv',
+//   ],
+// });
 ```
-
-const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook({
-workerpool: 'debug-v8-learn.main.pools.iexec.eth', // Filter by specific
-workerpool ENS });
-
-const taskId = await orderModule.matchOrders({ requestorder: requestOrder,
-apporder: appOrders[0], datasetorder: datasetOrders[0], workerpoolorder:
-workerpoolOrders[0], inputFiles: [
-'https://raw.githubusercontent.com/user/repo/main/config.json',
-'https://example.com/public-data.csv', ], });
-
-````
 
 ### Using SDK CLI
 
@@ -256,7 +241,7 @@ iexec app run 0x456def... --protectedData 0x123abc... --inputFiles "https://exam
 
 # Multiple input files (space-separated)
 iexec app run 0x456def... --protectedData 0x123abc... --inputFiles "https://example.com/config.json" --inputFiles "https://example.com/template.html"
-````
+```
 
 ### Using DataProtector
 
@@ -284,99 +269,87 @@ securely and made available to the iApp as environment variables.
 
 ### Using SDK Library
 
-```ts twoslash
-import {
-  IExecConfig,
-  IExecOrderModule,
-  IExecOrderbookModule,
-  IExecSecretsModule,
-} from '@iexec/sdk';
+```ts twoslash [Browser]
+import { IExec, utils } from 'iexec';
 
-// create the configuration
-const config = new IExecConfig({ ethProvider: window.ethereum });
-
-// instantiate modules sharing the same configuration
-const orderModule = IExecOrderModule.fromConfig(config);
-const orderbookModule = IExecOrderbookModule.fromConfig(config);
-const secretsModule = IExecSecretsModule.fromConfig(config);
+const ethProvider = utils.getSignerFromPrivateKey(
+  "bellecour", // blockchain node URL
+  "PRIVATE_KEY",
+);
+const iexec = new IExec({
+  ethProvider,
+});
 // ---cut---
 // Basic secrets
-const requestOrder = await orderModule.createRequestOrder({
+const requestOrder = await orderModule.createRequestorder({
   app: '0x456def...',
+  category: 0, // Required: category for the request
   appmaxprice: 10,
   workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
   // Other parameters have default values
 });
 
-// Fetch matching orders from orderbook with filters
-const appOrders = await orderbookModule.fetchAppOrderbook({
-  app: '0x456def...', // Filter by specific app
-});
-const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook({
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // Filter by specific workerpool ENS
-});
+// // Fetch matching orders from orderbook with filters
+// const appOrders = await orderbookModule.fetchAppOrderbook('0x456def...'); // Filter by specific app
+// const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook('debug-v8-learn.main.pools.iexec.eth'); // Filter by specific workerpool ENS
 
-const taskId = await orderModule.matchOrders({
-  requestorder: requestOrder,
-  apporder: appOrders[0],
-  workerpoolorder: workerpoolOrders[0],
-  secrets: {
-    1: 'api-key-12345',
-    2: 'database-password',
-  },
-});
+// const taskId = await orderModule.matchOrders({
+//   requestorder: requestOrder,
+//   apporder: appOrders.orders[0],
+//   workerpoolorder: workerpoolOrders.orders[0],
+//   secrets: {
+//     1: 'api-key-12345',
+//     2: 'database-password',
+//   },
+// });
 
-// Multiple secrets
-const requestOrder = await orderModule.createRequestOrder({
-  app: '0x456def...',
-  appmaxprice: 10,
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
-  // Other parameters have default values
-});
+// // Multiple secrets
+// const requestOrder2 = await orderModule.createRequestorder({
+//   app: '0x456def...',
+//   category: 0, // Required: category for the request
+//   appmaxprice: 10,
+//   workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
+//   // Other parameters have default values
+// });
 
-const taskId = await orderModule.matchOrders({
-  requestorder: requestOrder,
-  apporder: appOrders[0],
-  workerpoolorder: workerpoolOrders[0],
-  secrets: {
-    1: 'openai-api-key',
-    2: 'database-connection-string',
-    3: 'jwt-secret',
-    4: 'encryption-key',
-  },
-});
+// const taskId2 = await orderModule.matchOrders({
+//   requestorder: requestOrder2,
+//   apporder: appOrders.orders[0],
+//   workerpoolorder: workerpoolOrders.orders[0],
+//   secrets: {
+//     1: 'openai-api-key',
+//     2: 'database-connection-string',
+//     3: 'jwt-secret',
+//     4: 'encryption-key',
+//   },
+// });
 
-// With protected data and secrets
-const requestOrder = await orderModule.createRequestOrder({
-  app: '0x456def...',
-  appmaxprice: 10,
-  dataset: '0x123abc...', // Protected data address
-  datasetmaxprice: 5,
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
-  // Other parameters have default values
-});
+// // With protected data and secrets
+// const requestOrder3 = await orderModule.createRequestorder({
+//   app: '0x456def...',
+//   category: 0, // Required: category for the request
+//   appmaxprice: 10,
+//   dataset: '0x123abc...', // Protected data address
+//   datasetmaxprice: 5,
+//   workerpool: 'debug-v8-learn.main.pools.iexec.eth', // ENS address for iExec's debug workerpool
+//   // Other parameters have default values
+// });
 
-// Fetch matching orders from orderbook with filters
-const appOrders = await orderbookModule.fetchAppOrderbook({
-  app: '0x456def...', // Filter by specific app
-});
-const datasetOrders = await orderbookModule.fetchDatasetOrderbook({
-  dataset: '0x123abc...', // Filter by specific dataset
-});
-const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook({
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // Filter by specific workerpool ENS
-});
+// // Fetch matching orders from orderbook with filters
+// const appOrders2 = await orderbookModule.fetchAppOrderbook('0x456def...'); // Filter by specific app
+// const datasetOrders = await orderbookModule.fetchDatasetOrderbook('0x123abc...'); // Filter by specific dataset
+// const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook('debug-v8-learn.main.pools.iexec.eth'); // Filter by specific workerpool ENS
 
-const taskId = await orderModule.matchOrders({
-  requestorder: requestOrder,
-  apporder: appOrders[0],
-  datasetorder: datasetOrders[0],
-  workerpoolorder: workerpoolOrders[0],
-  secrets: {
-    1: 'openai-api-key',
-    2: 'database-password',
-  },
-});
+// const taskId3 = await orderModule.matchOrders({
+//   requestorder: requestOrder3,
+//   apporder: appOrders2.orders[0],
+//   datasetorder: datasetOrders.orders[0],
+//   workerpoolorder: workerpoolOrders.orders[0],
+//   secrets: {
+//     1: 'openai-api-key',
+//     2: 'database-password',
+//   },
+// });
 ```
 
 ### Using SDK CLI
@@ -417,25 +390,21 @@ which file to process.
 
 ### Using SDK Library
 
-```ts twoslash
-import {
-  IExecConfig,
-  IExecOrderModule,
-  IExecOrderbookModule,
-  IExecResultModule,
-} from '@iexec/sdk';
+```ts twoslash [Browser]
+import { IExec, utils } from 'iexec';
 
-// create the configuration
-const config = new IExecConfig({ ethProvider: window.ethereum });
-
-// instantiate modules sharing the same configuration
-const orderModule = IExecOrderModule.fromConfig(config);
-const orderbookModule = IExecOrderbookModule.fromConfig(config);
-const resultModule = IExecResultModule.fromConfig(config);
+const ethProvider = utils.getSignerFromPrivateKey(
+  "bellecour", // blockchain node URL
+  "PRIVATE_KEY",
+);
+const iexec = new IExec({
+  ethProvider,
+});
 // ---cut---
 // Basic path specification (with protected data)
-const requestOrder = await orderModule.createRequestOrder({
+const requestOrder = await iexec.orderModule.createRequestorder({
   app: '0x456def...',
+  category: 0, // Required: category for the request
   appmaxprice: 10,
   dataset: '0x123abc...', // Protected data address
   datasetmaxprice: 5,
@@ -463,8 +432,9 @@ const taskId = await orderModule.matchOrders({
 });
 
 // Complex path examples (with protected data)
-const requestOrder = await orderModule.createRequestOrder({
+const requestOrder2 = await orderModule.createRequestorder({
   app: '0x456def...',
+  category: 0, // Required: category for the request
   appmaxprice: 10,
   dataset: '0x123abc...', // Protected data address
   datasetmaxprice: 5,
@@ -472,8 +442,8 @@ const requestOrder = await orderModule.createRequestOrder({
   // Other parameters have default values
 });
 
-const taskId = await orderModule.matchOrders({
-  requestorder: requestOrder,
+const taskId2 = await orderModule.matchOrders({
+  requestorder: requestOrder2,
   apporder: appOrders[0],
   datasetorder: datasetOrders[0],
   workerpoolorder: workerpoolOrders[0],
@@ -528,25 +498,21 @@ You can combine different types of inputs for complex executions.
 
 ### Using SDK Library
 
-```ts twoslash
-import {
-  IExecConfig,
-  IExecOrderModule,
-  IExecOrderbookModule,
-  IExecSecretsModule,
-} from '@iexec/sdk';
+```ts twoslash [Browser]
+import { IExec, utils } from 'iexec';
 
-// create the configuration
-const config = new IExecConfig({ ethProvider: window.ethereum });
-
-// instantiate modules sharing the same configuration
-const orderModule = IExecOrderModule.fromConfig(config);
-const orderbookModule = IExecOrderbookModule.fromConfig(config);
-const secretsModule = IExecSecretsModule.fromConfig(config);
+const ethProvider = utils.getSignerFromPrivateKey(
+  "bellecour", // blockchain node URL
+  "PRIVATE_KEY",
+);
+const iexec = new IExec({
+  ethProvider,
+});
 // ---cut---
 // Complete example with all input types
-const requestOrder = await orderModule.createRequestOrder({
+const requestOrder = await iexec.orderModule.createRequestorder({
   app: '0x456def...',
+  category: 0, // Required: category for the request
   appmaxprice: 10,
   dataset: '0x123abc...', // Protected data address
   datasetmaxprice: 5,
@@ -555,32 +521,32 @@ const requestOrder = await orderModule.createRequestOrder({
   // Other parameters have default values
 });
 
-// Fetch matching orders from orderbook with filters
-const appOrders = await orderbookModule.fetchAppOrderbook({
-  app: '0x456def...', // Filter by specific app
-});
-const datasetOrders = await orderbookModule.fetchDatasetOrderbook({
-  dataset: '0x123abc...', // Filter by specific dataset
-});
-const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook({
-  workerpool: 'debug-v8-learn.main.pools.iexec.eth', // Filter by specific workerpool ENS
-});
+// // Fetch matching orders from orderbook with filters
+// const appOrders = await orderbookModule.fetchAppOrderbook({
+//   app: '0x456def...', // Filter by specific app
+// });
+// const datasetOrders = await orderbookModule.fetchDatasetOrderbook({
+//   dataset: '0x123abc...', // Filter by specific dataset
+// });
+// const workerpoolOrders = await orderbookModule.fetchWorkerpoolOrderbook({
+//   workerpool: 'debug-v8-learn.main.pools.iexec.eth', // Filter by specific workerpool ENS
+// });
 
-const taskId = await orderModule.matchOrders({
-  requestorder: requestOrder,
-  apporder: appOrders[0],
-  datasetorder: datasetOrders[0],
-  workerpoolorder: workerpoolOrders[0],
-  inputFiles: [
-    'https://example.com/config.json',
-    'https://example.com/template.html',
-  ],
-  secrets: {
-    1: 'api-key-12345',
-    2: 'database-password',
-  },
-  path: 'data/input.csv',
-});
+// const taskId = await orderModule.matchOrders({
+//   requestorder: requestOrder,
+//   apporder: appOrders[0],
+//   datasetorder: datasetOrders[0],
+//   workerpoolorder: workerpoolOrders[0],
+//   inputFiles: [
+//     'https://example.com/config.json',
+//     'https://example.com/template.html',
+//   ],
+//   secrets: {
+//     1: 'api-key-12345',
+//     2: 'database-password',
+//   },
+//   path: 'data/input.csv',
+// });
 ```
 
 ### Using SDK CLI
@@ -599,9 +565,10 @@ iexec app run 0x456def... \
 ### Using DataProtector
 
 ```ts twoslash
-import { IExecDataProtectorCore } from '@iexec/dataprotector';
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const dataProtector = new IExecDataProtectorCore(web3Provider);
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 // Process protected data with multiple input types
 const result = await dataProtector.processProtectedData({
@@ -644,6 +611,11 @@ const dbPassword = process.env.IEXEC_SECRET_2; // 'database-password'
 ### Validate Inputs Before Execution
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 const validateInputs = (params) => {
   const errors = [];
 
@@ -695,6 +667,11 @@ const result = await dataProtectorCore.processProtectedData(params);
 ### Handle Input-Related Errors
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 try {
   const result = await dataProtectorCore.processProtectedData({
     protectedData: '0x123abc...',
@@ -720,6 +697,11 @@ try {
 ### 1. Use Appropriate Input Types
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // ✅ Use secrets for sensitive data
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
@@ -764,6 +746,11 @@ const validFiles = accessibleFiles
 ### 3. Use Descriptive Arguments
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // ✅ Clear, descriptive arguments
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
@@ -776,6 +763,11 @@ const result = await dataProtectorCore.processProtectedData({
 ### 4. Organize Secrets Logically
 
 ```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
 // ✅ Logical secret numbering
 const result = await dataProtectorCore.processProtectedData({
   protectedData: '0x123abc...',
@@ -797,4 +789,4 @@ Now that you understand how to add inputs to iApp executions:
 - Learn about
   [Using iApps with Protected Data](./use-iapp-with-protected-data.md)
 - Explore [Different Ways to Execute](./different-ways-to-execute.md) iApps
-- Check out our [How to Pay for Executions](./how-to-pay-executions.md) guide
+- Check out our [How to Pay for Executions](./how-to-pay-executions.md) guide -->

@@ -1,4 +1,4 @@
----
+<!-- ---
 title: How to Pay for iApp Executions
 description:
   Learn about payment methods, pricing, and cost management for iApp executions
@@ -393,4 +393,4 @@ Now that you understand payment methods:
 - Explore [Using iApps with Protected Data](./use-iapp-with-protected-data.md)
 - Check out our
   [Pricing Considerations](../how-to-pay/pricing-considerations.md) for detailed
-  cost analysis
+  cost analysis -->
