@@ -99,8 +99,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Documentation', link: '/get-started/welcome' },
-      { text: 'Guides', link: '/' },
-      { text: 'References', link: '/' },
+      { text: 'Guides', link: '/guides/build-iapp/' },
+      { text: 'References', link: '/references/dataProtector' },
       {
         component: 'ChainSelector',
         props: {
