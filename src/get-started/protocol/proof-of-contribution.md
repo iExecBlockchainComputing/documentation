@@ -621,21 +621,21 @@ Orders compatibility required:
 
 **1. The worker pool’s category and the requester’s category must be equal.**
 
-```sol
+```text
 require(_requestorder.category == _workerpoolorder.category);
 ```
 
 **2. The worker pool’s trust must be greater or equal to the requester’s
 trust.**
 
-```sol
+```text
 require(_requestorder.trust == _workerpoolorder.trust);
 ```
 
 **3. The app’s, dataset’s and worker pool’s prices must be less or equal to the
 requester’s appmaxprice, datasetmaxprice and workerpoolmaxprice.**
 
-```sol
+```text
 require(_requestorder.appmaxprice >= _apporder.appprice);
 require(_requestorder.datasetmaxprice >= _datasetorder.datasetprice);
 require(_requestorder.workerpoolmaxprice >= _workerpoolorder.workerpoolprice);
@@ -644,42 +644,42 @@ require(_requestorder.workerpoolmaxprice >= _workerpoolorder.workerpoolprice);
 **4. The worker pool’s tag must enable all the features required by the app’s
 tag, the dataset’s tag and the worker pool’s tag.**
 
-```sol
+```text
 require(tag & ~_workerpoolorder.tag == 0x0);
 require(tag & ~_workerpoolorder.tag == 0x0);
 ```
 
 **5. If TEE tag is required, then application must be TEE compatible.**
 
-```sol
+```text
 require((tag ^ _apporder.tag)[31] & 0x01 == 0x0);
 ```
 
 **6. The app provided by the apporder must match the one required by the
 requester.**
 
-```sol
+```text
 require(_requestorder.app == _apporder.app);
 ```
 
 **7. The dataset provided by the datasetorder must match the one required by the
 requester.**
 
-```sol
+```text
 require(_requestorder.dataset == _datasetorder.dataset);
 ```
 
 **8. If the requester specified a worker pool restriction, the worker pool must
 match this value or be part of the corresponding group.**
 
-```sol
+```text
 require(_checkIdentity(_requestorder.workerpool, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));
 ```
 
 **9. The application must fit the dataset’s and the worker pool’s application
 restrictions (if any).**
 
-```sol
+```text
 require(_checkIdentity(_datasetorder.apprestrict, _apporder.app, GROUPMEMBER_PURPOSE));
 require(_checkIdentity(_workerpoolorder.apprestrict, _apporder.app, GROUPMEMBER_PURPOSE));
 ```
@@ -687,7 +687,7 @@ require(_checkIdentity(_workerpoolorder.apprestrict, _apporder.app, GROUPMEMBER_
 **10. The dataset must fit the application’s and the worker pool’s restrictions
 (if any).**
 
-```sol
+```text
 require(_checkIdentity(_apporder.datasetrestrict, _datasetorder.dataset, GROUPMEMBER_PURPOSE));
 require(_checkIdentity(_workerpoolorder.datasetrestrict, _datasetorder.dataset, GROUPMEMBER_PURPOSE));
 ```
@@ -695,7 +695,7 @@ require(_checkIdentity(_workerpoolorder.datasetrestrict, _datasetorder.dataset, 
 **11. The worker pool must fit the application’s and the dataset’s restrictions
 (if any).**
 
-```sol
+```text
 require(_checkIdentity(_apporder.workerpoolrestrict, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));
 require(_checkIdentity(_datasetorder.workerpoolrestrict, _workerpoolorder.workerpool, GROUPMEMBER_PURPOSE));
 ```
@@ -703,7 +703,7 @@ require(_checkIdentity(_datasetorder.workerpoolrestrict, _workerpoolorder.worker
 **12. The requester must fit the application’s, the dataset’s and the worker
 pool’s restrictions (if any).**
 
-```sol
+```text
 require(_checkIdentity(_apporder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));
 require(_checkIdentity(_datasetorder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));
 require(_checkIdentity(_workerpoolorder.requesterrestrict, _requestorder.requester, GROUPMEMBER_PURPOSE));
@@ -711,7 +711,7 @@ require(_checkIdentity(_workerpoolorder.requesterrestrict, _requestorder.request
 
 **13. All resources must be registered in the corresponding registries.**
 
-```sol
+```text
 require(m_appregistry.isRegistered(_apporder.app));
 require(m_datasetregistry.isRegistered(_datasetorder.dataset));
 require(m_workerpoolregistry.isRegistered(_workerpoolorder.workerpool));
@@ -719,7 +719,7 @@ require(m_workerpoolregistry.isRegistered(_workerpoolorder.workerpool));
 
 **14. All orders must be signed or presigned.**
 
-```sol
+```text
 require(_checkPresignatureOrSignature(App(_apporder.app).m_owner(), _apporder.hash(), _apporder.sign));
 require(_checkPresignatureOrSignature(Dataset(_datasetorder.dataset).m_owner(), _datasetorder.hash(), _datasetorder.sign));
 require(_checkPresignatureOrSignature(Workerpool(_workerpoolorder.workerpool).m_owner(), _workerpoolorder.hash(), _workerpoolorder.sign));

@@ -8,6 +8,10 @@ export function getSidebar() {
         items: [
           { text: '💡 Welcome', link: '/get-started/welcome' },
           {
+            text: '🛠️ Toolkit',
+            link: '/get-started/toolkit',
+          },
+          {
             text: '👋 Hello World',
             link: '/get-started/helloWorld',
             collapsed: true,
@@ -52,12 +56,20 @@ export function getSidebar() {
         text: 'iExec OVERVIEW',
         items: [
           {
+            text: '❓ What is iExec ?',
+            link: '/get-started/overview/what-is-iexec',
+          },
+          {
             text: '❓&nbsp;&nbsp;What is Protected Data ?',
             link: '/get-started/overview/what-is-protected-data',
           },
           {
             text: '❓ What is an iApp ?',
             link: '/get-started/overview/what-is-iapp',
+          },
+          {
+            text: '❓ What is a Workerpool ?',
+            link: '/get-started/overview/what-is-workerpool',
           },
           {
             text: '🪙 RLC Token',
@@ -94,6 +106,14 @@ export function getSidebar() {
         text: 'PROTOCOL',
         items: [
           {
+            text: '💸 Pay Per Task Model',
+            link: '/get-started/protocol/poco/pay-per-task',
+          },
+          {
+            text: '🛡️ Proof of Contribution',
+            link: '/get-started/protocol/poco/proof-of-contribution',
+          },
+          {
             text: '⚙️ Workers & Workerpools',
             collapsed: true,
             items: [
@@ -104,20 +124,6 @@ export function getSidebar() {
               {
                 text: '🔒 Manage Workerpool Access',
                 link: '/get-started/protocol/worker/manage-access',
-              },
-            ],
-          },
-          {
-            text: '⛓️‍💥 PoCo',
-            collapsed: true,
-            items: [
-              {
-                text: '💸 Pay Per Task Model',
-                link: '/get-started/protocol/poco/pay-per-task',
-              },
-              {
-                text: '🛡️ Proof of Contribution',
-                link: '/get-started/protocol/poco/proof-of-contribution',
               },
             ],
           },
