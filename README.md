@@ -139,6 +139,25 @@ Fork this repository and ensure you're working on the `main` branch:
 > - All pull requests are reviewed by our team before being merged
 > - Feel free to ask questions in the pull request if you need clarification
 
+### Some conventions
+
+In order to keep the documentation consistent, we have some naming conventions
+for input parameters:
+
+- `protectedData`: '0x123abc...',
+- `protectedDataAddress`: '0x123abc...',
+- `authorizedApp`: '0x456def...',
+- `authorizedUser`: '0x789cba...',
+- `userAddress`: '0x789cba...',
+- `appWhitelist`: '0xba46d6...',
+- `owner`: '0xa0c15e...',
+- `newOwner`: '0xc5e9f4...',
+- `voucherOwner`: '0x5714eB...',
+- `renterAddress`: '0x246bdf...'
+- `subscriberAddress`: '0x246bdf...'
+- `workerpool`: '0xa5de76...'
+- `taskId`: '0x7ac398...'
+
 ## 🆘 Support
 
 - 📖 [Documentation](https://docs.iex.ec)
