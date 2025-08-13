@@ -121,8 +121,8 @@ Ready to dive into the iExec ecosystem? Here are the next steps:
   networks
 - **[Start Using iExec](./quick-start.md)** - Begin your confidential computing
   journey
-- **[Earn RLC](/documentation/manage-data/guides/manage-access)** - Become a
-  provider and monetize your resources
+- **[Earn RLC](/guides/manage-data/manage-access)** - Become a provider and
+  monetize your resources
 
 <script setup>
 import ImageViewer from '@/components/ImageViewer.vue';

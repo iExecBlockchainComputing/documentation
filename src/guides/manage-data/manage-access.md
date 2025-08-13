@@ -66,8 +66,7 @@ console.log('Protected data address:', protectedData.address);
 computations by authorized users and iApps.
 
 **Supported types**: Common data types like text, numbers, true/false values,
-and files. See the
-[full list here](/documentation/manage-data/dataProtector/types).
+and files. See the [full list here](/references/dataProtector/types).
 
 **Storage**: Store your data on IPFS or Arweave. For larger files, you can use
 your own IPFS node.
@@ -75,7 +74,7 @@ your own IPFS node.
 ::: tip
 
 Need Help ? Check our
-[Schema and Dataset Types guide](/documentation/manage-data/guides/handle-schemas-dataset-types)
+[Schema and Dataset Types guide](/guides/manage-data/handle-schemas-dataset-types)
 for detailed formatting instructions.
 
 :::
@@ -194,7 +193,7 @@ automatically.
 **Example**: `pricePerAccess: 1_000_000_000` = 1 RLC per access
 
 → **Want to learn more monetization capabilities?** See our detailed
-[Monetize Protected Data guide](/documentation/manage-data/guides/monetize-protected-data)
+[Monetize Protected Data guide](/guides/manage-data/monetize-protected-data)
 
 #### numberOfAccess <OptionalBadge />
 
@@ -219,14 +218,13 @@ get a "no dataset orders" error. Set this high enough for your use case.
 steps:
 
 - **Process the data**: Use
-  [processProtectedData](/documentation/manage-data/dataProtector/dataProtectorCore/processProtectedData)
+  [processProtectedData](/references/dataProtector/dataProtectorCore/processProtectedData)
   to run computations
 - **Manage access**:
-  [Revoke](/documentation/manage-data/dataProtector/dataProtectorCore/revokeOneAccess)
-  or
-  [modify permissions](/documentation/manage-data/dataProtector/dataProtectorCore/grantAccess)
+  [Revoke](/references/dataProtector/dataProtectorCore/revokeOneAccess) or
+  [modify permissions](/references/dataProtector/dataProtectorCore/grantAccess)
   anytime
 - **Learn data types**: Deep dive into
-  [schemas and dataset types](/documentation/manage-data/guides/handle-schemas-dataset-types)
+  [schemas and dataset types](/guides/manage-data/handle-schemas-dataset-types)
 - **Monetize data**: Explore
-  [data monetization strategies](/documentation/manage-data/guides/monetize-protected-data)
+  [data monetization strategies](/guides/manage-data/monetize-protected-data)

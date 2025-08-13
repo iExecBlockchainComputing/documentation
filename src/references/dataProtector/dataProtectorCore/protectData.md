@@ -390,7 +390,7 @@ details on the transaction using the [iExec explorer](https://explorer.iex.ec).
 Under the hood, your protected data will be **compressed as a zip file**. In
 this zip file, you'll find back all of your protected fields, each field being
 serialized with a tool called `borsh`. You can find more details here:
-[deserializer](/documentation/build-iapp/iapp-generator/deserializer).
+[deserializer](/references/iapp-generator/deserializer).
 
 This is mainly returned for debug purpose.
 

@@ -11,7 +11,7 @@ description:
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 border-none!">Time to build!</h2>
-  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="/documentation/build-iapp/iapp-generator" target="_blank" class="!text-gray-900 !font-bold underline hover:!text-black">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApps with just a few commands.</p>
+  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="/references/iapp-generator" target="_blank" class="!text-gray-900 !font-bold underline hover:!text-black">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApps with just a few commands.</p>
 </div>
 
 If you wanna explore and deep dive in the CLI. You can check the
@@ -72,10 +72,10 @@ Telegram handles.
 
 Transfer, sell or rent protected content to authorized users.
 [Github](https://github.com/iExecBlockchainComputing/dataprotector-sdk/tree/main/packages/protected-data-delivery-dapp)
-| [Documentation](/documentation/manage-data/dataProtector/dataProtectorSharing)
+| [Documentation](/references/dataProtector/dataProtectorSharing)
 
 <div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">These are just a few examples, the possibilities are endless. Want to explore iApp Generator? Check out our <a href="/documentation/build-iapp/iapp-generator" target="_blank">documentation</a> and see what you can build!</p>
+  <p class="m-0!">These are just a few examples, the possibilities are endless. Want to explore iApp Generator? Check out our <a href="/references/iapp-generator" target="_blank">documentation</a> and see what you can build!</p>
 </div>
 
 ## 💾 Installation (Win / Mac / Linux)

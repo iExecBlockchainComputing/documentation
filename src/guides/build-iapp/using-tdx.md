@@ -184,9 +184,9 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
 
 **For production applications, use the standard SGX guides**:
 
-- **[Debugging Your iApp](/documentation/build-iapp/guides/debugging)** -
-  Troubleshoot execution issues
-- **[Inputs and Outputs](/documentation/build-iapp/guides/inputs-and-outputs)** -
-  Handle data in TEE environment
-- **[App Access Control and Pricing](/documentation/build-iapp/guides/manage-access)** -
+- **[Debugging Your iApp](/guides/build-iapp/debugging)** - Troubleshoot
+  execution issues
+- **[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)** - Handle data
+  in TEE environment
+- **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
   Deploy production-ready iApps

@@ -300,16 +300,16 @@ iexec task show <taskId>
 
 Integrate result handling into your applications:
 
-- **[Inputs and Outputs](/documentation/build-iapp/guides/inputs-and-outputs)** -
-  Understand what your iApp can output
-- **[Debugging Your iApp](/documentation/build-iapp/guides/debugging)** -
-  Troubleshoot execution issues
-- **[App Access Control and Pricing](/documentation/build-iapp/guides/manage-access)** -
+- **[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)** - Understand
+  what your iApp can output
+- **[Debugging Your iApp](/guides/build-iapp/debugging)** - Troubleshoot
+  execution issues
+- **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
   Control who can run your iApp
 
 ### Advanced Topics
 
-- **[DataProtector SDK](/documentation/manage-data/dataProtector)** - Complete
-  SDK documentation
-- **[SDK Deep Dive](/documentation/protocol/sdk)** - Advanced result handling
+- **[DataProtector SDK](/references/dataProtector)** - Complete SDK
+  documentation
+- **[SDK Deep Dive](/get-started/protocol/sdk)** - Advanced result handling
   techniques

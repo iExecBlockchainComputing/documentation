@@ -17,8 +17,8 @@ blockchain. This mechanism helps protect the personal information of the
 telegram chat ID recipients through use of Ethereum addresses.
 
 The telegram chat ID address is stored as a `protectedData` entity using
-[iExec Data Protector](/documentation/manage-data/dataProtector). Through this
-mechanism, users have complete control over which applications may use their
+[iExec Data Protector](/references/dataProtector). Through this mechanism, users
+have complete control over which applications may use their
 [chat ID](./web3telegram/integration-guide.md#_1-get-your-users-to-retrieve-their-chat-id)
 for sending communications.
 

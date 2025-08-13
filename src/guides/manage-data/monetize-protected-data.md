@@ -245,11 +245,11 @@ usage periods, and flexible pricing models.
 - **See it in action**: Try the [Content Creator demo](/documentation/use-cases)
   to understand the full flow
 - **Start simple**: Begin with
-  [pay-per-use via grantAccess](/documentation/manage-data/guides/manage-access)
+  [pay-per-use via grantAccess](/guides/manage-data/manage-access)
 - **Explore sharing**: Try
-  [DataProtector Sharing](/documentation/manage-data/dataProtector/dataProtectorSharing)
-  for automated distribution
+  [DataProtector Sharing](/references/dataProtector/dataProtectorSharing) for
+  automated distribution
 - **Build collections**: Learn about
-  [collection management](/documentation/manage-data/dataProtector/dataProtectorSharing/collection)
+  [collection management](/references/dataProtector/dataProtectorSharing/collection)
 - **Set up subscriptions**: Implement
-  [recurring revenue models](/documentation/manage-data/dataProtector/dataProtectorSharing/subscription)
+  [recurring revenue models](/references/dataProtector/dataProtectorSharing/subscription)

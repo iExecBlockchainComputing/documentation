@@ -164,13 +164,13 @@ Ready to build privacy-first applications? Choose your path:
     <div class="flex items-start gap-3">
       <span class="text-xl">⚡</span>
       <div>
-        <strong>Quick Start:</strong> Follow our <a href="/documentation/helloWorld" class="text-fuchsia-700 hover:text-fuchsia-600">Hello World guide</a> to build your first confidential app in minutes
+        <strong>Quick Start:</strong> Follow our <a href="/get-started/helloWorld" class="text-fuchsia-700 hover:text-fuchsia-600">Hello World guide</a> to build your first confidential app in minutes
       </div>
     </div>
     <div class="flex items-start gap-3">
       <span class="text-xl">🔍</span>
       <div>
-        <strong>Explore Use Cases:</strong> Browse <a href="/documentation/use-cases" class="text-fuchsia-700 hover:text-fuchsia-600">real-world examples</a> to see what you can build with iExec
+        <strong>Explore Use Cases:</strong> Browse <a href="/get-started/use-cases" class="text-fuchsia-700 hover:text-fuchsia-600">real-world examples</a> to see what you can build with iExec
       </div>
     </div>
     <div class="flex items-start gap-3">

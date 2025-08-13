@@ -64,4 +64,4 @@ messages.
 import { type Contact } from '@iexec/web3telegram';
 ```
 
-[`Contact[]`](/documentation/manage-data/dataProtector/types#contact)
+[`Contact[]`](/references/dataProtector/types#contact)

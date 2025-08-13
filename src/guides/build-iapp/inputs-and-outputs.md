@@ -618,7 +618,7 @@ save_report(report)
 Once your iApp completes execution, users can retrieve and decrypt the results:
 
 → **Learn how users get results**: Check our
-[How to Get and Decrypt Results](/documentation/build-iapp/guides/how-to-get-and-decrypt-results)
+[How to Get and Decrypt Results](/guides/build-iapp/how-to-get-and-decrypt-results)
 guide for the complete user workflow.
 
 ## What's Next?
@@ -627,15 +627,15 @@ guide for the complete user workflow.
 
 Continue building with these guides:
 
-- **[App Access Control and Pricing](/documentation/build-iapp/guides/manage-access)** -
+- **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
   Control who can use your iApp
-- **[Debugging Your iApp](/documentation/build-iapp/guides/debugging)** -
-  Troubleshoot execution issues
-- **[How to Get and Decrypt Results](/documentation/build-iapp/guides/how-to-get-and-decrypt-results)** -
+- **[Debugging Your iApp](/guides/build-iapp/debugging)** - Troubleshoot
+  execution issues
+- **[How to Get and Decrypt Results](/guides/build-iapp/how-to-get-and-decrypt-results)** -
   User-side result handling
 
 ### Technical Deep Dive
 
-- **[SDK Deep Dive](/documentation/protocol/sdk)** - Advanced SDK concepts
+- **[SDK Deep Dive](/get-started/protocol/sdk)** - Advanced SDK concepts
 - **[Application I/O Protocol Docs](https://protocol.docs.iex.ec/for-developers/application-io)** -
   Low-level protocol details

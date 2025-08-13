@@ -16,14 +16,14 @@ communications and permission must be granted for the `Web3Mail` tool to use the
 `protectedData` entity containing their email address. This is best done by
 granting authorization to the Web3Mail app whitelist
 `0x781482C39CcE25546583EaC4957Fb7Bf04C277D2` as `authorizedApp`. Refer to the
-[Data Protector `grantAccess`](/documentation/manage-data/dataProtector/dataProtectorCore/grantAccess)
+[Data Protector `grantAccess`](/references/dataProtector/dataProtectorCore/grantAccess)
 documentation for more details.
 
 ::: tip
 
 For executing the `sendEmail` method with a voucher or xRLC, refer to the
 dedicated section in the documentation under
-"[How to Pay for web3mail](/documentation/use-iapp/how-to-pay/how-to-pay-for-web3mail)".
+"[How to Pay for web3mail](/guides/use-iapp/how-to-pay/how-to-pay-for-web3mail)".
 
 :::
 

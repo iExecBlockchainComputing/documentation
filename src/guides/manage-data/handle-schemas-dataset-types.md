@@ -253,8 +253,8 @@ don't match, you'll get runtime errors when processing the data.
 :::
 
 → **Ready to build an iApp?** Check out our detailed
-[Inputs and Outputs guide](/documentation/build-iapp/guides/inputs-and-outputs)
-to learn how to access schema fields inside your iApp using the deserializer.
+[Inputs and Outputs guide](/guides/build-iapp/inputs-and-outputs) to learn how
+to access schema fields inside your iApp using the deserializer.
 
 ## Next Steps
 
@@ -262,10 +262,10 @@ to learn how to access schema fields inside your iApp using the deserializer.
 explore next:
 
 - **Build an iApp**: Check out the
-  [iApp Generator guide](/documentation/build-iapp/iapp-generator) to create
-  your first data processor
+  [iApp Generator guide](/references/iapp-generator) to create your first data
+  processor
 - **Process data**: Learn about
-  [processProtectedData](/documentation/manage-data/dataProtector/dataProtectorCore/processProtectedData)
+  [processProtectedData](/references/dataProtector/dataProtectorCore/processProtectedData)
   for running computations
 - **See it in action**: Try our
   [Hello World tutorial](/documentation/helloWorld) for a complete example

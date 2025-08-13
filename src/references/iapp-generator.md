@@ -41,34 +41,34 @@ minutes, not months.
 
 Start here to understand what iApps are and how they work:
 
-- **[What Is an iApp?](/documentation/build-iapp/what-is-iapp)** - Core concepts
-  and TEE overview
-- **[Getting Started](/documentation/build-iapp/iapp-generator/getting-started)** -
-  Your first iApp in 15 minutes
-- **[Building Your iApp](/documentation/build-iapp/iapp-generator/building-your-iexec-app)** -
+- **[What Is an iApp?](/get-started/what-is-iexec/what-is-iapp)** - Core
+  concepts and TEE overview
+- **[Getting Started](/references/iapp-generator/getting-started)** - Your first
+  iApp in 15 minutes
+- **[Building Your iApp](/references/iapp-generator/building-your-iexec-app)** -
   Complete development guide
 
 ### 2. **Master the Development Workflow**
 
 Once you've built your first iApp, level up with these practical guides:
 
-- **[Inputs and Outputs](/documentation/build-iapp/guides/inputs-and-outputs)** -
-  Handle data flow in TEE environment
-- **[Debugging Your iApp](/documentation/build-iapp/guides/debugging)** -
-  Troubleshoot execution issues
-- **[App Access Control and Pricing](/documentation/build-iapp/guides/manage-access)** -
+- **[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)** - Handle data
+  flow in TEE environment
+- **[Debugging Your iApp](/guides/build-iapp/debugging)** - Troubleshoot
+  execution issues
+- **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
   Control who can use your iApp
-- **[How to Get and Decrypt Results](/documentation/build-iapp/guides/how-to-get-and-decrypt-results)** -
+- **[How to Get and Decrypt Results](/guides/build-iapp/how-to-get-and-decrypt-results)** -
   Retrieve and use outputs
 
 ### 3. **Explore Advanced Features**
 
 Ready for production? Dive into specialized topics:
 
-- **[Using TDX (Experimental)](/documentation/build-iapp/guides/using-tdx)** -
-  Next-gen TEE technology
-- **[Complete Guides Overview](/documentation/build-iapp/guides/)** - All
-  development guides in one place
+- **[Using TDX (Experimental)](/guides/build-iapp/using-tdx)** - Next-gen TEE
+  technology
+- **[Complete Guides Overview](/guides/build-iapp/)** - All development guides
+  in one place
 
 ## Why Choose iApp Generator?
 
@@ -99,19 +99,17 @@ applications:
 
 ::: tip Quick Path
 
-1. **[Getting Started](/documentation/build-iapp/iapp-generator/getting-started)** -
-   Build your first iApp (15 minutes)
-2. **[Inputs and Outputs](/documentation/build-iapp/guides/inputs-and-outputs)** -
-   Handle data properly
-3. **[Debugging](/documentation/build-iapp/guides/debugging)** - Fix issues
-   quickly
-4. **[App Access Control](/documentation/build-iapp/guides/manage-access)** - Go
-   to production :::
+1. **[Getting Started](/references/iapp-generator/getting-started)** - Build
+   your first iApp (15 minutes)
+2. **[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)** - Handle data
+   properly
+3. **[Debugging](/guides/build-iapp/debugging)** - Fix issues quickly
+4. **[App Access Control](/guides/build-iapp/manage-access)** - Go to production
+   :::
 
 ### Need Help?
 
-- **[Complete Guides](/documentation/build-iapp/guides/)** - All development
-  guides
+- **[Complete Guides](/guides/build-iapp/)** - All development guides
 - **[iExec Discord](https://discord.com/invite/pbt9m98wnU)** - Community support
 - **[Protocol Documentation](https://protocol.docs.iex.ec)** - Technical deep
   dive

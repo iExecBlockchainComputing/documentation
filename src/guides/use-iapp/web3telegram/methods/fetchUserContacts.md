@@ -84,4 +84,4 @@ with `userAddress` to send them messages.
 import { type Contact } from '@iexec/web3telegram';
 ```
 
-[`Contract[]`](/documentation/manage-data/dataProtector/types#contact)
+[`Contract[]`](/references/dataProtector/types#contact)
