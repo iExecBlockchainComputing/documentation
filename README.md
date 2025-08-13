@@ -173,3 +173,4 @@ Fork this repository and ensure you're working on the `main` branch:
 - migrate github SDK doc here
 - migrate pay-per-task page into a guide
 - check pages (introduction & getting-started) for use-iapp guide
+- Fix Mermaid integration for some guides (or remove and replace)
