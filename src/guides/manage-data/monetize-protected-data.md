@@ -71,7 +71,7 @@ access time, not individual transactions.
 
 ::: tip See It Live
 
-The [Content Creator demo](/documentation/use-cases) shows DataProtector Sharing
+The [Content Creator demo](/get-started/use-cases) shows DataProtector Sharing
 in action with file monetization. While it uses the content-delivery iApp for
 file streaming, the same patterns work for any iApp - AI models, data
 processing, oracles, etc.
@@ -242,7 +242,7 @@ usage periods, and flexible pricing models.
 
 **Ready to start monetizing your data?** Here are your next steps:
 
-- **See it in action**: Try the [Content Creator demo](/documentation/use-cases)
+- **See it in action**: Try the [Content Creator demo](/get-started/use-cases)
   to understand the full flow
 - **Start simple**: Begin with
   [pay-per-use via grantAccess](/guides/manage-data/manage-access)

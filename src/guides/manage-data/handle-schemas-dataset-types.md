@@ -268,4 +268,4 @@ explore next:
   [processProtectedData](/references/dataProtector/dataProtectorCore/processProtectedData)
   for running computations
 - **See it in action**: Try our
-  [Hello World tutorial](/documentation/helloWorld) for a complete example
+  [Hello World tutorial](/get-started/helloWorld) for a complete example
