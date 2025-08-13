@@ -106,12 +106,12 @@ export function getSidebar() {
         text: 'PROTOCOL',
         items: [
           {
-            text: '💸 Pay Per Task Model',
-            link: '/get-started/protocol/poco/pay-per-task',
+            text: '🛡️ Proof of Contribution',
+            link: '/get-started/protocol/proof-of-contribution',
           },
           {
-            text: '🛡️ Proof of Contribution',
-            link: '/get-started/protocol/poco/proof-of-contribution',
+            text: '💸 Pay Per Task Model',
+            link: '/get-started/protocol/pay-per-task',
           },
           {
             text: '⚙️ Workers & Workerpools',
@@ -136,15 +136,15 @@ export function getSidebar() {
         items: [
           {
             text: 'Manage Access',
-            link: '/guides/manage-data/guides/manage-access',
+            link: '/guides/manage-data/manage-access',
           },
           {
             text: 'Handle Schemas and Dataset Types',
-            link: '/guides/manage-data/guides/handle-schemas-dataset-types',
+            link: '/guides/manage-data/handle-schemas-dataset-types',
           },
           {
             text: 'Monetize Protected Data',
-            link: '/guides/manage-data/guides/monetize-protected-data',
+            link: '/guides/manage-data/monetize-protected-data',
           },
         ],
       },
@@ -293,89 +293,89 @@ export function getSidebar() {
             items: [
               {
                 text: 'Collection',
-                link: '/references/manage-data/dataProtector/dataProtectorSharing/collection',
+                link: '/references/dataProtector/dataProtectorSharing/collection',
                 collapsed: true,
                 items: [
                   {
                     text: 'createCollection',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/collection/createCollection',
+                    link: '/references/dataProtector/dataProtectorSharing/collection/createCollection',
                   },
                   {
                     text: 'removeCollection',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/collection/removeCollection',
+                    link: '/references/dataProtector/dataProtectorSharing/collection/removeCollection',
                   },
                   {
                     text: 'addToCollection',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/collection/addToCollection',
+                    link: '/references/dataProtector/dataProtectorSharing/collection/addToCollection',
                   },
                   {
                     text: 'removeProtectedDataFromCollection',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/collection/removeProtectedDataFromCollection',
+                    link: '/references/dataProtector/dataProtectorSharing/collection/removeProtectedDataFromCollection',
                   },
                 ],
               },
               {
                 text: 'Renting',
-                link: '/references/manage-data/dataProtector/dataProtectorSharing/renting',
+                link: '/references/dataProtector/dataProtectorSharing/renting',
                 collapsed: true,
                 items: [
                   {
                     text: 'setProtectedDataToRenting',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/renting/setProtectedDataToRenting',
+                    link: '/references/dataProtector/dataProtectorSharing/renting/setProtectedDataToRenting',
                   },
                   {
                     text: 'setProtectedDataRentingParams',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/renting/setProtectedDataRentingParams',
+                    link: '/references/dataProtector/dataProtectorSharing/renting/setProtectedDataRentingParams',
                   },
                   {
                     text: 'rentProtectedData',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/renting/rentProtectedData',
+                    link: '/references/dataProtector/dataProtectorSharing/renting/rentProtectedData',
                   },
                   {
                     text: 'removeProtectedDataFromRenting',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/renting/removeProtectedDataFromRenting',
+                    link: '/references/dataProtector/dataProtectorSharing/renting/removeProtectedDataFromRenting',
                   },
                 ],
               },
               {
                 text: 'Selling',
-                link: '/references/manage-data/dataProtector/dataProtectorSharing/selling',
+                link: '/references/dataProtector/dataProtectorSharing/selling',
                 collapsed: true,
                 items: [
                   {
                     text: 'setProtectedDataForSale',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/selling/setProtectedDataForSale',
+                    link: '/references/dataProtector/dataProtectorSharing/selling/setProtectedDataForSale',
                   },
                   {
                     text: 'buyProtectedData',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/selling/buyProtectedData',
+                    link: '/references/dataProtector/dataProtectorSharing/selling/buyProtectedData',
                   },
                   {
                     text: 'removeProtectedDataForSale',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/selling/removeProtectedDataForSale',
+                    link: '/references/dataProtector/dataProtectorSharing/selling/removeProtectedDataForSale',
                   },
                 ],
               },
               {
                 text: 'Subscription',
-                link: '/references/manage-data/dataProtector/dataProtectorSharing/subscription',
+                link: '/references/dataProtector/dataProtectorSharing/subscription',
                 collapsed: true,
                 items: [
                   {
                     text: 'setProtectedDataToSubscription',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/subscription/setProtectedDataToSubscription',
+                    link: '/references/dataProtector/dataProtectorSharing/subscription/setProtectedDataToSubscription',
                   },
                   {
                     text: 'setSubscriptionParams',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/subscription/setSubscriptionParams',
+                    link: '/references/dataProtector/dataProtectorSharing/subscription/setSubscriptionParams',
                   },
                   {
                     text: 'subscribeToCollection',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/subscription/subscribeToCollection',
+                    link: '/references/dataProtector/dataProtectorSharing/subscription/subscribeToCollection',
                   },
                   {
                     text: 'removeProtectedDataFromSubscription',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/subscription/removeProtectedDataFromSubscription',
+                    link: '/references/dataProtector/dataProtectorSharing/subscription/removeProtectedDataFromSubscription',
                   },
                 ],
               },
@@ -385,7 +385,7 @@ export function getSidebar() {
                 items: [
                   {
                     text: 'consumeProtectedData',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/consume/consumeProtectedData',
+                    link: '/references/dataProtector/dataProtectorSharing/consume/consumeProtectedData',
                   },
                 ],
               },
@@ -395,27 +395,27 @@ export function getSidebar() {
                 items: [
                   {
                     text: 'getProtectedDataInCollections',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/read/getProtectedDataInCollections',
+                    link: '/references/dataProtector/dataProtectorSharing/read/getProtectedDataInCollections',
                   },
                   {
                     text: 'getProtectedDataPricingParams',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/read/getProtectedDataPricingParams',
+                    link: '/references/dataProtector/dataProtectorSharing/read/getProtectedDataPricingParams',
                   },
                   {
                     text: 'getCollectionOwners',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/read/getCollectionOwners',
+                    link: '/references/dataProtector/dataProtectorSharing/read/getCollectionOwners',
                   },
                   {
                     text: 'getCollectionsByOwner',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/read/getCollectionsByOwner',
+                    link: '/references/dataProtector/dataProtectorSharing/read/getCollectionsByOwner',
                   },
                   {
                     text: 'getCollectionSubscriptions',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/read/getCollectionSubscriptions',
+                    link: '/references/dataProtector/dataProtectorSharing/read/getCollectionSubscriptions',
                   },
                   {
                     text: 'getRentals',
-                    link: '/references/manage-data/dataProtector/dataProtectorSharing/read/getRentals',
+                    link: '/references/dataProtector/dataProtectorSharing/read/getRentals',
                   },
                 ],
               },
@@ -431,28 +431,28 @@ export function getSidebar() {
             items: [
               {
                 text: 'Advanced Configuration',
-                link: '/references/manage-data/dataProtector/advanced/advanced-configuration',
+                link: '/references/dataProtector/advanced/advanced-configuration',
               },
               {
                 text: 'Sharing smart contract',
-                link: '/references/manage-data/dataProtector/advanced/dps-smart-contract',
+                link: '/references/dataProtector/advanced/dps-smart-contract',
               },
               {
                 text: 'Apps whitelist',
-                link: '/references/manage-data/dataProtector/advanced/apps-whitelist',
+                link: '/references/dataProtector/advanced/apps-whitelist',
                 collapsed: true,
                 items: [
                   {
                     text: 'createAddOnlyAppWhitelist',
-                    link: '/references/manage-data/dataProtector/advanced/apps-whitelist/createAddOnlyAppWhitelist',
+                    link: '/references/dataProtector/advanced/apps-whitelist/createAddOnlyAppWhitelist',
                   },
                   {
                     text: 'addAppToAddOnlyAppWhitelist',
-                    link: '/references/manage-data/dataProtector/advanced/apps-whitelist/addAppToAddOnlyAppWhitelist',
+                    link: '/references/dataProtector/advanced/apps-whitelist/addAppToAddOnlyAppWhitelist',
                   },
                   {
                     text: 'getUserAddOnlyAppWhitelist',
-                    link: '/references/manage-data/dataProtector/advanced/apps-whitelist/getUserAddOnlyAppWhitelist',
+                    link: '/references/dataProtector/advanced/apps-whitelist/getUserAddOnlyAppWhitelist',
                   },
                 ],
               },

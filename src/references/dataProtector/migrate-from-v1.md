@@ -5,7 +5,7 @@ description:
   the latest npm package
 ---
 
-# Migrate from V1 to V2 <span style="margin-left: 12px; position: absolute; top: -2px;"><Badge type="warning" text="beta" /></span>
+# Migrate from V1 to V2 <span style="margin-left: 12px; position: absolute; top: -2px;"></span>
 
 ::: tip
 
