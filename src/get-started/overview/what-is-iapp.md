@@ -99,104 +99,59 @@ guarantees** that privacy is preserved within the TEE execution environment.
 
 ## Use Cases
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
-    <div class="flex items-baseline gap-2 text-lg">
-      <span>📧</span>
-      <h3 class="font-semibold m-0!">Private Communication</h3>
-    </div>
-    <p class="text-sm m-0!">Users send emails, notifications, or messages using their protected contact lists without exposing recipient information.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4">
+    <h4 class="text-lg font-semibold mb-2">🏥 Healthcare</h4>
+    <p class="text-sm m-0">Process medical data for AI diagnosis without exposing patient information</p>
   </div>
-
-  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
-    <div class="flex items-baseline gap-2 text-lg">
-      <span>🔮</span>
-      <h3 class="font-semibold m-0!">Trustworthy Oracles</h3>
-    </div>
-    <p class="text-sm m-0!">Users contribute real data to oracles while keeping their private information confidential.</p>
+  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4">
+    <h4 class="text-lg font-semibold mb-2">💰 Finance</h4>
+    <p class="text-sm m-0">Analyze financial data for credit scoring while maintaining privacy</p>
   </div>
-
-  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
-    <div class="flex items-baseline gap-2 text-lg">
-      <span>🤖</span>
-      <h3 class="font-semibold m-0!">Personal AI Assistants</h3>
-    </div>
-    <p class="text-sm m-0!">Users let AI models perform actions based on their private data - trading, scheduling, recommendations...</p>
+  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4">
+    <h4 class="text-lg font-semibold mb-2">🎬 Media</h4>
+    <p class="text-sm m-0">Content recommendation engines that don't track user behavior</p>
   </div>
-
-  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
-    <div class="flex items-baseline gap-2 text-lg">
-      <span>⚡</span>
-      <h3 class="font-semibold m-0!">Automated Actions</h3>
-    </div>
-      <p class="text-sm m-0!">Users let AI models perform actions based on their private data - trading, scheduling, recommendations...</p>
+  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4">
+    <h4 class="text-lg font-semibold mb-2">🔬 Research</h4>
+    <p class="text-sm m-0">Collaborative research on sensitive datasets across institutions</p>
   </div>
 </div>
 
-## ❓ Frequently Asked Questions
+## Getting Started
 
-::: details 📦 What can I build with iApps?
+<div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
+  <h2 class="text-2xl font-bold mt-0 border-none!">Time to build!</h2>
+  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="/references/iapp-generator" target="_blank" class="!text-gray-900 !font-bold underline hover:!text-black">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApps with just a few commands.</p>
+</div>
 
-Anything that runs in Docker! AI models, data processing scripts, web scrapers,
-image processing, financial calculations, etc. If it runs in a container, it can
-be an iApp.
+### Quick Start Path
 
-:::
+1. **Protect your data** with [DataProtector](/references/dataProtector)
+2. **Build your iApp** using the [iApp Generator](/references/iapp-generator)
+3. **Deploy and test** your application
+4. **Process protected data** securely
 
-::: details ⚡How fast are iApps?
+### What You'll Learn
 
-Initial task scheduling takes a few seconds (depending on the resources the
-worker download, congestion etc), then your code runs at normal speed depending
-on complexity.
+- How to create a Docker container for your application
+- How to handle inputs and outputs securely
+- How to deploy to the iExec network
+- How to process protected data in TEE environments
 
-:::
+<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+  <p class="m-0!">These are just a few examples, the possibilities are endless. Want to explore iApp Generator? Check out our <a href="/references/iapp-generator" target="_blank">documentation</a> and see what you can build!</p>
+</div>
 
-::: details 🛡️ Are iApps really secure?
+## Technical Requirements
 
-Yes! Code runs in Intel SGX or TDX secure enclaves. Even the worker running your
-iApp can't see what's happening inside the enclave.
-
-:::
-
-::: details 🚀 How do I deploy my first iApp?
-
-Try our [Hello World](/get-started/helloWorld) for a quick start, or check the
-[iApp Generator](/references/iapp-generator) section for detailed instructions.
-
-:::
-
-::: details 🔧 What programming languages are supported?
-
-iApps can be built in any language that runs in Docker (Python, JavaScript, R,
-Java, Go, etc.). However, **iApp Generator** currently supports only Python and
-Node.js for simplified development.
-
-:::
+- **Docker**: Your application must be containerized
+- **Input/Output**: Define clear input and output schemas
+- **TEE Compatibility**: Ensure your code runs in secure enclaves
+- **Network Access**: Configure any external API calls or dependencies
 
 ## Next Steps
 
-<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
+Ready to build your first privacy-preserving application? Start with our [Hello World tutorial](/get-started/helloWorld) or dive into the [iApp Generator documentation](/references/iapp-generator).
 
-<div class="flex flex-col gap-4">
-  <div class="flex items-start gap-3">
-    <div>📚</div>
-    <div>
-      Learn More - iApp Generator:
-      <a href="/references/iapp-generator">Complete DataProtector Documentation</a>
-    </div>
-  </div>
-  <div class="flex items-start gap-3">
-    <div>🚀</div>
-    <div>
-      Getting Started - deploy your first iApp:
-      <a href="/guides/build-iapp/build-&-deploy">DataProtector Quick Start Guide</a>
-    </div>
-  </div>
-</div>
-
-</div>
-
----
-
-**TL;DR**: iApps = Your code + Secure execution + User privacy + Verifiable
-results. Cloud computing, but nobody can spy on your stuff. 🔒
+For more technical details, see the [DataProtector Sharing](/references/dataProtector/dataProtectorSharing) documentation.

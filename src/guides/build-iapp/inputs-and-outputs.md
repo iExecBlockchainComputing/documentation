@@ -636,6 +636,6 @@ Continue building with these guides:
 
 ### Technical Deep Dive
 
-- **[SDK Deep Dive](/get-started/protocol/sdk)** - Advanced SDK concepts
+- **[SDK Deep Dive](/references/sdk)** - Advanced SDK concepts
 - **[Application I/O Protocol Docs](https://protocol.docs.iex.ec/for-developers/application-io)** -
   Low-level protocol details

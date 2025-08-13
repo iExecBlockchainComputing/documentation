@@ -267,5 +267,5 @@ explore next:
 - **Process data**: Learn about
   [processProtectedData](/references/dataProtector/dataProtectorCore/processProtectedData)
   for running computations
-- **See it in action**: Try our
-  [Hello World tutorial](/get-started/helloWorld) for a complete example
+- **See it in action**: Try our [Hello World tutorial](/get-started/helloWorld)
+  for a complete example

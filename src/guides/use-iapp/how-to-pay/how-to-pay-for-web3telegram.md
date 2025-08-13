@@ -8,7 +8,7 @@ description:
 
 # How to Pay for Web3Telegram
 
-[Web3Telegram](../web3telegram) dev tool offers secure, blockchain-based
+[Web3Telegram](/references/web3telegram) dev tool offers secure, blockchain-based
 communication by encrypting emails and protecting user privacy.
 
 The `sendTelegram` function uses confidential computing power to encrypt and

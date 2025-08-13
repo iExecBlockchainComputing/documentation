@@ -35,7 +35,7 @@ After mastering these guides, explore:
 
 - **[iApp Generator](/references/iapp-generator)** - Complete development
   toolkit
-- **[What is an iApp?](/get-started/what-is-iexec/what-is-iapp)** - Core
+- **[What is an iApp?](/get-started/overview/what-is-iapp)** - Core
   concepts and TEE overview
 
 Ready to build your first privacy-preserving application? Start with the

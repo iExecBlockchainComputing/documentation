@@ -76,7 +76,7 @@ consensus on a given result. Its logic is detailed in two blog articles:
 
 The
 [nominal workflow](https://github.com/iExecBlockchainComputing/iexec-doc/raw/master/techreport/nominalworkflow-ODB.png)
-is also available in the [technical report section](../glossary.md)
+is also available in the [technical report section](/references/glossary)
 
 Below are the details of the implementations:
 

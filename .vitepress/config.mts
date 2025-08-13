@@ -98,7 +98,7 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Documentation', link: '/get-started/welcome' },
+      { text: 'Get Started', link: '/get-started/welcome' },
       { text: 'Guides', link: '/guides/build-iapp/' },
       { text: 'References', link: '/references/dataProtector' },
       {

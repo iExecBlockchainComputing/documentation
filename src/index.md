@@ -31,7 +31,7 @@ features:
     details:
       Create decentralized applications that run on confidential computing
       infrastructure with our iApp Generator
-    link: /get-started/what-is-iexec/what-is-iapp
+    link: /get-started/overview/what-is-iapp
   - icon: ⚡
     title: Use iApps
     details:

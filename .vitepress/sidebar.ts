@@ -43,25 +43,25 @@ export function getSidebar() {
             link: '/get-started/use-cases',
           },
           {
-            text: '🪙 RLC Token',
-            link: '/get-started/rlc',
-          },
-          {
             text: '🤖 Develop with AI',
             link: '/get-started/develop-with-ai',
           },
         ],
       },
       {
-        text: 'WHAT IS iExec ?',
+        text: 'iExec OVERVIEW',
         items: [
           {
             text: '❓&nbsp;&nbsp;What is Protected Data ?',
-            link: '/get-started/what-is-iexec/what-is-protected-data',
+            link: '/get-started/overview/what-is-protected-data',
           },
           {
             text: '❓ What is an iApp ?',
-            link: '/get-started/what-is-iexec/build-iapp/what-is-iapp',
+            link: '/get-started/overview/what-is-iapp',
+          },
+          {
+            text: '🪙 RLC Token',
+            link: '/get-started/rlc',
           },
         ],
       },
@@ -151,27 +151,27 @@ export function getSidebar() {
         items: [
           {
             text: 'Build and Deploy',
-            link: '/guides/build-iapp/guides/build-&-deploy',
+            link: '/guides/build-iapp/build-&-deploy',
           },
           {
             text: 'Manage Access',
-            link: '/guides/build-iapp/guides/manage-access',
+            link: '/guides/build-iapp/manage-access',
           },
           {
             text: 'Inputs and Outputs',
-            link: '/guides/build-iapp/guides/inputs-and-outputs',
+            link: '/guides/build-iapp/inputs-and-outputs',
           },
           {
             text: 'Using TDX',
-            link: '/guides/build-iapp/guides/using-tdx',
+            link: '/guides/build-iapp/using-tdx',
           },
           {
             text: 'How to Get and Decrypt Results',
-            link: '/guides/build-iapp/guides/how-to-get-and-decrypt-results',
+            link: '/guides/build-iapp/how-to-get-and-decrypt-results',
           },
           {
             text: 'Debugging',
-            link: '/guides/build-iapp/guides/debugging',
+            link: '/guides/build-iapp/debugging',
           },
         ],
       },
@@ -180,31 +180,31 @@ export function getSidebar() {
         items: [
           {
             text: '📝 Introduction',
-            link: '/guides/what-is-iexec/introduction',
+            link: '/guides/use-iapp/introduction',
           },
           {
             text: '🚀 Getting Started',
-            link: '/guides/what-is-iexec/getting-started',
+            link: '/guides/use-iapp/getting-started',
           },
           {
             text: 'Different Ways to Execute an iApp',
-            link: '/guides/use-iapp/guides/different-ways-to-execute',
+            link: '/guides/use-iapp/different-ways-to-execute',
           },
           {
             text: 'Add Inputs to the Execution',
-            link: '/guides/use-iapp/guides/add-inputs-to-execution',
+            link: '/guides/use-iapp/add-inputs-to-execution',
           },
           {
             text: 'Use iApp with Protected Data',
-            link: '/guides/use-iapp/guides/use-iapp-with-protected-data',
+            link: '/guides/use-iapp/use-iapp-with-protected-data',
           },
           {
             text: 'Find iApps to Use',
-            link: '/guides/use-iapp/guides/find-iapps',
+            link: '/guides/use-iapp/find-iapps',
           },
           {
             text: 'How to Pay the Executions',
-            link: '/guides/use-iapp/guides/how-to-pay-executions',
+            link: '/guides/use-iapp/how-to-pay-executions',
           },
           {
             text: '💰 How to Pay',
@@ -228,83 +228,13 @@ export function getSidebar() {
               },
             ],
           },
-          {
-            text: '✉ Web3Mail',
-            link: '/guides/use-iapp/web3mail',
-            collapsed: true,
-            items: [
-              {
-                text: 'Getting Started',
-                link: '/guides/use-iapp/web3mail/getting-started',
-              },
-              {
-                text: 'Methods',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'fetchMyContacts',
-                    link: '/guides/use-iapp/web3mail/methods/fetchMyContacts',
-                  },
-                  {
-                    text: 'fetchUserContacts',
-                    link: '/guides/use-iapp/web3mail/methods/fetchUserContacts',
-                  },
-                  {
-                    text: 'sendEmail',
-                    link: '/guides/use-iapp/web3mail/methods/sendEmail',
-                  },
-                ],
-              },
-              {
-                text: 'Advanced Configuration',
-                link: '/guides/use-iapp/web3mail/advanced-configuration',
-              },
-            ],
-          },
-          {
-            text: '💬 Web3Telegram',
-            link: '/guides/use-iapp/web3telegram',
-            collapsed: true,
-            items: [
-              {
-                text: 'Getting Started',
-                link: '/guides/use-iapp/web3telegram/getting-started',
-              },
-              {
-                text: 'Methods',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'fetchMyContacts',
-                    link: '/guides/use-iapp/web3telegram/methods/fetchMyContacts',
-                  },
-                  {
-                    text: 'fetchUserContacts',
-                    link: '/guides/use-iapp/web3telegram/methods/fetchUserContacts',
-                  },
-                  {
-                    text: 'sendTelegram',
-                    link: '/guides/use-iapp/web3telegram/methods/sendTelegram',
-                  },
-                ],
-              },
-              {
-                text: 'Integration Guide',
-                link: '/guides/use-iapp/web3telegram/integration-guide',
-              },
-              {
-                text: 'Advanced Configuration',
-                link: '/guides/use-iapp/web3telegram/advanced-configuration',
-              },
-            ],
-          },
         ],
       },
     ],
     '/references/': [
       {
         text: '🔐 DataProtector',
-        link: '/references/manage-data/dataProtector',
+        link: '/references/dataProtector',
         collapsed: true,
         items: [
           {
@@ -534,33 +464,104 @@ export function getSidebar() {
       },
       {
         text: '🤖 iApp Generator',
-        link: '/references/build-iapp/iapp-generator',
-        collapsed: true,
+        link: '/references/iapp-generator',
         items: [
           {
             text: 'Getting Started',
-            link: '/references/build-iapp/iapp-generator/getting-started',
+            link: '/references/iapp-generator/getting-started',
           },
           {
             text: 'Building your iApp',
-            link: '/references/build-iapp/iapp-generator/building-your-iexec-app',
+            link: '/references/iapp-generator/building-your-iexec-app',
           },
           {
             text: 'Deserialize ProtectedData',
-            link: '/references/build-iapp/iapp-generator/deserializer',
+            link: '/references/iapp-generator/deserializer',
             collapsed: true,
             items: [
               {
                 text: 'getValue',
-                link: '/references/build-iapp/iapp-generator/deserializer/getValue',
+                link: '/references/iapp-generator/deserializer/getValue',
               },
             ],
           },
         ],
       },
       {
+        text: '✉ Web3Mail',
+        link: '/references/web3mail',
+        items: [
+          {
+            text: 'Getting Started',
+            link: '/references/web3mail/getting-started',
+          },
+          {
+            text: 'Methods',
+            collapsed: true,
+            items: [
+              {
+                text: 'fetchMyContacts',
+                link: '/references/web3mail/methods/fetchMyContacts',
+              },
+              {
+                text: 'fetchUserContacts',
+                link: '/references/web3mail/methods/fetchUserContacts',
+              },
+              {
+                text: 'sendEmail',
+                link: '/references/web3mail/methods/sendEmail',
+              },
+            ],
+          },
+          {
+            text: 'Advanced Configuration',
+            link: '/references/web3mail/advanced-configuration',
+          },
+        ],
+      },
+      {
+        text: '💬 Web3Telegram',
+        link: '/references/web3telegram',
+        items: [
+          {
+            text: 'Getting Started',
+            link: '/references/web3telegram/getting-started',
+          },
+          {
+            text: 'Methods',
+            collapsed: true,
+            items: [
+              {
+                text: 'fetchMyContacts',
+                link: '/references/web3telegram/methods/fetchMyContacts',
+              },
+              {
+                text: 'fetchUserContacts',
+                link: '/references/web3telegram/methods/fetchUserContacts',
+              },
+              {
+                text: 'sendTelegram',
+                link: '/references/web3telegram/methods/sendTelegram',
+              },
+            ],
+          },
+          {
+            text: 'Integration Guide',
+            link: '/references/web3telegram/integration-guide',
+          },
+          {
+            text: 'Advanced Configuration',
+            link: '/references/web3telegram/advanced-configuration',
+          },
+        ],
+      },
+      {
+        text: '🔧 iExec SDK',
+        link: '/references/sdk',
+      },
+      {
         text: '�📖 Glossary',
-        link: '/references/protocol/glossary',
+        link: '/references/glossary',
       },
     ],
   } satisfies DefaultTheme.Sidebar;
