@@ -10,44 +10,44 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /overview/welcome
+      link: /get-started/welcome
     - theme: alt
       text: Hello World Tutorial
-      link: /overview/helloWorld
+      link: /get-started/helloWorld
 
 features:
   - icon: 🚀
     title: Quick Start
     details: Jump in and start building on iExec in minutes.
-    link: /overview/helloWorld
+    link: /get-started/helloWorld
   - icon: 🔐
     title: Protect & Manage Data
     details:
       Secure your data with advanced encryption and control access while
       maintaining privacy using DataProtector
-    link: /manage-data/what-is-protected-data
+    link: /get-started/overview/what-is-protected-data
   - icon: 🤖
     title: Build iApps
     details:
       Create decentralized applications that run on confidential computing
       infrastructure with our iApp Generator
-    link: /build-iapp/what-is-iapp
+    link: /get-started/overview/what-is-iapp
   - icon: ⚡
     title: Use iApps
     details:
       Execute existing iApps including Web3Mail, Web3Telegram for your
       applications
-    link: /use-iapp/introduction
+    link: /guides/use-iapp/introduction
   - icon: 💰
     title: Monetize Data
     details:
       Create revenue streams from your data while maintaining full control and
       privacy
-    link: /use-iapp/how-to-pay/how-to-pay-for-web3mail
+    link: /guides/use-iapp/how-to-pay/how-to-pay-for-web3mail
   - icon: 🧠
     title: Protocols
     details:
       Deep dive into the core concepts of the protocol and understand how iExec
       enables privacy, governance, and monetization
-    link: /protocol/sdk
+    link: /get-started/protocol/proof-of-contribution
 ---

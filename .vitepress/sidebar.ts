@@ -2,49 +2,78 @@ import type { DefaultTheme } from 'vitepress';
 
 export function getSidebar() {
   return {
-    '/overview/': [
+    '/get-started/': [
       {
         text: 'GET STARTED',
         items: [
-          { text: '💡 Welcome', link: '/overview/welcome' },
+          { text: '💡 Welcome', link: '/get-started/welcome' },
+          {
+            text: '🛠️ Toolkit',
+            link: '/get-started/toolkit',
+          },
           {
             text: '👋 Hello World',
-            link: '/overview/helloWorld',
+            link: '/get-started/helloWorld',
+            collapsed: true,
             items: [
               {
                 text: 'iExec Overview',
-                link: '/overview/helloWorld/1-overview',
+                link: '/get-started/helloWorld/1-overview',
               },
               {
                 text: 'Protect Data',
-                link: '/overview/helloWorld/2-protectData',
+                link: '/get-started/helloWorld/2-protectData',
               },
-              { text: 'Build iApp', link: '/overview/helloWorld/3-buildIApp' },
+              {
+                text: 'Build iApp',
+                link: '/get-started/helloWorld/3-buildIApp',
+              },
               {
                 text: 'Manage Data Access',
-                link: '/overview/helloWorld/4-manageDataAccess',
+                link: '/get-started/helloWorld/4-manageDataAccess',
               },
               {
                 text: 'Bonus Chapter !',
-                link: '/overview/helloWorld/5-bonusChapter',
+                link: '/get-started/helloWorld/5-bonusChapter',
               },
             ],
           },
           {
             text: '🚀 Quick Start',
-            link: '/overview/quick-start',
+            link: '/get-started/quick-start',
           },
           {
             text: '📋 Use Cases',
-            link: '/overview/use-cases',
-          },
-          {
-            text: '🪙 RLC Token',
-            link: '/overview/rlc',
+            link: '/get-started/use-cases',
           },
           {
             text: '🤖 Develop with AI',
-            link: '/overview/develop-with-ai',
+            link: '/get-started/develop-with-ai',
+          },
+        ],
+      },
+      {
+        text: 'iExec OVERVIEW',
+        items: [
+          {
+            text: '❓ What is iExec ?',
+            link: '/get-started/overview/what-is-iexec',
+          },
+          {
+            text: '❓&nbsp;&nbsp;What is Protected Data ?',
+            link: '/get-started/overview/what-is-protected-data',
+          },
+          {
+            text: '❓ What is an iApp ?',
+            link: '/get-started/overview/what-is-iapp',
+          },
+          {
+            text: '❓ What is a Workerpool ?',
+            link: '/get-started/overview/what-is-workerpool',
+          },
+          {
+            text: '🪙 RLC Token',
+            link: '/get-started/rlc',
           },
         ],
       },
@@ -53,488 +82,488 @@ export function getSidebar() {
         items: [
           {
             text: 'iExec Explorer',
-            link: '/overview/tooling-and-explorers/iexec-explorer',
+            link: '/get-started/tooling-and-explorers/iexec-explorer',
           },
           {
             text: 'Builder Dashboard',
-            link: '/overview/tooling-and-explorers/builder-dashboard',
+            link: '/get-started/tooling-and-explorers/builder-dashboard',
           },
           {
             text: 'RLC Bridge',
-            link: '/overview/tooling-and-explorers/bridge',
+            link: '/get-started/tooling-and-explorers/bridge',
           },
           {
             text: 'Subgraph Explorer',
-            link: '/overview/tooling-and-explorers/subgraph-explorer',
+            link: '/get-started/tooling-and-explorers/subgraph-explorer',
           },
           {
             text: 'Blockchain Explorer',
-            link: '/overview/tooling-and-explorers/blockchain-explorer',
+            link: '/get-started/tooling-and-explorers/blockchain-explorer',
           },
         ],
       },
-    ],
-    '/manage-data/': [
-      {
-        text: 'PROTECT AND MANAGE DATA',
-        items: [
-          {
-            text: '❓&nbsp;&nbsp;What is Protected Data?',
-            link: '/manage-data/what-is-protected-data',
-          },
-          {
-            text: '📖 Guides',
-            items: [
-              {
-                text: 'Manage Access',
-                link: '/manage-data/guides/manage-access',
-              },
-              {
-                text: 'Handle Schemas and Dataset Types',
-                link: '/manage-data/guides/handle-schemas-dataset-types',
-              },
-              {
-                text: 'Monetize Protected Data',
-                link: '/manage-data/guides/monetize-protected-data',
-              },
-            ],
-          },
-          {
-            text: '🔐 DataProtector',
-            link: '/manage-data/dataProtector',
-            items: [
-              {
-                text: 'Getting Started',
-                link: '/manage-data/dataProtector/getting-started',
-              },
-              {
-                text: 'DataProtector Core',
-                link: '/manage-data/dataProtector/dataProtectorCore',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'protectData',
-                    link: '/manage-data/dataProtector/dataProtectorCore/protectData',
-                  },
-                  {
-                    text: 'getProtectedData',
-                    link: '/manage-data/dataProtector/dataProtectorCore/getProtectedData',
-                  },
-                  {
-                    text: 'transferOwnership',
-                    link: '/manage-data/dataProtector/dataProtectorCore/transferOwnership',
-                  },
-                  {
-                    text: 'grantAccess',
-                    link: '/manage-data/dataProtector/dataProtectorCore/grantAccess',
-                  },
-                  {
-                    text: 'getGrantedAccess',
-                    link: '/manage-data/dataProtector/dataProtectorCore/getGrantedAccess',
-                  },
-                  {
-                    text: 'revokeOneAccess',
-                    link: '/manage-data/dataProtector/dataProtectorCore/revokeOneAccess',
-                  },
-                  {
-                    text: 'revokeAllAccess',
-                    link: '/manage-data/dataProtector/dataProtectorCore/revokeAllAccess',
-                  },
-                  {
-                    text: 'processProtectedData',
-                    link: '/manage-data/dataProtector/dataProtectorCore/processProtectedData',
-                  },
-                  {
-                    text: 'getResultFromCompletedTask',
-                    link: '/manage-data/dataProtector/dataProtectorCore/getResultFromCompletedTask',
-                  },
-                ],
-              },
-              {
-                text: 'DataProtector Sharing',
-                link: '/manage-data/dataProtector/dataProtectorSharing',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'Collection',
-                    link: '/manage-data/dataProtector/dataProtectorSharing/collection',
-                    collapsed: true,
-                    items: [
-                      {
-                        text: 'createCollection',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/collection/createCollection',
-                      },
-                      {
-                        text: 'removeCollection',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/collection/removeCollection',
-                      },
-                      {
-                        text: 'addToCollection',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/collection/addToCollection',
-                      },
-                      {
-                        text: 'removeProtectedDataFromCollection',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/collection/removeProtectedDataFromCollection',
-                      },
-                    ],
-                  },
-                  {
-                    text: 'Renting',
-                    link: '/manage-data/dataProtector/dataProtectorSharing/renting',
-                    collapsed: true,
-                    items: [
-                      {
-                        text: 'setProtectedDataToRenting',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/renting/setProtectedDataToRenting',
-                      },
-                      {
-                        text: 'setProtectedDataRentingParams',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/renting/setProtectedDataRentingParams',
-                      },
-                      {
-                        text: 'rentProtectedData',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/renting/rentProtectedData',
-                      },
-                      {
-                        text: 'removeProtectedDataFromRenting',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/renting/removeProtectedDataFromRenting',
-                      },
-                    ],
-                  },
-                  {
-                    text: 'Selling',
-                    link: '/manage-data/dataProtector/dataProtectorSharing/selling',
-                    collapsed: true,
-                    items: [
-                      {
-                        text: 'setProtectedDataForSale',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/selling/setProtectedDataForSale',
-                      },
-                      {
-                        text: 'buyProtectedData',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/selling/buyProtectedData',
-                      },
-                      {
-                        text: 'removeProtectedDataForSale',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/selling/removeProtectedDataForSale',
-                      },
-                    ],
-                  },
-                  {
-                    text: 'Subscription',
-                    link: '/manage-data/dataProtector/dataProtectorSharing/subscription',
-                    collapsed: true,
-                    items: [
-                      {
-                        text: 'setProtectedDataToSubscription',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/subscription/setProtectedDataToSubscription',
-                      },
-                      {
-                        text: 'setSubscriptionParams',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/subscription/setSubscriptionParams',
-                      },
-                      {
-                        text: 'subscribeToCollection',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/subscription/subscribeToCollection',
-                      },
-                      {
-                        text: 'removeProtectedDataFromSubscription',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/subscription/removeProtectedDataFromSubscription',
-                      },
-                    ],
-                  },
-                  {
-                    text: 'Consume',
-                    collapsed: true,
-                    items: [
-                      {
-                        text: 'consumeProtectedData',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/consume/consumeProtectedData',
-                      },
-                    ],
-                  },
-                  {
-                    text: 'Read Data',
-                    collapsed: true,
-                    items: [
-                      {
-                        text: 'getProtectedDataInCollections',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/read/getProtectedDataInCollections',
-                      },
-                      {
-                        text: 'getProtectedDataPricingParams',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/read/getProtectedDataPricingParams',
-                      },
-                      {
-                        text: 'getCollectionOwners',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/read/getCollectionOwners',
-                      },
-                      {
-                        text: 'getCollectionsByOwner',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/read/getCollectionsByOwner',
-                      },
-                      {
-                        text: 'getCollectionSubscriptions',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/read/getCollectionSubscriptions',
-                      },
-                      {
-                        text: 'getRentals',
-                        link: '/manage-data/dataProtector/dataProtectorSharing/read/getRentals',
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                text: 'Types',
-                link: '/manage-data/dataProtector/types',
-              },
-              {
-                text: 'Advanced',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'Advanced Configuration',
-                    link: '/manage-data/dataProtector/advanced/advanced-configuration',
-                  },
-                  {
-                    text: 'Sharing smart contract',
-                    link: '/manage-data/dataProtector/advanced/dps-smart-contract',
-                  },
-                  {
-                    text: 'Apps whitelist',
-                    link: '/manage-data/dataProtector/advanced/apps-whitelist',
-                    collapsed: true,
-                    items: [
-                      {
-                        text: 'createAddOnlyAppWhitelist',
-                        link: '/manage-data/dataProtector/advanced/apps-whitelist/createAddOnlyAppWhitelist',
-                      },
-                      {
-                        text: 'addAppToAddOnlyAppWhitelist',
-                        link: '/manage-data/dataProtector/advanced/apps-whitelist/addAppToAddOnlyAppWhitelist',
-                      },
-                      {
-                        text: 'getUserAddOnlyAppWhitelist',
-                        link: '/manage-data/dataProtector/advanced/apps-whitelist/getUserAddOnlyAppWhitelist',
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                text: 'Migrate from v1 to v2',
-                link: '/manage-data/dataProtector/migrate-from-v1',
-              },
-            ],
-          },
-        ],
-      },
-    ],
-    '/build-iapp/': [
-      {
-        text: 'BUILD YOUR iAPP',
-        items: [
-          { text: '❓ What is an iApp?', link: '/build-iapp/what-is-iapp' },
-          {
-            text: '📖 Guides',
-            items: [
-              {
-                text: 'Build and Deploy',
-                link: '/build-iapp/guides/build-&-deploy',
-              },
-              {
-                text: 'Manage Access',
-                link: '/build-iapp/guides/manage-access',
-              },
-              {
-                text: 'Inputs and Outputs',
-                link: '/build-iapp/guides/inputs-and-outputs',
-              },
-              {
-                text: 'Using TDX',
-                link: '/build-iapp/guides/using-tdx',
-              },
-              {
-                text: 'How to Get and Decrypt Results',
-                link: '/build-iapp/guides/how-to-get-and-decrypt-results',
-              },
-              {
-                text: 'Debugging',
-                link: '/build-iapp/guides/debugging',
-              },
-            ],
-          },
-          {
-            text: '🤖 iApp Generator',
-            link: '/build-iapp/iapp-generator',
-            items: [
-              {
-                text: 'Getting Started',
-                link: '/build-iapp/iapp-generator/getting-started',
-              },
-              {
-                text: 'Building your iApp',
-                link: '/build-iapp/iapp-generator/building-your-iexec-app',
-              },
-              {
-                text: 'Deserialize ProtectedData',
-                link: '/build-iapp/iapp-generator/deserializer',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'getValue',
-                    link: '/build-iapp/iapp-generator/deserializer/getValue',
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    ],
-    '/use-iapp/': [
-      {
-        text: 'USE AN iAPP',
-        items: [
-          { text: '📝 Introduction', link: '/use-iapp/introduction' },
-          { text: '🚀 Getting Started', link: '/use-iapp/getting-started' },
-          {
-            text: '📖 Guides',
-            items: [
-              {
-                text: 'Find iApps to Use',
-                link: '/use-iapp/guides/find-iapps',
-              },
-              {
-                text: 'Different Ways to Execute an iApp',
-                link: '/use-iapp/guides/different-ways-to-execute',
-              },
-              {
-                text: 'Use iApp with Protected Data',
-                link: '/use-iapp/guides/use-iapp-with-protected-data',
-              },
-              {
-                text: 'Add Inputs to the Execution',
-                link: '/use-iapp/guides/add-inputs-to-execution',
-              },
-              {
-                text: 'How to Pay the Executions',
-                link: '/use-iapp/guides/how-to-pay-executions',
-              },
-            ],
-          },
-          {
-            text: '💰 How to Pay',
-            items: [
-              {
-                text: 'How to Pay for Web3Mail',
-                link: '/use-iapp/how-to-pay/how-to-pay-for-web3mail',
-              },
-              {
-                text: 'How to Pay for Web3Telegram',
-                link: '/use-iapp/how-to-pay/how-to-pay-for-web3telegram',
-              },
-              {
-                text: 'Pricing Considerations',
-                link: '/use-iapp/how-to-pay/pricing-considerations',
-              },
-              {
-                text: 'Voucher',
-                link: '/use-iapp/how-to-pay/voucher',
-              },
-            ],
-          },
-          {
-            text: '📨 Web3Mail',
-            link: '/use-iapp/web3mail',
-            collapsed: true,
-            items: [
-              {
-                text: 'Getting Started',
-                link: '/use-iapp/web3mail/getting-started',
-              },
-              {
-                text: 'Methods',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'fetchMyContacts',
-                    link: '/use-iapp/web3mail/methods/fetchMyContacts',
-                  },
-                  {
-                    text: 'fetchUserContacts',
-                    link: '/use-iapp/web3mail/methods/fetchUserContacts',
-                  },
-                  {
-                    text: 'sendEmail',
-                    link: '/use-iapp/web3mail/methods/sendEmail',
-                  },
-                ],
-              },
-              {
-                text: 'Advanced Configuration',
-                link: '/use-iapp/web3mail/advanced-configuration',
-              },
-            ],
-          },
-          {
-            text: '💬 Web3Telegram',
-            link: '/use-iapp/web3telegram',
-            collapsed: true,
-            items: [
-              {
-                text: 'Getting Started',
-                link: '/use-iapp/web3telegram/getting-started',
-              },
-              {
-                text: 'Methods',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'fetchMyContacts',
-                    link: '/use-iapp/web3telegram/methods/fetchMyContacts',
-                  },
-                  {
-                    text: 'fetchUserContacts',
-                    link: '/use-iapp/web3telegram/methods/fetchUserContacts',
-                  },
-                  {
-                    text: 'sendTelegram',
-                    link: '/use-iapp/web3telegram/methods/sendTelegram',
-                  },
-                ],
-              },
-              {
-                text: 'Integration Guide',
-                link: '/use-iapp/web3telegram/integration-guide',
-              },
-              {
-                text: 'Advanced Configuration',
-                link: '/use-iapp/web3telegram/advanced-configuration',
-              },
-            ],
-          },
-        ],
-      },
-    ],
-    '/protocol/': [
       {
         text: 'PROTOCOL',
         items: [
           {
-            text: '🔧&nbsp;&nbsp;iExec SDK',
-            link: '/protocol/sdk',
+            text: '🛡️ Proof of Contribution',
+            link: '/get-started/protocol/proof-of-contribution',
           },
           {
-            text: '⚙️&nbsp;&nbsp;Workers & Workerpools',
-            link: '/protocol/workers',
+            text: '💸 Pay Per Task Model',
+            link: '/get-started/protocol/pay-per-task',
           },
           {
-            text: '📖&nbsp;&nbsp;Glossary',
-            link: '/protocol/glossary',
+            text: '⚙️ Workers & Workerpools',
+            collapsed: true,
+            items: [
+              {
+                text: '🚀 Worker Quick Start',
+                link: '/get-started/protocol/worker/quick-start',
+              },
+              {
+                text: '🔒 Manage Workerpool Access',
+                link: '/get-started/protocol/worker/manage-access',
+              },
+            ],
           },
         ],
+      },
+    ],
+    '/guides/': [
+      {
+        text: 'PROTECT AND MANAGE DATA',
+        items: [
+          {
+            text: 'Manage Access',
+            link: '/guides/manage-data/manage-access',
+          },
+          {
+            text: 'Handle Schemas and Dataset Types',
+            link: '/guides/manage-data/handle-schemas-dataset-types',
+          },
+          {
+            text: 'Monetize Protected Data',
+            link: '/guides/manage-data/monetize-protected-data',
+          },
+        ],
+      },
+      {
+        text: 'BUILD YOUR iAPP',
+        items: [
+          {
+            text: 'Build and Deploy',
+            link: '/guides/build-iapp/build-&-deploy',
+          },
+          {
+            text: 'Manage Access',
+            link: '/guides/build-iapp/manage-access',
+          },
+          {
+            text: 'Inputs and Outputs',
+            link: '/guides/build-iapp/inputs-and-outputs',
+          },
+          {
+            text: 'Using TDX',
+            link: '/guides/build-iapp/using-tdx',
+          },
+          {
+            text: 'How to Get and Decrypt Results',
+            link: '/guides/build-iapp/how-to-get-and-decrypt-results',
+          },
+          {
+            text: 'Debugging',
+            link: '/guides/build-iapp/debugging',
+          },
+        ],
+      },
+      {
+        text: 'USE AN iAPP',
+        items: [
+          {
+            text: '📝 Introduction',
+            link: '/guides/use-iapp/introduction',
+          },
+          {
+            text: '🚀 Getting Started',
+            link: '/guides/use-iapp/getting-started',
+          },
+          {
+            text: 'Find iApps to Use',
+            link: '/use-iapp/guides/find-iapps',
+          },
+          {
+            text: 'Different Ways to Execute an iApp',
+            link: '/use-iapp/guides/different-ways-to-execute',
+          },
+          {
+            text: 'Use iApp with Protected Data',
+            link: '/use-iapp/guides/use-iapp-with-protected-data',
+          },
+          {
+            text: 'Add Inputs to the Execution',
+            link: '/use-iapp/guides/add-inputs-to-execution',
+          },
+          {
+            text: 'How to Pay the Executions',
+            link: '/use-iapp/guides/how-to-pay-executions',
+          },
+          {
+            text: '💰 How to Pay',
+            collapsed: true,
+            items: [
+              {
+                text: 'How to Pay for Web3Mail',
+                link: '/guides/use-iapp/how-to-pay/how-to-pay-for-web3mail',
+              },
+              {
+                text: 'How to Pay for Web3Telegram',
+                link: '/guides/use-iapp/how-to-pay/how-to-pay-for-web3telegram',
+              },
+              {
+                text: 'Pricing Considerations',
+                link: '/guides/use-iapp/how-to-pay/pricing-considerations',
+              },
+              {
+                text: 'Voucher',
+                link: '/guides/use-iapp/how-to-pay/voucher',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    '/references/': [
+      {
+        text: '🔐 DataProtector',
+        link: '/references/dataProtector',
+        collapsed: true,
+        items: [
+          {
+            text: 'Getting Started',
+            link: '/references/dataProtector/getting-started',
+          },
+          {
+            text: 'DataProtector Core',
+            link: '/references/dataProtector/dataProtectorCore',
+            collapsed: true,
+            items: [
+              {
+                text: 'protectData',
+                link: '/references/dataProtector/dataProtectorCore/protectData',
+              },
+              {
+                text: 'getProtectedData',
+                link: '/references/dataProtector/dataProtectorCore/getProtectedData',
+              },
+              {
+                text: 'transferOwnership',
+                link: '/references/dataProtector/dataProtectorCore/transferOwnership',
+              },
+              {
+                text: 'grantAccess',
+                link: '/references/dataProtector/dataProtectorCore/grantAccess',
+              },
+              {
+                text: 'getGrantedAccess',
+                link: '/references/dataProtector/dataProtectorCore/getGrantedAccess',
+              },
+              {
+                text: 'revokeOneAccess',
+                link: '/references/dataProtector/dataProtectorCore/revokeOneAccess',
+              },
+              {
+                text: 'revokeAllAccess',
+                link: '/references/dataProtector/dataProtectorCore/revokeAllAccess',
+              },
+              {
+                text: 'processProtectedData',
+                link: '/references/dataProtector/dataProtectorCore/processProtectedData',
+              },
+              {
+                text: 'getResultFromCompletedTask',
+                link: '/references/dataProtector/dataProtectorCore/getResultFromCompletedTask',
+              },
+            ],
+          },
+          {
+            text: 'DataProtector Sharing',
+            link: '/references/dataProtector/dataProtectorSharing',
+            collapsed: true,
+            items: [
+              {
+                text: 'Collection',
+                link: '/references/dataProtector/dataProtectorSharing/collection',
+                collapsed: true,
+                items: [
+                  {
+                    text: 'createCollection',
+                    link: '/references/dataProtector/dataProtectorSharing/collection/createCollection',
+                  },
+                  {
+                    text: 'removeCollection',
+                    link: '/references/dataProtector/dataProtectorSharing/collection/removeCollection',
+                  },
+                  {
+                    text: 'addToCollection',
+                    link: '/references/dataProtector/dataProtectorSharing/collection/addToCollection',
+                  },
+                  {
+                    text: 'removeProtectedDataFromCollection',
+                    link: '/references/dataProtector/dataProtectorSharing/collection/removeProtectedDataFromCollection',
+                  },
+                ],
+              },
+              {
+                text: 'Renting',
+                link: '/references/dataProtector/dataProtectorSharing/renting',
+                collapsed: true,
+                items: [
+                  {
+                    text: 'setProtectedDataToRenting',
+                    link: '/references/dataProtector/dataProtectorSharing/renting/setProtectedDataToRenting',
+                  },
+                  {
+                    text: 'setProtectedDataRentingParams',
+                    link: '/references/dataProtector/dataProtectorSharing/renting/setProtectedDataRentingParams',
+                  },
+                  {
+                    text: 'rentProtectedData',
+                    link: '/references/dataProtector/dataProtectorSharing/renting/rentProtectedData',
+                  },
+                  {
+                    text: 'removeProtectedDataFromRenting',
+                    link: '/references/dataProtector/dataProtectorSharing/renting/removeProtectedDataFromRenting',
+                  },
+                ],
+              },
+              {
+                text: 'Selling',
+                link: '/references/dataProtector/dataProtectorSharing/selling',
+                collapsed: true,
+                items: [
+                  {
+                    text: 'setProtectedDataForSale',
+                    link: '/references/dataProtector/dataProtectorSharing/selling/setProtectedDataForSale',
+                  },
+                  {
+                    text: 'buyProtectedData',
+                    link: '/references/dataProtector/dataProtectorSharing/selling/buyProtectedData',
+                  },
+                  {
+                    text: 'removeProtectedDataForSale',
+                    link: '/references/dataProtector/dataProtectorSharing/selling/removeProtectedDataForSale',
+                  },
+                ],
+              },
+              {
+                text: 'Subscription',
+                link: '/references/dataProtector/dataProtectorSharing/subscription',
+                collapsed: true,
+                items: [
+                  {
+                    text: 'setProtectedDataToSubscription',
+                    link: '/references/dataProtector/dataProtectorSharing/subscription/setProtectedDataToSubscription',
+                  },
+                  {
+                    text: 'setSubscriptionParams',
+                    link: '/references/dataProtector/dataProtectorSharing/subscription/setSubscriptionParams',
+                  },
+                  {
+                    text: 'subscribeToCollection',
+                    link: '/references/dataProtector/dataProtectorSharing/subscription/subscribeToCollection',
+                  },
+                  {
+                    text: 'removeProtectedDataFromSubscription',
+                    link: '/references/dataProtector/dataProtectorSharing/subscription/removeProtectedDataFromSubscription',
+                  },
+                ],
+              },
+              {
+                text: 'Consume',
+                collapsed: true,
+                items: [
+                  {
+                    text: 'consumeProtectedData',
+                    link: '/references/dataProtector/dataProtectorSharing/consume/consumeProtectedData',
+                  },
+                ],
+              },
+              {
+                text: 'Read Data',
+                collapsed: true,
+                items: [
+                  {
+                    text: 'getProtectedDataInCollections',
+                    link: '/references/dataProtector/dataProtectorSharing/read/getProtectedDataInCollections',
+                  },
+                  {
+                    text: 'getProtectedDataPricingParams',
+                    link: '/references/dataProtector/dataProtectorSharing/read/getProtectedDataPricingParams',
+                  },
+                  {
+                    text: 'getCollectionOwners',
+                    link: '/references/dataProtector/dataProtectorSharing/read/getCollectionOwners',
+                  },
+                  {
+                    text: 'getCollectionsByOwner',
+                    link: '/references/dataProtector/dataProtectorSharing/read/getCollectionsByOwner',
+                  },
+                  {
+                    text: 'getCollectionSubscriptions',
+                    link: '/references/dataProtector/dataProtectorSharing/read/getCollectionSubscriptions',
+                  },
+                  {
+                    text: 'getRentals',
+                    link: '/references/dataProtector/dataProtectorSharing/read/getRentals',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            text: 'Types',
+            link: '/references/dataProtector/types',
+          },
+          {
+            text: 'Advanced',
+            collapsed: true,
+            items: [
+              {
+                text: 'Advanced Configuration',
+                link: '/references/dataProtector/advanced/advanced-configuration',
+              },
+              {
+                text: 'Sharing smart contract',
+                link: '/references/dataProtector/advanced/dps-smart-contract',
+              },
+              {
+                text: 'Apps whitelist',
+                link: '/references/dataProtector/advanced/apps-whitelist',
+                collapsed: true,
+                items: [
+                  {
+                    text: 'createAddOnlyAppWhitelist',
+                    link: '/references/dataProtector/advanced/apps-whitelist/createAddOnlyAppWhitelist',
+                  },
+                  {
+                    text: 'addAppToAddOnlyAppWhitelist',
+                    link: '/references/dataProtector/advanced/apps-whitelist/addAppToAddOnlyAppWhitelist',
+                  },
+                  {
+                    text: 'getUserAddOnlyAppWhitelist',
+                    link: '/references/dataProtector/advanced/apps-whitelist/getUserAddOnlyAppWhitelist',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            text: 'Migrate from v1 to v2',
+            link: '/references/dataProtector/migrate-from-v1',
+          },
+        ],
+      },
+      {
+        text: '🤖 iApp Generator',
+        link: '/references/iapp-generator',
+        items: [
+          {
+            text: 'Getting Started',
+            link: '/references/iapp-generator/getting-started',
+          },
+          {
+            text: 'Building your iApp',
+            link: '/references/iapp-generator/building-your-iexec-app',
+          },
+          {
+            text: 'Deserialize ProtectedData',
+            link: '/references/iapp-generator/deserializer',
+            collapsed: true,
+            items: [
+              {
+                text: 'getValue',
+                link: '/references/iapp-generator/deserializer/getValue',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        text: '✉ Web3Mail',
+        link: '/references/web3mail',
+        items: [
+          {
+            text: 'Getting Started',
+            link: '/references/web3mail/getting-started',
+          },
+          {
+            text: 'Methods',
+            collapsed: true,
+            items: [
+              {
+                text: 'fetchMyContacts',
+                link: '/references/web3mail/methods/fetchMyContacts',
+              },
+              {
+                text: 'fetchUserContacts',
+                link: '/references/web3mail/methods/fetchUserContacts',
+              },
+              {
+                text: 'sendEmail',
+                link: '/references/web3mail/methods/sendEmail',
+              },
+            ],
+          },
+          {
+            text: 'Advanced Configuration',
+            link: '/references/web3mail/advanced-configuration',
+          },
+        ],
+      },
+      {
+        text: '💬 Web3Telegram',
+        link: '/references/web3telegram',
+        items: [
+          {
+            text: 'Getting Started',
+            link: '/references/web3telegram/getting-started',
+          },
+          {
+            text: 'Methods',
+            collapsed: true,
+            items: [
+              {
+                text: 'fetchMyContacts',
+                link: '/references/web3telegram/methods/fetchMyContacts',
+              },
+              {
+                text: 'fetchUserContacts',
+                link: '/references/web3telegram/methods/fetchUserContacts',
+              },
+              {
+                text: 'sendTelegram',
+                link: '/references/web3telegram/methods/sendTelegram',
+              },
+            ],
+          },
+          {
+            text: 'Integration Guide',
+            link: '/references/web3telegram/integration-guide',
+          },
+          {
+            text: 'Advanced Configuration',
+            link: '/references/web3telegram/advanced-configuration',
+          },
+        ],
+      },
+      {
+        text: '🔧 iExec SDK',
+        link: '/references/sdk',
+      },
+      {
+        text: '�📖 Glossary',
+        link: '/references/glossary',
       },
     ],
   } satisfies DefaultTheme.Sidebar;
