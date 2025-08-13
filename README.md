@@ -169,3 +169,7 @@ Fork this repository and ensure you're working on the `main` branch:
 - Update or add design illustrations based on the new design system
 - Check how to pay guide to update with the launch on Arbitrum (RLC vs xRLC)
 - framework AI supporté TDX vs SGX
+- check glossary
+- migrate github SDK doc here
+- migrate pay-per-task page into a guide
+- check pages (introduction & getting-started) for use-iapp guide
