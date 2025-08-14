@@ -31,8 +31,8 @@ creating, testing, and deploying confidential iApps.
 
 ## ⚙️ Advanced iApp Building
 
-- **[Advanced Overview](/guides/build-iapp/advanced/overview)** -
-  Deep dive: Docker, SGX/TDX, SCONE/Gramine, datasets & E2E
+- **[Advanced Overview](/guides/build-iapp/advanced/overview)** - Deep dive:
+  Docker, SGX/TDX, SCONE/Gramine, datasets & E2E
 
 ## 📚 What's Next?
 
