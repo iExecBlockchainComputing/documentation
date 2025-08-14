@@ -141,3 +141,4 @@ The actual content of the protected file.
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
 </script>
+```

@@ -117,7 +117,7 @@ const sendTelegram = await web3telegram.sendTelegram({
 });
 ```
 
-### useVoucher <OptionalBadge />
+### useVoucher <ChainNotSupportedBadge /> <OptionalBadge />
 
 **Type:** `boolean`  
 **Default:** `false`
@@ -294,8 +294,7 @@ This uniquely identifies the telegram task on the iExec side chain. You can view
 the status of the `sendTelegram` method by monitoring the task on the
 [iExec Explorer](https://explorer.iex.ec/bellecour).
 
-```
-
 <script setup>
 import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

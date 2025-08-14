@@ -16,7 +16,7 @@ messages, ensuring secure and decentralized email exchanges.
 This guide explains how to pay for Web3Mail's computing power using **vouchers**
 and **xRLC**, detailing the steps for each method.
 
-## Using Vouchers for Web3Mail
+## Using Vouchers for Web3Mail <ChainNotSupportedBadge />
 
 ### Step 1: Obtain a Voucher
 
@@ -162,4 +162,5 @@ iexec.account.withdraw(RLC_amount);
 <script setup>
 // Assets
 import builderDashboardImage from '@/assets/tooling-&-explorers/builder-dashboard/builder-dashboard.png';
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

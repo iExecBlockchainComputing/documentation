@@ -86,7 +86,7 @@ iexec account show
 iexec account deposit 100
 ```
 
-## Method 2: Paying with Vouchers
+## Method 2: Paying with Vouchers <ChainNotSupportedBadge />
 
 Vouchers are pre-funded payment instruments that simplify the payment process
 and can be shared with others.
@@ -493,3 +493,7 @@ Now that you understand payment methods:
 - Learn about [Adding Inputs to Execution](./add-inputs-to-execution.md)
 - Explore [Using iApps with Protected Data](./use-iapp-with-protected-data.md)
 - Review the pricing information above for detailed cost analysis
+
+<script setup>
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

@@ -112,7 +112,7 @@ const sendEmail = await web3mail.sendEmail({
 });
 ```
 
-### useVoucher <OptionalBadge />
+### useVoucher <ChainNotSupportedBadge /><OptionalBadge />
 
 **Type:** `boolean`  
 **Default:** `false`
@@ -394,4 +394,5 @@ For any other errors, you'll get a `WorkflowError` error in the form of:
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>
