@@ -186,7 +186,7 @@ export function getSidebar() {
             link: '/guides/build-iapp/debugging',
           },
           {
-            text: 'Advanced Low‑Level iApp Building',
+            text: 'Advanced Low-Level iApp Building',
             collapsed: true,
             items: [
               {
@@ -200,10 +200,6 @@ export function getSidebar() {
               {
                 text: 'Build your first application',
                 link: '/guides/build-iapp/advanced-low-level/your-first-app',
-              },
-              {
-                text: 'Intel SGX Technology Overview',
-                link: '/guides/build-iapp/advanced-low-level/intel-sgx-technology',
               },
               {
                 text: 'Build your first SGX app (SCONE)',
