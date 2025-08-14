@@ -192,3 +192,6 @@ for input parameters:
 - migrate github SDK doc here
 - migrate pay-per-task page into a guide
 - check pages (introduction & getting-started) for use-iapp guide
+- explain TDX vs SGX
+- Give recap of Workerpool address fo chains
+- Talk about ENS on Bellecour(it's not supported on arbitrum)

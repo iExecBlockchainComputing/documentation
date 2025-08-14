@@ -390,3 +390,8 @@ For any other errors, you'll get a `WorkflowError` error in the form of:
   errorCause: <Original error>
 }
 ```
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
+</script>

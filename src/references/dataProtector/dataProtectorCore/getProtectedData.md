@@ -191,3 +191,7 @@ import { type ProtectedData } from '@iexec/dataprotector';
 ```
 
 See [`ProtectedData`](../types.md#protecteddata)
+
+<script setup>
+import OptionalBadge from '@/components/OptionalBadge.vue'
+</script>

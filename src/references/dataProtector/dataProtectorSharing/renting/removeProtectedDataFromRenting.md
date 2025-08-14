@@ -64,3 +64,7 @@ import { type SuccessWithTransactionHash } from '@iexec/dataprotector';
 ```
 
 See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+</script>

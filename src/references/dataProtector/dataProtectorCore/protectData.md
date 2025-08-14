@@ -439,4 +439,6 @@ To further check your data was correctly created, you can inspect it on the
 <script setup>
 // Assets
 import explorerDatasetImage from '@/assets/explorer-dataset-example.png';
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
 </script>

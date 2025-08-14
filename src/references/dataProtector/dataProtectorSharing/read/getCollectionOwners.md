@@ -68,3 +68,7 @@ Type ↗️</a>
 
 `true` if you (logged-in user) have an active subscription to one of the
 collections.
+
+<script setup>
+import OptionalBadge from '@/components/OptionalBadge.vue'
+</script>

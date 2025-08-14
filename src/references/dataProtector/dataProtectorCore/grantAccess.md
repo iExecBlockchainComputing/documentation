@@ -250,3 +250,8 @@ The result of this method confirms the new access grant. It consists of a JSON
 `grantedAccess` object.
 
 [`GrantedAccess`](../types.md#grantedaccess)
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
+</script>

@@ -59,3 +59,7 @@ import { type GetUserAppWhitelistResponse } from '@iexec/dataprotector';
 // Child types
 import { type AddOnlyAppWhitelist } from '@iexec/dataprotector';
 ```
+
+<script setup>
+import OptionalBadge from '@/components/OptionalBadge.vue'
+</script>

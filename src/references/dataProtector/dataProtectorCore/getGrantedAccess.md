@@ -217,3 +217,7 @@ smaller than the page size.
 **Type:** GrantedAccess
 
 See [`GrantedAccess`](../types.md#grantedaccess)
+
+<script setup>
+import OptionalBadge from '@/components/OptionalBadge.vue'
+</script>

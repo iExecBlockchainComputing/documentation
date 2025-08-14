@@ -65,3 +65,7 @@ import { type Contact } from '@iexec/web3mail';
 ```
 
 [`Contact[]`](/references/dataProtector/types#contact)
+
+<script setup>
+import OptionalBadge from '@/components/OptionalBadge.vue'
+</script>

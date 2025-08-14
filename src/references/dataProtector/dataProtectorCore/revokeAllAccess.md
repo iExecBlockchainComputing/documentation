@@ -141,3 +141,8 @@ import { type RevokedAccess } from '@iexec/dataprotector';
 ```
 
 [`RevokedAccess[]`](../types.md#revokedaccess)
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
+</script>

@@ -228,3 +228,8 @@ steps:
   [schemas and dataset types](/guides/manage-data/handle-schemas-dataset-types)
 - **Monetize data**: Explore
   [data monetization strategies](/guides/manage-data/monetize-protected-data)
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
+</script>

@@ -8,6 +8,8 @@ description:
 
 <script setup>
 import { Icon } from '@iconify/vue';
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
 </script>
 
 # consumeProtectedData
