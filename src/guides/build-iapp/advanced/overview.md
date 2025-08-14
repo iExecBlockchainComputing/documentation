@@ -7,8 +7,9 @@ description:
 
 # ⚙️ Advanced Low‑Level iApp Building
 
-::: warning Important This section contains legacy, low-level material. Please
-note:
+::: warning Important
+
+This section contains legacy, low-level material. Please note:
 
 - Terminology and some concepts may have changed in the current documentation.
 - These topics are intentionally advanced and can be complex to understand.
@@ -17,7 +18,9 @@ note:
 
 If you believe you truly need these advanced flows or you’re unsure which path
 to take, please contact our support so we can understand your use case and help
-you efficiently: [Join our Discord](https://discord.gg/9h25DQFSCU). :::
+you efficiently: [Join our Discord](https://discord.gg/9h25DQFSCU).
+
+:::
 
 - **[Quick Start for Developers](./quick-start-for-developers)**
 - **[Build your first application](./your-first-app)**
