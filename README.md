@@ -192,3 +192,4 @@ for input parameters:
 - migrate github SDK doc here
 - migrate pay-per-task page into a guide
 - check pages (introduction & getting-started) for use-iapp guide
+- Rework Advanced iApp building guides. (from "old" protocol doc)
