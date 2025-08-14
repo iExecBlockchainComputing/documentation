@@ -64,7 +64,7 @@ const processProtectedDataResponse =
   });
 ```
 
-### app <RequiredBadge /> {#app-param}
+### app <RequiredBadge />
 
 **Type:** `AddressOrENS`
 
@@ -128,7 +128,7 @@ const processProtectedDataResponse =
   });
 ```
 
-### useVoucher <OptionalBadge />
+### useVoucher <ChainNotSupportedBadge /> <OptionalBadge />
 
 **Type:** `boolean`  
 **Default:** `false`
@@ -495,3 +495,9 @@ include a file named **content**, which corresponds to the protected data
 processed during the task.
 
 :::
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>
