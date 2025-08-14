@@ -17,11 +17,11 @@ const shouldShow = computed(() => isArbitrumSelected.value);
 <template>
   <VPBadge
     v-if="shouldShow"
-    type="warning"
-    text="Not Supported for this Chain"
+    type="tip"
+    text="Chain Not Supported"
     style="
-      color: var(--vp-c-orange-1);
-      background-color: hsla(15, 100%, 40%, 8%);
+      color: var(--vp-c-red-1);
+      background-color: hsla(350, 89%, 60%, 8%);
       margin-top: 1px;
       margin-right: 4px;
     "
