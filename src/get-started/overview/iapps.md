@@ -1,9 +1,9 @@
 ---
-title: What is an iApp?
+title: iApps
 description: Privacy-first applications that run on decentralized infrastructure
 ---
 
-# 🚀 What is an iApp?
+# iApps
 
 An iExec Application (iApp) is your regular application code (Python script, AI
 model, data processor, ...) that can securely process protected data (created by

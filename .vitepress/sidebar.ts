@@ -60,16 +60,16 @@ export function getSidebar() {
             link: '/get-started/overview/what-is-iexec',
           },
           {
-            text: '❓&nbsp;&nbsp;What is Protected Data ?',
-            link: '/get-started/overview/what-is-protected-data',
+            text: '🔐 Protected Data',
+            link: '/get-started/overview/protected-data',
           },
           {
-            text: '❓ What is an iApp ?',
-            link: '/get-started/overview/what-is-iapp',
+            text: '🚀 iApps',
+            link: '/get-started/overview/iapps',
           },
           {
-            text: '❓ What is a Workerpool ?',
-            link: '/get-started/overview/what-is-workerpool',
+            text: '⚡ Workerpools',
+            link: '/get-started/overview/workerpools',
           },
           {
             text: '🪙 RLC Token',

@@ -1,9 +1,9 @@
 ---
-title: What is Protected Data?
+title: Protected Data
 description: Understanding iExec's data protection mechanisms
 ---
 
-# ❓ What is Protected Data?
+# Protected Data
 
 Protected Data refers to any data encrypted using the **iExec Data Protector
 tool**. This end-to-end encryption solution enables users to protect, manage and
@@ -15,7 +15,7 @@ monetize their data within the Web3 ecosystem.
 
 ## Key Concepts
 
-### 👑 Data Governance
+### Data Governance
 
 <div class="mb-4"></div>
 
@@ -42,7 +42,7 @@ monetize their data within the Web3 ecosystem.
   </div>
 </div>
 
-### 🔒 Privacy-preserving Computation
+### Privacy-preserving Computation
 
 <div class="mb-4"></div>
 
@@ -69,7 +69,7 @@ monetize their data within the Web3 ecosystem.
   </div>
 </div>
 
-### 💰 Monetization
+### Monetization
 
 <div class="mb-4"></div>
 

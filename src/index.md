@@ -25,13 +25,13 @@ features:
     details:
       Secure your data with advanced encryption and control access while
       maintaining privacy using DataProtector
-    link: /get-started/overview/what-is-protected-data
+    link: /get-started/overview/protected-data
   - icon: 🤖
     title: Build iApps
     details:
       Create decentralized applications that run on confidential computing
       infrastructure with our iApp Generator
-    link: /get-started/overview/what-is-iapp
+    link: /get-started/overview/iapps
   - icon: ⚡
     title: Use iApps
     details:
