@@ -6,7 +6,7 @@ description:
   data is already listed for rent, it updates the terms accordingly.
 ---
 
-# setProtectedDataToRenting
+# setProtectedDataToRenting <ChainNotSupportedBadge />
 
 Method to allow a protected data to be rented.
 
@@ -119,4 +119,5 @@ See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
 
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

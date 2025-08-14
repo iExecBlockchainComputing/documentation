@@ -5,7 +5,7 @@ description:
   pagination options.
 ---
 
-# getCollectionsByOwner
+# getCollectionsByOwner <ChainNotSupportedBadge />
 
 Method to get all collections for a specific user.
 
@@ -91,4 +91,5 @@ Type ↗️</a>
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

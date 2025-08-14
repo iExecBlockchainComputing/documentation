@@ -5,7 +5,7 @@ description:
   detailed rental information based on the protected data address.
 ---
 
-# getRentals
+# getRentals <ChainNotSupportedBadge />
 
 Method to get all rentals for:
 
@@ -104,4 +104,5 @@ Type ↗️</a>
 
 <script setup>
 import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

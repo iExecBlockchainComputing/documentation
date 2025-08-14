@@ -6,7 +6,7 @@ description:
   honored until their rental period ends.
 ---
 
-# removeProtectedDataFromRenting
+# removeProtectedDataFromRenting <ChainNotSupportedBadge />
 
 Method to remove a protected data from renting.
 
@@ -67,4 +67,5 @@ See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
 
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

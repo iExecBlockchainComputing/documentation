@@ -6,7 +6,7 @@ description:
   Environment (TEE) dApp and whitelist usage for secure data delivery.
 ---
 
-# Apps Whitelist
+# Apps Whitelist <ChainNotSupportedBadge />
 
 In order to consume a protected data, an iExec TEE dApp needs to be provided.
 
@@ -78,3 +78,7 @@ See it in
 
 See it in
 [https://blockscout-bellecour.iex.ec/](https://blockscout-bellecour.iex.ec/address/0x1cb7D4F3FFa203F211e57357D759321C6CE49921)
+
+<script setup>
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

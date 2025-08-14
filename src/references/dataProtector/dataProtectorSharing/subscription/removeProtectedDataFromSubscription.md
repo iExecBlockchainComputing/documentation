@@ -5,7 +5,7 @@ description:
   data to current and future subscribers, removing it from subscription access.
 ---
 
-# removeProtectedDataFromSubscription
+# removeProtectedDataFromSubscription <ChainNotSupportedBadge />
 
 Method to remove a protected data from your subscription.
 
@@ -78,4 +78,5 @@ See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
 
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

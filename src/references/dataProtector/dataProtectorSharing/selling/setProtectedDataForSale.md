@@ -6,7 +6,7 @@ description:
   their own pricing or retain the data for personal use."
 ---
 
-# setProtectedDataForSale
+# setProtectedDataForSale <ChainNotSupportedBadge />
 
 Method to set a protected data for sale.
 
@@ -90,4 +90,5 @@ See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
 
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

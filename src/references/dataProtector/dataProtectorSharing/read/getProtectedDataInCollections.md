@@ -6,7 +6,7 @@ description:
   timestamp in descending order.
 ---
 
-# getProtectedDataInCollections
+# getProtectedDataInCollections <ChainNotSupportedBadge />
 
 Method to get protected data that are in collections.
 
@@ -230,4 +230,5 @@ Type ↗️</a>
 
 <script setup>
 import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

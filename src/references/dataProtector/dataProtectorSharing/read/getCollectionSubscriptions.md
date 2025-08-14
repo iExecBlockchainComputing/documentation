@@ -5,7 +5,7 @@ description:
   detailed information about subscription activity based on collection ID.
 ---
 
-# getCollectionSubscriptions
+# getCollectionSubscriptions <ChainNotSupportedBadge />
 
 Method to get all subscriptions for:
 
@@ -107,4 +107,5 @@ Type ↗️</a>
 
 <script setup>
 import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

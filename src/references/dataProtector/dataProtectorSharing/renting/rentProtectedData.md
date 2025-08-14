@@ -7,7 +7,7 @@ description:
   a transaction that would revert.
 ---
 
-# rentProtectedData
+# rentProtectedData <ChainNotSupportedBadge />
 
 Method to rent a protected data.
 
@@ -140,4 +140,5 @@ See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
 
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

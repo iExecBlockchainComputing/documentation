@@ -6,7 +6,7 @@ description:
   the data as desired.
 ---
 
-# buyProtectedData
+# buyProtectedData <ChainNotSupportedBadge />
 
 Method to buy a protected data that is for sale.
 
@@ -166,4 +166,5 @@ See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

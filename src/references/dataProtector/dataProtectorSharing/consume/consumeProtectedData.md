@@ -6,13 +6,7 @@ description:
   Service, and securely retrieving encrypted data from IPFS.
 ---
 
-<script setup>
-import { Icon } from '@iconify/vue';
-import RequiredBadge from '@/components/RequiredBadge.vue'
-import OptionalBadge from '@/components/OptionalBadge.vue'
-</script>
-
-# consumeProtectedData
+# consumeProtectedData <ChainNotSupportedBadge />
 
 Method to consume a protected data, ie. visualize it or download it.
 
@@ -83,7 +77,7 @@ const consumeProtectedDataResult =
   });
 ```
 
-### app <RequiredBadge /> {#app-param}
+### app <RequiredBadge />
 
 **Type:** `AddressOrENS`
 
@@ -341,3 +335,10 @@ Identifies the specific task associated with the deal.
 `ArrayBuffer`
 
 The actual content of the protected file.
+
+<script setup>
+import { Icon } from '@iconify/vue';
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

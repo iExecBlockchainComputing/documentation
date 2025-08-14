@@ -6,7 +6,7 @@ description:
   the specified collection.
 ---
 
-# addToCollection
+# addToCollection <ChainNotSupportedBadge />
 
 Method to transfer one of your protected data to a collection of yours in the
 Data Sharing smart contract.
@@ -168,4 +168,5 @@ See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

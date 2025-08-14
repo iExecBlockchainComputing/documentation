@@ -5,7 +5,7 @@ description:
   app access control management.
 ---
 
-# getUserAddOnlyAppWhitelist
+# getUserAddOnlyAppWhitelist <ChainNotSupportedBadge />
 
 Method to get `AddOnlyAppWhitelist`, you can filter by user ethereum address.
 
@@ -62,4 +62,5 @@ import { type AddOnlyAppWhitelist } from '@iexec/dataprotector';
 
 <script setup>
 import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

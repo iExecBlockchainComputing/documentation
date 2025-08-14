@@ -5,7 +5,7 @@ description:
   data access control.
 ---
 
-# addAppToAddOnlyAppWhitelist
+# addAppToAddOnlyAppWhitelist <ChainNotSupportedBadge />
 
 Method to add an app (iExec TEE dApp) into the `AddOnlyAppWhitelist`.
 
@@ -99,4 +99,5 @@ See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
 
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

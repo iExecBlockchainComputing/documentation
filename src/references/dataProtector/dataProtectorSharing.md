@@ -6,7 +6,7 @@ description:
   maintaining control and privacy.
 ---
 
-# DataProtector Sharing
+# DataProtector Sharing <ChainNotSupportedBadge />
 
 The DataProtector Sharing module includes a set of methods for distributing and
 monetizing your protected data. These work seamlessly in your own applications
@@ -63,3 +63,7 @@ additional activity from the data owner. This has several key benefits
   distribution, only the consumer of the data signs their transaction
 - The data owner doesn't manage access, the Data Sharing smart contract
   automatically enforces the distribution and monetization choices
+
+<script setup>
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

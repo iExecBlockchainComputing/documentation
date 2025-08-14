@@ -6,7 +6,7 @@ description:
   access.
 ---
 
-# getProtectedDataPricingParams
+# getProtectedDataPricingParams <ChainNotSupportedBadge />
 
 Method to get all distribution params for a protected data.
 
@@ -66,4 +66,5 @@ Type ↗️</a>
 
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

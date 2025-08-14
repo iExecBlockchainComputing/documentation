@@ -168,19 +168,15 @@ for input parameters:
 ## TODO
 
 - Add an audit section for smart contracts
-- Add Arbitrum support
 - On arbitrum hide : DataProtector Sharing ??
 - Adapt hardcoded address to feat with new contracts deployed on arbitrum
 - Add link to the new explorer feature Asset_Types in the guide =>
   `handle-schemas-dataset-types`
 - Add link to remix for deploying whitelist
-- complete `use-iapp` section
-- Maybe split input and output in two diff sub section in build your iapp guide
 - SGX vs TDX need review
 - Explorer l'intégration de codeSpace
-- complete `Protocol`section
-- Add a Development workflow
-- Update context7 when doc will be deployed
+- Add a Development workflow pahe (1 - ProtectData, 2- ...)
+- Update context7 when doc will be deployed (Martin)
 - Check theGraph Images with design Team
 - Update the Dune Dashboard to the final version
 - Add new section in `iexec-explorer.md` file to talk about: available chain on
@@ -189,7 +185,7 @@ for input parameters:
 - Check how to pay guide to update with the launch on Arbitrum (RLC vs xRLC)
 - framework AI supporté TDX vs SGX
 - check glossary
-- migrate github SDK doc here
+- migrate github iexec SDK doc here
 - migrate pay-per-task page into a guide
 - check pages (introduction & getting-started) for use-iapp guide
 - explain TDX vs SGX

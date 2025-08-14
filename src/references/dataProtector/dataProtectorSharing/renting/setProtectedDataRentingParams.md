@@ -6,7 +6,7 @@ description:
   isn't listed for rent yet, it will be set for renting with the provided terms.
 ---
 
-# setProtectedDataRentingParams
+# setProtectedDataRentingParams <ChainNotSupportedBadge />
 
 Method to update a protected data renting params.
 
@@ -115,3 +115,7 @@ import { type SuccessWithTransactionHash } from '@iexec/dataprotector';
 ```
 
 See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
+
+<script setup>
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

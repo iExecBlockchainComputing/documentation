@@ -6,7 +6,7 @@ description:
   DataProtector Sharing.
 ---
 
-# createCollection
+# createCollection <ChainNotSupportedBadge />
 
 Method to create a new collection in the Data Sharing smart contract.
 
@@ -34,3 +34,7 @@ const createCollectionResult = await dataProtectorSharing.createCollection();
 ```ts twoslash
 import { type CreateCollectionResponse } from '@iexec/dataprotector';
 ```
+
+<script setup>
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

@@ -6,7 +6,7 @@ description:
   no automatic renewal, using the Data Sharing smart contract.
 ---
 
-# subscribeToCollection
+# subscribeToCollection <ChainNotSupportedBadge />
 
 Method to subscribe to a collection.
 
@@ -136,4 +136,5 @@ See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
 
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

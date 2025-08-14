@@ -5,7 +5,7 @@ description:
   in descending order.
 ---
 
-# getCollectionOwners
+# getCollectionOwners <ChainNotSupportedBadge />
 
 Method to get all collection owners.
 
@@ -71,4 +71,5 @@ collections.
 
 <script setup>
 import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

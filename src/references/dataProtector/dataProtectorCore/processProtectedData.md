@@ -160,7 +160,7 @@ sufficient funds for this transfer to proceed.
 
 :::
 
-### voucherOwner <OptionalBadge />
+### voucherOwner <ChainNotSupportedBadge /> <OptionalBadge />
 
 **Type:** `Address`
 

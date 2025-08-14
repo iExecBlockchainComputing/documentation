@@ -6,7 +6,7 @@ description:
   access your data easily.
 ---
 
-# setProtectedDataToSubscription
+# setProtectedDataToSubscription <ChainNotSupportedBadge />
 
 Method to set a protected data as part of your subscription.
 
@@ -67,4 +67,5 @@ See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
 
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

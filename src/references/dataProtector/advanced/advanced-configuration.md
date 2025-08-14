@@ -22,7 +22,7 @@ section.
 import { type DataProtectorConfigOptions } from '@iexec/dataprotector';
 ```
 
-### dataprotectorContractAddress
+### dataprotectorContractAddress <ChainNotSupportedBadge />
 
 `AddressOrENS`
 
@@ -164,3 +164,7 @@ const dataProtector = new IExecDataProtector(web3Provider, {
 discontinuity.
 
 :::
+
+<script setup>
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

@@ -6,7 +6,7 @@ description:
   modifying terms and protecting subscribers' access.
 ---
 
-# Data Sharing - Subscription
+# Data Sharing - Subscription <ChainNotSupportedBadge />
 
 Subscription agreements are one of the options for distributing a collection
 owner's protected data. Similar to the rental distribution terms, a subscription
@@ -58,3 +58,7 @@ The collection owner has a few options to manage their subscription bundles:
 Making any of these changes is effective immediately. For any existing
 subscribers, updates to the subscription terms take effect upon renewal of the
 subscription.
+
+<script setup>
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

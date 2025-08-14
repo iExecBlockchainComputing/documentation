@@ -6,7 +6,7 @@ description:
   the collection.
 ---
 
-# removeCollection
+# removeCollection <ChainNotSupportedBadge />
 
 Method to remove one of your collections in the Data Sharing smart contract.
 
@@ -71,4 +71,5 @@ See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
 
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

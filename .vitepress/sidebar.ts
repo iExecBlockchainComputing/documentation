@@ -430,10 +430,6 @@ export function getSidebar() {
                 link: '/references/dataProtector/advanced/advanced-configuration',
               },
               {
-                text: 'Sharing smart contract',
-                link: '/references/dataProtector/advanced/dps-smart-contract',
-              },
-              {
                 text: 'Apps whitelist',
                 link: '/references/dataProtector/advanced/apps-whitelist',
                 collapsed: true,

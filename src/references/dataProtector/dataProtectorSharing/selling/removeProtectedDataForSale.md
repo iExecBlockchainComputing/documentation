@@ -5,7 +5,7 @@ description:
   purchase transactions.
 ---
 
-# removeProtectedDataForSale
+# removeProtectedDataForSale <ChainNotSupportedBadge />
 
 Method to remove a protected data for sale.
 
@@ -63,4 +63,5 @@ See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
 
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>
