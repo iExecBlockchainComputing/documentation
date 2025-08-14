@@ -9,16 +9,6 @@ blockchain.
 In this guide, we will use the iExec SDK command-line interface to deploy an
 iExec app on a test blockchain.
 
-**Tutorial Steps :**
-
-- [Install the iExec SDK](quick-start-for-developers.md#install-the-iexec-sdk)
-- [Create your identity on the blockchain](quick-start-for-developers.md#create-your-identity-on-the-blockchain)
-- [Initialize your iExec project](quick-start-for-developers.md#initialize-your-iexec-project)
-- [Deploy your app on iExec](quick-start-for-developers.md#deploy-your-app-on-iexec)
-- [Run your app on iExec](quick-start-for-developers.md#run-your-app-on-iexec)
-- [Publish your app on iExec marketplace](quick-start-for-developers.md#publish-your-app-on-the-iexec-marketplace)
-- [What's next?](quick-start-for-developers.md#whats-next)
-
 ## Install the iExec SDK
 
 Requirements:
