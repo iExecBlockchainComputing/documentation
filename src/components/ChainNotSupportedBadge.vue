@@ -21,7 +21,7 @@ const shouldShow = computed(() => isArbitrumSelected.value);
     text="Not Supported for this Chain"
     style="
       color: var(--vp-c-orange-1);
-      background-color: hsla(0, 100%, 50%, 8%);
+      background-color: hsla(0, 100%, 70%, 8%);
       margin-top: 1px;
       margin-right: 4px;
     "
