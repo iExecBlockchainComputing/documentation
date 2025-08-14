@@ -29,9 +29,9 @@ creating, testing, and deploying confidential iApps.
 - **[Using TDX (Experimental)](/guides/build-iapp/using-tdx)** - Next-gen TEE
   technology
 
-## ⚙️ Advanced Low-Level iApp Building
+## ⚙️ Advanced iApp Building
 
-- **[Advanced Low-Level (legacy guides)](/guides/build-iapp/advanced-low-level/)** -
+- **[Advanced Overview](/guides/build-iapp/advanced/overview)** -
   Deep dive: Docker, SGX/TDX, SCONE/Gramine, datasets & E2E
 
 ## 📚 What's Next?

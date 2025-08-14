@@ -1,11 +1,11 @@
 ---
-title: Advanced Low-Level iApp Building
+title: Advanced iApp Building
 description:
   Legacy, low-level guides for building confidential iApps (Docker, SGX, TDX,
   SCONE/Gramine, E2E encryption)
 ---
 
-# ⚙️ Advanced Low‑Level iApp Building
+# ⚙️ Advanced iApp Building
 
 ::: warning Important
 
