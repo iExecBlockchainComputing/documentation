@@ -17,8 +17,8 @@ Types in DataProtector.
 
 ### datasetprice: <span class="text-yellow">`string`</span>
 
-- Price (in n<TokenSymbol />) to charge the user specified in `requesterrestrict` for each
-  use of this `protectedData`
+- Price (in n<TokenSymbol />) to charge the user specified in
+  `requesterrestrict` for each use of this `protectedData`
 
 ### volume: <span class="text-yellow">`string`</span>
 

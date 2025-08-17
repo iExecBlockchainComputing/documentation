@@ -52,8 +52,8 @@ contract to debit your account if the voucher balance is insufficient. This
 ensures that if the voucher alone doesn't cover the execution cost, the
 remaining balance is automatically deducted from your account.
 
-For additional information on using <TokenSymbol /> for fallback payment in Web3Mail, refer
-to the **Using <TokenSymbol /> with Web3Mail** section.
+For additional information on using <TokenSymbol /> for fallback payment in
+Web3Mail, refer to the **Using <TokenSymbol /> with Web3Mail** section.
 
 ### Step 4: Execute Web3Mail's SendEmail Function
 
@@ -75,9 +75,9 @@ const sendEmail = await web3mail.sendEmail({
 
 ## Using <TokenSymbol /> for Web3Mail
 
-If you choose to use <TokenSymbol /> to cover the computational cost of Web3Mail (or if you
-need to cover data access costs such as retrieving the recipient's email
-address), follow these steps:
+If you choose to use <TokenSymbol /> to cover the computational cost of Web3Mail
+(or if you need to cover data access costs such as retrieving the recipient's
+email address), follow these steps:
 
 ### Install the iExec SDK
 
@@ -97,9 +97,14 @@ const iexec = new IExec({ ethProvider: window.ethereum });
 
 ### Purchase RLC
 
-Obtain RLC tokens from a supported cryptocurrency exchange. For detailed information on how to buy RLC tokens, see our [RLC Token guide](/get-started/rlc) which covers all available DEX and CEX supported.
+Obtain RLC tokens from a supported cryptocurrency exchange. For detailed
+information on how to buy RLC tokens, see our
+[RLC Token guide](/get-started/rlc) which covers all available DEX and CEX
+supported.
 
-For detailed instructions on how to bridge RLC tokens between networks, see our [Bridge guide](/get-started/tooling-and-explorers/bridge) which covers all supported networks and bridging methods.
+For detailed instructions on how to bridge RLC tokens between networks, see our
+[Bridge guide](/get-started/tooling-and-explorers/bridge) which covers all
+supported networks and bridging methods.
 
 ### Deposit <TokenSymbol />
 
@@ -109,7 +114,8 @@ Deposit the <TokenSymbol /> into your iExec account using the command:
 iexec.account.deposit(RLC_amount);
 ```
 
-This converts <TokenSymbol /> into sRLC, used as proof of funds for task execution.
+This converts <TokenSymbol /> into sRLC, used as proof of funds for task
+execution.
 
 ### Check sRLC Balance
 

@@ -1,8 +1,8 @@
 ---
 title: How to Pay for Web3Telegram
 description:
-  Learn how to pay for Web3Telegram's confidential computing power using vouchers
-  and RLC for secure, blockchain-based email communication.
+  Learn how to pay for Web3Telegram's confidential computing power using
+  vouchers and RLC for secure, blockchain-based email communication.
 ---
 
 # How to Pay for Web3Telegram
@@ -52,8 +52,8 @@ contract to debit your account if the voucher balance is insufficient. This
 ensures that if the voucher alone doesn't cover the execution cost, the
 remaining balance is automatically deducted from your account.
 
-For additional information on using <TokenSymbol /> for fallback payment in Web3Telegram,
-refer to the **Using <TokenSymbol /> with Web3Telegram** section.
+For additional information on using <TokenSymbol /> for fallback payment in
+Web3Telegram, refer to the **Using <TokenSymbol /> with Web3Telegram** section.
 
 ### Step 4: Execute Web3Telegram's `sendTelegram` Function
 
@@ -81,9 +81,9 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ## Using <TokenSymbol /> for Web3Telegram
 
-If you choose to use <TokenSymbol /> to cover the computational cost of Web3Telegram (or if
-you need to cover data access costs such as retrieving the recipient's Chat Id),
-follow these steps:
+If you choose to use <TokenSymbol /> to cover the computational cost of
+Web3Telegram (or if you need to cover data access costs such as retrieving the
+recipient's Chat Id), follow these steps:
 
 ### Install the iExec SDK
 
@@ -103,9 +103,14 @@ const iexec = new IExec({ ethProvider: window.ethereum });
 
 ### Purchase RLC
 
-Obtain RLC tokens from a supported cryptocurrency exchange. For detailed information on how to buy RLC tokens, see our [RLC Token guide](/get-started/rlc) which covers all available DEX and CEX supported.
+Obtain RLC tokens from a supported cryptocurrency exchange. For detailed
+information on how to buy RLC tokens, see our
+[RLC Token guide](/get-started/rlc) which covers all available DEX and CEX
+supported.
 
-For detailed instructions on how to bridge RLC tokens between networks, see our [Bridge guide](/get-started/tooling-and-explorers/bridge) which covers all supported networks and bridging methods.
+For detailed instructions on how to bridge RLC tokens between networks, see our
+[Bridge guide](/get-started/tooling-and-explorers/bridge) which covers all
+supported networks and bridging methods.
 
 ### Deposit <TokenSymbol />
 
@@ -115,7 +120,8 @@ Deposit the <TokenSymbol /> into your iExec account using the command:
 iexec.account.deposit(RLC_amount);
 ```
 
-This converts <TokenSymbol /> into sRLC, used as proof of funds for task execution.
+This converts <TokenSymbol /> into sRLC, used as proof of funds for task
+execution.
 
 ### Check sRLC Balance
 

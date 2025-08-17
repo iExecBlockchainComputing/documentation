@@ -21,8 +21,8 @@ documentation for more details.
 
 ::: tip
 
-For executing the `sendTelegram` method with a voucher or <TokenSymbol />, refer to the
-dedicated section in the documentation under
+For executing the `sendTelegram` method with a voucher or <TokenSymbol />, refer
+to the dedicated section in the documentation under
 "[How to Pay for web3telegram](/guides/use-iapp/how-to-pay/how-to-pay-for-web3telegram)".
 
 :::
@@ -147,10 +147,10 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ::: tip
 
-If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK will
-automatically get the required amount to your iExec account. Ensure that your
-voucher is authorized to access your iExec account and that your account has
-sufficient funds for this transfer to proceed.
+If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK
+will automatically get the required amount to your iExec account. Ensure that
+your voucher is authorized to access your iExec account and that your account
+has sufficient funds for this transfer to proceed.
 
 :::
 

@@ -21,8 +21,8 @@ documentation for more details.
 
 ::: tip
 
-For executing the `sendEmail` method with a voucher or <TokenSymbol />, refer to the
-dedicated section in the documentation under
+For executing the `sendEmail` method with a voucher or <TokenSymbol />, refer to
+the dedicated section in the documentation under
 "[How to Pay for web3mail](/guides/use-iapp/how-to-pay/how-to-pay-for-web3mail)".
 
 :::
@@ -136,10 +136,10 @@ const sendEmail = await web3mail.sendEmail({
 
 ::: tip
 
-If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK will
-automatically get the required amount to your iExec account. Ensure that your
-voucher is authorized to access your iExec account and that your account has
-sufficient funds for this transfer to proceed.
+If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK
+will automatically get the required amount to your iExec account. Ensure that
+your voucher is authorized to access your iExec account and that your account
+has sufficient funds for this transfer to proceed.
 
 :::
 

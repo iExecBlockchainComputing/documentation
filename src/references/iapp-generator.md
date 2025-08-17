@@ -67,8 +67,8 @@ Ready for production? Dive into specialized topics:
 
 - **[Using TDX (Experimental)](/guides/build-iapp/using-tdx)** - Next-gen TEE
   technology
-- **[Complete Guides Overview](/guides/build-iapp/)** - All development guides
-  in one place
+- **[Complete Guides Overview](/guides/build-iapp/build-&-deploy)** - All
+  development guides in one place
 
 ## Why Choose iApp Generator?
 
@@ -109,7 +109,8 @@ applications:
 
 ### Need Help?
 
-- **[Complete Guides](/guides/build-iapp/)** - All development guides
+- **[Complete Guides](/guides/build-iapp/build-&-deploy)** - All development
+  guides
 - **[iExec Discord](https://discord.com/invite/pbt9m98wnU)** - Community support
 - **[Protocol Documentation](https://protocol.docs.iex.ec)** - Technical deep
   dive

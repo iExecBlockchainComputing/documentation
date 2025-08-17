@@ -66,7 +66,7 @@ orders:
 When you execute an iApp, the system matches your request with available orders
 from all three categories. For a deeper understanding of how orders work and how
 to manage them, see the
-[Build & Deploy guide](/build-iapp/guides/build-&-deploy) in the Build iApp
+[Build & Deploy guide](/guides/build-iapp/build-&-deploy) in the Build iApp
 section.
 
 ## Detailed Guides

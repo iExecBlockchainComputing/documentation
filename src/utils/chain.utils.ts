@@ -1,5 +1,5 @@
 import { arbitrum } from 'viem/chains';
-import { bellecour } from './bellecourChainConfig';
+import { bellecour } from './wagmiNetworks';
 import arbitrumLogo from '@/assets/icons/arbitrum.svg';
 import iexecLogo from '@/assets/icons/iexec-logo.png';
 
@@ -36,12 +36,19 @@ export function getSupportedChains(): Chain[] {
       blockExplorers: arbitrum.blockExplorers,
     },
     {
-      id: bellecour.id,
+      id: Number(bellecour.id),
       name: bellecour.name,
       icon: iexecLogo,
       nativeCurrency: bellecour.nativeCurrency,
       rpcUrls: bellecour.rpcUrls,
-      blockExplorers: bellecour.blockExplorers,
+      blockExplorers: {
+        default: {
+          name: bellecour.blockExplorers?.default?.name || 'Blockscout',
+          url:
+            bellecour.blockExplorers?.default?.url ||
+            'https://blockscout-bellecour.iex.ec',
+        },
+      },
     },
   ];
 }

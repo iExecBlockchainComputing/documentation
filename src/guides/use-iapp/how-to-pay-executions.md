@@ -120,10 +120,10 @@ const result = await dataProtectorCore.processProtectedData({
 
 ::: tip
 
-If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK will
-automatically get the required amount to your iExec account. Ensure that your
-voucher is authorized to access your iExec account and that your account has
-sufficient funds for this transfer to proceed.
+If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK
+will automatically get the required amount to your iExec account. Ensure that
+your voucher is authorized to access your iExec account and that your account
+has sufficient funds for this transfer to proceed.
 
 :::
 
