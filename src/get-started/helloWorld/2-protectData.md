@@ -6,7 +6,7 @@ description:
 ---
 
 <script setup>
-import ProtectData from '../../modules/helloWorld/ProtectData.vue';
+import ProtectData from '@/modules/helloWorld/ProtectData.vue';
 </script>
 
 # 🛡️ Let's Protect Data

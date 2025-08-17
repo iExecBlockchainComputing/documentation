@@ -15,8 +15,8 @@
 <script setup>
 import { ref, computed } from 'vue';
 import avatarStyles from './profile.module.css';
-import { getAvatarVisualNumber } from '../utils/getAvatarVisualNumber';
-import { truncateAddress } from '../utils/truncateAddress';
+import { getAvatarVisualNumber } from '@/utils/getAvatarVisualNumber';
+import { truncateAddress } from '@/utils/truncateAddress';
 
 const props = defineProps({
   address: {

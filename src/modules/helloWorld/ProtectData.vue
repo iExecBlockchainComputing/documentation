@@ -115,7 +115,7 @@ import { IExecDataProtectorCore } from '@iexec/dataprotector';
 import Button from '@/components/ui/Button.vue';
 import ReownButton from './ReownButton.vue';
 import { useAccount } from '@wagmi/vue';
-import { useWalletConnection } from '../../hooks/useWalletConnection.vue';
+import { useWalletConnection } from '@/hooks/useWalletConnection.vue';
 import useUserStore from '@/stores/useUser.store';
 
 const { connector } = useAccount();

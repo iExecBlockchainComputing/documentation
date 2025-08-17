@@ -109,6 +109,7 @@ iapp test
 ## Next Steps
 
 - Learn how to
-  [use iApps with protected data](./use-iapp-with-protected-data.md)
-- Discover how to [add inputs to execution](./add-inputs-to-execution.md)
-- Understand [how to pay for executions](./how-to-pay-executions.md)
+  [use iApps with protected data](/guides/use-iapp/use-iapp-with-protected-data)
+- Discover how to
+  [add inputs to execution](/guides/use-iapp/add-inputs-to-execution)
+- Understand [how to pay for executions](/guides/use-iapp/how-to-pay-executions)

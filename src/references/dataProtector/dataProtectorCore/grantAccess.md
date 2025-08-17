@@ -249,7 +249,7 @@ import { type GrantedAccess } from '@iexec/dataprotector';
 The result of this method confirms the new access grant. It consists of a JSON
 `grantedAccess` object.
 
-[`GrantedAccess`](../types.md#grantedaccess)
+[`GrantedAccess`](/references/dataProtector/types#grantedaccess)
 
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'

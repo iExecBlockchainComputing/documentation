@@ -117,10 +117,10 @@ You can acquire RLC tokens through several methods:
 
 Ready to dive into the iExec ecosystem? Here are the next steps:
 
-- **[Bridge RLC](./tooling-and-explorers/bridge.md)** - Transfer RLC between
-  networks
-- **[Start Using iExec](./quick-start.md)** - Begin your confidential computing
-  journey
+- **[Bridge RLC](/get-started/tooling-and-explorers/bridge)** - Transfer RLC
+  between networks
+- **[Start Using iExec](/get-started/quick-start)** - Begin your confidential
+  computing journey
 - **[Earn RLC](/guides/manage-data/manage-access)** - Become a provider and
   monetize your resources
 

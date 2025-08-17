@@ -113,7 +113,8 @@ For this `app` parameter you can use the "Protected data delivery TEE dApp":
 </div>Please note: This application can only be used <strong>within the
 dataProtectorSharing module</strong>, as it is owned by the DataProtector Sharing smart contract.
 
-For more details, see [Apps whitelist](../../advanced/apps-whitelist).
+For more details, see
+[Apps whitelist](/references/dataProtector/advanced/apps-whitelist).
 
 :::
 
@@ -122,7 +123,8 @@ For more details, see [Apps whitelist](../../advanced/apps-whitelist).
 If you want to provide **your own TEE dApp**, you will need to create a
 whitelist that contains your app.
 
-For more details, see [Apps whitelist](../../advanced/apps-whitelist).
+For more details, see
+[Apps whitelist](/references/dataProtector/advanced/apps-whitelist).
 
 :::
 

@@ -81,8 +81,8 @@ protected throughout the computation.
 ## Getting Started
 
 Ready to start using iApps? Check out our
-[Getting Started Guide](./getting-started.md) to learn how to find, execute, and
-interact with iApps on the iExec network.
+[Getting Started Guide](/guides/use-iapp/getting-started) to learn how to find,
+execute, and interact with iApps on the iExec network.
 
 <script setup>
 import TokenSymbol from '@/components/TokenSymbol.vue'

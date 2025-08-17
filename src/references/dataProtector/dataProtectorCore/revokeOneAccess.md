@@ -20,7 +20,8 @@ As this will generate a blockchain transaction, expect it to take a least 5sec
 
 The `revokeOneAccess` method requires a `grantedAccess` object as an input
 parameter. This object is retrieved from the
-[`getGrantedAccess`](./getGrantedAccess.md) method.
+[`getGrantedAccess`](/references/dataProtector/dataProtectorCore/getGrantedAccess)
+method.
 
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
@@ -88,7 +89,7 @@ data).
 import { type RevokedAccess } from '@iexec/dataprotector';
 ```
 
-[`RevokedAccess`](../types.md#revokedaccess)
+[`RevokedAccess`](/references/dataProtector/types#revokedaccess)
 
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'

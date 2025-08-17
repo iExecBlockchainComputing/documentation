@@ -31,7 +31,7 @@ is bundled by the user into one or more collections. Within the collection, the
 user may specify different sharing options for different pieces of data. This
 illustration shows the hierarchy of a Data Sharing smart contract:
 
-![Data Sharing smart contract](./dataProtectorSharing/data-sharing-sc.png)
+![Data Sharing smart contract](/references/dataProtector/dataProtectorSharing/data-sharing-sc.png)
 
 The Data Sharing smart contract enforces governance over the user's protected
 data based on their desired distribution choices. The user has complete control

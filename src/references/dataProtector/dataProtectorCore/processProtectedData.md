@@ -14,7 +14,8 @@ application.
 > [!IMPORTANT]
 >
 > You must ensure this application has authorization to use the `protectedData`.
-> You may grant this permission using the [`grantAccess`](./grantAccess.md)
+> You may grant this permission using the
+> [`grantAccess`](/references/dataProtector/dataProtectorCore/grantAccess)
 > method.
 
 ## Usage
@@ -469,7 +470,7 @@ Bellecour side chain. You can monitor task execution using the
 ::: tip
 
 The
-[getResultFromCompletedTask()](../dataProtectorCore/getResultFromCompletedTask.md)
+[getResultFromCompletedTask()](/references/dataProtector/dataProtectorCore/getResultFromCompletedTask)
 function allows you to retrieve the result of a completed task using its
 `taskId`.
 

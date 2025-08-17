@@ -79,7 +79,7 @@ steps to contribute:
 
 Fork this repository and ensure you're working on the `main` branch:
 
-[![fork-button](./src/public/fork-button.png)](https://github.com/iExecBlockchainComputing/documentation/fork)
+[![fork-button](/src/public/fork-button.png)](https://github.com/iExecBlockchainComputing/documentation/fork)
 
 ### 2. Set Up Your Development Environment
 

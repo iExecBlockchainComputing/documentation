@@ -117,7 +117,7 @@ For this `addOnlyAppWhitelist`, you are free to use
 `0x256bcd881c33bdf9df952f2a0148f27d439f2e64`.
 
 For more details on how to create and manage appsWhitelist, see
-[Apps whitelist](../../advanced/apps-whitelist).
+[Apps whitelist](/references/dataProtector/advanced/apps-whitelist).
 
 :::
 
@@ -163,7 +163,8 @@ Once with `isDone: false`, and then with `isDone: true`
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';
 ```
 
-See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
+See
+[`SuccessWithTransactionHash`](/references/dataProtector/types#successwithtransactionhash)
 
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'

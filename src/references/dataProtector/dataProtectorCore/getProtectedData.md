@@ -99,7 +99,8 @@ const listProtectedData = await dataProtectorCore.getProtectedData({
 ```
 <!-- prettier-ignore-end -->
 
-Available types are listed [here](./protectData#schema).
+Available types are listed
+[here](/references/dataProtector/dataProtectorCore/protectData#schema).
 
 ### owner <OptionalBadge />
 
@@ -190,7 +191,7 @@ const listProtectedData = await dataProtectorCore.getProtectedData({
 import { type ProtectedData } from '@iexec/dataprotector';
 ```
 
-See [`ProtectedData`](../types.md#protecteddata)
+See [`ProtectedData`](/references/dataProtector/types#protecteddata)
 
 <script setup>
 import OptionalBadge from '@/components/OptionalBadge.vue'

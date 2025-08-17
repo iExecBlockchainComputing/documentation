@@ -73,8 +73,9 @@ Types in DataProtector.
 ### schema: <span class="text-yellow">`DataSchema`</span>
 
 - Data schema for the protected data as defined when the protected data was
-  created (see [protectedData](./dataProtectorCore/protectData.md)). `schema`
-  provides a structured representation of the protected data format and
+  created (see
+  [protectedData](/references/dataProtector/dataProtectorCore/protectData)).
+  `schema` provides a structured representation of the protected data format and
   attributes. This field plays a crucial role in understanding and interpreting
   the underlying structure of the sensitive information.
 

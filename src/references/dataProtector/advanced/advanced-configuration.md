@@ -13,7 +13,8 @@ parameters. As these parameters are very specific, they are not needed for a
 standard usage of `@iexec/dataprotector`.
 
 Similarly, not all functionalities need to be instantiated at once in the SDK,
-as described in the [getting started](../getting-started.md#instantiate-sdk)
+as described in the
+[getting started](/references/dataProtector/getting-started#instantiate-sdk)
 section.
 
 ## Parameters

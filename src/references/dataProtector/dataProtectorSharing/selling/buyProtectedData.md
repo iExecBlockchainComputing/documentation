@@ -151,7 +151,7 @@ purpose of Content Creator usecase-demo. This `addOnlyAppWhitelist` is managed
 by iExec.
 
 For more details on how to create and manage appsWhitelist, see
-[Apps whitelist](../../advanced/apps-whitelist).
+[Apps whitelist](/references/dataProtector/advanced/apps-whitelist).
 
 :::
 
@@ -161,7 +161,8 @@ For more details on how to create and manage appsWhitelist, see
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';
 ```
 
-See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
+See
+[`SuccessWithTransactionHash`](/references/dataProtector/types#successwithtransactionhash)
 
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'

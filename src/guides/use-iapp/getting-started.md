@@ -73,14 +73,14 @@ section.
 
 For step-by-step instructions, check out these guides:
 
-- **[Different Ways to Execute](./different-ways-to-execute.md)** - iExec cli,
-  lib, and other execution methods
-- **[Use iApps with Protected Data](./use-iapp-with-protected-data.md)** -
+- **[Different Ways to Execute](/guides/use-iapp/different-ways-to-execute)** -
+  iExec cli, lib, and other execution methods
+- **[Use iApps with Protected Data](/guides/use-iapp/use-iapp-with-protected-data)** -
   Working with sensitive data securely
-- **[Add Inputs to Execution](./add-inputs-to-execution.md)** - How to provide
-  data and parameters to iApps
-- **[How to Pay for Executions](./how-to-pay-executions.md)** - Understanding
-  costs and payment options
+- **[Add Inputs to Execution](/guides/use-iapp/add-inputs-to-execution)** - How
+  to provide data and parameters to iApps
+- **[How to Pay for Executions](/guides/use-iapp/how-to-pay-executions)** -
+  Understanding costs and payment options
 
 ## Quick Start
 

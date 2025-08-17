@@ -58,7 +58,7 @@ description:
 </template>
 
 <script setup>
-import CouponCode from '../../modules/helloWorld/CouponCode.vue';
+import CouponCode from '@/modules/helloWorld/CouponCode.vue';
 import Button from '@/components/ui/Button.vue';
 import useUserStore from '@/stores/useUser.store';
 import { computed } from 'vue';
