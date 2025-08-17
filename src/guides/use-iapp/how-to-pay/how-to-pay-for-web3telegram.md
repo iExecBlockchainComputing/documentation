@@ -7,14 +7,14 @@ description:
 
 # How to Pay for Web3Telegram
 
-[Web3Telegram](/references/web3telegram) dev tool offers secure,
-blockchain-based communication by encrypting emails and protecting user privacy.
+[Web3Telegram](/references/web3telegram) offers secure, blockchain-based
+communication by encrypting messages and protecting user privacy.
 
-The `sendTelegram` function uses confidential computing power to encrypt and
-send messages, ensuring secure and decentralized email exchanges.
+The `sendTelegram` function uses iExec's protocol to encrypt and send messages,
+ensuring secure and decentralized email exchanges.
 
-This guide explains how to pay for Web3Telegram's computing power using
-**vouchers** and **<TokenSymbol />**, detailing the steps for each method.
+This guide shows how to pay for Web3Telegram using **vouchers** and
+**<TokenSymbol />**.
 
 ## Using Vouchers for Web3Telegram <ChainNotSupportedBadge />
 
@@ -34,8 +34,8 @@ This guide explains how to pay for Web3Telegram's computing power using
   <img :src="builderDashboardImage" alt="Builder dashboard screenshot">
 </a>
 
-The iExec Builder Dashboard is a comprehensive tool for managing vouchers and
-resources, providing an intuitive interface for:
+The iExec Builder Dashboard manages vouchers and resources with an intuitive
+interface for:
 
 - **Claiming Vouchers**: Builders can claim vouchers during the BUILD and EARN
   stages.

@@ -50,11 +50,11 @@ take the form of data, applications or computing power.
 Workers must achieve consensus on the execution result to get the requester’s
 funds. If consensus is not achieved, the requester is reimbursed.
 
-Worker and scheduler must stake RLC to participate as a computing providers. Bad
+Worker and scheduler must stake RLC to participate as computing providers. Bad
 behaviour from an actor results in a loss of stake.
 
 This is essential on the public blockchain, but all values can be set to 0 for
-private blockchain solutions.
+private blockchain networks.
 
 ### Permissioning
 
@@ -766,9 +766,6 @@ An application can only perform result encryption inside an enclave. No
 encryption key will be provided by the SMS to an application that doesn't run
 outside an enclave.
 
-(TODO: potential issue, key leaking to malicious application with the requester
-attacking a beneficiary)
-
 **[Dataset owner] How do I limit the usage of my dataset to a specific
 application?**
 
@@ -820,7 +817,7 @@ A scheduler could therefore emit two kinds of workerpoolorder:
 
 ### Callback
 
-Some requester might want an onchain callback with the result of the execution.
+Some requesters might want an onchain callback with the result of the execution.
 The callback mechanism is based on
 [[EIP-1154]](proof-of-contribution.md#references-1). The result is a `bytes`
 value that is set during the `finalize`. The `IexecProxy` implements both side

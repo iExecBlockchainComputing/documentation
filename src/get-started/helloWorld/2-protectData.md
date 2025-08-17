@@ -95,11 +95,11 @@ button:
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">3</span>
-    <span>The encrypted data is stored on IPFS</span>
+    <span>iExec's protocol stores the encrypted data on IPFS</span>
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">4</span>
-    <span>The symmetric key is stored in a secure enclave (TEE) in the Secret Management Service</span>
+    <span>iExec's protocol stores the symmetric key in a secure enclave (TEE) in the Secret Management Service</span>
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">5</span>
@@ -179,7 +179,8 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
 
 - 📦 **Protected Data** is encrypted and stored on decentralized storage
 
-- ⛓️ **Ownership** is stored on the blockchain and linked to your wallet
+- ⛓️ **Ownership** iExec's protocol writes ownership on the blockchain and links
+  it to your wallet
 
 - 🔌 **Integration** is simple with our developer tools
 

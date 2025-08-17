@@ -37,7 +37,7 @@ import ChainSelector from '@/components/ChainSelector.vue'
     <div class="text-3xl">📚</div>
     <div class="flex flex-col h-full min-h-[120px]">
       <h3 class="m-0! text-lg leading-tight text-[var(--vp-c-text-1)]">1 - iExec Overview</h3>
-      <p class="my-4 text-sm text-[var(--vp-c-text-2)]">Discover how iExec technologies work and the problem they solves</p>
+      <p class="my-4 text-sm text-[var(--vp-c-text-2)]">Discover how iExec technologies work and the problems they solve</p>
       <div class="mt-auto pt-3">
         <span class="inline-block text-sm bg-[var(--vp-c-bg-soft)] rounded text-[var(--vp-c-text-4)]">8 min read</span>
       </div>

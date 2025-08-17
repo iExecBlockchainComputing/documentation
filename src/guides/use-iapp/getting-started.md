@@ -6,8 +6,8 @@ description:
 
 # 🚀 Getting Started with iApps
 
-Welcome to the world of secure, privacy-preserving computation! This guide gives
-you a high-level overview of how to use iApps on the iExec network.
+Welcome to secure, privacy-preserving computation! This guide shows you how to
+use iApps on the iExec confidential computing network.
 
 ## Prerequisites
 

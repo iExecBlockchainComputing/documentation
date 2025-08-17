@@ -54,7 +54,7 @@ Turnkey Privacy iApps, they will.**
   </div>
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4 flex items-center gap-3">
     <span class="text-green-500 text-xl">✅</span>
-    <p class="m-0"><strong>Trusted Execution:</strong> iExec ensures that your code runs inside a Trusted Execution Environment (TEE), which guarantees that only the specified Docker image is executed in a secure and isolated environment.</p>
+    <p class="m-0"><strong>Trusted Execution:</strong> iExec ensures your code runs inside a Trusted Execution Environment (TEE), guaranteeing only the specified Docker image executes in a secure, isolated environment.</p>
   </div>
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4 flex items-center gap-3">
     <span class="text-green-500 text-xl">✅</span>
@@ -62,7 +62,7 @@ Turnkey Privacy iApps, they will.**
   </div>
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4 flex items-center gap-3">
     <span class="text-green-500 text-xl">✅</span>
-    <p class="m-0"><strong>Zero Trust Architecture:</strong> User data is protected by hardware-based TEEs, which keep data confidential and inaccessible to the host, cloud provider, or operating system during execution.</p>
+    <p class="m-0"><strong>Zero Trust Architecture:</strong> User data is protected by hardware-based TEEs, keeping data confidential and inaccessible to the host, cloud provider, or operating system during execution.</p>
   </div>
 </div>
 

@@ -30,9 +30,9 @@ If you want to build your iApp in another language, you need to know how to
 deserialize a protected data.
 
 Under the hood, protected data are **zip files** replicating the tree structure
-of the original data object. Each value is stored in a dedicated file, binary
-values are stored as is while boolean, numbers, and strings are serialized with
-borsh.
+of the original data object. iExec's protocol stores each value in a dedicated
+file, binary values are stored as is while boolean, numbers, and strings are
+serialized with borsh.
 
 To access a value from a protected data, your app will need to unzip the iExec
 dataset file at `$IEXEC_IN/$IEXEC_DATASET_FILENAME`. Then for `'bool'`, `'f64'`,

@@ -66,7 +66,7 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
     <div class="flex items-center gap-3">
       <span>•</span>
       <div>
-        <strong>Secret storage:</strong> Secrets stored in a TEE database.
+        <strong>Secret storage:</strong> iExec's protocol secrets in a TEE database.
       </div>
     </div>
   </div>
@@ -130,7 +130,7 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
     <div class="flex items-center gap-3">
       <span class="text-xl font-bold text-fuchsia-700">5.</span>
       <div>
-        <strong>Compute:</strong> Authorized users can compute on your data with the authorized iApps
+        <strong>Compute:</strong> Authorized users can compute on your data with authorized iApps
       </div>
     </div>
   </div>

@@ -128,8 +128,8 @@ const protectedData = await dataProtectorCore.protectData({
 
 ::: tip
 
-If you'd like to **protect a file**, you first need to convert it to some kind
-of buffer. To do so, you can use `createArrayBufferFromFile`.
+If you'd like to **protect a file**, you first need to convert it to a buffer.
+You can use `createArrayBufferFromFile` to do this.
 
 ```ts twoslash
 const file: File = new File([], 'emptyFile.txt');
@@ -218,7 +218,7 @@ The name is public and not encrypted.
 **Type:** `"ipfs" | "arweave"`  
 **Default:** `"ipfs"`
 
-Specify the storage solution to use for the protected data encrypted payload
+Specify the storage platform to use for the protected data encrypted payload
 hosting.
 
 ```ts twoslash

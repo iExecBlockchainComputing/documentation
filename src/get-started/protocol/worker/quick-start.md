@@ -34,13 +34,12 @@ configuration documentation of the
 For security reason, it is **highly recommended** to launch your worker in a
 virtual machine.
 
-After having loaded some <TokenSymbol /> and deposited them to your iExec
-account, you can start your worker.
+After loading some <TokenSymbol /> and depositing them to your iExec account,
+you can start your worker.
 
-When the worker initialization process is complete, the worker will be started
-and you will get something like: **You worker is all set**. Your worker will now
-be able to compute some tasks coming from the iExec network to earn some
-<TokenSymbol />s.
+When the worker initialization process is complete, the worker will start and
+you will get: **Your worker is all set**. Your worker will now be able to
+compute tasks from the iExec network to earn <TokenSymbol />.
 
 ## Wallet restriction
 
