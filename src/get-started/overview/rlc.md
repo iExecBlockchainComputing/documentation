@@ -19,8 +19,8 @@ the more utility RLC gains in real applications.
 
 ## 🎯 Why RLC Matters
 
-**Stack adoption = token usage.** Developers build with iExec tools. RLC gets
-used. More privacy apps deployed = more RLC demand.
+**Stack adoption = token usage.** When developers build with iExec tools, RLC
+gets used. More privacy apps deployed means more RLC demand.
 
 ### For Users
 
@@ -34,8 +34,8 @@ contributions.
 
 ### For Holders
 
-**Clear positioning:** More developers using iExec's privacy tools = more RLC
-utility in real applications. We're building activable privacy, not just
+**Clear positioning:** More developers using iExec's privacy tools means more
+RLC utility in real applications. We're building actionable privacy, not just
 protocols.
 
 ## 💰 Transparent Payment Flow

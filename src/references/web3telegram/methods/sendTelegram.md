@@ -40,7 +40,7 @@ const sendTelegram = await web3telegram.sendTelegram({
   protectedData: '0x123abc...',
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
-  label: 'some-cutom-id',
+  label: 'some-custom-id',
   workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth',
   dataMaxPrice: 42,
   appMaxPrice: 42,
@@ -136,7 +136,7 @@ const sendTelegram = await web3telegram.sendTelegram({
   protectedData: '0x123abc...',
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
-  label: 'some-cutom-id',
+  label: 'some-custom-id',
   workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth',
   dataMaxPrice: 42,
   appMaxPrice: 42,
@@ -172,7 +172,7 @@ const sendTelegram = await web3telegram.sendTelegram({
   protectedData: '0x123abc...',
   senderName: 'Arthur',
   telegramContent: 'My telegram message content',
-  label: 'some-cutom-id', // [!code focus]
+  label: 'some-custom-id', // [!code focus]
 });
 ```
 

@@ -209,7 +209,7 @@ const sendEmail = await web3mail.sendEmail({
   protectedData: '0x123abc...',
   emailSubject: 'My email subject',
   emailContent: 'My email content',
-  label: 'some-cutom-id', // [!code focus]
+  label: 'some-custom-id', // [!code focus]
 });
 ```
 

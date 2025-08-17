@@ -70,7 +70,7 @@ const sendTelegram = await web3telegram.sendTelegram({
   protectedData: '0x123abc...',
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
-  label: 'some-cutom-id',
+  label: 'some-custom-id',
   workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth',
   dataMaxPrice: 42,
   appMaxPrice: 42,
@@ -91,13 +91,13 @@ To manage RLC tokens, developers must use the iExec SDK, which offers all the
 necessary tools for interacting with the iExec platform. This includes
 depositing, withdrawing, and checking balances of RLC and <TokenSymbol />
 
-- In your JS/TS project npm install iexec
+- In your JS/TS project, run `npm install iexec`
 - Instantiate the iExec SDK (see the
   [doc](https://github.com/iExecBlockchainComputing/iexec-sdk/blob/master/docs/README.md#quick-start))
 
 ```javascript
 import { IExec } from 'iexec';
-// connect injected provider
+// Connect to injected provider
 const iexec = new IExec({ ethProvider: window.ethereum });
 ```
 
@@ -106,7 +106,7 @@ const iexec = new IExec({ ethProvider: window.ethereum });
 Obtain RLC tokens from a supported cryptocurrency exchange. For detailed
 information on how to buy RLC tokens, see our
 [RLC Token guide](/get-started/overview/rlc) which covers all available DEX and
-CEX supported.
+CEX options.
 
 For detailed instructions on how to bridge RLC tokens between networks, see our
 [Bridge guide](/get-started/tooling-and-explorers/bridge) which covers all
@@ -147,7 +147,7 @@ const sendTelegram = await web3telegram.sendTelegram({
   protectedData: '0x123abc...',
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
-  label: 'some-cutom-id',
+  label: 'some-custom-id',
   workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth',
   dataMaxPrice: 42,
   appMaxPrice: 42,
