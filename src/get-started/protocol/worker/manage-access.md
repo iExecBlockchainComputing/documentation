@@ -44,7 +44,7 @@ your workerpool:
 | key                 | description                                                                          |
 | ------------------- | ------------------------------------------------------------------------------------ |
 | `workerpool`        | workerpool address                                                                   |
-| `workerpoolprice`   | price to charge the requester for each execution of the app (in nRLC)                |
+| `workerpoolprice`   | price to charge the requester for each execution of the app (in nano <TokenSymbol />)                |
 | `volume`            | number of authorized uses, each use decreases this number                            |
 | `tag`               | restrict usage to a specific runtime such as **Scone** or **Gramine** TEE frameworks |
 | `category`          | Order category, will define the deal `workClockTimeRef` and its deadlines            |
@@ -106,3 +106,7 @@ cancel command.
 ```bash
 iexec order cancel --workerpool <orderHash>
 ```
+
+<script setup>
+import TokenSymbol from '@/components/TokenSymbol.vue'
+</script>

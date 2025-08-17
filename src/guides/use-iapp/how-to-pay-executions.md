@@ -14,7 +14,7 @@ and cost management strategies.
 
 iExec supports multiple payment methods for executing iApps:
 
-1. **RLC Tokens**: Direct payment using RLC (Request Compute Language) tokens
+1. **RLC Tokens**: Direct payment using <TokenSymbol /> tokens
 2. **Vouchers**: Pre-funded vouchers for simplified payment
 3. **Mixed Payment**: Combination of RLC and vouchers
 
@@ -120,7 +120,7 @@ const result = await dataProtectorCore.processProtectedData({
 
 ::: tip
 
-If your voucher doesn't have enough xRLC to cover the deal, the SDK will
+If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK will
 automatically get the required amount to your iExec account. Ensure that your
 voucher is authorized to access your iExec account and that your account has
 sufficient funds for this transfer to proceed.
@@ -496,4 +496,5 @@ Now that you understand payment methods:
 
 <script setup>
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+import TokenSymbol from '@/components/TokenSymbol.vue'
 </script>

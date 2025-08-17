@@ -153,7 +153,7 @@ const processProtectedDataResponse =
 
 ::: tip
 
-If your voucher doesn't have enough xRLC to cover the deal, the SDK will
+If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK will
 automatically get the required amount to your iExec account. Ensure that your
 voucher is authorized to access your iExec account and that your account has
 sufficient funds for this transfer to proceed.
@@ -500,4 +500,5 @@ processed during the task.
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+import TokenSymbol from '@/components/TokenSymbol.vue'
 </script>

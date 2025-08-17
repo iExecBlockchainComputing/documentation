@@ -17,7 +17,6 @@ Before you begin, make sure you have:
 - Some RLC tokens for paying computation fees (or access to free vouchers
   through learning programs) - [Learn about RLC tokens](/get-started/rlc) and
   [how to bridge them](/get-started/tooling-and-explorers/bridge)
-  - **Note**: On Arbitrum, you'll need AETH (Arbitrum ETH) instead of RLC
 - Basic understanding of blockchain transactions
 - iExec SDK installed
 

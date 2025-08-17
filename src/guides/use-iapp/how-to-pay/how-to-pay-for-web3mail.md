@@ -2,7 +2,7 @@
 title: How to Pay for Web3Mail
 description:
   Learn how to pay for Web3Mail's confidential computing power using vouchers
-  and xLC for secure, blockchain-based email communication.
+  and RLC for secure, blockchain-based email communication.
 ---
 
 # How to Pay for Web3Mail
@@ -14,7 +14,7 @@ The `sendEmail` function uses confidential computing power to encrypt and send
 messages, ensuring secure and decentralized email exchanges.
 
 This guide explains how to pay for Web3Mail's computing power using **vouchers**
-and **xRLC**, detailing the steps for each method.
+and **<TokenSymbol />**, detailing the steps for each method.
 
 ## Using Vouchers for Web3Mail <ChainNotSupportedBadge />
 
@@ -52,8 +52,8 @@ contract to debit your account if the voucher balance is insufficient. This
 ensures that if the voucher alone doesn't cover the execution cost, the
 remaining balance is automatically deducted from your account.
 
-For additional information on using xRLC for fallback payment in Web3Mail, refer
-to the **Using xRLC with Web3Mail** section.
+For additional information on using <TokenSymbol /> for fallback payment in Web3Mail, refer
+to the **Using <TokenSymbol /> with Web3Mail** section.
 
 ### Step 4: Execute Web3Mail's SendEmail Function
 
@@ -73,9 +73,9 @@ const sendEmail = await web3mail.sendEmail({
 });
 ```
 
-## Using xRLC for Web3Mail
+## Using <TokenSymbol /> for Web3Mail
 
-If you choose to use xRLC to cover the computational cost of Web3Mail (or if you
+If you choose to use <TokenSymbol /> to cover the computational cost of Web3Mail (or if you
 need to cover data access costs such as retrieving the recipient's email
 address), follow these steps:
 
@@ -83,7 +83,7 @@ address), follow these steps:
 
 To manage RLC tokens, developers must use the iExec SDK, which offers all the
 necessary tools for interacting with the iExec platform. This includes
-depositing, withdrawing, and checking balances of RLC and xRLC
+depositing, withdrawing, and checking balances of RLC and <TokenSymbol />
 
 - In your JS/TS project npm install iexec
 - Instantiate the iExec SDK (see the
@@ -97,32 +97,19 @@ const iexec = new IExec({ ethProvider: window.ethereum });
 
 ### Purchase RLC
 
-Obtain RLC tokens from a supported cryptocurrency exchange.
+Obtain RLC tokens from a supported cryptocurrency exchange. For detailed information on how to buy RLC tokens, see our [RLC Token guide](/get-started/rlc) which covers all available DEX and CEX supported.
 
-### Convert to xRLC
+For detailed instructions on how to bridge RLC tokens between networks, see our [Bridge guide](/get-started/tooling-and-explorers/bridge) which covers all supported networks and bridging methods.
 
-Use the iExec Bridge to convert your RLC into xRLC for use on iExec's sidechain.
-The bridging operation follows the lock & mint / burn & unlock principle. When
-sending tokens from Mainnet to Bellecour, the bridge locks the initial amount on
-the source chain and mints the equivalent on the destination chain. When going
-in the other direction, it burns tokens on the Sidechain and unlocks the same
-amount on Mainnet. The bridged asset is called xRLC on Bellecour.
+### Deposit <TokenSymbol />
 
-Users can send tokens from the Ethereum Mainnet to the iExec Sidechain or
-vice-versa using the Account Manager
-([iExec Explorer](https://explorer.iex.ec/bellecour) or
-[POA Bridge UI](https://bridge-bellecour.iex.ec/)) available across all iExec
-products.
-
-### Deposit xRLC
-
-Deposit the xRLC into your iExec account using the command:
+Deposit the <TokenSymbol /> into your iExec account using the command:
 
 ```javascript
-iexec.account.deposit(xRLC_amount);
+iexec.account.deposit(RLC_amount);
 ```
 
-This converts xRLC into sRLC, used as proof of funds for task execution.
+This converts <TokenSymbol /> into sRLC, used as proof of funds for task execution.
 
 ### Check sRLC Balance
 
@@ -135,7 +122,7 @@ iexec.account.show();
 ### Execute sendEmail
 
 Set the `useVoucher` parameter to `false` when using Web3Mail's sendEmail
-function to pay with xRLC:
+function to pay with <TokenSymbol />:
 
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
@@ -153,7 +140,7 @@ const sendEmail = await web3mail.sendEmail({
 
 ### Withdraw sRLC (If Desired)
 
-Convert sRLC back to xRLC and withdraw to your wallet using:
+Convert sRLC back to <TokenSymbol /> and withdraw to your wallet using:
 
 ```javascript
 iexec.account.withdraw(RLC_amount);
@@ -163,4 +150,5 @@ iexec.account.withdraw(RLC_amount);
 // Assets
 import builderDashboardImage from '@/assets/tooling-&-explorers/builder-dashboard/builder-dashboard.png';
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+import TokenSymbol from '@/components/TokenSymbol.vue'
 </script>
