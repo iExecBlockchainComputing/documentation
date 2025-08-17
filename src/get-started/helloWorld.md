@@ -14,13 +14,9 @@ import ChainSelector from '@/components/ChainSelector.vue'
 
 > Reading time 🕒 2 mins
 
-<div class="mb-6 p-4 bg-[var(--vp-c-bg-soft)] rounded-lg border border-[var(--vp-c-divider)]">
-  <div class="flex items-center gap-3 mb-3">
-    <span class="text-lg">🌐</span>
-    <h3 class="m-0 text-lg font-medium">Select Your Network</h3>
-  </div>
-  <div class="flex items-center gap-3">
-    <span class="text-sm font-medium">Network:</span>
+<div class="mb-0 p-6 bg-[var(--vp-c-bg-soft)] rounded-lg border border-[var(--vp-c-divider)]">
+  <div class="flex">
+    <h3 class="m-0! py-2 text-lg font-medium">🌐 Select Your Network :</h3>
     <ChainSelector />
   </div>
 </div>
@@ -100,21 +96,21 @@ Before you begin, make sure you have:
 <div class="flex flex-col gap-2 my-4 pl-0">
   <div class="flex items-center gap-4 text-left">
     <div class="flex items-center gap-1 flex-1 text-sm font-medium">
-      🦊 Ethereum Wallet 
+      🦊 Ethereum Wallet
       <InfoIcon tooltip="Required to interact with iExec sidechain Bellecour features, manage your data access permissions, and handle transactions on the iExec platform" />
     </div>
     <a target="_blank" href="https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" class="no-underline! text-sm ml-auto hover:underline!">Metamask Download →</a>
   </div>
   <div class="flex items-center gap-4 text-left">
     <div class="flex items-center gap-1 flex-1 text-sm font-medium">
-      📦 Node.js v20+ 
+      📦 Node.js v20+
       <InfoIcon tooltip="Required runtime environment for running JavaScript code and managing project dependencies" />
     </div>
     <a target="_blank" href="https://nodejs.org/en/" class="no-underline! text-sm ml-auto hover:underline!">Download →</a>
   </div>
    <div class="flex items-center gap-4 text-left">
     <div class="flex items-center gap-1 flex-1 text-sm font-medium">
-      🐳 Docker installed 
+      🐳 Docker installed
       <InfoIcon tooltip="Docker is essential for creating isolated containers that package your iExec applications with all dependencies. This ensures consistent and secure execution across different environments, especially in TEEs (Trusted Execution Environments)" />
     </div>
     <a target="_blank" href="https://docker.com/" class="no-underline! text-sm ml-auto hover:underline!">Download →</a>
@@ -122,7 +118,7 @@ Before you begin, make sure you have:
   
   <div class="flex items-center gap-4 text-left">
     <div class="flex items-center gap-1 flex-1 text-sm font-medium">
-      🐳 DockerHub Account 
+      🐳 DockerHub Account
       <InfoIcon tooltip="Needed to publish and manage your iExec applications in containers for secure deployment" />
     </div>
     <a target="_blank" href="https://hub.docker.com/" class="no-underline! text-sm ml-auto hover:underline!">Sign Up →</a>
