@@ -97,7 +97,7 @@ Before you begin, make sure you have:
   <div class="flex items-center gap-4 text-left">
     <div class="flex items-center gap-1 flex-1 text-sm font-medium">
       🦊 Ethereum Wallet
-      <InfoIcon tooltip="Required to interact with iExec sidechain Bellecour features, manage your data access permissions, and handle transactions on the iExec platform" />
+      <InfoIcon tooltip="Required to interact with iExec protocol, manage your data access permissions, and handle transactions on the iExec platform" />
     </div>
     <a target="_blank" href="https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" class="no-underline! text-sm ml-auto hover:underline!">Metamask Download →</a>
   </div>

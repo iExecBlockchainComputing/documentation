@@ -1,8 +1,9 @@
 ---
 title: RLC Token
 description:
-  The RLC token is the cryptocurrency that powers the iExec decentralized
-  computing ecosystem
+  RLC (Run on Lots of Computers) is the cryptocurrency powering iExec's
+  confidential computing ecosystem. Learn about RLC tokenomics, utility, and how
+  it drives privacy-first Web3 applications.
 ---
 
 <div class="flex flex-col items-center mb-8">
@@ -11,15 +12,31 @@ description:
   <p class="text-lg text-center text-gray-600 max-w-2xl">The native cryptocurrency that powers the entire iExec decentralized confidential computing ecosystem</p>
 </div>
 
-**RLC** (**R**un on **L**ots of **C**omputers) serves as the primary medium of
-exchange for all interactions within the protocol, enabling users to access
-confidential computing services, and rewarding providers for their
+RLC (Run on Lots of Computers) powers all privacy apps on iExec. Every
+confidential computation requires RLC. Every piece of protected data consumed
+requires RLC. Every app execution requires RLC. The more builders use our tools,
+the more utility RLC gains in real applications.
+
+## 🎯 Why RLC Matters
+
+**Stack adoption = token usage.** Developers build with iExec tools. RLC gets
+used. More privacy apps deployed = more RLC demand.
+
+### For Users
+
+Every confidential computation you run uses RLC. That's how we keep your data
+private while making it usable.
+
+### For Providers
+
+Build apps, provide data, or run workers. All earn RLC when people use your
 contributions.
 
-## 🎯 What RLC Enables
+### For Holders
 
-RLC is essential for interacting with the iExec protocol and accessing its
-decentralized confidential computing services.
+**Clear positioning:** More developers using iExec's privacy tools = more RLC
+utility in real applications. We're building activable privacy, not just
+protocols.
 
 ## 💰 Transparent Payment Flow
 
@@ -46,7 +63,7 @@ protocol during the task period. In exchange, you receive **sRLC (staked RLC)**.
 Once the task is completed, you can recover the RLC that wasn't consumed for the
 task payment.
 
-## 💰 Tokenomics & Ecosystem Metrics
+### 📊 Ecosystem Growth Metrics
 
 RLC operates on a utility-driven economic model where demand for confidential
 computing services drives token value:
@@ -56,6 +73,14 @@ scarcity and value preservation.
 
 **Network Effects**: As more users and providers join the iExec ecosystem, the
 demand for RLC increases, driving token value through network effects.
+
+**Utility-Driven Growth**: Every interaction in the **Turnkey Privacy**
+ecosystem requires RLC:
+
+- iApp executions consume RLC for computation
+- Protected Data access requires RLC
+- Confidential computations need RLC for execution
+- Staking mechanisms lock RLC, reducing circulating supply
 
 <ImageViewer
     :image-url-dark="duneDashboard"

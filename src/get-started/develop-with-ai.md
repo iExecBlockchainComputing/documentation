@@ -7,7 +7,7 @@ description:
 
 # 🤖 Develop with AI
 
-Building privacy-first applications with iExec can be accelerated using
+AI tools accelerate building privacy-first applications with iExec using
 AI-powered development tools. This guide covers how to effectively use AI
 assistants while maintaining security best practices.
 
@@ -23,12 +23,12 @@ provide:
 
 ## 🎨 Vibe Coding Integration
 
-Vibe coding is a modern way to build applications by describing what you want in
-plain language. An AI assistant (like Cursor or ChatGPT) then generates code
-based on your description.
+Vibe coding lets you build applications by describing what you want in plain
+language. An AI assistant (like Cursor or ChatGPT) then generates code based on
+your description.
 
-It's fast, creative, and helps you prototype ideas quickly. Even if you're not a
-technical expert you can:
+It's fast, creative, and helps you prototype ideas quickly. Even non-technical
+users can:
 
 - Write a prompt like: "I want to create a form able to protect my data with
   DataProtector"

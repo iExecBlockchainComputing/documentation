@@ -73,7 +73,7 @@ export function getSidebar() {
           },
           {
             text: '🪙 RLC Token',
-            link: '/get-started/rlc',
+            link: '/get-started/overview/rlc',
           },
         ],
       },

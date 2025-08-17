@@ -99,8 +99,8 @@ const iexec = new IExec({ ethProvider: window.ethereum });
 
 Obtain RLC tokens from a supported cryptocurrency exchange. For detailed
 information on how to buy RLC tokens, see our
-[RLC Token guide](/get-started/rlc) which covers all available DEX and CEX
-supported.
+[RLC Token guide](/get-started/overview/rlc) which covers all available DEX and
+CEX supported.
 
 For detailed instructions on how to bridge RLC tokens between networks, see our
 [Bridge guide](/get-started/tooling-and-explorers/bridge) which covers all

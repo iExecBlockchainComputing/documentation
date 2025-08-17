@@ -23,20 +23,20 @@ features:
   - icon: 🔐
     title: Protect & Manage Data
     details:
-      Secure your data with advanced encryption and control access while
-      maintaining privacy using DataProtector
+      DataProtector encrypts and allows you to control access to your sensitive
+      data. Ready-to-use privacy toolkit for developers.
     link: /guides/manage-data/manage-access
   - icon: 🤖
     title: Build iApps
     details:
-      Create decentralized applications that run on confidential computing
-      infrastructure with our iApp Generator
+      iApp Generator builds confidential applications that run in secure TEEs.
+      Custom confidentiality integration without managing infrastructure.
     link: /guides/build-iapp/build-&-deploy
   - icon: ⚡
     title: Use iApps
     details:
-      Execute existing iApps including Web3Mail, Web3Telegram for your
-      applications
+      Execute privacy-preserving apps like Web3Mail and Web3Telegram. Use what
+      others built, extend what you need.
     link: /guides/use-iapp/introduction
   - icon: 💰
     title: Monetize Data
@@ -47,7 +47,7 @@ features:
   - icon: 🧠
     title: Protocols
     details:
-      Deep dive into the core concepts of the protocol and understand how iExec
-      enables privacy, governance, and monetization
+      Deep dive into core protocol concepts. Understand how iExec enables
+      privacy, governance, and monetization.
     link: /get-started/protocol/proof-of-contribution
 ---

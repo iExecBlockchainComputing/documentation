@@ -15,7 +15,8 @@ Before you begin, make sure you have:
 
 - A Web3 wallet (MetaMask, WalletConnect, etc.)
 - Some RLC tokens for paying computation fees (or access to free vouchers
-  through learning programs) - [Learn about RLC tokens](/get-started/rlc) and
+  through learning programs) -
+  [Learn about RLC tokens](/get-started/overview/rlc) and
   [how to bridge them](/get-started/tooling-and-explorers/bridge)
 - Basic understanding of blockchain transactions
 - iExec SDK installed
