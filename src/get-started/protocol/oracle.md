@@ -32,28 +32,26 @@ Oracles are systems designed to solve this problem: providing the blockchain
 with data from the real world in the most secure and robust way possible. It
 turns out we at iExec have been working on this problem for a long time. Indeed
 an update to an Oracle \(for example the price of a stock or the average
-temperature for a day\) can appear as the result of a specific type of
-off-chain computation, one that would involve calling an API and processing the
-response to return the final result. As a result the iExec infrastructure is
-perfectly suited to build an efficient and secure Oracle system: the iExec
-Oracle.
+temperature for a day\) can appear as the result of a specific type of off-chain
+computation, one that would involve calling an API and processing the response
+to return the final result. As a result the iExec infrastructure is perfectly
+suited to build an efficient and secure Oracle system: the iExec Oracle.
 
 ## The iExec solution: the Decentralized Oracle \(Oracle\)
 
 For two years iExec has been working on the design of the
-[Proof of Contribution protocol](/get-started/key-concepts/proof-of-contribution.md),
+[Proof of Contribution protocol](/get-started/protocol/proof-of-contribution.md),
 which provides a flexible and highly robust solution to the problem of off-chain
 computation. At its core it is a simple Schelling game between off-chain
 computation providers \(Workers\): a given number of Workers are randomly chosen
-in a much bigger group, and receive the same computation. Each of them
-proposes a result, and the result that proposed by the biggest number of
-workers becomes the overall computation result \(see PoCo documentation for
-more details\).
+in a much bigger group, and receive the same computation. Each of them proposes
+a result, and the result that proposed by the biggest number of workers becomes
+the overall computation result \(see PoCo documentation for more details\).
 
 The PoCo is both flexible and robust: the trust level for the computation \(e.g.
-for the Oracle update in the Oracle case\) can set arbitrarily, and
-determines the number of replications. It also includes a coherent on-chain
-incentive mechanism, that protects the whole system against any \(financially
+for the Oracle update in the Oracle case\) can set arbitrarily, and determines
+the number of replications. It also includes a coherent on-chain incentive
+mechanism, that protects the whole system against any \(financially
 sustainable\) attack. Last but not least, it is cheap and scalable: the more
 Workers join the iExec platform, the more secure and the cheaper running a
 Oracle will be. iExec Oracle relies on random sampling among all the Workers on
@@ -99,18 +97,18 @@ execute between the workers of the worker-pool they manage. Each side of the
 iExec platform \(worker-pool, computation requester\) create and sign orders
 that describe the kind of transaction they are willing to enter \(type of
 hardware, minimum price, etc…\). When several orders of different types are
-compatible they match together on the blockchain, to create a deal. Once a
-deal creates, the scheduler that is part of the deal will choose a set of
-workers in his workerpool to execute the task. Each worker will download the
-dApp \(a docker container\) and run it. Upon execution of the task, each worker
-sends back two values on the blockchain:
+compatible they match together on the blockchain, to create a deal. Once a deal
+creates, the scheduler that is part of the deal will choose a set of workers in
+his workerpool to execute the task. Each worker will download the dApp \(a
+docker container\) and run it. Upon execution of the task, each worker sends
+back two values on the blockchain:
 
 - a hash of the result.
 - after consensus reaches, the corresponding result.
 
-A normal execution ends when the deal finalizes; all the stakeholders are
-paid, and the computation requester is free to download the data pointed to by
-the results field of the `Deal` object on the blockchain.
+A normal execution ends when the deal finalizes; all the stakeholders are paid,
+and the computation requester is free to download the data pointed to by the
+results field of the `Deal` object on the blockchain.
 
 ### iExec d'Oracle: general architecture
 
@@ -122,8 +120,8 @@ contract and a classical iExec dApp \(packaged in a docker container\).
 
 **Off-chain component:**
 
-The off-chain part of a Oracle is a classical iExec dApp, that will execute
-on the iExec platform and replicate on several workers as part of an iExec
+The off-chain part of a Oracle is a classical iExec dApp, that will execute on
+the iExec platform and replicate on several workers as part of an iExec
 computation deal. It contains the oracle logic, for example to query a web API
 and process the result. Whenever an operator wishes to update the Oracle, it
 requests a computation like in a normal iExec deal, specifying the Oracle app as
@@ -182,8 +180,8 @@ iExec will then achieve PoCo consensus on the hash of the `callback-data` value,
 and will then submit `callback-data` values on-chain, in the `Task` object on
 the `IexecProxy` smart contract.
 
-Once your oracle dApp writes, you can build it into a Docker image and make
-it available on the iExec platform as explained here.
+Once your oracle dApp writes, you can build it into a Docker image and make it
+available on the iExec platform as explained here.
 
 ### The Oracle generic contract
 
@@ -305,12 +303,12 @@ public
 }
 ```
 
-The PriceFeed Oracle also declares an event `ValueChange`, that fires
-whenever an update creates.
+The PriceFeed Oracle also declares an event `ValueChange`, that fires whenever
+an update creates.
 
-- An `updateEnv` function, that can use by the owner of the Oracle to update
-  its parameters. It simply calls the `_iexecDoracleUpdateSettings` function of
-  its parent `IexecDoracle` contract.
+- An `updateEnv` function, that can use by the owner of the Oracle to update its
+  parameters. It simply calls the `_iexecDoracleUpdateSettings` function of its
+  parent `IexecDoracle` contract.
 
 ```text
 function updateEnv(
