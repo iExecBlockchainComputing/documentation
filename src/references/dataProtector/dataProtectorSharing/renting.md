@@ -7,7 +7,7 @@ description:
   terms, even if modified by the owner.
 ---
 
-# Data Sharing - Renting
+# Data Sharing - Renting <ChainNotSupportedBadge />
 
 Rental agreements are one of the options given for distributing a collection
 owner's protected data. A rental agreement has the following attributes:
@@ -40,3 +40,7 @@ The collection owner has a few options once they list protected data for rent:
 Making either of these chances is effective immediately but only for future
 rentals. The Data Sharing smart contract enforces any ongoing rental agreements
 until the terms expire.
+
+<script setup>
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

@@ -41,17 +41,17 @@ iexec order init --workerpool
 Edit the `workerpoolorder` part in `iexec.json` to set the conditions to use
 your workerpool:
 
-| key                 | description                                                                          |
-| ------------------- | ------------------------------------------------------------------------------------ |
-| `workerpool`        | workerpool address                                                                   |
-| `workerpoolprice`   | price to charge the requester for each execution of the app (in nRLC)                |
-| `volume`            | number of authorized uses, each use decreases this number                            |
-| `tag`               | restrict usage to a specific runtime such as **Scone** or **Gramine** TEE frameworks |
-| `category`          | Order category, will define the deal `workClockTimeRef` and its deadlines            |
-| `trust`             | Trust level of the execution, impacts the number of replicates                       |
-| `apprestrict`       | restrict the workerpool usage to a specifig app (1)                                  |
-| `datasetrestrict`   | restrict the workerpool usage to a specific dataset (1)                              |
-| `requesterrestrict` | restrict the workerpool usage to a specific requester (1)                            |
+| key                 | description                                                                           |
+| ------------------- | ------------------------------------------------------------------------------------- |
+| `workerpool`        | workerpool address                                                                    |
+| `workerpoolprice`   | price to charge the requester for each execution of the app (in nano <TokenSymbol />) |
+| `volume`            | number of authorized uses, each use decreases this number                             |
+| `tag`               | restrict usage to a specific runtime such as **Scone** or **Gramine** TEE frameworks  |
+| `category`          | Order category, will define the deal `workClockTimeRef` and its deadlines             |
+| `trust`             | Trust level of the execution, impacts the number of replicates                        |
+| `apprestrict`       | restrict the workerpool usage to a specifig app (1)                                   |
+| `datasetrestrict`   | restrict the workerpool usage to a specific dataset (1)                               |
+| `requesterrestrict` | restrict the workerpool usage to a specific requester (1)                             |
 
 1. the restriction is disabled by default with
    0x0000000000000000000000000000000000000000.
@@ -106,3 +106,7 @@ cancel command.
 ```bash
 iexec order cancel --workerpool <orderHash>
 ```
+
+<script setup>
+import TokenSymbol from '@/components/TokenSymbol.vue'
+</script>

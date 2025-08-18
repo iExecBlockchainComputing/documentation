@@ -77,8 +77,8 @@ if (!userStore.chainId) {
       userStore.setSelectedChain(walletChain);
     }
   } else {
-    // Otherwise, use Bellecour as default
-    const defaultChain = getChainById(0x86); // Bellecour
+    // Otherwise, use Arbitrum as default
+    const defaultChain = getChainById(42161); // Arbitrum
     if (defaultChain) {
       userStore.setSelectedChain(defaultChain);
     }

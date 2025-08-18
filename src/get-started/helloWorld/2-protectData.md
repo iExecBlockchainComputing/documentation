@@ -6,7 +6,7 @@ description:
 ---
 
 <script setup>
-import ProtectData from '../../modules/helloWorld/ProtectData.vue';
+import ProtectData from '@/modules/helloWorld/ProtectData.vue';
 </script>
 
 # 🛡️ Let's Protect Data
@@ -30,7 +30,7 @@ their dApps with these key features:
 
 - 🔐 **Data Privacy and Security**
 
-  Utilizes end-to-end encryption and decentralized storage
+  Uses end-to-end encryption and decentralized storage
   (<a href="https://ipfs.tech/" target="_blank">IPFS</a> or
   <a href="https://ar.io/" target="_blank">AR.io</a>) to ensure protection and
   confidentiality, leveraging advanced confidential computing technology.
@@ -95,11 +95,11 @@ button:
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">3</span>
-    <span>The encrypted data is stored on IPFS</span>
+    <span>iExec's protocol stores the encrypted data on IPFS</span>
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">4</span>
-    <span>The symmetric key is stored in a secure enclave (TEE) in the Secret Management Service</span>
+    <span>iExec's protocol stores the symmetric key in a secure enclave (TEE) in the Secret Management Service</span>
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">5</span>
@@ -179,7 +179,8 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
 
 - 📦 **Protected Data** is encrypted and stored on decentralized storage
 
-- ⛓️ **Ownership** is stored on the blockchain and linked to your wallet
+- ⛓️ **Ownership** iExec's protocol writes ownership on the blockchain and links
+  it to your wallet
 
 - 🔌 **Integration** is simple with our developer tools
 

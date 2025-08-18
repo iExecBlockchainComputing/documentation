@@ -1,6 +1,9 @@
 ---
 title: Getting Started
-description: DataProtector getting started
+description:
+  Get started with DataProtector - iExec's turnkey privacy toolkit for
+  encrypting, controlling, and monetizing sensitive data. Learn SDK setup, data
+  protection, and access controls in minutes.
 ---
 
 # Getting Started
@@ -195,7 +198,7 @@ const dataProtectorSharing = dataProtector.sharing;
 #### Advanced Configuration
 
 To add optional parameters, see
-[advanced configuration](./advanced/advanced-configuration.md).
+[advanced configuration](/references/dataProtector/advanced/advanced-configuration).
 
 ::: info
 
@@ -205,9 +208,9 @@ protected data in the experimental **intel TDX** environment.
 
 For more details see:
 
-- [configure DataProtector TDX](./advanced/advanced-configuration.md#iexecoptions)
-- [create TDX protected data](./dataProtectorCore/protectData.md#usage)
-- [process TDX protected data](./dataProtectorCore/processProtectedData.md#workerpool)
+- [configure DataProtector TDX](/references/dataProtector/advanced/advanced-configuration#iexecoptions)
+- [create TDX protected data](/references/dataProtector/dataProtectorCore/protectData#usage)
+- [process TDX protected data](/references/dataProtector/dataProtectorCore/processProtectedData#workerpool)
 
 ⚠️ Keep in mind: TDX mode is experimental and can be subject to instabilities or
 discontinuity.

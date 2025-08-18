@@ -140,4 +140,9 @@ Once with `isDone: false`, and then with `isDone: true`
 import { type RevokedAccess } from '@iexec/dataprotector';
 ```
 
-[`RevokedAccess[]`](../types.md#revokedaccess)
+[`RevokedAccess[]`](/references/dataProtector/types#revokedaccess)
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
+</script>

@@ -16,10 +16,10 @@ Web3Telegram offers a secure method to manage telegram communications via the
 blockchain. This mechanism helps protect the personal information of the
 telegram chat ID recipients through use of Ethereum addresses.
 
-The telegram chat ID address is stored as a `protectedData` entity using
+iExec's protocol the telegram chat ID as a `protectedData` entity using
 [iExec Data Protector](/references/dataProtector). Through this mechanism, users
 have complete control over which applications may use their
-[chat ID](./web3telegram/integration-guide.md#_1-get-your-users-to-retrieve-their-chat-id)
+[chat ID](/references/web3telegram/integration-guide#_1-get-your-users-to-retrieve-their-chat-id)
 for sending communications.
 
 Sending a user a message, therefore, requires knowledge of the Ethereum address

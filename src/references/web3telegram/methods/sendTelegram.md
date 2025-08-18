@@ -21,8 +21,8 @@ documentation for more details.
 
 ::: tip
 
-For executing the `sendTelegram` method with a voucher or xRLC, refer to the
-dedicated section in the documentation under
+For executing the `sendTelegram` method with a voucher or <TokenSymbol />, refer
+to the dedicated section in the documentation under
 "[How to Pay for web3telegram](/guides/use-iapp/how-to-pay/how-to-pay-for-web3telegram)".
 
 :::
@@ -40,7 +40,7 @@ const sendTelegram = await web3telegram.sendTelegram({
   protectedData: '0x123abc...',
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
-  label: 'some-cutom-id',
+  label: 'some-custom-id',
   workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth',
   dataMaxPrice: 42,
   appMaxPrice: 42,
@@ -117,7 +117,7 @@ const sendTelegram = await web3telegram.sendTelegram({
 });
 ```
 
-### useVoucher <OptionalBadge />
+### useVoucher <ChainNotSupportedBadge /> <OptionalBadge />
 
 **Type:** `boolean`  
 **Default:** `false`
@@ -136,7 +136,7 @@ const sendTelegram = await web3telegram.sendTelegram({
   protectedData: '0x123abc...',
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
-  label: 'some-cutom-id',
+  label: 'some-custom-id',
   workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth',
   dataMaxPrice: 42,
   appMaxPrice: 42,
@@ -147,10 +147,10 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ::: tip
 
-If your voucher doesn't have enough xRLC to cover the deal, the SDK will
-automatically get the required amount to your iExec account. Ensure that your
-voucher is authorized to access your iExec account and that your account has
-sufficient funds for this transfer to proceed.
+If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK
+will automatically get the required amount to your iExec account. Ensure that
+your voucher is authorized to access your iExec account and that your account
+has sufficient funds for this transfer to proceed.
 
 :::
 
@@ -172,7 +172,7 @@ const sendTelegram = await web3telegram.sendTelegram({
   protectedData: '0x123abc...',
   senderName: 'Arthur',
   telegramContent: 'My telegram message content',
-  label: 'some-cutom-id', // [!code focus]
+  label: 'some-custom-id', // [!code focus]
 });
 ```
 
@@ -293,3 +293,9 @@ import { type SendTelegramResponse } from '@iexec/web3telegram';
 This uniquely identifies the telegram task on the iExec side chain. You can view
 the status of the `sendTelegram` method by monitoring the task on the
 [iExec Explorer](https://explorer.iex.ec/bellecour).
+
+<script setup>
+import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+import TokenSymbol from '@/components/TokenSymbol.vue'
+</script>

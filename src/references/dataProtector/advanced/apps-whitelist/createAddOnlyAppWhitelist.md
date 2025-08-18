@@ -5,7 +5,7 @@ description:
   becomes the owner by default, with transferable ownership as an ERC721.
 ---
 
-# createAddOnlyAppWhitelist
+# createAddOnlyAppWhitelist <ChainNotSupportedBadge />
 
 Method to create an `AddOnlyAppWhitelist`. By default, the owner will be the
 caller of the `createAddOnlyAppWhitelist` method, but as the
@@ -31,3 +31,7 @@ const isAddedToAddAppToAddOnlyAppWhitelist =
 ```ts twoslash
 import { type CreateAppWhitelistResponse } from '@iexec/dataprotector';
 ```
+
+<script setup>
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

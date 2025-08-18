@@ -103,3 +103,7 @@ The ETH address of the new owner of the `protectedData`.
 
 The ID of the transaction that happened on iExec's side chain. You may view
 details on the transaction using the [iExec explorer](https://explorer.iex.ec).
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+</script>

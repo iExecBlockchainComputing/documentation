@@ -6,7 +6,7 @@ description:
   using the Data Sharing smart contract.
 ---
 
-# setSubscriptionParams
+# setSubscriptionParams <ChainNotSupportedBadge />
 
 Method to set subscription parameters for a given collection of yours.
 
@@ -111,4 +111,10 @@ const setSubscriptionParamsResult =
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';
 ```
 
-See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
+See
+[`SuccessWithTransactionHash`](/references/dataProtector/types#successwithtransactionhash)
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

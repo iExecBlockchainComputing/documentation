@@ -14,7 +14,7 @@ and cost management strategies.
 
 iExec supports multiple payment methods for executing iApps:
 
-1. **RLC Tokens**: Direct payment using RLC (Request Compute Language) tokens
+1. **RLC Tokens**: Direct payment using <TokenSymbol /> tokens
 2. **Vouchers**: Pre-funded vouchers for simplified payment
 3. **Mixed Payment**: Combination of RLC and vouchers
 
@@ -86,7 +86,7 @@ iexec account show
 iexec account deposit 100
 ```
 
-## Method 2: Paying with Vouchers
+## Method 2: Paying with Vouchers <ChainNotSupportedBadge />
 
 Vouchers are pre-funded payment instruments that simplify the payment process
 and can be shared with others.
@@ -120,10 +120,10 @@ const result = await dataProtectorCore.processProtectedData({
 
 ::: tip
 
-If your voucher doesn't have enough xRLC to cover the deal, the SDK will
-automatically get the required amount to your iExec account. Ensure that your
-voucher is authorized to access your iExec account and that your account has
-sufficient funds for this transfer to proceed.
+If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK
+will automatically get the required amount to your iExec account. Ensure that
+your voucher is authorized to access your iExec account and that your account
+has sufficient funds for this transfer to proceed.
 
 :::
 
@@ -490,6 +490,13 @@ const executeWithPaymentRetry = async (params: any, maxRetries = 3) => {
 
 Now that you understand payment methods:
 
-- Learn about [Adding Inputs to Execution](./add-inputs-to-execution.md)
-- Explore [Using iApps with Protected Data](./use-iapp-with-protected-data.md)
+- Learn about
+  [Adding Inputs to Execution](/guides/use-iapp/add-inputs-to-execution)
+- Explore
+  [Using iApps with Protected Data](/guides/use-iapp/use-iapp-with-protected-data)
 - Review the pricing information above for detailed cost analysis
+
+<script setup>
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+import TokenSymbol from '@/components/TokenSymbol.vue'
+</script>

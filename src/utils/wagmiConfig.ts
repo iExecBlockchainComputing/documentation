@@ -2,9 +2,9 @@ import { createAppKit } from '@reown/appkit/vue';
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
 import { http, CreateConnectorFn } from '@wagmi/vue';
 import { injected } from '@wagmi/vue/connectors';
-import wagmiNetworks from './wagmiNetworks.ts';
-import { InjectedWalletProvider } from './injected-wallet-provider/injected-wallet-provider.ts';
-import { EIP6963ProviderDetail } from './injected-wallet-provider/types.ts';
+import wagmiNetworks from '@/utils/wagmiNetworks';
+import { InjectedWalletProvider } from '@/utils/injected-wallet-provider/injected-wallet-provider';
+import { EIP6963ProviderDetail } from '@/utils/injected-wallet-provider/types';
 import { AppKitNetwork } from '@reown/appkit/networks';
 
 export const projectId = import.meta.env.VITE_REOWN_PROJECT_ID as string;

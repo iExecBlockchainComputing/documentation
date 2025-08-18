@@ -42,8 +42,8 @@ const dataProtector = new IExecDataProtectorCore(web3Provider); // [!code ++]
 
 ## Methods
 
-Some methods were renamed in order to standardize the SDK, they still provide
-the same functionalities as before.
+Some methods were renamed to standardize the SDK, but they still provide the
+same functionalities as before.
 
 ### Rename `fetchProtectedData` & Add New Filtering Param
 

@@ -85,3 +85,7 @@ import { type Contact } from '@iexec/web3telegram';
 ```
 
 [`Contract[]`](/references/dataProtector/types#contact)
+
+<script setup>
+import OptionalBadge from '@/components/OptionalBadge.vue'
+</script>

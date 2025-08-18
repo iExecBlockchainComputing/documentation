@@ -6,8 +6,8 @@ description:
 ---
 
 <script setup>
-import GrantAccess from '../../modules/helloWorld/GrantAccess.vue';
-import { useWalletConnection } from '../../hooks/useWalletConnection.vue';
+import GrantAccess from '@/modules/helloWorld/GrantAccess.vue';
+import { useWalletConnection } from '@/hooks/useWalletConnection.vue';
 
 const { protectedDataAddress } = useWalletConnection();
 </script>

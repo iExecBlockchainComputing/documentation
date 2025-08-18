@@ -6,7 +6,7 @@ description:
   the owner.
 ---
 
-# removeProtectedDataFromCollection
+# removeProtectedDataFromCollection <ChainNotSupportedBadge />
 
 Method to remove one of your protected data from a collection of yours in the
 Data Sharing smart contract.
@@ -73,4 +73,10 @@ const { txHash } = await dataProtectorSharing.removeProtectedDataFromCollection(
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';
 ```
 
-See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
+See
+[`SuccessWithTransactionHash`](/references/dataProtector/types#successwithtransactionhash)
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

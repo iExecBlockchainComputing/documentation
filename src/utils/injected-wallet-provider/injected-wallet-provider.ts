@@ -3,7 +3,7 @@ import {
   EIP6963AnnounceProviderEvent,
   EIP6963ProviderDetail,
   EIP6963RequestProviderEvent,
-} from './types';
+} from '@/utils/injected-wallet-provider/types';
 
 // This class extends EventEmitter to be able to emit events and give our DApp an interface to subscribe to
 export class InjectedWalletProvider extends EventEmitter {

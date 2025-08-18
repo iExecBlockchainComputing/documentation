@@ -165,7 +165,7 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 ::: tip
 
 `pricePerAccess` is expressed in nano RLC (nRLC). nRLC is the smallest
-subdivision of the RLC token, 1 RLC equals to 10^9 nRLC.
+subdivision of the <TokenSymbol /> token, 1 <TokenSymbol /> equals to 10^9 nRLC.
 
 When provided, `pricePerAccess` must be a non-negative integer value.
 
@@ -249,4 +249,10 @@ import { type GrantedAccess } from '@iexec/dataprotector';
 The result of this method confirms the new access grant. It consists of a JSON
 `grantedAccess` object.
 
-[`GrantedAccess`](../types.md#grantedaccess)
+[`GrantedAccess`](/references/dataProtector/types#grantedaccess)
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
+import TokenSymbol from '@/components/TokenSymbol.vue'
+</script>

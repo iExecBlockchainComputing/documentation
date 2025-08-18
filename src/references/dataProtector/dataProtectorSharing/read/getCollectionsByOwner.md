@@ -5,7 +5,7 @@ description:
   pagination options.
 ---
 
-# getCollectionsByOwner
+# getCollectionsByOwner <ChainNotSupportedBadge />
 
 Method to get all collections for a specific user.
 
@@ -87,3 +87,9 @@ import type {
 
 <a href="https://github.com/iExecBlockchainComputing/dataprotector-sdk/blob/c83e30e6ce8b55ecf8a35ecb4eb1014cd4ecefe9/packages/sdk/src/lib/types/sharingTypes.ts" target="_blank">See
 Type ↗️</a>
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

@@ -7,13 +7,12 @@ description:
 
 # RLC Bridge
 
-**RLC** (RLC Token) is the essential cryptocurrency for interacting with the
-iExec protocol. Whether you are executing tasks, accessing protected data, or
-participating in the iExec decentralized confidential computing network, you
-will need RLC tokens on the appropriate network.
+**RLC** (RLC Token) powers all iExec protocol interactions. You need RLC tokens
+whether you're executing tasks, accessing protected data, or participating in
+the iExec confidential computing network.
 
 This guide helps you bridge RLC tokens to **Bellecour** (becoming xRLC) and
-**Arbitrum** networks using dedicated bridge solutions.
+**Arbitrum** networks using the Bellecour Bridge and Stargate Bridge.
 
 ## 🗂️ Available Bridges
 

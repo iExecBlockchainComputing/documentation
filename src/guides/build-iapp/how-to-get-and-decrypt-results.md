@@ -258,7 +258,7 @@ Error: Failed to decrypt result
 
 **Solutions**:
 
-- Ensure you're using the correct wallet (beneficiary)
+- Use the correct wallet (beneficiary)
 - Check if result was actually encrypted
 - Verify task completed successfully
 

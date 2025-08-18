@@ -38,7 +38,7 @@ Ensures computation confidentiality through mechanisms of memory encryption at
 the hardware level (in a Trusted Execution Environment or TEE). It can be used
 so that only authorized code can run inside a protected area and manipulate its
 data. In some cases, ensuring that code runs correctly without any third party
-altering the execution, is even more important than hiding the computation's
+altering the execution is even more important than hiding the computation's
 data.
 
 This concept is called Trusted Computing. These guarantees are critical for a

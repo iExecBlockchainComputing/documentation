@@ -73,7 +73,7 @@ export function getSidebar() {
           },
           {
             text: '🪙 RLC Token',
-            link: '/get-started/rlc',
+            link: '/get-started/overview/rlc',
           },
         ],
       },
@@ -476,10 +476,6 @@ export function getSidebar() {
               {
                 text: 'Advanced Configuration',
                 link: '/references/dataProtector/advanced/advanced-configuration',
-              },
-              {
-                text: 'Sharing smart contract',
-                link: '/references/dataProtector/advanced/dps-smart-contract',
               },
               {
                 text: 'Apps whitelist',

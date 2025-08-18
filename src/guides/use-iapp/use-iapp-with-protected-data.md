@@ -455,6 +455,8 @@ const taskResult = await dataProtectorCore.getResultFromCompletedTask({
 
 Now that you understand how to use iApps with protected data:
 
-- Learn about [Different Ways to Execute](./different-ways-to-execute.md) iApps
-- Explore [How to Pay for Executions](./how-to-pay-executions.md)
-- Check out our [Add Inputs to Execution](./add-inputs-to-execution.md) guide
+- Learn about
+  [Different Ways to Execute](/guides/use-iapp/different-ways-to-execute) iApps
+- Explore [How to Pay for Executions](/guides/use-iapp/how-to-pay-executions)
+- Check out our
+  [Add Inputs to Execution](/guides/use-iapp/add-inputs-to-execution) guide
