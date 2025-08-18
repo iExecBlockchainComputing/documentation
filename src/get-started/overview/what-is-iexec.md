@@ -34,7 +34,7 @@ finds available workers and executes everything confidentially.
 → **Devtool**: [iApp Generator](/references/iapp-generator) helps you create and
 deploy iApps
 
-### 📦 Step 4: Get Results
+### Step 4: Get Results
 
 Results come back **encrypted to you**. Workers never see raw data, you never
 lose control.
@@ -86,12 +86,12 @@ protocol handles the rest.
 
 Now that you get the protocol, pick your devtools:
 
-- **📧 Quick Win**: Add [Web3Mail](/references/web3mail) or
+- **Quick Win**: Add [Web3Mail](/references/web3mail) or
   [Web3Telegram](/references/web3telegram) to your project ! (uses the protocol
   under the hood)
-- **🛡️ Protect Data**: Try [DataProtector](/references/dataProtector) to encrypt
+- **Protect Data**: Try [DataProtector](/references/dataProtector) to encrypt
   your first dataset
-- **🚀 Build iApps**: Create confidential compute with
+- **Build iApps**: Create confidential compute with
   [iApp Generator](/references/iapp-generator)
-- **👋 Hands-On**: Follow our [Hello World](/get-started/helloWorld) to see all
+- **Hands-On**: Follow our [Hello World](/get-started/helloWorld) to see all
   devtools working together

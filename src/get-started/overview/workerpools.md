@@ -145,19 +145,16 @@ secure environments on the iExec network.
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-4">
     <div class="flex items-start gap-3">
-      <span class="text-xl">🚀</span>
       <div>
         <strong>Start Using:</strong> <a href="/get-started/helloWorld" class="text-blue-700 hover:text-blue-600">Build your first iApp</a> and see workerpools in action
       </div>
     </div>
     <div class="flex items-start gap-3">
-      <span class="text-xl">⚙️</span>
       <div>
         <strong>Join as Worker:</strong> <a href="https://discord.com/invite/pbt9m98wnU" target="_blank" class="text-blue-700 hover:text-blue-600">Contact us on Discord</a> for guidance and support
       </div>
     </div>
     <div class="flex items-start gap-3">
-      <span class="text-xl">🏭</span>
       <div>
         <strong>Manage Workerpool:</strong> <a href="https://discord.com/invite/pbt9m98wnU" target="_blank" class="text-blue-700 hover:text-blue-600">Contact us on Discord</a> for deployment assistance
       </div>
