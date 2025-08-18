@@ -172,12 +172,9 @@ for input parameters:
 - Add link to the new explorer feature Asset_Types in the guide =>
   `handle-schemas-dataset-types`
 - Add link to remix for deploying whitelist
-<<<<<<< HEAD
 - complete `use-iapp` section
-- Maybe split input and output in two diff sub section in build your iapp guide
-=======
+- # Maybe split input and output in two diff sub section in build your iapp guide
 - SGX vs TDX need review
->>>>>>> origin/main
 - Explorer l'intégration de codeSpace
 - Add a Development workflow section (1 - ProtectData, 2- ...)
 - Update context7 when doc will be deployed (Martin)
@@ -196,10 +193,7 @@ for input parameters:
 - Give recap of Workerpool address fo chains
 - Talk about ENS on Bellecour(it's not supported on arbitrum)
 - Rework Advanced iApp building guides. (from "old" protocol doc)
-<<<<<<< HEAD
 - Talk about encrypting results in use-iapp
-- Refactor "advanced" section in build-iapp
-=======
+- # Refactor "advanced" section in build-iapp
 - Rework src\get-started\protocol\iexec-doracle.md (transfer to guide or
   rewrite)
->>>>>>> origin/main

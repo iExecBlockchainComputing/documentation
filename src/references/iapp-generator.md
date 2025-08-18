@@ -61,17 +61,10 @@ Once you've built your first iApp, level up with these practical guides:
 
 Ready for production? Dive into specialized topics:
 
-<<<<<<< HEAD
 - **[Build Intel TDX App (Experimental)](/guides/build-iapp/advanced/create-your-first-tdx-app)** -
   Next-gen TEE with traditional deployment and iApp Generator technology
 - **[Complete Guides Overview](/guides/build-iapp/)** - All development guides
   in one place
-=======
-- **[Using TDX (Experimental)](/guides/build-iapp/using-tdx)** - Next-gen TEE
-  technology
-- **[Complete Guides Overview](/guides/build-iapp/build-&-deploy)** - All
-  development guides in one place
->>>>>>> origin/main
 
 ## Why Choose iApp Generator?
 
