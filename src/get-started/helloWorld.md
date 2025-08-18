@@ -2,7 +2,7 @@
 title: Hello World Tutorial
 description:
   Kickstart your Web3 journey with iExec. In just 30 minutes, learn how to build
-  privacy-focused dApps, protect sensitive data, and manage data access.
+  privacy-focused DApp, protect sensitive data, and manage data access.
 ---
 
 <script setup>
@@ -12,22 +12,18 @@ import ChainSelector from '@/components/ChainSelector.vue'
 
 # 👋 Welcome to iExec
 
-> Reading time 🕒 2 mins
+> Reading time 🕒 2 min
 
-<div class="mb-6 p-4 bg-[var(--vp-c-bg-soft)] rounded-lg border border-[var(--vp-c-divider)]">
-  <div class="flex items-center gap-3 mb-3">
-    <span class="text-lg">🌐</span>
-    <h3 class="m-0 text-lg font-medium">Select Your Network</h3>
-  </div>
-  <div class="flex items-center gap-3">
-    <span class="text-sm font-medium">Network:</span>
+<div class="mb-0 p-6 bg-[var(--vp-c-bg-soft)] rounded-lg border border-[var(--vp-c-divider)]">
+  <div class="flex">
+    <h3 class="m-0! py-2 text-lg font-medium">🌐 Select Your Network :</h3>
     <ChainSelector />
   </div>
 </div>
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 border-none!">Start Your Web3 Privacy Journey</h2>
-  <p>And learn how to build Privacy-preserving decentralized applications (dApps) with iExec in this interactive guide.</p>
+  <p>And learn how to build Privacy-preserving decentralized applications (DApp) with iExec in this interactive guide.</p>
   <div class="mt-6 flex items-center gap-4">
     <span class="bg-gray-900 text-white px-4 py-2 rounded-full font-medium">☕ 30 minutes journey</span>
     <p>Perfect for hackathons 😊</p>
@@ -41,7 +37,7 @@ import ChainSelector from '@/components/ChainSelector.vue'
     <div class="text-3xl">📚</div>
     <div class="flex flex-col h-full min-h-[120px]">
       <h3 class="m-0! text-lg leading-tight text-[var(--vp-c-text-1)]">1 - iExec Overview</h3>
-      <p class="my-4 text-sm text-[var(--vp-c-text-2)]">Discover how iExec technologies work and the problem they solves</p>
+      <p class="my-4 text-sm text-[var(--vp-c-text-2)]">Discover how iExec technologies work and the problems they solve</p>
       <div class="mt-auto pt-3">
         <span class="inline-block text-sm bg-[var(--vp-c-bg-soft)] rounded text-[var(--vp-c-text-4)]">8 min read</span>
       </div>
@@ -100,21 +96,21 @@ Before you begin, make sure you have:
 <div class="flex flex-col gap-2 my-4 pl-0">
   <div class="flex items-center gap-4 text-left">
     <div class="flex items-center gap-1 flex-1 text-sm font-medium">
-      🦊 Ethereum Wallet 
-      <InfoIcon tooltip="Required to interact with iExec sidechain Bellecour features, manage your data access permissions, and handle transactions on the iExec platform" />
+      🦊 Ethereum Wallet
+      <InfoIcon tooltip="Required to interact with iExec protocol, manage your data access permissions, and handle transactions on the iExec platform" />
     </div>
     <a target="_blank" href="https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" class="no-underline! text-sm ml-auto hover:underline!">Metamask Download →</a>
   </div>
   <div class="flex items-center gap-4 text-left">
     <div class="flex items-center gap-1 flex-1 text-sm font-medium">
-      📦 Node.js v20+ 
+      📦 Node.js v20+
       <InfoIcon tooltip="Required runtime environment for running JavaScript code and managing project dependencies" />
     </div>
     <a target="_blank" href="https://nodejs.org/en/" class="no-underline! text-sm ml-auto hover:underline!">Download →</a>
   </div>
    <div class="flex items-center gap-4 text-left">
     <div class="flex items-center gap-1 flex-1 text-sm font-medium">
-      🐳 Docker installed 
+      🐳 Docker installed
       <InfoIcon tooltip="Docker is essential for creating isolated containers that package your iExec applications with all dependencies. This ensures consistent and secure execution across different environments, especially in TEEs (Trusted Execution Environments)" />
     </div>
     <a target="_blank" href="https://docker.com/" class="no-underline! text-sm ml-auto hover:underline!">Download →</a>
@@ -122,7 +118,7 @@ Before you begin, make sure you have:
   
   <div class="flex items-center gap-4 text-left">
     <div class="flex items-center gap-1 flex-1 text-sm font-medium">
-      🐳 DockerHub Account 
+      🐳 DockerHub Account
       <InfoIcon tooltip="Needed to publish and manage your iExec applications in containers for secure deployment" />
     </div>
     <a target="_blank" href="https://hub.docker.com/" class="no-underline! text-sm ml-auto hover:underline!">Sign Up →</a>

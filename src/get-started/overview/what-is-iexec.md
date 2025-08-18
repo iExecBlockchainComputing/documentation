@@ -7,9 +7,8 @@ description:
 
 # What is iExec?
 
-iExec is a **decentralized computing platform** that enables developers to build
-and deploy privacy-preserving applications using confidential computing
-technology.
+iExec is a **decentralized confidential computing toolkit** that helps
+developers build privacy-preserving applications.
 
 ## The Protocol (Simple Version)
 

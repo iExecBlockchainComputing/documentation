@@ -160,14 +160,14 @@ within the iExec network.
 
 ::: info
 
-💡 A **workerpool** is a decentralized network of nodes that execute iApps
+💡 A **workerpool** is a decentralized network of nodes that execute iApp
 securely within a **Trusted Execution Environment (TEE)**.
 
 :::
 
 ::: info
 
-🧪 While **TEE** iApp are base on **intel SGX** technology by default, iApp has
+🧪 While **TEE** iApp are based on **intel SGX** technology by default, iApp has
 an experimental support for **intel TDX** applications.
 
 TDX mode is enabled by setting the environment variable

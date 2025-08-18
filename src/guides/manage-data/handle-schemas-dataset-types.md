@@ -1,7 +1,7 @@
 ---
 title: Handle Schemas and Dataset Types
 description:
-  Learn how schemas work in DataProtector and how to use them in your iApps
+  Learn how schemas work in DataProtector and how to use them in your iApp
 ---
 
 # 🏷️ Handle Schemas and Dataset Types
@@ -10,9 +10,9 @@ description:
 data.**
 
 They define the structure and types of your data automatically when you protect
-it, making it easy for iApps to know what they're working with.
+it, making it easy for iApp to know what they're working with.
 
-Think of schemas as **data fingerprints** - they tell iApps "this protected data
+Think of schemas as **data fingerprints** - they tell iApp "this protected data
 contains an email address and a phone number" without revealing the actual
 values.
 
@@ -59,7 +59,7 @@ console.log('📍 Address:', protectedData.address);
 
 ::: info Schema Structure
 
-The schema automatically maps your data structure to types that iApps can
+The schema automatically maps your data structure to types that iApp can
 understand and validate.
 
 :::
@@ -93,7 +93,7 @@ MIME types manually.
 
 ### 🎯 **For iApp Development**
 
-Schemas let your iApps validate and process data safely:
+Schemas let your iApp validate and process data safely:
 
 ```ts twoslash
 import { IExecDataProtectorDeserializer } from '@iexec/dataprotector-deserializer';
@@ -110,7 +110,7 @@ const preferences = await deserializer.getValue(
 
 ### 🛡️ **For Type Safety**
 
-Prevents your iApps from processing incompatible data types.
+Prevents your iApp from processing incompatible data types.
 
 ### 🔍 **For Data Discovery**
 
@@ -240,7 +240,7 @@ const fileData = await dataProtectorCore.protectData({
 }
 ```
 
-## Using Schemas in iApps
+## Using Schemas in iApp
 
 Once you have protected data with a schema, you'll want to process it inside an
 iApp.

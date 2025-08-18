@@ -1,18 +1,21 @@
 ---
-title: iApps
-description: Privacy-first applications that run on decentralized infrastructure
+title: What is an iApp?
+description:
+  Learn about iExec Applications (iApp) - confidential computing apps that
+  process sensitive data in secure TEE environments. Build privacy-preserving
+  AI, data analysis, and Web3 apps.
 ---
 
 # iApps
 
-An iExec Application (iApp) is your regular application code (Python script, AI
-model, data processor, ...) that can securely process protected data (created by
-[DataProtector](/references/dataProtector)) inside a confidential computing
-environment called TEE (a Trusted Execution Environment).
+An iExec Application (iApp) brings Turnkey Privacy to your regular application
+code. Your Python scripts, AI models, or data processors can securely process
+protected data inside a TEE (Trusted Execution Environment).
 
-## Why iApps Matter ?
+## Why iApp Matter ?
 
-iApps let you process sensitive data while keeping it private and secure.
+iApp provide Turnkey Privacy capabilities. Process sensitive data while keeping
+it private and secure.
 
 Imagine you want to build:
 
@@ -33,8 +36,10 @@ Imagine you want to build:
   </div>
 </div>
 
-Users have this data, but they won't give it to your regular app. **With iApps,
-they will.**
+Users have this data, but they won't trust your regular app with it. **With
+Turnkey Privacy iApp, they will.**
+
+**You gain their trust. They gain their privacy. Everyone wins.**
 
 ## Key Concepts
 
@@ -45,7 +50,7 @@ they will.**
   </div>
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4 flex items-center gap-3">
     <span class="text-green-500 text-xl">✅</span>
-    <p class="m-0"><strong>Trusted Execution:</strong> iExec ensures that your code runs inside a Trusted Execution Environment (TEE), which guarantees that only the specified Docker image is executed in a secure and isolated environment.</p>
+    <p class="m-0"><strong>Trusted Execution:</strong> iExec ensures your code runs inside a Trusted Execution Environment (TEE), guaranteeing only the specified Docker image executes in a secure, isolated environment.</p>
   </div>
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4 flex items-center gap-3">
     <span class="text-green-500 text-xl">✅</span>
@@ -53,19 +58,18 @@ they will.**
   </div>
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4 flex items-center gap-3">
     <span class="text-green-500 text-xl">✅</span>
-    <p class="m-0"><strong>Zero Trust Architecture:</strong> User data is protected by hardware-based TEEs, which keep data confidential and inaccessible to the host, cloud provider, or operating system during execution.</p>
+    <p class="m-0"><strong>Zero Trust Architecture:</strong> User data is protected by hardware-based TEEs, keeping data confidential and inaccessible to the host, cloud provider, or operating system during execution.</p>
   </div>
 </div>
 
 ## How it Works
 
-Your code runs in a Trusted Execution Environment (TEE), a secure area inside
-specific processors (Intel SGX/TDX chipset). Everything that happens there stays
-private and protected, even from the operating system.
+Your code runs in a Trusted Execution Environment (TEE). This secure area exists
+inside specific processors (Intel SGX/TDX chipset). Everything stays private and
+protected there, even from the operating system.
 
-An authorized user can trigger an iApp that processes someone's protected data
-inside this private environment. The data is used, but never exposed, not even
-to the person running the app.
+Authorized users trigger iApp that process protected data inside this private
+environment. Your iApp uses the data but never exposes it, not even to you.
 
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-3">
@@ -89,9 +93,9 @@ to the person running the app.
 </div>
 
 Your iApp can send emails, update contracts, make transactions, trigger
-notifications - anything your code needs to do with the protected data. This
-isn't about trust - it's about **cryptographic and hardware-enforced
-guarantees** that privacy is preserved within the TEE execution environment.
+notifications - anything your code needs. This isn't about trust. We provide
+**cryptographic and hardware-enforced guarantees** that preserve privacy within
+the TEE execution environment.
 
 ## Use Cases
 
@@ -118,7 +122,7 @@ guarantees** that privacy is preserved within the TEE execution environment.
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 border-none!">Time to build!</h2>
-  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="/references/iapp-generator" target="_blank" class="!text-gray-900 !font-bold underline hover:!text-black">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApps with just a few commands.</p>
+  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="/references/iapp-generator" target="_blank" class="!text-gray-900 !font-bold underline hover:!text-black">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApp with just a few commands.</p>
 </div>
 
 ### Quick Start Path

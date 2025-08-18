@@ -6,7 +6,7 @@ description:
   no automatic renewal, using the Data Sharing smart contract.
 ---
 
-# subscribeToCollection
+# subscribeToCollection <ChainNotSupportedBadge />
 
 Method to subscribe to a collection.
 
@@ -37,18 +37,18 @@ const { txHash } = await dataProtectorSharing.subscribeToCollection({
 ::: tip
 
 Technically, `price` and `duration` parameters could be avoided. It is mainly a
-protection against front-running "attacks", ie. if the collection owner changes
-the price **at the same time** you subscribe to the collection, you would end up
-paying more than expected. Passing the `price` here allows the SDK to ensure
-you're paying the right price. If prices don't match, the SDK will throw an
-error.
+protection against front-running "attacks", that is, if the collection owner
+changes the price **at the same time** you subscribe to the collection, you
+would end up paying more than expected. Passing the `price` here allows the SDK
+to ensure you're paying the right price. If prices don't match, the SDK will
+throw an error.
 
 :::
 
 ## Pre-conditions
 
-- The collection must be available for subscription, ie. the collection owner
-  must have set a price and a duration.
+- The collection must be available for subscription, that is, the collection
+  owner must have set a price and a duration.
 
 ## Parameters
 
@@ -132,4 +132,10 @@ const { txHash } = await dataProtectorSharing.subscribeToCollection({
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';
 ```
 
-See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
+See
+[`SuccessWithTransactionHash`](/references/dataProtector/types#successwithtransactionhash)
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

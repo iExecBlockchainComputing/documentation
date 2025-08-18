@@ -6,7 +6,7 @@ description:
 ---
 
 <script setup>
-import ProtectData from '../../modules/helloWorld/ProtectData.vue';
+import ProtectData from '@/modules/helloWorld/ProtectData.vue';
 </script>
 
 # 🛡️ Let's Protect Data
@@ -15,7 +15,7 @@ import ProtectData from '../../modules/helloWorld/ProtectData.vue';
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 border-none!">Time to get practical</h2>
-  <p>Let's follow Alice as she learns how to protect her data using DataProtector on Bob's dApp, our developer tool for protecting data creation and management.</p>
+  <p>Let's follow Alice as she learns how to protect her data using DataProtector on Bob's iApp, our developer tool for protecting data creation and management.</p>
 </div>
 
 <div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
@@ -26,11 +26,11 @@ import ProtectData from '../../modules/helloWorld/ProtectData.vue';
 
 DataProtector is a developer tool built on top of our technology. It helps
 developers easily add data protection, management, and monetization features to
-their dApps with these key features:
+their DApp with these key features:
 
 - 🔐 **Data Privacy and Security**
 
-  Utilizes end-to-end encryption and decentralized storage
+  Uses end-to-end encryption and decentralized storage
   (<a href="https://ipfs.tech/" target="_blank">IPFS</a> or
   <a href="https://ar.io/" target="_blank">AR.io</a>) to ensure protection and
   confidentiality, leveraging advanced confidential computing technology.
@@ -40,7 +40,7 @@ their dApps with these key features:
   Allows users to manage access, enabling flexible control and monetization of
   data assets.
 
-- 🔌 **Seamless dApp Integration**
+- 🔌 **Seamless iApp Integration**
 
   Features an SDK for easy integration into your DApp, enhancing functionality
   and user experience.
@@ -95,11 +95,11 @@ button:
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">3</span>
-    <span>The encrypted data is stored on IPFS</span>
+    <span>iExec's protocol stores the encrypted data on IPFS</span>
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">4</span>
-    <span>The symmetric key is stored in a secure enclave (TEE) in the Secret Management Service</span>
+    <span>iExec's protocol stores the symmetric key in a secure enclave (TEE) in the Secret Management Service</span>
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">5</span>
@@ -179,7 +179,8 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
 
 - 📦 **Protected Data** is encrypted and stored on decentralized storage
 
-- ⛓️ **Ownership** is stored on the blockchain and linked to your wallet
+- ⛓️ **Ownership** iExec's protocol writes ownership on the blockchain and links
+  it to your wallet
 
 - 🔌 **Integration** is simple with our developer tools
 

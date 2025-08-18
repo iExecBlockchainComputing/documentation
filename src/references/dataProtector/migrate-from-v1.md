@@ -42,8 +42,8 @@ const dataProtector = new IExecDataProtectorCore(web3Provider); // [!code ++]
 
 ## Methods
 
-Some methods were renamed in order to standardize the SDK, they still provide
-the same functionalities as before.
+Some methods were renamed to standardize the SDK, but they still provide the
+same functionalities as before.
 
 ### Rename `fetchProtectedData` & Add New Filtering Param
 
@@ -132,7 +132,7 @@ The serialization of the data protected by `protectData()` has been changed to
 support a wider range of numbers, and extend the support for processing
 protected data in non-JS-based applications.
 
-The new serialization mechanism is based on the [borsh](https://borsh.io/)
+The new serialization mechanism is based on the [Borsh](https://borsh.io/)
 specification.
 
 Consequently, the data schemas associated with protected data have changed.

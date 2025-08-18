@@ -1,0 +1,27 @@
+name: Documentation Quality
+
+on:
+  pull_request:
+
+jobs:
+  vale:
+    name: Vale Documentation Quality Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Vale
+        # Vale runs spell checking and basic grammar validation
+        # - reporter: github-pr-check provides concise feedback in PR comments
+        # - fail_on_error: false prevents workflow failures on minor issues
+        # - filter_mode: added only checks files changed in the PR
+        # - vale_flags: sets minimum alert level to suggestions only
+        uses: errata-ai/vale-action@v2.1.1
+        with:
+          files: src/
+          reporter: github-pr-check
+          fail_on_error: false
+          filter_mode: added
+          vale_flags: '--minAlertLevel=suggestion'

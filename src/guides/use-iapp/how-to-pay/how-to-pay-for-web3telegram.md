@@ -1,23 +1,22 @@
 ---
 title: How to Pay for Web3Telegram
 description:
-  Learn how to pay for Web3Telegram using vouchers or xRLC. This guide walks you
-  through obtaining vouchers, managing RLC to xRLC conversion, and using both
-  methods for secure Telegram communication.
+  Learn how to pay for Web3Telegram's confidential computing power using
+  vouchers and RLC for secure, blockchain-based email communication.
 ---
 
 # How to Pay for Web3Telegram
 
-[Web3Telegram](/references/web3telegram) dev tool offers secure,
-blockchain-based communication by encrypting emails and protecting user privacy.
+[Web3Telegram](/references/web3telegram) offers secure, blockchain-based
+communication by encrypting messages and protecting user privacy.
 
-The `sendTelegram` function uses confidential computing power to encrypt and
-send messages, ensuring secure and decentralized email exchanges.
+The `sendTelegram` function uses iExec's protocol to encrypt and send messages,
+ensuring secure and decentralized email exchanges.
 
-This guide explains how to pay for Web3Telegram's computing power using
-**vouchers** and **xRLC**, detailing the steps for each method.
+This guide shows how to pay for Web3Telegram using **vouchers** and
+**<TokenSymbol />**.
 
-## Using Vouchers for Web3Telegram
+## Using Vouchers for Web3Telegram <ChainNotSupportedBadge />
 
 ### Step 1: Obtain a Voucher
 
@@ -35,8 +34,8 @@ This guide explains how to pay for Web3Telegram's computing power using
   <img :src="builderDashboardImage" alt="Builder dashboard screenshot">
 </a>
 
-The iExec Builder Dashboard is a comprehensive tool for managing vouchers and
-resources, providing an intuitive interface for:
+The iExec Builder Dashboard manages vouchers and resources with an intuitive
+interface for:
 
 - **Claiming Vouchers**: Builders can claim vouchers during the BUILD and EARN
   stages.
@@ -53,8 +52,8 @@ contract to debit your account if the voucher balance is insufficient. This
 ensures that if the voucher alone doesn't cover the execution cost, the
 remaining balance is automatically deducted from your account.
 
-For additional information on using xRLC for fallback payment in Web3Telegram,
-refer to the **Using xRLC with Web3Telegram** section.
+For additional information on using <TokenSymbol /> for fallback payment in
+Web3Telegram, refer to the **Using <TokenSymbol /> with Web3Telegram** section.
 
 ### Step 4: Execute Web3Telegram's `sendTelegram` Function
 
@@ -71,7 +70,7 @@ const sendTelegram = await web3telegram.sendTelegram({
   protectedData: '0x123abc...',
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
-  label: 'some-cutom-id',
+  label: 'some-custom-id',
   workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth',
   dataMaxPrice: 42,
   appMaxPrice: 42,
@@ -80,56 +79,49 @@ const sendTelegram = await web3telegram.sendTelegram({
 });
 ```
 
-## Using xRLC for Web3Telegram
+## Using <TokenSymbol /> for Web3Telegram
 
-If you choose to use xRLC to cover the computational cost of Web3Telegram (or if
-you need to cover data access costs such as retrieving the recipient's Chat Id),
-follow these steps:
+If you choose to use <TokenSymbol /> to cover the computational cost of
+Web3Telegram (or if you need to cover data access costs such as retrieving the
+recipient's Chat Id), follow these steps:
 
 ### Install the iExec SDK
 
 To manage RLC tokens, developers must use the iExec SDK, which offers all the
 necessary tools for interacting with the iExec platform. This includes
-depositing, withdrawing, and checking balances of RLC and xRLC
+depositing, withdrawing, and checking balances of RLC and <TokenSymbol />
 
-- In your JS/TS project npm install iexec
+- In your JS/TS project, run `npm install iexec`
 - Instantiate the iExec SDK (see the
   [doc](https://github.com/iExecBlockchainComputing/iexec-sdk/blob/master/docs/README.md#quick-start))
 
 ```javascript
 import { IExec } from 'iexec';
-// connect injected provider
+// Connect to injected provider
 const iexec = new IExec({ ethProvider: window.ethereum });
 ```
 
 ### Purchase RLC
 
-Obtain RLC tokens from a supported cryptocurrency exchange.
+Obtain RLC tokens from a supported cryptocurrency exchange. For detailed
+information on how to buy RLC tokens, see our
+[RLC Token guide](/get-started/overview/rlc) which covers all available DEX and
+CEX options.
 
-### Convert to xRLC
+For detailed instructions on how to bridge RLC tokens between networks, see our
+[Bridge guide](/get-started/tooling-and-explorers/bridge) which covers all
+supported networks and bridging methods.
 
-Use the iExec Bridge to convert your RLC into xRLC for use on iExec's sidechain.
-The bridging operation follows the lock & mint / burn & unlock principle. When
-sending tokens from Mainnet to Bellecour, the bridge locks the initial amount on
-the source chain and mints the equivalent on the destination chain. When going
-in the other direction, it burns tokens on the Sidechain and unlocks the same
-amount on Mainnet. The bridged asset is called xRLC on Bellecour.
+### Deposit <TokenSymbol />
 
-Users can send tokens from the Ethereum Mainnet to the iExec Sidechain or
-vice-versa using the Account Manager
-([iExec Explorer](https://explorer.iex.ec/bellecour) or
-[POA Bridge UI](https://bridge-bellecour.iex.ec/)) available across all iExec
-products.
-
-### Deposit xRLC
-
-Deposit the xRLC into your iExec account using the command:
+Deposit the <TokenSymbol /> into your iExec account using the command:
 
 ```javascript
-iexec.account.deposit(xRLC_amount);
+iexec.account.deposit(RLC_amount);
 ```
 
-This converts xRLC into sRLC, used as proof of funds for task execution.
+This converts <TokenSymbol /> into sRLC, used as proof of funds for task
+execution.
 
 ### Check sRLC Balance
 
@@ -142,7 +134,7 @@ iexec.account.show();
 ### Execute `sendTelegram`
 
 Set the `useVoucher` parameter to `false` when using Web3Telegram's sendTelegram
-function to pay with xRLC:
+function to pay with <TokenSymbol />:
 
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
@@ -155,7 +147,7 @@ const sendTelegram = await web3telegram.sendTelegram({
   protectedData: '0x123abc...',
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
-  label: 'some-cutom-id',
+  label: 'some-custom-id',
   workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth',
   dataMaxPrice: 42,
   appMaxPrice: 42,
@@ -166,7 +158,7 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ### Withdraw sRLC (If Desired)
 
-Convert sRLC back to xRLC and withdraw to your wallet using:
+Convert sRLC back to <TokenSymbol /> and withdraw to your wallet using:
 
 ```javascript
 iexec.account.withdraw(RLC_amount);
@@ -175,4 +167,6 @@ iexec.account.withdraw(RLC_amount);
 <script setup>
 // Assets
 import builderDashboardImage from '@/assets/tooling-&-explorers/builder-dashboard/builder-dashboard.png';
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+import TokenSymbol from '@/components/TokenSymbol.vue'
 </script>

@@ -6,7 +6,7 @@ description:
   or selling to control how your data is shared and monetized.
 ---
 
-# Data Sharing - Collection Methods
+# Data Sharing - Collection Methods <ChainNotSupportedBadge />
 
 A collection is a way to group protected data for sharing by the Data Sharing
 module. The Data Sharing smart contract operates on data contained within a
@@ -68,3 +68,7 @@ for any protected data in the collection.
 
 The collection owner may list any of their protected data for sale. This is
 especially useful for dealers of digital assets like NFTs.
+
+<script setup>
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

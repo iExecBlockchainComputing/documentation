@@ -1,13 +1,13 @@
 ---
 title: addAppToAddOnlyAppWhitelist
 description:
-  Method to add an app (iExec TEE dApp) into the AddOnlyAppWhitelist for secure
+  Method to add an app (iExec TEE iApp) into the AddOnlyAppWhitelist for secure
   data access control.
 ---
 
-# addAppToAddOnlyAppWhitelist
+# addAppToAddOnlyAppWhitelist <ChainNotSupportedBadge />
 
-Method to add an app (iExec TEE dApp) into the `AddOnlyAppWhitelist`.
+Method to add an app (iExec TEE iApp) into the `AddOnlyAppWhitelist`.
 
 ::: warning
 
@@ -95,4 +95,10 @@ const isAddedToAddAppToAddOnlyAppWhitelist =
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';
 ```
 
-See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
+See
+[`SuccessWithTransactionHash`](/references/dataProtector/types#successwithtransactionhash)
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

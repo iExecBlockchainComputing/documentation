@@ -31,9 +31,9 @@ explore apps and protectedData—all in one powerful dashboard.
   
   <FeatureCard
     icon="mdi:apps"
-    title="iApps Listing"
+    title="iApp Listing"
     description="Explore the catalog of trusted execution environment (TEE) applications, including their use cases and ownership details"
-    link-url="#iapps-listing"
+    link-url="#iApp-listing"
     icon-color="text-green-500"
   />
   
@@ -137,7 +137,7 @@ Browse and analyze all tasks across the iExec network:
 - **Execution Environment**: See which workerpool nodes are processing your
   tasks and their TEE capabilities (TDX, SGX)
 - **Data Flow**: Track which protected datasets are securely accessed by
-  authorized iApps
+  authorized iApp
 - **Result Management**:
   - **Download Results**: Access completed task outputs directly from the
     Explorer interface
@@ -145,13 +145,13 @@ Browse and analyze all tasks across the iExec network:
     requester specifications
   - **Result Verification**: Validate computation correctness and integrity
 
-## 📱 iApps Listing
+## 📱 iApp Listing
 
 <ImageViewer
   :image-url-dark="appViewImage"
   image-alt="App View"
   link-url="https://explorer.iex.ec/bellecour/apps"
-  caption="🔗 Explore iApps Marketplace"
+  caption="🔗 Explore iApp Marketplace"
 />
 
 Explore the iExec application marketplace:

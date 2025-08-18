@@ -28,7 +28,7 @@ Understanding how your task progresses through the iExec network:
 
 ### iExec Explorer
 
-Track your tasks at [explorer.iex.ec](https://explorer.iex.ec):
+Track your tasks at [iExec Explorer](https://explorer.iex.ec):
 
 - Search by `taskId` or deal ID
 - Check status: `PENDING` → `ACTIVE` → `COMPLETED/FAILED`
@@ -167,7 +167,7 @@ except Exception as e:
 
 ## What's Next?
 
-Continue improving your iApps:
+Continue improving your iApp:
 
 - **[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)** - Handle data
   in TEE

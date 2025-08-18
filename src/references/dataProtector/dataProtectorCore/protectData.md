@@ -128,8 +128,8 @@ const protectedData = await dataProtectorCore.protectData({
 
 ::: tip
 
-If you'd like to **protect a file**, you first need to convert it to some kind
-of buffer. To do so, you can use `createArrayBufferFromFile`.
+If you'd like to **protect a file**, you first need to convert it to a buffer.
+You can use `createArrayBufferFromFile` to do this.
 
 ```ts twoslash
 const file: File = new File([], 'emptyFile.txt');
@@ -218,7 +218,7 @@ The name is public and not encrypted.
 **Type:** `"ipfs" | "arweave"`  
 **Default:** `"ipfs"`
 
-Specify the storage solution to use for the protected data encrypted payload
+Specify the storage platform to use for the protected data encrypted payload
 hosting.
 
 ```ts twoslash
@@ -389,7 +389,7 @@ details on the transaction using the [iExec explorer](https://explorer.iex.ec).
 
 Under the hood, your protected data will be **compressed as a zip file**. In
 this zip file, you'll find back all of your protected fields, each field being
-serialized with a tool called `borsh`. You can find more details here:
+serialized with a tool called `Borsh`. You can find more details here:
 [deserializer](/references/iapp-generator/deserializer).
 
 This is mainly returned for debug purpose.
@@ -439,4 +439,6 @@ To further check your data was correctly created, you can inspect it on the
 <script setup>
 // Assets
 import explorerDatasetImage from '@/assets/explorer-dataset-example.png';
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
 </script>

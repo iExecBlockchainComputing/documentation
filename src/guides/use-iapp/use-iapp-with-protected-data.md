@@ -1,25 +1,25 @@
 ---
-title: Use iApps with Protected Data
+title: Use iApp with Protected Data
 description:
-  Learn how to securely process protected data using iApps on the iExec network
+  Learn how to securely process protected data using iApp on the iExec network
 ---
 
-# 🔒 Use iApps with Protected Data
+# 🔒 Use iApp with Protected Data
 
 Protected data is the cornerstone of privacy-preserving computation on iExec.
-This guide shows you how to use iApps with protected data, from granting access
+This guide shows you how to use iApp with protected data, from granting access
 to processing and retrieving results.
 
-## Understanding Protected Data and iApps
+## Understanding Protected Data and iApp
 
 Protected data is encrypted information that can only be processed by authorized
-iApps within Trusted Execution Environments (TEEs). The data remains
-confidential throughout the entire computation process.
+iApp within Trusted Execution Environments (TEEs). The data remains confidential
+throughout the entire computation process.
 
 ### The Workflow
 
 1. **Protect Your Data**: Encrypt sensitive information using the Data Protector
-2. **Grant Access**: Authorize specific iApps to process your data
+2. **Grant Access**: Authorize specific iApp to process your data
 3. **Execute iApp**: Run the iApp with your protected data
 4. **Retrieve Results**: Get the computation results while data remains private
 
@@ -92,9 +92,9 @@ const { address: paymentDataAddress } = await dataProtectorCore.protectData({
 });
 ```
 
-## Step 2: Grant Access to iApps
+## Step 2: Grant Access to iApp
 
-iApps need explicit authorization to access your protected data.
+iApp need explicit authorization to access your protected data.
 
 ### Grant Access to a Specific iApp
 
@@ -453,8 +453,10 @@ const taskResult = await dataProtectorCore.getResultFromCompletedTask({
 
 ## Next Steps
 
-Now that you understand how to use iApps with protected data:
+Now that you understand how to use iApp with protected data:
 
-- Learn about [Different Ways to Execute](./different-ways-to-execute.md) iApps
-- Explore [How to Pay for Executions](./how-to-pay-executions.md)
-- Check out our [Add Inputs to Execution](./add-inputs-to-execution.md) guide
+- Learn about
+  [Different Ways to Execute](/guides/use-iapp/different-ways-to-execute) iApp
+- Explore [How to Pay for Executions](/guides/use-iapp/how-to-pay-executions)
+- Check out our
+  [Add Inputs to Execution](/guides/use-iapp/add-inputs-to-execution) guide

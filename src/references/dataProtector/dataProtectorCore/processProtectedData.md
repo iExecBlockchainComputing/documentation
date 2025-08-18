@@ -14,7 +14,8 @@ application.
 > [!IMPORTANT]
 >
 > You must ensure this application has authorization to use the `protectedData`.
-> You may grant this permission using the [`grantAccess`](./grantAccess.md)
+> You may grant this permission using the
+> [`grantAccess`](/references/dataProtector/dataProtectorCore/grantAccess)
 > method.
 
 ## Usage
@@ -64,7 +65,7 @@ const processProtectedDataResponse =
   });
 ```
 
-### app <RequiredBadge /> {#app-param}
+### app <RequiredBadge />
 
 **Type:** `AddressOrENS`
 
@@ -128,7 +129,7 @@ const processProtectedDataResponse =
   });
 ```
 
-### useVoucher <OptionalBadge />
+### useVoucher <ChainNotSupportedBadge /> <OptionalBadge />
 
 **Type:** `boolean`  
 **Default:** `false`
@@ -153,14 +154,14 @@ const processProtectedDataResponse =
 
 ::: tip
 
-If your voucher doesn't have enough xRLC to cover the deal, the SDK will
-automatically get the required amount to your iExec account. Ensure that your
-voucher is authorized to access your iExec account and that your account has
-sufficient funds for this transfer to proceed.
+If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK
+will automatically get the required amount to your iExec account. Ensure that
+your voucher is authorized to access your iExec account and that your account
+has sufficient funds for this transfer to proceed.
 
 :::
 
-### voucherOwner <OptionalBadge />
+### voucherOwner <ChainNotSupportedBadge /> <OptionalBadge />
 
 **Type:** `Address`
 
@@ -469,7 +470,7 @@ Bellecour side chain. You can monitor task execution using the
 ::: tip
 
 The
-[getResultFromCompletedTask()](../dataProtectorCore/getResultFromCompletedTask.md)
+[getResultFromCompletedTask()](/references/dataProtector/dataProtectorCore/getResultFromCompletedTask)
 function allows you to retrieve the result of a completed task using its
 `taskId`.
 
@@ -495,3 +496,10 @@ include a file named **content**, which corresponds to the protected data
 processed during the task.
 
 :::
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+import TokenSymbol from '@/components/TokenSymbol.vue'
+</script>

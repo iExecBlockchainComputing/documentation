@@ -72,8 +72,8 @@ export function getSidebar() {
             link: '/get-started/overview/workerpools',
           },
           {
-            text: 'RLC Token',
-            link: '/get-started/rlc',
+            text: '🪙 RLC Token',
+            link: '/get-started/overview/rlc',
           },
         ],
       },
@@ -110,20 +110,34 @@ export function getSidebar() {
             link: '/get-started/protocol/proof-of-contribution',
           },
           {
-            text: '💸 Pay Per Task Model',
+            text: 'Pay Per Task Model',
             link: '/get-started/protocol/pay-per-task',
           },
           {
-            text: '⚙️ Workers & Workerpools',
+            text: 'Oracle',
+            link: '/get-started/protocol/oracle',
+          },
+          {
+            text: 'Workers & Workerpools',
             collapsed: true,
             items: [
               {
-                text: '🚀 Worker Quick Start',
+                text: 'Worker Quick Start',
                 link: '/get-started/protocol/worker/quick-start',
               },
               {
-                text: '🔒 Manage Workerpool Access',
+                text: 'Manage Workerpool Access',
                 link: '/get-started/protocol/worker/manage-access',
+              },
+            ],
+          },
+          {
+            text: 'TEE Technology',
+            collapsed: true,
+            items: [
+              {
+                text: 'Intel SGX Technology Overview',
+                link: '/get-started/protocol/tee/intel-sgx-technology',
               },
             ],
           },
@@ -174,6 +188,44 @@ export function getSidebar() {
           {
             text: 'Debugging',
             link: '/guides/build-iapp/debugging',
+          },
+          {
+            text: 'Advanced',
+            collapsed: true,
+            items: [
+              {
+                text: 'Overview',
+                link: '/guides/build-iapp/advanced/overview',
+              },
+              {
+                text: 'Quick Start for Developers',
+                link: '/guides/build-iapp/advanced/quick-start-for-developers',
+              },
+              {
+                text: 'Build your first application',
+                link: '/guides/build-iapp/advanced/your-first-app',
+              },
+              {
+                text: 'Build your first SGX app (SCONE)',
+                link: '/guides/build-iapp/advanced/create-your-first-sgx-app',
+              },
+              {
+                text: 'End-to-end Encryption',
+                link: '/guides/build-iapp/advanced/end-to-end-encryption',
+              },
+              {
+                text: 'SGX Encrypted Dataset',
+                link: '/guides/build-iapp/advanced/sgx-encrypted-dataset',
+              },
+              {
+                text: 'Access Confidential Assets',
+                link: '/guides/build-iapp/advanced/access-confidential-assets',
+              },
+              {
+                text: 'Build Intel TDX app',
+                link: '/guides/build-iapp/advanced/create-your-first-tdx-app',
+              },
+            ],
           },
         ],
       },
@@ -430,10 +482,6 @@ export function getSidebar() {
                 link: '/references/dataProtector/advanced/advanced-configuration',
               },
               {
-                text: 'Sharing smart contract',
-                link: '/references/dataProtector/advanced/dps-smart-contract',
-              },
-              {
                 text: 'Apps whitelist',
                 link: '/references/dataProtector/advanced/apps-whitelist',
                 collapsed: true,
@@ -562,5 +610,5 @@ export function getSidebar() {
         link: '/references/glossary',
       },
     ],
-  } satisfies DefaultTheme.Sidebar;
+  } as DefaultTheme.Sidebar;
 }

@@ -7,7 +7,7 @@ description:
   a transaction that would revert.
 ---
 
-# rentProtectedData
+# rentProtectedData <ChainNotSupportedBadge />
 
 Method to rent a protected data.
 
@@ -32,11 +32,11 @@ const rentResult = await dataProtectorSharing.rentProtectedData({
 ::: tip
 
 Technically, `price` and `duration` parameters could be avoided. It is mainly a
-protection against front-running "attacks", ie. if the collection owner changes
-the price **at the same time** you rent the protected data, you would end up
-paying more than expected. Passing the `price` here allows the SDK to ensure
-you're paying the right price. If prices don't match, the SDK will throw an
-error.
+protection against front-running "attacks", that is, if the collection owner
+changes the price **at the same time** you rent the protected data, you would
+end up paying more than expected. Passing the `price` here allows the SDK to
+ensure you're paying the right price. If prices don't match, the SDK will throw
+an error.
 
 :::
 
@@ -95,7 +95,7 @@ const rentResult = await dataProtectorSharing.rentProtectedData({
 ::: tip
 
 To get the renting price of the given protected data, you can use
-[getProtectedDataPricingParams](../read/getProtectedDataPricingParams.md).
+[getProtectedDataPricingParams](/references/dataProtector/dataProtectorSharing/read/getProtectedDataPricingParams).
 
 :::
 
@@ -126,7 +126,7 @@ const rentResult = await dataProtectorSharing.rentProtectedData({
 ::: tip
 
 To get the renting duration of the given protected data, you can use
-[getProtectedDataPricingParams](../read/getProtectedDataPricingParams.md).
+[getProtectedDataPricingParams](/references/dataProtector/dataProtectorSharing/read/getProtectedDataPricingParams).
 
 :::
 
@@ -136,4 +136,10 @@ To get the renting duration of the given protected data, you can use
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';
 ```
 
-See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
+See
+[`SuccessWithTransactionHash`](/references/dataProtector/types#successwithtransactionhash)
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

@@ -10,19 +10,19 @@ description:
 This method allows an authorized entity to send an email message to a user
 without needing to know their email address.
 
-The recipient email address is stored in a `protectedData` entity. The user
-receiving the email must explicitly authorize you to send them email
-communications and permission must be granted for the `Web3Mail` tool to use the
-`protectedData` entity containing their email address. This is best done by
-granting authorization to the Web3Mail app whitelist
+The recipient email address in a `protectedData` entity. The user receiving the
+email must explicitly authorize you to send them email communications and
+permission must be granted for the `Web3Mail` tool to use the `protectedData`
+entity containing their email address. This is best done by granting
+authorization to the Web3Mail app whitelist
 `0x781482C39CcE25546583EaC4957Fb7Bf04C277D2` as `authorizedApp`. Refer to the
 [Data Protector `grantAccess`](/references/dataProtector/dataProtectorCore/grantAccess)
 documentation for more details.
 
 ::: tip
 
-For executing the `sendEmail` method with a voucher or xRLC, refer to the
-dedicated section in the documentation under
+For executing the `sendEmail` method with a voucher or <TokenSymbol />, refer to
+the dedicated section in the documentation under
 "[How to Pay for web3mail](/guides/use-iapp/how-to-pay/how-to-pay-for-web3mail)".
 
 :::
@@ -112,7 +112,7 @@ const sendEmail = await web3mail.sendEmail({
 });
 ```
 
-### useVoucher <OptionalBadge />
+### useVoucher <ChainNotSupportedBadge /><OptionalBadge />
 
 **Type:** `boolean`  
 **Default:** `false`
@@ -136,10 +136,10 @@ const sendEmail = await web3mail.sendEmail({
 
 ::: tip
 
-If your voucher doesn't have enough xRLC to cover the deal, the SDK will
-automatically get the required amount to your iExec account. Ensure that your
-voucher is authorized to access your iExec account and that your account has
-sufficient funds for this transfer to proceed.
+If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK
+will automatically get the required amount to your iExec account. Ensure that
+your voucher is authorized to access your iExec account and that your account
+has sufficient funds for this transfer to proceed.
 
 :::
 
@@ -209,7 +209,7 @@ const sendEmail = await web3mail.sendEmail({
   protectedData: '0x123abc...',
   emailSubject: 'My email subject',
   emailContent: 'My email content',
-  label: 'some-cutom-id', // [!code focus]
+  label: 'some-custom-id', // [!code focus]
 });
 ```
 
@@ -390,3 +390,10 @@ For any other errors, you'll get a `WorkflowError` error in the form of:
   errorCause: <Original error>
 }
 ```
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+import TokenSymbol from '@/components/TokenSymbol.vue'
+</script>

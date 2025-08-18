@@ -1,11 +1,11 @@
 ---
-title: Introduction to Using iApps
+title: Introduction to Using iApp
 description:
-  Learn how to use iExec Applications (iApps) to securely process protected data
+  Learn how to use iExec Applications (iApp) to securely process protected data
   in a privacy-safe environment
 ---
 
-# 📝 Introduction to Using iApps
+# 📝 Introduction to Using iApp
 
 In the iExec network, multiple actors work together in a coordinated process to
 ensure secure, decentralized computation. Here's how the ecosystem operates:
@@ -22,7 +22,7 @@ ensure secure, decentralized computation. Here's how the ecosystem operates:
 
 ### Network Assets
 
-- **📱 iApps**: Applications that process the data securely
+- **📱 iApp**: Applications that process the data securely
 - **💾 Data**: Protected information that needs to be processed
 - **⚡ Computational Power**: Processing resources provided by workers
 - **💰 PoCo**: Proof of Contribution system that matches all actors through
@@ -53,7 +53,8 @@ When a deal is triggered, the following sequence occurs:
 7. **Result Generation**: Computation results are generated
 8. **Result Delivery**: Results are returned to the requester through the
    network
-9. **Payment Settlement**: RLC tokens are distributed to all participants
+9. **Payment Settlement**: <TokenSymbol /> tokens are distributed to all
+   participants
 
 ### Network Architecture Diagram
 
@@ -70,8 +71,8 @@ When a deal is triggered, the following sequence occurs:
 5. **Data Access**: iApp requests access to protected data through secure
    channels
 6. **Computation**: iApp processes data within the TEE, maintaining privacy
-7. **Payment Distribution**: RLC tokens are distributed to all participants
-   based on completed tasks
+7. **Payment Distribution**: <TokenSymbol /> tokens are distributed to all
+   participants based on completed tasks
 
 This decentralized architecture ensures that no single entity has control over
 the entire process, while the use of TEEs guarantees that sensitive data remains
@@ -79,6 +80,10 @@ protected throughout the computation.
 
 ## Getting Started
 
-Ready to start using iApps? Check out our
-[Getting Started Guide](./getting-started.md) to learn how to find, execute, and
-interact with iApps on the iExec network.
+Ready to start using iApp? Check out our
+[Getting Started Guide](/guides/use-iapp/getting-started) to learn how to find,
+execute, and interact with iApp on the iExec network.
+
+<script setup>
+import TokenSymbol from '@/components/TokenSymbol.vue'
+</script>

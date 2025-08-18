@@ -6,9 +6,9 @@ description:
 
 # Create and Deploy an iApp
 
-iApps (iExec Applications) are decentralized applications that run on the iExec
-network. They leverage confidential computing to ensure data privacy and
-security while providing scalable off-chain computation.
+iApp (iExec Applications) are decentralized applications that run on the iExec
+network. They use confidential computing to ensure data privacy and security
+while providing scalable off-chain computation.
 
 ## About iApp Generator
 
@@ -22,8 +22,8 @@ iApp Generator handles all the low-level complexity for you.
   familiar programming languages while the generator handles all TEE-specific
   configurations.
 - **Access to TEEs easily** - No need to dive into low-level requirements,
-  create iApps that connect to TEEs in minutes.
-- **Check and deploy iApps quickly** - iApp Generator checks that your iApp
+  create iApp that connect to TEEs in minutes.
+- **Check and deploy iApp quickly** - iApp Generator checks that your iApp
   complies with the iExec Framework and streamlines its deployment.
 
 ## Prerequisites
@@ -194,90 +194,35 @@ After your tests pass and the package is built, you can deploy your iApp to a
 supported network. During deployment, you'll enter your DockerHub credentials,
 specify your app version, and push both standard and TEE-compatible images:
 
-<CLIDemo
-  initialCommand="iapp deploy"
-  asciiText="Deploy"
-  :steps="[
-    {
-      showAt: 2,
-      question: 'Using chain bellecour',
-      answer: '',
-      showTyping: false,
-      isComplete: true
-    },
-    {
-      showAt: 3,
-      question: 'Using saved walletPrivateKey (from iapp.config.json)',
-      answer: '',
-      showTyping: false,
-      isComplete: true
-    },
-    {
-      showAt: 4,
-      completeAt: 6,
-      question: 'What is your username on DockerHub? (It will be used to properly tag the Docker image)',
-      answer: 'bob',
-      showTyping: true,
-      isComplete: false
-    },
-    {
-      showAt: 6,
-      completeAt: 8,
-      question: 'What is your DockerHub access token?',
-      answer: '**********************',
-      showTyping: true,
-      isComplete: false
-    },
-    {
-      showAt: 8,
-      completeAt: 10,
-      question: 'What is the version of your iApp?',
-      answer: '0.0.1',
-      showTyping: true,
-      isComplete: false
-    },
-    {
-      showAt: 10,
-      question: 'Docker image built (sha256:a53fc4c480f482c384a13266ea2cb6cc5572733c866c44a5f604f4bfab3a744a) and tagged bob/hello-world:0.0.1',
-      answer: '',
-      showTyping: false,
-      isComplete: true
-    },
-    {
-      showAt: 11,
-      question: 'Pushed image bob/hello-world:0.0.1 on dockerhub',
-      answer: '',
-      showTyping: false,
-      isComplete: true
-    },
-    {
-      showAt: 12,
-      question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7 on dockerhub',
-      answer: '',
-      showTyping: false,
-      isComplete: true
-    },
-    {
-      showAt: 13,
-      question: 'TEE app deployed',
-      answer: '',
-      showTyping: false,
-      isComplete: true
-    }
-  ]"
-  :completionStep="14"
-  :completionMessage="'Deployment of your iApp completed successfully:'"
-  :completionItems="[
-    '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7',
-    '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
-  ]"
-  :successMessage="'Run iapp run 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923 to execute your iApp on an iExec TEE worker'"
-  :autoRestart="true"
-/>
+<template v-if="selectedChain === 42161">
+  <CLIDemo
+    initialCommand="iapp deploy --chain arbitrum-mainnet"
+    asciiText="Deploy"
+    :steps="arbitrumSteps"
+    :completionStep="15"
+    :completionMessage="'Deployment of your iApp completed successfully:'"
+    :completionItems="arbitrumCompletionItems"
+    :successMessage="'Run iapp run 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923 to execute your iApp on an iExec TEE worker'"
+    :autoRestart="true"
+  />
+</template>
+
+<template v-else>
+  <CLIDemo
+    initialCommand="iapp deploy"
+    asciiText="Deploy"
+    :steps="bellecourSteps"
+    :completionStep="14"
+    :completionMessage="'Deployment of your iApp completed successfully:'"
+    :completionItems="bellecourCompletionItems"
+    :successMessage="'Run iapp run 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923 to execute your iApp on an iExec TEE worker'"
+    :autoRestart="true"
+  />
+</template>
 
 ## Real Examples
 
-Here are some real-world examples of iApps to help you understand how they work
+Here are some real-world examples of iApp to help you understand how they work
 in practice.
 
 ### Email Notification iApp
@@ -359,4 +304,169 @@ for month in range(12):
 
 <script setup>
 import CLIDemo from '@/components/CLIDemo.vue';
+import { computed } from 'vue';
+import useUserStore from '@/stores/useUser.store';
+
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const arbitrumSteps = [
+  {
+    showAt: 2,
+    question: 'Using chain arbitrum-mainnet',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 3,
+    question: 'This method requires sending blockchain transactions, transaction fees will be applied. Would you like to continue?',
+    answer: 'Yes',
+    options: [
+      { label: 'Yes', selected: true },
+      { label: 'no', selected: false }
+    ],
+    highlighted: false,
+    showTyping: false,
+    isComplete: false
+  },
+  {
+    showAt: 4,
+    question: 'Using saved walletPrivateKey (from iapp.config.json)',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 5,
+    completeAt: 7,
+    question: 'What is your username on DockerHub? (It will be used to properly tag the Docker image)',
+    answer: 'bob',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 7,
+    completeAt: 9,
+    question: 'What is your DockerHub access token?',
+    answer: '**********************',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 9,
+    completeAt: 11,
+    question: 'What is the version of your iApp?',
+    answer: '0.0.1',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 11,
+    question: 'Docker image built (sha256:a53fc4c480f482c384a13266ea2cb6cc5572733c866c44a5f604f4bfab3a744a) and tagged bob/hello-world:0.0.1',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 12,
+    question: 'Pushed image bob/hello-world:0.0.1 on dockerhub',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 13,
+    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7 on dockerhub',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 14,
+    question: 'TEE app deployed',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  }
+];
+
+const bellecourSteps = [
+  {
+    showAt: 2,
+    question: 'Using chain bellecour',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 3,
+    question: 'Using saved walletPrivateKey (from iapp.config.json)',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 4,
+    completeAt: 6,
+    question: 'What is your username on DockerHub? (It will be used to properly tag the Docker image)',
+    answer: 'bob',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 6,
+    completeAt: 8,
+    question: 'What is your DockerHub access token?',
+    answer: '**********************',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 8,
+    completeAt: 10,
+    question: 'What is the version of your iApp?',
+    answer: '0.0.1',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 10,
+    question: 'Docker image built (sha256:a53fc4c480f482c384a13266ea2cb6cc5572733c866c44a5f604f4bfab3a744a) and tagged bob/hello-world:0.0.1',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 11,
+    question: 'Pushed image bob/hello-world:0.0.1 on dockerhub',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 12,
+    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7 on dockerhub',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 13,
+    question: 'TEE app deployed',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  }
+];
+
+const arbitrumCompletionItems = [
+  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7',
+  '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
+];
+
+const bellecourCompletionItems = [
+  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7',
+  '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
+];
 </script>

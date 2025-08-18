@@ -6,7 +6,7 @@ description:
   their own pricing or retain the data for personal use."
 ---
 
-# setProtectedDataForSale
+# setProtectedDataForSale <ChainNotSupportedBadge />
 
 Method to set a protected data for sale.
 
@@ -86,4 +86,10 @@ const setForSaleResult = await dataProtectorSharing.setProtectedDataForSale({
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';
 ```
 
-See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
+See
+[`SuccessWithTransactionHash`](/references/dataProtector/types#successwithtransactionhash)
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>
