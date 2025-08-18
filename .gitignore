@@ -12,3 +12,6 @@ components.d.ts
 
 #mac
 .DS_Store
+
+#vale
+.github/styles/*
