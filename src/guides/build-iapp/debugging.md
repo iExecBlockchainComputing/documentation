@@ -171,5 +171,5 @@ Continue improving your iApp:
 
 - **[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)** - Handle data
   in TEE
-- **[How to Get and Decrypt Results](/guides/build-iapp/how-to-get-and-decrypt-results)** -
+- **[How to Get and Decrypt Results](/guides/build-iapp/download-and-decrypt-results)** -
   Retrieve results

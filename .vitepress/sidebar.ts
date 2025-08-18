@@ -182,8 +182,8 @@ export function getSidebar() {
             link: '/guides/build-iapp/using-tdx',
           },
           {
-            text: 'How to Get and Decrypt Results',
-            link: '/guides/build-iapp/how-to-get-and-decrypt-results',
+            text: 'Download and Decrypt Results',
+            link: '/guides/build-iapp/download-and-decrypt-results',
           },
           {
             text: 'Debugging',

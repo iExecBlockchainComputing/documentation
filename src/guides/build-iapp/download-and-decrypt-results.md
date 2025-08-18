@@ -3,7 +3,7 @@ title: How to Get and Decrypt Results
 description: Download and decrypt iApp execution results from completed tasks
 ---
 
-# 📦 How to Get and Decrypt Results
+# 📦 Download and Decrypt Results
 
 **When an iApp execution completes, you need to retrieve and decrypt the
 results.** This guide shows you how to download task results and decrypt them to
@@ -40,36 +40,11 @@ Deal (agreement between parties)
 - 📁 **Results contain** all files from `IEXEC_OUT` directory
 - ⚡ **Available immediately** after task completion
 
-## Downloading Results
+## Download & Decrypt Results
 
-### Using iExec SDK CLI
-
-**Get task information and download**:
-
-```bash
-# Check task status and get result info
-iexec task show <taskId>
-
-# Download encrypted result
-iexec task show <taskId> --download my-result
-
-# Extract downloaded files
-unzip my-result.zip -d my-result/
-ls my-result/
-```
-
-**Get task ID from deal**:
-
-```bash
-# If you only have the deal ID
-iexec deal show <dealId>
-
-# Lists all tasks in the deal with their IDs
-```
-
-### Using DataProtector SDK
-
-**Integrated download and decryption**:
+DataProtector provides methods to download and decrypt results from completed
+tasks. You can view the `taskId` in your
+[iExec Explorer](https://explorer.iex.ec/).
 
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
@@ -77,7 +52,7 @@ import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
-// Get result from completed task
+// Get result from a completed task
 const result = await dataProtectorCore.getResultFromCompletedTask({
   taskId: '0x123abc...', // Your task ID
 });
@@ -85,51 +60,12 @@ const result = await dataProtectorCore.getResultFromCompletedTask({
 console.log('Result downloaded and decrypted:', result);
 ```
 
-## Decrypting Results
+::: tip Info
 
-### Automatic Decryption with DataProtector
+The `processProtectedData` method will create a task and automatically download
+and decrypt the result.
 
-**The easiest way** - decryption happens automatically:
-
-```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-// Execute and get results in one flow
-const processResponse = await dataProtectorCore.processProtectedData({
-  protectedData: '0x123abc...',
-  app: '0x456def...',
-});
-
-console.log('Task ID:', processResponse.taskId);
-
-// Get decrypted result
-const result = await dataProtectorCore.getResultFromCompletedTask({
-  taskId: processResponse.taskId,
-});
-
-// Result is automatically decrypted ArrayBuffer
-const resultText = new TextDecoder().decode(result.result);
-console.log('Decrypted result:', resultText);
-```
-
-### Manual Decryption with CLI
-
-**If you downloaded manually**:
-
-```bash
-# Download the encrypted result
-iexec task show <taskId> --download my-result
-
-# Decrypt using your wallet (must be the beneficiary)
-iexec result decrypt my-result.zip --force
-
-# Extract decrypted files
-unzip decrypted-result.zip -d final-result/
-cat final-result/result.txt
-```
+:::
 
 ## Result File Structure
 

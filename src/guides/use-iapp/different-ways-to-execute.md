@@ -9,75 +9,7 @@ There are multiple ways to execute iApp on the iExec network. This guide covers
 the basic execution methods. For advanced features like protected data,
 arguments, and input files, see the dedicated guides.
 
-::: tip ENS Addresses
-
-**ENS (Ethereum Name Service)** is a naming system for Ethereum addresses that
-allows you to use human-readable names instead of long hexadecimal addresses.
-For example, instead of using `0x1234567890abcdef...`, you can use
-`debug-v8-learn.main.pools.iexec.eth`.
-
-In the examples below, we use `debug-v8-learn.main.pools.iexec.eth` which is
-iExec's official debug workerpool ENS address. This workerpool is specifically
-designed for testing and development purposes on the Bellecour testnet.
-
-:::
-
-## Method 1: Using the iExec SDK Library
-
-The iExec SDK provides a modular JavaScript interface for executing iApp.
-
-```ts twoslash
-import { IExec, utils } from 'iexec';
-
-const ethProvider = utils.getSignerFromPrivateKey(
-  'bellecour', // blockchain node URL
-  'PRIVATE_KEY'
-);
-const iexec = new IExec({
-  ethProvider,
-});
-// ---cut---
-// Create & Sign a request order
-const requestorderToSign = await iexec.order.createRequestorder({
-  app: '0x456def...', // The iApp address
-  category: 0,
-});
-const requestOrder = await iexec.order.signRequestorder(requestorderToSign);
-
-// Fetch app orders
-const appOrders = await iexec.orderbook.fetchAppOrderbook(
-  '0x456def...' // Filter by specific app
-);
-if (appOrders.orders.length === 0) {
-  throw new Error('No app orders found for the specified app');
-}
-
-// Fetch workerpool orders
-const workerpoolOrders = await iexec.orderbook.fetchWorkerpoolOrderbook({
-  workerpool: '0xa5de76...', // Filter by specific workerpool
-});
-if (workerpoolOrders.orders.length === 0) {
-  throw new Error('No workerpool orders found for the specified workerpool');
-}
-
-// Execute the task
-const taskId = await iexec.order.matchOrders({
-  requestorder: requestOrder,
-  apporder: appOrders.orders[0].order,
-  workerpoolorder: workerpoolOrders.orders[0].order,
-});
-```
-
-## Method 2: Using the iExec CLI
-
-The iExec CLI is perfect for quick executions and automation scripts.
-
-```bash
-# Execute an iApp
-iexec app run 0x456def...
-```
-
-## Method 3: Using the iApp Generator CLI
+## Using the iApp Generator CLI
 
 The iApp Generator CLI provides a streamlined way to execute iApp, especially
 for developers who have built their own iApp.
@@ -98,12 +30,6 @@ iapp run 0x456def...
 # Test the iApp locally first
 iapp test
 ```
-
-## When to Use Each Method
-
-- **iExec Library**: For JavaScript applications and web3 integration
-- **iExec CLI**: For quick testing and automation scripts
-- **iApp Generator CLI**: For developers who have built their own iApp
 
 ## Next Steps
 

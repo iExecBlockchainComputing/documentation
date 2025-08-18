@@ -30,10 +30,27 @@ iApp Generator handles all the low-level complexity for you.
 
 Before getting started, make sure you have the following installed:
 
-- **Node.js** (version 18 or higher) - [Download here](https://nodejs.org/)
-- **Docker** - [Download here](https://www.docker.com/get-started)
-- **Docker Hub account** - [Sign up here](https://hub.docker.com/) (required for
-  deployment)
+<div class="flex flex-col gap-2 my-4 pl-0">
+  <div class="flex items-center gap-4 text-left">
+    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
+      📦 Node.js v20+
+    </div>
+    <a target="_blank" href="https://nodejs.org/en/" class="no-underline! text-sm ml-auto hover:underline!">Download →</a>
+  </div>
+   <div class="flex items-center gap-4 text-left">
+    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
+      🐳 Docker installed
+    </div>
+    <a target="_blank" href="https://docker.com/" class="no-underline! text-sm ml-auto hover:underline!">Download →</a>
+  </div>
+  
+  <div class="flex items-center gap-4 text-left">
+    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
+      🐳 DockerHub Account
+    </div>
+    <a target="_blank" href="https://hub.docker.com/" class="no-underline! text-sm ml-auto hover:underline!">Sign Up →</a>
+  </div>
+</div>
 
 ## Installation
 
@@ -220,88 +237,6 @@ specify your app version, and push both standard and TEE-compatible images:
   />
 </template>
 
-## Real Examples
-
-Here are some real-world examples of iApp to help you understand how they work
-in practice.
-
-### Email Notification iApp
-
-This iApp lets you send updates to your contacts without ever seeing their email
-addresses, privacy is preserved by design.
-
-::: code-group
-
-```js [Node.js]
-/* User runs: "Send updates to my contacts about my project" */
-const contacts = loadProtectedData(); // User's protected contact list
-contacts.forEach((contact) => {
-  sendEmail(contact, projectUpdateMessage);
-});
-// → Emails sent directly, you never see the addresses
-```
-
-```python [Python]
-# User runs: "Send updates to my contacts about my project"
-contacts = load_protecteddata()  # User's protected contact list
-for contact in contacts:
-   send_email(contact, project_update_message)
-# → Emails sent directly, you never see the addresses
-```
-
-:::
-
-### Oracle Update iApp
-
-This iApp securely updates a price oracle using private trading data, ensuring
-sensitive information stays confidential.
-
-::: code-group
-
-```js [Node.js]
-// User runs: "Update price oracle with my private trading data"
-const tradingData = loadProtectedData(); // User's protected trading history
-const averagePrice = calculateWeightedAverage(tradingData);
-updateOracleContract(averagePrice);
-// → Oracle updated with real data, trading history stays private
-```
-
-```python [Python]
-# User runs: "Update price oracle with my private trading data"
-trading_data = load_protecteddata()  # User's protected trading history
-average_price = calculate_weighted_average(trading_data)
-update_oracle_contract(average_price)
-# → Oracle updated with real data, trading history stays private
-```
-
-:::
-
-### Automated Transactions iApp
-
-This iApp automates monthly payments using protected payment details, so
-financial information remains private.
-
-::: code-group
-
-```js [Node.js]
-// User runs: "Automate payments every month"
-const paymentInfo = loadProtectedData(); // User's payment details
-for (let month = 0; month < 12; month++) {
-  processPayment(paymentInfo);
-}
-// → Payments processed, payment details stay private
-```
-
-```python [Python]
-# User runs: "Automate payments every month"
-payment_info = load_protecteddata()  # User's payment details
-for month in range(12):
-   process_payment(payment_info)
-# → Payments processed, payment details stay private
-```
-
-:::
-
 <script setup>
 import CLIDemo from '@/components/CLIDemo.vue';
 import { computed } from 'vue';
@@ -377,7 +312,7 @@ const arbitrumSteps = [
   },
   {
     showAt: 13,
-    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7 on dockerhub',
+    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7 on dockerhub',
     answer: '',
     showTyping: false,
     isComplete: true
@@ -446,7 +381,7 @@ const bellecourSteps = [
   },
   {
     showAt: 12,
-    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7 on dockerhub',
+    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7 on dockerhub',
     answer: '',
     showTyping: false,
     isComplete: true
@@ -461,12 +396,12 @@ const bellecourSteps = [
 ];
 
 const arbitrumCompletionItems = [
-  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7',
+  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7',
   '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
 ];
 
 const bellecourCompletionItems = [
-  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7',
+  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7',
   '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
 ];
 </script>

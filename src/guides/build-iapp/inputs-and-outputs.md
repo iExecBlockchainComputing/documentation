@@ -618,7 +618,7 @@ save_report(report)
 Once your iApp completes execution, users can retrieve and decrypt the results:
 
 → **Learn how users get results**: Check our
-[How to Get and Decrypt Results](/guides/build-iapp/how-to-get-and-decrypt-results)
+[How to Get and Decrypt Results](/guides/build-iapp/download-and-decrypt-results)
 guide for the complete user workflow.
 
 ## What's Next?
@@ -631,7 +631,7 @@ Continue building with these guides:
   Control who can use your iApp
 - **[Debugging Your iApp](/guides/build-iapp/debugging)** - Troubleshoot
   execution issues
-- **[How to Get and Decrypt Results](/guides/build-iapp/how-to-get-and-decrypt-results)** -
+- **[How to Get and Decrypt Results](/guides/build-iapp/download-and-decrypt-results)** -
   User-side result handling
 
 ### Technical Deep Dive

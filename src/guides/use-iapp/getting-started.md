@@ -8,34 +8,33 @@ description: Learn the basics of finding and executing iApp on the iExec network
 Welcome to secure, privacy-preserving computation! This guide shows you how to
 use iApp on the iExec confidential computing network.
 
-## Prerequisites
+### Prerequisites
 
-Before you begin, make sure you have:
+Before getting started, ensure that you have the following installed on your
+system:
 
-- A Web3 wallet (MetaMask, WalletConnect, etc.)
-- Some RLC tokens for paying computation fees (or access to free vouchers
-  through learning programs) -
-  [Learn about RLC tokens](/get-started/overview/rlc) and
-  [how to bridge them](/get-started/tooling-and-explorers/bridge)
-- Basic understanding of blockchain transactions
-- iExec SDK installed
+\- [**Node.js**](https://nodejs.org/en/) version 18 or higher
+
+\- [**NPM**](https://docs.npmjs.com/) (Node.js package manager)
+
+### Installation
 
 ::: code-group
 
 ```sh [npm]
-npm install -g iexec
+npm install @iexec/dataprotector
 ```
 
 ```sh [yarn]
-yarn global add iexec
+yarn add @iexec/dataprotector
 ```
 
 ```sh [pnpm]
-pnpm add -g iexec
+pnpm add @iexec/dataprotector
 ```
 
 ```sh [bun]
-bun add -g iexec
+bun add @iexec/dataprotector
 ```
 
 :::
@@ -81,15 +80,3 @@ For step-by-step instructions, check out these guides:
   to provide data and parameters to iApp
 - **[How to Pay for Executions](/guides/use-iapp/how-to-pay-executions)** -
   Understanding costs and payment options
-
-## Quick Start
-
-Ready to jump in? Follow the execution guides for detailed instructions on how
-to use iApp.
-
-<script setup>
-import ImageViewer from '@/components/ImageViewer.vue';
-
-// Assets
-import appViewImage from '@/assets/tooling-&-explorers/iexec-explorer/app-view.png';
-</script>

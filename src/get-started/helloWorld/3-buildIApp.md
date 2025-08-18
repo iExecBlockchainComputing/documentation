@@ -489,7 +489,7 @@ const arbitrumSteps = [
   },
   {
     showAt: 13,
-    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7 on dockerhub',
+    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7 on dockerhub',
     answer: '',
     showTyping: false,
     isComplete: true
@@ -558,7 +558,7 @@ const bellecourSteps = [
   },
   {
     showAt: 12,
-    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7 on dockerhub',
+    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7 on dockerhub',
     answer: '',
     showTyping: false,
     isComplete: true
@@ -573,12 +573,12 @@ const bellecourSteps = [
 ];
 
 const arbitrumCompletionItems = [
-  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7',
+  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7',
   '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
 ];
 
 const bellecourCompletionItems = [
-  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-debug-ce3a01d9c5d7',
+  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7',
   '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
 ];
 </script>
