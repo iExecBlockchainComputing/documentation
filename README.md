@@ -173,7 +173,7 @@ for input parameters:
   `handle-schemas-dataset-types`
 - Add link to remix for deploying whitelist
 - complete `use-iapp` section
-- # Maybe split input and output in two diff sub section in build your iapp guide
+- Maybe split input and output in two diff sub section in build your iapp guide
 - Explorer l'intégration de codeSpace
 - Add a Development workflow section (1 - ProtectData, 2- ...)
 - Update context7 when doc will be deployed (Martin)
@@ -193,7 +193,7 @@ for input parameters:
 - Talk about ENS on Bellecour(it's not supported on arbitrum)
 - Rework Advanced iApp building guides. (from "old" protocol doc)
 - Talk about encrypting results in use-iapp
-- # Refactor "advanced" section in build-iapp
+- Refactor "advanced" section in build-iapp
 - Rework src\get-started\protocol\iexec-doracle.md (transfer to guide or
   rewrite)
 - Talk about encrypting results in use-iapp
