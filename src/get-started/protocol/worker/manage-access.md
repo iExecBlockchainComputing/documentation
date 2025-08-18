@@ -49,7 +49,7 @@ your workerpool:
 | `tag`               | restrict usage to a specific runtime such as **Scone** or **Gramine** TEE frameworks  |
 | `category`          | Order category, will define the deal `workClockTimeRef` and its deadlines             |
 | `trust`             | Trust level of the execution, impacts the number of replicates                        |
-| `apprestrict`       | restrict the workerpool usage to a specifig app (1)                                   |
+| `apprestrict`       | restrict the workerpool usage to a specific app (1)                                   |
 | `datasetrestrict`   | restrict the workerpool usage to a specific dataset (1)                               |
 | `requesterrestrict` | restrict the workerpool usage to a specific requester (1)                             |
 
@@ -94,7 +94,7 @@ iexec orderbook workerpool <your workerpool address>
 
 Copy the `orderHash` of the order you want to remove
 
-Unpublish the `workerpoolorder` from the iExec Marketplace
+To unpublish the `workerpoolorder` from the iExec Marketplace
 
 ```bash
 iexec order unpublish --workerpool <orderHash>

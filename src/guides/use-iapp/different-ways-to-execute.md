@@ -1,12 +1,11 @@
 ---
-title: Different Ways to Execute iApps
-description:
-  Learn about various methods for executing iApps on the iExec network
+title: Different Ways to Execute iApp
+description: Learn about various methods for executing iApp on the iExec network
 ---
 
-# ⚡ Different Ways to Execute iApps
+# ⚡ Different Ways to Execute iApp
 
-There are multiple ways to execute iApps on the iExec network. This guide covers
+There are multiple ways to execute iApp on the iExec network. This guide covers
 the basic execution methods. For advanced features like protected data,
 arguments, and input files, see the dedicated guides.
 
@@ -25,7 +24,7 @@ designed for testing and development purposes on the Bellecour testnet.
 
 ## Method 1: Using the iExec SDK Library
 
-The iExec SDK provides a modular JavaScript interface for executing iApps.
+The iExec SDK provides a modular JavaScript interface for executing iApp.
 
 ```ts twoslash
 import { IExec, utils } from 'iexec';
@@ -80,8 +79,8 @@ iexec app run 0x456def...
 
 ## Method 3: Using the iApp Generator CLI
 
-The iApp Generator CLI provides a streamlined way to execute iApps, especially
-for developers who have built their own iApps.
+The iApp Generator CLI provides a streamlined way to execute iApp, especially
+for developers who have built their own iApp.
 
 > **Note**: For installation instructions, see the
 > [iApp Generator Getting Started guide](/references/iapp-generator/getting-started).
@@ -104,12 +103,12 @@ iapp test
 
 - **iExec Library**: For JavaScript applications and web3 integration
 - **iExec CLI**: For quick testing and automation scripts
-- **iApp Generator CLI**: For developers who have built their own iApps
+- **iApp Generator CLI**: For developers who have built their own iApp
 
 ## Next Steps
 
 - Learn how to
-  [use iApps with protected data](/guides/use-iapp/use-iapp-with-protected-data)
+  [use iApp with protected data](/guides/use-iapp/use-iapp-with-protected-data)
 - Discover how to
   [add inputs to execution](/guides/use-iapp/add-inputs-to-execution)
 - Understand [how to pay for executions](/guides/use-iapp/how-to-pay-executions)

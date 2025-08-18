@@ -15,15 +15,15 @@ Requirements:
 [![npm version](https://img.shields.io/badge/nodejs-%3E=18.0.0-brightgreen.svg)](https://nodejs.org/en/)
 
 ```bash
-npm -g install iexec # install the cli
+npm -g install iexec # install the CLI
 iexec --version
 iexec --help
 ```
 
 ## Create your identity on the blockchain
 
-On the blockchain, your identity is defined by your **wallet,** constisting of
-cryptochraphically encrypted **private key** and **public address.** What you
+On the blockchain, your identity is defined by your **wallet,** consisting of
+cryptographically encrypted **private key** and **public address.** What you
 own on the blockchain is associated with your address. The applications you
 deploy on iExec are associated with your wallet.
 
@@ -207,7 +207,7 @@ Useful options:
 
 - `--args <args>` specify the app execution arguments
 - `--watch` watch execution status changes
-- `--workerpool <address>` specify the workerpool to use (eg:
+- `--workerpool <address>` specify the workerpool to use (for example:
   `--workerpool prod-v8-learn.main.pools.iexec.eth`)
 
 Discover more option with `iexec app run --help`

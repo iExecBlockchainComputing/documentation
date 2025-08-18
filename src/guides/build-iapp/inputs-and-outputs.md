@@ -1,7 +1,7 @@
 ---
 title: Inputs and Outputs
 description:
-  Understand the different input types and output formats for iApps in the TEE
+  Understand the different input types and output formats for iApp in the TEE
   environment
 ---
 

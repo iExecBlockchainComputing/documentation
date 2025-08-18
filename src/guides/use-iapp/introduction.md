@@ -1,11 +1,11 @@
 ---
-title: Introduction to Using iApps
+title: Introduction to Using iApp
 description:
-  Learn how to use iExec Applications (iApps) to securely process protected data
+  Learn how to use iExec Applications (iApp) to securely process protected data
   in a privacy-safe environment
 ---
 
-# 📝 Introduction to Using iApps
+# 📝 Introduction to Using iApp
 
 In the iExec network, multiple actors work together in a coordinated process to
 ensure secure, decentralized computation. Here's how the ecosystem operates:
@@ -22,7 +22,7 @@ ensure secure, decentralized computation. Here's how the ecosystem operates:
 
 ### Network Assets
 
-- **📱 iApps**: Applications that process the data securely
+- **📱 iApp**: Applications that process the data securely
 - **💾 Data**: Protected information that needs to be processed
 - **⚡ Computational Power**: Processing resources provided by workers
 - **💰 PoCo**: Proof of Contribution system that matches all actors through
@@ -80,9 +80,9 @@ protected throughout the computation.
 
 ## Getting Started
 
-Ready to start using iApps? Check out our
+Ready to start using iApp? Check out our
 [Getting Started Guide](/guides/use-iapp/getting-started) to learn how to find,
-execute, and interact with iApps on the iExec network.
+execute, and interact with iApp on the iExec network.
 
 <script setup>
 import TokenSymbol from '@/components/TokenSymbol.vue'

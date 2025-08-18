@@ -35,7 +35,7 @@ SGX/TDX secure enclaves where data stays private during processing.
 
 ### 1. **Learn the Concepts**
 
-Start here to understand what iApps are and how they work:
+Start here to understand what iApp are and how they work:
 
 - **[What Is an iApp?](/get-started/overview/what-is-iapp)** - Core concepts and
   TEE overview

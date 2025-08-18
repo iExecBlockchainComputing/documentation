@@ -1,7 +1,7 @@
 ---
 title: Using TDX (Experimental)
 description:
-  Enable Intel TDX for enhanced TEE security in iApps - experimental feature
+  Enable Intel TDX for enhanced TEE security in iApp - experimental feature
 ---
 
 # 🛡️ Using TDX (Experimental)
@@ -15,8 +15,8 @@ instabilities, limited compatibility, and potential outages.
 :::
 
 **Intel TDX (Trust Domain Extensions) is the next generation of TEE
-technology.** This guide shows you how to enable TDX in your iApps and
-understand the differences from the default SGX implementation.
+technology.** This guide shows you how to enable TDX in your iApp and understand
+the differences from the default SGX implementation.
 
 ## What is TDX?
 
@@ -123,8 +123,8 @@ await dataProtector.core.processProtectedData({
 
 :::warning Protected Data Requirements
 
-**TDX iApps may require TDX-compatible protected data.** Check compatibility
-before using protected data with TDX iApps.
+**TDX iApp may require TDX-compatible protected data.** Check compatibility
+before using protected data with TDX iApp.
 
 :::
 
@@ -137,7 +137,7 @@ documentation for TDX-specific requirements.
 ### 1. **Local Testing**
 
 ```bash
-# Test locally (same as regular iApps)
+# Test locally (same as regular iApp)
 iapp test --protectedData "mock_name"
 
 # TDX only affects remote deployment/execution
@@ -189,4 +189,4 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
 - **[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)** - Handle data
   in TEE environment
 - **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
-  Deploy production-ready iApps
+  Deploy production-ready iApp

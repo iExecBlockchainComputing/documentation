@@ -2,7 +2,7 @@
 title: Builder Dashboard
 description:
   Monitor iExec applications with the powerful Builder Dashboard. Manage your
-  iApps and your manage vouchers
+  iApp and your manage vouchers
 ---
 
 # 🏗️ Builder Dashboard
@@ -11,7 +11,7 @@ The **Builder Dashboard** is your comprehensive development hub for iExec
 protocol. Monitor voucher usage, track your remaining compute capacity for TEE
 iApp runs, and view execution history—all in one place. This powerful interface
 streamlines your development workflow and provides deep insights on your
-confidential iApps deployed on the protocol.
+confidential iApp deployed on the protocol.
 
 <ImageViewer
   :image-url-dark="builderDashboardImage"
@@ -33,7 +33,7 @@ confidential iApps deployed on the protocol.
   <FeatureCard
     icon="mdi:apps"
     title="Confidential iApp Monitoring"
-    description="Monitor deployed iApps, track execution statistics, unique users"
+    description="Monitor deployed iApp, track execution statistics, unique users"
     icon-color="text-green-500"
   />
 </CardGrid>
@@ -96,21 +96,21 @@ monitoring with detailed task execution history and real-time balance tracking.
 ## 📱 Confidential iApp Management
 
 The second screen provides comprehensive management and analytics for your
-deployed confidential iApps with detailed statistics and user insights.
+deployed confidential iApp with detailed statistics and user insights.
 
 <ImageViewer
   :image-url-dark="myIappsViewImage"
-  image-alt="My Confidential iApps Dashboard"
-  link-url="https://builder.iex.ec/iapps"
-  caption="🔗 Manage Your iApps"
+  image-alt="My Confidential iApp Dashboard"
+  link-url="https://builder.iex.ec/iApp"
+  caption="🔗 Manage Your iApp"
 />
 
-### My Confidential iApps Overview
+### My Confidential iApp Overview
 
 <div class="bg-gradient-to-r from-blue-400/10 to-blue-400/5 rounded-[6px] p-6 border-l-4 border-blue-700 my-6">
   <h4 class="!mt-0 !mb-2">📱 iApp Portfolio Metrics</h4>
   <ul class="!mb-0">
-    <li><strong>Deployed Applications</strong>: Complete list of all your confidential iApps currently deployed</li>
+    <li><strong>Deployed Applications</strong>: Complete list of all your confidential iApp currently deployed</li>
     <li><strong>Execution Statistics</strong>: See exactly how many times each iApp has been executed</li>
     <li><strong>Unique Users</strong>: Track total unique users who have run each application</li>
     <li><strong>Revenue Insights</strong>: Track earnings and profitability per application</li>
@@ -122,7 +122,7 @@ deployed confidential iApps with detailed statistics and user insights.
 <CardGrid>
   <FeatureCard
     icon="mdi:apps"
-    title="Deployed iApps"
+    title="Deployed iApp"
     description="View all your confidential applications with deployment status, versions, and metadata"
     icon-color="text-blue-500"
   />

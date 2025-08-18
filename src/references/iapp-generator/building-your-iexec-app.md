@@ -160,7 +160,7 @@ within the iExec network.
 
 ::: info
 
-💡 A **workerpool** is a decentralized network of nodes that execute iApps
+💡 A **workerpool** is a decentralized network of nodes that execute iApp
 securely within a **Trusted Execution Environment (TEE)**.
 
 :::

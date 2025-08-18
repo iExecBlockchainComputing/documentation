@@ -130,7 +130,7 @@ building consensus. In order to do so, the application just has to provide the
 path to the deterministic file using a specific entry
 `deterministic-output-path` in `${IEXEC_OUT}/computed.json`.
 
-Alternatively, if the application is used in a doracle context (the results are
+Alternatively, if the application is used in a oracle context (the results are
 designed to be processed on-chain by receiver smart-contracts), then the value
 of this callback must be specified in `${IEXEC_OUT}/computed.json` under the
 entry `callback-data`.
@@ -445,7 +445,7 @@ struct AppOrder
 }
 ```
 
-- `app` Address of the smartcontract describing the application. Must be
+- `app` Address of the smart contract describing the application. Must be
   registered in the AppRegistry.
 - `appprice` Price of a run of the application.
 - `volume` Number of run authorized (by this order).
@@ -478,7 +478,7 @@ struct DatasetOrder
 }
 ```
 
-- `dataset` Address of the smartcontract describing the dataset. Must be
+- `dataset` Address of the smart contract describing the dataset. Must be
   registered in the DatasetRegistry.
 - `datasetprice` Price of a use of the dataset.
 - `volume` Number of authorized uses (by this order).
@@ -513,7 +513,7 @@ struct WorkerpoolOrder
 }
 ```
 
-- `workerpool` Address of the smartcontract describing the worker pool. Must be
+- `workerpool` Address of the smart contract describing the worker pool. Must be
   registered in the WorkerpoolRegistry.
 - `workerpoolprice` Price of an execution on the worker pool.
 - `volume` Number of executions proposed (by this order).
@@ -555,11 +555,11 @@ struct RequestOrder
 }
 ```
 
-- `app` Address of the smartcontract describing the application. Must be
+- `app` Address of the smart contract describing the application. Must be
   registered in the AppRegistry.
 - `appmaxprice` Maximum price allowed by the requester for the payment of the
   application.
-- `dataset` Address of the smartcontract describing the dataset. Must be
+- `dataset` Address of the smart contract describing the dataset. Must be
   registered in the DatasetRegistry. Null if no dataset is required.
 - `datasetmaxprice` Maximum price allowed by the requester for the payment of
   the dataset (if any).

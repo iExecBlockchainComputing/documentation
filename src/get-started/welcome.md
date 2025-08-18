@@ -52,7 +52,7 @@ actionable:
     <div class="flex items-center gap-3">
       <span class="text-xl">🔧</span>
       <div>
-        <strong>Activable Tools:</strong> Composable toolkit, SDKs, and ready-to-use components for straightforward development
+        <strong>Available Tools:</strong> Composable toolkit, SDK, and ready-to-use components for straightforward development
       </div>
     </div>
   </div>

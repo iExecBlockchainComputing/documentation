@@ -6,7 +6,7 @@ description:
 
 # Create and Deploy an iApp
 
-iApps (iExec Applications) are decentralized applications that run on the iExec
+iApp (iExec Applications) are decentralized applications that run on the iExec
 network. They use confidential computing to ensure data privacy and security
 while providing scalable off-chain computation.
 
@@ -22,8 +22,8 @@ iApp Generator handles all the low-level complexity for you.
   familiar programming languages while the generator handles all TEE-specific
   configurations.
 - **Access to TEEs easily** - No need to dive into low-level requirements,
-  create iApps that connect to TEEs in minutes.
-- **Check and deploy iApps quickly** - iApp Generator checks that your iApp
+  create iApp that connect to TEEs in minutes.
+- **Check and deploy iApp quickly** - iApp Generator checks that your iApp
   complies with the iExec Framework and streamlines its deployment.
 
 ## Prerequisites
@@ -222,7 +222,7 @@ specify your app version, and push both standard and TEE-compatible images:
 
 ## Real Examples
 
-Here are some real-world examples of iApps to help you understand how they work
+Here are some real-world examples of iApp to help you understand how they work
 in practice.
 
 ### Email Notification iApp

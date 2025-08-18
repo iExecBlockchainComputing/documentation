@@ -14,4 +14,5 @@ components.d.ts
 .DS_Store
 
 #vale
-.github/styles/*
+.github/styles/config/*
+!.github/styles/config/vocabularies/

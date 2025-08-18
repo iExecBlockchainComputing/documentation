@@ -12,7 +12,7 @@ and cost management strategies.
 
 ## Payment Methods Overview
 
-iExec supports multiple payment methods for executing iApps:
+iExec supports multiple payment methods for executing iApp:
 
 1. **RLC Tokens**: Direct payment using <TokenSymbol /> tokens
 2. **Vouchers**: Pre-funded vouchers for simplified payment
@@ -127,7 +127,7 @@ has sufficient funds for this transfer to proceed.
 
 :::
 
-#### Using Someone Else's Voucher
+#### Using Someone Else Voucher
 
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
@@ -493,7 +493,7 @@ Now that you understand payment methods:
 - Learn about
   [Adding Inputs to Execution](/guides/use-iapp/add-inputs-to-execution)
 - Explore
-  [Using iApps with Protected Data](/guides/use-iapp/use-iapp-with-protected-data)
+  [Using iApp with Protected Data](/guides/use-iapp/use-iapp-with-protected-data)
 - Review the pricing information above for detailed cost analysis
 
 <script setup>

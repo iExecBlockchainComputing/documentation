@@ -2,22 +2,22 @@
 title: iExec Overview
 description:
   Explore how iExec's confidential computing toolkit helps developers build
-  privacy-preserving dApps. Learn how DataProtector and iApps let users control,
+  privacy-preserving iApp. Learn how DataProtector and iApp let users control,
   protect, and monetize sensitive data.
 ---
 
 # 🧐 iExec Overview
 
-> Reading time 🕒 8 mins
+> Reading time 🕒 8 min
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 border-none!">Let's start with the basics</h2>
   <p>and explore how iExec can help you build Privacy-preserving applications and securely manage sensitive data.</p>
 </div>
 
-## 👨‍💻 Building Privacy-preserving dApps with iExec
+## 👨‍💻 Building Privacy-preserving iApp with iExec
 
-<p>Imagine you're building a decentralized application (dApp) that needs to <strong> handle sensitive user data</strong>, for example:</p>
+<p>Imagine you're building a decentralized application (iApp) that needs to <strong> handle sensitive user data</strong>, for example:</p>
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-2.5">
     <div class="flex items-center gap-2 text-base">
@@ -60,7 +60,7 @@ description:
 </div>
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">This is where <span class="text-fuchsia-700 font-semibold">iExec</span> comes in! We provide tools to easily add <span class="text-fuchsia-700 font-semibold">privacy</span> and <span class="text-fuchsia-700 font-semibold">monetization</span> features into your dApp.</p>
+  <p class="m-0!">This is where <span class="text-fuchsia-700 font-semibold">iExec</span> comes in! We provide tools to easily add <span class="text-fuchsia-700 font-semibold">privacy</span> and <span class="text-fuchsia-700 font-semibold">monetization</span> features into your iApp.</p>
 </div>
 
 ## 👷 How do we Solve it?
@@ -84,14 +84,14 @@ Computing</a></span> technologies.
 
 iExec combines three fundamental elements that work together seamlessly:
 
-#### 1. Protect Data with our Devtool [DataProtector](/references/dataProtector/getting-started)
+#### 1. Protect Data with our DevTool [DataProtector](/references/dataProtector/getting-started)
 
 - Encrypt your sensitive data and store it securely on Arweave or IPFS
 - Only you control who can access it and when
 - Perfect for private information like research data, business analytics, or
   personal records
 
-#### 2. Compute Data with iExec Apps (iApps) Running in Secure Environment
+#### 2. Compute Data with iExec Apps (iApp) Running in Secure Environment
 
 - Special applications that can work with protected data
 - Run in secure environments (called TEEs) that keep your data private
@@ -115,17 +115,17 @@ inside stays **safe** and **private**.
 With a tool called **DataProtector**, your data becomes **protected** and can
 only be read and processed inside this secure room.
 
-Special applications called **iApps** (applications built to run in secure
+Special applications called **iApp** (applications built to run in secure
 environments) can enter the room to work with your data. You stay in **control**
 by setting **access rules** that only you can modify about who can access it and
 when.
 
-## 🔍 Building your First Privacy-preserving dApp
+## 🔍 Building your First Privacy-preserving iApp
 
 Let's meet Bob and Alice to understand how iExec enables Privacy-preserving
 applications:
 
-### 1. Meet Bob: the dApp Developer 👨‍💻
+### 1. Meet Bob: the iApp Developer 👨‍💻
 
 Bob is building a decentralized application that uses iExec's technology. His
 platform consists of:
@@ -135,7 +135,7 @@ platform consists of:
 - Thanks to DataProtector, end users can protect their data, manage access, and
   process it seamlessly.
 
-### 2. Meet Alice: the dApp User 👩‍💼
+### 2. Meet Alice: the iApp User 👩‍💼
 
 When using Bob's platform, Alice can:
 
@@ -144,7 +144,7 @@ When using Bob's platform, Alice can:
 - Authorize specific iExec Apps and persons like Bob to use her data in a secure
   environment
 
-Depending on the dApp's use case, Alice could:
+Depending on the iApp's use case, Alice could:
 
 - Apply algorithms to her data and get results confidentially
 - Share her data with other users privately (and get paid for it)
@@ -166,7 +166,7 @@ And many other use cases...
   </div>
   <div class="flex items-center gap-3">
     <span class="text-xl">📦</span>
-    <p class="m-0"><strong>iApps (iExec App):</strong> Special applications that can process protected data</p>
+    <p class="m-0"><strong>iApp (iExec App):</strong> Special applications that can process protected data</p>
   </div>
   <div class="flex items-center gap-3">
     <span class="text-xl">⛓️</span>

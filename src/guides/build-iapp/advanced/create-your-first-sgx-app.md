@@ -80,7 +80,7 @@ Make sure your `chain.json` content is as follows:
 }
 ```
 
-If you start from a new firectory tree, you will need to replay the following
+If you start from a new directory tree, you will need to replay the following
 steps from [Build your first application](./your-first-app):
 
 - [Write the app](./your-first-app.md#write-the-app) Javascript or Python source
@@ -195,7 +195,7 @@ Congratulations, you just built your Scone TEE application.
 
 You may have noticed the `tee-debug` flag in the image name, the built image is
 actually in TEE debug mode, this allows you to have some debug features while
-developping the app.
+developing the app.
 
 Once you are happy with the debug app, contact us to go to production!
 
