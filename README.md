@@ -64,29 +64,6 @@ ensure:
 - Professional tone
 - Accessibility best practices
 
-#### Vale Statistics and Reports
-
-Generate comprehensive reports to track documentation quality:
-
-**Current Statistics (as of latest run):**
-
-- **Total Issues**: 2,731
-- **Top Issues**:
-  - Headings capitalization (622)
-  - Acronyms explanation (472)
-  - Passive voice (460)
-  - Word choice (294)
-  - Parentheses usage (244)
-
-**Files with Most Issues:**
-
-1. `proof-of-contribution.md` (323 issues)
-2. `glossary.md` (143 issues)
-3. `quick-start-for-developers.md` (75 issues)
-
-**Quality Score**: Based on the number of issues per file, we can calculate a
-quality percentage and track improvements over time.
-
 ### Environment Variables (Optional)
 
 Some features of the application require environment variables. This
