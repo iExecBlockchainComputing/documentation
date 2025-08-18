@@ -16,3 +16,4 @@ components.d.ts
 #vale
 .github/styles/*
 !.github/styles/config/vocabularies/
+vale-report.txt

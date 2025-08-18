@@ -110,19 +110,23 @@ export function getSidebar() {
             link: '/get-started/protocol/proof-of-contribution',
           },
           {
-            text: '💸 Pay Per Task Model',
+            text: 'Pay Per Task Model',
             link: '/get-started/protocol/pay-per-task',
           },
           {
-            text: '⚙️ Workers & Workerpools',
+            text: 'Oracle',
+            link: '/get-started/protocol/oracle',
+          },
+          {
+            text: 'Workers & Workerpools',
             collapsed: true,
             items: [
               {
-                text: '🚀 Worker Quick Start',
+                text: 'Worker Quick Start',
                 link: '/get-started/protocol/worker/quick-start',
               },
               {
-                text: '🔒 Manage Workerpool Access',
+                text: 'Manage Workerpool Access',
                 link: '/get-started/protocol/worker/manage-access',
               },
             ],
