@@ -127,6 +127,16 @@ export function getSidebar() {
               },
             ],
           },
+          {
+            text: 'TEE Technology',
+            collapsed: true,
+            items: [
+              {
+                text: 'Intel SGX Technology Overview',
+                link: '/get-started/protocol/tee/intel-sgx-technology',
+              },
+            ],
+          },
         ],
       },
     ],
@@ -174,6 +184,44 @@ export function getSidebar() {
           {
             text: 'Debugging',
             link: '/guides/build-iapp/debugging',
+          },
+          {
+            text: 'Advanced',
+            collapsed: true,
+            items: [
+              {
+                text: 'Overview',
+                link: '/guides/build-iapp/advanced/overview',
+              },
+              {
+                text: 'Quick Start for Developers',
+                link: '/guides/build-iapp/advanced/quick-start-for-developers',
+              },
+              {
+                text: 'Build your first application',
+                link: '/guides/build-iapp/advanced/your-first-app',
+              },
+              {
+                text: 'Build your first SGX app (SCONE)',
+                link: '/guides/build-iapp/advanced/create-your-first-sgx-app',
+              },
+              {
+                text: 'End-to-end Encryption',
+                link: '/guides/build-iapp/advanced/end-to-end-encryption',
+              },
+              {
+                text: 'SGX Encrypted Dataset',
+                link: '/guides/build-iapp/advanced/sgx-encrypted-dataset',
+              },
+              {
+                text: 'Access Confidential Assets',
+                link: '/guides/build-iapp/advanced/access-confidential-assets',
+              },
+              {
+                text: 'Build Intel TDX app',
+                link: '/guides/build-iapp/advanced/create-your-first-tdx-app',
+              },
+            ],
           },
         ],
       },
@@ -558,5 +606,5 @@ export function getSidebar() {
         link: '/references/glossary',
       },
     ],
-  } satisfies DefaultTheme.Sidebar;
+  } as DefaultTheme.Sidebar;
 }
