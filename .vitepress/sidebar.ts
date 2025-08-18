@@ -56,20 +56,20 @@ export function getSidebar() {
         text: 'iExec OVERVIEW',
         items: [
           {
-            text: '❓ What is iExec ?',
+            text: 'What is iExec ?',
             link: '/get-started/overview/what-is-iexec',
           },
           {
-            text: '❓&nbsp;&nbsp;What is Protected Data ?',
-            link: '/get-started/overview/what-is-protected-data',
+            text: 'Protected Data',
+            link: '/get-started/overview/protected-data',
           },
           {
-            text: '❓ What is an iApp ?',
-            link: '/get-started/overview/what-is-iapp',
+            text: 'iApp',
+            link: '/get-started/overview/iapp',
           },
           {
-            text: '❓ What is a Workerpool ?',
-            link: '/get-started/overview/what-is-workerpool',
+            text: 'Workerpool',
+            link: '/get-started/overview/workerpool',
           },
           {
             text: '🪙 RLC Token',

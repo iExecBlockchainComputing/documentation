@@ -125,8 +125,10 @@ ethereum
 intel
 nano
 workerpool
+Workerpool
 protectedData
 dataProtector
+DataProtector
 iApp
 sconification
 middleware

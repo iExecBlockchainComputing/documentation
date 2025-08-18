@@ -6,7 +6,7 @@ description:
   AI, data analysis, and Web3 apps.
 ---
 
-# 🚀 What is an iApp?
+# iApp
 
 An iExec Application (iApp) brings Turnkey Privacy to your regular application
 code. Your Python scripts, AI models, or data processors can securely process
@@ -22,19 +22,15 @@ Imagine you want to build:
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-2.5">
     <div class="flex items-center gap-2 text-base">
-      <span>🤖</span>
       <span>An AI that analyzes personal health data</span>
     </div>
     <div class="flex items-center gap-2 text-base">
-      <span>📧</span>
       <span>An email tool that needs access to contact lists</span>
     </div>
     <div class="flex items-center gap-2 text-base">
-      <span>💰</span>
       <span>A financial advisor that processes bank statements</span>
     </div>
     <div class="flex items-center gap-2 text-base">
-      <span>🛡️</span>
       <span>A content filter that reads private messages</span>
     </div>
   </div>
@@ -105,19 +101,19 @@ the TEE execution environment.
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4">
-    <h4 class="text-lg font-semibold mb-2">🏥 Healthcare</h4>
+    <h4 class="text-lg font-semibold mb-2">Healthcare</h4>
     <p class="text-sm m-0">Process medical data for AI diagnosis without exposing patient information</p>
   </div>
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4">
-    <h4 class="text-lg font-semibold mb-2">💰 Finance</h4>
+    <h4 class="text-lg font-semibold mb-2">Finance</h4>
     <p class="text-sm m-0">Analyze financial data for credit scoring while maintaining privacy</p>
   </div>
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4">
-    <h4 class="text-lg font-semibold mb-2">🎬 Media</h4>
+    <h4 class="text-lg font-semibold mb-2">Media</h4>
     <p class="text-sm m-0">Content recommendation engines that don't track user behavior</p>
   </div>
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4">
-    <h4 class="text-lg font-semibold mb-2">🔬 Research</h4>
+    <h4 class="text-lg font-semibold mb-2">Research</h4>
     <p class="text-sm m-0">Collaborative research on sensitive datasets across institutions</p>
   </div>
 </div>

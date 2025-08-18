@@ -6,7 +6,7 @@ description:
   controls, and secure data monetization.
 ---
 
-# ❓ What is Protected Data?
+# Protected Data
 
 Protected Data refers to any data encrypted using the **iExec Data Protector
 tool**. This Turnkey Privacy encryption solution enables users to protect,
@@ -18,7 +18,7 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
 
 ## Key Concepts
 
-### 👑 Data Governance
+### Data Governance
 
 <div class="mb-4"></div>
 
@@ -45,7 +45,7 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
   </div>
 </div>
 
-### 🔒 Privacy-preserving Computation
+### Privacy-preserving Computation
 
 <div class="mb-4"></div>
 
@@ -72,7 +72,7 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
   </div>
 </div>
 
-### 💰 Monetization
+### Monetization
 
 <div class="mb-4"></div>
 
@@ -141,7 +141,6 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
     <div class="flex items-baseline gap-2 text-lg">
-      <span>👤</span>
       <h3 class="font-semibold m-0!">Personal Data</h3>
     </div>
     <ul class="list-disc ml-6">
@@ -153,7 +152,6 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
 
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
     <div class="flex items-baseline gap-2 text-lg">
-      <span>🏢</span>
       <h3 class="font-semibold m-0!">Business Intelligence</h3>
     </div>
     <ul class="list-disc ml-6">
@@ -165,7 +163,6 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
 
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
     <div class="flex items-baseline gap-2 text-lg">
-      <span>🤖</span>
       <h3 class="font-semibold m-0!">AI Training</h3>
     </div>
     <ul class="list-disc ml-6">
@@ -177,7 +174,6 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
 
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
     <div class="flex items-baseline gap-2 text-lg">
-      <span>🔬</span>
       <h3 class="font-semibold m-0!">Research</h3>
     </div>
     <ul class="list-disc ml-6">
@@ -197,13 +193,11 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-4">
     <div class="flex items-start gap-3">
-      <span class="text-xl">📚</span>
       <div>
         <strong>Learn More:</strong> <a href="/guides/manage-data/manage-access" class="text-fuchsia-700 hover:text-fuchsia-600">Complete DataProtector Documentation</a>
       </div>
     </div>
     <div class="flex items-start gap-3">
-      <span class="text-xl">🚀</span>
       <div>
         <strong>Getting Started:</strong> <a href="/references/dataProtector/getting-started" class="text-fuchsia-700 hover:text-fuchsia-600">DataProtector Quick Start Guide</a>
       </div>
