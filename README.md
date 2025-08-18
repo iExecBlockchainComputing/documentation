@@ -168,14 +168,13 @@ for input parameters:
 ## TODO
 
 - Add an audit section for smart contracts
-- On arbitrum hide : DataProtector Sharing ??
 - Adapt hardcoded address to feat with new contracts deployed on arbitrum
 - Add link to the new explorer feature Asset_Types in the guide =>
   `handle-schemas-dataset-types`
 - Add link to remix for deploying whitelist
 - SGX vs TDX need review
 - Explorer l'intégration de codeSpace
-- Add a Development workflow pahe (1 - ProtectData, 2- ...)
+- Add a Development workflow section (1 - ProtectData, 2- ...)
 - Update context7 when doc will be deployed (Martin)
 - Check theGraph Images with design Team
 - Update the Dune Dashboard to the final version
