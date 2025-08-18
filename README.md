@@ -191,3 +191,5 @@ for input parameters:
 - Give recap of Workerpool address fo chains
 - Talk about ENS on Bellecour(it's not supported on arbitrum)
 - Rework Advanced iApp building guides. (from "old" protocol doc)
+- Rework src\get-started\protocol\iexec-doracle.md (transfer to guide or
+  rewrite)
