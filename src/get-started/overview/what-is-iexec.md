@@ -62,8 +62,9 @@ tamper-proof.
 
 ### **Deals**
 
-A job request: "Execute iApp X on protected data Y, send results to Z." The
-protocol handles the rest.
+The execution instruction that unifies the entire flow: "Run this iApp on this
+Protected Data using a TEE Worker, then return the encrypted result to me." The
+protocol takes care of worker allocation and secure coordination.
 
 ## Real Example Walkthrough
 
