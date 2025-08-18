@@ -12,17 +12,34 @@ description: iExec terms glossary
 A computer program designed to automate processes. An application is generally
 under the control of different communities such as product managers, project
 owners, or data center administrators. An application can also be decentralized
-thanks to the blockchain: see “DApp”.
+thanks to the blockchain: see [DApp](#decentralized-application-dapp).
+
+### Attestation
+
+A process that verifies the integrity and authenticity of a TEE environment.
+Attestation proves that code is running in a genuine, unmodified TEE
+environment.
+
+**Key Points**:
+
+- **Verification**: Proves the TEE environment is genuine and unmodified
+- **Trust Establishment**: Builds trust between parties in confidential
+  computing
+- **Remote Attestation**: Allows verification of remote TEE environments
+- **iExec Integration**: Used to verify worker TEE environments
+
+**Analogy**: Attestation is like having a security guard verify that a secure
+facility is legitimate and hasn't been tampered with before allowing access.
 
 ## B
 
 ### Bellecour Sidechain
 
-iExec’s product sidechain. It is linked to Ethereum Mainnet with a bridge
+iExec's product sidechain. It is linked to Ethereum Mainnet with a bridge
 allowing for the transfer of assets between networks. It allows iExec to be used
 without paying Ethereum gas fees.
 
-See “Sidechain and xRLC” for more information.
+See [Sidechain](#sidechain) and [xRLC](#xrlc) for more information.
 
 ### Beneficiary
 
@@ -34,19 +51,14 @@ contract etc.
 
 ### Confidential Computing / Trusted Computing
 
-Ensures computation confidentiality through mechanisms of memory encryption at
-the hardware level (in a Trusted Execution Environment or TEE). It can be used
-so that only authorized code can run inside a protected area and manipulate its
-data. In some cases, ensuring that code runs correctly without any third party
-altering the execution, is even more important than hiding the computation's
-data.
+A technology that ensures computation confidentiality through hardware-level
+memory encryption (Trusted Execution Environment or TEE). It allows only
+authorized code to run in protected areas and manipulate data securely. These
+guarantees are critical for decentralized cloud computing where code runs on
+remote machines not controlled by the requester.
 
-This concept is called Trusted Computing. These guarantees are critical for a
-decentralized cloud where code is being executed on a remote machine, that is
-not controlled by the requester. They are also required to prevent leakage while
-monetizing data sets.
-
-See ”Trusted Execution Environments ('TEE')” for more information
+See [Trusted Execution Environment (TEE)](#trusted-execution-environment-tee)
+for more information
 
 ## D
 
@@ -57,7 +69,7 @@ and a frontend user interface. A DApp has its backend code running on a
 decentralized peer-to-peer network. Contrast this with a traditional application
 where the backend code is running in fully controlled environments.
 
-See “Application” for more information.
+See [Application](#application) for more information.
 
 ### DApp Provider
 
@@ -81,17 +93,10 @@ Owns datasets that can be monetized in the iExec marketplace.
 ### Deal
 
 An agreement between all parties (requester and providers) in the iExec network.
-A deal is created when requester and providers’ orders are matched in the
+A deal is created when requester and providers' orders are matched in the
 marketplace and recorded in the PoCo smart contract.
 
 ## E
-
-### Ethereum
-
-A decentralized, open-source blockchain with smart contract functionality.
-Ethereum proposes using blockchain technology to maintain a decentralized
-payment network and to store computer code that can be used to power
-decentralized applications.
 
 ### Enclave
 
@@ -99,15 +104,15 @@ In confidential computing jargon, an "enclave" is the special memory zone
 protected by the CPU. For simplicity's sake, we can refer to private regions of
 memory defined by Intel® SGX application as "enclaves".
 
-### EVM (Ethereum Virtual Machine)
+**Key Points**:
 
-The Ethereum's execution environment. This is the virtual machine which executes
-the smart contracts on the blockchain.
+- **Protected Memory**: Secure area where sensitive code and data run
+- **Hardware Protection**: Protected by CPU security features
+- **Isolation**: Completely isolated from the rest of the system
+- **SGX Specific**: Term primarily used with Intel SGX technology
 
-### Explorer (iExec Explorer)
-
-Tracks and displays all transactions occuring on iExec’s platform. It provides
-detailed information on the latest deals, tasks, apps, and datasets deployed.
+**Analogy**: An enclave is like a secure room within a building that only
+authorized people can enter and where everything inside is protected.
 
 ### ERC-20
 
@@ -121,10 +126,22 @@ capable of having a different value from another token from the same Smart
 Contract. This uniqueness may come from a variety of sources, including age,
 rarity, or appearance.
 
-### iExec Academy
+### Ethereum
 
-iExec’s content aggregator where people can find content related to the project,
-including articles, demos, documentation, and tutorials.
+A decentralized, open-source blockchain with smart contract functionality.
+Ethereum proposes using blockchain technology to maintain a decentralized
+payment network and to store computer code that can be used to power
+decentralized applications.
+
+### EVM (Ethereum Virtual Machine)
+
+The Ethereum's execution environment. This is the virtual machine which executes
+the smart contracts on the blockchain.
+
+### Explorer (iExec Explorer)
+
+Tracks and displays all transactions occuring on iExec's platform. It provides
+detailed information on the latest deals, tasks, apps, and datasets deployed.
 
 ## I
 
@@ -134,6 +151,43 @@ A fundraising mechanism where a blockchain-based startup mints its own native
 crypto asset in exchange for other cryptocurrencies. The goal is to raise funds
 and, in turn, create a community of incentivized users who want the project to
 succeed so that the presale tokens gain in value.
+
+### iExec Academy
+
+iExec's content aggregator where people can find content related to the project,
+including articles, demos, documentation, and tutorials.
+
+### Intel SGX (Software Guard Extensions)
+
+Intel's first-generation TEE technology that protects individual applications or
+parts of applications. SGX creates small, secure memory areas called "enclaves"
+where sensitive code and data can run safely.
+
+**Characteristics**:
+
+- **Scope**: Application-level protection
+- **Memory**: Limited secure memory (like a small safe)
+- **Code Changes**: Requires significant modifications
+- **Best For**: Focused, lightweight applications
+
+**Analogy**: SGX is like installing a small, specialized safe inside your office
+for specific valuable items.
+
+### Intel TDX (Trust Domain Extensions)
+
+Intel's next-generation TEE technology that protects entire virtual machines.
+TDX provides larger secure memory spaces and requires minimal code changes
+compared to SGX.
+
+**Characteristics**:
+
+- **Scope**: Virtual machine-level protection
+- **Memory**: Large secure memory space (multi-GB+)
+- **Code Changes**: Minimal changes needed - "lift and shift" approach
+- **Best For**: Complex applications, legacy systems, AI workloads
+
+**Analogy**: TDX is like moving your entire office into a secure building where
+everything is protected.
 
 ## M
 
@@ -164,7 +218,7 @@ paying for the creation. Once the transaction is verified, a new NFT is minted.
 This process to add NFTs to a blockchain allows creators to sell their photos,
 videos, and digital 3D objects.
 
-See “ERC-721” for more information.
+See [ERC-721](#erc-721) for more information.
 
 ### MREnclave
 
@@ -183,17 +237,17 @@ nRLC is the smallest subdivision of the RLC token, 1 RLC equals to 10^9 nRLC.
 nRLC is the base unit for the PoCo, orders prices in a deal are calculated in
 nRLC.
 
-See “Deal and PoCo” for more information.
+See [Deal](#deal) and [PoCo](#poco-proof-of-contribution) for more information.
 
 ## O
 
 ### Oilers
 
 A term of affection used to designate the iExec community. Oilers are said to be
-holding “digital oil”. This term could also be in reference to the iExec
-whitepaper that states: “ iExec introduces a new paradigm in cloud computing: it
+holding "digital oil". This term could also be in reference to the iExec
+whitepaper that states: " iExec introduces a new paradigm in cloud computing: it
 will allow the trading of computing resources as commodities; in the same way we
-may observe with resources such as oil, gold or rice.”
+may observe with resources such as oil, gold or rice."
 
 ### Oracle
 
@@ -223,15 +277,6 @@ payments are always fair and timely.
 
 ## R
 
-### Requester
-
-A person who buys the execution of a task in the iExec marketplace.
-
-### RLC (Run on lots of computers)
-
-An Ethereum (ERC20) token launched during the iExec ICO in 2017. This utility
-token is used on the iExec marketplace to buy and sell computing assets.
-
 ### Remote attestation
 
 As explained by
@@ -242,6 +287,15 @@ software is running in an Intel® SGX-protected way, as well as getting other
 details about the application being attested. If the attestation is successful,
 a secure communication channel is established between the provider and the
 enclave, and secrets can safely land in the latter.
+
+### Requester
+
+A person who buys the execution of a task in the iExec marketplace.
+
+### RLC (Run on lots of computers)
+
+An Ethereum (ERC20) token launched during the iExec ICO in 2017. This utility
+token is used on the iExec marketplace to buy and sell computing assets.
 
 ### Roadmap
 
@@ -256,23 +310,34 @@ on ongoing projects and the future work. It is available here
 
 Organizes the work distribution for workers in a worker pool.
 
+### Scone Framework
+
+A high-level framework that simplifies the development of Intel SGX
+applications. Scone provides tools and libraries to make SGX development easier
+and more accessible.
+
+**Key Points**:
+
+- **SGX Simplification**: Makes SGX development easier and more accessible
+- **iExec Integration**: Used by iExec to simplify SGX application development
+- **High-Level Tools**: Provides libraries and tools for SGX development
+- **Production Ready**: Used in production iExec SGX applications
+
+**Analogy**: Scone is like having a toolkit that makes it easier to build secure
+applications, similar to how a construction toolkit makes building houses
+easier.
+
 ### SDK (Software Development Kit)
 
-A set of tools for interaction with smart contracts and the iExec’s marketplace.
+A set of tools for interaction with smart contracts and the iExec's marketplace.
 It is available as a CLI and JS library. Access SDK here:
 <https://github.com/iExecBlockchainComputing/iexec-sdk>
-
-### SGX (Secure Guard Extension by Intel)
-
-Is a confidential computing technology developed by Intel.
-
-See “Confidential Computing” for more information.
 
 ### Sidechain
 
 A controlled blockchain deployed over a data center and linked to Ethereum
-Mainnet with a bridge permitting to transfer assets between the two. iExec’s
-sidechain “Bellecour” is iExec’s mainnet bridged to ethereum mainnet.
+Mainnet with a bridge permitting to transfer assets between the two. iExec's
+sidechain "Bellecour" is iExec's mainnet bridged to ethereum mainnet.
 
 ### Smart Contracts
 
@@ -282,9 +347,9 @@ contracts into digital parallels. Smart contracts are very logical - following
 an if this then that structure. This means they behave exactly as programmed and
 cannot be changed.
 
-Nick Szabo used the term "smart contract" in 1994, when he wrote “an
-introduction to the concept” and, in 1996, “an exploration of what smart
-contracts could do”.
+Nick Szabo used the term "smart contract" in 1994, when he wrote "an
+introduction to the concept" and, in 1996, "an exploration of what smart
+contracts could do".
 
 ### SMS (Secret Management Service)
 
@@ -302,12 +367,12 @@ operation.
 
 ### Staking (of RLC)
 
-A mechanism in PoCo that involves a certain amount of Workers’ RLC being
-‘locked-up’ during the execution of a task. To prevent malicious workers, the
+A mechanism in PoCo that involves a certain amount of Workers' RLC being
+'locked-up' during the execution of a task. To prevent malicious workers, the
 locked RLC is staked as a security deposit. Workers who computed a false result
 will lose their stake.
 
-See “PoCo” for more information.
+See [PoCo](#poco-proof-of-contribution) for more information.
 
 ## T
 
@@ -320,12 +385,38 @@ A task within iExec is an instance where computing power is required.
 Used by programmers and developers to test and troubleshoot the aspects and
 features of a blockchain network to ensure it is ready for mainnet launch.
 
+### Trusted Domain
+
+A secure virtual machine created by Intel TDX technology. Trusted domains are
+isolated, protected environments where entire applications can run securely.
+
+**Key Points**:
+
+- **VM-Level Protection**: Protects entire virtual machines, not just parts
+- **Multiple Domains**: Can run multiple trusted domains on a single TDX machine
+- **Complete Isolation**: Each domain is completely isolated from others
+- **TDX Specific**: Term used specifically with Intel TDX technology
+
+**Analogy**: A trusted domain is like having multiple secure offices within one
+secure building, where each office is completely private and protected.
+
 ### Trusted Execution Environment (TEE)
 
 A hardware secure area used to guarantee the confidentiality, integrity, and
-ownership of code and data.
+ownership of code and data. Think of TEE as a **secure vault inside your
+computer** where sensitive operations happen - like having a private room that
+only authorized code can enter.
 
-See” Confidential Computing ” for more information
+**Key Benefits**:
+
+- 🔒 **Data Privacy**: Your data is encrypted and protected during processing
+- 🛡️ **Code Integrity**: Your code runs exactly as intended, without tampering
+- 🌐 **Trust in Untrusted Environments**: Run securely on remote computers you
+  don't control
+
+**Real-world analogy**: Imagine a bank vault inside a regular building. The
+building (your computer) can be accessed by many people, but the vault (TEE) has
+special security measures that keep its contents completely private and secure.
 
 ## W
 
@@ -334,7 +425,7 @@ See” Confidential Computing ” for more information
 Explain the purpose and technology behind a project. Producing a whitepaper is a
 key step for a crypto startup to help investors understand technical information
 about its concept; whitepapers usually include a roadmap for how the project
-plans to grow and succeed. iExec’s whitepaper is available
+plans to grow and succeed. iExec's whitepaper is available
 [here](https://www.iex.ec/whitepaper)
 
 ### Workers
@@ -369,4 +460,5 @@ The bridge helps maintain the parity between the main chain and the external
 chain. For example, one xRLC on the sidechain has the same value as 1 RLC on the
 mainchain.
 
-See “Sidechain, Bellecour Sidechain or Minting” for more information.
+See [Sidechain](#sidechain), [Bellecour Sidechain](#bellecour-sidechain) or
+[Minting](#minting) for more information.

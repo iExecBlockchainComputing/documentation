@@ -26,8 +26,8 @@ creating, testing, and deploying confidential iApps.
 
 ## 🧪 Advanced Features
 
-- **[Using TDX (Experimental)](/guides/build-iapp/using-tdx)** - Next-gen TEE
-  technology
+- **[Build Intel TDX App (Experimental)](/guides/build-iapp/advanced/create-your-first-tdx-app)** -
+  Build TDX applications with traditional deployment and iApp Generator
 
 ## ⚙️ Advanced iApp Building
 

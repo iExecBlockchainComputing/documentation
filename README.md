@@ -176,7 +176,6 @@ for input parameters:
 - Add link to remix for deploying whitelist
 - complete `use-iapp` section
 - Maybe split input and output in two diff sub section in build your iapp guide
-- SGX vs TDX need review
 - Explorer l'intégration de codeSpace
 - complete `Protocol`section
 - Add a Development workflow
@@ -193,3 +192,5 @@ for input parameters:
 - migrate pay-per-task page into a guide
 - check pages (introduction & getting-started) for use-iapp guide
 - Rework Advanced iApp building guides. (from "old" protocol doc)
+- Talk about encrypting results in use-iapp
+- Refactor "advanced" section in build-iapp
