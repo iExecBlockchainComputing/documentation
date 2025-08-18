@@ -23,9 +23,9 @@ iexec --help
 ## Create your identity on the blockchain
 
 On the blockchain, your identity is defined by your **wallet,** consisting of
-cryptographically encrypted **private key** and **public address.** What you
-own on the blockchain is associated with your address. The applications you
-deploy on iExec are associated with your wallet.
+cryptographically encrypted **private key** and **public address.** What you own
+on the blockchain is associated with your address. The applications you deploy
+on iExec are associated with your wallet.
 
 Let's set up your wallet.
 
