@@ -68,8 +68,8 @@ export function getSidebar() {
             link: '/get-started/overview/iapp',
           },
           {
-            text: 'Workerpools',
-            link: '/get-started/overview/workerpools',
+            text: 'Workerpool',
+            link: '/get-started/overview/workerpool',
           },
           {
             text: '🪙 RLC Token',
