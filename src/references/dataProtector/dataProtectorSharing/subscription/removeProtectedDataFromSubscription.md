@@ -5,7 +5,7 @@ description:
   data to current and future subscribers, removing it from subscription access.
 ---
 
-# removeProtectedDataFromSubscription
+# removeProtectedDataFromSubscription <ChainNotSupportedBadge />
 
 Method to remove a protected data from your subscription.
 
@@ -74,4 +74,10 @@ const { txHash } =
 import { type SuccessWithTransactionHash } from '@iexec/dataprotector';
 ```
 
-See [`SuccessWithTransactionHash`](../../types.md#successwithtransactionhash)
+See
+[`SuccessWithTransactionHash`](/references/dataProtector/types#successwithtransactionhash)
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

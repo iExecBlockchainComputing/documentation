@@ -7,9 +7,9 @@ description:
 
 # Use Cases Showcase
 
-Explore our demo applications showcasing iExec's privacy-preserving technologies
-in action. Each use case demonstrates real-world applications of confidential
-computing and decentralized data protection.
+Explore our demo applications showcasing iExec's confidential computing toolkit
+in action. Each use case shows real-world applications of privacy-preserving
+technologies.
 
 <div class="grid grid-cols-1 gap-8 my-8">
   <UseCaseCard

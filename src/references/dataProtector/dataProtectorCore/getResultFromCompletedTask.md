@@ -134,3 +134,11 @@ import { type GetResultFromCompletedTaskResponse } from '@iexec/dataprotector';
 `ArrayBuffer`
 
 The actual content of the protected file.
+
+```
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
+</script>
+```

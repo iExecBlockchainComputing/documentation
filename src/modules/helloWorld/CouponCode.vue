@@ -60,7 +60,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 import ReownButton from './ReownButton.vue';
-import { useWalletConnection } from '../../hooks/useWalletConnection.vue';
+import { useWalletConnection } from '@/hooks/useWalletConnection.vue';
 
 const { userAddress } = useWalletConnection();
 

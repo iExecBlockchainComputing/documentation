@@ -102,7 +102,7 @@ learning and prototyping.
 
 </CardGrid>
 
-## Next StepsAfter Exploring our Starters and Sandboxes
+## Next Steps After Exploring our Starters and Sandboxes
 
 1. **Choose Your Framework**: Start with our Next.js template or wait for
    React/Vue options

@@ -1,32 +1,28 @@
 ---
 title: iApp Generator
 description:
-  Build privacy-first applications that run in secure TEE environments. Your
-  complete toolkit for creating, testing, and deploying confidential iApps on
-  the iExec network.
+  iApp Generator CLI toolkit for building confidential computing applications.
+  Create privacy-preserving AI, data analysis, and Web3 apps that run in secure
+  TEE environments. Deploy in minutes
 ---
 
 # 🤖 iApp Generator
 
-**Build privacy-first applications that run in secure TEE environments.** iApp
-Generator is your complete toolkit for creating, testing, and deploying
-confidential iApps on the iExec network.
-
-Transform your ideas into production-ready privacy-preserving applications in
-minutes, not months.
+**Here's the tool, what it does, and how to use it.** iApp Generator is a CLI
+that builds applications running inside TEEs. You write code, we handle the
+confidential computing setup.
 
 ## What is iApp Generator?
 
-**iApp Generator** is a CLI tool that simplifies building **iExec Applications
-(iApps)** - applications that run inside **Trusted Execution Environments
-(TEE)** for maximum privacy and security.
+**iApp Generator** builds confidential applications. Your code runs in Intel
+SGX/TDX secure enclaves where data stays private during processing.
 
-### What you Can Build
+### What you get
 
-- **AI models** that process sensitive data privately
-- **Data analysis** tools that protect user information
-- **Custom algorithms** with confidential inputs and outputs
-- **Privacy-preserving services** for Web3 applications
+- **Project scaffolding** - Complete setup, ready to deploy
+- **Local testing** - Debug in simulation mode before going live
+- **Simple deployment** - One command deploys to TEE workers
+- **Data integration** - Works with encrypted datasets out of the box
 
 ### What iApp Generator Provides
 
@@ -65,32 +61,39 @@ Once you've built your first iApp, level up with these practical guides:
 
 Ready for production? Dive into specialized topics:
 
+<<<<<<< HEAD
 - **[Build Intel TDX App (Experimental)](/guides/build-iapp/advanced/create-your-first-tdx-app)** -
   Next-gen TEE with traditional deployment and iApp Generator technology
 - **[Complete Guides Overview](/guides/build-iapp/)** - All development guides
   in one place
+=======
+- **[Using TDX (Experimental)](/guides/build-iapp/using-tdx)** - Next-gen TEE
+  technology
+- **[Complete Guides Overview](/guides/build-iapp/build-&-deploy)** - All
+  development guides in one place
+>>>>>>> origin/main
 
 ## Why Choose iApp Generator?
 
-### 🔒 **Privacy by Design**
+### Privacy without infrastructure overhead
 
-Your applications run in hardware-secured enclaves where even the infrastructure
-provider can't access your data or code.
+Your code runs in Intel SGX/TDX enclaves. Even the worker running your app can't
+see what's happening inside.
 
-### ⚡ **Developer-Friendly**
+### You build, we handle the TEE complexity
 
-Focus on your application logic while iApp Generator handles the complex TEE
-setup, deployment, and execution infrastructure.
+Write normal application code. iApp Generator handles secure deployment, worker
+coordination, and result encryption.
 
-### 🌍 **Decentralized Infrastructure**
+### Runs everywhere TEEs exist
 
-Deploy on a global network of TEE-enabled workers without managing servers or
-cloud infrastructure.
+Deploy across Intel-enabled workers globally. No server management, no cloud
+provider lock-in.
 
-### 🔧 **Complete Toolkit**
+### Complete toolkit
 
-From local development to production deployment, everything you need is included
-in one CLI tool.
+Development, testing, deployment, and execution - everything included in one
+CLI.
 
 ## Ready to Build?
 
@@ -109,7 +112,8 @@ applications:
 
 ### Need Help?
 
-- **[Complete Guides](/guides/build-iapp/)** - All development guides
+- **[Complete Guides](/guides/build-iapp/build-&-deploy)** - All development
+  guides
 - **[iExec Discord](https://discord.com/invite/pbt9m98wnU)** - Community support
 - **[Protocol Documentation](https://protocol.docs.iex.ec)** - Technical deep
   dive

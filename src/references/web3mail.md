@@ -16,7 +16,7 @@ The Web3Mail tool offers a secure method to manage email-based communications
 via the blockchain. This mechanism helps protect the personal information of the
 email recipients through use of Ethereum addresses.
 
-The email address is stored as a `protectedData` entity using the
+iExec's protocol stores the email address as a `protectedData` entity using the
 [iExec Data Protector tool](/references/dataProtector). Through this mechanism,
 users have complete control over which applications may use their email address
 for sending communications. Sending a user a message, therefore, requires

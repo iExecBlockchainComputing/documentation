@@ -40,7 +40,7 @@ Here's the simplified process:
 2. **You sign the order** with your wallet
 3. **You publish the order** on the iExec marketplace
 4. **Users can discover** and execute your iApp according to your conditions
-5. **You automatically receive** payment in RLC for each execution
+5. **You automatically receive** payment in <TokenSymbol /> for each execution
 
 ```
 Deployed iApp + Published Signed App Order = Application accessible on iExec
@@ -231,12 +231,12 @@ Here's the detailed description of each parameter:
 **Common values:**
 
 - `"0"` - Free
-- `"1000000000"` - 1 RLC per execution
-- `"500000000"` - 0.5 RLC per execution
+- `"1000000000"` - 1 <TokenSymbol /> per execution
+- `"500000000"` - 0.5 <TokenSymbol /> per execution
 
 ::: tip
 
-1 RLC = 1,000,000,000 nRLC (10^9)
+1 <TokenSymbol /> = 1,000,000,000 nano <TokenSymbol /> (10^9)
 
 :::
 
@@ -301,3 +301,7 @@ Next steps:
   Complete CLI reference
 - **[Official Orders Documentation](https://protocol.docs.iex.ec/for-developers/advanced/manage-your-apporders)** -
   Protocol-level order management
+
+<script setup>
+import TokenSymbol from '@/components/TokenSymbol.vue'
+</script>

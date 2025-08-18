@@ -7,14 +7,13 @@ description:
 
 # What is iExec?
 
-iExec is a **decentralized computing platform** that enables developers to build
-and deploy privacy-preserving applications using confidential computing
-technology.
+iExec is a **decentralized confidential computing toolkit** that helps
+developers build privacy-preserving applications.
 
 ## 🎯 **Mission**
 
-iExec's mission is to democratize access to **confidential computing** by
-providing a decentralized infrastructure that combines:
+iExec democratizes **confidential computing** by providing a toolkit that
+combines:
 
 - **🔐 Privacy Protection** - Data remains encrypted during computation
 - **⚡ Scalable Computing** - Access to distributed computing resources
@@ -38,14 +37,14 @@ providing a decentralized infrastructure that combines:
 3. **⚙️ Worker Network**
    - Distributed computing providers
    - Execute iApps securely
-   - Earn RLC tokens for contributions
+   - Earn <TokenSymbol /> tokens for contributions
 
 ## 🚀 **Key Features**
 
 - **TEE (Trusted Execution Environment)** support
 - **Zero-knowledge computation**
 - **Decentralized marketplace** for computing resources
-- **RLC token** for payments and governance
+- **<TokenSymbol /> token** for payments and governance
 - **Cross-chain compatibility**
 
 ## 🔗 **Get Started**
@@ -55,3 +54,7 @@ Ready to explore iExec? Check out:
 - [What is Protected Data?](/get-started/overview/what-is-protected-data)
 - [What is an iApp?](/get-started/overview/what-is-iapp)
 - [Hello World Tutorial](/get-started/helloWorld)
+
+<script setup>
+import TokenSymbol from '@/components/TokenSymbol.vue'
+</script>

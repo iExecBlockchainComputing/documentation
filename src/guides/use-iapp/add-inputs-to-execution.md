@@ -333,6 +333,8 @@ const dbPassword = process.env.IEXEC_SECRET_2; // 'database-password'
 Now that you understand how to add inputs to iApp executions:
 
 - Learn about
-  [Using iApps with Protected Data](./use-iapp-with-protected-data.md)
-- Explore [Different Ways to Execute](./different-ways-to-execute.md) iApps
-- Check out our [How to Pay for Executions](./how-to-pay-executions.md) guide
+  [Using iApps with Protected Data](/guides/use-iapp/use-iapp-with-protected-data)
+- Explore
+  [Different Ways to Execute](/guides/use-iapp/different-ways-to-execute) iApps
+- Check out our
+  [How to Pay for Executions](/guides/use-iapp/how-to-pay-executions) guide

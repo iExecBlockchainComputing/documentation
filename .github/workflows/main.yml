@@ -2,9 +2,7 @@ name: main-ci
 
 on:
   workflow_dispatch:
-  push:
-    paths-ignore:
-      - 'README.md'
+  pull_request:
 
 jobs:
   build:

@@ -190,7 +190,7 @@ yourself!
 Set to `0` for free access, or specify a price to monetize your data
 automatically.
 
-**Example**: `pricePerAccess: 1_000_000_000` = 1 RLC per access
+**Example**: `pricePerAccess: 1_000_000_000` = 1 <TokenSymbol /> per access
 
 → **Want to learn more monetization capabilities?** See our detailed
 [Monetize Protected Data guide](/guides/manage-data/monetize-protected-data)
@@ -228,3 +228,9 @@ steps:
   [schemas and dataset types](/guides/manage-data/handle-schemas-dataset-types)
 - **Monetize data**: Explore
   [data monetization strategies](/guides/manage-data/monetize-protected-data)
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue'
+import TokenSymbol from '@/components/TokenSymbol.vue'
+</script>

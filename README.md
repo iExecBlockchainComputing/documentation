@@ -79,7 +79,7 @@ steps to contribute:
 
 Fork this repository and ensure you're working on the `main` branch:
 
-[![fork-button](./src/public/fork-button.png)](https://github.com/iExecBlockchainComputing/documentation/fork)
+[![fork-button](/src/public/fork-button.png)](https://github.com/iExecBlockchainComputing/documentation/fork)
 
 ### 2. Set Up Your Development Environment
 
@@ -168,18 +168,19 @@ for input parameters:
 ## TODO
 
 - Add an audit section for smart contracts
-- Add Arbitrum support
-- On arbitrum hide : DataProtector Sharing ??
 - Adapt hardcoded address to feat with new contracts deployed on arbitrum
 - Add link to the new explorer feature Asset_Types in the guide =>
   `handle-schemas-dataset-types`
 - Add link to remix for deploying whitelist
+<<<<<<< HEAD
 - complete `use-iapp` section
 - Maybe split input and output in two diff sub section in build your iapp guide
+=======
+- SGX vs TDX need review
+>>>>>>> origin/main
 - Explorer l'intégration de codeSpace
-- complete `Protocol`section
-- Add a Development workflow
-- Update context7 when doc will be deployed
+- Add a Development workflow section (1 - ProtectData, 2- ...)
+- Update context7 when doc will be deployed (Martin)
 - Check theGraph Images with design Team
 - Update the Dune Dashboard to the final version
 - Add new section in `iexec-explorer.md` file to talk about: available chain on
@@ -188,9 +189,17 @@ for input parameters:
 - Check how to pay guide to update with the launch on Arbitrum (RLC vs xRLC)
 - framework AI supporté TDX vs SGX
 - check glossary
-- migrate github SDK doc here
+- migrate github iexec SDK doc here
 - migrate pay-per-task page into a guide
 - check pages (introduction & getting-started) for use-iapp guide
+- explain TDX vs SGX
+- Give recap of Workerpool address fo chains
+- Talk about ENS on Bellecour(it's not supported on arbitrum)
 - Rework Advanced iApp building guides. (from "old" protocol doc)
+<<<<<<< HEAD
 - Talk about encrypting results in use-iapp
 - Refactor "advanced" section in build-iapp
+=======
+- Rework src\get-started\protocol\iexec-doracle.md (transfer to guide or
+  rewrite)
+>>>>>>> origin/main

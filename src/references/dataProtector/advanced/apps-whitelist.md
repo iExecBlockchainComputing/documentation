@@ -6,7 +6,7 @@ description:
   Environment (TEE) dApp and whitelist usage for secure data delivery.
 ---
 
-# Apps Whitelist
+# Apps Whitelist <ChainNotSupportedBadge />
 
 In order to consume a protected data, an iExec TEE dApp needs to be provided.
 
@@ -21,13 +21,13 @@ The story goes as follow:
 
 1. The collection owner adds a protected data to a collection. When doing so,
    they need to set an `addOnlyAppWhitelist` parameter (see
-   [here](../dataProtectorSharing/collection/addToCollection.md#addonlyappwhitelist)).
+   [here](/references/dataProtector/dataProtectorSharing/collection/addToCollection#addonlyappwhitelist)).
    This parameter is the address of a whitelist smart contract that contains
    applications allowed to consume the protected data.
 
 2. When a user wants to consume the protected data, they need to provide the
    address of the application they want to use to consume the data (See
-   [consumeProtectedData](../dataProtectorSharing/consume/consumeProtectedData.md#app-param)
+   [consumeProtectedData](/references/dataProtector/dataProtectorSharing/consume/consumeProtectedData#app-param)
    &nbsp;`app` parameter). This chosen application must be in the whitelist
    defined by the collection owner.
 
@@ -78,3 +78,7 @@ See it in
 
 See it in
 [https://blockscout-bellecour.iex.ec/](https://blockscout-bellecour.iex.ec/address/0x1cb7D4F3FFa203F211e57357D759321C6CE49921)
+
+<script setup>
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>
