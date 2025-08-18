@@ -241,16 +241,12 @@ export function getSidebar() {
             link: '/guides/use-iapp/getting-started',
           },
           {
-            text: 'Different Ways to Execute an iApp',
-            link: '/guides/use-iapp/different-ways-to-execute',
+            text: 'Run iApp',
+            link: '/guides/use-iapp/run-iapp',
           },
           {
-            text: 'Use iApp with Protected Data',
-            link: '/guides/use-iapp/use-iapp-with-protected-data',
-          },
-          {
-            text: 'Add Inputs to the Execution',
-            link: '/guides/use-iapp/add-inputs-to-execution',
+            text: 'Run iApp with Inputs',
+            link: '/guides/use-iapp/run-iapp-with-inputs',
           },
           {
             text: 'How to Pay the Executions',

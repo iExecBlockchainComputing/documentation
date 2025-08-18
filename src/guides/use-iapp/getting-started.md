@@ -72,11 +72,9 @@ section.
 
 For step-by-step instructions, check out these guides:
 
-- **[Different Ways to Execute](/guides/use-iapp/different-ways-to-execute)** -
-  iExec CLI, lib, and other execution methods
-- **[Use iApp with Protected Data](/guides/use-iapp/use-iapp-with-protected-data)** -
-  Working with sensitive data securely
-- **[Add Inputs to Execution](/guides/use-iapp/add-inputs-to-execution)** - How
-  to provide data and parameters to iApp
+- **[Run iApp](/guides/use-iapp/run-iapp)** - iExec CLI, lib, and other
+  execution methods
+- **[Run iApp with Inputs](/guides/use-iapp/run-iapp-with-inputs)** - How to
+  provide data and parameters to iApp
 - **[How to Pay for Executions](/guides/use-iapp/how-to-pay-executions)** -
   Understanding costs and payment options

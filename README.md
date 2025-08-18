@@ -252,3 +252,4 @@ for input parameters:
 - Talk about ENS on Bellecour(it's not supported on arbitrum)
 - Rework Advanced iApp building guides. (from "old" protocol doc)
 - Rework src\get-started\protocol\oracle.md (transfer to guide or rewrite)
+- Talk about iApp secret

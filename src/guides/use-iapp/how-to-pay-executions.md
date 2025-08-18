@@ -438,10 +438,8 @@ const executeWithPaymentRetry = async (params: any, maxRetries = 3) => {
 
 Now that you understand payment methods:
 
-- Learn about
-  [Adding Inputs to Execution](/guides/use-iapp/add-inputs-to-execution)
-- Explore
-  [Using iApp with Protected Data](/guides/use-iapp/use-iapp-with-protected-data)
+- Learn about [Run iApp with Inputs](/guides/use-iapp/run-iapp-with-inputs)
+- Explore [Getting Started with iApp](/guides/use-iapp/getting-started)
 - Review the pricing information above for detailed cost analysis
 
 <script setup>
