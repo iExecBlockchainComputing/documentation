@@ -1,13 +1,13 @@
 ---
 title: addAppToAddOnlyAppWhitelist
 description:
-  Method to add an app (iExec TEE dApp) into the AddOnlyAppWhitelist for secure
+  Method to add an app (iExec TEE iApp) into the AddOnlyAppWhitelist for secure
   data access control.
 ---
 
 # addAppToAddOnlyAppWhitelist <ChainNotSupportedBadge />
 
-Method to add an app (iExec TEE dApp) into the `AddOnlyAppWhitelist`.
+Method to add an app (iExec TEE iApp) into the `AddOnlyAppWhitelist`.
 
 ::: warning
 

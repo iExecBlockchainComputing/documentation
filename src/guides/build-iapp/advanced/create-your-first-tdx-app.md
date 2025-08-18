@@ -32,7 +32,7 @@ application need to be changed in order to run securely in a TEE. Only two files
 need to be changed compared to the usual SGX workflow: `chain.json` and
 `iexec.json`.
 
-iApps for the TDX framework follow the same format as non-TEE applications;
+iApp for the TDX framework follow the same format as non-TEE applications;
 follow the instructions on [Build your first application](./your-first-app) to
 create and Dockerize your iApp.
 
@@ -97,7 +97,7 @@ Deploy the app with the standard command:
 iexec app deploy
 ```
 
-To execute the app in TDX, ddd `--tag tee,tdx` to the `iexec app run` and select
+To execute the app in TDX, add `--tag tee,tdx` to the `iexec app run` and select
 the TDX workerpool (`tdx-labs.pools.iexec.eth`).
 
 ```bash

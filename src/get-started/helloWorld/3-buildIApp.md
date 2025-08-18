@@ -7,15 +7,15 @@ description:
 
 # 🛠️ Build and Deploy your First iApp
 
-> Reading time 🕒 10 mins
+> Reading time 🕒 10 min
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 border-none!">Time to build!</h2>
-  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="/references/iapp-generator" target="_blank" class="!text-gray-900 !font-bold underline hover:!text-black">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApps with just a few commands.</p>
+  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="/references/iapp-generator" target="_blank" class="!text-gray-900 !font-bold underline hover:!text-black">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApp with just a few commands.</p>
 </div>
 
 If you wanna explore and deep dive in the CLI. You can check the
-[iapp-cli](https://github.com/iExecBlockchainComputing/iapp/tree/main/cli)
+[iApp-CLI](https://github.com/iExecBlockchainComputing/iapp/tree/main/cli)
 github repository. Follow the instructions carefully for a smooth development
 experience.
 
@@ -49,7 +49,7 @@ Before getting started, make sure you have:
   <p class="m-0!">Don't worry! All secrets used in this tutorial stay on your machine and aren’t shared with anyone. You’ll only need them to run the <code>iapp run</code> command.</p>
 </div>
 
-## 🚀 Types of iApps you Can Build
+## 🚀 Types of iApp you Can Build
 
 iExec enables you to build various types of Privacy-preserving applications.
 Here are some popular use cases:
@@ -373,7 +373,7 @@ Once you have your token, you can deploy your iApp.
   <p class="m-0!">📝 Make sure to save your <span class="text-fuchsia-700 font-semibold">iApp address</span> after deployment - you'll need it later!</p>
   <p class="m-0!">You can find your iApp address in the <code>iexec-app.json</code> file in your project folder.</p>
   <br>
-  <p class="m-0!">⚠️  If you encounter issues during deployment, make sure Docker's BuildKit feature is enabled and supports AMD64 architecture:</p>
+  <p class="m-0!">⚠️  If you encounter issues during deployment, make sure the Docker BuildKit feature is enabled and supports AMD64 architecture:</p>
 
 ```sh
 docker buildx inspect --bootstrap | grep -i platforms
@@ -403,8 +403,8 @@ protocol documentation [here](https://protocol.docs.iex.ec/).
 
 ## 🎯 Key Takeaways
 
-- 🔒 **iApps:** Special applications that run in TEEs to process protected data
-- 🛠️ **iApp CLI:** Command-line tool for building, testing, and deploying iApps
+- 🔒 **iApp:** Special applications that run in TEEs to process protected data
+- 🛠️ **iApp CLI:** Command-line tool for building, testing, and deploying iApp
 - 🔐 **Protected Data:** Can be integrated and processed securely in your iApp
 - ⛓️ **Deployment:** Apps are deployed on iExec protocol to run in trusted
   environments

@@ -7,9 +7,9 @@ description:
 
 # 📥 Add Inputs to iApp Execution
 
-iApps can accept various types of inputs to customize their behavior and provide
+iApp can accept various types of inputs to customize their behavior and provide
 necessary data for processing. This guide covers all the different ways to add
-inputs to your iApp executions using various iExec tools and SDKs.
+inputs to your iApp executions using various iExec tools and SDK.
 
 ## Types of Inputs
 
@@ -310,7 +310,7 @@ const taskResult = await dataProtectorCore.getResultFromCompletedTask({
 
 You can combine different types of inputs for complex executions.
 
-## How Secrets Work in iApps
+## How Secrets Work in iApp
 
 Inside the iApp, secrets are available as environment variables:
 
@@ -333,8 +333,8 @@ const dbPassword = process.env.IEXEC_SECRET_2; // 'database-password'
 Now that you understand how to add inputs to iApp executions:
 
 - Learn about
-  [Using iApps with Protected Data](/guides/use-iapp/use-iapp-with-protected-data)
+  [Using iApp with Protected Data](/guides/use-iapp/use-iapp-with-protected-data)
 - Explore
-  [Different Ways to Execute](/guides/use-iapp/different-ways-to-execute) iApps
+  [Different Ways to Execute](/guides/use-iapp/different-ways-to-execute) iApp
 - Check out our
   [How to Pay for Executions](/guides/use-iapp/how-to-pay-executions) guide

@@ -1,0 +1,2 @@
+# Terms to reject - currently empty
+# Add terms here that should always be flagged as errors

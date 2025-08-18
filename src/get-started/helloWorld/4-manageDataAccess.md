@@ -14,7 +14,7 @@ const { protectedDataAddress } = useWalletConnection();
 
 # 🔑 Manage Data Access
 
-> Reading time 🕒 6 mins
+> Reading time 🕒 6 min
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 border-none!">Control Your Data</h2>
@@ -97,8 +97,8 @@ iapp run <my-iapp-address> --protectedData {{ protectedDataAddress }}
 ## What's Next: Data Monetization
 
 We've completed the first step of the journey! You can now integrate the
-**DataProtector SDK** into your dApp, **secure your data**, **grant access** to
-users and iApps, and **process it safely**.
+**DataProtector SDK** into your iApp, **secure your data**, **grant access** to
+users and iApp, and **process it safely**.
 
 But here's where it gets even more exciting... **monetization!**.
 

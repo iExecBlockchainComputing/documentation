@@ -24,7 +24,7 @@ combines:
 
 ### **Three Main Components:**
 
-1. **🤖 iApps (iExec Applications)**
+1. **🤖 iApp (iExec Applications)**
    - Confidential computing applications
    - Run in secure enclaves (TEEs)
    - Process encrypted data without exposing it
@@ -36,7 +36,7 @@ combines:
 
 3. **⚙️ Worker Network**
    - Distributed computing providers
-   - Execute iApps securely
+   - Execute iApp securely
    - Earn <TokenSymbol /> tokens for contributions
 
 ## 🚀 **Key Features**

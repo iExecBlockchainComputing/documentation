@@ -4,8 +4,65 @@
 
 - **Node.js**: Version 22 or higher
 - **npm**: Comes bundled with Node.js
+- **Vale** (optional): For documentation linting and quality checks
 
 ## ⚙️ Configuration
+
+### Documentation Quality with Vale
+
+We use [Vale](https://vale.sh/) to maintain high-quality documentation
+standards. Vale checks your writing for clarity, consistency, and adherence to
+our style guidelines, helping us maintain a coherent tone of voice, accurate
+terminology, and overall editorial quality across the project.
+
+#### Installing Vale
+
+**macOS:**
+
+```bash
+brew install Vale/tap/vale
+```
+
+**Linux (Snap):**
+
+```bash
+snap install vale
+```
+
+**Windows:**
+
+```bash
+choco install vale
+```
+
+#### Running Vale Locally
+
+```bash
+# Download and install external configuration sources
+vale sync
+
+# Check all documentation files
+vale src/
+
+# Check specific files
+vale src/get-started/helloWorld/1-overview.md
+
+# Get detailed output
+vale --output=line src/
+
+# Generate comprehensive report with statistics
+vale --output=line src/ > vale-report.txt 2>&1
+```
+
+#### Vale Rules
+
+Our Vale configuration uses the Google & Vale writing style guide, which helps
+ensure:
+
+- Clear and concise language
+- Consistent terminology
+- Professional tone
+- Accessibility best practices
 
 ### Environment Variables (Optional)
 
@@ -138,6 +195,8 @@ Fork this repository and ensure you're working on the `main` branch:
 >   you're satisfied with the preview
 > - All pull requests are reviewed by our team before being merged
 > - Feel free to ask questions in the pull request if you need clarification
+> - **Documentation Quality**: Vale will automatically check your documentation
+>   for style and clarity
 
 ### Some conventions
 
@@ -191,5 +250,4 @@ for input parameters:
 - Give recap of Workerpool address fo chains
 - Talk about ENS on Bellecour(it's not supported on arbitrum)
 - Rework Advanced iApp building guides. (from "old" protocol doc)
-- Rework src\get-started\protocol\iexec-doracle.md (transfer to guide or
-  rewrite)
+- Rework src\get-started\protocol\oracle.md (transfer to guide or rewrite)

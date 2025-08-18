@@ -1,7 +1,7 @@
 ---
 title: What is a Workerpool?
 description:
-  Learn about workerpools in iExec - the computing resources that execute iApps
+  Learn about workerpools in iExec - the computing resources that execute iApp
 ---
 
 # What is a Workerpool?

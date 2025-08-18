@@ -167,7 +167,7 @@ except Exception as e:
 
 ## What's Next?
 
-Continue improving your iApps:
+Continue improving your iApp:
 
 - **[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)** - Handle data
   in TEE

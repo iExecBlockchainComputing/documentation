@@ -1,13 +1,12 @@
 ---
-title: Getting Started with iApps
-description:
-  Learn the basics of finding and executing iApps on the iExec network
+title: Getting Started with iApp
+description: Learn the basics of finding and executing iApp on the iExec network
 ---
 
-# 🚀 Getting Started with iApps
+# 🚀 Getting Started with iApp
 
 Welcome to secure, privacy-preserving computation! This guide shows you how to
-use iApps on the iExec confidential computing network.
+use iApp on the iExec confidential computing network.
 
 ## Prerequisites
 
@@ -43,11 +42,11 @@ bun add -g iexec
 
 Ready to dive in? Let's get started with finding and executing your first iApp!
 
-## Overview: How to Use iApps
+## Overview: How to Use iApp
 
-Using iApps involves these main steps:
+Using iApp involves these main steps:
 
-1. **Find iApps** - Browse available applications in the
+1. **Find iApp** - Browse available applications in the
    [iExec Explorer](/get-started/tooling-and-explorers/iexec-explorer)
 2. **Prepare Data** - Set up any required protected data or inputs
 3. **Execute** - Run the iApp
@@ -55,7 +54,7 @@ Using iApps involves these main steps:
 
 ### Understanding Orders
 
-iApps are executed through a marketplace system where different actors publish
+iApp are executed through a marketplace system where different actors publish
 orders:
 
 - **App orders** - Published by developers with pricing and availability
@@ -75,18 +74,18 @@ section.
 For step-by-step instructions, check out these guides:
 
 - **[Different Ways to Execute](/guides/use-iapp/different-ways-to-execute)** -
-  iExec cli, lib, and other execution methods
-- **[Use iApps with Protected Data](/guides/use-iapp/use-iapp-with-protected-data)** -
+  iExec CLI, lib, and other execution methods
+- **[Use iApp with Protected Data](/guides/use-iapp/use-iapp-with-protected-data)** -
   Working with sensitive data securely
 - **[Add Inputs to Execution](/guides/use-iapp/add-inputs-to-execution)** - How
-  to provide data and parameters to iApps
+  to provide data and parameters to iApp
 - **[How to Pay for Executions](/guides/use-iapp/how-to-pay-executions)** -
   Understanding costs and payment options
 
 ## Quick Start
 
 Ready to jump in? Follow the execution guides for detailed instructions on how
-to use iApps.
+to use iApp.
 
 <script setup>
 import ImageViewer from '@/components/ImageViewer.vue';

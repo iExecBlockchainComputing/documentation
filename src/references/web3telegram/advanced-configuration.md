@@ -2,7 +2,7 @@
 title: Advanced Configuration
 description:
   Explore the advanced configuration options for integrating Web3Telegram. Learn
-  how to customize the dApp address, whitelist, subgraph, IPFS node, and more
+  how to customize the iApp address, whitelist, subgraph, IPFS node, and more
   for secure Telegram communication on the iExec blockchain.
 ---
 
@@ -21,12 +21,12 @@ import { type Web3TelegramConfigOptions } from '@iexec/web3telegram';
 ### dappAddressOrENS
 
 The Ethereum contract address or ENS (Ethereum Name Service) for the
-web3telegram dApp.
+web3telegram iApp.
 
 If not provided, the default ENS `web3telegram.apps.iexec.eth` pointing to the
-latest version of the web3telegram dApp provided by iExec will be used.
+latest version of the web3telegram iApp provided by iExec will be used.
 
-You can find the corresponding dApp address with Bellecour explorer:
+You can find the corresponding iApp address with Bellecour explorer:
 [https://explorer.iex.ec/bellecour/search/web3telegram.apps.iexec.eth](https://explorer.iex.ec/bellecour/search/web3telegram.apps.iexec.eth).
 
 ```ts twoslash
@@ -41,9 +41,9 @@ const web3telegram = new IExecWeb3telegram(web3Provider, {
 
 ### dappWhitelistAddress
 
-The Ethereum contract address for the web3telegram dApps whitelist. By granting
+The Ethereum contract address for the web3telegram iApp whitelist. By granting
 access to a whitelist, Chat Id owners ensure their Chat Id is still available to
-consumers even after a new version of web3telegram dApp gets released.
+consumers even after a new version of web3telegram iApp gets released.
 
 If not provided, the default whitelist smart contract address provided by iExec
 will be used.

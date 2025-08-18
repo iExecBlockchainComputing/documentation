@@ -354,7 +354,7 @@ You can pass input files to the app using `--input-files <list of URL>` option.
 With
 `--input-files https://example.com/file-A.txt,https://example.com/file-B.zip`
 the iExec worker will download the files before running the app in `IEXEC_IN`,
-and let the app access them throug variables:
+and let the app access them through variables:
 
 - `file-A.txt` as`IEXEC_INPUT_FILE_NAME_1`
 - `file-B.zip` as`IEXEC_INPUT_FILE_NAME_2`
