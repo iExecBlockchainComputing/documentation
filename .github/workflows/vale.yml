@@ -24,4 +24,4 @@ jobs:
           reporter: github-pr-check
           fail_on_error: false
           filter_mode: added
-          vale_flags: "--minAlertLevel=suggestion"
+          vale_flags: '--minAlertLevel=suggestion'
