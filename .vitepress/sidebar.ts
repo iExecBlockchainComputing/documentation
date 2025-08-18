@@ -114,6 +114,10 @@ export function getSidebar() {
             link: '/get-started/protocol/pay-per-task',
           },
           {
+            text: 'iExec DOracle',
+            link: '/get-started/protocol/iexec-doracle',
+          },
+          {
             text: '⚙️ Workers & Workerpools',
             collapsed: true,
             items: [
