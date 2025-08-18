@@ -73,19 +73,6 @@ const result = await dataProtectorCore.processProtectedData({
 });
 ```
 
-### Using CLI with RLC
-
-```bash
-# Execute with RLC payment
-iexec app run 0x456def... --protectedData 0xa0c15e...
-
-# Check your balance
-iexec account show
-
-# Deposit RLC
-iexec account deposit 100
-```
-
 ## Method 2: Paying with Vouchers <ChainNotSupportedBadge />
 
 Vouchers are pre-funded payment instruments that simplify the payment process
@@ -149,16 +136,6 @@ Make sure the voucher's owner has authorized you to use it. This parameter must
 be used in combination with `useVoucher: true`.
 
 :::
-
-#### CLI with Vouchers
-
-```bash
-# Use your own voucher
-iexec app run 0x456def... --protectedData 0xa0c15e... --useVoucher
-
-# Use someone else's voucher
-iexec app run 0x456def... --protectedData 0xa0c15e... --useVoucher --voucherOwner 0x5714eB...
-```
 
 ## Understanding Pricing
 
@@ -261,35 +238,6 @@ const result = await dataProtectorCore.processProtectedData({
   app: '0x456def...',
   useVoucher: true, // Simplify payment process
 });
-```
-
-### 4. Batch Operations
-
-Group multiple executions to optimize costs:
-
-```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-// Execute multiple tasks efficiently
-const tasks = [
-  { protectedData: '0x123abc...', app: '0x456def...' },
-  { protectedData: '0x124abc...', app: '0x456def...' },
-];
-
-const results = await Promise.all(
-  tasks.map((task) =>
-    dataProtectorCore.processProtectedData({
-      ...task,
-      dataMaxPrice: 5,
-      appMaxPrice: 3,
-      workerpoolMaxPrice: 2,
-      useVoucher: true,
-    })
-  )
-);
 ```
 
 ## Payment Troubleshooting
