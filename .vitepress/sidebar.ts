@@ -64,8 +64,8 @@ export function getSidebar() {
             link: '/get-started/overview/protected-data',
           },
           {
-            text: 'iApps',
-            link: '/get-started/overview/iapps',
+            text: 'iApp',
+            link: '/get-started/overview/iapp',
           },
           {
             text: 'Workerpools',

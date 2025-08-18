@@ -1,17 +1,17 @@
 ---
 title: Workerpools
 description:
-  Learn about workerpools in iExec - the computing resources that execute iApps
+  Learn about workerpools in iExec - the computing resources that execute iApp
 ---
 
 # Workerpools
 
 A **Workerpool** is a group of computing machines (workers) managed by a
-**Workerpool Manager** that provides computational resources to execute iApps in
+**Workerpool Manager** that provides computational resources to execute iApp in
 secure environments on the iExec network.
 
 <div class="bg-gradient-to-r from-blue-400/10 to-blue-400/5 rounded-[6px] p-6 border-l-4 border-blue-700 mb-6">
-  <p class="m-0!">Think of workerpools as <span class="text-blue-700 font-semibold">computing clusters</span> where your iApps run. Each workerpool consists of multiple workers (machines) coordinated by a manager who ensures tasks are executed efficiently and securely.</p>
+  <p class="m-0!">Think of workerpools as <span class="text-blue-700 font-semibold">computing clusters</span> where your iApp run. Each workerpool consists of multiple workers (machines) coordinated by a manager who ensures tasks are executed efficiently and securely.</p>
 </div>
 
 ## Key Concepts
@@ -58,7 +58,7 @@ secure environments on the iExec network.
     <div class="flex items-center gap-3">
       <span>•</span>
       <div>
-        <strong>Task Execution:</strong> Run iApps and process protected data securely
+        <strong>Task Execution:</strong> Run iApp and process protected data securely
       </div>
     </div>
     <div class="flex items-center gap-3">
@@ -137,7 +137,7 @@ secure environments on the iExec network.
 ## Getting Started
 
 <div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-  <p class="m-0!">Want to <span class="text-green-700 font-semibold">use workerpools</span>? Start building iApps and the protocol will handle workerpool selection automatically. Want to <span class="text-green-700 font-semibold">operate a workerpool</span>? Check our deployment guides.</p>
+  <p class="m-0!">Want to <span class="text-green-700 font-semibold">use workerpools</span>? Start building iApp and the protocol will handle workerpool selection automatically. Want to <span class="text-green-700 font-semibold">operate a workerpool</span>? Check our deployment guides.</p>
 </div>
 
 ## Next Steps

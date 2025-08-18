@@ -6,7 +6,7 @@ description:
   AI, data analysis, and Web3 apps.
 ---
 
-# iApps
+# iApp
 
 An iExec Application (iApp) brings Turnkey Privacy to your regular application
 code. Your Python scripts, AI models, or data processors can securely process

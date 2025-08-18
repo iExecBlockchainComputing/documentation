@@ -17,7 +17,7 @@ developers build privacy-preserving applications.
 Your sensitive data gets encrypted and stored online. Only you control who can
 access it.
 
-→ **Devtool**: [DataProtector](/references/dataProtector) handles this for you
+→ **DevTool**: [DataProtector](/references/dataProtector) handles this for you
 
 ### Step 2: Secure Computing (Workers)
 
@@ -25,13 +25,13 @@ Code runs inside **secure enclaves** (TEEs) on iExec workers. The worker can
 access your data to process it, but only within the privacy-safe TEE
 environment - your data never leaves the secure bubble.
 
-### Step 3: Run iApps
+### Step 3: Run iApp
 
 You submit a **Task** = "Run this iApp on this protected data". The protocol
 finds available workers and executes everything confidentially.
 
-→ **Devtool**: [iApp Generator](/references/iapp-generator) helps you create and
-deploy iApps
+→ **DevTool**: [iApp Generator](/references/iapp-generator) helps you create and
+deploy iApp
 
 ### Step 4: Get Results
 
@@ -49,7 +49,7 @@ Protected Data + iApp + Worker = Task → Encrypted Result
 Your data, encrypted. You set the rules: "Only these apps can use it, only for
 these purposes."
 
-### **iApps**
+### **iApp**
 
 Your code, packaged to run on workers. Can be AI models, data processing
 scripts, any computation.
@@ -90,7 +90,7 @@ Now that you get the protocol, pick your devtools:
   under the hood)
 - **Protect Data**: Try [DataProtector](/references/dataProtector) to encrypt
   your first dataset
-- **Build iApps**: Create confidential compute with
+- **Build iApp**: Create confidential compute with
   [iApp Generator](/references/iapp-generator)
 - **Hands-On**: Follow our [Hello World](/get-started/helloWorld) to see all
   devtools working together
