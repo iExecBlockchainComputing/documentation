@@ -41,7 +41,7 @@ dOracle.
 ## The iExec solution: the Decentralized Oracle \(dOracle\)
 
 For two years iExec has been working on the design of the
-[Proof of Contribution protocol](../key-concepts/proof-of-contribution.md),
+[Proof of Contribution protocol](/get-started/protocol/proof-of-contribution),
 which provides a flexible and highly robust solution to the problem of off-chain
 computation. At its core it is a simple Schelling game between off-chain
 computation providers \(Workers\): a given number of Workers are randomly chosen
