@@ -10,7 +10,10 @@
 
 ### Documentation Quality with Vale
 
-We use [Vale](https://vale.sh/) to maintain high-quality documentation standards. Vale checks your writing for clarity, consistency, and adherence to our style guidelines, helping us maintain a coherent tone of voice, accurate terminology, and overall editorial quality across the project.
+We use [Vale](https://vale.sh/) to maintain high-quality documentation
+standards. Vale checks your writing for clarity, consistency, and adherence to
+our style guidelines, helping us maintain a coherent tone of voice, accurate
+terminology, and overall editorial quality across the project.
 
 #### Installing Vale
 
@@ -50,7 +53,8 @@ vale --output=line src/
 
 #### Vale Rules
 
-Our Vale configuration uses the Google & Vale writing style guide, which helps ensure:
+Our Vale configuration uses the Google & Vale writing style guide, which helps
+ensure:
 
 - Clear and concise language
 - Consistent terminology
@@ -188,7 +192,8 @@ Fork this repository and ensure you're working on the `main` branch:
 >   you're satisfied with the preview
 > - All pull requests are reviewed by our team before being merged
 > - Feel free to ask questions in the pull request if you need clarification
-> - **Documentation Quality**: Vale will automatically check your documentation for style and clarity
+> - **Documentation Quality**: Vale will automatically check your documentation
+>   for style and clarity
 
 ### Some conventions
 
