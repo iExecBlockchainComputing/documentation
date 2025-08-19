@@ -613,14 +613,6 @@ report = generate_report(business_data, report_type)
 save_report(report)
 ```
 
-## Output Retrieval
-
-Once your iApp completes execution, users can retrieve and decrypt the results:
-
-→ **Learn how users get results**: Check our
-[How to Get and Decrypt Results](/guides/build-iapp/inputs-and-outputs) guide
-for the complete user workflow.
-
 ## What's Next?
 
 **You now understand all input types and output requirements!**
