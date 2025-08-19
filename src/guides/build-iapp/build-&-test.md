@@ -1,7 +1,8 @@
 ---
 title: Build and Test an iApp
 description:
-  Learn how to build, test, and package your iExec application using the iApp Generator CLI tool
+  Learn how to build, test, and package your iExec application using the iApp
+  Generator CLI tool
 ---
 
 # Build and Test an iApp

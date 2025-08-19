@@ -1,12 +1,14 @@
 ---
 title: Deploy and Run an iApp
 description:
-  Deploy your iApp to supported networks and learn how to execute it using the iApp Generator CLI
+  Deploy your iApp to supported networks and learn how to execute it using the
+  iApp Generator CLI
 ---
 
 # Deploy and Run an iApp
 
-It's time to run your iApp! After building and testing, you'll need to deploy it to a supported network and then execute it.
+It's time to run your iApp! After building and testing, you'll need to deploy it
+to a supported network and then execute it.
 
 ## Deploy your iApp
 
@@ -40,7 +42,11 @@ specify your app version, and push both standard and TEE-compatible images:
   />
 </template>
 
-Now that your iApp has been deployed on the iExec protocol, you can navigate to the `cache` folder to see your deployments saved. A file named `deployments.json` in the folder corresponding to your target network will be created containing each deployment made on this network. These files will help you easily track each deployment per network.
+Now that your iApp has been deployed on the iExec protocol, you can navigate to
+the `cache` folder to see your deployments saved. A file named
+`deployments.json` in the folder corresponding to your target network will be
+created containing each deployment made on this network. These files will help
+you easily track each deployment per network.
 
 Here is an example:
 
@@ -96,7 +102,12 @@ for developers who have built their own iApp.
   />
 </template>
 
-Now that you have run your iApp on the iExec protocol, you can navigate to the `cache` folder to see your runs saved. A file named `runs.json` in the folder corresponding to your target network will be created containing each run made on this network. These files will help you easily track each run per network. Use the [iExec Explorer](/guides/tooling-and-explorers/iexec-explorer) to retrieve more data about your tasks.
+Now that you have run your iApp on the iExec protocol, you can navigate to the
+`cache` folder to see your runs saved. A file named `runs.json` in the folder
+corresponding to your target network will be created containing each run made on
+this network. These files will help you easily track each run per network. Use
+the [iExec Explorer](/guides/tooling-and-explorers/iexec-explorer) to retrieve
+more data about your tasks.
 
 Here is an example:
 
@@ -116,7 +127,8 @@ Here is an example:
 ## Next Steps
 
 - Learn how to [manage access to your iApp](/guides/build-iapp/manage-access)
-- Discover [debugging techniques](/guides/build-iapp/debugging) for troubleshooting
+- Discover [debugging techniques](/guides/build-iapp/debugging) for
+  troubleshooting
 
 <script setup>
 import CLIDemo from '@/components/CLIDemo.vue';
