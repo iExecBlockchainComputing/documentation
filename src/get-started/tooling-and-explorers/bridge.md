@@ -118,17 +118,15 @@ requiring intermediate chains or wrapped tokens.
   link-url="https://halborn.com/audits"
 />
 
-### Code Audits
-
 The RLC multichain bridge implementation has been thoroughly audited by
-**Halborn**, a leading blockchain security firm. The audit report is accessible
-at [halborn.com/audits](https://halborn.com/audits).
+[**Halborn**](https://www.halborn.com/), a leading blockchain security firm. The
+audit report is accessible at [halborn.com/audits](https://halborn.com/audits).
 
 ### Open Source
 
 The complete source code for the RLC multichain bridge system is publicly
 available and open source on GitHub:
-[github.com/iExecBlockchainComputing/rlc-multichain](https://github.com/iExecBlockchainComputing/rlc-multichain)
+[RLC Bridge Repository](https://github.com/iExecBlockchainComputing/rlc-multichain)
 
 ### Security Features
 
