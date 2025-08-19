@@ -7,7 +7,12 @@ description:
 
 # 📥 Run iApp without a ProtectedData
 
-When running an iApp, you can use multiple types of inputs even without ProtectedData. Non-persistent inputs come directly from you (the requester) and can change between each execution, making them perfect for customizing the iApp's behavior for each specific run. These inputs include Arguments, Input Files, and Secrets, which allow you to provide additional data, parameters, and configuration to enable processing and customize functionality.
+When running an iApp, you can use multiple types of inputs even without
+ProtectedData. Non-persistent inputs come directly from you (the requester) and
+can change between each execution, making them perfect for customizing the
+iApp's behavior for each specific run. These inputs include Arguments, Input
+Files, and Secrets, which allow you to provide additional data, parameters, and
+configuration to enable processing and customize functionality.
 
 ## Adding Command-Line Arguments
 

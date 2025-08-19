@@ -7,7 +7,12 @@ description:
 
 # 📥 Run iApp with a ProtectedData
 
-When running an iApp, you can use multiple types of inputs. While ProtectedData is not mandatory to run an iApp, it's a powerful input type that allows you to process encrypted data from another provider. You can also use non-persistent inputs that come directly from you (the requester) and can change between each execution: Arguments, Input Files, and Secrets. These non-persistent inputs are perfect for customizing the iApp's behavior for each specific run.
+When running an iApp, you can use multiple types of inputs. While ProtectedData
+is not mandatory to run an iApp, it's a powerful input type that allows you to
+process encrypted data from another provider. You can also use non-persistent
+inputs that come directly from you (the requester) and can change between each
+execution: Arguments, Input Files, and Secrets. These non-persistent inputs are
+perfect for customizing the iApp's behavior for each specific run.
 
 ## Adding Protected Data
 
