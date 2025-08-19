@@ -17,6 +17,12 @@ confidential computation requires RLC. Every piece of protected data consumed
 requires RLC. Every app execution requires RLC. The more builders use our tools,
 the more utility RLC gains in real applications.
 
+::: tip Info
+
+On the iExec sidechain (Bellecour), the RLC token symbol becomes **xRLC**. xRLC is the native token of the Bellecour chain and is used for all transactions and payments on this network.
+
+:::
+
 ## 🎯 Why RLC Matters
 
 **Stack adoption = token usage.** When developers build with iExec tools, RLC

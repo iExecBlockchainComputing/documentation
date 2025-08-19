@@ -8,7 +8,7 @@ export function getSidebar() {
         items: [
           { text: '💡 Welcome', link: '/get-started/welcome' },
           {
-            text: '🛠️ Toolkit',
+            text: 'Toolkit',
             link: '/get-started/toolkit',
           },
           {
@@ -39,15 +39,15 @@ export function getSidebar() {
             ],
           },
           {
-            text: '🚀 Quick Start',
+            text: 'Quick Start',
             link: '/get-started/quick-start',
           },
           {
-            text: '📋 Use Cases',
+            text: 'Use Cases',
             link: '/get-started/use-cases',
           },
           {
-            text: '🤖 Develop with AI',
+            text: 'Develop with AI',
             link: '/get-started/develop-with-ai',
           },
         ],
@@ -72,7 +72,7 @@ export function getSidebar() {
             link: '/get-started/overview/workerpool',
           },
           {
-            text: '🪙 RLC Token',
+            text: 'RLC Token',
             link: '/get-started/overview/rlc',
           },
         ],
@@ -233,11 +233,11 @@ export function getSidebar() {
         text: 'USE AN iAPP',
         items: [
           {
-            text: '📝 Introduction',
+            text: 'Introduction',
             link: '/guides/use-iapp/introduction',
           },
           {
-            text: '🚀 Getting Started',
+            text: 'Getting Started',
             link: '/guides/use-iapp/getting-started',
           },
           {
@@ -576,7 +576,7 @@ export function getSidebar() {
         ],
       },
       {
-        text: '🔧 iExec SDK',
+        text: 'iExec SDK',
         link: '/references/sdk',
       },
       {
