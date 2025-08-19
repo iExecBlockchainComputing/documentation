@@ -47,6 +47,33 @@ networks:
   />
 </CardGrid>
 
+## ⚡ Stargate Bridge
+
+The **Stargate Bridge** powered by LayerZero enables cross-chain transfers of
+RLC tokens between Ethereum and Arbitrum mainnet in both directions.
+
+### Ethereum <> Arbitrum (RLC <> RLC)
+
+1. **Visit Stargate**: Go to [Stargate UI](https://stargate.finance/bridge)
+2. **Connect Wallet**: Connect your wallet to the Stargate interface
+3. **Select Networks**: Choose your source network (Ethereum or Arbitrum) and
+   destination network
+4. **Select Token**: Choose RLC as the token to bridge
+5. **Enter Amount**: Specify the amount of RLC to transfer
+6. **Confirm Transaction**: Approve the bridge transaction and wait for
+   confirmation
+
+<ImageViewer
+  :image-url-dark="stargateBridgeImage"
+  image-alt="Stargate Bridge Interface"
+  link-url="https://stargate.finance/bridge"
+/>
+
+<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 my-6">
+  <h4 class="!mt-0 !mb-2">🔄 Bidirectional Bridge</h4>
+  <p class="!mb-0">The Stargate bridge interface automatically detects your wallet's network and available RLC tokens. The process is similar in both directions - simply select the appropriate source and destination networks to transfer RLC between Ethereum and Arbitrum seamlessly.</p>
+</div>
+
 ## 🔄 Bellecour Bridge
 
 The **Bellecour Bridge** enables seamless transfer of RLC tokens between
@@ -76,33 +103,6 @@ Bellecour, RLC becomes xRLC, the native asset of the Bellecour network.
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 my-6">
   <h4 class="!mt-0 !mb-2">🔄 Bidirectional Bridge</h4>
   <p class="!mb-0">The bridge interface automatically detects your wallet's network and available tokens. The process is similar in both directions - simply switch to the appropriate network (source chain) in your wallet and refresh the page to update the bridge direction, then the bridge will handle the conversion between RLC and xRLC seamlessly.</p>
-</div>
-
-## ⚡ Stargate Bridge
-
-The **Stargate Bridge** powered by LayerZero enables cross-chain transfers of
-RLC tokens between Ethereum and Arbitrum mainnet in both directions.
-
-### Ethereum <> Arbitrum (RLC <> RLC)
-
-1. **Visit Stargate**: Go to [Stargate UI](https://stargate.finance/bridge)
-2. **Connect Wallet**: Connect your wallet to the Stargate interface
-3. **Select Networks**: Choose your source network (Ethereum or Arbitrum) and
-   destination network
-4. **Select Token**: Choose RLC as the token to bridge
-5. **Enter Amount**: Specify the amount of RLC to transfer
-6. **Confirm Transaction**: Approve the bridge transaction and wait for
-   confirmation
-
-<ImageViewer
-  :image-url-dark="stargateBridgeImage"
-  image-alt="Stargate Bridge Interface"
-  link-url="https://stargate.finance/bridge"
-/>
-
-<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 my-6">
-  <h4 class="!mt-0 !mb-2">🔄 Bidirectional Bridge</h4>
-  <p class="!mb-0">The Stargate bridge interface automatically detects your wallet's network and available RLC tokens. The process is similar in both directions - simply select the appropriate source and destination networks to transfer RLC between Ethereum and Arbitrum seamlessly.</p>
 </div>
 
 ## 🔒 Security & Audits
