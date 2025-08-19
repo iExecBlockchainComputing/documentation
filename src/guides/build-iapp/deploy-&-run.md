@@ -7,6 +7,10 @@ description:
 
 # Deploy and Run an iApp
 
+It's time to run your iApp! After building and testing, you'll need to deploy it to a supported network and then execute it.
+
+## Deploy your iApp
+
 After your tests pass and the package is built, you can deploy your iApp to a
 supported network. During deployment, you'll enter your DockerHub credentials,
 specify your app version, and push both standard and TEE-compatible images:
@@ -37,18 +41,13 @@ specify your app version, and push both standard and TEE-compatible images:
   />
 </template>
 
-# ⚡ Run an iApp
+## Run your iApp
 
 There are multiple ways to execute an iApp on the iExec network. An iApp can be:
 
 - **Self-sufficient** - Basic execution without additional inputs
 - **Data-dependent** - Requires protected data, secrets, input files, or
   command-line arguments
-
-This guide covers the basic execution methods. For advanced features like
-protected data, arguments, and input files, see the dedicated guides.
-
-## Using the iApp Generator Toolkit
 
 The iApp Generator CLI provides a streamlined way to execute iApp, especially
 for developers who have built their own iApp.

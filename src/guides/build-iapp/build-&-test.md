@@ -205,38 +205,6 @@ The CLI will build a Docker image, run your app, and show you the results:
   :autoRestart="true"
 />
 
-## Deployment
-
-After your tests pass and the package is built, you can deploy your iApp to a
-supported network. During deployment, you'll enter your DockerHub credentials,
-specify your app version, and push both standard and TEE-compatible images:
-
-<template v-if="selectedChain === 42161">
-  <CLIDemo
-    initialCommand="iapp deploy --chain arbitrum-mainnet"
-    asciiText="Deploy"
-    :steps="arbitrumSteps"
-    :completionStep="15"
-    :completionMessage="'Deployment of your iApp completed successfully:'"
-    :completionItems="arbitrumCompletionItems"
-    :successMessage="'Run iapp run 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923 to execute your iApp on an iExec TEE worker'"
-    :autoRestart="true"
-  />
-</template>
-
-<template v-else>
-  <CLIDemo
-    initialCommand="iapp deploy"
-    asciiText="Deploy"
-    :steps="bellecourSteps"
-    :completionStep="14"
-    :completionMessage="'Deployment of your iApp completed successfully:'"
-    :completionItems="bellecourCompletionItems"
-    :successMessage="'Run iapp run 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923 to execute your iApp on an iExec TEE worker'"
-    :autoRestart="true"
-  />
-</template>
-
 ## Next Steps
 
 - When everything is ready
