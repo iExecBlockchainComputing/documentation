@@ -40,6 +40,22 @@ specify your app version, and push both standard and TEE-compatible images:
   />
 </template>
 
+Now that your iApp has been deployed on the iExec protocol, you can navigate to the `cache` folder to see your deployments saved. A file named `deployments.json` in the folder corresponding to your target network will be created containing each deployment made on this network. These files will help you easily track each deployment per network.
+
+Here is an example:
+
+```json
+[
+  {
+    "sconifiedImage": "robiniexec/iapp:0.0.1-tee-scone-5.9.1-v16-debug-5aea8b4aa71d",
+    "appContractAddress": "0x9665136c599ec361C8eE627eC4F35A23fBa94897",
+    "owner": "0xbabE8270aC9857Af3aaC06877888F1939FbeC578",
+    "date": "2025-08-12T13:16:18.252Z"
+  },
+  ...
+]
+```
+
 ## Run your iApp
 
 There are multiple ways to execute an iApp on the iExec network. An iApp can be:
@@ -80,11 +96,27 @@ for developers who have built their own iApp.
   />
 </template>
 
+Now that you have run your iApp on the iExec protocol, you can navigate to the `cache` folder to see your runs saved. A file named `runs.json` in the folder corresponding to your target network will be created containing each run made on this network. These files will help you easily track each run per network. Use the [iExec Explorer](/guides/tooling-and-explorers/iexec-explorer) to retrieve more data about your tasks.
+
+Here is an example:
+
+```json
+[
+  {
+    "iAppAddress": "0x9665136c599ec361C8eE627eC4F35A23fBa94897",
+    "dealid": "0x26d758de1be51697c33fa606cd0c5243082a6e675a4463b106d71fde2893280f",
+    "taskid": "0x1a58dd6018b30b022eb35be53ad9374eb630925458d14643a1dfd9c686b964d8",
+    "txHash": "0x6f14eac6933c609fb6d3e6b2bbd18c373c6dc99c7d7fd22036d5a20f847c5e42",
+    "date": "2025-08-18T18:30:03.711Z"
+  },
+  ...
+]
+```
+
 ## Next Steps
 
-- Discover how to
-  [run an iApp with inputs](/guides/use-iapp/run-iapp-with-inputs)
-- Understand [how to pay for executions](/guides/use-iapp/how-to-pay-executions)
+- Learn how to [manage access to your iApp](/guides/build-iapp/manage-access)
+- Discover [debugging techniques](/guides/build-iapp/debugging) for troubleshooting
 
 <script setup>
 import CLIDemo from '@/components/CLIDemo.vue';
