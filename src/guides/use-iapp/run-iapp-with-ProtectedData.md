@@ -7,19 +7,7 @@ description:
 
 # 📥 Run iApp with a ProtectedData
 
-When an iApp requires additional data or parameters to function, you can provide
-various types of inputs to customize its behavior and enable processing. This
-guide covers all the different ways to run an iApp with inputs using the
-DataProtector turnkey toolkit.
-
-## Possible Inputs
-
-iExec supports several types of inputs for iApp executions:
-
-1. **Protected Data**: Encrypted data processed within the TEE
-2. **Arguments**: Command-line arguments passed to the application
-3. **Input Files**: URLs to public files that the app can download
-4. **Secrets**: Sensitive data like API keys stored securely
+When running an iApp, you can use multiple types of inputs. While ProtectedData is not mandatory to run an iApp, it's a powerful input type that allows you to process encrypted data from another provider. You can also use non-persistent inputs that come directly from you (the requester) and can change between each execution: Arguments, Input Files, and Secrets. These non-persistent inputs are perfect for customizing the iApp's behavior for each specific run.
 
 ## Adding Protected Data
 

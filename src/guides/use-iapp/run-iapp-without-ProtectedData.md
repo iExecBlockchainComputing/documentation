@@ -7,18 +7,7 @@ description:
 
 # 📥 Run iApp without a ProtectedData
 
-When an iApp requires additional data or parameters to function, you can provide
-various types of inputs to customize its behavior and enable processing. This
-guide covers all the different ways to run an iApp with inputs using the
-DataProtector turnkey toolkit.
-
-## Possible Inputs
-
-iExec supports several types of inputs for iApp executions:
-
-1. **Arguments**: Command-line arguments passed to the application
-2. **Input Files**: URLs to public files that the app can download
-3. **Secrets**: Sensitive data like API keys stored securely
+When running an iApp, you can use multiple types of inputs even without ProtectedData. Non-persistent inputs come directly from you (the requester) and can change between each execution, making them perfect for customizing the iApp's behavior for each specific run. These inputs include Arguments, Input Files, and Secrets, which allow you to provide additional data, parameters, and configuration to enable processing and customize functionality.
 
 ## Adding Command-Line Arguments
 
