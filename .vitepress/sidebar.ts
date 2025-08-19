@@ -241,38 +241,16 @@ export function getSidebar() {
             link: '/guides/use-iapp/getting-started',
           },
           {
+            text: 'How to Pay the Executions',
+            link: '/guides/use-iapp/how-to-pay-executions',
+          },
+          {
             text: 'Run iApp with ProtectedData',
             link: '/guides/use-iapp/run-iapp-with-ProtectedData',
           },
           {
             text: 'Run iApp without ProtectedData',
             link: '/guides/use-iapp/run-iapp-without-ProtectedData',
-          },
-          {
-            text: 'How to Pay the Executions',
-            link: '/guides/use-iapp/how-to-pay-executions',
-          },
-          {
-            text: '💰 How to Pay',
-            collapsed: true,
-            items: [
-              {
-                text: 'How to Pay for Web3Mail',
-                link: '/guides/use-iapp/how-to-pay/how-to-pay-for-web3mail',
-              },
-              {
-                text: 'How to Pay for Web3Telegram',
-                link: '/guides/use-iapp/how-to-pay/how-to-pay-for-web3telegram',
-              },
-              {
-                text: 'Pricing Considerations',
-                link: '/guides/use-iapp/how-to-pay/pricing-considerations',
-              },
-              {
-                text: 'Voucher',
-                link: '/guides/use-iapp/how-to-pay/voucher',
-              },
-            ],
           },
         ],
       },
