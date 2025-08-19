@@ -16,7 +16,13 @@ There are multiple ways to execute an iApp on the iExec network. An iApp can be:
 This guide covers the basic execution methods. For advanced features like
 protected data, arguments, and input files, see the dedicated guides.
 
-## Using the iApp Generator CLI
+## When to Use Each Method
+
+- **iApp Generator CLI**: For developers who have built their own iApp
+- **iExec Library**: For JavaScript applications and web3 integration
+- **iExec CLI**: For quick testing and automation scripts
+
+## Method 1: Using the iApp Generator CLI
 
 The iApp Generator CLI provides a streamlined way to execute iApp, especially
 for developers who have built their own iApp.
@@ -49,6 +55,61 @@ for developers who have built their own iApp.
     :autoRestart="true"
   />
 </template>
+
+## Method 2: Using the iExec SDK Library
+
+The iExec SDK provides a modular JavaScript interface for executing iApp.
+
+```ts twoslash
+import { IExec, utils } from 'iexec';
+
+const ethProvider = utils.getSignerFromPrivateKey(
+  'bellecour', // blockchain node URL
+  'PRIVATE_KEY'
+);
+const iexec = new IExec({
+  ethProvider,
+});
+// ---cut---
+// Create & Sign a request order
+const requestorderToSign = await iexec.order.createRequestorder({
+  app: '0x456def...', // The iApp address
+  category: 0,
+});
+const requestOrder = await iexec.order.signRequestorder(requestorderToSign);
+
+// Fetch app orders
+const appOrders = await iexec.orderbook.fetchAppOrderbook(
+  '0x456def...' // Filter by specific app
+);
+if (appOrders.orders.length === 0) {
+  throw new Error('No app orders found for the specified app');
+}
+
+// Fetch workerpool orders
+const workerpoolOrders = await iexec.orderbook.fetchWorkerpoolOrderbook({
+  workerpool: '0xa5de76...', // Filter by specific workerpool
+});
+if (workerpoolOrders.orders.length === 0) {
+  throw new Error('No workerpool orders found for the specified workerpool');
+}
+
+// Execute the task
+const taskId = await iexec.order.matchOrders({
+  requestorder: requestOrder,
+  apporder: appOrders.orders[0].order,
+  workerpoolorder: workerpoolOrders.orders[0].order,
+});
+```
+
+## Method 3: Using the iExec CLI
+
+The iExec CLI is perfect for quick executions and automation scripts.
+
+```bash
+# Execute an iApp
+iexec app run 0x456def...
+```
 
 ## Next Steps
 
