@@ -105,6 +105,40 @@ RLC tokens between Ethereum and Arbitrum mainnet in both directions.
   <p class="!mb-0">The Stargate bridge interface automatically detects your wallet's network and available RLC tokens. The process is similar in both directions - simply select the appropriate source and destination networks to transfer RLC between Ethereum and Arbitrum seamlessly.</p>
 </div>
 
+## 🔒 Security & Audits
+
+The **Stargate Bridge** uses the **LayerZero protocol** under the hood, which
+provides secure cross-chain communication infrastructure. LayerZero is a
+decentralized protocol that enables trustless cross-chain messaging without
+requiring intermediate chains or wrapped tokens.
+
+<ImageViewer
+  :image-url-dark="halbornLogoIcon"
+  image-alt="Halborn Security Logo"
+  link-url="https://halborn.com/audits"
+/>
+
+### Code Audits
+
+The RLC multichain bridge implementation has been thoroughly audited by
+**Halborn**, a leading blockchain security firm. The audit report is accessible
+at [halborn.com/audits](https://halborn.com/audits).
+
+### Open Source
+
+The complete source code for the RLC multichain bridge system is publicly
+available and open source on GitHub:
+[github.com/iExecBlockchainComputing/rlc-multichain](https://github.com/iExecBlockchainComputing/rlc-multichain)
+
+### Security Features
+
+- **LayerZero Protocol**: Battle-tested cross-chain messaging protocol
+- **Smart Contract Audits**: Professional security audits by Halborn
+- **Open Source**: Transparent codebase for community review
+- **UUPS Upgradeable**: Secure upgrade mechanism for future improvements
+- **Role-Based Access Control**: Granular permission management
+- **Emergency Pause**: Dual-level pause system for security incidents
+
 <script setup>
 import ImageViewer from '@/components/ImageViewer.vue';
 import CardGrid from '@/components/CardGrid.vue';
@@ -115,4 +149,5 @@ import iexecLogoIcon from '@/assets/icons/iexec-logo.png';
 import arbitrumLogoIcon from '@/assets/icons/arbitrum.svg';
 import bellecourBridgeImage from '@/assets/tooling-&-explorers/bridge/bellecour-bridge.png';
 import stargateBridgeImage from '@/assets/tooling-&-explorers/bridge/stargate-bridge.png';
+import halbornLogoIcon from '@/assets/icons/halborn.jpg';
 </script>
