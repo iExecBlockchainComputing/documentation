@@ -166,8 +166,12 @@ export function getSidebar() {
         text: 'BUILD YOUR iAPP',
         items: [
           {
-            text: 'Build and Deploy',
-            link: '/guides/build-iapp/build-&-deploy',
+            text: 'Build and Test',
+            link: '/guides/build-iapp/build-&-test',
+          },
+          {
+            text: 'Deploy and Run',
+            link: '/guides/build-iapp/deploy-&-run',
           },
           {
             text: 'Manage Access',
@@ -180,10 +184,6 @@ export function getSidebar() {
           {
             text: 'Using TDX',
             link: '/guides/build-iapp/using-tdx',
-          },
-          {
-            text: 'How to Get and Decrypt Results',
-            link: '/guides/build-iapp/how-to-get-and-decrypt-results',
           },
           {
             text: 'Debugging',
@@ -241,16 +241,12 @@ export function getSidebar() {
             link: '/guides/use-iapp/getting-started',
           },
           {
-            text: 'Different Ways to Execute an iApp',
-            link: '/guides/use-iapp/different-ways-to-execute',
+            text: 'Run iApp with ProtectedData',
+            link: '/guides/use-iapp/run-iapp-with-ProtectedData',
           },
           {
-            text: 'Use iApp with Protected Data',
-            link: '/guides/use-iapp/use-iapp-with-protected-data',
-          },
-          {
-            text: 'Add Inputs to the Execution',
-            link: '/guides/use-iapp/add-inputs-to-execution',
+            text: 'Run iApp without ProtectedData',
+            link: '/guides/use-iapp/run-iapp-without-ProtectedData',
           },
           {
             text: 'How to Pay the Executions',
@@ -606,7 +602,7 @@ export function getSidebar() {
         link: '/references/sdk',
       },
       {
-        text: '�📖 Glossary',
+        text: '📖 Glossary',
         link: '/references/glossary',
       },
     ],

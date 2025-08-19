@@ -19,13 +19,7 @@
       <p>You will sign three things:</p>
       <ol class="ml-4 list-inside list-decimal">
         <li>A transaction to create the protected data</li>
-        <li>
-          A message signature to prove your identity to the production SMS
-        </li>
-        <li>
-          A message signature to prove your identity to the debug SMS (this
-          signature is only required during this Hello World tutorial)
-        </li>
+        <li>A message signature to prove your identity to the SMS</li>
       </ol>
     </div>
 
@@ -189,7 +183,6 @@ async function protectData() {
         secretText: contentToProtect.value,
       },
       name: 'helloWorld',
-      allowDebug: true,
     });
     console.log('createdProtectedData', createdProtectedData);
 

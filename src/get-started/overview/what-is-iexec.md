@@ -10,7 +10,7 @@ description:
 iExec is a **decentralized confidential computing toolkit** that helps
 developers build privacy-preserving applications.
 
-## The Protocol (Simple Version)
+## SpeedRun The Protocol
 
 ### Step 1: Protect Data
 
