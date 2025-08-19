@@ -14,9 +14,13 @@ DataProtector turnkey toolkit.
 
 ## Choosing Between Toolkit
 
-**DataProtector SDK Toolkit**: Always requires protected data. Best for Node.js/frontend projects and production environments. Offers programmatic control, integration, error handling, and batch operations.
+**DataProtector SDK Toolkit**: Always requires protected data. Best for
+Node.js/frontend projects and production environments. Offers programmatic
+control, integration, error handling, and batch operations.
 
-**iApp Generator CLI Toolkit**: No protected data required to run an iApp. Perfect for testing, development, and quick prototyping. Provides immediate execution without coding.
+**iApp Generator CLI Toolkit**: No protected data required to run an iApp.
+Perfect for testing, development, and quick prototyping. Provides immediate
+execution without coding.
 
 ## Possible of Inputs
 
