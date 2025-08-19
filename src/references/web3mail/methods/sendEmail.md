@@ -321,7 +321,7 @@ import { type SendEmailResponse } from '@iexec/web3mail';
 
 This uniquely identifies the email task on the iExec side chain. You can view
 the status of the `sendEmail` method by monitoring the task on the
-[iExec Explorer](https://explorer.iex.ec/bellecour).
+[iExec Explorer](https://explorer.iex.ec/arbitrum-mainnet).
 
 ## Error Handling
 

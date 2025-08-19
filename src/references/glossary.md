@@ -22,7 +22,7 @@ iExec’s product sidechain. It is linked to Ethereum Mainnet with a bridge
 allowing for the transfer of assets between networks. It allows iExec to be used
 without paying Ethereum gas fees.
 
-See “Sidechain and xRLC” for more information.
+See "Sidechain" and "xRLC" for more information.
 
 ### Beneficiary
 

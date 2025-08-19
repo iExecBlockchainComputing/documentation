@@ -18,6 +18,12 @@ explore apps and protectedData—all in one powerful dashboard.
   caption="🔗 Explore the iExec Protocol"
 />
 
+::: tip
+
+Before searching or exploring, make sure to select your desired network. The Explorer displays data for the network you choose.
+
+:::
+
 ## 🎯 What you Can Explore
 
 <CardGrid>
@@ -72,7 +78,7 @@ explore apps and protectedData—all in one powerful dashboard.
 <ImageViewer
   :image-url-dark="dealViewImage"
   image-alt="Deal View"
-  link-url="https://explorer.iex.ec/bellecour/deals"
+  link-url="https://explorer.iex.ec/arbitrum-mainnet/deals"
   caption="🔗 Explore Deals"
 />
 
@@ -98,7 +104,7 @@ explore apps and protectedData—all in one powerful dashboard.
 <ImageViewer
   :image-url-dark="taskViewImage"
   image-alt="Task View"
-  link-url="https://explorer.iex.ec/bellecour/tasks"
+  link-url="https://explorer.iex.ec/arbitrum-mainnet/tasks"
   caption="🔗 Explore Tasks"
 />
 
@@ -114,14 +120,14 @@ Browse and analyze all tasks across the iExec network:
 <ImageViewer
     :image-url-dark="taskDetailsStartedImage"
     image-alt="Result Decryption"
-    link-url="https://explorer.iex.ec/bellecour/tasks"
+    link-url="https://explorer.iex.ec/arbitrum-mainnet/tasks"
     caption="🔗 Explore Tasks"
 />
 
 <ImageViewer
     :image-url-dark="taskDetailsCompletedImage"
     image-alt="Task Completed"
-    link-url="https://explorer.iex.ec/bellecour/tasks"
+    link-url="https://explorer.iex.ec/arbitrum-mainnet/tasks"
     caption="🔗 Explore Tasks"
 />
 
@@ -150,7 +156,7 @@ Browse and analyze all tasks across the iExec network:
 <ImageViewer
   :image-url-dark="appViewImage"
   image-alt="App View"
-  link-url="https://explorer.iex.ec/bellecour/apps"
+  link-url="https://explorer.iex.ec/arbitrum-mainnet/apps"
   caption="🔗 Explore iApp Marketplace"
 />
 
@@ -165,7 +171,7 @@ Explore the iExec application marketplace:
 <ImageViewer
   :image-url-dark="datasetViewImage"
   image-alt="Dataset View"
-  link-url="https://explorer.iex.ec/bellecour/datasets"
+  link-url="https://explorer.iex.ec/arbitrum-mainnet/datasets"
   caption="🔗 Explore Protected Datasets"
 />
 
@@ -182,7 +188,7 @@ Navigate the protected data landscape:
 <ImageViewer
   :image-url-dark="workerpoolViewImage"
   image-alt="Workerpool View"
-  link-url="https://explorer.iex.ec/bellecour/workerpools"
+  link-url="https://explorer.iex.ec/arbitrum-mainnet/workerpools"
   caption="🔗 Explore Workerpools Infrastructure"
 />
 

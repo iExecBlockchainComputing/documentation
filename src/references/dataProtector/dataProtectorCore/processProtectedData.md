@@ -464,8 +464,8 @@ Identifies the specific deal associated with this transaction.
 `string`
 
 A unique identifier associated with a task currently running on the iExec
-Bellecour side chain. You can monitor task execution using the
-[iExec blockchain explorer](https://explorer.iex.ec).
+protocol. You can monitor task execution using the
+[iExec blockchain explorer](https://explorer.iex.ec/arbitrum-mainnet).
 
 ::: tip
 

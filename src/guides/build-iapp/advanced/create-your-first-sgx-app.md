@@ -65,41 +65,6 @@ touch sconify.sh
 chmod +x sconify.sh
 ```
 
-### Update chain json
-
-Make sure your `chain.json` content is as follows:
-
-```json
-{
-  "default": "bellecour",
-  "chains": {
-    "bellecour": {
-      "sms": { "scone": "https://sms.scone-debug.v8-bellecour.iex.ec" }
-    }
-  }
-}
-```
-
-If you start from a new directory tree, you will need to replay the following
-steps from [Build your first application](./your-first-app):
-
-- [Write the app](./your-first-app.md#write-the-app) Javascript or Python source
-  code in `src/`
-- [Dockerize your app](./your-first-app.md#dockerize-your-app)
-- [Push your app to Dockerhub](./your-first-app.md#push-your-app-to-dockerhub)
-
-As we mentioned earlier, the advantage of using **SCONE** is the ability to make
-the application **Intel® SGX-enabled** without changing the source code. The
-only thing we are going to do is rebuilding the app using the
-Trusted-Execution-Environment tooling provided by **SCONE**.
-
-::: info
-
-SCONE provides TEE conversion tooling (Python, Java, ..) plus eventually TEE
-base images for other languages (NodeJs).
-
-:::
-
 ## Build the TEE docker image
 
 We will use the following script to wrap the sconification process, copy the

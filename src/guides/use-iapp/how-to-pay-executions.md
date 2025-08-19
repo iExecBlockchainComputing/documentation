@@ -28,7 +28,7 @@ your wallet to pay for executions.
 For detailed information on how to obtain RLC tokens, see our
 [RLC guide](/get-started/overview/rlc.md).
 
-### Step 2: Transfer to iExec Sidechain
+### Step 2: Stake RLC to Power Your iExec Tasks
 
 RLC tokens need to be staked on the iExec protocol to allow task payment. To do
 this, you should use the [iExec SDK](/references/sdk.md).
@@ -49,7 +49,7 @@ const balance = await iexec.account.checkBalance('0xa0c15e...');
 console.log('Nano RLC staked:', balance.stake.toString());
 console.log('Nano RLC locked:', balance.locked.toString());
 
-// Deposit RLC to the sidechain
+// Lock RLC in your account in the iExec protocol
 await iexec.account.deposit(1_000_000_000); // Deposit 1 RLC
 ```
 

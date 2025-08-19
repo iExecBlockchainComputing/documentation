@@ -292,7 +292,7 @@ import { type SendTelegramResponse } from '@iexec/web3telegram';
 
 This uniquely identifies the telegram task on the iExec side chain. You can view
 the status of the `sendTelegram` method by monitoring the task on the
-[iExec Explorer](https://explorer.iex.ec/bellecour).
+[iExec Explorer](https://explorer.iex.ec/arbitrum-mainnet).
 
 <script setup>
 import OptionalBadge from '@/components/OptionalBadge.vue'

@@ -80,8 +80,9 @@ The iExec SDK creates the minimum configuration files:
 
 :::
 
-You can now connect to the blockchain. In the following steps, we will use the
-[iExec sidechain (also called Bellecour)](/get-started/tooling-and-explorers/blockchain-explorer#bellecour)
+You can now connect to the desired supported blockchain. In the following steps, we will use the chosen
+blockchain to deploy and run your iExec app. See the
+[supported blockchains](/get-started/tooling-and-explorers/blockchain-explorer) for a full list.
 
 You can now check your wallet content:
 
