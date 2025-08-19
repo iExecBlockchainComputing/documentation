@@ -602,7 +602,7 @@ export function getSidebar() {
         link: '/references/sdk',
       },
       {
-        text: '�📖 Glossary',
+        text: '📖 Glossary',
         link: '/references/glossary',
       },
     ],
