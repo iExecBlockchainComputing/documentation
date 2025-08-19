@@ -14,6 +14,30 @@ iApp's behavior for each specific run. These inputs include Arguments, Input
 Files, and Secrets, which allow you to provide additional data, parameters, and
 configuration to enable processing and customize functionality.
 
+## Prerequisites
+
+Before you begin, make sure you have the iExec SDK installed.
+
+::: code-group
+
+```sh [npm]
+npm install -g iexec
+```
+
+```sh [yarn]
+yarn global add iexec
+```
+
+```sh [pnpm]
+pnpm add -g iexec
+```
+
+```sh [bun]
+bun add -g iexec
+```
+
+:::
+
 ## Adding Command-Line Arguments
 
 Command-line arguments are passed as a string to the iApp and are visible on the
