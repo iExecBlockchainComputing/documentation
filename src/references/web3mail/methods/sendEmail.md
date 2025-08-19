@@ -21,8 +21,8 @@ documentation for more details.
 
 ::: tip
 
-For executing the `sendEmail` method with a voucher or <TokenSymbol />, refer to
-the dedicated section in the documentation under
+For executing the `sendEmail` method with a voucher or RLC, refer to the
+dedicated section in the documentation under
 "[How to Pay for Executions](/guides/use-iapp/how-to-pay-executions.md)".
 
 :::
@@ -136,10 +136,10 @@ const sendEmail = await web3mail.sendEmail({
 
 ::: tip
 
-If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK
-will automatically get the required amount to your iExec account. Ensure that
-your voucher is authorized to access your iExec account and that your account
-has sufficient funds for this transfer to proceed.
+If your voucher doesn't have enough RLC to cover the deal, the SDK will
+automatically get the required amount to your iExec account. Ensure that your
+voucher is authorized to access your iExec account and that your account has
+sufficient funds for this transfer to proceed.
 
 :::
 
@@ -395,5 +395,4 @@ For any other errors, you'll get a `WorkflowError` error in the form of:
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
-import TokenSymbol from '@/components/TokenSymbol.vue'
 </script>

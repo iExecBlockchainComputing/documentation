@@ -14,7 +14,7 @@ and cost management strategies.
 
 iExec supports multiple payment methods for executing iApp:
 
-1. **RLC Tokens**: Direct payment using <TokenSymbol /> tokens
+1. **RLC Tokens**: Direct payment using RLC tokens
 2. **Vouchers**: Pre-funded vouchers for simplified payment
 3. **Mixed Payment**: Combination of RLC and vouchers
 
@@ -103,8 +103,8 @@ balance is insufficient. This ensures that if the voucher alone doesn't cover
 the execution cost, the remaining balance is automatically deducted from your
 account.
 
-For additional information on using <TokenSymbol /> for fallback payment in
-Web3Mail, refer to the **Using <TokenSymbol /> with Web3Mail** section.
+For additional information on using RLC for fallback payment in Web3Mail, refer
+to the **Using RLC with Web3Mail** section.
 
 ### Step 4: Use Voucher
 
@@ -161,10 +161,10 @@ const result = await dataProtectorCore.processProtectedData({
 
 ::: tip
 
-If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK
-will automatically get the required amount to your iExec account. Ensure that
-your voucher is authorized to access your iExec account and that your account
-has sufficient funds for this transfer to proceed.
+If your voucher doesn't have enough RLC to cover the deal, the SDK will
+automatically get the required amount to your iExec account. Ensure that your
+voucher is authorized to access your iExec account and that your account has
+sufficient funds for this transfer to proceed.
 
 :::
 
@@ -239,7 +239,6 @@ Now that you understand payment methods:
 
 <script setup>
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
-import TokenSymbol from '@/components/TokenSymbol.vue'
 import ImageViewer from '@/components/ImageViewer.vue';
 
 // Assets
