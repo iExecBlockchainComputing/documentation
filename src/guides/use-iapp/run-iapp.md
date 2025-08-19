@@ -20,7 +20,6 @@ protected data, arguments, and input files, see the dedicated guides.
 
 - **iApp Generator CLI**: For developers who have built their own iApp
 - **iExec Library**: For JavaScript applications and web3 integration
-- **iExec CLI**: For quick testing and automation scripts
 
 ## Method 1: Using the iApp Generator CLI
 
@@ -100,15 +99,6 @@ const taskId = await iexec.order.matchOrders({
   apporder: appOrders.orders[0].order,
   workerpoolorder: workerpoolOrders.orders[0].order,
 });
-```
-
-## Method 3: Using the iExec CLI
-
-The iExec CLI is perfect for quick executions and automation scripts.
-
-```bash
-# Execute an iApp
-iexec app run 0x456def...
 ```
 
 ## Next Steps

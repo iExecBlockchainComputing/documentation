@@ -4,7 +4,7 @@ description:
   How to create a confidential iExec application and deploy it on iExec protocol
 ---
 
-# Create and Deploy an iApp
+# Build and Deploy an iApp
 
 iApp (iExec Applications) are decentralized applications that run on the iExec
 network. They use confidential computing to ensure data privacy and security
