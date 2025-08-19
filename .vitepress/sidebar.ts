@@ -166,8 +166,12 @@ export function getSidebar() {
         text: 'BUILD YOUR iAPP',
         items: [
           {
-            text: 'Build and Deploy',
-            link: '/guides/build-iapp/build-&-deploy',
+            text: 'Build and Test',
+            link: '/guides/build-iapp/build-&-test',
+          },
+          {
+            text: 'Deploy and Run',
+            link: '/guides/build-iapp/deploy-&-run',
           },
           {
             text: 'Manage Access',

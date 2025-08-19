@@ -31,7 +31,7 @@ features:
     details:
       iApp Generator builds confidential applications that run in secure TEEs.
       Custom confidentiality integration without managing infrastructure.
-    link: /guides/build-iapp/build-&-deploy
+    link: /guides/build-iapp/build-&-test
   - icon: ⚡
     title: Use iApp
     details:
