@@ -241,12 +241,12 @@ export function getSidebar() {
             link: '/guides/use-iapp/getting-started',
           },
           {
-            text: 'Run iApp without ProtectedData',
-            link: '/guides/use-iapp/run-iapp-without-ProtectedData',
-          },
-          {
             text: 'Run iApp with ProtectedData',
             link: '/guides/use-iapp/run-iapp-with-ProtectedData',
+          },
+          {
+            text: 'Run iApp without ProtectedData',
+            link: '/guides/use-iapp/run-iapp-without-ProtectedData',
           },
           {
             text: 'How to Pay the Executions',
