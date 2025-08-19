@@ -64,17 +64,16 @@ orders:
 
 When you execute an iApp, the system matches your request with available orders
 from all three categories. For a deeper understanding of how orders work and how
-to manage them, see the
-[Build & Deploy guide](/guides/build-iapp/build-&-deploy) in the Build iApp
-section.
+to manage them, see the [Build & Test guide](/guides/build-iapp/build-&-test) in
+the Build iApp section.
 
 ## Detailed Guides
 
 For step-by-step instructions, check out these guides:
 
-- **[Run iApp](/guides/use-iapp/run-iapp)** - iExec CLI, lib, and other
-  execution methods
-- **[Run iApp with Inputs](/guides/use-iapp/run-iapp-with-inputs)** - How to
-  provide data and parameters to iApp
+- **[Run iApp without ProtectedData](/guides/use-iapp/run-iapp-without-ProtectedData)** -
+  iExec CLI, lib, and other execution methods
+- **[Run iApp with ProtectedData](/guides/use-iapp/run-iapp-with-ProtectedData)** -
+  How to provide data and parameters to iApp
 - **[How to Pay for Executions](/guides/use-iapp/how-to-pay-executions)** -
   Understanding costs and payment options

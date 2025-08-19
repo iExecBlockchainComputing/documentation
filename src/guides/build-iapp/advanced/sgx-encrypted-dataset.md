@@ -363,6 +363,4 @@ an encrypted dataset in a Confidential Computing application.
 
 To go further, check out how to:
 
-- [Attach a secret to your app](/guides/build-iapp/build-&-deploy#application-developer-secret)
-- [Access requester secrets](/guides/build-iapp/inputs-and-outputs#access-requester-secrets)
 - [Protect the result](end-to-end-encryption.md)

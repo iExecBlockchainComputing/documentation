@@ -1,7 +1,8 @@
 ---
 title: Run iApp without ProtectedData
 description:
-  Learn how to run iApp with basic inputs like command-line arguments, public files, and secrets using the iexec SDK
+  Learn how to run iApp with basic inputs like command-line arguments, public
+  files, and secrets using the iexec SDK
 ---
 
 # 📥 Run iApp without a ProtectedData

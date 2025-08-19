@@ -1,7 +1,8 @@
 ---
 title: Run iApp with ProtectedData
 description:
-  Learn how to run iApp with encrypted protected data, arguments, and input files using the DataProtector toolkit for secure data processing
+  Learn how to run iApp with encrypted protected data, arguments, and input
+  files using the DataProtector toolkit for secure data processing
 ---
 
 # 📥 Run iApp with a ProtectedData

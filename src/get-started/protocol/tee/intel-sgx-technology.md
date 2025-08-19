@@ -79,6 +79,6 @@ The environment you are about to use is a "develop" environment:
 - where configurations and secrets might be inspected (debug enclaves)
 
 When your developer discovery journey is complete, please reach the
-[production section](/guides/build-iapp/build-&-deploy#go-to-production).
+[production section](/guides/build-iapp/build-&-test#go-to-production).
 
 :::

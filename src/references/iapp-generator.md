@@ -46,7 +46,7 @@ Once you've built your first iApp, level up with these practical guides:
   execution issues
 - **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
   Control who can use your iApp
-- **[How to Get and Decrypt Results](/guides/build-iapp/download-and-decrypt-results)** -
+- **[How to Get and Decrypt Results](/guides/build-iapp/inputs-and-outputs)** -
   Retrieve and use outputs
 
 ### 3. **Explore Advanced Features**
@@ -55,7 +55,7 @@ Ready for production? Dive into specialized topics:
 
 - **[Using TDX (Experimental)](/guides/build-iapp/using-tdx)** - Next-gen TEE
   technology
-- **[Complete Guides Overview](/guides/build-iapp/build-&-deploy)** - All
+- **[Complete Guides Overview](/guides/build-iapp/build-&-test)** - All
   development guides in one place
 
 ## Why Choose iApp Generator?
@@ -97,7 +97,7 @@ applications:
 
 ### Need Help?
 
-- **[Complete Guides](/guides/build-iapp/build-&-deploy)** - All development
+- **[Complete Guides](/guides/build-iapp/build-&-test)** - All development
   guides
 - **[iExec Discord](https://discord.com/invite/pbt9m98wnU)** - Community support
 - **[Protocol Documentation](https://protocol.docs.iex.ec)** - Technical deep

@@ -106,8 +106,8 @@ Now that you have run your iApp on the iExec protocol, you can navigate to the
 `cache` folder to see your runs saved. A file named `runs.json` in the folder
 corresponding to your target network will be created containing each run made on
 this network. These files will help you easily track each run per network. Use
-the [iExec Explorer](/guides/tooling-and-explorers/iexec-explorer) to retrieve
-more data about your tasks.
+the [iExec Explorer](/get-started/tooling-and-explorers/iexec-explorer) to
+retrieve more data about your tasks.
 
 Here is an example:
 

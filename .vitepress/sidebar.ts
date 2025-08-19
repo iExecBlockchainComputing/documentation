@@ -186,10 +186,6 @@ export function getSidebar() {
             link: '/guides/build-iapp/using-tdx',
           },
           {
-            text: 'Download and Decrypt Results',
-            link: '/guides/build-iapp/download-and-decrypt-results',
-          },
-          {
             text: 'Debugging',
             link: '/guides/build-iapp/debugging',
           },
@@ -245,12 +241,12 @@ export function getSidebar() {
             link: '/guides/use-iapp/getting-started',
           },
           {
-            text: 'Run iApp',
-            link: '/guides/use-iapp/run-iapp',
+            text: 'Run iApp without ProtectedData',
+            link: '/guides/use-iapp/run-iapp-without-ProtectedData',
           },
           {
-            text: 'Run iApp with Inputs',
-            link: '/guides/use-iapp/run-iapp-with-inputs',
+            text: 'Run iApp with ProtectedData',
+            link: '/guides/use-iapp/run-iapp-with-ProtectedData',
           },
           {
             text: 'How to Pay the Executions',
