@@ -200,7 +200,3 @@ const taskId = await iexec.order.matchOrders({
   workerpoolorder: workerpoolOrders.orders[0].order,
 });
 ```
-
-## Next Steps
-
-Now that you understand how to add inputs to iApp executions:

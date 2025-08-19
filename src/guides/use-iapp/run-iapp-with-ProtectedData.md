@@ -113,10 +113,3 @@ const result = await dataProtectorCore.processProtectedData({
   },
 });
 ```
-
-## Next Steps
-
-Now that you understand how to add inputs to iApp executions:
-
-- Check out our
-  [How to Pay for Executions](/guides/use-iapp/how-to-pay-executions) guide
