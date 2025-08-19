@@ -1,8 +1,7 @@
 ---
-title: Run an iApp
+title: Deploy and Run an iApp
 description:
-  Learn about various methods for executing iApp on the iExec network, including
-  CLI and SDK approaches
+  Deploy your iApp to supported networks and learn how to execute it using the iApp Generator CLI
 ---
 
 # Deploy and Run an iApp

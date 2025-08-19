@@ -1,7 +1,7 @@
 ---
-title: Create and Deploy an iApp
+title: Build and Test an iApp
 description:
-  How to create a confidential iExec application and deploy it on iExec protocol
+  Learn how to build, test, and package your iExec application using the iApp Generator CLI tool
 ---
 
 # Build and Test an iApp

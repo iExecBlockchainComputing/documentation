@@ -118,13 +118,13 @@ iexec wallet import <private-key>
 
 ::: tip iApp Generator Users
 
-If you used iApp Generator, you already have an `iexecconfig.json` file with a
+If you used iApp Generator, you already have an `iapp.config.json` file with a
 generated private key. You can use this existing private key to initialize your
 wallet:
 
 ```bash
-# Extract the private key from your `iexecconfig.json`
-iexec wallet import <your-private-key-from-iexecconfig>
+# Extract the private key from your `iapp.config.json`
+iexec wallet import <your-private-key>
 ```
 
 :::
