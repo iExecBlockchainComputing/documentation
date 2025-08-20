@@ -6,15 +6,15 @@ description: Control who can use your iApp and set pricing with app orders
 # 💰 Manage Access
 
 **Orders control who can use your iApp and under what conditions.** Once your
-iApp is deployed with iApp Generator, you need to create app orders to make it
+iApp is deployed with iApp Generator, you need to publish app orders to make it
 accessible to users and define your governance rules.
 
-Think of orders as **usage contracts** - they define pricing, access
+Think of orders as **usage proposals** - they define pricing, access
 restrictions, and execution conditions for your application.
 
 ## What is an Order?
 
-An **app order** is a signed contract that defines the usage conditions for your
+An **app order** is a signed proposal that defines the usage conditions for your
 iApp:
 
 - **Price per execution** (in nRLC)
@@ -43,7 +43,7 @@ Here's the simplified process:
 5. **You automatically receive** payment in <TokenSymbol /> for each execution
 
 ```
-Deployed iApp + Signed App Order = Application accessible on iExec
+Deployed iApp + Published Signed App Order = Application accessible on iExec
 ```
 
 ## App Order Example

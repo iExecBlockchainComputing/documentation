@@ -24,7 +24,7 @@ you efficiently: [Join our Discord](https://discord.gg/9h25DQFSCU).
 
 - **[Quick Start for Developers](./quick-start-for-developers)**
 - **[Build your first application](./your-first-app)**
-- **[Intel SGX Technology Overview](/get-started/protocol/tee/intel-sgx-technology)**
+- **[Intel SGX Technology](/get-started/protocol/tee/intel-sgx)**
 - **[Build your first SGX app (SCONE)](./create-your-first-sgx-app)**
 - **[End-to-end Encryption](./end-to-end-encryption)**
 - **[SGX Encrypted Dataset](./sgx-encrypted-dataset)**

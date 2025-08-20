@@ -230,7 +230,8 @@ for input parameters:
 - Add link to the new explorer feature Asset_Types in the guide =>
   `handle-schemas-dataset-types`
 - Add link to remix for deploying whitelist
-- SGX vs TDX need review
+- complete `use-iapp` section
+- Maybe split input and output in two diff sub section in build your iapp guide
 - Explorer l'intégration de codeSpace
 - Add a Development workflow section (1 - ProtectData, 2- ...)
 - Update context7 when doc will be deployed (Martin)
@@ -246,10 +247,15 @@ for input parameters:
 - migrate pay-per-task page into a guide
 - check pages (introduction & getting-started) for use-iapp guide
 - Schema what is iexec to do and implement
-- explain TDX vs SGX
 - Give recap of Workerpool address fo chains
 - Talk about ENS on Bellecour(it's not supported on arbitrum)
-- Rework Advanced iApp building guides. (from "old" protocol doc)
+- Rework Advanced iApp building guides. (from "old" protocol doc) <<<<<<< HEAD
+- Talk about encrypting results in use-iapp
+- Refactor "advanced" section in build-iapp
+- Rework src\get-started\protocol\iexec-doracle.md (transfer to guide or
+  rewrite)
+- Talk about encrypting results in use-iapp
+- Refactor "advanced" section in build-iapp
 - Rework src\get-started\protocol\oracle.md (transfer to guide or rewrite)
 - Talk about iApp secret
 - Improve Guide in build-iapp section - be more clear for builder ( how to
