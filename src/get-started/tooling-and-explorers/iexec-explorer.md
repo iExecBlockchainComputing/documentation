@@ -20,7 +20,8 @@ explore apps and protectedData—all in one powerful dashboard.
 
 ::: tip
 
-Before searching or exploring, make sure to select your desired network. The Explorer displays data for the network you choose.
+Before searching or exploring, make sure to select your desired network. The
+Explorer displays data for the network you choose.
 
 :::
 

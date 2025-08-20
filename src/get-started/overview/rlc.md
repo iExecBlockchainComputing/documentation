@@ -19,7 +19,9 @@ the more utility RLC gains in real applications.
 
 ::: tip Info
 
-On the iExec sidechain (Bellecour), the RLC token symbol becomes **xRLC**. xRLC is the native token of the Bellecour chain and is used for all transactions and payments on this network.
+On the iExec sidechain (Bellecour), the RLC token symbol becomes **xRLC**. xRLC
+is the native token of the Bellecour chain and is used for all transactions and
+payments on this network.
 
 :::
 
