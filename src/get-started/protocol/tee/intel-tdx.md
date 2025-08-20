@@ -45,6 +45,41 @@ machines.
 **Analogy**: TDX is like moving your entire office into a secure building where
 everything is protected.
 
+### Visual Representation
+
+```mermaid
+graph TB
+    Hypervisor[Hypervisor<br/>Cannot see inside TDX]
+    TrustDomain[🔒 TDX Trust Domain<br/>Entire VM Protected]
+    App[Your Complete Application<br/>All Protected]
+    Data[OS, Libraries, Data<br/>All Encrypted]
+    Hypervisor --> TrustDomain
+    TrustDomain --> App
+    App --> Data
+    style TrustDomain fill:#ffffff,stroke:#0000ff,stroke-width:2px,color:#000000
+    style Data fill:#ffffff,stroke:#00ff00,stroke-width:2px,color:#000000
+```
+
+## TDX Technology Details
+
+### How TDX Works
+
+1. **Trust Domain Creation**: TDX creates secure virtual machines called "trust
+   domains"
+2. **VM-Level Isolation**: Entire virtual machines run in isolated, secure
+   environments
+3. **Large Memory Support**: Significantly larger secure memory space compared
+   to SGX
+4. **Legacy Compatibility**: Existing applications can run with minimal
+   modifications
+
+### TDX Advantages
+
+- **Larger Memory**: Multi-GB+ secure memory space vs limited SGX memory
+- **Easier Migration**: "Lift and shift" approach for existing applications
+- **Better Performance**: Optimized for complex, memory-intensive workloads
+- **VM-Level Security**: Protects entire virtual machines, not just applications
+
 ## TDX with iExec
 
 iExec is actively exploring TDX technology to expand the platform's capabilities
@@ -59,3 +94,55 @@ iExec provides experimental TDX support through:
 - **🔐 Secret Management Service**: SMS support for TDX applications
 - **📋 Task Verification**: Proof of contribution for TDX executions
 - **🔗 Blockchain Integration**: Decentralized coordination and payment
+
+### iExec TDX Workflow
+
+```mermaid
+graph TD
+    Dev[Developer]
+    Build[Build TDX App]
+    Deploy[Deploy to iExec]
+    Worker[TDX Worker Selected]
+    TrustDomain[TDX Trust Domain Created]
+    Execute[Secure Execution]
+    Proof[Proof of Contribution]
+    Result[Results]
+    Dev --> Build
+    Build --> Deploy
+    Deploy --> Worker
+    Worker --> TrustDomain
+    TrustDomain --> Execute
+    Execute --> Proof
+    Proof --> Result
+    style TrustDomain fill:#ffffff,stroke:#0000ff,stroke-width:2px,color:#000000
+    style Execute fill:#ffffff,stroke:#0000ff,stroke-width:2px,color:#000000
+```
+
+## When to Use TDX
+
+**TDX is ideal for**:
+
+- 💾 Working with memory-intensive applications
+- 🔄 Running existing applications with minimal changes
+- 🚀 Running complex workloads with VM-level protection
+
+## What's Next?
+
+**Learn about the foundation**:
+
+- **[Intel SGX Technology](/get-started/protocol/tee/intel-sgx)** -
+  First-generation application-level TEE technology
+- **[SGX vs TDX Comparison](/get-started/protocol/tee/sgx-vs-tdx)** - Detailed
+  comparison of both technologies
+
+**Ready to experiment with TDX?** Check out the practical guides:
+
+- **[Build Intel TDX App (Experimental)](/guides/build-iapp/advanced/create-your-first-tdx-app)** -
+  Build TDX applications with traditional deployment and iApp Generator
+- **[Create Your First TDX App](/guides/build-iapp/advanced/create-your-first-tdx-app)** -
+  Build TDX applications
+
+**For production applications, use SGX**:
+
+- **[Build & Deploy](/guides/build-iapp/build-&-deploy)** - Create
+  production-ready SGX applications

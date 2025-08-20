@@ -45,6 +45,49 @@ special security measures that keep its contents completely private and secure.
 | No hardware security guarantees | Hardware-level security protection     |
 | Like working in a public space  | Like working in a secure, private room |
 
+### Visual Representation
+
+**Regular Computing:**
+
+```mermaid
+graph TB
+    OS1[Operating System<br/>Can see everything]
+    App1[Your Application<br/>Visible & Vulnerable]
+    Data1[Sensitive Data<br/>Exposed]
+    OS1 --> App1
+    App1 --> Data1
+    style Data1 fill:#ffffff,stroke:#ff0000,stroke-width:2px,color:#000000
+    style OS1 fill:#ffffff,stroke:#000000,stroke-width:1px,color:#000000
+    style App1 fill:#ffffff,stroke:#000000,stroke-width:1px,color:#000000
+```
+
+**TEE Computing:**
+
+```mermaid
+graph TB
+    OS2[Operating System<br/>Cannot see inside TEE]
+    App2[Regular Application Parts]
+    TEE[🔒 TEE Enclave<br/>Protected]
+    Data2[Sensitive Code & Data<br/>Encrypted]
+    OS2 --> App2
+    App2 --> TEE
+    TEE --> Data2
+    style TEE fill:#ffffff,stroke:#0000ff,stroke-width:2px,color:#000000
+    style Data2 fill:#ffffff,stroke:#00ff00,stroke-width:2px,color:#000000
+    style OS2 fill:#ffffff,stroke:#000000,stroke-width:1px,color:#000000
+    style App2 fill:#ffffff,stroke:#000000,stroke-width:1px,color:#000000
+```
+
+## How TEE Works
+
+### Core Principles
+
+1. **Hardware Protection**: Special CPU features create isolated, secure areas
+2. **Memory Encryption**: All data in the secure area is automatically encrypted
+3. **Access Control**: Only authorized code can enter the secure area
+4. **Integrity Verification**: The system can prove it's running the correct
+   code
+
 ## TEE Technology Evolution
 
 TEE technologies have evolved to address different use cases:
