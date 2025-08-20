@@ -124,7 +124,7 @@ Deploy the app with the standard command:
 iexec app deploy
 ```
 
-To execute the app in TDX, ddd `--tag tee,tdx` to the `iexec app run` and select
+To execute the app in TDX, add `--tag tee,tdx` to the `iexec app run` and select
 the TDX workerpool (`tdx-labs.pools.iexec.eth`).
 
 ```bash

@@ -47,6 +47,33 @@ networks:
   />
 </CardGrid>
 
+## ⚡ Stargate Bridge
+
+The **Stargate Bridge** powered by LayerZero enables cross-chain transfers of
+RLC tokens between Ethereum and Arbitrum mainnet in both directions.
+
+### Ethereum <> Arbitrum (RLC <> RLC)
+
+1. **Visit Stargate**: Go to [Stargate UI](https://stargate.finance/bridge)
+2. **Connect Wallet**: Connect your wallet to the Stargate interface
+3. **Select Networks**: Choose your source network (Ethereum or Arbitrum) and
+   destination network
+4. **Select Token**: Choose RLC as the token to bridge
+5. **Enter Amount**: Specify the amount of RLC to transfer
+6. **Confirm Transaction**: Approve the bridge transaction and wait for
+   confirmation
+
+<ImageViewer
+  :image-url-dark="stargateBridgeImage"
+  image-alt="Stargate Bridge Interface"
+  link-url="https://stargate.finance/bridge"
+/>
+
+<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 my-6">
+  <h4 class="!mt-0 !mb-2">🔄 Bidirectional Bridge</h4>
+  <p class="!mb-0">The Stargate bridge interface automatically detects your wallet's network and available RLC tokens. The process is similar in both directions - simply select the appropriate source and destination networks to transfer RLC between Ethereum and Arbitrum seamlessly.</p>
+</div>
+
 ## 🔄 Bellecour Bridge
 
 The **Bellecour Bridge** enables seamless transfer of RLC tokens between
@@ -78,32 +105,37 @@ Bellecour, RLC becomes xRLC, the native asset of the Bellecour network.
   <p class="!mb-0">The bridge interface automatically detects your wallet's network and available tokens. The process is similar in both directions - simply switch to the appropriate network (source chain) in your wallet and refresh the page to update the bridge direction, then the bridge will handle the conversion between RLC and xRLC seamlessly.</p>
 </div>
 
-## ⚡ Stargate Bridge
+## 🔒 Security & Audits
 
-The **Stargate Bridge** powered by LayerZero enables cross-chain transfers of
-RLC tokens between Ethereum and Arbitrum mainnet in both directions.
+The **Stargate Bridge** uses the **LayerZero protocol** under the hood, which
+provides secure cross-chain communication infrastructure. LayerZero is a
+decentralized protocol that enables trustless cross-chain messaging without
+requiring intermediate chains or wrapped tokens.
 
-### Ethereum <> Arbitrum (RLC <> RLC)
-
-1. **Visit Stargate**: Go to [Stargate UI](https://stargate.finance/bridge)
-2. **Connect Wallet**: Connect your wallet to the Stargate interface
-3. **Select Networks**: Choose your source network (Ethereum or Arbitrum) and
-   destination network
-4. **Select Token**: Choose RLC as the token to bridge
-5. **Enter Amount**: Specify the amount of RLC to transfer
-6. **Confirm Transaction**: Approve the bridge transaction and wait for
-   confirmation
-
-<ImageViewer
-  :image-url-dark="stargateBridgeImage"
-  image-alt="Stargate Bridge Interface"
-  link-url="https://stargate.finance/bridge"
-/>
-
-<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 my-6">
-  <h4 class="!mt-0 !mb-2">🔄 Bidirectional Bridge</h4>
-  <p class="!mb-0">The Stargate bridge interface automatically detects your wallet's network and available RLC tokens. The process is similar in both directions - simply select the appropriate source and destination networks to transfer RLC between Ethereum and Arbitrum seamlessly.</p>
+<div style="display: flex; align-items: center; justify-content: center; margin: 1.5rem 0;">
+  <a href="https://halborn.com/audits" target="_blank" rel="noopener noreferrer">
+    <img :src="halbornLogoIcon" alt="Halborn Security Logo" style="height: 200px;" />
+  </a>
 </div>
+
+The RLC multichain bridge implementation has been thoroughly audited by
+[**Halborn**](https://www.halborn.com/), a leading blockchain security firm. The
+audit report is accessible at [halborn.com/audits](https://halborn.com/audits).
+
+### Open Source
+
+The complete source code for the RLC multichain bridge system is publicly
+available and open source on GitHub:
+[RLC Bridge Repository](https://github.com/iExecBlockchainComputing/rlc-multichain)
+
+### Security Features
+
+- **LayerZero Protocol**: Battle-tested cross-chain messaging protocol
+- **Smart Contract Audits**: Professional security audits by Halborn
+- **Open Source**: Transparent codebase for community review
+- **UUPS Upgradeable**: Secure upgrade mechanism for future improvements
+- **Role-Based Access Control**: Granular permission management
+- **Emergency Pause**: Dual-level pause system for security incidents
 
 <script setup>
 import ImageViewer from '@/components/ImageViewer.vue';
@@ -115,4 +147,5 @@ import iexecLogoIcon from '@/assets/icons/iexec-logo.png';
 import arbitrumLogoIcon from '@/assets/icons/arbitrum.svg';
 import bellecourBridgeImage from '@/assets/tooling-&-explorers/bridge/bellecour-bridge.png';
 import stargateBridgeImage from '@/assets/tooling-&-explorers/bridge/stargate-bridge.png';
+import halbornLogoIcon from '@/assets/icons/halborn.svg';
 </script>

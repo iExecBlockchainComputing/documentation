@@ -114,6 +114,11 @@ memory defined by Intel® SGX application as "enclaves".
 **Analogy**: An enclave is like a secure room within a building that only
 authorized people can enter and where everything inside is protected.
 
+### Explorer (iExec Explorer)
+
+Tracks and displays all transactions occurring on iExec’s platform. It provides
+detailed information on the latest deals, tasks, apps, and datasets deployed.
+
 ### ERC-20
 
 A standard for fungible tokens. This property makes each token exactly the same
@@ -424,8 +429,8 @@ special security measures that keep its contents completely private and secure.
 
 Explain the purpose and technology behind a project. Producing a whitepaper is a
 key step for a crypto startup to help investors understand technical information
-about its concept; whitepapers usually include a roadmap for how the project
-plans to grow and succeed. iExec's whitepaper is available
+about its concept; whitepaper usually include a roadmap for how the project
+plans to grow and succeed. iExec’s whitepaper is available
 [here](https://www.iex.ec/whitepaper)
 
 ### Workers
@@ -452,7 +457,7 @@ requesters.
 
 X in xRLC stands for eXternal.
 
-A xRLC is the native token of iExec sidechains (it means it is used as ETH on
+A xRLC is the native token of iExec sidechain (it means it is used as ETH on
 ethereum mainnet). A xRLC is a RLC bridged on an external sidechain and only the
 bridge can mint\* xRLC.
 

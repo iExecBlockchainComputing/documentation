@@ -1,20 +1,20 @@
 ---
 title: What is an iApp?
 description:
-  Learn about iExec Applications (iApps) - confidential computing apps that
+  Learn about iExec Applications (iApp) - confidential computing apps that
   process sensitive data in secure TEE environments. Build privacy-preserving
   AI, data analysis, and Web3 apps.
 ---
 
-# 🚀 What is an iApp?
+# iApp
 
 An iExec Application (iApp) brings Turnkey Privacy to your regular application
 code. Your Python scripts, AI models, or data processors can securely process
 protected data inside a TEE (Trusted Execution Environment).
 
-## Why iApps Matter ?
+## Why iApp Matter ?
 
-iApps provide Turnkey Privacy capabilities. Process sensitive data while keeping
+iApp provide Turnkey Privacy capabilities. Process sensitive data while keeping
 it private and secure.
 
 Imagine you want to build:
@@ -22,26 +22,22 @@ Imagine you want to build:
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-2.5">
     <div class="flex items-center gap-2 text-base">
-      <span>🤖</span>
       <span>An AI that analyzes personal health data</span>
     </div>
     <div class="flex items-center gap-2 text-base">
-      <span>📧</span>
       <span>An email tool that needs access to contact lists</span>
     </div>
     <div class="flex items-center gap-2 text-base">
-      <span>💰</span>
       <span>A financial advisor that processes bank statements</span>
     </div>
     <div class="flex items-center gap-2 text-base">
-      <span>🛡️</span>
       <span>A content filter that reads private messages</span>
     </div>
   </div>
 </div>
 
 Users have this data, but they won't trust your regular app with it. **With
-Turnkey Privacy iApps, they will.**
+Turnkey Privacy iApp, they will.**
 
 **You gain their trust. They gain their privacy. Everyone wins.**
 
@@ -72,7 +68,7 @@ Your code runs in a Trusted Execution Environment (TEE). This secure area exists
 inside specific processors (Intel SGX/TDX chipset). Everything stays private and
 protected there, even from the operating system.
 
-Authorized users trigger iApps that process protected data inside this private
+Authorized users trigger iApp that process protected data inside this private
 environment. Your iApp uses the data but never exposes it, not even to you.
 
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
@@ -105,19 +101,19 @@ the TEE execution environment.
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4">
-    <h4 class="text-lg font-semibold mb-2">🏥 Healthcare</h4>
+    <h4 class="text-lg font-semibold mb-2">Healthcare</h4>
     <p class="text-sm m-0">Process medical data for AI diagnosis without exposing patient information</p>
   </div>
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4">
-    <h4 class="text-lg font-semibold mb-2">💰 Finance</h4>
+    <h4 class="text-lg font-semibold mb-2">Finance</h4>
     <p class="text-sm m-0">Analyze financial data for credit scoring while maintaining privacy</p>
   </div>
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4">
-    <h4 class="text-lg font-semibold mb-2">🎬 Media</h4>
+    <h4 class="text-lg font-semibold mb-2">Media</h4>
     <p class="text-sm m-0">Content recommendation engines that don't track user behavior</p>
   </div>
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-4">
-    <h4 class="text-lg font-semibold mb-2">🔬 Research</h4>
+    <h4 class="text-lg font-semibold mb-2">Research</h4>
     <p class="text-sm m-0">Collaborative research on sensitive datasets across institutions</p>
   </div>
 </div>
@@ -126,7 +122,7 @@ the TEE execution environment.
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 border-none!">Time to build!</h2>
-  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="/references/iapp-generator" target="_blank" class="!text-gray-900 !font-bold underline hover:!text-black">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApps with just a few commands.</p>
+  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="/references/iapp-generator" target="_blank" class="!text-gray-900 !font-bold underline hover:!text-black">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApp with just a few commands.</p>
 </div>
 
 ### Quick Start Path

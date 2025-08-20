@@ -132,7 +132,7 @@ The serialization of the data protected by `protectData()` has been changed to
 support a wider range of numbers, and extend the support for processing
 protected data in non-JS-based applications.
 
-The new serialization mechanism is based on the [borsh](https://borsh.io/)
+The new serialization mechanism is based on the [Borsh](https://borsh.io/)
 specification.
 
 Consequently, the data schemas associated with protected data have changed.

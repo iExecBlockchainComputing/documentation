@@ -10,8 +10,8 @@ description:
 
 Method to remove one of your collections in the Data Sharing smart contract.
 
-By removing a collection, we mean to burn the associated NFT, ie. to **transfer
-it to the zero address**.
+By removing a collection, we mean to burn the associated NFT, that is, to
+**transfer it to the zero address**.
 
 ## Usage
 

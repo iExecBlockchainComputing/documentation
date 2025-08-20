@@ -18,7 +18,7 @@ indeed whitelisted for it.
 
 The SMS currently supports 3 types of secrets:
 
-1. [Application developer secret](/guides/build-iapp/build-&-deploy#application-developer-secret):
+1. [Application developer secret](/guides/build-iapp/build-&-test#application-developer-secret):
    This secret is directly accessible from the application as an environment
    variable. It is owned by the developer of the application. It can be any kind
    of data (API key, private key, token, ..) as long as it respects the size
@@ -58,6 +58,4 @@ graph TD
 You now understand how these three kinds of confidential assets work on iExec,
 you can go one step further by learning how to manipulate them:
 
-- [Attach a secret to your app](/guides/build-iapp/build-&-deploy#application-developer-secret)
-- [Access requester secrets](/guides/build-iapp/inputs-and-outputs#access-requester-secrets)
 - [Access a confidential dataset](sgx-encrypted-dataset.md)

@@ -11,7 +11,7 @@ applications?**
 
 DataProtector lets you encrypt data and control access through orders -
 specifying who can use it, how many times, and at what price. Protected data is
-only accessible in secure enclaves (TEEs) by authorized users and iApps.
+only accessible in secure enclaves (TEEs) by authorized users and iApp.
 
 ## Installation
 
@@ -63,7 +63,7 @@ console.log('Protected data address:', protectedData.address);
 ### What you Can Protect
 
 **Data**: Any kind of data you want to keep private and make available for
-computations by authorized users and iApps.
+computations by authorized users and iApp.
 
 **Supported types**: Common data types like text, numbers, true/false values,
 and files. See the [full list here](/references/dataProtector/types).
@@ -78,27 +78,6 @@ Need Help ? Check our
 for detailed formatting instructions.
 
 :::
-
-### Debug Mode Option
-
-Debug mode lets you test with debug iApps during development. As "debug" iApps
-don't have the same security standards, we recommend using this mode only during
-iApp development.
-
-```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-
-const protectedData = await dataProtectorCore.protectData({
-  data: {
-    email: 'test@example.com',
-  },
-  allowDebug: true, // [!code focus]
-});
-```
 
 ## Grant Access
 
@@ -153,7 +132,7 @@ data. No random code can touch it.
 
 **Pro tip**: Use app whitelists for production. Instead of a single app address,
 you can specify a whitelist contract that contains multiple app versions. Very
-useful for when you need to upgrade your iApps, without losing all the granted
+useful for when you need to upgrade your iApp, without losing all the granted
 access.
 
 ```ts

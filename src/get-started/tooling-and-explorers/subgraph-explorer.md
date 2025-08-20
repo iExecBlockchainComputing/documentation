@@ -21,7 +21,7 @@ data through GraphQL queries.
 ## 🎯 What is the Graph?
 
 The Graph is a decentralized protocol for indexing and querying blockchain data.
-It enables developers to build and publish open APIs called **subgraphs** that
+It enables developers to build and publish open API called **subgraphs** that
 applications can query using GraphQL. This makes it easy to access blockchain
 data without having to run your own indexing infrastructure.
 
@@ -127,7 +127,7 @@ explore the available data and construct complex queries.
 
 Here are some example queries you can try in the GraphQL explorer:
 
-#### Query iApps
+#### Query iApp
 
 ```graphql
 query {

@@ -236,34 +236,6 @@ const protectedData = await dataProtectorCore.protectData({
 });
 ```
 
-### allowDebug <OptionalBadge />
-
-**Type:** `boolean`  
-**Default:** `false`
-
-Allow using the protected data in TEE debug apps.
-
-```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-const protectedData = await dataProtectorCore.protectData({
-  name: 'myEmail',
-  data: {
-    email: 'example@gmail.com',
-  },
-  allowDebug: true, // [!code focus]
-});
-```
-
-::: tip
-
-This param is for development only.
-
-:::
-
 ### onStatusUpdate <OptionalBadge />
 
 **Type:** `OnStatusUpdateFn<ProtectDataStatuses>`
@@ -389,7 +361,7 @@ details on the transaction using the [iExec explorer](https://explorer.iex.ec).
 
 Under the hood, your protected data will be **compressed as a zip file**. In
 this zip file, you'll find back all of your protected fields, each field being
-serialized with a tool called `borsh`. You can find more details here:
+serialized with a tool called `Borsh`. You can find more details here:
 [deserializer](/references/iapp-generator/deserializer).
 
 This is mainly returned for debug purpose.

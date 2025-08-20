@@ -8,7 +8,7 @@ description:
 
 # consumeProtectedData <ChainNotSupportedBadge />
 
-Method to consume a protected data, ie. visualize it or download it.
+Method to consume a protected data, that is, visualize it or download it.
 
 This method does a few things under the hood:
 
@@ -16,8 +16,8 @@ This method does a few things under the hood:
 - Push the public key to iExec SMS (Secret Management Service) (For more info,
   see
   [iExec Protocol documentation](https://protocol.docs.iex.ec/for-developers/confidential-computing/access-confidential-assets#secret-management-service-sms))
-- Wait for the consuming task to be executed by a worker. The iExec TEE dApp
-  being executed is the one given with the `app` parameter. The iExec TEE dApp
+- Wait for the consuming task to be executed by a worker. The iExec TEE iApp
+  being executed is the one given with the `app` parameter. The iExec TEE iApp
   will get the protected data from IPFS, encrypt it with the public key
   generated in the first step, and re-upload it to IPFS.
 - Retrieve the encrypted data from IPFS and decrypt it with the private key
@@ -81,8 +81,8 @@ const consumeProtectedDataResult =
 
 **Type:** `AddressOrENS`
 
-Address or ENS of the iExec TEE dApp that will be used to consume the protected
-data. This iExec TEE dApp is the one that runs within an iExec worker.
+Address or ENS of the iExec TEE iApp that will be used to consume the protected
+data. This iExec TEE iApp is the one that runs within an iExec worker.
 
 ```ts twoslash
 import {
@@ -102,7 +102,7 @@ const consumeProtectedDataResult =
 
 ::: tip
 
-For this `app` parameter you can use the "Protected data delivery TEE dApp":
+For this `app` parameter you can use the "Protected data delivery TEE iApp":
 
 ```
 0x1cb7D4F3FFa203F211e57357D759321C6CE49921
@@ -120,7 +120,7 @@ For more details, see
 
 ::: tip
 
-If you want to provide **your own TEE dApp**, you will need to create a
+If you want to provide **your own TEE iApp**, you will need to create a
 whitelist that contains your app.
 
 For more details, see

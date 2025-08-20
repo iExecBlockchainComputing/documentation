@@ -354,7 +354,7 @@ You can pass input files to the app using `--input-files <list of URL>` option.
 With
 `--input-files https://example.com/file-A.txt,https://example.com/file-B.zip`
 the iExec worker will download the files before running the app in `IEXEC_IN`,
-and let the app access them throug variables:
+and let the app access them through variables:
 
 - `file-A.txt` as`IEXEC_INPUT_FILE_NAME_1`
 - `file-B.zip` as`IEXEC_INPUT_FILE_NAME_2`
@@ -413,13 +413,3 @@ iExec:
 - using docker to package your app with all its dependencies
 - testing an iExec app locally
 - publishing on dockerhub
-
-Resources:
-
-- A list of iExec applications with their Docker images can be found at
-  [https://github.com/iExecBlockchainComputing/iexec-apps](https://github.com/iExecBlockchainComputing/iexec-apps)
-
-Continue with these articles:
-
-- [Confidential app](/guides/build-iapp/build-&-deploy#confidential-app)
-- [Learn how to manage your apporders](/guides/build-iapp/build-&-deploy#manage-your-apporders)

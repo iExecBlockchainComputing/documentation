@@ -32,11 +32,11 @@ const rentResult = await dataProtectorSharing.rentProtectedData({
 ::: tip
 
 Technically, `price` and `duration` parameters could be avoided. It is mainly a
-protection against front-running "attacks", ie. if the collection owner changes
-the price **at the same time** you rent the protected data, you would end up
-paying more than expected. Passing the `price` here allows the SDK to ensure
-you're paying the right price. If prices don't match, the SDK will throw an
-error.
+protection against front-running "attacks", that is, if the collection owner
+changes the price **at the same time** you rent the protected data, you would
+end up paying more than expected. Passing the `price` here allows the SDK to
+ensure you're paying the right price. If prices don't match, the SDK will throw
+an error.
 
 :::
 

@@ -1,7 +1,7 @@
 ---
 title: Advanced iApp Building
 description:
-  Legacy, low-level guides for building confidential iApps (Docker, SGX, TDX,
+  Legacy, low-level guides for building confidential iApp (Docker, SGX, TDX,
   SCONE/Gramine, E2E encryption)
 ---
 

@@ -21,12 +21,12 @@ import { type Web3MailConfigOptions } from '@iexec/web3mail';
 ### dappAddressOrENS
 
 The Ethereum contract address or ENS (Ethereum Name Service) for the web3mail
-dApp.
+iApp.
 
 If not provided, the default ENS `web3mail.apps.iexec.eth` pointing to the
-latest version of the web3mail dApp provided by iExec will be used.
+latest version of the web3mail iApp provided by iExec will be used.
 
-You can find the corresponding dApp address with Bellecour explorer:
+You can find the corresponding iApp address with Bellecour explorer:
 [https://explorer.iex.ec/bellecour/search/web3mail.apps.iexec.eth](https://explorer.iex.ec/bellecour/search/web3mail.apps.iexec.eth).
 
 ```ts twoslash
@@ -41,9 +41,9 @@ const web3mail = new IExecWeb3mail(web3Provider, {
 
 ### dappWhitelistAddress
 
-The Ethereum contract address for the web3mail dApps whitelist. By granting
+The Ethereum contract address for the web3mail iApp whitelist. By granting
 access to a whitelist, email address owners ensure their email is still
-available to consumers even after a new version of web3mail dApp gets released.
+available to consumers even after a new version of web3mail iApp gets released.
 
 If not provided, the default whitelist smart contract address provided by iExec
 will be used.

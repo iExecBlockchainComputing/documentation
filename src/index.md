@@ -27,13 +27,13 @@ features:
       data. Ready-to-use privacy toolkit for developers.
     link: /guides/manage-data/manage-access
   - icon: 🤖
-    title: Build iApps
+    title: Build iApp
     details:
       iApp Generator builds confidential applications that run in secure TEEs.
       Custom confidentiality integration without managing infrastructure.
-    link: /guides/build-iapp/build-&-deploy
+    link: /guides/build-iapp/build-&-test
   - icon: ⚡
-    title: Use iApps
+    title: Use iApp
     details:
       Execute privacy-preserving apps like Web3Mail and Web3Telegram. Use what
       others built, extend what you need.

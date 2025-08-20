@@ -37,18 +37,18 @@ const { txHash } = await dataProtectorSharing.subscribeToCollection({
 ::: tip
 
 Technically, `price` and `duration` parameters could be avoided. It is mainly a
-protection against front-running "attacks", ie. if the collection owner changes
-the price **at the same time** you subscribe to the collection, you would end up
-paying more than expected. Passing the `price` here allows the SDK to ensure
-you're paying the right price. If prices don't match, the SDK will throw an
-error.
+protection against front-running "attacks", that is, if the collection owner
+changes the price **at the same time** you subscribe to the collection, you
+would end up paying more than expected. Passing the `price` here allows the SDK
+to ensure you're paying the right price. If prices don't match, the SDK will
+throw an error.
 
 :::
 
 ## Pre-conditions
 
-- The collection must be available for subscription, ie. the collection owner
-  must have set a price and a duration.
+- The collection must be available for subscription, that is, the collection
+  owner must have set a price and a duration.
 
 ## Parameters
 

@@ -17,13 +17,6 @@ confidential computing setup.
 **iApp Generator** builds confidential applications. Your code runs in Intel
 SGX/TDX secure enclaves where data stays private during processing.
 
-### What you get
-
-- **Project scaffolding** - Complete setup, ready to deploy
-- **Local testing** - Debug in simulation mode before going live
-- **Simple deployment** - One command deploys to TEE workers
-- **Data integration** - Works with encrypted datasets out of the box
-
 ### What iApp Generator Provides
 
 - ✅ **Project scaffolding** - Complete iApp structure ready to deploy
@@ -35,10 +28,9 @@ SGX/TDX secure enclaves where data stays private during processing.
 
 ### 1. **Learn the Concepts**
 
-Start here to understand what iApps are and how they work:
+Start here to understand what iApp are and how they work:
 
-- **[What Is an iApp?](/get-started/overview/what-is-iapp)** - Core concepts and
-  TEE overview
+- **[iApp](/get-started/overview/iapp)** - Core concepts and TEE overview
 - **[Getting Started](/references/iapp-generator/getting-started)** - Your first
   iApp in 15 minutes
 - **[Building Your iApp](/references/iapp-generator/building-your-iexec-app)** -
@@ -54,7 +46,7 @@ Once you've built your first iApp, level up with these practical guides:
   execution issues
 - **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
   Control who can use your iApp
-- **[How to Get and Decrypt Results](/guides/build-iapp/how-to-get-and-decrypt-results)** -
+- **[How to Get and Decrypt Results](/guides/build-iapp/inputs-and-outputs)** -
   Retrieve and use outputs
 
 ### 3. **Explore Advanced Features**
@@ -63,8 +55,8 @@ Ready for production? Dive into specialized topics:
 
 - **[Build Intel TDX App (Experimental)](/guides/build-iapp/advanced/create-your-first-tdx-app)** -
   Next-gen TEE with traditional deployment and iApp Generator technology
-- **[Complete Guides Overview](/guides/build-iapp/)** - All development guides
-  in one place
+- **[Complete Guides Overview](/guides/build-iapp/build-&-test)** - All
+  development guides in one place
 
 ## Why Choose iApp Generator?
 
@@ -105,7 +97,7 @@ applications:
 
 ### Need Help?
 
-- **[Complete Guides](/guides/build-iapp/build-&-deploy)** - All development
+- **[Complete Guides](/guides/build-iapp/build-&-test)** - All development
   guides
 - **[iExec Discord](https://discord.com/invite/pbt9m98wnU)** - Community support
 - **[Protocol Documentation](https://protocol.docs.iex.ec)** - Technical deep
