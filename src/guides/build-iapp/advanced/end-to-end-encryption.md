@@ -1,11 +1,11 @@
 # Protect the result
 
 In previous tutorials, we saw how to build
-[Confidential Computing applications](/get-started/protocol/tee/intel-sgx-technology)
-that run securely inside enclaves and combine them with confidential assets to
-get the most out of confidential computing advantages. In this chapter, we will
-push things further to protect the workflow in an end to end mode. That means
-the next step would be encrypting results.
+[Confidential Computing applications](/get-started/protocol/tee/intel-sgx) that
+run securely inside enclaves and combine them with confidential assets to get
+the most out of confidential computing advantages. In this chapter, we will push
+things further to protect the workflow in an end to end mode. That means the
+next step would be encrypting results.
 
 ::: warning
 
@@ -21,7 +21,7 @@ Before going any further, make sure you managed to
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
   [Install the iExec SDK](./quick-start-for-developers.md#install-the-iexec-sdk)
 - Familiarity with the basic concepts of
-  [Intel® SGX](/get-started/protocol/tee/intel-sgx-technology) and
+  [Intel® SGX](/get-started/protocol/tee/intel-sgx) and
   [SCONE](https://scontain.com) framework.
 
 :::
@@ -37,9 +37,9 @@ Assuming your application is deployed (if not please check how to do it
 [with Scone](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec)), before
 triggering an execution you need to generate an RSA key-pair, then push the
 public key to the
-[Secret Management Service](/get-started/protocol/tee/intel-sgx-technology). The
-latter, in turn, will provide it, at runtime, to the enclave running your
-Confidential Computing application.
+[Secret Management Service](/get-started/protocol/tee/intel-sgx). The latter, in
+turn, will provide it, at runtime, to the enclave running your Confidential
+Computing application.
 
 To generate the key-pair, go to `~/iexec-projects` and use the following SDK
 command:

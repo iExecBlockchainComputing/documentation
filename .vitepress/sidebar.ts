@@ -132,12 +132,24 @@ export function getSidebar() {
             ],
           },
           {
-            text: 'TEE Technology',
+            text: '🔒 TEE Technology',
             collapsed: true,
             items: [
               {
-                text: 'Intel SGX Technology Overview',
-                link: '/get-started/protocol/tee/intel-sgx-technology',
+                text: 'Introduction to TEE Technologies',
+                link: '/get-started/protocol/tee/introduction',
+              },
+              {
+                text: 'Intel SGX Technology',
+                link: '/get-started/protocol/tee/intel-sgx',
+              },
+              {
+                text: 'Intel TDX Technology',
+                link: '/get-started/protocol/tee/intel-tdx',
+              },
+              {
+                text: 'SGX vs TDX Comparison',
+                link: '/get-started/protocol/tee/sgx-vs-tdx',
               },
             ],
           },
@@ -181,10 +193,7 @@ export function getSidebar() {
             text: 'Inputs and Outputs',
             link: '/guides/build-iapp/inputs-and-outputs',
           },
-          {
-            text: 'Using TDX',
-            link: '/guides/build-iapp/using-tdx',
-          },
+
           {
             text: 'Debugging',
             link: '/guides/build-iapp/debugging',
