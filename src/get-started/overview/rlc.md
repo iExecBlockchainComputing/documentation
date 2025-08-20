@@ -155,5 +155,4 @@ import FeatureCard from '@/components/FeatureCard.vue';
 
 // Assets
 import rlcGif from '@/assets/rlc/rlc.gif';
-import duneDashboard from '@/assets/rlc/dune-dashboard.png';
 </script>
