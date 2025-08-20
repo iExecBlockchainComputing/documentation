@@ -112,11 +112,11 @@ provides secure cross-chain communication infrastructure. LayerZero is a
 decentralized protocol that enables trustless cross-chain messaging without
 requiring intermediate chains or wrapped tokens.
 
-<ImageViewer
-  :image-url-dark="halbornLogoIcon"
-  image-alt="Halborn Security Logo"
-  link-url="https://halborn.com/audits"
-/>
+<div style="display: flex; align-items: center; justify-content: center; margin: 1.5rem 0;">
+  <a href="https://halborn.com/audits" target="_blank" rel="noopener noreferrer">
+    <img :src="halbornLogoIcon" alt="Halborn Security Logo" style="height: 200px;" />
+  </a>
+</div>
 
 The RLC multichain bridge implementation has been thoroughly audited by
 [**Halborn**](https://www.halborn.com/), a leading blockchain security firm. The
@@ -147,5 +147,5 @@ import iexecLogoIcon from '@/assets/icons/iexec-logo.png';
 import arbitrumLogoIcon from '@/assets/icons/arbitrum.svg';
 import bellecourBridgeImage from '@/assets/tooling-&-explorers/bridge/bellecour-bridge.png';
 import stargateBridgeImage from '@/assets/tooling-&-explorers/bridge/stargate-bridge.png';
-import halbornLogoIcon from '@/assets/icons/halborn.jpg';
+import halbornLogoIcon from '@/assets/icons/halborn.svg';
 </script>
