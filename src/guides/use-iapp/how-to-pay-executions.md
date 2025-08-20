@@ -120,7 +120,7 @@ const sendEmail = await web3mail.sendEmail({
   protectedData: '0x123abc...',
   emailSubject: 'My email subject',
   emailContent: 'My email content',
-  useVoucher: false, // [!code focus]
+  useVoucher: true, // [!code focus]
 });
 ```
 
@@ -223,8 +223,8 @@ const result = await dataProtectorCore.processProtectedData({
 
 ::: info
 
-All price parameters are in **nRLC** (nano RLC). The default value for all price
-parameters is `0`, which means no maximum price limit is set.
+All price parameters are in nRLC (nano RLC). The default value for all price
+parameters is 0, which means only free resources are accepted.
 
 :::
 
