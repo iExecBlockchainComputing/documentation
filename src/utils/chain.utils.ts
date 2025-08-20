@@ -23,6 +23,7 @@ export interface Chain {
       url: string;
     };
   };
+  iexecExplorerUrl: string;
 }
 
 export function getSupportedChains(): Chain[] {
@@ -34,6 +35,7 @@ export function getSupportedChains(): Chain[] {
       nativeCurrency: arbitrum.nativeCurrency,
       rpcUrls: arbitrum.rpcUrls,
       blockExplorers: arbitrum.blockExplorers,
+      iexecExplorerUrl: 'https://explorer.iex.ec/arbitrum-mainnet',
     },
     {
       id: Number(bellecour.id),
@@ -49,6 +51,7 @@ export function getSupportedChains(): Chain[] {
             'https://blockscout-bellecour.iex.ec',
         },
       },
+      iexecExplorerUrl: 'https://explorer.iex.ec/bellecour',
     },
   ];
 }

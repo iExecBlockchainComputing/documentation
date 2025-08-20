@@ -208,7 +208,8 @@ const processProtectedDataResponse =
 
 Do not use this to provide any sensitive information to the application. All
 arguments passed this way are visible in plain text using the
-[iExec blockchain explorer](https://explorer.iex.ec).
+<a :href="explorerUrl" target="_blank" rel="noopener">iExec blockchain
+explorer</a> .
 
 :::
 
@@ -451,7 +452,9 @@ import { type ProcessProtectedDataResponse } from '@iexec/dataprotector';
 `string`
 
 The ID of the transaction that happened on iExec's side chain. You may view
-details on the transaction using the [iExec explorer](https://explorer.iex.ec).
+details on the transaction using the
+<a :href="explorerUrl" target="_blank" rel="noopener">iExec blockchain
+explorer</a> .
 
 ### dealId
 
@@ -465,7 +468,8 @@ Identifies the specific deal associated with this transaction.
 
 A unique identifier associated with a task currently running on the iExec
 protocol. You can monitor task execution using the
-[iExec blockchain explorer](https://explorer.iex.ec/arbitrum-mainnet).
+<a :href="explorerUrl" target="_blank" rel="noopener">iExec blockchain
+explorer</a> .
 
 ::: tip
 
@@ -498,7 +502,17 @@ processed during the task.
 :::
 
 <script setup>
+import { computed } from 'vue';
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
+
+// Get current chain and compute explorer info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
 </script>

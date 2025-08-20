@@ -321,7 +321,8 @@ import { type SendEmailResponse } from '@iexec/web3mail';
 
 This uniquely identifies the email task on the iExec side chain. You can view
 the status of the `sendEmail` method by monitoring the task on the
-[iExec Explorer](https://explorer.iex.ec/arbitrum-mainnet).
+<a :href="explorerUrl" target="_blank" rel="noopener">iExec blockchain
+explorer</a> .
 
 ## Error Handling
 
@@ -392,7 +393,17 @@ For any other errors, you'll get a `WorkflowError` error in the form of:
 ```
 
 <script setup>
+import { computed } from 'vue';
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
+
+// Get current chain and compute explorer info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
 </script>
