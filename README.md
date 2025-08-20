@@ -226,7 +226,6 @@ for input parameters:
 
 ## TODO
 
-- Add an audit section for smart contracts
 - Adapt hardcoded address to feat with new contracts deployed on arbitrum
 - Add link to the new explorer feature Asset_Types in the guide =>
   `handle-schemas-dataset-types`
@@ -241,7 +240,7 @@ for input parameters:
   the UI + SRLC/RLC on account section feature of the protocol
 - Update or add design illustrations based on the new design system
 - Check how to pay guide to update with the launch on Arbitrum (RLC vs xRLC)
-- framework AI supporté TDX vs SGX
+- framework AI supporté
 - check glossary
 - migrate github iexec SDK doc here
 - migrate pay-per-task page into a guide
