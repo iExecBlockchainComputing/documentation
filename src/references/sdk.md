@@ -9,8 +9,72 @@ The iExec SDK is a [CLI](#command-line-interface) and a
 [JS library](#javascripttypescript-library) that allows easy interactions with
 iExec decentralized marketplace in order to run off-chain computations.
 
-iExec SDK is available on [npm](https://www.npmjs.com/package/iexec) and
-[GitHub](https://github.com/iExecBlockchainComputing/iexec-sdk)
+## Overview
+
+### Prerequisites
+
+Before getting started, ensure that you have the following installed on your
+system:
+
+\- [**Node.js**](https://nodejs.org/en/) version 18 or higher
+
+\- [**NPM**](https://docs.npmjs.com/) (Node.js package manager)
+
+### Installation
+
+::: code-group
+
+```sh [npm]
+npm install @iexec/dataprotector
+```
+
+```sh [yarn]
+yarn add @iexec/dataprotector
+```
+
+```sh [pnpm]
+pnpm add @iexec/dataprotector
+```
+
+```sh [bun]
+bun add @iexec/dataprotector
+```
+
+:::
+
+### Instantiate SDK
+
+::: code-group
+
+```ts twoslash [Browser]
+declare global {
+  interface Window {
+    ethereum: any;
+  }
+}
+// ---cut---
+import { IExec } from 'iexec';
+
+// Connect to injected provider
+const iexec = new IExec({ ethProvider: window.ethereum });
+```
+
+```ts twoslash [NodeJS]
+import { IExec, utils } from 'iexec';
+
+const ethProvider = utils.getSignerFromPrivateKey(
+  'http://localhost:8545', // blockchain node URL
+  'YOUR_PRIVATE_KEY'
+);
+const iexec = new IExec({
+  ethProvider,
+});
+```
+
+:::
+
+For comprehensive documentation and advanced usage examples, see the
+[iExec SDK GitHub repository](https://github.com/iExecBlockchainComputing/iexec-sdk/blob/master/docs/README.md).
 
 ## Command Line Interface
 

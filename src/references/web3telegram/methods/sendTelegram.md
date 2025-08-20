@@ -23,7 +23,7 @@ documentation for more details.
 
 For executing the `sendTelegram` method with a voucher or <TokenSymbol />, refer
 to the dedicated section in the documentation under
-"[How to Pay for web3telegram](/guides/use-iapp/how-to-pay/how-to-pay-for-web3telegram)".
+"[How to Pay for Executions](/guides/use-iapp/how-to-pay-executions.md)".
 
 :::
 
