@@ -203,12 +203,12 @@ export function getSidebar() {
             collapsed: true,
             items: [
               {
-                text: 'Quick Start for Developers',
-                link: '/guides/build-iapp/advanced/quick-start-for-developers',
+                text: 'Quick Start',
+                link: '/guides/build-iapp/advanced/quick-start',
               },
               {
                 text: 'Build your first application',
-                link: '/guides/build-iapp/advanced/your-first-app',
+                link: '/guides/build-iapp/advanced/build-your-first-app',
               },
               {
                 text: 'Build your first SGX app',
@@ -216,7 +216,7 @@ export function getSidebar() {
               },
               {
                 text: 'End-to-end Encryption',
-                link: '/guides/build-iapp/advanced/end-to-end-encryption',
+                link: '/guides/build-iapp/advanced/protect-the-result',
               },
               {
                 text: 'Access Confidential Assets',
@@ -224,7 +224,7 @@ export function getSidebar() {
               },
               {
                 text: 'Build Intel TDX app',
-                link: '/guides/build-iapp/advanced/create-your-first-tdx-app',
+                link: '/guides/build-iapp/advanced/build-your-first-tdx-app',
               },
             ],
           },
