@@ -252,7 +252,7 @@ export function getSidebar() {
           {
             text: 'Run iApp without ProtectedData',
             link: '/guides/use-iapp/run-iapp-without-ProtectedData',
-          },          
+          },
           {
             text: 'Integrate Web3 Messaging',
             link: '/guides/use-iapp/web3-messaging',
