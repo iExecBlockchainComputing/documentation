@@ -135,12 +135,12 @@ you can specify a whitelist contract that contains multiple app versions. Very
 useful for when you need to upgrade your iApp, without losing all the granted
 access.
 
-```ts
+```text twoslash
 // Single app
-authorizedApp: 'web3mail.apps.iexec.eth';
+authorizedApp: {{web3MailAddress}};
 
 // Or use a whitelist (recommended for production)
-authorizedApp: '0x781482C39CcE25546583EaC4957Fb7Bf04C277D2'; // Web3Mail whitelist
+authorizedApp: {{web3MailAppWhitelist}}; // Web3Mail whitelist
 ```
 
 #### authorizedUser <RequiredBadge />
@@ -169,7 +169,7 @@ yourself!
 Set to `0` for free access, or specify a price to monetize your data
 automatically.
 
-**Example**: `pricePerAccess: 1_000_000_000` = 1 <TokenSymbol /> per access
+**Example**: `pricePerAccess: 1_000_000_000` = 1 RLC per access
 
 → **Want to learn more monetization capabilities?** See our detailed
 [Monetize Protected Data guide](/guides/manage-data/monetize-protected-data)
@@ -209,7 +209,17 @@ steps:
   [data monetization strategies](/guides/manage-data/monetize-protected-data)
 
 <script setup>
+import { computed } from 'vue';
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
-import TokenSymbol from '@/components/TokenSymbol.vue'
+
+// Get current chain info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const web3MailAddress = computed(() => chainData.value.web3MailAddress);
+const web3MailAppWhitelist = computed(() => chainData.value.web3MailAppWhitelist);
 </script>

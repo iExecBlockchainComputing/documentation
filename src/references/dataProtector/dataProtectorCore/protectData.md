@@ -393,24 +393,25 @@ The multiaddr field is the IPFS path of your encrypted data.
 
 You can access your encrypted IPFS data with the link:
 
-`https://ipfs-gateway.v8-bellecour.iex.ec/ipfs/abc123...`
+`{{ipfsGateway}}/ipfs/abc123...`
 
 `abc123...` is the second part of the returned string `/p2p/abc123...`
 
 :::
 
-## Created Protected Data
-
-To further check your data was correctly created, you can inspect it on the
-[iExec explorer](https://explorer.iex.ec/).
-
-<a href="https://explorer.iex.ec/" target="_blank" rel="noreferrer" style="display: inline-block">
-  <img :src="explorerDatasetImage" alt="iExec explorer - Dataset example">
-</a>
-
 <script setup>
+import { computed } from 'vue';
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
+
+// Get current chain info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const ipfsGateway = computed(() => chainData.value.ipfsGateway);
+
 // Assets
-import explorerDatasetImage from '@/assets/explorer-dataset-example.png';
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
 </script>

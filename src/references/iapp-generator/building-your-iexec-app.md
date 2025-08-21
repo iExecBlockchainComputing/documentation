@@ -181,7 +181,6 @@ Your iApp is now running on iExec!
 
 Once your application is **stable** and **functional**, you can:
 
-- Contact **iExec** to move to **production mode** (Full Privacy).
 - Learn how to **manage orders** and integrate with the **iExec protocol**.
 
 #### 📚 Recommended Resources

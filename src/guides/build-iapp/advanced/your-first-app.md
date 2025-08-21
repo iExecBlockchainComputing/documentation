@@ -1,5 +1,6 @@
 ---
-description: >-
+title: Build Your First Application
+description:
   In this section we will show you how you can create a Docker dapp over the
   iExec infrastructure.
 ---
@@ -322,20 +323,20 @@ docker pull <docker-hub-user>/hello-world:1.0.0 | grep "Digest: sha256:" | sed '
 
 Deploy your app on iExec
 
-```bash
-iexec app deploy
+```bash twoslash
+iexec app deploy --chain {{chainName}}
 ```
 
 Verify the deployed app \(name, multiaddr, checksum, owner\)
 
-```bash
-iexec app show
+```bash twoslash
+iexec app show --chain {{chainName}}
 ```
 
 ### Run your app on iExec
 
-```bash
-iexec app run --workerpool debug-v8-learn.main.pools.iexec.eth --watch
+```bash twoslash
+iexec app run --chain {{chainName}} --workerpool {{workerpoolAddress}} --watch
 ```
 
 ::: info
@@ -364,8 +365,8 @@ and let the app access them through variables:
 Once the run is completed copy the taskid from `iexec app run` output to
 download and check the result
 
-```bash
-iexec task show <taskid> --download my-app-result  \
+```bash twoslash
+iexec task show --chain {{chainName}} <taskid> --download my-app-result  \
     && unzip my-app-result.zip -d my-app-result
 ```
 
@@ -396,8 +397,8 @@ Sometimes things don't work out right the first time and you may need to
 
 ## Publish your app on the iExec marketplace
 
-```bash
-iexec app publish
+```bash twoslash
+iexec app publish --chain {{chainName}}
 ```
 
 **Congratulations your application is now available on iExec!**
@@ -413,3 +414,17 @@ iExec:
 - using docker to package your app with all its dependencies
 - testing an iExec app locally
 - publishing on dockerhub
+
+<script setup>
+import { computed } from 'vue';
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
+
+// Get current chain info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const chainName = computed(() => chainData.value.chainName);
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
+</script>
