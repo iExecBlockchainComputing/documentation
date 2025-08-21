@@ -246,9 +246,9 @@ Here's the detailed description of each parameter:
 
 **Examples:**
 
-- `"1"` - Single use
-- `"100"` - Limited campaign
-- `"10000"` - Virtually unlimited usage
+- `1` - Single use
+- `100` - Limited campaign
+- `10000` - Virtually unlimited usage
 
 ### `tag` <Badge type="tip" text="optional" />
 
@@ -270,20 +270,19 @@ All restrictions use `0x0000000000000000000000000000000000000000` to indicate
 
 **Description:** Restrict usage to a specific dataset
 
-**Typical usage:** `"0x0000000000000000000000000000000000000000"` (no
-restriction)
+**Typical usage:** `0x0000000000000000000000000000000000000000` (no restriction)
 
 #### `workerpoolrestrict` <Badge type="tip" text="optional" />
 
 **Description:** Restrict execution to a specific workerpool
 
-**Example:** `"prod-v8-bellecour.main.pools.iexec.eth"` for the main workerpool
+**Example:** `{{ workerpoolAddress }}` for the main workerpool
 
 #### `requesterrestrict` <Badge type="tip" text="optional" />
 
 **Description:** Restrict usage to a specific user
 
-**Typical usage:** `"0x0000000000000000000000000000000000000000"` (open to all)
+**Typical usage:** `0x0000000000000000000000000000000000000000` (open to all)
 
 ## What's Next?
 
@@ -301,3 +300,16 @@ Next steps:
   Complete CLI reference
 - **[Official Orders Documentation](https://protocol.docs.iex.ec/for-developers/advanced/manage-your-apporders)** -
   Protocol-level order management
+
+<script setup>
+import { computed } from 'vue';
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
+
+// Get current chain and compute explorer info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
+</script>

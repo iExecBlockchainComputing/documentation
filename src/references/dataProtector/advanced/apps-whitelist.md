@@ -76,9 +76,6 @@ See it in
 See it in
 [https://explorer.iex.ec/bellecour](https://explorer.iex.ec/bellecour/app/0x1cb7d4f3ffa203f211e57357d759321c6ce49921)
 
-See it in
-[https://blockscout-bellecour.iex.ec/](https://blockscout-bellecour.iex.ec/address/0x1cb7D4F3FFa203F211e57357D759321C6CE49921)
-
 <script setup>
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

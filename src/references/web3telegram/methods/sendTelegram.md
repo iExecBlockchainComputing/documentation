@@ -177,8 +177,7 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 **Type:** `workerpoolAddressOrEns | undefined`
 
-**Default:** `prod-v8-bellecour.main.pools.iexec.eth` (iExec's production
-workerpool)
+**Default:** `{{workerpoolAddress}}` (iExec's workerpool)
 
 Allows specifying the workerpool that will run the Web3Telegram application.
 
@@ -193,7 +192,7 @@ const sendTelegram = await web3telegram.sendTelegram({
   protectedData: '0x123abc...',
   senderName: 'Arthur',
   telegramContent: 'My telegram message content',
-  workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth', // [!code focus]
+  workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
 });
 ```
 
@@ -298,4 +297,5 @@ const selectedChain = computed(() => userStore.getCurrentChainId());
 
 const chainData = computed(() => getChainById(selectedChain.value));
 const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
 </script>

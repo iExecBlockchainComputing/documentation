@@ -225,8 +225,8 @@ docker run --rm -e SCONE_HASH=1 <docker-hub-user>/tee-scone-hello-world:1.0.0-de
 
 Deploy the app with the standard command:
 
-```bash
-iexec app deploy
+```bash twoslash
+iexec app deploy --chain {{chainName}}
 ```
 
 ### Run the TEE app
@@ -239,17 +239,14 @@ a debug workerpool, use the debug workerpool
 
 You are now ready to run the app
 
-```bash
-iexec app run --tag tee,scone --workerpool debug-v8-learn.main.pools.iexec.eth --watch
+```bash twoslash
+iexec app run --chain {{chainName}} --tag tee,scone --workerpool debug-v8-learn.main.pools.iexec.eth --watch
 ```
 
 ::: info
 
 You noticed we used `debug-v8-learn.main.pools.iexec.eth` instead of an ethereum
 address, this is an ENS name.
-
-The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables
-associating decentralized naming to ethereum addresses.
 
 :::
 
@@ -269,3 +266,16 @@ may need to use some confidential data to get the full potential of the
 
 - [Access confidential assets from your app](access-confidential-assets.md)
 - [Protect the result](end-to-end-encryption.md)
+
+<script setup>
+import { computed } from 'vue';
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
+
+// Get current chain and compute explorer info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const chainName = computed(() => chainData.value.chainName);
+</script>

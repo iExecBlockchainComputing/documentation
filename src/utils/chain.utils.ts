@@ -23,7 +23,10 @@ export interface Chain {
       url: string;
     };
   };
+  chainName: string;
   iexecExplorerUrl: string;
+  workerpoolAddress: string;
+  ipfsGateway: string;
 }
 
 export function getSupportedChains(): Chain[] {
@@ -35,7 +38,10 @@ export function getSupportedChains(): Chain[] {
       nativeCurrency: arbitrum.nativeCurrency,
       rpcUrls: arbitrum.rpcUrls,
       blockExplorers: arbitrum.blockExplorers,
+      chainName: 'arbitrum-mainnet',
       iexecExplorerUrl: 'https://explorer.iex.ec/arbitrum-mainnet',
+      workerpoolAddress: '0x2C06263943180Cc024dAFfeEe15612DB6e5fD248',
+      ipfsGateway: 'https://ipfs-gateway.arbitrum-mainnet.iex.ec',
     },
     {
       id: Number(bellecour.id),
@@ -51,7 +57,10 @@ export function getSupportedChains(): Chain[] {
             'https://blockscout-bellecour.iex.ec',
         },
       },
+      chainName: 'bellecour',
       iexecExplorerUrl: 'https://explorer.iex.ec/bellecour',
+      workerpoolAddress: 'prod-v8-bellecour.main.pools.iexec.eth',
+      ipfsGateway: 'https://ipfs-gateway.v8-bellecour.iex.ec',
     },
   ];
 }

@@ -64,7 +64,7 @@ Ethereum wallet. See iExec SDK documentation
 
 Create a new folder for your iExec project and initialize the project:
 
-```text
+```bash
 mkdir ~/iexec-projects
 cd ~/iexec-projects
 iexec init --skip-wallet
@@ -87,7 +87,7 @@ for a full list.
 
 You can now check your wallet content:
 
-```text
+```bash
 iexec wallet show
 ```
 
@@ -102,7 +102,7 @@ Let's deploy an iExec app!
 
 Initialize a new application
 
-```text
+```bash
 iexec app init
 ```
 
@@ -134,22 +134,22 @@ iExec.
 You will now deploy your app on iExec, this will be your first transaction on
 the blockchain:
 
-```text
-iexec app deploy
+```bash twoslash
+iexec app deploy --chain {{chainName}}
 ```
 
 ::: tip
 
 While running `iexec app deploy` you sent your first transaction on the
-bellecour blockchain.
+{{chainName}} blockchain.
 
 :::
 
 You can check your deployed apps with their index, let's check your last
 deployed app:
 
-```text
-iexec app show
+```bash twoslash
+iexec app show --chain {{chainName}}
 ```
 
 ## Run your app on iExec
@@ -173,21 +173,21 @@ At any time you can:
 
 - view your balance
 
-```sh
-iexec account show
+```bash twoslash
+iexec account show --chain {{chainName}}
 ```
 
 - deposit RLC from your wallet to your iExec Account
 
-```sh
-iexec account deposit <amount>
+```bash twoslash
+iexec account deposit --chain {{chainName}} <amount>
 ```
 
 - withdraw RLC from your iExec account to your wallet \(only stake can be
   withdrawn\)
 
-```sh
-iexec account withdraw <amount>
+```bash twoslash
+iexec account withdraw --chain {{chainName}} <amount>
 ```
 
 :::
@@ -197,8 +197,8 @@ to pay for the computation.
 
 Everything is ready to run your application!
 
-```text
-iexec app run --args <your-name-here> --workerpool prod-v8-learn.main.pools.iexec.eth --watch
+```bash twoslash
+iexec app run --chain {{chainName}} --args <your-name-here> --workerpool prod-v8-learn.main.pools.iexec.eth --watch
 ```
 
 ::: info
@@ -253,14 +253,14 @@ is a 32Bytes hexadecimal string\).
 
 Download the result of your task
 
-```text
-iexec task show <taskid> --download my-result
+```bash twoslash
+iexec task show --chain {{chainName}} <taskid> --download my-result
 ```
 
 You can get your taskid with the command:
 
-```text
-iexec deal show <dealid>
+```bash twoslash
+iexec deal show --chain {{chainName}} <dealid>
 ```
 
 ::: info
@@ -274,7 +274,7 @@ produce an text file in `result.txt`.
 
 Let's discover the result of the computation.
 
-```text
+```bash
 unzip my-result.zip -d my-result
 cat my-result/result.txt
 ```
@@ -301,13 +301,13 @@ The conditions to use an app are defined in the **apporder**.
 
 Publish a new apporder for your application.
 
-```text
-iexec app publish
+```bash twoslash
+iexec app publish --chain {{chainName}}
 ```
 
 ::: info
 
-`iexec app publish` options allows to define custom access rules to the app
+`iexec app publish` command allows to define custom access rules to the app
 \(run `iexec app publish --help` to discover all the possibilities\).
 
 You will learn more about orders management later, keep the apporder default
@@ -320,17 +320,13 @@ conditions defined in apporder.
 
 You can check the published apporders for your app
 
-```text
-iexec orderbook app <your app address>
+```bash twoslash
+iexec orderbook app --chain {{chainName}} <your app address>
 ```
 
 Congratulation you just created a decentralized application! Anyone can now
 trigger an execution of your application on the iExec decentralized
 infrastructure.
-
-- With the iexec SDK CLI
-  `iexec app run <app address> --workerpool prod-v8-learn.main.pools.iexec.eth`
-- On iExec marketplace
 
 ## What's next?
 
@@ -346,3 +342,16 @@ You are now familiar with the following key iExec concepts for developers:
 Continue with these guides:
 
 - [Learn how to build your first application running on iExec](your-first-app.md)
+
+<script setup>
+import { computed } from 'vue';
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
+
+// Get current chain and compute explorer info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const chainName = computed(() => chainData.value.chainName);
+</script>

@@ -156,9 +156,9 @@ const consumeProtectedDataResult =
 ### workerpool <OptionalBadge />
 
 **Type:** `AddressOrENS`  
-**Default:** `prod-v8-bellecour.main.pools.iexec.eth`
+**Default:** `{{ workerpoolAddress }}` (iExec's workerpool)
 
-Address or ENS of the workerpool.
+Address or ENS of the workerpool on which your confidential task will run.
 
 ```ts twoslash
 import {
@@ -173,7 +173,7 @@ const consumeProtectedDataResult =
   await dataProtectorSharing.consumeProtectedData({
     protectedData: '0x123abc...',
     app: '0x456def...',
-    workerpool: 'prod-v8-bellecour.main.pools.iexec.eth', // [!code focus]
+    workerpool: '0xa5de76...', // [!code focus]
   });
 ```
 
@@ -331,8 +331,18 @@ Identifies the specific task associated with the deal.
 The actual content of the protected file.
 
 <script setup>
+import { computed } from 'vue';
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
 import { Icon } from '@iconify/vue';
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+
+// Get current chain and compute explorer info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
 </script>

@@ -64,21 +64,22 @@ private key in the file `<0x-your-wallet-address>_key`.
 
 Now, push the public key to the SMS:
 
-```bash
-iexec result push-encryption-key --tee-framework scone
+```bash twoslash
+iexec result push-encryption-key --tee-framework --chain {{chainName}} scone
 ```
 
 And check it using:
 
-```bash
-iexec result check-encryption-key --tee-framework scone
+```bash twoslash
+iexec result check-encryption-key --tee-framework --chain {{chainName}} scone
 ```
 
 Now to see that in action, you'd need to trigger a task and specify yourself as
 the beneficiary in the command:
 
-```bash
+```bash twoslash
 iexec app run <0x-your-app-address> \
+    --chain {{chainName}}
     --workerpool debug-v8-learn.main.pools.iexec.eth \
     --tag tee,scone \
     --encrypt-result \
@@ -87,8 +88,8 @@ iexec app run <0x-your-app-address> \
 
 Wait for the task to be `COMPLETED` and download the result:
 
-```bash
-iexec task show <0x-your-task-id> --download
+```bash twoslash
+iexec task show --chain {{chainName}} <0x-your-task-id> --download
 ```
 
 If you extract the obtained zip and try to read the content of the file
@@ -134,3 +135,16 @@ the dataset, and the result.
 
 You can go to the advanced section and learn more about managing orders on the
 iExec to effectively monetize your applications and datasets.
+
+<script setup>
+import { computed } from 'vue';
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
+
+// Get current chain and compute explorer info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const chainName = computed(() => chainData.value.chainName);
+</script>

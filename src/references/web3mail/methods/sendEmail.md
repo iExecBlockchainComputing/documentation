@@ -216,8 +216,7 @@ const sendEmail = await web3mail.sendEmail({
 ### workerpoolAddressOrEns <OptionalBadge />
 
 **Type:** `workerpoolAddressOrEns`  
-**Default:** `prod-v8-bellecour.main.pools.iexec.eth` (iExec's production
-workerpool)
+**Default:** `{{workerpoolAddress}}` (iExec's workerpool)
 
 Allows specifying the workerpool that will run the Web3Mail application.
 
@@ -231,7 +230,7 @@ const sendEmail = await web3mail.sendEmail({
   protectedData: '0x123abc...',
   emailSubject: 'My email subject',
   emailContent: 'My email content',
-  workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth', // [!code focus]
+  workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
 });
 ```
 
@@ -399,4 +398,5 @@ const selectedChain = computed(() => userStore.getCurrentChainId());
 
 const chainData = computed(() => getChainById(selectedChain.value));
 const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
 </script>

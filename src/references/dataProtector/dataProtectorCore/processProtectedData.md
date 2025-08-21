@@ -266,20 +266,15 @@ const processProtectedDataResponse = await dataProtectorCore.processProtectedDat
 ### workerpool <OptionalBadge />
 
 **Type:** `AddressOrENS | 'any'`  
-**Default:** `prod-v8-bellecour.main.pools.iexec.eth`
+**Default:** `{{ workerpoolAddress }}`
 
-The ETH address or Ethereum Name Service (ENS) address for the iExec workerpool.
 It's the confidential computer on which the iExec application will run.
 
 ::: tip
 
-iExec currently offers a production workerpool located at the Ethereum Name
-Service (ENS) address `prod-v8-bellecour.main.pools.iexec.eth`. This is the
-default workerpool for running confidential computations on the iExec platform.
-
-If you don't specify a workerpool preference,
-0x0000000000000000000000000000000000000000 represents any randomly available
-workerpool.
+iExec currently offers a production workerpool located at the address
+`{{ workerpoolAddress }}`. This is the default workerpool for running
+confidential computations on the iExec platform.
 
 :::
 
@@ -515,4 +510,5 @@ const selectedChain = computed(() => userStore.getCurrentChainId());
 
 const chainData = computed(() => getChainById(selectedChain.value));
 const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
 </script>

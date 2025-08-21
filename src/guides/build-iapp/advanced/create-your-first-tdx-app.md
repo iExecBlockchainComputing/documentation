@@ -1,4 +1,4 @@
-# 🛡️ Build Intel TDX App (Experimental)
+# 🛡️ Build Intel TDX App (Experimental) <ChainNotSupportedBadge/>
 
 In this tutorial, you will learn how to build and run a Confidential Computing
 application with Intel TDX technology using both traditional deployment and the
@@ -309,3 +309,7 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
   in TDX
 - **[Advanced iApp Building](/guides/build-iapp/advanced/overview)** - Advanced
   development techniques
+
+<script setup>
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>
