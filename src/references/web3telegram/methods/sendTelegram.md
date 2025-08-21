@@ -41,7 +41,6 @@ const sendTelegram = await web3telegram.sendTelegram({
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
   label: 'some-custom-id',
-  workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth',
   dataMaxPrice: 42,
   appMaxPrice: 42,
   workerpoolMaxPrice: 42,
@@ -56,7 +55,7 @@ import { type SendTelegramParams } from '@iexec/web3telegram';
 
 ### protectedData
 
-`Address`
+**Type:** `Address`
 
 The address of the `protectedData` holding the contact's telegram chat ID.
 
@@ -76,7 +75,7 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ### senderName
 
-`string`
+**Type:** `string`
 
 The name of the telegram message sender.
 
@@ -96,9 +95,7 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ### telegramContent
 
-`string`
-
-_maximum size_: 512 kb
+**Type:**`string` **Maximum siz:** `512 kb`
 
 The telegram message content that needs to be sent. The content is limited to
 512 kb in size. Telegram content is encrypted and stored in IPFS.
@@ -119,7 +116,8 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ### useVoucher <ChainNotSupportedBadge /> <OptionalBadge />
 
-**Type:** `boolean`  
+**Type:** `boolean`
+
 **Default:** `false`
 
 This optional param allows you to pay for the deal using your voucher. Make sure
@@ -137,7 +135,6 @@ const sendTelegram = await web3telegram.sendTelegram({
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
   label: 'some-custom-id',
-  workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth',
   dataMaxPrice: 42,
   appMaxPrice: 42,
   workerpoolMaxPrice: 42,
@@ -156,7 +153,7 @@ sufficient funds for this transfer to proceed.
 
 ### label
 
-`string | undefined`
+**Type:** `string | undefined`
 
 Allows adding a custom public label. The Web3telegram tool writes this onchain
 as `iexec_args` in the deal params.
@@ -178,9 +175,10 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ### workerpoolAddressOrEns
 
-`workerpoolAddressOrEns | undefined`
+**Type:** `workerpoolAddressOrEns | undefined`
 
-_default_: iExec's production workerpool
+**Default:** `prod-v8-bellecour.main.pools.iexec.eth` (iExec's production
+workerpool)
 
 Allows specifying the workerpool that will run the Web3Telegram application.
 
@@ -199,19 +197,11 @@ const sendTelegram = await web3telegram.sendTelegram({
 });
 ```
 
-::: tip
-
-iExec currently offers a production workerpool located at the Ethereum Name
-Service (ENS) address `prod-v8-bellecour.main.pools.iexec.eth`. This is the
-default workerpool for running confidential computations on the iExec platform.
-
-:::
-
 ### dataMaxPrice
 
-`number | undefined`
+**Type:** `number | undefined`
 
-_default_: `0`
+**Default:** `0`
 
 Allows specifying the maximum amount (in nRLC) you are willing to pay the
 telegram chat ID owner for using their data. The owner of the protected chat ID
@@ -234,9 +224,9 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ### appMaxPrice
 
-`number | undefined`
+**Type:** `number | undefined`
 
-_default_: `0`
+**Default:** `0`
 
 Allows specifying the maximum amount (in nRLC) you are willing to pay the
 Web3telegram app provider (iExec) for using the Web3telegram application.
@@ -258,9 +248,9 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ### workerpoolMaxPrice
 
-`number | undefined`
+**Type:** `number | undefined`
 
-_default_: `0`
+**Default:** `0`
 
 Allows specifying the maximum amount you want to pay the workerpool provider for
 using their infrastructure to run the web3telegram app in nRLC.
@@ -288,7 +278,7 @@ import { type SendTelegramResponse } from '@iexec/web3telegram';
 
 ### taskId
 
-`Addess`
+**Type:** `Address`
 
 This uniquely identifies the telegram task on the iExec side chain. You can view
 the status of the `sendTelegram` method by monitoring the task on the

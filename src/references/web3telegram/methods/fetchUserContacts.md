@@ -33,7 +33,7 @@ import { type FetchUserContactsParams } from '@iexec/web3telegram';
 
 ### userAddress
 
-`Address`
+**Type:** `Address`
 
 The entity for which you wish to obtain the list of contacts.
 

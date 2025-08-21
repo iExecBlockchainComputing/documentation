@@ -37,7 +37,7 @@ this, you should use the [iExec SDK](/references/sdk.md).
 import { IExec, utils } from 'iexec';
 
 const ethProvider = utils.getSignerFromPrivateKey(
-  'bellecour', // blockchain node URL
+  'chain', // blockchain node URL
   'PRIVATE_KEY'
 );
 const iexec = new IExec({
@@ -136,7 +136,6 @@ const sendTelegram = await web3telegram.sendTelegram({
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
   label: 'some-custom-id',
-  workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth',
   dataMaxPrice: 42,
   appMaxPrice: 42,
   workerpoolMaxPrice: 42,

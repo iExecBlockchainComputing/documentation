@@ -47,7 +47,7 @@ blockchain.
 import { IExec, utils } from 'iexec';
 
 const ethProvider = utils.getSignerFromPrivateKey(
-  'bellecour', // blockchain node URL
+  'chain', // blockchain node URL
   'PRIVATE_KEY'
 );
 const iexec = new IExec({
@@ -98,7 +98,7 @@ execution.
 import { IExec, utils } from 'iexec';
 
 const ethProvider = utils.getSignerFromPrivateKey(
-  'bellecour', // blockchain node URL
+  'chain', // blockchain node URL
   'PRIVATE_KEY'
 );
 const iexec = new IExec({
@@ -155,7 +155,7 @@ securely and made available to the iApp as environment variables.
 import { IExec, utils } from 'iexec';
 
 const ethProvider = utils.getSignerFromPrivateKey(
-  'bellecour', // blockchain node URL
+  'chain', // blockchain node URL
   'PRIVATE_KEY'
 );
 const iexec = new IExec({

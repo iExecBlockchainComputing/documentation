@@ -216,7 +216,8 @@ const sendEmail = await web3mail.sendEmail({
 ### workerpoolAddressOrEns <OptionalBadge />
 
 **Type:** `workerpoolAddressOrEns`  
-**Default:** iExec's production workerpool
+**Default:** `prod-v8-bellecour.main.pools.iexec.eth` (iExec's production
+workerpool)
 
 Allows specifying the workerpool that will run the Web3Mail application.
 
@@ -233,14 +234,6 @@ const sendEmail = await web3mail.sendEmail({
   workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth', // [!code focus]
 });
 ```
-
-::: tip
-
-iExec currently offers a production workerpool located at the Ethereum Name
-Service (ENS) address `prod-v8-bellecour.main.pools.iexec.eth`. This is the
-default workerpool for running confidential computations on the iExec platform.
-
-:::
 
 ### dataMaxPrice <OptionalBadge />
 
