@@ -19,14 +19,10 @@ instabilities, limited compatibility, and potential outages.
 
 :::
 
-:::info Understanding TDX Concepts
-
 Before implementing TDX, make sure you understand the foundational concepts and
 differences between TEE technologies. Check out our
 **[Intel TDX Technology](/get-started/protocol/tee/intel-tdx)** guide for
 comprehensive explanations of TDX technology and its benefits.
-
-:::
 
 ::: info
 
