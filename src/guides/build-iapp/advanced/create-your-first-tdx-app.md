@@ -1,4 +1,11 @@
-# 🛡️ Build Intel TDX App (Experimental)
+---
+title: Build Intel TDX App (Experimental)
+description:
+  Learn how to build and run Confidential Computing applications with Intel TDX
+  technology using both traditional deployment and the iApp Generator
+---
+
+# 🛡️ Build Intel TDX App (Experimental) <ChainNotSupportedBadge/>
 
 In this tutorial, you will learn how to build and run a Confidential Computing
 application with Intel TDX technology using both traditional deployment and the
@@ -103,7 +110,7 @@ Your `iexec.json` should now look like this example:
     "checksum": "<checksum>", // starts with 0x, update it with your own image digest
     "mrenclave": {
       "framework": "TDX", // TEE framework (keep default value)
-  	}
+   }
   },
   ...
 }
@@ -211,7 +218,7 @@ declaration
 await dataProtector.core.processProtectedData({
   protectedData: protectedData.address,
   workerpool: 'tdx-labs.pools.iexec.eth',
-  app: '0x1919ceb0c6e60f3B497936308B58F9a6aDf071eC',
+  app: '0x456def...',
 });
 ```
 
@@ -296,8 +303,8 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
   **[Intel SGX Technology](/get-started/protocol/tee/intel-sgx)** for production
 - **[Create Your First SGX App](/guides/build-iapp/advanced/create-your-first-sgx-app)** -
   Build production-ready SGX applications
-- **[Build & Deploy](/guides/build-iapp/build-&-deploy)** - Standard iApp
-  deployment guide
+- **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Standard iApp deployment
+  guide
 
 ### 🔗 **Related Resources**
 
@@ -307,5 +314,9 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
   Generator documentation
 - **[DataProtector SDK](/references/dataProtector)** - Work with protected data
   in TDX
-- **[Advanced iApp Building](/guides/build-iapp/advanced/overview)** - Advanced
-  development techniques
+- **[Advanced iApp Building](/guides/build-iapp/advanced/quick-start-for-developers)** -
+  Advanced development techniques
+
+<script setup>
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+</script>

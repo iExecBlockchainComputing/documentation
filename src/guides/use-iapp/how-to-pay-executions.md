@@ -14,7 +14,7 @@ and cost management strategies.
 
 iExec supports multiple payment methods for executing iApp:
 
-1. **RLC Tokens**: Direct payment using <TokenSymbol /> tokens
+1. **RLC Tokens**: Direct payment using RLC tokens
 2. **Vouchers**: Pre-funded vouchers for simplified payment
 3. **Mixed Payment**: Combination of RLC and vouchers
 
@@ -28,7 +28,7 @@ your wallet to pay for executions.
 For detailed information on how to obtain RLC tokens, see our
 [RLC guide](/get-started/overview/rlc.md).
 
-### Step 2: Transfer to iExec Sidechain
+### Step 2: Stake RLC to Power Your iExec Tasks
 
 RLC tokens need to be staked on the iExec protocol to allow task payment. To do
 this, you should use the [iExec SDK](/references/sdk.md).
@@ -37,7 +37,7 @@ this, you should use the [iExec SDK](/references/sdk.md).
 import { IExec, utils } from 'iexec';
 
 const ethProvider = utils.getSignerFromPrivateKey(
-  'bellecour', // blockchain node URL
+  'chain', // blockchain node URL
   'PRIVATE_KEY'
 );
 const iexec = new IExec({
@@ -49,7 +49,7 @@ const balance = await iexec.account.checkBalance('0xa0c15e...');
 console.log('Nano RLC staked:', balance.stake.toString());
 console.log('Nano RLC locked:', balance.locked.toString());
 
-// Deposit RLC to the sidechain
+// Lock RLC in your account in the iExec protocol
 await iexec.account.deposit(1_000_000_000); // Deposit 1 RLC
 ```
 
@@ -103,8 +103,8 @@ balance is insufficient. This ensures that if the voucher alone doesn't cover
 the execution cost, the remaining balance is automatically deducted from your
 account.
 
-For additional information on using <TokenSymbol /> for fallback payment in
-Web3Mail, refer to the **Using <TokenSymbol /> with Web3Mail** section.
+For additional information on using RLC for fallback payment in Web3Mail, refer
+to the **Using RLC with Web3Mail** section.
 
 ### Step 4: Use Voucher
 
@@ -136,7 +136,6 @@ const sendTelegram = await web3telegram.sendTelegram({
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
   label: 'some-custom-id',
-  workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth',
   dataMaxPrice: 42,
   appMaxPrice: 42,
   workerpoolMaxPrice: 42,
@@ -161,10 +160,10 @@ const result = await dataProtectorCore.processProtectedData({
 
 ::: tip
 
-If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK
-will automatically get the required amount to your iExec account. Ensure that
-your voucher is authorized to access your iExec account and that your account
-has sufficient funds for this transfer to proceed.
+If your voucher doesn't have enough RLC to cover the deal, the SDK will
+automatically get the required amount to your iExec account. Ensure that your
+voucher is authorized to access your iExec account and that your account has
+sufficient funds for this transfer to proceed.
 
 :::
 
@@ -239,7 +238,6 @@ Now that you understand payment methods:
 
 <script setup>
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
-import TokenSymbol from '@/components/TokenSymbol.vue'
 import ImageViewer from '@/components/ImageViewer.vue';
 
 // Assets

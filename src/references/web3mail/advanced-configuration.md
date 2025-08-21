@@ -23,19 +23,13 @@ import { type Web3MailConfigOptions } from '@iexec/web3mail';
 The Ethereum contract address or ENS (Ethereum Name Service) for the web3mail
 iApp.
 
-If not provided, the default ENS `web3mail.apps.iexec.eth` pointing to the
-latest version of the web3mail iApp provided by iExec will be used.
-
-You can find the corresponding iApp address with Bellecour explorer:
-[https://explorer.iex.ec/bellecour/search/web3mail.apps.iexec.eth](https://explorer.iex.ec/bellecour/search/web3mail.apps.iexec.eth).
-
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 // ---cut---
 const web3mail = new IExecWeb3mail(web3Provider, {
-  dappAddressOrENS: 'web3mail.apps.iexec.eth', // [!code focus]
+  dappAddressOrENS: '0x456def...', // [!code focus]
 });
 ```
 
@@ -54,12 +48,9 @@ import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 // ---cut---
 const web3mail = new IExecWeb3mail(web3Provider, {
-  dappWhitelistAddress: '0x781482C39CcE25546583EaC4957Fb7Bf04C277D2', // [!code focus]
+  dappWhitelistAddress: '0x456def...', // [!code focus]
 });
 ```
-
-See it in
-[https://blockscout-bellecour.iex.ec/](https://blockscout-bellecour.iex.ec/address/0x781482C39CcE25546583EaC4957Fb7Bf04C277D2)
 
 ### dataProtectorSubgraph
 
@@ -74,8 +65,7 @@ import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 // ---cut---
 const web3mail = new IExecWeb3mail(web3Provider, {
-  dataProtectorSubgraph:
-    'https://thegraph-product.iex.ec/subgraphs/name/bellecour/dataprotector', // [!code focus]
+  dataProtectorSubgraph: 'subgraph-url', // [!code focus]
 });
 ```
 
@@ -92,7 +82,7 @@ import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 // ---cut---
 const web3mail = new IExecWeb3mail(web3Provider, {
-  ipfsNode: 'https://ipfs-upload.v8-bellecour.iex.ec', // [!code focus]
+  ipfsNode: 'ipfs-node-url', // [!code focus]
 });
 ```
 
@@ -110,7 +100,7 @@ import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 // ---cut---
 const web3mail = new IExecWeb3mail(web3Provider, {
-  ipfsGateway: 'https://ipfs-gateway.v8-bellecour.iex.ec', // [!code focus]
+  ipfsGateway: 'ipfs-gateway-url', // [!code focus]
 });
 ```
 

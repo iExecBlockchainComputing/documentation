@@ -23,11 +23,8 @@ import { type Web3TelegramConfigOptions } from '@iexec/web3telegram';
 The Ethereum contract address or ENS (Ethereum Name Service) for the
 web3telegram iApp.
 
-If not provided, the default ENS `web3telegram.apps.iexec.eth` pointing to the
-latest version of the web3telegram iApp provided by iExec will be used.
-
-You can find the corresponding iApp address with Bellecour explorer:
-[https://explorer.iex.ec/bellecour/search/web3telegram.apps.iexec.eth](https://explorer.iex.ec/bellecour/search/web3telegram.apps.iexec.eth).
+If not provided, the default ENS web3telegram iApp provided by iExec will be
+used.
 
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
@@ -35,7 +32,7 @@ import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 // ---cut---
 const web3telegram = new IExecWeb3telegram(web3Provider, {
-  dappAddressOrENS: 'web3telegram.apps.iexec.eth', // [!code focus]
+  dappAddressOrENS: '0x456def...', // [!code focus]
 });
 ```
 
@@ -54,12 +51,9 @@ import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 // ---cut---
 const web3telegram = new IExecWeb3telegram(web3Provider, {
-  dappWhitelistAddress: '0x192C6f5AccE52c81Fcc2670f10611a3665AAA98F', // [!code focus]
+  dappWhitelistAddress: '0x456def...', // [!code focus]
 });
 ```
-
-See it in
-[https://blockscout-bellecour.iex.ec/](https://blockscout-bellecour.iex.ec/address/0x192C6f5AccE52c81Fcc2670f10611a3665AAA98F)
 
 ### dataProtectorSubgraph
 
@@ -74,8 +68,7 @@ import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 // ---cut---
 const web3telegram = new IExecWeb3telegram(web3Provider, {
-  dataProtectorSubgraph:
-    'https://thegraph-product.iex.ec/subgraphs/name/bellecour/dataprotector', // [!code focus]
+  dataProtectorSubgraph: 'subgraph-url', // [!code focus]
 });
 ```
 
@@ -92,7 +85,7 @@ import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 // ---cut---
 const web3telegram = new IExecWeb3telegram(web3Provider, {
-  ipfsNode: 'https://ipfs-upload.v8-bellecour.iex.ec', // [!code focus]
+  ipfsNode: 'ipfs-node-url', // [!code focus]
 });
 ```
 
@@ -110,7 +103,7 @@ import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 // ---cut---
 const web3telegram = new IExecWeb3telegram(web3Provider, {
-  ipfsGateway: 'https://ipfs-gateway.v8-bellecour.iex.ec', // [!code focus]
+  ipfsGateway: 'ipfs-gateway-url', // [!code focus]
 });
 ```
 

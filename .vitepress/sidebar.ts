@@ -8,7 +8,7 @@ export function getSidebar() {
         items: [
           { text: '💡 Welcome', link: '/get-started/welcome' },
           {
-            text: '🛠️ Toolkit',
+            text: 'Toolkit',
             link: '/get-started/toolkit',
           },
           {
@@ -39,15 +39,15 @@ export function getSidebar() {
             ],
           },
           {
-            text: '🚀 Quick Start',
+            text: 'Quick Start',
             link: '/get-started/quick-start',
           },
           {
-            text: '📋 Use Cases',
+            text: 'Use Cases',
             link: '/get-started/use-cases',
           },
           {
-            text: '🤖 Develop with AI',
+            text: 'Develop with AI',
             link: '/get-started/develop-with-ai',
           },
         ],
@@ -72,7 +72,7 @@ export function getSidebar() {
             link: '/get-started/overview/workerpool',
           },
           {
-            text: '🪙 RLC Token',
+            text: 'RLC Token',
             link: '/get-started/overview/rlc',
           },
         ],
@@ -203,10 +203,6 @@ export function getSidebar() {
             collapsed: true,
             items: [
               {
-                text: 'Overview',
-                link: '/guides/build-iapp/advanced/overview',
-              },
-              {
                 text: 'Quick Start for Developers',
                 link: '/guides/build-iapp/advanced/quick-start-for-developers',
               },
@@ -215,16 +211,12 @@ export function getSidebar() {
                 link: '/guides/build-iapp/advanced/your-first-app',
               },
               {
-                text: 'Build your first SGX app (SCONE)',
+                text: 'Build your first SGX app',
                 link: '/guides/build-iapp/advanced/create-your-first-sgx-app',
               },
               {
                 text: 'End-to-end Encryption',
                 link: '/guides/build-iapp/advanced/end-to-end-encryption',
-              },
-              {
-                text: 'SGX Encrypted Dataset',
-                link: '/guides/build-iapp/advanced/sgx-encrypted-dataset',
               },
               {
                 text: 'Access Confidential Assets',
@@ -242,11 +234,11 @@ export function getSidebar() {
         text: 'USE AN iAPP',
         items: [
           {
-            text: '📝 Introduction',
+            text: 'Introduction',
             link: '/guides/use-iapp/introduction',
           },
           {
-            text: '🚀 Getting Started',
+            text: 'Getting Started',
             link: '/guides/use-iapp/getting-started',
           },
           {
@@ -585,7 +577,7 @@ export function getSidebar() {
         ],
       },
       {
-        text: '🔧 iExec SDK',
+        text: 'iExec SDK',
         link: '/references/sdk',
       },
       {

@@ -1,3 +1,10 @@
+---
+title: Build Your First Application with Scone Framework
+description:
+  Learn how to build and run Confidential Computing applications with the Scone
+  TEE framework for secure, privacy-preserving computation
+---
+
 # Build your first application with Scone framework
 
 In this tutorial, you will learn how to build and run a Confidential Computing
@@ -64,41 +71,6 @@ touch Dockerfile
 touch sconify.sh
 chmod +x sconify.sh
 ```
-
-### Update chain json
-
-Make sure your `chain.json` content is as follows:
-
-```json
-{
-  "default": "bellecour",
-  "chains": {
-    "bellecour": {
-      "sms": { "scone": "https://sms.scone-debug.v8-bellecour.iex.ec" }
-    }
-  }
-}
-```
-
-If you start from a new directory tree, you will need to replay the following
-steps from [Build your first application](./your-first-app):
-
-- [Write the app](./your-first-app.md#write-the-app) Javascript or Python source
-  code in `src/`
-- [Dockerize your app](./your-first-app.md#dockerize-your-app)
-- [Push your app to Dockerhub](./your-first-app.md#push-your-app-to-dockerhub)
-
-As we mentioned earlier, the advantage of using **SCONE** is the ability to make
-the application **Intel® SGX-enabled** without changing the source code. The
-only thing we are going to do is rebuilding the app using the
-Trusted-Execution-Environment tooling provided by **SCONE**.
-
-::: info
-
-SCONE provides TEE conversion tooling (Python, Java, ..) plus eventually TEE
-base images for other languages (NodeJs).
-
-:::
 
 ## Build the TEE docker image
 
@@ -260,31 +232,27 @@ docker run --rm -e SCONE_HASH=1 <docker-hub-user>/tee-scone-hello-world:1.0.0-de
 
 Deploy the app with the standard command:
 
-```bash
-iexec app deploy
+```bash twoslash
+iexec app deploy --chain {{chainName}}
 ```
 
 ### Run the TEE app
 
 Specify the tag `--tag tee,scone` in `iexec app run` command to run a tee app.
 
-One last thing, in order to run a **TEE-debug** app you will also need to select
-a debug workerpool, use the debug workerpool
-`debug-v8-learn.main.pools.iexec.eth`.
+One last thing, in order to run a **TEE** app you will also need to select a
+workerpool, use the iexec workerpool `{{workerpoolAddress}}`.
 
 You are now ready to run the app
 
-```bash
-iexec app run --tag tee,scone --workerpool debug-v8-learn.main.pools.iexec.eth --watch
+```bash twoslash
+iexec app run --chain {{chainName}} --tag tee,scone --workerpool {{workerpoolAddress}} --watch
 ```
 
 ::: info
 
-You noticed we used `debug-v8-learn.main.pools.iexec.eth` instead of an ethereum
-address, this is an ENS name.
-
-The [ENS (Ethereum Name Service)](https://ens.domains/) protocol enables
-associating decentralized naming to ethereum addresses.
+You noticed we used `{{workerpoolAddress}}` instead of an ethereum address, this
+is an ENS name.
 
 :::
 
@@ -304,3 +272,17 @@ may need to use some confidential data to get the full potential of the
 
 - [Access confidential assets from your app](access-confidential-assets.md)
 - [Protect the result](end-to-end-encryption.md)
+
+<script setup>
+import { computed } from 'vue';
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
+
+// Get current chain info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const chainName = computed(() => chainData.value.chainName);
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
+</script>

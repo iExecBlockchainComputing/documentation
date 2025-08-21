@@ -53,8 +53,7 @@ When a deal is triggered, the following sequence occurs:
 7. **Result Generation**: Computation results are generated
 8. **Result Delivery**: Results are returned to the requester through the
    network
-9. **Payment Settlement**: <TokenSymbol /> tokens are distributed to all
-   participants
+9. **Payment Settlement**: RLC tokens are distributed to all participants
 
 ### Network Architecture Diagram
 
@@ -71,8 +70,8 @@ When a deal is triggered, the following sequence occurs:
 5. **Data Access**: iApp requests access to protected data through secure
    channels
 6. **Computation**: iApp processes data within the TEE, maintaining privacy
-7. **Payment Distribution**: <TokenSymbol /> tokens are distributed to all
-   participants based on completed tasks
+7. **Payment Distribution**: RLC tokens are distributed to all participants
+   based on completed tasks
 
 This decentralized architecture ensures that no single entity has control over
 the entire process, while the use of TEEs guarantees that sensitive data remains
@@ -83,7 +82,3 @@ protected throughout the computation.
 Ready to start using iApp? Check out our
 [Getting Started Guide](/guides/use-iapp/getting-started) to learn how to find,
 execute, and interact with iApp on the iExec network.
-
-<script setup>
-import TokenSymbol from '@/components/TokenSymbol.vue'
-</script>

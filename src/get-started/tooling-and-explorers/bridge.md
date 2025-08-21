@@ -120,7 +120,8 @@ requiring intermediate chains or wrapped tokens.
 
 The RLC multichain bridge implementation has been thoroughly audited by
 [**Halborn**](https://www.halborn.com/), a leading blockchain security firm. The
-audit report is accessible at [halborn.com/audits](https://halborn.com/audits).
+audit report is accessible at
+[halborn.com/audits](https://www.halborn.com/audits/iexec/rlc-multichain-bridge-979ae0).
 
 ### Open Source
 

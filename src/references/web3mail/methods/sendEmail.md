@@ -14,15 +14,15 @@ The recipient email address in a `protectedData` entity. The user receiving the
 email must explicitly authorize you to send them email communications and
 permission must be granted for the `Web3Mail` tool to use the `protectedData`
 entity containing their email address. This is best done by granting
-authorization to the Web3Mail app whitelist
-`0x781482C39CcE25546583EaC4957Fb7Bf04C277D2` as `authorizedApp`. Refer to the
+authorization to the Web3Mail app whitelist `{{web3MailAppWhitelist}}` as
+`authorizedApp`. Refer to the
 [Data Protector `grantAccess`](/references/dataProtector/dataProtectorCore/grantAccess)
 documentation for more details.
 
 ::: tip
 
-For executing the `sendEmail` method with a voucher or <TokenSymbol />, refer to
-the dedicated section in the documentation under
+For executing the `sendEmail` method with a voucher or RLC, refer to the
+dedicated section in the documentation under
 "[How to Pay for Executions](/guides/use-iapp/how-to-pay-executions.md)".
 
 :::
@@ -136,10 +136,10 @@ const sendEmail = await web3mail.sendEmail({
 
 ::: tip
 
-If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK
-will automatically get the required amount to your iExec account. Ensure that
-your voucher is authorized to access your iExec account and that your account
-has sufficient funds for this transfer to proceed.
+If your voucher doesn't have enough RLC to cover the deal, the SDK will
+automatically get the required amount to your iExec account. Ensure that your
+voucher is authorized to access your iExec account and that your account has
+sufficient funds for this transfer to proceed.
 
 :::
 
@@ -216,7 +216,7 @@ const sendEmail = await web3mail.sendEmail({
 ### workerpoolAddressOrEns <OptionalBadge />
 
 **Type:** `workerpoolAddressOrEns`  
-**Default:** iExec's production workerpool
+**Default:** `{{workerpoolAddress}}` (iExec's workerpool)
 
 Allows specifying the workerpool that will run the Web3Mail application.
 
@@ -230,17 +230,9 @@ const sendEmail = await web3mail.sendEmail({
   protectedData: '0x123abc...',
   emailSubject: 'My email subject',
   emailContent: 'My email content',
-  workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth', // [!code focus]
+  workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
 });
 ```
-
-::: tip
-
-iExec currently offers a production workerpool located at the Ethereum Name
-Service (ENS) address `prod-v8-bellecour.main.pools.iexec.eth`. This is the
-default workerpool for running confidential computations on the iExec platform.
-
-:::
 
 ### dataMaxPrice <OptionalBadge />
 
@@ -321,7 +313,8 @@ import { type SendEmailResponse } from '@iexec/web3mail';
 
 This uniquely identifies the email task on the iExec side chain. You can view
 the status of the `sendEmail` method by monitoring the task on the
-[iExec Explorer](https://explorer.iex.ec/bellecour).
+<a :href="explorerUrl" target="_blank" rel="noopener">iExec blockchain
+explorer</a> .
 
 ## Error Handling
 
@@ -392,8 +385,19 @@ For any other errors, you'll get a `WorkflowError` error in the form of:
 ```
 
 <script setup>
+import { computed } from 'vue';
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
-import TokenSymbol from '@/components/TokenSymbol.vue'
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
+
+// Get current chain info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
+const web3MailAppWhitelist = computed(() => chainData.value.web3MailAppWhitelist);
 </script>

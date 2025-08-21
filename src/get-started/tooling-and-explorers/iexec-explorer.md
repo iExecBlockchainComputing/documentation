@@ -14,9 +14,16 @@ explore apps and protectedData—all in one powerful dashboard.
 <ImageViewer
   :image-url-dark="explorerGlobalImage"
   image-alt="iExec Explorer"
-  link-url="https://explorer.iex.ec/"
+  :link-url="explorerUrl"
   caption="🔗 Explore the iExec Protocol"
 />
+
+::: tip
+
+Before searching or exploring, make sure to select your desired network. The
+Explorer displays data for the network you choose.
+
+:::
 
 ## 🎯 What you Can Explore
 
@@ -72,7 +79,7 @@ explore apps and protectedData—all in one powerful dashboard.
 <ImageViewer
   :image-url-dark="dealViewImage"
   image-alt="Deal View"
-  link-url="https://explorer.iex.ec/bellecour/deals"
+  :link-url="`${explorerUrl}/deals`"
   caption="🔗 Explore Deals"
 />
 
@@ -98,7 +105,7 @@ explore apps and protectedData—all in one powerful dashboard.
 <ImageViewer
   :image-url-dark="taskViewImage"
   image-alt="Task View"
-  link-url="https://explorer.iex.ec/bellecour/tasks"
+  :link-url="`${explorerUrl}/tasks`"
   caption="🔗 Explore Tasks"
 />
 
@@ -114,14 +121,14 @@ Browse and analyze all tasks across the iExec network:
 <ImageViewer
     :image-url-dark="taskDetailsStartedImage"
     image-alt="Result Decryption"
-    link-url="https://explorer.iex.ec/bellecour/tasks"
+    :link-url="`${explorerUrl}/tasks`"
     caption="🔗 Explore Tasks"
 />
 
 <ImageViewer
     :image-url-dark="taskDetailsCompletedImage"
     image-alt="Task Completed"
-    link-url="https://explorer.iex.ec/bellecour/tasks"
+    :link-url="`${explorerUrl}/tasks`"
     caption="🔗 Explore Tasks"
 />
 
@@ -150,7 +157,7 @@ Browse and analyze all tasks across the iExec network:
 <ImageViewer
   :image-url-dark="appViewImage"
   image-alt="App View"
-  link-url="https://explorer.iex.ec/bellecour/apps"
+  :link-url="`${explorerUrl}/apps`"
   caption="🔗 Explore iApp Marketplace"
 />
 
@@ -165,7 +172,7 @@ Explore the iExec application marketplace:
 <ImageViewer
   :image-url-dark="datasetViewImage"
   image-alt="Dataset View"
-  link-url="https://explorer.iex.ec/bellecour/datasets"
+  :link-url="`${explorerUrl}/datasets`"
   caption="🔗 Explore Protected Datasets"
 />
 
@@ -182,7 +189,7 @@ Navigate the protected data landscape:
 <ImageViewer
   :image-url-dark="workerpoolViewImage"
   image-alt="Workerpool View"
-  link-url="https://explorer.iex.ec/bellecour/workerpools"
+  :link-url="`${explorerUrl}/workerpools`"
   caption="🔗 Explore Workerpools Infrastructure"
 />
 
@@ -195,9 +202,19 @@ Explore the decentralized computing infrastructure:
 - **Usage Statistics**: Analyze workerpool utilization
 
 <script setup>
+import { computed } from 'vue';
 import ImageViewer from '@/components/ImageViewer.vue';
 import FeatureCard from '@/components/FeatureCard.vue';
 import CardGrid from '@/components/CardGrid.vue';
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
+
+// Get current chain info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
 
 // Assets
 import explorerGlobalImage from '@/assets/tooling-&-explorers/iexec-explorer/explorer-global.png';

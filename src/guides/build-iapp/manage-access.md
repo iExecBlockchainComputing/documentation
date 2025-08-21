@@ -40,7 +40,7 @@ Here's the simplified process:
 2. **You sign the order** with your wallet
 3. **You publish the order** on the iExec marketplace
 4. **Users can discover** and execute your iApp according to your conditions
-5. **You automatically receive** payment in <TokenSymbol /> for each execution
+5. **You automatically receive** payment in RLC for each execution
 
 ```
 Deployed iApp + Published Signed App Order = Application accessible on iExec
@@ -231,12 +231,12 @@ Here's the detailed description of each parameter:
 **Common values:**
 
 - `"0"` - Free
-- `"1000000000"` - 1 <TokenSymbol /> per execution
-- `"500000000"` - 0.5 <TokenSymbol /> per execution
+- `"1000000000"` - 1 RLC per execution
+- `"500000000"` - 0.5 RLC per execution
 
 ::: tip
 
-1 <TokenSymbol /> = 1,000,000,000 nano <TokenSymbol /> (10^9)
+1 RLC = 1,000,000,000 nano RLC (10^9)
 
 :::
 
@@ -246,9 +246,9 @@ Here's the detailed description of each parameter:
 
 **Examples:**
 
-- `"1"` - Single use
-- `"100"` - Limited campaign
-- `"10000"` - Virtually unlimited usage
+- `1` - Single use
+- `100` - Limited campaign
+- `10000` - Virtually unlimited usage
 
 ### `tag` <Badge type="tip" text="optional" />
 
@@ -270,20 +270,19 @@ All restrictions use `0x0000000000000000000000000000000000000000` to indicate
 
 **Description:** Restrict usage to a specific dataset
 
-**Typical usage:** `"0x0000000000000000000000000000000000000000"` (no
-restriction)
+**Typical usage:** `0x0000000000000000000000000000000000000000` (no restriction)
 
 #### `workerpoolrestrict` <Badge type="tip" text="optional" />
 
 **Description:** Restrict execution to a specific workerpool
 
-**Example:** `"prod-v8-bellecour.main.pools.iexec.eth"` for the main workerpool
+**Example:** `{{ workerpoolAddress }}` for the main workerpool
 
 #### `requesterrestrict` <Badge type="tip" text="optional" />
 
 **Description:** Restrict usage to a specific user
 
-**Typical usage:** `"0x0000000000000000000000000000000000000000"` (open to all)
+**Typical usage:** `0x0000000000000000000000000000000000000000` (open to all)
 
 ## What's Next?
 
@@ -303,5 +302,14 @@ Next steps:
   Protocol-level order management
 
 <script setup>
-import TokenSymbol from '@/components/TokenSymbol.vue'
+import { computed } from 'vue';
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
+
+// Get current chain info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
 </script>
