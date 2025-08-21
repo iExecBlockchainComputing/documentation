@@ -14,8 +14,8 @@ The recipient Chat ID is stored in a `protectedData` entity. The user receiving
 message must explicitly authorize you to send them telegram communications and
 permission must be granted for the `Web3Telegram` tool to use the
 `protectedData` entity containing their chat ID. This is best done by granting
-authorization to the Web3Telegram app whitelist
-`{{web3TelegramAppWhitelist}}` as `authorizedApp`. Refer to the
+authorization to the Web3Telegram app whitelist `{{web3TelegramAppWhitelist}}`
+as `authorizedApp`. Refer to the
 [Data Protector `grantAccess`](/references/dataProtector/dataProtectorCore/grantAccess)
 documentation for more details.
 

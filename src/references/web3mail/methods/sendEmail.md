@@ -14,8 +14,8 @@ The recipient email address in a `protectedData` entity. The user receiving the
 email must explicitly authorize you to send them email communications and
 permission must be granted for the `Web3Mail` tool to use the `protectedData`
 entity containing their email address. This is best done by granting
-authorization to the Web3Mail app whitelist
-`{{web3MailAppWhitelist}}` as `authorizedApp`. Refer to the
+authorization to the Web3Mail app whitelist `{{web3MailAppWhitelist}}` as
+`authorizedApp`. Refer to the
 [Data Protector `grantAccess`](/references/dataProtector/dataProtectorCore/grantAccess)
 documentation for more details.
 
