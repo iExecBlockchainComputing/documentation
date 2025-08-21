@@ -87,7 +87,7 @@ the beneficiary in the command:
 ```bash twoslash
 iexec app run <0x-your-app-address> \
     --chain {{chainName}}
-    --workerpool debug-v8-learn.main.pools.iexec.eth \
+    --workerpool {{workerpoolAddress}} \
     --tag tee,scone \
     --encrypt-result \
     --watch
@@ -154,4 +154,5 @@ const selectedChain = computed(() => userStore.getCurrentChainId());
 
 const chainData = computed(() => getChainById(selectedChain.value));
 const chainName = computed(() => chainData.value.chainName);
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
 </script>

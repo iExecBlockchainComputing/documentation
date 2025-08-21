@@ -303,8 +303,8 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
   **[Intel SGX Technology](/get-started/protocol/tee/intel-sgx)** for production
 - **[Create Your First SGX App](/guides/build-iapp/advanced/create-your-first-sgx-app)** -
   Build production-ready SGX applications
-- **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Standard iApp
-  deployment guide
+- **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Standard iApp deployment
+  guide
 
 ### 🔗 **Related Resources**
 
@@ -314,8 +314,8 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
   Generator documentation
 - **[DataProtector SDK](/references/dataProtector)** - Work with protected data
   in TDX
-- **[Advanced iApp Building](/guides/build-iapp/advanced/quick-start-for-developers)** - Advanced
-  development techniques
+- **[Advanced iApp Building](/guides/build-iapp/advanced/quick-start-for-developers)** -
+  Advanced development techniques
 
 <script setup>
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'

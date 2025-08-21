@@ -81,5 +81,5 @@ technology** for advanced use cases.
 
 - **[Build Intel TDX App (Experimental)](/guides/build-iapp/advanced/create-your-first-tdx-app)** -
   Build TDX applications with traditional deployment and iApp Generator
-- **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Create your first
-  TEE application
+- **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Create your first TEE
+  application

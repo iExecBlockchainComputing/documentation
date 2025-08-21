@@ -205,7 +205,7 @@ to pay for the computation.
 Everything is ready to run your application!
 
 ```bash twoslash
-iexec app run --chain arbitrum-mainnet --args <your-name-here> --workerpool prod-v8-learn.main.pools.iexec.eth --watch
+iexec app run --chain arbitrum-mainnet --args <your-name-here> --workerpool {{workerpoolAddress}} --watch
 ```
 
 ::: info
@@ -217,7 +217,7 @@ Useful options:
 - `--args <args>` specify the app execution arguments
 - `--watch` watch execution status changes
 - `--workerpool <address>` specify the workerpool to use (for example:
-  `--workerpool prod-v8-learn.main.pools.iexec.eth`)
+  `--workerpool {{workerpoolAddress}}`)
 
 Discover more option with `iexec app run --help`
 
@@ -361,4 +361,5 @@ const selectedChain = computed(() => userStore.getCurrentChainId());
 
 const chainData = computed(() => getChainById(selectedChain.value));
 const chainName = computed(() => chainData.value.chainName);
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
 </script>

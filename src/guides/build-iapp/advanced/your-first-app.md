@@ -336,7 +336,7 @@ iexec app show --chain {{chainName}}
 ### Run your app on iExec
 
 ```bash twoslash
-iexec app run --chain {{chainName}} --workerpool debug-v8-learn.main.pools.iexec.eth --watch
+iexec app run --chain {{chainName}} --workerpool {{workerpoolAddress}} --watch
 ```
 
 ::: info
@@ -426,4 +426,5 @@ const selectedChain = computed(() => userStore.getCurrentChainId());
 
 const chainData = computed(() => getChainById(selectedChain.value));
 const chainName = computed(() => chainData.value.chainName);
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
 </script>

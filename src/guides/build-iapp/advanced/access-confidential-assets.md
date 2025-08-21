@@ -2,7 +2,8 @@
 title: Access Confidential Assets from Your App
 description:
   Learn how to access confidential assets including secrets, protected data, and
-  requester secrets from your iExec application using the Secret Management Service
+  requester secrets from your iExec application using the Secret Management
+  Service
 ---
 
 # Access confidential assets from your app

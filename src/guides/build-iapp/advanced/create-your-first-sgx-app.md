@@ -240,20 +240,19 @@ iexec app deploy --chain {{chainName}}
 
 Specify the tag `--tag tee,scone` in `iexec app run` command to run a tee app.
 
-One last thing, in order to run a **TEE-debug** app you will also need to select
-a debug workerpool, use the debug workerpool
-`debug-v8-learn.main.pools.iexec.eth`.
+One last thing, in order to run a **TEE** app you will also need to select a
+workerpool, use the iexec workerpool `{{workerpoolAddress}}`.
 
 You are now ready to run the app
 
 ```bash twoslash
-iexec app run --chain {{chainName}} --tag tee,scone --workerpool debug-v8-learn.main.pools.iexec.eth --watch
+iexec app run --chain {{chainName}} --tag tee,scone --workerpool {{workerpoolAddress}} --watch
 ```
 
 ::: info
 
-You noticed we used `debug-v8-learn.main.pools.iexec.eth` instead of an ethereum
-address, this is an ENS name.
+You noticed we used `{{workerpoolAddress}}` instead of an ethereum address, this
+is an ENS name.
 
 :::
 
@@ -285,4 +284,5 @@ const selectedChain = computed(() => userStore.getCurrentChainId());
 
 const chainData = computed(() => getChainById(selectedChain.value));
 const chainName = computed(() => chainData.value.chainName);
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
 </script>

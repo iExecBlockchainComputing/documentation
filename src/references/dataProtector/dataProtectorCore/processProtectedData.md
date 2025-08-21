@@ -278,7 +278,7 @@ confidential computations on the iExec platform.
 
 :::
 
-::: info
+::: info TDX <ChainNotSupportedBadge/>
 
 🧪 While protected data are processed in **TEE** by **intel SGX** technology by
 default, `@iexec/dataprotector` can be configured to create and process

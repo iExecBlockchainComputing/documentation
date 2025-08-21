@@ -27,6 +27,10 @@ export interface Chain {
   iexecExplorerUrl: string;
   workerpoolAddress: string;
   ipfsGateway: string;
+  web3MailAddress: string;
+  web3MailAppWhitelist: string;
+  web3TelegramAddress: string;
+  web3TelegramAppWhitelist: string;
 }
 
 export function getSupportedChains(): Chain[] {
@@ -42,6 +46,10 @@ export function getSupportedChains(): Chain[] {
       iexecExplorerUrl: 'https://explorer.iex.ec/arbitrum-mainnet',
       workerpoolAddress: '0x2C06263943180Cc024dAFfeEe15612DB6e5fD248',
       ipfsGateway: 'https://ipfs-gateway.arbitrum-mainnet.iex.ec',
+      web3MailAddress: '0x9E37767A18B7E7ac2bbeba0900e3B5b0613FA385',
+      web3MailAppWhitelist: '0xD5054a18565c4a9E5c1aa3cEB53258bd59d4c78C',
+      web3TelegramAddress: '0xD8614ad70A73A426A15F6474EB4aE633e0015805',
+      web3TelegramAppWhitelist: '0x53AFc09a647e7D5Fa9BDC784Eb3623385C45eF89',
     },
     {
       id: Number(bellecour.id),
@@ -61,6 +69,10 @@ export function getSupportedChains(): Chain[] {
       iexecExplorerUrl: 'https://explorer.iex.ec/bellecour',
       workerpoolAddress: 'prod-v8-bellecour.main.pools.iexec.eth',
       ipfsGateway: 'https://ipfs-gateway.v8-bellecour.iex.ec',
+      web3MailAddress: 'web3mail.apps.iexec.eth',
+      web3MailAppWhitelist: '0x781482C39CcE25546583EaC4957Fb7Bf04C277D2',
+      web3TelegramAddress: 'web3telegram.apps.iexec.eth',
+      web3TelegramAppWhitelist: '0x192C6f5AccE52c81Fcc2670f10611a3665AAA98F',
     },
   ];
 }
