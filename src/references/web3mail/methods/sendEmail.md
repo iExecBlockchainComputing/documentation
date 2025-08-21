@@ -15,7 +15,7 @@ email must explicitly authorize you to send them email communications and
 permission must be granted for the `Web3Mail` tool to use the `protectedData`
 entity containing their email address. This is best done by granting
 authorization to the Web3Mail app whitelist
-`0x781482C39CcE25546583EaC4957Fb7Bf04C277D2` as `authorizedApp`. Refer to the
+`{{web3MailAppWhitelist}}` as `authorizedApp`. Refer to the
 [Data Protector `grantAccess`](/references/dataProtector/dataProtectorCore/grantAccess)
 documentation for more details.
 
@@ -399,4 +399,5 @@ const selectedChain = computed(() => userStore.getCurrentChainId());
 const chainData = computed(() => getChainById(selectedChain.value));
 const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
 const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
+const web3MailAppWhitelist = computed(() => chainData.value.web3MailAppWhitelist);
 </script>

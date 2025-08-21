@@ -218,7 +218,7 @@ declaration
 await dataProtector.core.processProtectedData({
   protectedData: protectedData.address,
   workerpool: 'tdx-labs.pools.iexec.eth',
-  app: '0x1919ceb0c6e60f3B497936308B58F9a6aDf071eC',
+  app: '0x456def...',
 });
 ```
 

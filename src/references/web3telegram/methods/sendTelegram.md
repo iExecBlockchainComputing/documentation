@@ -15,7 +15,7 @@ message must explicitly authorize you to send them telegram communications and
 permission must be granted for the `Web3Telegram` tool to use the
 `protectedData` entity containing their chat ID. This is best done by granting
 authorization to the Web3Telegram app whitelist
-`0x192C6f5AccE52c81Fcc2670f10611a3665AAA98F` as `authorizedApp`. Refer to the
+`{{web3TelegramAppWhitelist}}` as `authorizedApp`. Refer to the
 [Data Protector `grantAccess`](/references/dataProtector/dataProtectorCore/grantAccess)
 documentation for more details.
 
@@ -298,4 +298,5 @@ const selectedChain = computed(() => userStore.getCurrentChainId());
 const chainData = computed(() => getChainById(selectedChain.value));
 const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
 const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
+const web3TelegramAppWhitelist = computed(() => chainData.value.web3TelegramAppWhitelist);
 </script>

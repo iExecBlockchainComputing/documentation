@@ -131,7 +131,7 @@ dApp, and the parameters if applicable. The Oracle result writes in the
 
 ```bash
 $ cat ${IEXEC_OUT}/computed.json
-{ 'callback-data': '0x48656c6c6f2c20776f726c6421'}
+{ 'callback-data': '0x456def...'}
 ```
 
 When the computation ends the worker will send both this `callback-data`
