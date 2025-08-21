@@ -67,8 +67,7 @@ chmod +x sconify.sh
 ## Build the TEE docker image
 
 Before wrapping your iExec confidential application with Scone, you need to
-generate a custom signing key. This key is required for the sconification
-process and will be referenced in the Docker command below.
+generate a custom signing key. This key is used for the sconification process.
 
 Generate your enclave signing key with:
 
@@ -84,16 +83,12 @@ We will use the following script to wrap the sconification process, copy the
 
 ::: code-group
 
-```bash [for Javascript]
+```bash [Javascript]
 #!/bin/bash
 
-# Declare the app entrypoint
-ENTRYPOINT="node /app/app.js"
-
 # Declare image related variables
-IMG_NAME=tee-scone-hello-world
 IMG_FROM=<docker-hub-user>/hello-world:1.0.0
-IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0
+IMG_TO=<docker-hub-user>/tee-scone-hello-world:1.0.0
 
 # Run the sconifier to build the TEE image based on the non-TEE image
 docker run -it --rm \
@@ -101,7 +96,6 @@ docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
             registry.scontain.com/scone-production/iexec-sconify-image:5.9.1-v16\
             sconify_iexec \
-            --name=${IMG_NAME} \
             --from=${IMG_FROM} \
             --to=${IMG_TO} \
             --binary-fs \
@@ -111,32 +105,25 @@ docker run -it --rm \
             --binary=/usr/local/bin/node \
             --heap=1G \
             --dlopen=1 \
-            --no-color \
             --verbose \
-            --command=${ENTRYPOINT} \
             && echo -e "\n------------------\n" \
             && echo "successfully built TEE docker image => ${IMG_TO}" \
             && echo "application mrenclave.fingerprint is $(docker run --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
 
-```bash [for Python]
+```bash [Python]
 #!/bin/bash
 
-# Declare the app entrypoint
-ENTRYPOINT="python3 /app/app.py"
-
 # Declare image related variables
-IMG_NAME=tee-scone-hello-world
 IMG_FROM=<docker-hub-user>/hello-world:1.0.0
-IMG_TO=<docker-hub-user>/${IMG_NAME}:1.0.0
+IMG_TO=<docker-hub-user>/tee-scone-hello-world:1.0.0
 
 # Run the sconifier to build the TEE image based on the non-TEE image
-docker run -it \
+docker run -it --rm \
             -v $PWD/enclave-key.pem:/sig/enclave-key.pem \
             -v /var/run/docker.sock:/var/run/docker.sock \
             registry.scontain.com/scone-production/iexec-sconify-image:5.9.1-v16\
             sconify_iexec \
-            --name=${IMG_NAME} \
             --from=${IMG_FROM} \
             --to=${IMG_TO} \
             --binary-fs \
@@ -146,9 +133,7 @@ docker run -it \
             --binary=/usr/local/bin/python3 \
             --heap=1G \
             --dlopen=1 \
-            --no-color \
             --verbose \
-            --command=${ENTRYPOINT} \
             && echo -e "\n------------------\n" \
             && echo "successfully built TEE docker image => ${IMG_TO}" \
             && echo "application mrenclave.fingerprint is $(docker run --rm -e SCONE_HASH=1 ${IMG_TO})"
@@ -245,13 +230,6 @@ You are now ready to run the app
 ```bash twoslash
 iexec app run --chain {{chainName}} --tag tee,scone --workerpool {{workerpoolAddress}} --watch
 ```
-
-::: info
-
-You noticed we used `{{workerpoolAddress}}` instead of an ethereum address, this
-is an ENS name.
-
-:::
 
 ::: info
 
