@@ -215,7 +215,7 @@ import {getChainById} from '@/utils/chain.utils';
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
 
-- // Get current chain info
+// Get current chain info
 const userStore = useUserStore();
 const selectedChain = computed(() => userStore.getCurrentChainId());
 

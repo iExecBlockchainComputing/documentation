@@ -278,7 +278,7 @@ import { computed } from 'vue';
 import useUserStore  from '@/stores/useUser.store';
 import {getChainById} from '@/utils/chain.utils';
 
-- // Get current chain info
+// Get current chain info
 const userStore = useUserStore();
 const selectedChain = computed(() => userStore.getCurrentChainId());
 
