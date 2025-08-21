@@ -339,7 +339,7 @@ import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 
-// Get current chain and compute explorer info
+- // Get current chain info
 const userStore = useUserStore();
 const selectedChain = computed(() => userStore.getCurrentChainId());
 
