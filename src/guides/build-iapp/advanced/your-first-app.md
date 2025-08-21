@@ -1,4 +1,5 @@
 ---
+title: Build Your First Application
 description:
   In this section we will show you how you can create a Docker dapp over the
   iExec infrastructure.
