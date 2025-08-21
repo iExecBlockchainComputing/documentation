@@ -43,14 +43,6 @@ docker login registry.scontain.com
 
 ## Prepare your application
 
-::: warning
-
-For demo purposes, we omitted some development best practices in these examples.
-
-Make sure to check your field's best practices before going to production.
-
-:::
-
 Before going further, your `<docker-hub-user>/hello-world:1.0.0` image built
 previously is required.
 
