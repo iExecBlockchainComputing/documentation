@@ -253,6 +253,10 @@ export function getSidebar() {
             link: '/guides/use-iapp/add-inputs-to-execution',
           },
           {
+            text: 'Integrate Web3 Messaging',
+            link: '/guides/use-iapp/web3-messaging',
+          },
+          {
             text: 'How to Pay the Executions',
             link: '/guides/use-iapp/how-to-pay-executions',
           },
@@ -591,10 +595,7 @@ export function getSidebar() {
               },
             ],
           },
-          {
-            text: 'Integration Guide',
-            link: '/references/web3telegram/integration-guide',
-          },
+
           {
             text: 'Advanced Configuration',
             link: '/references/web3telegram/advanced-configuration',

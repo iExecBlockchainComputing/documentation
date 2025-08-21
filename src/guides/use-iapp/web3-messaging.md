@@ -1,0 +1,123 @@
+---
+title: Integrate Web3 Messaging (Web3Mail & Web3Telegram)
+description:
+  End-to-end guide to send messages with Web3Mail (email) and Web3Telegram
+  (Telegram) using iExec — protect identifiers, grant access, and send securely
+---
+
+# Integrate Web3 Messaging
+
+This guide covers both Web3Mail (email) and Web3Telegram (Telegram). The flow is
+the same, except that:
+
+- For Web3Mail, you only need the user's email address.
+- For Web3Telegram, you must first retrieve the user's Telegram Chat ID.
+
+## Overview
+
+1. (Telegram only) Retrieve the Chat ID from the iExec bot
+2. Create the `protectedData` using DataProtector
+3. Grant access with DataProtector
+4. Send the message using the relevant SDK
+
+## 1. Retrieve the Telegram Chat ID (Telegram only) {#retrieve-chat-id}
+
+Ask the recipient to open Telegram and start a conversation with
+[@IExecWeb3TelegramBot](https://t.me/IExecWeb3TelegramBot). The bot replies with
+their unique Chat ID.
+
+:::: tip
+
+- Once the Chat ID is protected, all messages will arrive within this bot
+  conversation.
+- The recipient can leave the conversation at any time to stop receiving
+  messages. ::::
+
+## 2. Create the Protected Data
+
+Protect the identifier using DataProtector Core.
+
+### Web3Mail — protect the email address
+
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+
+const protectedData = await dataProtectorCore.protectData({
+  data: {
+    email: 'user@example.com',
+  },
+});
+```
+
+### Web3Telegram — protect the Chat ID
+
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+
+const protectedData = await dataProtectorCore.protectData({
+  data: {
+    telegram_chatId: '12345678',
+  },
+});
+```
+
+## 3. Grant Access
+
+Grant permission for a sender and/or an app to contact the user.
+
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+
+const grantedAccess = await dataProtectorCore.grantAccess({
+  protectedData: '0x123abc...',
+  authorizedApp: '0x456def...',
+  authorizedUser: '0x789cba...',
+  pricePerAccess: 3,
+  numberOfAccess: 10,
+});
+```
+
+## 4. Send the Message
+
+### Web3Mail — sendEmail
+
+```ts twoslash
+import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3mail = new IExecWeb3mail(web3Provider);
+
+const sendEmail = await web3mail.sendEmail({
+  protectedData: '0x123abc...',
+  emailSubject: 'My email subject',
+  emailContent: 'My email content',
+  // useVoucher: true,
+});
+```
+
+### Web3Telegram — sendTelegram
+
+```ts twoslash
+import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3telegram = new IExecWeb3telegram(web3Provider);
+
+const sendTelegram = await web3telegram.sendTelegram({
+  protectedData: '0x123abc...',
+  senderName: 'Arthur',
+  telegramContent: 'My telegram message content',
+  // useVoucher: true,
+});
+```
+
+## Payment
+
+See the full payment guide:
+[/guides/use-iapp/how-to-pay-executions](/guides/use-iapp/how-to-pay-executions)
