@@ -7,35 +7,37 @@ description:
 
 # Integrate Web3 Messaging
 
-This guide covers both Web3Mail (email) and Web3Telegram (Telegram). The flow is
-the same, except that:
+This guide covers both Web3Mail (email) and Web3Telegram (Telegram) toolkit. The
+flow is the same, except that:
 
 - For Web3Mail, you only need the user's email address.
-- For Web3Telegram, you must first retrieve the user's Telegram Chat ID.
+- For Web3Telegram, you only need the user's Telegram Chat ID.
 
 ## Overview
 
-1. (Telegram only) Retrieve the Chat ID from the iExec bot
-2. Create the `protectedData` using DataProtector
-3. Grant access with DataProtector
-4. Send the message using the relevant SDK
+1. (Telegram only) Get a Chat ID from the iExec bot
+2. Create the Protected Data using DataProtector Toolkit
+3. Grant access of your Protected Data
+4. Send the message using the relevant SDK ( Web3Mail / Web3Telegram )
 
-## 1. Retrieve the Telegram Chat ID (Telegram only) {#retrieve-chat-id}
+## 1. Retrieve the Telegram Chat ID (Telegram only)
 
 Ask the recipient to open Telegram and start a conversation with
 [@IExecWeb3TelegramBot](https://t.me/IExecWeb3TelegramBot). The bot replies with
-their unique Chat ID.
+a unique Chat ID.
 
-:::: tip
+::: tip
 
 - Once the Chat ID is protected, all messages will arrive within this bot
   conversation.
 - The recipient can leave the conversation at any time to stop receiving
-  messages. ::::
+  messages.
+
+:::
 
 ## 2. Create the Protected Data
 
-Protect the identifier using DataProtector Core.
+Protect the email address or Chat ID using DataProtector Core.
 
 ### Web3Mail — protect the email address
 
