@@ -17,7 +17,7 @@ next step would be encrypting results.
 ::: warning
 
 Before going any further, make sure you managed to
-[Build your first application with Scone framework](create-your-first-sgx-app.md).
+[Build your first application with Scone framework](./build-your-first-sgx-iapp.md).
 
 :::
 
@@ -26,7 +26,6 @@ Before going any further, make sure you managed to
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and
   client.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
-  [Install the iExec SDK](./quick-start-for-developers.md#install-the-iexec-sdk)
 - Familiarity with the basic concepts of
   [Intel® SGX](/get-started/protocol/tee/intel-sgx) and
   [SCONE](https://scontain.com) framework.
@@ -41,9 +40,9 @@ feature.
 :::
 
 Assuming your application is deployed (if not please check how to do it
-[with Scone](create-your-first-sgx-app.md#deploy-the-tee-app-on-iexec)), before
-triggering an execution you need to generate an RSA key-pair, then push the
-public key to the
+[with Scone](./build-your-first-sgx-iapp.md#deploy-the-tee-app-on-iexec)),
+before triggering an execution you need to generate an RSA key-pair, then push
+the public key to the
 [Secret Management Service](/get-started/protocol/tee/intel-sgx). The latter, in
 turn, will provide it, at runtime, to the enclave running your Confidential
 Computing application.
@@ -51,7 +50,7 @@ Computing application.
 To generate the key-pair, go to `~/iexec-projects` and use the following SDK
 command:
 
-Make sure your [`chain.json`](create-your-first-sgx-app.md#update-chain-json)
+Make sure your [`chain.json`](./build-your-first-sgx-iapp.md#update-chain-json)
 content is correct.
 
 ```bash

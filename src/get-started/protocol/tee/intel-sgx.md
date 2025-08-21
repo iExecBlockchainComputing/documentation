@@ -144,5 +144,5 @@ graph TD
 
 - **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Create your first SGX
   application
-- **[Advanced SGX Development](/guides/build-iapp/advanced/create-your-first-sgx-app)** -
+- **[Advanced SGX Development](/guides/build-iapp/advanced/build-your-first-sgx-iapp)** -
   Deep dive into SGX development

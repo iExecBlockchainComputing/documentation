@@ -1,11 +1,11 @@
 ---
-title: Build Intel TDX App (Experimental)
+title: Build Intel TDX iApp (Experimental)
 description:
   Learn how to build and run Confidential Computing applications with Intel TDX
   technology using both traditional deployment and the iApp Generator
 ---
 
-# 🛡️ Build Intel TDX App (Experimental) <ChainNotSupportedBadge/>
+# 🛡️ Build Intel TDX iApp <ChainNotSupportedBadge/>
 
 In this tutorial, you will learn how to build and run a Confidential Computing
 application with Intel TDX technology using both traditional deployment and the
@@ -68,7 +68,7 @@ need to be changed compared to the usual SGX workflow: `chain.json` and
 
 iApps using Intel TDX technology follow the same format as non-TEE applications;
 follow the instructions on
-[Build your first application](./build-your-first-app) to create and Dockerize
+[Build your first application](./build-your-first-iapp) to create and Dockerize
 your iApp.
 
 After this step, the Docker image of your iApp should be published on Docker Hub
@@ -119,22 +119,21 @@ Your `iexec.json` should now look like this example:
 
 ::: info
 
-See
-[Deploy your app on iExec](./build-your-first-app.md#deploy-your-app-on-iexec)
-to retrieve your image `<checksum>`.
+See [Deploy your iApp on iExec](./build-your-first-iapp.md) to retrieve your
+image `<checksum>`.
 
 :::
 
-### Deploy and run the TEE app
+### Deploy and run the TEE iApp
 
-Deploy the app with the standard command:
+Deploy the iApp with the standard command:
 
 ```bash
 iexec app deploy
 ```
 
-To execute the app in TDX, add `--tag tee,tdx` to the `iexec app run` and select
-the TDX workerpool (`tdx-labs.pools.iexec.eth`).
+To execute the iApp in TDX, add `--tag tee,tdx` to the `iexec app run` and
+select the TDX workerpool (`tdx-labs.pools.iexec.eth`).
 
 ```bash
 iexec app run --tag tee,tdx --workerpool tdx-labs.pools.iexec.eth --watch
@@ -142,8 +141,8 @@ iexec app run --tag tee,tdx --workerpool tdx-labs.pools.iexec.eth --watch
 
 ::: info
 
-Remember, you can access task and app logs by following the instructions on page
-[Debug your tasks](/guides/build-iapp/debugging).
+Remember, you can access task and iApp logs by following the instructions on
+page [Debug your tasks](/guides/build-iapp/debugging).
 
 :::
 
@@ -283,7 +282,7 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
   execution issues and TDX-specific problems
 - **[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)** - Handle data
   in TEE environment with TDX
-- **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
+- **[iApp Access Control and Pricing](/guides/build-iapp/manage-access)** -
   Configure access control for your TDX applications
 
 ### 📚 **Learn More About TEE Technologies**
@@ -303,7 +302,7 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
 
 - **⚠️ TDX is experimental**: Consider using
   **[Intel SGX Technology](/get-started/protocol/tee/intel-sgx)** for production
-- **[Create Your First SGX App](/guides/build-iapp/advanced/create-your-first-sgx-app)** -
+- **[Create Your First SGX iApp](/guides/build-iapp/advanced/build-your-first-sgx-iapp)** -
   Build production-ready SGX applications
 - **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Standard iApp deployment
   guide
@@ -316,7 +315,7 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
   Generator documentation
 - **[DataProtector SDK](/references/dataProtector)** - Work with protected data
   in TDX
-- **[Advanced iApp Building](/guides/build-iapp/advanced/quick-start-for-developers)** -
+- **[Advanced iApp Building](/guides/build-iapp/advanced/quick-start)** -
   Advanced development techniques
 
 <script setup>

@@ -137,9 +137,9 @@ graph TD
 
 **Ready to experiment with TDX?** Check out the practical guides:
 
-- **[Build Intel TDX App (Experimental)](/guides/build-iapp/advanced/build-your-first-tdx-app)** -
+- **[Build Intel TDX iApp (Experimental)](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
   Build TDX applications with traditional deployment and iApp Generator
-- **[Build Your First TDX App](/guides/build-iapp/advanced/build-your-first-tdx-app)** -
+- **[Build Your First TDX iApp](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
   Build TDX applications
 
 **For production applications, use SGX**:

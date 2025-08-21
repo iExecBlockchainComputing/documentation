@@ -1,14 +1,14 @@
 ---
-title: Build Your First Application
+title: Build Your First iApp
 description:
-  In this section we will show you how you can create a Docker dapp over the
-  iExec infrastructure.
+  In this section we will show you how you can create an iApp over the iExec
+  infrastructure.
 ---
 
-# Build your first application
+# Build your first iApp
 
-> In this section we will show you how you can create a Docker dapp over the
-> iExec infrastructure.
+> In this section we will show you how you can create an iApp (iExec
+> confidential application) over the iExec infrastructure.
 
 ::: tip Prerequisites
 
@@ -16,15 +16,14 @@ description:
   client.
 - [Dockerhub](https://hub.docker.com/) account.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
-  [Install the iExec SDK](quick-start-for-developers.md#install-the-iexec-sdk).
-- [Quickstart](quick-start-for-developers.md) tutorial completed
+- [Quickstart](./quick-start.md) tutorial completed
 
 :::
 
-In this guide, we will prepare an iExec app based on an existing docker image
+In this guide, we will prepare an iExec iApp based on an existing docker image
 and we will run it on iExec decentralized infrastructure.
 
-## Understand what is an iExec decentralized application?
+## Understand what is an iExec decentralized application (iApp)?
 
 iExec leverage [Docker](https://www.docker.com/why-docker) containers to ensure
 the execution of your application on a decentralized infrastructure. iExec
@@ -46,19 +45,19 @@ supports Linux-based docker images.
 Today you can run any application as a task. This means services are not
 supported for now.
 
-## Build your app
+## Build your iApp
 
 Create the folder tree for your application in `~/iexec-projects/`.
 
 ```bash
 cd ~/iexec-projects
-mkdir hello-world-app
-cd hello-world-app
+mkdir hello-world-iapp
+cd hello-world-iapp
 mkdir src
 touch Dockerfile
 ```
 
-### Write the app
+### Write the iApp
 
 ::: warning
 
@@ -137,7 +136,7 @@ application. Execution logs are accessible by:
 
 :::
 
-### Dockerize your app
+### Dockerize your iApp
 
 **Copy the following content** in `Dockerfile` .
 
@@ -192,7 +191,7 @@ way to name the image to reuse it in the next steps.
 
 **Congratulations you built your first docker image for iExec!**
 
-## Test your app locally
+## Test your iApp locally
 
 ### Basic test
 
@@ -261,9 +260,9 @@ docker run \
     arg1 arg2 arg3
 ```
 
-## Test your app on iExec
+## Test your iApp on iExec
 
-### Push your app to Dockerhub
+### Push your iApp to Dockerhub
 
 Login to your Dockerhub account.
 
@@ -289,12 +288,12 @@ Push the image to Dockerhub.
 docker push <docker-hub-user>/hello-world:1.0.0
 ```
 
-**Congratulations, your app is ready to be deployed on iExec!**
+**Congratulations, your iApp is ready to be deployed on iExec!**
 
-### Deploy your app on iExec
+### Deploy your iApp on iExec
 
-You already learned how to deploy the default app on iExec in the
-[previous tutorial](quick-start-for-developers.md).
+You already learned how to deploy the default iApp on iExec in the
+[previous tutorial](./quick-start.md).
 
 Go back to the `iexec-project` folder.
 
@@ -302,17 +301,17 @@ Go back to the `iexec-project` folder.
 cd ~/iexec-projects/
 ```
 
-You will need a few configurations in `iexec.json` to deploy your app:
+You will need a few configurations in `iexec.json` to deploy your iApp:
 
-- Replace app **name** with your application name \(display only\)
-- Replace app **multiaddr** with your app image download URI \(should looks like
-  `docker.io/<docker-hub-user>/hello-world:1.0.0`\)
-- Replace app **checksum** with your application image checksum \(see tip
+- Replace iApp **name** with your application name \(display only\)
+- Replace iApp **multiaddr** with your iApp image download URI \(should looks
+  like `docker.io/<docker-hub-user>/hello-world:1.0.0`\)
+- Replace iApp **checksum** with your application image checksum \(see tip
   below\)
 
 ::: info
 
-The checksum of your app is the sha256 digest of the docker image prefixed with
+The checksum of your iApp is the sha256 digest of the docker image prefixed with
 `0x` , you can use the following command to get it.
 
 ```bash
@@ -321,19 +320,19 @@ docker pull <docker-hub-user>/hello-world:1.0.0 | grep "Digest: sha256:" | sed '
 
 :::
 
-Deploy your app on iExec
+Deploy your iApp on iExec
 
 ```bash twoslash
 iexec app deploy --chain {{chainName}}
 ```
 
-Verify the deployed app \(name, multiaddr, checksum, owner\)
+Verify the deployed iApp \(name, multiaddr, checksum, owner\)
 
 ```bash twoslash
 iexec app show --chain {{chainName}}
 ```
 
-### Run your app on iExec
+### Run your iApp on iExec
 
 ```bash twoslash
 iexec app run --chain {{chainName}} --workerpool {{workerpoolAddress}} --watch
@@ -343,19 +342,19 @@ iexec app run --chain {{chainName}} --workerpool {{workerpoolAddress}} --watch
 
 **Using arguments:**
 
-You can pass arguments to the app using `--args <args>` option.
+You can pass arguments to the iApp using `--args <args>` option.
 
-With `--args "dostuff --with-option"` the app will receive
+With `--args "dostuff --with-option"` the iApp will receive
 `["dostuff", "--with-option"]` as process args.
 
 **Using input files:**
 
-You can pass input files to the app using `--input-files <list of URL>` option.
+You can pass input files to the iApp using `--input-files <list of URL>` option.
 
 With
 `--input-files https://example.com/file-A.txt,https://example.com/file-B.zip`
-the iExec worker will download the files before running the app in `IEXEC_IN`,
-and let the app access them through variables:
+the iExec worker will download the files before running the iApp in `IEXEC_IN`,
+and let the iApp access them through variables:
 
 - `file-A.txt` as`IEXEC_INPUT_FILE_NAME_1`
 - `file-B.zip` as`IEXEC_INPUT_FILE_NAME_2`
@@ -370,9 +369,9 @@ iexec task show --chain {{chainName}} <taskid> --download my-app-result  \
     && unzip my-app-result.zip -d my-app-result
 ```
 
-**Congratulations your app successfully ran on iExec!**
+**Congratulations your iApp successfully ran on iExec!**
 
-## Manage your app's output
+## Manage your iApp's output
 
 iExec enables running apps producing output files, you will need a place for
 storing your apps outputs.
@@ -390,12 +389,12 @@ the[iExec SDK](https://github.com/iExecBlockchainComputing/iexec-sdk).
 
 :::
 
-## Access to app and task logs on iExec
+## Access to iApp and task logs on iExec
 
 Sometimes things don't work out right the first time and you may need to
 [Debug your tasks](/guides/build-iapp/debugging).
 
-## Publish your app on the iExec marketplace
+## Publish your iApp on the iExec marketplace
 
 ```bash twoslash
 iexec app publish --chain {{chainName}}
@@ -405,14 +404,14 @@ iexec app publish --chain {{chainName}}
 
 ## What's next?
 
-In this tutorial you learned about the key concepts for building an app on
+In this tutorial you learned about the key concepts for building an iApp on
 iExec:
 
-- iExec app inputs and outputs
-- iExec app must produce a `computed.json` file \(required for the proof of
+- iExec iApp inputs and outputs
+- iExec iApp must produce a `computed.json` file \(required for the proof of
   execution\)
-- using docker to package your app with all its dependencies
-- testing an iExec app locally
+- using docker to package your iApp with all its dependencies
+- testing an iExec iApp locally
 - publishing on dockerhub
 
 <script setup>

@@ -208,11 +208,11 @@ export function getSidebar() {
               },
               {
                 text: 'Build your first application',
-                link: '/guides/build-iapp/advanced/build-your-first-app',
+                link: '/guides/build-iapp/advanced/build-your-first-iapp',
               },
               {
                 text: 'Build your first SGX app',
-                link: '/guides/build-iapp/advanced/create-your-first-sgx-app',
+                link: '/guides/build-iapp/advanced/build-your-first-sgx-iapp',
               },
               {
                 text: 'End-to-end Encryption',
@@ -224,7 +224,7 @@ export function getSidebar() {
               },
               {
                 text: 'Build Intel TDX app',
-                link: '/guides/build-iapp/advanced/build-your-first-tdx-app',
+                link: '/guides/build-iapp/advanced/build-your-first-tdx-iapp',
               },
             ],
           },

@@ -11,7 +11,7 @@ description:
 
 The iApp (iExec Application) Generator CLI simplifies the setup of your iApp by
 guiding you through a step-by-step initialization process. This ensures your
-iApp is correctly configured and compatible with iExec’s confidential computing
+iApp is correctly configured and compatible with iExec's confidential computing
 environment.
 
 ### 🏗 Define your Project
@@ -124,39 +124,78 @@ algorithms and data processing here.
 
 :::
 
-### 🧪 Test and Deploy your iApp
+## 🛠️ CLI Commands Reference
 
-Use the following CLI commands to **validate**, **deploy**, and **execute** your
-iApp:
+### Core Commands
 
-```sh
-iapp test                 # Runs a basic test locally.
-iapp deploy               # Turns your code into a TEE app and registers the iApp on iExec.
+#### `iapp init`
 
-iapp run <iAppAddress>    # Executes the deployed iApp on a worker node.
-iapp debug <taskId>       # Retrieve detailed execution logs from worker nodes for a specific task
+**Purpose**: Initialize a new iApp project  
+**Usage**: `iapp init`  
+**Options**: Interactive prompts for project configuration  
+**What it does**: Creates project structure, configuration files, and basic
+templates
 
-iapp mock <inputType>     # Creates a mocked input for testing.
-iapp --help               # Displays available commands.
-```
+#### `iapp test`
 
-::: info
+**Purpose**: Test your iApp locally before deployment  
+**Usage**: `iapp test`  
+**Options**: None  
+**What it does**: Runs a basic test locally to validate your application logic
 
-use `iapp debug <taskId>` if execution exceeds the timeout (default: 5 min).
+#### `iapp deploy`
 
-:::
+**Purpose**: Deploy your iApp to the iExec network  
+**Usage**: `iapp deploy`  
+**Options**: None  
+**What it does**: Turns your code into a TEE app and registers the iApp on iExec
 
-Once deployed, your iApp will run **securely in a TEE-enabled workerpool**
-within the iExec network.
+#### `iapp run <iAppAddress>`
 
-::: info
+**Purpose**: Execute your deployed iApp on a worker node  
+**Usage**: `iapp run <iAppAddress>`  
+**Options**: None  
+**What it does**: Sends your iApp for execution on the iExec network
 
-💡 A **workerpool** is a decentralized network of nodes that execute iApp
-securely within a **Trusted Execution Environment (TEE)**.
+#### `iapp debug <taskId>`
 
-:::
+**Purpose**: Retrieve detailed execution logs from worker nodes  
+**Usage**: `iapp debug <taskId>`  
+**Options**: None  
+**What it does**: Provides detailed logs for debugging failed or slow executions
 
-::: info
+#### `iapp mock <inputType>`
+
+**Purpose**: Create mocked input for testing purposes  
+**Usage**: `iapp mock <inputType>`  
+**Options**: None  
+**What it does**: Generates sample input data to test your iApp locally
+
+#### `iapp --help`
+
+**Purpose**: Display all available commands and options  
+**Usage**: `iapp --help`  
+**Options**: None  
+**What it does**: Shows comprehensive help information for all CLI commands
+
+### Advanced Options
+
+#### Environment Variables
+
+##### `EXPERIMENTAL_TDX_APP=true`
+
+**Purpose**: Enable experimental Intel TDX support  
+**Usage**: Set as environment variable before running commands  
+**Example**: `EXPERIMENTAL_TDX_APP=true iapp test`  
+**What it does**: Enables TDX mode for testing, deployment, and execution
+
+**Available with**:
+
+- `iapp test`
+- `iapp deploy`
+- `iapp run <app-address>`
+
+::: info TDX <ChainNotSupportedBadge />
 
 🧪 While **TEE** iApp are based on **intel SGX** technology by default, iApp has
 an experimental support for **intel TDX** applications.
@@ -164,31 +203,19 @@ an experimental support for **intel TDX** applications.
 TDX mode is enabled by setting the environment variable
 `EXPERIMENTAL_TDX_APP=true`.
 
-examples:
-
-- `EXPERIMENTAL_TDX_APP=true iapp test`
-- `EXPERIMENTAL_TDX_APP=true iapp deploy`
-- `EXPERIMENTAL_TDX_APP=true iapp run <app-address>`
-
 ⚠️ Keep in mind: TDX mode is experimental and can be subject to instabilities or
 discontinuity.
 
 :::
 
-### 🚀 Next Steps
+## 🚀 Next Steps
 
 Your iApp is now running on iExec!
 
-Once your application is **stable** and **functional**, you can:
-
-- Learn how to **manage orders** and integrate with the **iExec protocol**.
-
-#### 📚 Recommended Resources
-
-- 🔗
-  [Order Management](https://protocol.docs.iex.ec/for-developers/advanced/manage-your-apporders)
-- 🔗 [iExec Protocol Documentation](https://protocol.docs.iex.ec/)
+Once your application is **stable** and **functional**, you can learn how to
+[manage orders](https://protocol.docs.iex.ec/for-developers/advanced/manage-your-apporders)
 
 <script setup>
 import CLIDemo from '@/components/CLIDemo.vue';
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

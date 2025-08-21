@@ -13,7 +13,7 @@ application with the Scone TEE framework.
 ::: warning
 
 Before going any further, make sure you managed to
-[Build your first application](./build-your-first-app).
+[Build your first application](./build-your-first-iapp).
 
 :::
 
@@ -22,7 +22,6 @@ Before going any further, make sure you managed to
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and
   client.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
-  [Install the iExec SDK](./quick-start-for-developers.md#install-the-iexec-sdk)
 - Familiarity with the basic concepts of
   [Intel® SGX](/get-started/protocol/tee/intel-sgx) and
   [SCONE](https://scontain.com) framework.
@@ -47,7 +46,7 @@ Before going further, your `<docker-hub-user>/hello-world:1.0.0` image built
 previously is required.
 
 If you missed that part, please go back to
-[Build your first application](./build-your-first-app).
+[Build your first application](./build-your-first-iapp).
 
 For this tutorial, you can reuse the same directory tree or create a new one.
 
@@ -155,13 +154,13 @@ docker push <docker-hub-user>/tee-scone-hello-world:1.0.0
 
 Congratulations, you just built your Scone TEE application.
 
-## Test your app on iExec
+## Test your iApp on iExec
 
 At this stage, your application is ready to be tested on iExec. The process is
 similar to testing any type of application on the platform, with these minor
 exceptions:
 
-### Deploy the TEE app on iExec
+### Deploy the TEE iApp on iExec
 
 TEE applications require some additional information to be filled in during
 deployment.
@@ -197,12 +196,11 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 ::: info
 
 See
-[Create your identity on the blockchain](./quick-start-for-developers.md#create-your-identity-on-the-blockchain)
+[Create your identity on the blockchain](./quick-start.md#create-your-identity-on-the-blockchain)
 to retrieve `<your-wallet-address>` value.
 
-See
-[Deploy your app on iExec](./build-your-first-app.md#deploy-your-app-on-iexec)
-to retrieve your image `<checksum>`.
+See [Deploy your iApp on iExec](./build-your-first-iapp.md) to retrieve your
+image `<checksum>`.
 
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint
 (mrenclave):
@@ -213,20 +211,20 @@ docker run --rm -e SCONE_HASH=1 <docker-hub-user>/tee-scone-hello-world:1.0.0
 
 :::
 
-Deploy the app with the standard command:
+Deploy the iApp with the standard command:
 
 ```bash twoslash
 iexec app deploy --chain {{chainName}}
 ```
 
-### Run the TEE app
+### Run the TEE iApp
 
-Specify the tag `--tag tee,scone` in `iexec app run` command to run a tee app.
+Specify the tag `--tag tee,scone` in `iexec app run` command to run a tee iApp.
 
-One last thing, in order to run a **TEE** app you will also need to select a
+One last thing, in order to run a **TEE** iApp you will also need to select a
 workerpool, use the iexec workerpool `{{workerpoolAddress}}`.
 
-You are now ready to run the app
+You are now ready to run the iApp
 
 ```bash twoslash
 iexec app run --chain {{chainName}} --tag tee,scone --workerpool {{workerpoolAddress}} --watch
@@ -234,8 +232,8 @@ iexec app run --chain {{chainName}} --tag tee,scone --workerpool {{workerpoolAdd
 
 ::: info
 
-Remember, you can access task and app logs by following the instructions on page
-[Debug your tasks](/guides/build-iapp/debugging).
+Remember, you can access task and iApp logs by following the instructions on
+page [Debug your tasks](/guides/build-iapp/debugging).
 
 :::
 
@@ -246,7 +244,7 @@ Trusted Execution Environments using iExec. But according to your use case, you
 may need to use some confidential data to get the full potential of the
 **Confidential Computing** paradigm. Check out next chapters to see how:
 
-- [Access confidential assets from your app](access-confidential-assets.md)
+- [Access confidential assets from your iApp](access-confidential-assets.md)
 - [Protect the result](./protect-the-result.md)
 
 <script setup>
