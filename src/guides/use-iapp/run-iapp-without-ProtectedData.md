@@ -21,19 +21,19 @@ Before you begin, make sure you have the iExec SDK installed.
 ::: code-group
 
 ```sh [npm]
-npm install -g iexec
+npm install iexec
 ```
 
 ```sh [yarn]
-yarn global add iexec
+yarn add iexec
 ```
 
 ```sh [pnpm]
-pnpm add -g iexec
+pnpm add iexec
 ```
 
 ```sh [bun]
-bun add -g iexec
+bun add iexec
 ```
 
 :::

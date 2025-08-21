@@ -71,12 +71,20 @@ CLI:
 
 ::: code-group
 
-```bash [npm]
-npm install -g iexec
+```sh [npm]
+npm install iexec
 ```
 
-```bash [yarn]
-yarn global add iexec
+```sh [yarn]
+yarn add iexec
+```
+
+```sh [pnpm]
+pnpm add iexec
+```
+
+```sh [bun]
+bun add iexec
 ```
 
 :::
