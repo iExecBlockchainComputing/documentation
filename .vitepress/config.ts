@@ -101,7 +101,7 @@ export default withMermaid(
       // https://vitepress.dev/reference/default-theme-config
       nav: [
         { text: 'Get Started', link: '/get-started/welcome' },
-        { text: 'Guides', link: '/guides/build-iapp/build-&-deploy' },
+        { text: 'Guides', link: '/guides/build-iapp/build-&-test' },
         { text: 'References', link: '/references/dataProtector' },
         {
           component: 'ChainSelector',

@@ -15,30 +15,124 @@ applications.
 This guide covers all input types available to your iApp and how to generate
 proper outputs that users can retrieve and decrypt.
 
-## Development vs User Execution
+## Two Perspectives on Inputs
 
-**Two perspectives on inputs:**
+**Inputs work differently depending on your role:**
 
 - 🔧 **As a developer** (using iApp Generator): You write code to access inputs
   from the TEE environment
 - 👤 **As a user** (using DataProtector): You provide inputs when executing the
   iApp via `processProtectedData()`
 
+::: tip
+
+You can also execute iApps outside of DataProtector using other methods. See the
+[Use an iApp guide](/guides/use-iapp/introduction) for more information.
+
+:::
+
 This guide shows both perspectives for each input type.
 
 ## Input Types Overview
 
-When your iApp executes in the TEE, it can access four different types of
-inputs:
+Inside the TEE, your iApp can work with four distinct categories of inputs:
 
-| Input Type            | Visibility  | Use Case                 | Access Method          |
-| --------------------- | ----------- | ------------------------ | ---------------------- |
-| **Args**              | Public      | Configuration parameters | Command line arguments |
-| **Input Files**       | Public URLs | Large datasets, models   | Download from URLs     |
-| **Requester Secrets** | Private     | API keys, credentials    | Environment variables  |
-| **Protected Data**    | Encrypted   | User's sensitive data    | File system in TEE     |
+| Input Type            | Visibility | Security Level | Purpose                  | How iApp Accesses It   |
+| --------------------- | ---------- | -------------- | ------------------------ | ---------------------- |
+| **Protected Data**    | Public     | Encrypted      | Data to be processed     | Clear files in TEE     |
+| **Args**              | Public     | Clear          | Configuration parameters | Command line arguments |
+| **Input Files**       | Public     | Clear          | Large datasets, models   | Clear files in TEE     |
+| **Requester Secrets** | Private    | Encrypted      | User's sensitive data    | Environment variables  |
 
-## 1. Arguments (Args)
+## 1. Protected Data
+
+**What it is:** Encrypted data that's only decrypted inside your TEE
+environment.
+
+**When to use:** Processing sensitive information like personal data, financial
+records, health data.
+
+### How to Access Protected Data
+
+Protected data is available in the `IEXEC_IN` directory as decrypted files:
+
+::: code-group
+
+```python [Python]
+import os
+import json
+
+# Get the input directory and dataset filename
+iexec_in = os.environ['IEXEC_IN']
+data_filename = os.environ['IEXEC_DATASET_FILENAME']
+
+# Protected data is decrypted and available as files
+try:
+    # For single protected data
+    with open(f"{iexec_in}/{data_filename}", 'r') as f:
+        data = json.load(f)
+
+    # Access the sensitive data
+    user_email = data.get('email')
+    user_preferences = data.get('preferences')
+
+    print(f"Processing data for user: {user_email}")
+
+except FileNotFoundError:
+    print("No protected data provided")
+```
+
+```javascript [JavaScript]
+const fs = require('fs');
+const path = require('path');
+
+// Get the input directory and dataset filename
+const iexecIn = process.env.IEXEC_IN;
+const dataFilename = process.env.IEXEC_DATASET_FILENAME;
+
+try {
+  // Protected data is decrypted and available as files
+  const dataPath = path.join(iexecIn, dataFilename);
+  const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+
+  // Access the sensitive data
+  const userEmail = data.email;
+  const userPreferences = data.preferences;
+
+  console.log(`Processing data for user: ${userEmail}`);
+} catch (error) {
+  console.log('No protected data provided');
+}
+```
+
+:::
+
+### How Users Provide Protected Data
+
+Users specify the protected data address when executing your iApp:
+
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
+// User provides the protected data they want to use for processing
+const response = await dataProtectorCore.processProtectedData({
+  protectedData: '0x123abc...', // Address of the protected data
+  app: '0x456def...', // Your iApp address
+});
+```
+
+::: warning
+
+Protected data is decrypted and loaded into TEE enclave memory. Very large
+datasets (>1-2GB) may cause out-of-memory errors. Consider data preprocessing or
+chunking for large datasets.
+
+:::
+
+## 2. Arguments (Args)
 
 **What they are:** Public parameters passed to your iApp during execution.
 
@@ -47,14 +141,14 @@ anything that doesn't need to be secret.
 
 ::: danger
 
-Security Warning Args are **completely public** and visible on the blockchain
-explorer. Never pass sensitive information through args.
+Args are **completely public** and visible on the blockchain explorer. Never
+pass sensitive information through args.
 
 :::
 
 ### How to Access Args
 
-In your iApp Generator project, args are passed as command-line arguments:
+In your iApp project, args are passed as command-line arguments:
 
 ::: code-group
 
@@ -107,7 +201,7 @@ const response = await dataProtectorCore.processProtectedData({
 - Processing options: `"format=json output_size=small"`
 - Analysis parameters: `"start_date=2024-01-01 end_date=2024-12-31"`
 
-## 2. Input Files
+## 3. Input Files
 
 **What they are:** Files downloaded from public URLs during iApp execution.
 
@@ -182,20 +276,20 @@ const response = await dataProtectorCore.processProtectedData({
 - Reference datasets: `"https://data.gov/reference-corpus.csv"`
 - Configuration files: `"https://myapp.com/config.json"`
 
-### Limits and Best Practices
+::: warning
 
-- **File size**: Limited by TEE enclave memory (typically several GB max)
+- **File size**: Limited by TEE enclave memory (typically 1-2GB max)
 - **Memory constraint**: Files are loaded into enclave memory - large files may
   cause out-of-memory errors
 - **Format**: Any format (binary, text, compressed)
 - **URLs**: Must be direct download links (not web pages)
 - **Security**: Files are public - don't use for sensitive data
-- **Best practice**: Keep input files under 1-2GB for reliable execution
 
-## 3. Requester Secrets
+:::
 
-**What they are:** Confidential credentials provided by the user running your
-iApp.
+## 4. Requester Secrets
+
+**What they are:** Confidential data provided by the user running your iApp.
 
 **When to use:** API keys, database credentials, authentication tokens that the
 user needs to provide.
@@ -238,9 +332,9 @@ if (apiKey) {
 
 :::
 
-### How Users Provide Inputs
+### How Users Provide Requester Secrets
 
-Users provide all inputs when executing your iApp via DataProtector:
+Users provide all Requester Secrets when executing your iApp via DataProtector:
 
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
@@ -254,11 +348,6 @@ const processProtectedDataResponse =
     protectedData: '0x123abc...', // Protected data address
     app: '0x456def...', // Your iApp address
     args: 'model=bert threshold=0.8', // Public arguments
-    inputFiles: [
-      // Public input files
-      'https://example.com/model.pkl',
-      'https://example.com/config.json',
-    ],
     secrets: {
       // Requester secrets
       1: 'sk-1234567890abcdef', // API key
@@ -266,115 +355,6 @@ const processProtectedDataResponse =
     },
   });
 ```
-
-## 4. Protected Data
-
-**What it is:** Encrypted user data that's only decrypted inside your TEE
-environment.
-
-**When to use:** Processing user's sensitive information like personal data,
-financial records, health data.
-
-### How to Access Protected Data
-
-Protected data is available in the `IEXEC_IN` directory as decrypted files:
-
-::: code-group
-
-```python [Python]
-import os
-import json
-
-# Get the input directory
-iexec_in = os.environ['IEXEC_IN']
-
-# Protected data is decrypted and available as files
-try:
-    # For single protected data
-    with open(f"{iexec_in}/protectedData", 'r') as f:
-        data = json.load(f)
-
-    # Access user's sensitive data
-    user_email = data.get('email')
-    user_preferences = data.get('preferences')
-
-    print(f"Processing data for user: {user_email}")
-
-except FileNotFoundError:
-    print("No protected data provided")
-```
-
-```javascript [JavaScript]
-const fs = require('fs');
-const path = require('path');
-
-// Get the input directory
-const iexecIn = process.env.IEXEC_IN;
-
-try {
-  // Protected data is decrypted and available as files
-  const dataPath = path.join(iexecIn, 'protectedData');
-  const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-
-  // Access user's sensitive data
-  const userEmail = data.email;
-  const userPreferences = data.preferences;
-
-  console.log(`Processing data for user: ${userEmail}`);
-} catch (error) {
-  console.log('No protected data provided');
-}
-```
-
-:::
-
-### How Users Provide Protected Data
-
-Users specify the protected data address when executing your iApp:
-
-```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-// User provides their protected data for processing
-const response = await dataProtectorCore.processProtectedData({
-  protectedData: '0x123abc...', // Address of their protected data
-  app: '0x456def...', // Your iApp address
-});
-```
-
-### Working with Multiple Protected Datasets
-
-When multiple datasets are provided, they're available as separate files:
-
-::: code-group
-
-```python [Python]
-import os
-
-iexec_in = os.environ['IEXEC_IN']
-
-# List all available protected datasets
-for filename in os.listdir(iexec_in):
-    if filename.startswith('dataset_'):
-        with open(f"{iexec_in}/{filename}", 'r') as f:
-            dataset = json.load(f)
-            print(f"Processing dataset: {filename}")
-```
-
-:::
-
-### Memory Limitations
-
-::: warning
-
-TEE Memory Constraints Protected data is decrypted and loaded into TEE enclave
-memory. Very large datasets (>1-2GB) may cause out-of-memory errors. Consider
-data preprocessing or chunking for large datasets.
-
-:::
 
 ## Creating Outputs
 
@@ -452,7 +432,7 @@ fs.writeFileSync(
 ### Output Best Practices
 
 1. **Always create `computed.json`** - This is mandatory
-2. **Use descriptive filenames** - `analysis_result.json` vs `output.txt`
+2. **Use descriptive filenames** - `analysis_result.json`, not `output.txt`
 3. **Include metadata** - Timestamps, versions, parameters used
 4. **Structure your data** - Use JSON for structured results
 5. **Keep files reasonable** - Large outputs increase retrieval time and may hit
@@ -538,7 +518,7 @@ const response = await dataProtectorCore.processProtectedData({
 # Access inputs in your iApp
 args = sys.argv[1:]           # Processing parameters
 api_key = os.environ.get('IEXEC_REQUESTER_SECRET_1')  # User's API access
-protected_data = load_protected_data()  # User's sensitive data
+protected_data = load_protected_data()  # The sensitive data to process
 
 # Process and output results
 results = analyze_data(protected_data, args, api_key)
@@ -605,21 +585,13 @@ const response = await dataProtectorCore.processProtectedData({
 # Get configuration from args
 report_type = get_arg('type', default='summary')
 
-# Access user's business data
+# Access the business data
 business_data = load_protected_data()
 
 # Generate report
 report = generate_report(business_data, report_type)
 save_report(report)
 ```
-
-## Output Retrieval
-
-Once your iApp completes execution, users can retrieve and decrypt the results:
-
-→ **Learn how users get results**: Check our
-[How to Get and Decrypt Results](/guides/build-iapp/how-to-get-and-decrypt-results)
-guide for the complete user workflow.
 
 ## What's Next?
 
@@ -631,7 +603,7 @@ Continue building with these guides:
   Control who can use your iApp
 - **[Debugging Your iApp](/guides/build-iapp/debugging)** - Troubleshoot
   execution issues
-- **[How to Get and Decrypt Results](/guides/build-iapp/how-to-get-and-decrypt-results)** -
+- **[How to Get and Decrypt Results](/guides/build-iapp/inputs-and-outputs)** -
   User-side result handling
 
 ### Technical Deep Dive

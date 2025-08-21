@@ -79,27 +79,6 @@ for detailed formatting instructions.
 
 :::
 
-### Debug Mode Option
-
-Debug mode lets you test with debug iApp during development. As "debug" iApp
-don't have the same security standards, we recommend using this mode only during
-iApp development.
-
-```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-
-const protectedData = await dataProtectorCore.protectData({
-  data: {
-    email: 'test@example.com',
-  },
-  allowDebug: true, // [!code focus]
-});
-```
-
 ## Grant Access
 
 By default, your protected data is private. To let others use it, you need to

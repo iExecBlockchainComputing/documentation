@@ -132,12 +132,24 @@ export function getSidebar() {
             ],
           },
           {
-            text: 'TEE Technology',
+            text: '🔒 TEE Technology',
             collapsed: true,
             items: [
               {
-                text: 'Intel SGX Technology Overview',
-                link: '/get-started/protocol/tee/intel-sgx-technology',
+                text: 'Introduction to TEE Technologies',
+                link: '/get-started/protocol/tee/introduction',
+              },
+              {
+                text: 'Intel SGX Technology',
+                link: '/get-started/protocol/tee/intel-sgx',
+              },
+              {
+                text: 'Intel TDX Technology',
+                link: '/get-started/protocol/tee/intel-tdx',
+              },
+              {
+                text: 'SGX vs TDX Comparison',
+                link: '/get-started/protocol/tee/sgx-vs-tdx',
               },
             ],
           },
@@ -166,8 +178,12 @@ export function getSidebar() {
         text: 'BUILD YOUR iAPP',
         items: [
           {
-            text: 'Build and Deploy',
-            link: '/guides/build-iapp/build-&-deploy',
+            text: 'Build and Test',
+            link: '/guides/build-iapp/build-&-test',
+          },
+          {
+            text: 'Deploy and Run',
+            link: '/guides/build-iapp/deploy-&-run',
           },
           {
             text: 'Manage Access',
@@ -177,14 +193,7 @@ export function getSidebar() {
             text: 'Inputs and Outputs',
             link: '/guides/build-iapp/inputs-and-outputs',
           },
-          {
-            text: 'Using TDX',
-            link: '/guides/build-iapp/using-tdx',
-          },
-          {
-            text: 'How to Get and Decrypt Results',
-            link: '/guides/build-iapp/how-to-get-and-decrypt-results',
-          },
+
           {
             text: 'Debugging',
             link: '/guides/build-iapp/debugging',
@@ -241,46 +250,20 @@ export function getSidebar() {
             link: '/guides/use-iapp/getting-started',
           },
           {
-            text: 'Different Ways to Execute an iApp',
-            link: '/guides/use-iapp/different-ways-to-execute',
-          },
-          {
-            text: 'Use iApp with Protected Data',
-            link: '/guides/use-iapp/use-iapp-with-protected-data',
-          },
-          {
-            text: 'Add Inputs to the Execution',
-            link: '/guides/use-iapp/add-inputs-to-execution',
-          },
-          {
-            text: 'Integrate Web3 Messaging',
-            link: '/guides/use-iapp/web3-messaging',
-          },
-          {
             text: 'How to Pay the Executions',
             link: '/guides/use-iapp/how-to-pay-executions',
           },
           {
-            text: '💰 How to Pay',
-            collapsed: true,
-            items: [
-              {
-                text: 'How to Pay for Web3Mail',
-                link: '/guides/use-iapp/how-to-pay/how-to-pay-for-web3mail',
-              },
-              {
-                text: 'How to Pay for Web3Telegram',
-                link: '/guides/use-iapp/how-to-pay/how-to-pay-for-web3telegram',
-              },
-              {
-                text: 'Pricing Considerations',
-                link: '/guides/use-iapp/how-to-pay/pricing-considerations',
-              },
-              {
-                text: 'Voucher',
-                link: '/guides/use-iapp/how-to-pay/voucher',
-              },
-            ],
+            text: 'Run iApp with ProtectedData',
+            link: '/guides/use-iapp/run-iapp-with-ProtectedData',
+          },
+          {
+            text: 'Run iApp without ProtectedData',
+            link: '/guides/use-iapp/run-iapp-without-ProtectedData',
+          },          
+          {
+            text: 'Integrate Web3 Messaging',
+            link: '/guides/use-iapp/web3-messaging',
           },
         ],
       },
@@ -607,7 +590,7 @@ export function getSidebar() {
         link: '/references/sdk',
       },
       {
-        text: '�📖 Glossary',
+        text: '📖 Glossary',
         link: '/references/glossary',
       },
     ],
