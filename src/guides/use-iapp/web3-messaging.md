@@ -39,9 +39,9 @@ a unique Chat ID.
 
 Protect the email address or Chat ID using DataProtector Core.
 
-### Web3Mail — protect the email address
+::: code-group
 
-```ts twoslash
+```ts twoslash [Web3Mail]
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
@@ -53,9 +53,7 @@ const protectedData = await dataProtectorCore.protectData({
 });
 ```
 
-### Web3Telegram — protect the Chat ID
-
-```ts twoslash
+```ts twoslash [Web3Telegram]
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
@@ -66,6 +64,8 @@ const protectedData = await dataProtectorCore.protectData({
   },
 });
 ```
+
+:::
 
 ## 3. Grant Access
 
@@ -87,9 +87,9 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 
 ## 4. Send the Message
 
-### Web3Mail — sendEmail
+::: code-group
 
-```ts twoslash
+```ts twoslash [Web3Mail]
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
@@ -103,9 +103,7 @@ const sendEmail = await web3mail.sendEmail({
 });
 ```
 
-### Web3Telegram — sendTelegram
-
-```ts twoslash
+```ts twoslash [Web3Telegram]
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
@@ -115,11 +113,16 @@ const sendTelegram = await web3telegram.sendTelegram({
   protectedData: '0x123abc...',
   senderName: 'Arthur',
   telegramContent: 'My telegram message content',
-  // useVoucher: true,
 });
 ```
 
+:::
+
 ## Payment
 
-See the full payment guide:
-[/guides/use-iapp/how-to-pay-executions](/guides/use-iapp/how-to-pay-executions)
+Each message sent through Web3Mail or Web3Telegram requires payment in RLC
+tokens.
+
+For detailed information about payment methods, pricing, and voucher usage, see
+our comprehensive guide:
+[How to pay for executions](/guides/use-iapp/how-to-pay-executions)
