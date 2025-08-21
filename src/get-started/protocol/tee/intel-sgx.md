@@ -142,7 +142,7 @@ graph TD
 
 **Ready to build with SGX?** Check out the practical guides:
 
-- **[Build & Deploy](/guides/build-iapp/build-&-deploy)** - Create your first
+- **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Create your first
   SGX application
 - **[Advanced SGX Development](/guides/build-iapp/advanced/create-your-first-sgx-app)** -
   Deep dive into SGX development

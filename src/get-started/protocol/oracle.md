@@ -1,4 +1,5 @@
 ---
+title: iExec Oracle
 description: A flexible and secure Oracle Solution
 ---
 

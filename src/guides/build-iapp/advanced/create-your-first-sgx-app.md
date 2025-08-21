@@ -1,3 +1,10 @@
+---
+title: Build Your First Application with Scone Framework
+description:
+  Learn how to build and run Confidential Computing applications with the Scone
+  TEE framework for secure, privacy-preserving computation
+---
+
 # Build your first application with Scone framework
 
 In this tutorial, you will learn how to build and run a Confidential Computing

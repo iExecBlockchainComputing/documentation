@@ -1,3 +1,10 @@
+---
+title: Access Confidential Assets from Your App
+description:
+  Learn how to access confidential assets including secrets, protected data, and
+  requester secrets from your iExec application using the Secret Management Service
+---
+
 # Access confidential assets from your app
 
 ::: warning
@@ -55,4 +62,4 @@ graph TD
 You now understand how these three kinds of confidential assets work on iExec,
 you can go one step further by learning how to manipulate them:
 
-- [Access to a Protected Data](guides/build-iapp/inputs-and-outputs)
+- [Access to a Protected Data](/guides/build-iapp/inputs-and-outputs)

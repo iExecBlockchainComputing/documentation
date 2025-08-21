@@ -1,3 +1,10 @@
+---
+title: Quick Start for Developers
+description:
+  Learn how to create and deploy decentralized applications on the iExec
+  infrastructure using the iExec SDK command-line interface
+---
+
 # Quick Start
 
 > In this tutorial we will show you how you can create decentralized application
@@ -135,13 +142,13 @@ You will now deploy your app on iExec, this will be your first transaction on
 the blockchain:
 
 ```bash twoslash
-iexec app deploy --chain {{chainName}}
+iexec app deploy --chain arbitrum-mainnet
 ```
 
 ::: tip
 
 While running `iexec app deploy` you sent your first transaction on the
-{{chainName}} blockchain.
+arbitrum-mainnet blockchain.
 
 :::
 
@@ -149,7 +156,7 @@ You can check your deployed apps with their index, let's check your last
 deployed app:
 
 ```bash twoslash
-iexec app show --chain {{chainName}}
+iexec app show --chain arbitrum-mainnet
 ```
 
 ## Run your app on iExec
@@ -174,20 +181,20 @@ At any time you can:
 - view your balance
 
 ```bash twoslash
-iexec account show --chain {{chainName}}
+iexec account show --chain arbitrum-mainnet
 ```
 
 - deposit RLC from your wallet to your iExec Account
 
 ```bash twoslash
-iexec account deposit --chain {{chainName}} <amount>
+iexec account deposit --chain arbitrum-mainnet <amount>
 ```
 
 - withdraw RLC from your iExec account to your wallet \(only stake can be
   withdrawn\)
 
 ```bash twoslash
-iexec account withdraw --chain {{chainName}} <amount>
+iexec account withdraw --chain arbitrum-mainnet <amount>
 ```
 
 :::
@@ -198,7 +205,7 @@ to pay for the computation.
 Everything is ready to run your application!
 
 ```bash twoslash
-iexec app run --chain {{chainName}} --args <your-name-here> --workerpool prod-v8-learn.main.pools.iexec.eth --watch
+iexec app run --chain arbitrum-mainnet --args <your-name-here> --workerpool prod-v8-learn.main.pools.iexec.eth --watch
 ```
 
 ::: info
@@ -254,13 +261,13 @@ is a 32Bytes hexadecimal string\).
 Download the result of your task
 
 ```bash twoslash
-iexec task show --chain {{chainName}} <taskid> --download my-result
+iexec task show --chain arbitrum-mainnet <taskid> --download my-result
 ```
 
 You can get your taskid with the command:
 
 ```bash twoslash
-iexec deal show --chain {{chainName}} <dealid>
+iexec deal show --chain arbitrum-mainnet <dealid>
 ```
 
 ::: info
@@ -302,7 +309,7 @@ The conditions to use an app are defined in the **apporder**.
 Publish a new apporder for your application.
 
 ```bash twoslash
-iexec app publish --chain {{chainName}}
+iexec app publish --chain arbitrum-mainnet
 ```
 
 ::: info
@@ -321,7 +328,7 @@ conditions defined in apporder.
 You can check the published apporders for your app
 
 ```bash twoslash
-iexec orderbook app --chain {{chainName}} <your app address>
+iexec orderbook app --chain arbitrum-mainnet <your app address>
 ```
 
 Congratulation you just created a decentralized application! Anyone can now

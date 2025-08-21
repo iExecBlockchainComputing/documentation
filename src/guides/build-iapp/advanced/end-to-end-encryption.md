@@ -1,3 +1,10 @@
+---
+title: End-to-End Encryption
+description:
+  Learn how to implement end-to-end encryption for your Confidential Computing
+  applications to protect results and ensure complete data privacy
+---
+
 # Protect the result
 
 In previous tutorials, we saw how to build
@@ -104,9 +111,9 @@ mkdir /tmp/trash && \
 `iexec_out/result.zip` :
 
 ```bash
-)3�Xq��Yv��ȿzE�fRu<\�ݵm�m���疞r���c��(a���{{'��ܼ���͛�q/[{����H�t>��������h��gD$g��\.�k��j�����"�s?"�h�J�_Q41�_[{��X��������Ԛ��a�蘟v���E����r����肽
-�����Յ]9W�TL�*���
-          �t��d���z��O`����!���e�&snoL3�K6L9���%
+)3XqYvȿzEfRu<\ݵmm疞rc(a{{'ܼ͛q/[{Ht>hgD$g\.kj"s?"hJ_Q41_[{XԚa蘟vEr肽
+Յ]9WTL*
+          tdzO`!e&snoL3K6L9%
 ```
 
 Now you should decrypt the result by running:

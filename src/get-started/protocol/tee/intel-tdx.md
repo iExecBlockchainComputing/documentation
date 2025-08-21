@@ -144,5 +144,5 @@ graph TD
 
 **For production applications, use SGX**:
 
-- **[Build & Deploy](/guides/build-iapp/build-&-deploy)** - Create
+- **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Create
   production-ready SGX applications
