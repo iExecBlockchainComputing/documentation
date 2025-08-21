@@ -272,7 +272,7 @@ It's the confidential computer on which the iExec application will run.
 
 ::: tip
 
-iExec currently offers a production workerpool located at the address
+iExec currently offers a workerpool located at the address
 `{{ workerpoolAddress }}`. This is the default workerpool for running
 confidential computations on the iExec platform.
 

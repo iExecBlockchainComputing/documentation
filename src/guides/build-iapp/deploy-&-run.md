@@ -53,7 +53,7 @@ Here is an example:
 ```json
 [
   {
-    "sconifiedImage": "robiniexec/iapp:0.0.1-tee-scone-5.9.1-v16-debug-5aea8b4aa71d",
+    "sconifiedImage": "robiniexec/iapp:0.0.1-tee-scone-5.9.1-v16-5aea8b4aa71d",
     "appContractAddress": "0x9665136c599ec361C8eE627eC4F35A23fBa94897",
     "owner": "0xbabE8270aC9857Af3aaC06877888F1939FbeC578",
     "date": "2025-08-12T13:16:18.252Z"

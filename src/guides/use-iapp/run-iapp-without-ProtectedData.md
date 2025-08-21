@@ -59,7 +59,7 @@ const requestorderToSign = await iexec.order.createRequestorder({
   app: '0x456def...',
   category: 0,
   appmaxprice: 10,
-  workerpool: '0xa5de76...', // ENS address for iExec's debug workerpool
+  workerpool: '0xa5de76...',
   params: 'arg1 arg2 arg3', // Command-line arguments
   // Other parameters have default values
 });
@@ -110,7 +110,7 @@ const requestorderToSign = await iexec.order.createRequestorder({
   app: '0x456def...',
   category: 0, // Required: category for the request
   appmaxprice: 10,
-  workerpool: '0xa5de76...', // ENS address for iExec's debug workerpool
+  workerpool: '0xa5de76...',
   params: {
     iexec_input_files: [
       'https://example.com/config.json',
@@ -167,7 +167,7 @@ const requestorderToSign = await iexec.order.createRequestorder({
   app: '0x456def...',
   category: 0, // Required: category for the request
   appmaxprice: 10,
-  workerpool: '0xa5de76...', // ENS address for iExec's debug workerpool
+  workerpool: '0xa5de76...',
   params: {
     iexec_secrets: {
       1: 'api-key-12345',
