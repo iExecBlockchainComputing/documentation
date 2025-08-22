@@ -126,6 +126,104 @@
 }
 
 /**
+ * Colors: Text
+ *
+ * - `text-1`: Used for primary text.
+ *
+ * - `text-2`: Used for muted texts, such as "inactive menu" or "info texts".
+ *
+ * - `text-3`: Used for subtle texts, such as "placeholders" or "caret icon".
+ * -------------------------------------------------------------------------- */
+
+:root {
+  /* --vp-c-text-1: #3c3c43; */
+  --vp-c-text-1: #1d1d24;
+  /* --vp-c-text-2: #67676c; */
+  --vp-c-text-2: #5d5d69;
+  --vp-c-text-3: #929295;
+}
+
+.dark {
+  /* --vp-c-text-1: #dfdfd6; */
+  --vp-c-text-1: #fff;
+  /* --vp-c-text-2: #98989f; */
+  --vp-c-text-2: #a3a3a8;
+  --vp-c-text-3: #6a6a71;
+}
+
+/**
+ * Colors: Function
+ *
+ * - `default`: The color used purely for subtle indication without any
+ *   special meanings attached to it such as bg color for menu hover state.
+ *
+ * - `brand`: Used for primary brand colors, such as link text, button with
+ *   brand theme, etc.
+ *
+ * - `tip`: Used to indicate useful information. The default theme uses the
+ *   brand color for this by default.
+ *
+ * - `warning`: Used to indicate warning to the users. Used in custom
+ *   container, badges, etc.
+ *
+ * - `danger`: Used to show error, or dangerous message to the users. Used
+ *   in custom container, badges, etc.
+ *
+ * To understand the scaling system, refer to "Colors: Palette" section.
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-c-default-1: var(--vp-c-gray-1);
+  --vp-c-default-2: var(--vp-c-gray-2);
+  --vp-c-default-3: var(--vp-c-gray-3);
+  --vp-c-default-soft: var(--vp-c-gray-soft);
+
+  --vp-c-brand-1: var(--vp-c-indigo-1);
+  --vp-c-brand-2: var(--vp-c-indigo-2);
+  --vp-c-brand-3: var(--vp-c-indigo-3);
+  --vp-c-brand-soft: var(--vp-c-indigo-soft);
+
+  /* DEPRECATED: Use `--vp-c-brand-1` instead. */
+  --vp-c-brand: var(--vp-c-brand-1);
+
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+
+  --vp-c-note-1: var(--vp-c-brand-1);
+  --vp-c-note-2: var(--vp-c-brand-2);
+  --vp-c-note-3: var(--vp-c-brand-3);
+  --vp-c-note-soft: var(--vp-c-brand-soft);
+
+  --vp-c-success-1: var(--vp-c-green-1);
+  --vp-c-success-2: var(--vp-c-green-2);
+  --vp-c-success-3: var(--vp-c-green-3);
+  --vp-c-success-soft: var(--vp-c-green-soft);
+
+  --vp-c-important-1: var(--vp-c-purple-1);
+  --vp-c-important-2: var(--vp-c-purple-2);
+  --vp-c-important-3: var(--vp-c-purple-3);
+  --vp-c-important-soft: var(--vp-c-purple-soft);
+
+  --vp-c-warning-1: var(--vp-c-yellow-1);
+  --vp-c-warning-2: var(--vp-c-yellow-2);
+  --vp-c-warning-3: var(--vp-c-yellow-3);
+  --vp-c-warning-soft: var(--vp-c-yellow-soft);
+
+  --vp-c-danger-1: var(--vp-c-red-1);
+  --vp-c-danger-2: var(--vp-c-red-2);
+  --vp-c-danger-3: var(--vp-c-red-3);
+  --vp-c-danger-soft: var(--vp-c-red-soft);
+
+  --vp-c-caution-1: var(--vp-c-red-1);
+  --vp-c-caution-2: var(--vp-c-red-2);
+  --vp-c-caution-3: var(--vp-c-red-3);
+  --vp-c-caution-soft: var(--vp-c-red-soft);
+}
+
+
+/**
  * Component: Button
  * -------------------------------------------------------------------------- */
 
@@ -194,4 +292,22 @@ html:not(.dark) .dark-only {
 
 input {
   @apply w-full rounded-md border border-[var(--vp-c-divider)] bg-[var(--vp-c-bg-soft)] px-4 py-3 text-base text-[var(--vp-c-text-1)] transition focus:border-[var(--vp-c-brand-2)] focus:outline-none disabled:cursor-not-allowed disabled:opacity-70;
+}
+
+/**
+ * Component: Banner
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --c-bg-gradient-from: #e1e6f7;
+  --c-bg-gradient-to: #f1f2f6;
+  --c-border: #b6b7c3;
+  --c-text: #b6b7c3;
+}
+
+.dark {
+  --c-bg-gradient-from: #2e334a;
+  --c-bg-gradient-to: #292b34;
+  --c-border: #5a5b68;
+  --c-text: #b6b7c3;
 }
