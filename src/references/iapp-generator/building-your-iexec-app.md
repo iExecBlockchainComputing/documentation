@@ -81,19 +81,8 @@ You'll set up:
 - **Protected Data** – Encrypted data accessible only inside the TEE.
 - **App Secret** – Immutable secret provisioned by the iApp owner.
 
-::: tip 💡
-
-The Secret Management Service (SMS) securely stores application developer
-secrets. Once set, the App Secret is immutable and cannot be updated. Use with
-caution.
-
-For more information on **App Secrets**, refer to
-[Access confidential assets from your app](https://protocol.docs.iex.ec/for-developers/confidential-computing/access-confidential-assets)
-
-:::
-
 For more details and to learn how to use them in your application, refer here
-[Application I/O](https://protocol.docs.iex.ec/for-developers/application-io)
+[Inputs and Outputs](guides/build-iapp/inputs-and-outputs)
 
 ## 🚀 Launch your iApp
 
@@ -196,7 +185,7 @@ templates through interactive prompts.
 **Usage**: `iapp mock <inputType> [options]`  
 **Positional arguments**:
 
-- `<inputType>` – Type of input to mock (e.g., `default`, `custom`)  
+- `<inputType>` – Type of input to mock (e.g., `default`, `custom`)
 
 **Options**:
 
@@ -211,7 +200,7 @@ templates through interactive prompts.
 **Usage**: `iapp wallet <action> [options]`  
 **Positional arguments**:
 
-- `<action>` – Wallet action to perform (e.g., `balance`, `address`, `sign`)  
+- `<action>` – Wallet action to perform (e.g., `balance`, `address`, `sign`)
 
 **Options**:
 
@@ -251,7 +240,7 @@ discontinuity.
 Your iApp is now running on iExec!
 
 Once your application is **stable** and **functional**, you can learn how to
-[manage orders](https://protocol.docs.iex.ec/for-developers/advanced/manage-your-apporders)
+[manage access to your iApp](guides/build-iapp/manage-access)
 
 <script setup>
 import CLIDemo from '@/components/CLIDemo.vue';

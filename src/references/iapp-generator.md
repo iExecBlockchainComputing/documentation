@@ -100,8 +100,6 @@ applications:
 - **[Complete Guides](/guides/build-iapp/build-&-test)** - All development
   guides
 - **[iExec Discord](https://discord.com/invite/pbt9m98wnU)** - Community support
-- **[Protocol Documentation](https://protocol.docs.iex.ec)** - Technical deep
-  dive
 
 ---
 

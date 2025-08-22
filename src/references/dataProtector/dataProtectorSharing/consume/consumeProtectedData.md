@@ -15,7 +15,7 @@ This method does a few things under the hood:
 - Generate an RSA key pair and save it to indexedDB (if available)
 - Push the public key to iExec SMS (Secret Management Service) (For more info,
   see
-  [iExec Protocol documentation](https://protocol.docs.iex.ec/for-developers/confidential-computing/access-confidential-assets#secret-management-service-sms))
+  [iExec Advanced documentation](/guides/build-iapp/advanced/access-confidential-assets))
 - Wait for the consuming task to be executed by a worker. The iExec TEE iApp
   being executed is the one given with the `app` parameter. The iExec TEE iApp
   will get the protected data from IPFS, encrypt it with the public key
