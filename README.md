@@ -261,3 +261,4 @@ for input parameters:
 - Improve Guide in build-iapp section - be more clear for builder ( how to
   process process protectedData, clarify input-output guide)
 - refactor iapp generator cli reference
+- Add illustration in the different pages
