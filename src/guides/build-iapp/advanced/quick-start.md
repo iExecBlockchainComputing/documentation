@@ -135,8 +135,8 @@ Given an input string, the application generates an ASCII art greeting.
 
 You can deploy this application on iExec, it will run out of the box. When you
 are confident with iExec concept, you can read
-[Your first app](your-first-app.md) and learn how to setup your own app on
-iExec.
+[Your first app](./build-your-first-iapp.md) and learn how to setup your own app
+on iExec.
 
 You will now deploy your app on iExec, this will be your first transaction on
 the blockchain:
@@ -173,8 +173,8 @@ Your iExec account is managed by smart contracts \(and not owned by iExec\).
 
 When you request an execution the price for the task is locked from your
 account's stake then transferred to accounts of the workers contributing to the
-task \(read more about
-[Proof of Contribution](/get-started/protocol/proof-of-contribution) protocol\).
+task \(read more about [Proof of Contribution](/protocol/proof-of-contribution)
+protocol\).
 
 At any time you can:
 
@@ -250,7 +250,7 @@ graph TD
 ```
 
 Guaranties about completion times (fast/slow) are available in the
-[category section](/get-started/protocol/pay-per-task):
+[category section](/protocol/pay-per-task):
 
 - maximum deal/task time
 - maximum computing time
@@ -348,7 +348,7 @@ You are now familiar with the following key iExec concepts for developers:
 
 Continue with these guides:
 
-- [Learn how to build your first application running on iExec](your-first-app.md)
+- [Learn how to build your first application running on iExec](./build-your-first-iapp.md)
 
 <script setup>
 import { computed } from 'vue';

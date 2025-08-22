@@ -1,17 +1,17 @@
 ---
-title: Access Confidential Assets from Your App
+title: Access Confidential Assets from Your iApp
 description:
   Learn how to access confidential assets including secrets, protected data, and
   requester secrets from your iExec application using the Secret Management
   Service
 ---
 
-# Access confidential assets from your app
+# Access confidential assets from your iApp
 
 ::: warning
 
 Before going any further, make sure you managed to
-[Build your first application with Scone framework](create-your-first-sgx-app.md).
+[Build your first application with Scone framework](build-your-first-sgx-iapp.md).
 
 :::
 
@@ -53,8 +53,8 @@ graph TD
     ProtectedDataOwn[ProtectedData owner] -->|1.c. Push secret| SMS
     Req --> |2 . Buy task| Chain
     Chain[Blockchain] --> |3 . Notify task to compute| Worker[Worker/Workerpool]
-    Worker --> |4 . Launch TEE application| App[TEE application]
-    App --> |5.a. Get secrets for task| SMS
+    Worker --> |4 . Launch TEE application| iApp[TEE application]
+    iApp --> |5.a. Get secrets for task| SMS
     SMS --> |5.b. Check authorization for secrets| Chain
 ```
 

@@ -306,8 +306,6 @@ Next steps:
 
 - **[iExec SDK Documentation](https://github.com/iExecBlockchainComputing/iexec-sdk)** -
   Complete CLI reference
-- **[Official Orders Documentation](https://protocol.docs.iex.ec/for-developers/advanced/manage-your-apporders)** -
-  Protocol-level order management
 
 <script setup>
 import { computed } from 'vue';

@@ -135,14 +135,14 @@ graph TD
 
 **Learn about the next generation**:
 
-- **[Intel TDX Technology](/get-started/protocol/tee/intel-tdx)** -
-  Next-generation VM-level TEE technology
-- **[SGX vs TDX Comparison](/get-started/protocol/tee/sgx-vs-tdx)** - Detailed
-  comparison of both technologies
+- **[Intel TDX Technology](/protocol/tee/intel-tdx)** - Next-generation VM-level
+  TEE technology
+- **[SGX vs TDX Comparison](/protocol/tee/sgx-vs-tdx)** - Detailed comparison of
+  both technologies
 
 **Ready to build with SGX?** Check out the practical guides:
 
 - **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Create your first SGX
   application
-- **[Advanced SGX Development](/guides/build-iapp/advanced/create-your-first-sgx-app)** -
+- **[Advanced SGX Development](/guides/build-iapp/advanced/build-your-first-sgx-iapp)** -
   Deep dive into SGX development
