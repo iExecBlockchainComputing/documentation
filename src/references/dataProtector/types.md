@@ -107,7 +107,7 @@ _Hash example:_ `0xc9c2d58fc01fe54149b7daf49a0026d4ab1fdd3d10fb7c76350790fff03fe
 <!-- prettier-ignore-end -->
 
 You can read more about the
-[iExec Explorer](get-started/tooling-and-explorers/iexec-explorer).
+[iExec Explorer](/get-started/tooling-and-explorers/iexec-explorer).
 
 ## ✅ SuccessWithTransactionHash
 
@@ -122,4 +122,4 @@ _Hash example:_ `0xc9c2d58fc01fe54149b7daf49a0026d4ab1fdd3d10fb7c76350790fff03fe
 <!-- prettier-ignore-end -->
 
 You can read more about the [iExec Explorer]
-(get-started/tooling-and-explorers/iexec-explorer).
+(/get-started/tooling-and-explorers/iexec-explorer).

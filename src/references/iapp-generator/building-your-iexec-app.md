@@ -82,7 +82,7 @@ You'll set up:
 - **App Secret** – Immutable secret provisioned by the iApp owner.
 
 For more details and to learn how to use them in your application, refer here
-[Inputs and Outputs](guides/build-iapp/inputs-and-outputs)
+[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)
 
 ## 🚀 Launch your iApp
 
@@ -240,7 +240,7 @@ discontinuity.
 Your iApp is now running on iExec!
 
 Once your application is **stable** and **functional**, you can learn how to
-[manage access to your iApp](guides/build-iapp/manage-access)
+[manage access to your iApp](/guides/build-iapp/manage-access)
 
 <script setup>
 import CLIDemo from '@/components/CLIDemo.vue';

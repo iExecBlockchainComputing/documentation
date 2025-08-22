@@ -13,7 +13,7 @@ In order to consume a protected data, an iExec TEE iApp needs to be provided.
 ::: tip
 
 **TEE** stands for Trusted Execution Environment. Find more details
-[here](get-started/protocol/tee/introduction)
+[here](/get-started/protocol/tee/introduction)
 
 :::
 
