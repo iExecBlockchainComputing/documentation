@@ -553,7 +553,7 @@ may need to use some confidential data to get the full potential of the
 **Confidential Computing** paradigm. Check out next chapters to see how:
 
 - [Access confidential assets from your iApp](access-confidential-assets.md)
-- [Protect the result](./protect-the-result.md)
+- [Protect the result](/guides/build-iapp/advanced/protect-the-result.md)
 
 <script setup>
 import { computed } from 'vue';

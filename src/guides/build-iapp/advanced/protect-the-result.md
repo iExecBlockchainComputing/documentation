@@ -17,7 +17,7 @@ encrypting results.
 ::: warning
 
 Before going any further, make sure you managed to
-[Build your first application with Scone framework](./build-your-first-sgx-iapp.md).
+[Build your first application with Scone framework](/guides/build-iapp/advanced/build-your-first-sgx-iapp.md).
 
 :::
 
@@ -39,7 +39,7 @@ feature.
 :::
 
 Assuming your application is deployed (if not please check how to do it
-[with Scone](./build-your-first-sgx-iapp.md#deploy-the-tee-app-on-iexec)),
+[with Scone](/guides/build-iapp/advanced/build-your-first-sgx-iapp.md#deploy-the-tee-app-on-iexec)),
 before triggering an execution you need to generate an RSA key-pair, then push
 the public key to the [Secret Management Service](/protocol/tee/intel-sgx). The
 latter, in turn, will provide it, at runtime, to the enclave running your
@@ -48,7 +48,8 @@ Confidential Computing application.
 To generate the key-pair, go to `~/iexec-projects` and use the following SDK
 command:
 
-Make sure your [`chain.json`](./build-your-first-sgx-iapp.md#update-chain-json)
+Make sure your
+[`chain.json`](/guides/build-iapp/advanced/build-your-first-sgx-iapp.md#update-chain-json)
 content is correct.
 
 ```bash
