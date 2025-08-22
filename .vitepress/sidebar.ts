@@ -154,10 +154,6 @@ export function getSidebar() {
                 link: '/guides/build-iapp/advanced/quick-start',
               },
               {
-                text: 'Build your first application',
-                link: '/guides/build-iapp/advanced/build-your-first-iapp',
-              },
-              {
                 text: 'Build your first SGX app',
                 link: '/guides/build-iapp/advanced/build-your-first-sgx-iapp',
               },

@@ -10,13 +10,6 @@ description:
 In this tutorial, you will learn how to build and run a Confidential Computing
 application with the Scone TEE framework.
 
-::: warning
-
-Before going any further, make sure you managed to
-[Build your first application](./build-your-first-iapp).
-
-:::
-
 ::: tip Prerequisites:
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and
@@ -41,14 +34,6 @@ docker login registry.scontain.com
 
 ## Prepare your application
 
-Before going further, your `<docker-hub-user>/hello-world:1.0.0` image built
-previously is required.
-
-If you missed that part, please go back to
-[Build your first application](./build-your-first-iapp).
-
-For this tutorial, you can reuse the same directory tree or create a new one.
-
 To create a new directory tree, execute the following commands in
 `~/iexec-projects/`.
 
@@ -60,6 +45,201 @@ mkdir src
 touch Dockerfile
 touch sconify.sh
 chmod +x sconify.sh
+```
+
+### Write the iApp logic
+
+The following examples only feature Javascript and Python use cases for
+simplicity concerns but remember that you can run on iExec anything which is
+Dockerizable.
+
+**Copy the following content** in `src/` .
+
+::: code-group
+
+```javascript [src/app.js]
+const fsPromises = require('fs').promises;
+
+(async () => {
+  try {
+    const iexecOut = process.env.IEXEC_OUT;
+    // Do whatever you want (let's write hello world here)
+    const message = process.argv.length > 2 ? process.argv[2] : 'World';
+
+    const text = `Hello, ${message}!`;
+    console.log(text);
+    // Append some results in /iexec_out/
+    await fsPromises.writeFile(`${iexecOut}/result.txt`, text);
+    // Declare everything is computed
+    const computedJsonObj = {
+      'deterministic-output-path': `${iexecOut}/result.txt`,
+    };
+    await fsPromises.writeFile(
+      `${iexecOut}/computed.json`,
+      JSON.stringify(computedJsonObj)
+    );
+  } catch (e) {
+    console.log(e);
+    process.exit(1);
+  }
+})();
+```
+
+```python [src/app.py]
+import os
+import sys
+import json
+
+iexec_out = os.environ['IEXEC_OUT']
+
+# Do whatever you want (let's write hello world here)
+text = 'Hello, {}!'.format(sys.argv[1] if len(sys.argv) > 1 else "World")
+print(text)
+
+# Append some results in /iexec_out/
+with open(iexec_out + '/result.txt', 'w+') as fout:
+    fout.write(text)
+
+# Declare everything is computed
+with open(iexec_out + '/computed.json', 'w+') as f:
+    json.dump({ "deterministic-output-path" : iexec_out + '/result.txt' }, f)
+```
+
+:::
+
+::: warning
+
+As a developer, make it a rule to never log sensitive information in your
+application. Execution logs are accessible by:
+
+- worker(s) involved in the task
+- the workerpool manager
+- the requester of the task
+
+:::
+
+### Dockerize your iApp
+
+**Copy the following content** in `Dockerfile` .
+
+::: code-group
+
+```bash [Dockerfile for JavaScript]
+FROM node:22-alpine3.21
+### install your dependencies if you have some
+RUN mkdir /app && cd /app
+COPY ./src /app
+ENTRYPOINT [ "node", "/app/app.js"]
+```
+
+```bash [Dockerfile for Python]
+FROM python:3.13.3-alpine3.21
+### install python dependencies if you have some
+COPY ./src /app
+ENTRYPOINT ["python3", "/app/app.py"]
+```
+
+:::
+
+Build the docker image.
+
+::: warning
+
+iExec expects your Docker container to be built for the `linux/amd64` platform.
+However, if you develop on a **Mac** with Apple **M processor**, the platform is
+`linux/arm64`, which is different. To prepare your application, you will need to
+install `buildkit` and then prepare your docker image for both platforms.
+
+```bash
+brew install buildkit
+# ARM64 variant for local testing only
+docker buildx build --platform linux/arm64 --tag <docker-hub-user>/hello-world .
+# AMD64 variant to deploy on iExec
+docker buildx build --platform linux/amd64 --tag <docker-hub-user>/hello-world .
+```
+
+:::
+
+```bash
+docker build --tag hello-world .
+```
+
+::: tip
+
+`docker build` produce an image id, using `--tag <name>` option is a convenient
+way to name the image to reuse it in the next steps.
+
+:::
+
+**Congratulations you built your first docker image for iExec!**
+
+## Test your iApp locally
+
+### Basic test
+
+Create local volumes to simulate input and output directories.
+
+```bash
+mkdir -p ./tmp/iexec_in
+mkdir -p ./tmp/iexec_out
+```
+
+Run your application locally \(container volumes bound with local volumes\).
+
+```bash
+docker run --rm \
+    -v ./tmp/iexec_in:/iexec_in \
+    -v ./tmp/iexec_out:/iexec_out \
+    -e IEXEC_IN=/iexec_in \
+    -e IEXEC_OUT=/iexec_out \
+    hello-world arg1 arg2 arg3
+```
+
+::: tip Docker run \[options\] image \[args\]
+
+**docker run usage:**
+
+`docker run [OPTIONS] IMAGE [COMMAND] [ARGS...]`
+
+Use `[COMMAND]` and `[ARGS...]` to simulate the requester arguments
+
+**useful options for iExec:**
+
+`-v` : Bind mount a volume. Use it to bind input and output directories
+(`/iexec_in` and `/iexec_out`)
+
+`-e`: Set environnement variable. Use it to simulate iExec Runtime variables
+
+:::
+
+### Test with input files
+
+Starting with the basic test you can simulate input files.
+
+For each input file:
+
+- Copy it in the local volume bound to `/iexec_in` .
+- Add `-e IEXEC_INPUT_FILE_NAME_x=NAME` to docker run options \(`x` is the index
+  of the file starting by 1 and `NAME` is the name of the file\)
+
+Add `-e IEXEC_INPUT_FILES_NUMBER=n` to docker run options \(`n` is the total
+number of input files\).
+
+Example with two inputs files:
+
+```bash
+touch ./tmp/iexec_in/file1 && \
+touch ./tmp/iexec_in/file2 && \
+docker run \
+    -v ./tmp/iexec_in:/iexec_in \
+    -v ./tmp/iexec_out:/iexec_out \
+    -e IEXEC_IN=/iexec_in \
+    -e IEXEC_OUT=/iexec_out \
+    -e IEXEC_INPUT_FILE_NAME_1=file1 \
+    -e IEXEC_INPUT_FILE_NAME_2=file2 \
+    -e IEXEC_INPUT_FILES_NUMBER=2 \
+    hello-world \
+    arg1 arg2 arg3
 ```
 
 ## Build the TEE docker image
@@ -85,7 +265,7 @@ We will use the following script to wrap the sconification process, copy the
 #!/bin/bash
 
 # Declare image related variables
-IMG_FROM=<docker-hub-user>/hello-world:1.0.0
+IMG_FROM=<docker-hub-user>/hello-world
 IMG_TO=<docker-hub-user>/tee-scone-hello-world:1.0.0
 
 # Run the sconifier to build the TEE image based on the non-TEE image
@@ -113,7 +293,7 @@ docker run -it --rm \
 #!/bin/bash
 
 # Declare image related variables
-IMG_FROM=<docker-hub-user>/hello-world:1.0.0
+IMG_FROM=<docker-hub-user>/hello-world
 IMG_TO=<docker-hub-user>/tee-scone-hello-world:1.0.0
 
 # Run the sconifier to build the TEE image based on the non-TEE image
@@ -148,6 +328,7 @@ Run the `sconify.sh` script to build the Scone TEE application:
 Push your image on DockerHub:
 
 ```bash
+docker login
 docker push <docker-hub-user>/tee-scone-hello-world:1.0.0
 ```
 
@@ -197,9 +378,6 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 See
 [Create your identity on the blockchain](./quick-start.md#create-your-identity-on-the-blockchain)
 to retrieve `<your-wallet-address>` value.
-
-See [Deploy your iApp on iExec](./build-your-first-iapp.md) to retrieve your
-image `<checksum>`.
 
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint
 (mrenclave):

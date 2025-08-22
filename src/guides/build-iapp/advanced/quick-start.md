@@ -135,8 +135,8 @@ Given an input string, the application generates an ASCII art greeting.
 
 You can deploy this application on iExec, it will run out of the box. When you
 are confident with iExec concept, you can read
-[Your first app](./build-your-first-iapp.md) and learn how to setup your own app
-on iExec.
+[Your first app](./build-your-first-sgx-iapp.md) and learn how to setup your own
+app on iExec.
 
 You will now deploy your app on iExec, this will be your first transaction on
 the blockchain:
@@ -348,7 +348,7 @@ You are now familiar with the following key iExec concepts for developers:
 
 Continue with these guides:
 
-- [Learn how to build your first application running on iExec](./build-your-first-iapp.md)
+- [Learn how to build your first condiential application running on iExec](./build-your-first-sgx-iapp.md)
 
 <script setup>
 import { computed } from 'vue';
