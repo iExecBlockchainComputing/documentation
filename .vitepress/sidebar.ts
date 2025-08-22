@@ -198,7 +198,7 @@ export function getSidebar() {
           },
           {
             text: 'Integrate Web3 Messaging',
-            link: '/guides/use-iapp/web3-messaging',
+            link: '/guides/use-iapp/integrate-web3-messaging',
           },
         ],
       },
@@ -547,7 +547,6 @@ export function getSidebar() {
           },
           {
             text: 'Workers & Workerpools',
-            collapsed: true,
             items: [
               {
                 text: 'Worker Quick Start',
@@ -561,7 +560,6 @@ export function getSidebar() {
           },
           {
             text: '🔒 TEE Technology',
-            collapsed: true,
             items: [
               {
                 text: 'Introduction to TEE Technologies',
