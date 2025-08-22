@@ -28,7 +28,7 @@ technology** for advanced use cases.
 
 ### 🎯 **Protection Scope**
 
-| Aspect               | [Intel SGX](/get-started/protocol/tee/intel-sgx)             | [Intel TDX](/get-started/protocol/tee/intel-tdx)               |
+| Aspect               | [Intel SGX](/protocol/tee/intel-sgx)                         | [Intel TDX](/protocol/tee/intel-tdx)                           |
 | -------------------- | ------------------------------------------------------------ | -------------------------------------------------------------- |
 | **What it protects** | Individual applications or parts of applications             | Trusted domains (secure virtual machines)                      |
 | **Scope**            | Small, focused secure areas within larger applications       | Multiple trusted domains can run on a single TDX machine       |
@@ -53,7 +53,7 @@ technology** for advanced use cases.
 
 ## When to Use Each Technology
 
-### Use SGX When:
+### Use SGX When
 
 - ✅ Building production applications
 - ✅ Need proven, stable technology
@@ -61,7 +61,7 @@ technology** for advanced use cases.
 - ✅ Require maximum worker availability
 - ✅ Need focused security for specific application parts
 
-### Use TDX When:
+### Use TDX When
 
 - 🔬 Experimenting with next-generation technology
 - 💾 Working with memory-intensive applications
@@ -72,10 +72,10 @@ technology** for advanced use cases.
 
 **Learn about specific TEE technologies**:
 
-- **[Intel SGX Technology](/get-started/protocol/tee/intel-sgx)** -
-  First-generation application-level TEE
-- **[Intel TDX Technology](/get-started/protocol/tee/intel-tdx)** -
-  Next-generation VM-level TEE
+- **[Intel SGX Technology](/protocol/tee/intel-sgx)** - First-generation
+  application-level TEE
+- **[Intel TDX Technology](/protocol/tee/intel-tdx)** - Next-generation VM-level
+  TEE
 
 **Ready to build with TEE?** Check out the practical guides:
 

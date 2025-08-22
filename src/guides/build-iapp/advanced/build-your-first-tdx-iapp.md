@@ -21,8 +21,8 @@ instabilities, limited compatibility, and potential outages.
 
 Before implementing TDX, make sure you understand the foundational concepts and
 differences between TEE technologies. Check out our
-**[Intel TDX Technology](/get-started/protocol/tee/intel-tdx)** guide for
-comprehensive explanations of TDX technology and its benefits.
+**[Intel TDX Technology](/protocol/tee/intel-tdx)** guide for comprehensive
+explanations of TDX technology and its benefits.
 
 ::: info
 
@@ -285,11 +285,11 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
 
 **Deepen your understanding**:
 
-- **[Intel TDX Technology](/get-started/protocol/tee/intel-tdx)** -
-  Comprehensive guide to TDX technology and benefits
-- **[SGX vs TDX Comparison](/get-started/protocol/tee/sgx-vs-tdx)** - Understand
-  the differences between TEE technologies
-- **[Introduction to TEE Technologies](/get-started/protocol/tee/introduction)** -
+- **[Intel TDX Technology](/protocol/tee/intel-tdx)** - Comprehensive guide to
+  TDX technology and benefits
+- **[SGX vs TDX Comparison](/protocol/tee/sgx-vs-tdx)** - Understand the
+  differences between TEE technologies
+- **[Introduction to TEE Technologies](/protocol/tee/introduction)** -
   Foundation concepts of TEE technologies
 
 ### 🚀 **Production Considerations**
@@ -297,7 +297,7 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
 **For production applications**:
 
 - **⚠️ TDX is experimental**: Consider using
-  **[Intel SGX Technology](/get-started/protocol/tee/intel-sgx)** for production
+  **[Intel SGX Technology](/protocol/tee/intel-sgx)** for production
 - **[Create Your First SGX iApp](/guides/build-iapp/advanced/build-your-first-sgx-iapp)** -
   Build production-ready SGX applications
 - **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Standard iApp deployment

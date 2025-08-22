@@ -70,7 +70,7 @@ lifecycle - during storage, transfer, and even while **being processed by
 applications.**
 
 This is made possible thanks to
-<span class="text-fuchsia-700 font-semibold"><a href="/get-started/protocol/tee/introduction">Trusted
+<span class="text-fuchsia-700 font-semibold"><a href="/protocol/tee/introduction">Trusted
 Execution Environment (TEE)</a></span> and
 <span class="text-fuchsia-700 font-semibold"><a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">Confidential
 Computing</a></span> technologies.

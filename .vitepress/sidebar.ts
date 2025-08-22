@@ -102,59 +102,6 @@ export function getSidebar() {
           },
         ],
       },
-      {
-        text: 'PROTOCOL',
-        items: [
-          {
-            text: '🛡️ Proof of Contribution',
-            link: '/get-started/protocol/proof-of-contribution',
-          },
-          {
-            text: 'Pay Per Task Model',
-            link: '/get-started/protocol/pay-per-task',
-          },
-          {
-            text: 'Oracle',
-            link: '/get-started/protocol/oracle',
-          },
-          {
-            text: 'Workers & Workerpools',
-            collapsed: true,
-            items: [
-              {
-                text: 'Worker Quick Start',
-                link: '/get-started/protocol/worker/quick-start',
-              },
-              {
-                text: 'Manage Workerpool Access',
-                link: '/get-started/protocol/worker/manage-access',
-              },
-            ],
-          },
-          {
-            text: '🔒 TEE Technology',
-            collapsed: true,
-            items: [
-              {
-                text: 'Introduction to TEE Technologies',
-                link: '/get-started/protocol/tee/introduction',
-              },
-              {
-                text: 'Intel SGX Technology',
-                link: '/get-started/protocol/tee/intel-sgx',
-              },
-              {
-                text: 'Intel TDX Technology',
-                link: '/get-started/protocol/tee/intel-tdx',
-              },
-              {
-                text: 'SGX vs TDX Comparison',
-                link: '/get-started/protocol/tee/sgx-vs-tdx',
-              },
-            ],
-          },
-        ],
-      },
     ],
     '/guides/': [
       {
@@ -584,6 +531,61 @@ export function getSidebar() {
       {
         text: '📖 Glossary',
         link: '/references/glossary',
+      },
+    ],
+    '/protocol/': [
+      {
+        text: 'PROTOCOL',
+        items: [
+          {
+            text: '🛡️ Proof of Contribution',
+            link: '/protocol/proof-of-contribution',
+          },
+          {
+            text: 'Pay Per Task Model',
+            link: '/protocol/pay-per-task',
+          },
+          {
+            text: 'Oracle',
+            link: '/protocol/oracle',
+          },
+          {
+            text: 'Workers & Workerpools',
+            collapsed: true,
+            items: [
+              {
+                text: 'Worker Quick Start',
+                link: '/protocol/worker/quick-start',
+              },
+              {
+                text: 'Manage Workerpool Access',
+                link: '/protocol/worker/manage-access',
+              },
+            ],
+          },
+          {
+            text: '🔒 TEE Technology',
+            collapsed: true,
+            items: [
+              {
+                text: 'Introduction to TEE Technologies',
+                link: '/protocol/tee/introduction',
+              },
+              {
+                text: 'Intel SGX Technology',
+                link: '/protocol/tee/intel-sgx',
+              },
+              {
+                text: 'Intel TDX Technology',
+                link: '/protocol/tee/intel-tdx',
+              },
+              {
+                text: 'SGX vs TDX Comparison',
+                link: '/protocol/tee/sgx-vs-tdx',
+              },
+            ],
+          },
+        ],
       },
     ],
   } as DefaultTheme.Sidebar;
