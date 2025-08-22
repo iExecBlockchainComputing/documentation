@@ -81,7 +81,7 @@ You'll set up:
 - **Protected Data** – Encrypted data accessible only inside the TEE.
 - **App Secret** – Immutable secret provisioned by the iApp owner.
 
-::: warning 💡
+::: tip 💡
 
 The Secret Management Service (SMS) securely stores application developer
 secrets. Once set, the App Secret is immutable and cannot be updated. Use with
@@ -126,68 +126,106 @@ algorithms and data processing here.
 
 ## 🛠️ CLI Commands Reference
 
-### Core Commands
-
-#### `iapp init`
+### `iapp init`
 
 **Purpose**: Initialize a new iApp project  
-**Usage**: `iapp init`  
-**Options**: Interactive prompts for project configuration  
+**Usage**: `iapp init [options]`  
 **What it does**: Creates project structure, configuration files, and basic
-templates
+templates through interactive prompts.
 
-#### `iapp test`
+### `iapp test`
 
 **Purpose**: Test your iApp locally before deployment  
-**Usage**: `iapp test`  
-**Options**: None  
-**What it does**: Runs a basic test locally to validate your application logic
+**Usage**: `iapp test [options]`  
+**Options**:
 
-#### `iapp deploy`
+- `-v, --version` [boolean] – Show version number
+- `--args <string>` – Arguments accessible inside the iApp (use quotes to group)
+- `--protectedData <string>` – Specify the protected data mock name (default or
+  custom via `iapp mock`)
+- `--inputFile <string>` – One or multiple input files (public URLs) available
+  inside the iApp at `$IEXEC_INPUT_FILE_NAME_*`
+- `--requesterSecret <array>` – Key-value requester secrets (`index=value`)
+  available inside the iApp at `$IEXEC_REQUESTER_SECRET_*`
+
+### `iapp deploy`
 
 **Purpose**: Deploy your iApp to the iExec network  
-**Usage**: `iapp deploy`  
-**Options**: None  
-**What it does**: Turns your code into a TEE app and registers the iApp on iExec
+**Usage**: `iapp deploy [options]`  
+**Options**:
 
-#### `iapp run <iAppAddress>`
+- `--chain <string>` – Specify the blockchain network for deployment (e.g.,
+  `goerli`, `mainnet`)
+
+### `iapp run <iAppAddress>`
 
 **Purpose**: Execute your deployed iApp on a worker node  
-**Usage**: `iapp run <iAppAddress>`  
-**Options**: None  
-**What it does**: Sends your iApp for execution on the iExec network
+**Usage**: `iapp run <iAppAddress> [options]`  
+**Positional arguments**:
 
-#### `iapp debug <taskId>`
+- `<iAppAddress>` – Address of the deployed iApp to run
+
+**Options**:
+
+- `--args <string>` – Arguments accessible inside the iApp (use quotes to group)
+- `--protectedData <string>` – Specify the protected data mock name (default or
+  custom via `iapp mock`)
+- `--inputFile <string>` – One or multiple input files (public URLs) available
+  inside the iApp at `$IEXEC_INPUT_FILE_NAME_*`
+- `--requesterSecret <array>` – Key-value requester secrets (`index=value`)
+  available inside the iApp at `$IEXEC_REQUESTER_SECRET_*`
+- `--chain <string>` – Specify the blockchain network to run the iApp on (e.g.,
+  `goerli`, `mainnet`)
+
+### `iapp debug <taskId>`
 
 **Purpose**: Retrieve detailed execution logs from worker nodes  
-**Usage**: `iapp debug <taskId>`  
-**Options**: None  
-**What it does**: Provides detailed logs for debugging failed or slow executions
+**Usage**: `iapp debug <taskId> [options]`  
+**Positional arguments**:
 
-#### `iapp mock <inputType>`
+- `<taskId>` – The ID of the task to debug
+
+**Options**:
+
+- `--chain <string>` – Specify the blockchain network of the task (e.g.,
+  `goerli`, `mainnet`)
+
+### `iapp mock <inputType>`
 
 **Purpose**: Create mocked input for testing purposes  
-**Usage**: `iapp mock <inputType>`  
-**Options**: None  
-**What it does**: Generates sample input data to test your iApp locally
+**Usage**: `iapp mock <inputType> [options]`  
+**Positional arguments**:
 
-#### `iapp --help`
+- `<inputType>` – Type of input to mock (e.g., `default`, `custom`)  
 
-**Purpose**: Display all available commands and options  
-**Usage**: `iapp --help`  
-**Options**: None  
-**What it does**: Shows comprehensive help information for all CLI commands
+**Options**:
 
-### Advanced Options
+- `--args <string>` – Arguments to use in the mock data
+- `--protectedData <string>` – Protected data mock name to use
+- `--inputFile <string>` – Input files to mock
+- `--requesterSecret <array>` – Requester secrets to mock
 
-#### Environment Variables
+### `iapp wallet <action>`
 
-##### `EXPERIMENTAL_TDX_APP=true`
+**Purpose**: Manage wallet-related operations  
+**Usage**: `iapp wallet <action> [options]`  
+**Positional arguments**:
+
+- `<action>` – Wallet action to perform (e.g., `balance`, `address`, `sign`)  
+
+**Options**:
+
+- `--chain <string>` – Specify the blockchain network (e.g., `goerli`,
+  `mainnet`)
+- `--data <string>` – Data to sign (for `sign` action)
+
+## Advanced Options <ChainNotSupportedBadge />
+
+### `EXPERIMENTAL_TDX_APP=true`
 
 **Purpose**: Enable experimental Intel TDX support  
 **Usage**: Set as environment variable before running commands  
-**Example**: `EXPERIMENTAL_TDX_APP=true iapp test`  
-**What it does**: Enables TDX mode for testing, deployment, and execution
+**Example**: `EXPERIMENTAL_TDX_APP=true iapp test`
 
 **Available with**:
 
