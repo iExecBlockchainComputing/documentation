@@ -173,8 +173,8 @@ Your iExec account is managed by smart contracts \(and not owned by iExec\).
 
 When you request an execution the price for the task is locked from your
 account's stake then transferred to accounts of the workers contributing to the
-task \(read more about
-[Proof of Contribution](/get-started/protocol/proof-of-contribution) protocol\).
+task \(read more about [Proof of Contribution](/protocol/proof-of-contribution)
+protocol\).
 
 At any time you can:
 
@@ -250,7 +250,7 @@ graph TD
 ```
 
 Guaranties about completion times (fast/slow) are available in the
-[category section](/get-started/protocol/pay-per-task):
+[category section](/protocol/pay-per-task):
 
 - maximum deal/task time
 - maximum computing time

@@ -110,12 +110,12 @@ TEE technologies have evolved to address different use cases:
 
 **Learn about specific TEE technologies**:
 
-- **[Intel SGX Technology](/get-started/protocol/tee/intel-sgx)** -
-  First-generation application-level TEE
-- **[Intel TDX Technology](/get-started/protocol/tee/intel-tdx)** -
-  Next-generation VM-level TEE
-- **[SGX vs TDX Comparison](/get-started/protocol/tee/sgx-vs-tdx)** -
-  Side-by-side technology comparison
+- **[Intel SGX Technology](/protocol/tee/intel-sgx)** - First-generation
+  application-level TEE
+- **[Intel TDX Technology](/protocol/tee/intel-tdx)** - Next-generation VM-level
+  TEE
+- **[SGX vs TDX Comparison](/protocol/tee/sgx-vs-tdx)** - Side-by-side
+  technology comparison
 
 **Ready to build with TEE?** Check out the practical guides:
 

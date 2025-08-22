@@ -22,9 +22,8 @@ Before going any further, make sure you managed to
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and
   client.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
-- Familiarity with the basic concepts of
-  [Intel® SGX](/get-started/protocol/tee/intel-sgx) and
-  [SCONE](https://scontain.com) framework.
+- Familiarity with the basic concepts of [Intel® SGX](/protocol/tee/intel-sgx)
+  and [SCONE](https://scontain.com) framework.
 
 :::
 

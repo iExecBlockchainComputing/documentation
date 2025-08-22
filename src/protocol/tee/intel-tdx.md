@@ -130,10 +130,10 @@ graph TD
 
 **Learn about the foundation**:
 
-- **[Intel SGX Technology](/get-started/protocol/tee/intel-sgx)** -
-  First-generation application-level TEE technology
-- **[SGX vs TDX Comparison](/get-started/protocol/tee/sgx-vs-tdx)** - Detailed
-  comparison of both technologies
+- **[Intel SGX Technology](/protocol/tee/intel-sgx)** - First-generation
+  application-level TEE technology
+- **[SGX vs TDX Comparison](/protocol/tee/sgx-vs-tdx)** - Detailed comparison of
+  both technologies
 
 **Ready to experiment with TDX?** Check out the practical guides:
 

@@ -8,11 +8,11 @@ description:
 # Protect the result
 
 In previous tutorials, we saw how to build
-[Confidential Computing applications](/get-started/protocol/tee/intel-sgx) that
-run securely inside enclaves and combine them with confidential assets to get
-the most out of confidential computing advantages. In this chapter, we will push
-things further to protect the workflow in an end to end mode. That means the
-next step would be encrypting results.
+[Confidential Computing applications](/protocol/tee/intel-sgx) that run securely
+inside enclaves and combine them with confidential assets to get the most out of
+confidential computing advantages. In this chapter, we will push things further
+to protect the workflow in an end to end mode. That means the next step would be
+encrypting results.
 
 ::: warning
 
@@ -26,9 +26,8 @@ Before going any further, make sure you managed to
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and
   client.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
-- Familiarity with the basic concepts of
-  [Intel® SGX](/get-started/protocol/tee/intel-sgx) and
-  [SCONE](https://scontain.com) framework.
+- Familiarity with the basic concepts of [Intel® SGX](/protocol/tee/intel-sgx)
+  and [SCONE](https://scontain.com) framework.
 
 :::
 
@@ -42,10 +41,9 @@ feature.
 Assuming your application is deployed (if not please check how to do it
 [with Scone](./build-your-first-sgx-iapp.md#deploy-the-tee-app-on-iexec)),
 before triggering an execution you need to generate an RSA key-pair, then push
-the public key to the
-[Secret Management Service](/get-started/protocol/tee/intel-sgx). The latter, in
-turn, will provide it, at runtime, to the enclave running your Confidential
-Computing application.
+the public key to the [Secret Management Service](/protocol/tee/intel-sgx). The
+latter, in turn, will provide it, at runtime, to the enclave running your
+Confidential Computing application.
 
 To generate the key-pair, go to `~/iexec-projects` and use the following SDK
 command:
