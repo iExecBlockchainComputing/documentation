@@ -6,12 +6,16 @@ description:
   simple for developers.
 ---
 
+<script setup>
+import Banner from '../components/Banner.vue'
+</script>
+
 # 💡 Turnkey Privacy Toolkit
 
-<div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
+<Banner>
   <h2 class="text-2xl font-bold mt-0 !border-none">Welcome to iExec</h2>
   <p>Your complete toolkit for building privacy-first Web3 applications that protect and use sensitive data</p>
-</div>
+</Banner>
 
 ## 🤔 Why iExec?
 

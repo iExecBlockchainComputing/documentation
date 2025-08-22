@@ -6,14 +6,18 @@ description:
   protect, and monetize sensitive data.
 ---
 
+<script setup>
+import Banner from '../../components/Banner.vue'
+</script>
+
 # 🧐 iExec Overview
 
 > Reading time 🕒 8 min
 
-<div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
+<Banner>
   <h2 class="text-2xl font-bold mt-0 border-none!">Let's start with the basics</h2>
   <p>and explore how iExec can help you build Privacy-preserving applications and securely manage sensitive data.</p>
-</div>
+</Banner>
 
 ## 👨‍💻 Building Privacy-preserving iApp with iExec
 

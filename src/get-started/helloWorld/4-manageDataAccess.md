@@ -8,6 +8,7 @@ description:
 <script setup>
 import GrantAccess from '@/modules/helloWorld/GrantAccess.vue';
 import { useWalletConnection } from '@/hooks/useWalletConnection.vue';
+import Banner from '../../components/Banner.vue'
 
 const { protectedDataAddress } = useWalletConnection();
 </script>
@@ -16,10 +17,10 @@ const { protectedDataAddress } = useWalletConnection();
 
 > Reading time 🕒 6 min
 
-<div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
+<Banner>
   <h2 class="text-2xl font-bold mt-0 border-none!">Control Your Data</h2>
   <p>Alice will learn how to grant access to her protected data and manage who can use it.</p>
-</div>
+</Banner>
 
 <div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <p class="m-0!">When you protect your data, you can authorize specific <span class="text-fuchsia-700 font-semibold">users</span> and <span class="text-fuchsia-700 font-semibold">applications</span> to access it. This means an authorized user will be able to use an authorized iApp to compute your protected data.</p>

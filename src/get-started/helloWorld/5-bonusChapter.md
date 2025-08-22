@@ -5,14 +5,18 @@ description:
   Hello World tutorial series.
 ---
 
+<script setup>
+import Banner from '../../components/Banner.vue'
+</script>
+
 # 🎉 Bonus Chapter
 
 > Reading time 🕒 4 min
 
-<div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
+<Banner>
   <h2 class="text-2xl font-bold mt-0 border-none!">Congratulations!</h2>
   <p class="m-0!">You've successfully completed the Hello World journey and learned how to protect data, deploy iApp, and manage data access. Now it's time to claim your rewards! 🏆</p>
-</div>
+</Banner>
 
 ## 🏁 Any Questions?
 

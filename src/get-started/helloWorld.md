@@ -8,6 +8,7 @@ description:
 <script setup>
 import InfoIcon from '@/components/InfoIcon.vue'
 import ChainSelector from '@/components/ChainSelector.vue'
+import Banner from '../components/Banner.vue'
 </script>
 
 # 👋 Welcome to iExec
@@ -21,14 +22,14 @@ import ChainSelector from '@/components/ChainSelector.vue'
   </div>
 </div>
 
-<div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
+<Banner>
   <h2 class="text-2xl font-bold mt-0 border-none!">Start Your Web3 Privacy Journey</h2>
   <p>And learn how to build Privacy-preserving decentralized applications (DApp) with iExec in this interactive guide.</p>
   <div class="mt-6 flex items-center gap-4">
     <span class="bg-gray-900 text-white px-4 py-2 rounded-full font-medium">☕ 30 minutes journey</span>
     <p>Perfect for hackathons 😊</p>
   </div>
-</div>
+</Banner>
 
 ## What you'll Learn and Build
 

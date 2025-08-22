@@ -7,16 +7,17 @@ description:
 
 <script setup>
 import ProtectData from '@/modules/helloWorld/ProtectData.vue';
+import Banner from '../../components/Banner.vue'
 </script>
 
 # 🛡️ Let's Protect Data
 
 > Reading time: 6 minutes
 
-<div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
+<Banner>
   <h2 class="text-2xl font-bold mt-0 border-none!">Time to get practical</h2>
   <p>Let's follow Alice as she learns how to protect her data using DataProtector on Bob's iApp, our developer tool for protecting data creation and management.</p>
-</div>
+</Banner>
 
 <div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
   <p class="m-0!"><strong>Protected data</strong> is encrypted data that remains confidential throughout its entire lifecycle - during storage, transfer and processing.</p>

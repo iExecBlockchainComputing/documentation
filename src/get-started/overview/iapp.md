@@ -6,6 +6,10 @@ description:
   AI, data analysis, and Web3 apps.
 ---
 
+<script setup>
+import Banner from '../../components/Banner.vue'
+</script>
+
 # iApp
 
 An iExec Application (iApp) brings Turnkey Privacy to your regular application
@@ -120,10 +124,10 @@ the TEE execution environment.
 
 ## Getting Started
 
-<div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
+<Banner>
   <h2 class="text-2xl font-bold mt-0 border-none!">Time to build!</h2>
   <p>Let's build an iApp that can process protected data in a secure environment using the <a href="/references/iapp-generator" target="_blank" class="!text-gray-900 !font-bold underline hover:!text-black">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApp with just a few commands.</p>
-</div>
+</Banner>
 
 ### Quick Start Path
 
