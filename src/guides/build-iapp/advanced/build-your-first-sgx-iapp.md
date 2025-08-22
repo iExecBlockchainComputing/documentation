@@ -10,13 +10,6 @@ description:
 In this tutorial, you will learn how to build and run a Confidential Computing
 application with the Scone TEE framework.
 
-::: warning
-
-Before going any further, make sure you managed to
-[Build your first application](./build-your-first-iapp).
-
-:::
-
 ::: tip Prerequisites:
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and
@@ -41,14 +34,6 @@ docker login registry.scontain.com
 
 ## Prepare your application
 
-Before going further, your `<docker-hub-user>/hello-world:1.0.0` image built
-previously is required.
-
-If you missed that part, please go back to
-[Build your first application](./build-your-first-iapp).
-
-For this tutorial, you can reuse the same directory tree or create a new one.
-
 To create a new directory tree, execute the following commands in
 `~/iexec-projects/`.
 
@@ -60,6 +45,201 @@ mkdir src
 touch Dockerfile
 touch sconify.sh
 chmod +x sconify.sh
+```
+
+### Write the iApp logic
+
+Develop your code logic like the content below.The following examples only
+feature Javascript and Python use cases for simplicity concerns but remember
+that you can run on iExec anything which is Dockerizable.
+
+**Copy the following content** in `src/` .
+
+::: code-group
+
+```javascript [src/app.js]
+const fsPromises = require('fs').promises;
+
+(async () => {
+  try {
+    const iexecOut = process.env.IEXEC_OUT;
+    // Do whatever you want (let's write hello world here)
+    const message = process.argv.length > 2 ? process.argv[2] : 'World';
+
+    const text = `Hello, ${message}!`;
+    console.log(text);
+    // Append some results in /iexec_out/
+    await fsPromises.writeFile(`${iexecOut}/result.txt`, text);
+    // Declare everything is computed
+    const computedJsonObj = {
+      'deterministic-output-path': `${iexecOut}/result.txt`,
+    };
+    await fsPromises.writeFile(
+      `${iexecOut}/computed.json`,
+      JSON.stringify(computedJsonObj)
+    );
+  } catch (e) {
+    console.log(e);
+    process.exit(1);
+  }
+})();
+```
+
+```python [src/app.py]
+import os
+import sys
+import json
+
+iexec_out = os.environ['IEXEC_OUT']
+
+# Do whatever you want (let's write hello world here)
+text = 'Hello, {}!'.format(sys.argv[1] if len(sys.argv) > 1 else "World")
+print(text)
+
+# Append some results in /iexec_out/
+with open(iexec_out + '/result.txt', 'w+') as fout:
+    fout.write(text)
+
+# Declare everything is computed
+with open(iexec_out + '/computed.json', 'w+') as f:
+    json.dump({ "deterministic-output-path" : iexec_out + '/result.txt' }, f)
+```
+
+:::
+
+::: warning
+
+As a developer, make it a rule to never log sensitive information in your
+application. Execution logs are accessible by:
+
+- worker(s) involved in the task
+- the workerpool manager
+- the requester of the task
+
+:::
+
+### Dockerize your iApp
+
+**Copy the following content** in `Dockerfile` .
+
+::: code-group
+
+```bash [Dockerfile for JavaScript]
+FROM node:22-alpine3.21
+### install your dependencies if you have some
+RUN mkdir /app && cd /app
+COPY ./src /app
+ENTRYPOINT [ "node", "/app/app.js"]
+```
+
+```bash [Dockerfile for Python]
+FROM python:3.13.3-alpine3.21
+### install python dependencies if you have some
+COPY ./src /app
+ENTRYPOINT ["python3", "/app/app.py"]
+```
+
+:::
+
+Build the docker image.
+
+::: warning
+
+iExec expects your Docker container to be built for the `linux/amd64` platform.
+However, if you develop on a **Mac** with Apple **M processor**, the platform is
+`linux/arm64`, which is different. To prepare your application, you will need to
+install `buildkit` and then prepare your docker image for both platforms.
+
+```bash
+brew install buildkit
+# ARM64 variant for local testing only
+docker buildx build --platform linux/arm64 --tag <docker-hub-user>/hello-world .
+# AMD64 variant to deploy on iExec
+docker buildx build --platform linux/amd64 --tag <docker-hub-user>/hello-world .
+```
+
+:::
+
+```bash
+docker build --tag hello-world .
+```
+
+::: tip
+
+`docker build` produce an image id, using `--tag <name>` option is a convenient
+way to name the image to reuse it in the next steps.
+
+:::
+
+**Congratulations you built your first docker image for iExec!**
+
+## Test your iApp locally
+
+### Basic test
+
+Create local volumes to simulate input and output directories.
+
+```bash
+mkdir -p ./tmp/iexec_in
+mkdir -p ./tmp/iexec_out
+```
+
+Run your application locally \(container volumes bound with local volumes\).
+
+```bash
+docker run --rm \
+    -v ./tmp/iexec_in:/iexec_in \
+    -v ./tmp/iexec_out:/iexec_out \
+    -e IEXEC_IN=/iexec_in \
+    -e IEXEC_OUT=/iexec_out \
+    hello-world arg1 arg2 arg3
+```
+
+::: tip Docker run \[options\] image \[args\]
+
+**docker run usage:**
+
+`docker run [OPTIONS] IMAGE [COMMAND] [ARGS...]`
+
+Use `[COMMAND]` and `[ARGS...]` to simulate the requester arguments
+
+**useful options for iExec:**
+
+`-v` : Bind mount a volume. Use it to bind input and output directories
+(`/iexec_in` and `/iexec_out`)
+
+`-e`: Set environnement variable. Use it to simulate iExec Runtime variables
+
+:::
+
+### Test with input files
+
+Starting with the basic test you can simulate input files.
+
+For each input file:
+
+- Copy it in the local volume bound to `/iexec_in` .
+- Add `-e IEXEC_INPUT_FILE_NAME_x=NAME` to docker run options \(`x` is the index
+  of the file starting by 1 and `NAME` is the name of the file\)
+
+Add `-e IEXEC_INPUT_FILES_NUMBER=n` to docker run options \(`n` is the total
+number of input files\).
+
+Example with two inputs files:
+
+```bash
+touch ./tmp/iexec_in/file1 && \
+touch ./tmp/iexec_in/file2 && \
+docker run \
+    -v ./tmp/iexec_in:/iexec_in \
+    -v ./tmp/iexec_out:/iexec_out \
+    -e IEXEC_IN=/iexec_in \
+    -e IEXEC_OUT=/iexec_out \
+    -e IEXEC_INPUT_FILE_NAME_1=file1 \
+    -e IEXEC_INPUT_FILE_NAME_2=file2 \
+    -e IEXEC_INPUT_FILES_NUMBER=2 \
+    hello-world \
+    arg1 arg2 arg3
 ```
 
 ## Build the TEE docker image
@@ -85,7 +265,7 @@ We will use the following script to wrap the sconification process, copy the
 #!/bin/bash
 
 # Declare image related variables
-IMG_FROM=<docker-hub-user>/hello-world:1.0.0
+IMG_FROM=<docker-hub-user>/hello-world
 IMG_TO=<docker-hub-user>/tee-scone-hello-world:1.0.0
 
 # Run the sconifier to build the TEE image based on the non-TEE image
@@ -113,7 +293,7 @@ docker run -it --rm \
 #!/bin/bash
 
 # Declare image related variables
-IMG_FROM=<docker-hub-user>/hello-world:1.0.0
+IMG_FROM=<docker-hub-user>/hello-world
 IMG_TO=<docker-hub-user>/tee-scone-hello-world:1.0.0
 
 # Run the sconifier to build the TEE image based on the non-TEE image
@@ -148,18 +328,13 @@ Run the `sconify.sh` script to build the Scone TEE application:
 Push your image on DockerHub:
 
 ```bash
+docker login
 docker push <docker-hub-user>/tee-scone-hello-world:1.0.0
 ```
 
 Congratulations, you just built your Scone TEE application.
 
-## Test your iApp on iExec
-
-At this stage, your application is ready to be tested on iExec. The process is
-similar to testing any type of application on the platform, with these minor
-exceptions:
-
-### Deploy the TEE iApp on iExec
+## Deploy the iApp
 
 TEE applications require some additional information to be filled in during
 deployment.
@@ -194,13 +369,6 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
 
 ::: info
 
-See
-[Create your identity on the blockchain](./quick-start.md#create-your-identity-on-the-blockchain)
-to retrieve `<your-wallet-address>` value.
-
-See [Deploy your iApp on iExec](./build-your-first-iapp.md) to retrieve your
-image `<checksum>`.
-
 Run your TEE image with `SCONE_HASH=1` to get the enclave fingerprint
 (mrenclave):
 
@@ -216,9 +384,52 @@ Deploy the iApp with the standard command:
 iexec app deploy --chain {{chainName}}
 ```
 
-### Run the TEE iApp
+You can check your deployed apps with their index, let's check your last
+deployed app:
 
-Specify the tag `--tag tee,scone` in `iexec app run` command to run a tee iApp.
+```bash twoslash
+iexec app show --chain arbitrum-mainnet
+```
+
+## Run the iApp
+
+iExec allows you to run applications on a decentralized infrastructure with
+payment in **RLC** tokens.
+
+::: info
+
+To run an application you must have enough RLC staked on your iExec account to
+pay for the computing resources.
+
+Your iExec account is managed by smart contracts \(and not owned by iExec\).
+
+When you request an execution the price for the task is locked from your
+account's stake then transferred to accounts of the workers contributing to the
+task \(read more about [Proof of Contribution](/protocol/proof-of-contribution)
+protocol\).
+
+At any time you can:
+
+- view your balance
+
+```bash twoslash
+iexec account show --chain arbitrum-mainnet
+```
+
+- deposit RLC from your wallet to your iExec Account
+
+```bash twoslash
+iexec account deposit --chain arbitrum-mainnet <amount>
+```
+
+- withdraw RLC from your iExec account to your wallet \(only stake can be
+  withdrawn\)
+
+```bash twoslash
+iexec account withdraw --chain arbitrum-mainnet <amount>
+```
+
+:::
 
 One last thing, in order to run a **TEE** iApp you will also need to select a
 workerpool, use the iexec workerpool `{{workerpoolAddress}}`.
@@ -229,12 +440,110 @@ You are now ready to run the iApp
 iexec app run --chain {{chainName}} --tag tee,scone --workerpool {{workerpoolAddress}} --watch
 ```
 
+The execution of tasks on the iExec network is asynchronous by design.
+
+```mermaid
+graph TD
+    Requester["Requester (or anyone)"] --> |"1 . Match compatible orders \n(request, application, dataset & workerpool orders) \n & Wait result" | Blockchain
+    Blockchain --> |2 . Notify new deal with tasks to compute| Scheduler
+    Worker --> |3 . Request new task to compute| Scheduler
+    Worker --> |4 . Run application| Application[Application image]
+    Worker --> |5.a. Push result| ResultStorage["Result Storage"]
+    Worker --> |5.b. Commit result proof| Blockchain
+    Workerpool --> |6 . Publish result link or callback| Blockchain
+
+    subgraph Workerpool
+        Scheduler
+        Worker
+        Application
+    end
+```
+
+Guaranties about completion times (fast/slow) are available in the
+[category section](/protocol/pay-per-task):
+
+- maximum deal/task time
+- maximum computing time
+
+Once the task is completed copy the taskid from `iexec app run` output \(taskid
+is a 32Bytes hexadecimal string\).
+
+Download the result of your task
+
+```bash twoslash
+iexec task show --chain arbitrum-mainnet <taskid> --download my-result
+```
+
+You can get your taskid with the command:
+
+```bash twoslash
+iexec deal show --chain arbitrum-mainnet <dealid>
+```
+
 ::: info
 
-Remember, you can access task and iApp logs by following the instructions on
-page [Debug your tasks](/guides/build-iapp/debugging).
+A task result is a zip file containing the output files of the application.
 
 :::
+
+[iexechub/python-hello-world](https://hub.docker.com/repository/docker/iexechub/python-hello-world)
+produce an text file in `result.txt`.
+
+Let's discover the result of the computation.
+
+```bash
+unzip my-result.zip -d my-result
+cat my-result/result.txt
+```
+
+Congratulations! You successfully executed your application on iExec!
+
+## Publish your app on the iExec Marketplace
+
+Your application is deployed on iExec and you completed an execution on iExec.
+For now, only you can request an execution of your application. The next step is
+to publish it on the iExec Marketplace, making it available for anyone to use.
+
+As the owner of this application, you can define the conditions under which it
+can be used
+
+::: info
+
+iExec uses orders signed by the resource owner's wallet to ensure resources
+governance.
+
+The conditions to use an app are defined in the **apporder**.
+
+:::
+
+Publish a new apporder for your application.
+
+```bash twoslash
+iexec app publish --chain arbitrum-mainnet
+```
+
+::: info
+
+`iexec app publish` command allows to define custom access rules to the app
+\(run `iexec app publish --help` to discover all the possibilities\).
+
+You will learn more about orders management later, keep the apporder default
+values for now.
+
+:::
+
+Your application is now available for everyone on iExec marketplace on the
+conditions defined in apporder.
+
+You can check the published apporders for your app
+
+```bash twoslash
+iexec orderbook app --chain arbitrum-mainnet <your app address>
+```
+
+Congratulation you just created a decentralized application! Anyone can now
+trigger an execution of your application on the iExec decentralized
+infrastructure.
 
 ## Next step?
 
@@ -244,7 +553,7 @@ may need to use some confidential data to get the full potential of the
 **Confidential Computing** paradigm. Check out next chapters to see how:
 
 - [Access confidential assets from your iApp](access-confidential-assets.md)
-- [Protect the result](./protect-the-result.md)
+- [Protect the result](/guides/build-iapp/advanced/protect-the-result.md)
 
 <script setup>
 import { computed } from 'vue';
