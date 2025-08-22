@@ -9,6 +9,7 @@ description:
 import InfoIcon from '@/components/InfoIcon.vue'
 import ChainSelector from '@/components/ChainSelector.vue'
 import Banner from '../components/Banner.vue'
+import Container from '../components/Container.vue'
 </script>
 
 # 👋 Welcome to iExec
@@ -126,6 +127,6 @@ Before you begin, make sure you have:
   </div>
 </div>
 
-<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
+<Container variant="green">
   <p class="m-0! font-medium">Need help setting up or got some questions? Join our <a target="_blank" href="https://discord.gg/6yrgRH6ATD">Discord Community</a> for support!</p>
-</div>
+</Container>

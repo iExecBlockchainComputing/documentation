@@ -8,6 +8,7 @@ description:
 
 <script setup>
 import Banner from '../components/Banner.vue'
+import Container from '../components/Container.vue'
 </script>
 
 # 💡 Turnkey Privacy Toolkit
@@ -24,9 +25,9 @@ deserves the power** to build groundbreaking applications while **keeping user
 data completely secure**. Your users deserve **absolute confidence** that their
 privacy is protected.
 
-<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+<Container variant="purple">
   <p class="!m-0">iExec solves this with <span class="text-fuchsia-700 font-semibold">Turnkey Privacy</span> - a toolkit that simplifies data protection, management, and secure computation, even in untrusted environments. We believe privacy should be <span class="text-fuchsia-700 font-semibold">plug-and-play simple</span>, not an afterthought.</p>
-</div>
+</Container>
 
 ## 🛠️ How we Make it Happen
 
@@ -159,9 +160,9 @@ Confidential Computing made easy
   </div>
 </div>
 
-<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
+<Container variant="green">
 <p class="m-0!">The next chapters guide you through our <span class="text-green-700 font-semibold">Hello World journey</span>. This 30-minute start teaches you everything about iExec. You'll learn <span class="text-green-700 font-semibold">protecting sensitive data</span> and <span class="text-green-700 font-semibold">building and deploying confidential apps</span>.</p>
-</div>
+</Container>
 
 ## 🚀 Start Building
 
@@ -196,8 +197,8 @@ _**Join thousands of developers** who are already transforming the future of
 privacy. **You have the power** to build the next generation of trust-first
 applications. Let's build something amazing together._ 🚀
 
-<div class="bg-gradient-to-r from-amber-400/10 to-amber-400/5 rounded-[6px] p-6 border-l-4 border-amber-600 mt-6">
+<Container variant="amber" spacing="top">
   <h4 class="!mt-0 !mb-2">🏆 Join the iExec Community</h4>
   <p class="!mb-2">Be part of a growing movement of developers, data owners, and privacy advocates who are <strong>reshaping how the world handles sensitive data</strong>.</p>
   <p class="!mb-0">When you build with iExec, you're not just solving a technical challenge—<strong>you're championing user rights and digital sovereignty</strong>. Every application you create makes the web more private, more secure, and more trustworthy for everyone.</p>
-</div>
+</Container>

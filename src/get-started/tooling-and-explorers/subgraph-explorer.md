@@ -185,10 +185,10 @@ query {
 }
 ```
 
-<div class="bg-gradient-to-r from-blue-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-blue-700 mb-6">
+<Container variant="blue">
   <h4 class="!mt-0 !mb-2">💡 Pro Tip</h4>
   <p class="!mb-0">Use the GraphQL explorer's auto-completion feature to discover available fields and build complex queries. The schema documentation is always up-to-date with the latest protocol changes.</p>
-</div>
+</Container>
 
 <script setup>
 import ImageViewer from '@/components/ImageViewer.vue';

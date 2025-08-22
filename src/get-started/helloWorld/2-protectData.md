@@ -8,6 +8,7 @@ description:
 <script setup>
 import ProtectData from '@/modules/helloWorld/ProtectData.vue';
 import Banner from '../../components/Banner.vue'
+import Container from '../../components/Container.vue'
 </script>
 
 # 🛡️ Let's Protect Data
@@ -19,9 +20,9 @@ import Banner from '../../components/Banner.vue'
   <p>Let's follow Alice as she learns how to protect her data using DataProtector on Bob's iApp, our developer tool for protecting data creation and management.</p>
 </Banner>
 
-<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+<Container variant="purple">
   <p class="m-0!"><strong>Protected data</strong> is encrypted data that remains confidential throughout its entire lifecycle - during storage, transfer and processing.</p>
-</div>
+</Container>
 
 ## 🧩 DataProtector, Key Features
 
@@ -52,9 +53,9 @@ their DApp with these key features:
 
 ## 🧩 What Happened Under the Hood
 
-<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+<Container variant="purple">
   <p class="m-0!">You won't believe how easy it is to protect your data with DataProtector. Just a few lines of code, and you're done!</p>
-</div>
+</Container>
 
 To use it, simply call the `protectData` method from the **DataProtector SDK**
 with two arguments.
@@ -170,9 +171,9 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
 });
 ```
 
-<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
+<Container variant="purple">
   <p class="m-0!">Check out our <a target="_blank" href="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main?file=%2Fsrc%2Fmain.tsx%3A18%2C7">code sandbox</a> for ready-to-use examples!</p>
-</div>
+</Container>
 
 ## 🎯 Key Takeaways
 
@@ -185,6 +186,6 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
 
 - 🔌 **Integration** is simple with our developer tools
 
-<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
+<Container variant="green">
   <p class="m-0!">In the next chapter, we'll show you how to build, deploy, and run an iApp to process your protected data. Let's go! 🚀</p>
-</div>
+</Container>

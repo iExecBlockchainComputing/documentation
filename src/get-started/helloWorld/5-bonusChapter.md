@@ -5,10 +5,6 @@ description:
   Hello World tutorial series.
 ---
 
-<script setup>
-import Banner from '../../components/Banner.vue'
-</script>
-
 # 🎉 Bonus Chapter
 
 > Reading time 🕒 4 min
@@ -32,9 +28,9 @@ import Banner from '../../components/Banner.vue'
   </div>
 </div>
 
-<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 my-6">
+<Container variant="green">
   <p class="m-0!">Need help setting up or got some questions? Join our <a target="_blank" href="https://discord.gg/6yrgRH6ATD" class="text-green-700 underline hover:text-green-900">Discord Community</a> for support!</p>
-</div>
+</Container>
 
 <template v-if="selectedChain !== 42161">
 <h2>🎁 Claim your Voucher</h2>
@@ -56,15 +52,17 @@ import Banner from '../../components/Banner.vue'
   Claim your $20 voucher
 </Button>
 
-<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mt-8 mb-6">
+<Container variant="green" spacing="top">
   <p class="m-0!">Thank you for being part of the iExec journey! We can't wait to see what you'll build next! 🚀</p>
-</div>
+</Container>
 </template>
 
 <script setup>
 import CouponCode from '@/modules/helloWorld/CouponCode.vue';
 import Button from '@/components/ui/Button.vue';
 import useUserStore from '@/stores/useUser.store';
+import Banner from '../../components/Banner.vue'
+import Container from '../../components/Container.vue'
 import { computed } from 'vue';
 
 const userStore = useUserStore();
