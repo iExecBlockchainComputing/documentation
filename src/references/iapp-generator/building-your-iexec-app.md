@@ -84,7 +84,7 @@ You'll set up:
 For more details and to learn how to use them in your application, refer here
 [Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)
 
-## 🚀 Launch your iApp
+## 🚀 Build your iApp
 
 After initialization, the following essential files and directories are
 generated:
@@ -96,8 +96,6 @@ generated:
   - `input/`
   - `output/`
   - `cache/`
-
-### 📝 Update your iApp
 
 To modify your main application logic open:
 
