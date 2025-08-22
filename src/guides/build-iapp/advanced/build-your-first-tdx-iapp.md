@@ -64,8 +64,8 @@ need to be changed compared to the usual SGX workflow: `chain.json` and
 
 iApps using Intel TDX technology follow the same format as non-TEE applications;
 follow the instructions on
-[Build your first application](./build-your-first-iapp) to create and Dockerize
-your iApp.
+[Build your first application](/guides/build-iapp/advanced/build-your-first-sgx-iapp)
+to create and Dockerize your iApp.
 
 After this step, the Docker image of your iApp should be published on Docker Hub
 (e.g. `<docker-hub-user>/hello-world:1.0.0`).
@@ -115,8 +115,8 @@ Your `iexec.json` should now look like this example:
 
 ::: info
 
-See [Deploy your iApp on iExec](./build-your-first-iapp.md) to retrieve your
-image `<checksum>`.
+See [Deploy your iApp on iExec](/guides/build-iapp/deploy-&-run.md) to retrieve
+your image `<checksum>`.
 
 :::
 
