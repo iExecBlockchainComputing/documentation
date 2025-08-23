@@ -13,7 +13,7 @@ In order to consume a protected data, an iExec TEE iApp needs to be provided.
 ::: tip
 
 **TEE** stands for Trusted Execution Environment. Find more details
-[here](https://protocol.docs.iex.ec/help/glossary#trusted-execution-environment-tee)
+[here](/protocol/tee/introduction)
 
 :::
 
@@ -75,9 +75,6 @@ See it in
 
 See it in
 [https://explorer.iex.ec/bellecour](https://explorer.iex.ec/bellecour/app/0x1cb7d4f3ffa203f211e57357d759321c6ce49921)
-
-See it in
-[https://blockscout-bellecour.iex.ec/](https://blockscout-bellecour.iex.ec/address/0x1cb7D4F3FFa203F211e57357D759321C6CE49921)
 
 <script setup>
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'

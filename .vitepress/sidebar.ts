@@ -8,7 +8,7 @@ export function getSidebar() {
         items: [
           { text: '💡 Welcome', link: '/get-started/welcome' },
           {
-            text: '🛠️ Toolkit',
+            text: 'Toolkit',
             link: '/get-started/toolkit',
           },
           {
@@ -39,21 +39,18 @@ export function getSidebar() {
             ],
           },
           {
-            text: '🚀 Quick Start',
+            text: 'Quick Start',
             link: '/get-started/quick-start',
           },
           {
-            text: '📋 Use Cases',
+            text: 'Use Cases',
             link: '/get-started/use-cases',
           },
           {
-            text: '🤖 Develop with AI',
+            text: 'Develop with AI',
             link: '/get-started/develop-with-ai',
           },
-          {
-            text: '🧠 iExec for AI',
-            link: '/get-started/ai',
-          },
+
         ],
       },
       {
@@ -76,7 +73,7 @@ export function getSidebar() {
             link: '/get-started/overview/workerpool',
           },
           {
-            text: '🪙 RLC Token',
+            text: 'RLC Token',
             link: '/get-started/overview/rlc',
           },
         ],
@@ -106,60 +103,8 @@ export function getSidebar() {
           },
         ],
       },
-      {
-        text: 'PROTOCOL',
-        items: [
-          {
-            text: '🛡️ Proof of Contribution',
-            link: '/get-started/protocol/proof-of-contribution',
-          },
-          {
-            text: 'Pay Per Task Model',
-            link: '/get-started/protocol/pay-per-task',
-          },
-          {
-            text: 'Oracle',
-            link: '/get-started/protocol/oracle',
-          },
-          {
-            text: 'Workers & Workerpools',
-            collapsed: true,
-            items: [
-              {
-                text: 'Worker Quick Start',
-                link: '/get-started/protocol/worker/quick-start',
-              },
-              {
-                text: 'Manage Workerpool Access',
-                link: '/get-started/protocol/worker/manage-access',
-              },
-            ],
-          },
-          {
-            text: '🔒 TEE Technology',
-            collapsed: true,
-            items: [
-              {
-                text: 'Introduction to TEE Technologies',
-                link: '/get-started/protocol/tee/introduction',
-              },
-              {
-                text: 'Intel SGX Technology',
-                link: '/get-started/protocol/tee/intel-sgx',
-              },
-              {
-                text: 'Intel TDX Technology',
-                link: '/get-started/protocol/tee/intel-tdx',
-              },
-              {
-                text: 'SGX vs TDX Comparison',
-                link: '/get-started/protocol/tee/sgx-vs-tdx',
-              },
-            ],
-          },
 
-        ],
-      },
+
     ],
     '/guides/': [
       {
@@ -208,28 +153,16 @@ export function getSidebar() {
             collapsed: true,
             items: [
               {
-                text: 'Overview',
-                link: '/guides/build-iapp/advanced/overview',
+                text: 'Quick Start',
+                link: '/guides/build-iapp/advanced/quick-start',
               },
               {
-                text: 'Quick Start for Developers',
-                link: '/guides/build-iapp/advanced/quick-start-for-developers',
-              },
-              {
-                text: 'Build your first application',
-                link: '/guides/build-iapp/advanced/your-first-app',
-              },
-              {
-                text: 'Build your first SGX app (SCONE)',
-                link: '/guides/build-iapp/advanced/create-your-first-sgx-app',
+                text: 'Build your first SGX app',
+                link: '/guides/build-iapp/advanced/build-your-first-sgx-iapp',
               },
               {
                 text: 'End-to-end Encryption',
-                link: '/guides/build-iapp/advanced/end-to-end-encryption',
-              },
-              {
-                text: 'SGX Encrypted Dataset',
-                link: '/guides/build-iapp/advanced/sgx-encrypted-dataset',
+                link: '/guides/build-iapp/advanced/protect-the-result',
               },
               {
                 text: 'Access Confidential Assets',
@@ -237,7 +170,7 @@ export function getSidebar() {
               },
               {
                 text: 'Build Intel TDX app',
-                link: '/guides/build-iapp/advanced/create-your-first-tdx-app',
+                link: '/guides/build-iapp/advanced/build-your-first-tdx-iapp',
               },
             ],
           },
@@ -247,11 +180,11 @@ export function getSidebar() {
         text: 'USE AN iAPP',
         items: [
           {
-            text: '📝 Introduction',
+            text: 'Introduction',
             link: '/guides/use-iapp/introduction',
           },
           {
-            text: '🚀 Getting Started',
+            text: 'Getting Started',
             link: '/guides/use-iapp/getting-started',
           },
           {
@@ -265,6 +198,10 @@ export function getSidebar() {
           {
             text: 'Run iApp without ProtectedData',
             link: '/guides/use-iapp/run-iapp-without-ProtectedData',
+          },
+          {
+            text: 'Integrate Web3 Messaging',
+            link: '/guides/use-iapp/integrate-web3-messaging',
           },
         ],
       },
@@ -579,10 +516,7 @@ export function getSidebar() {
               },
             ],
           },
-          {
-            text: 'Integration Guide',
-            link: '/references/web3telegram/integration-guide',
-          },
+
           {
             text: 'Advanced Configuration',
             link: '/references/web3telegram/advanced-configuration',
@@ -590,12 +524,69 @@ export function getSidebar() {
         ],
       },
       {
-        text: '🔧 iExec SDK',
+        text: 'iExec SDK',
         link: '/references/sdk',
       },
       {
         text: '📖 Glossary',
         link: '/references/glossary',
+      },
+    ],
+    '/protocol/': [
+      {
+        text: 'PROTOCOL',
+        items: [
+          {
+            text: '🛡️ Proof of Contribution',
+            link: '/protocol/proof-of-contribution',
+          },
+          {
+            text: 'Pay Per Task Model',
+            link: '/protocol/pay-per-task',
+          },
+          {
+            text: 'Oracle',
+            link: '/protocol/oracle',
+          },
+          {
+            text: 'Workers & Workerpools',
+            items: [
+              {
+                text: 'Worker Quick Start',
+                link: '/protocol/worker/quick-start',
+              },
+              {
+                text: 'Manage Workerpool Access',
+                link: '/protocol/worker/manage-access',
+              },
+            ],
+          },
+          {
+            text: '🔒 TEE Technology',
+            items: [
+              {
+                text: 'Introduction to TEE Technologies',
+                link: '/protocol/tee/introduction',
+              },
+              {
+                text: 'Intel SGX Technology',
+                link: '/protocol/tee/intel-sgx',
+              },
+              {
+                text: 'Intel TDX Technology',
+                link: '/protocol/tee/intel-tdx',
+              },
+              {
+                text: 'SGX vs TDX Comparison',
+                link: '/protocol/tee/sgx-vs-tdx',
+              },
+            ],
+          },
+          {
+            text: '🧠 iExec for AI',
+            link: '/protocol/ai',
+          },
+        ],
       },
     ],
   } as DefaultTheme.Sidebar;

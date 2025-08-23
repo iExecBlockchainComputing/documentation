@@ -1,9 +1,17 @@
-# Access confidential assets from your app
+---
+title: Access Confidential Assets from Your iApp
+description:
+  Learn how to access confidential assets including secrets, protected data, and
+  requester secrets from your iExec application using the Secret Management
+  Service
+---
+
+# Access confidential assets from your iApp
 
 ::: warning
 
 Before going any further, make sure you managed to
-[Build your first application with Scone framework](create-your-first-sgx-app.md).
+[Build your first application with Scone framework](build-your-first-sgx-iapp.md).
 
 :::
 
@@ -31,13 +39,10 @@ The SMS currently supports 3 types of secrets:
    is not linked to any application. When a requester buys a task, the requester
    can declare which secrets can be accessed by the application. Doing so, a
    single requester secret can be shared with multiple applications.
-3. [Dataset secret](sgx-encrypted-dataset.md): A dataset secret is not directly
-   accessible from the application but its decrypted content is. If a dataset is
-   requested and authorized to be used in it, its content will be automatically
-   decrypted in the application enclave. To monetize such a dataset on iExec,
-   the original dataset must be encrypted using the iExec SDK, its encrypted
-   counterpart must be publicly available and its encryption key pushed into the
-   SMS.
+3. [Protected Data secret](/guides/manage-data/manage-access): A protected data
+   secret is not directly accessible from the application but its decrypted
+   content is. If a Protected Data is requested and authorized to be used in it,
+   its content will be automatically decrypted in the application enclave.
 
 Here is a general overview of how confidential assets are used on iExec:
 
@@ -45,11 +50,11 @@ Here is a general overview of how confidential assets are used on iExec:
 graph TD
     Req[Requester] -->|1.a. Push secret| SMS[SMS]
     AppDev[Application developer] -->|1.b. Push secret| SMS
-    DatasetOwn[Dataset owner] -->|1.c. Push secret| SMS
+    ProtectedDataOwn[ProtectedData owner] -->|1.c. Push secret| SMS
     Req --> |2 . Buy task| Chain
     Chain[Blockchain] --> |3 . Notify task to compute| Worker[Worker/Workerpool]
-    Worker --> |4 . Launch TEE application| App[TEE application]
-    App --> |5.a. Get secrets for task| SMS
+    Worker --> |4 . Launch TEE application| iApp[TEE application]
+    iApp --> |5.a. Get secrets for task| SMS
     SMS --> |5.b. Check authorization for secrets| Chain
 ```
 
@@ -58,4 +63,4 @@ graph TD
 You now understand how these three kinds of confidential assets work on iExec,
 you can go one step further by learning how to manipulate them:
 
-- [Access a confidential dataset](sgx-encrypted-dataset.md)
+- [Access to a Protected Data](/guides/build-iapp/inputs-and-outputs)

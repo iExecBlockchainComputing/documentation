@@ -21,7 +21,7 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 const contactsList = await web3telegram.fetchUserContacts({
-  userAddress: '0xF048eF3d7E3B33A465E0599E641BB29421f7Df92',
+  userAddress: '0x789cba...',
 });
 ```
 
@@ -33,7 +33,7 @@ import { type FetchUserContactsParams } from '@iexec/web3telegram';
 
 ### userAddress
 
-`Address`
+**Type:** `Address`
 
 The entity for which you wish to obtain the list of contacts.
 
@@ -44,7 +44,7 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 const contactsList = await web3telegram.fetchUserContacts({
-  userAddress: '0xF048eF3d7E3B33A465E0599E641BB29421f7Df92', // [!code focus]
+  userAddress: '0x789cba...', // [!code focus]
 });
 ```
 

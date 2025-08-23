@@ -19,8 +19,8 @@ telegram chat ID recipients through use of Ethereum addresses.
 iExec's protocol the telegram chat ID as a `protectedData` entity using
 [iExec Data Protector](/references/dataProtector). Through this mechanism, users
 have complete control over which applications may use their
-[chat ID](/references/web3telegram/integration-guide#_1-get-your-users-to-retrieve-their-chat-id)
-for sending communications.
+[chat ID](/guides/use-iapp/integrate-web3-messaging#retrieve-chat-id) for
+sending communications.
 
 Sending a user a message, therefore, requires knowledge of the Ethereum address
 of their `protectedData` as well as an explicit authorization for your account

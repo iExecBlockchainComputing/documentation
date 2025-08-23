@@ -15,7 +15,7 @@ This method does a few things under the hood:
 - Generate an RSA key pair and save it to indexedDB (if available)
 - Push the public key to iExec SMS (Secret Management Service) (For more info,
   see
-  [iExec Protocol documentation](https://protocol.docs.iex.ec/for-developers/confidential-computing/access-confidential-assets#secret-management-service-sms))
+  [iExec Advanced documentation](/guides/build-iapp/advanced/access-confidential-assets))
 - Wait for the consuming task to be executed by a worker. The iExec TEE iApp
   being executed is the one given with the `app` parameter. The iExec TEE iApp
   will get the protected data from IPFS, encrypt it with the public key
@@ -156,9 +156,9 @@ const consumeProtectedDataResult =
 ### workerpool <OptionalBadge />
 
 **Type:** `AddressOrENS`  
-**Default:** `prod-v8-bellecour.main.pools.iexec.eth`
+**Default:** `{{ workerpoolAddress }}` (iExec's workerpool)
 
-Address or ENS of the workerpool.
+Address or ENS of the workerpool on which your confidential task will run.
 
 ```ts twoslash
 import {
@@ -173,17 +173,9 @@ const consumeProtectedDataResult =
   await dataProtectorSharing.consumeProtectedData({
     protectedData: '0x123abc...',
     app: '0x456def...',
-    workerpool: 'prod-v8-bellecour.main.pools.iexec.eth', // [!code focus]
+    workerpool: '0xa5de76...', // [!code focus]
   });
 ```
-
-::: tip
-
-iExec currently offers a production workerpool located at the Ethereum Name
-Service (ENS) address `prod-v8-bellecour.main.pools.iexec.eth`. This is the
-default workerpool for running confidential computations on the iExec platform.
-
-:::
 
 ### maxPrice <OptionalBadge />
 
@@ -339,8 +331,18 @@ Identifies the specific task associated with the deal.
 The actual content of the protected file.
 
 <script setup>
+import { computed } from 'vue';
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
 import { Icon } from '@iconify/vue';
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
+
+// Get current chain info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
 </script>

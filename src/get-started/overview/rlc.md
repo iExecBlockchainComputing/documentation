@@ -17,6 +17,14 @@ confidential computation requires RLC. Every piece of protected data consumed
 requires RLC. Every app execution requires RLC. The more builders use our tools,
 the more utility RLC gains in real applications.
 
+::: tip Info
+
+On the iExec sidechain (Bellecour), the RLC token symbol becomes **xRLC**. xRLC
+is the native token of the Bellecour chain and is used for all transactions and
+payments on this network.
+
+:::
+
 ## 🎯 Why RLC Matters
 
 **Stack adoption = token usage.** When developers build with iExec tools, RLC
@@ -82,13 +90,6 @@ ecosystem requires RLC:
 - Confidential computations need RLC for execution
 - Staking mechanisms lock RLC, reducing circulating supply
 
-<ImageViewer
-    :image-url-dark="duneDashboard"
-    image-alt="RLC Token Economics Dashboard"
-    link-url="https://dune.com/datawarlock/arbitrum-economics"
-    caption="🔗 Access iExec Dune Dashboard"
-  />
-
 ## 🔄 Getting RLC
 
 You can acquire RLC tokens through several methods:
@@ -150,10 +151,8 @@ Ready to dive into the iExec ecosystem? Here are the next steps:
   monetize your resources
 
 <script setup>
-import ImageViewer from '@/components/ImageViewer.vue';
 import FeatureCard from '@/components/FeatureCard.vue';
 
 // Assets
 import rlcGif from '@/assets/rlc/rlc.gif';
-import duneDashboard from '@/assets/rlc/dune-dashboard.png';
 </script>

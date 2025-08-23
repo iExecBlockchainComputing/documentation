@@ -92,14 +92,13 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 You may authorize a specific app or a whitelist of apps to use the protected
 data.
 
-iExec uses the ENS `web3mail.apps.iexec.eth` for the latest version of the
-Web3Mail decentralized application.
+The latest version of the iExec Web3Mail decentralized application is
+`{{web3MailAddress}}`.
 
 iExec also maintains a whitelist for current and past versions of Web3Mail iApp.
 Granting access to this whitelist allows use of an email `protectedData` with
 all versions of the Web3Mail application, ensuring you only have to grant this
-access once. The ETH address for this whitelist is
-**0x781482C39CcE25546583EaC4957Fb7Bf04C277D2**.
+access once. The ETH address for this whitelist is **{{web3MailAppWhitelist}}**.
 
 :::
 
@@ -165,7 +164,7 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 ::: tip
 
 `pricePerAccess` is expressed in nano RLC (nRLC). nRLC is the smallest
-subdivision of the <TokenSymbol /> token, 1 <TokenSymbol /> equals to 10^9 nRLC.
+subdivision of the RLC token, 1 RLC equals to 10^9 nRLC.
 
 When provided, `pricePerAccess` must be a non-negative integer value.
 
@@ -252,7 +251,17 @@ The result of this method confirms the new access grant. It consists of a JSON
 [`GrantedAccess`](/references/dataProtector/types#grantedaccess)
 
 <script setup>
+import { computed } from 'vue';
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
-import TokenSymbol from '@/components/TokenSymbol.vue'
+
+// Get current chain info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const web3MailAddress = computed(() => chainData.value.web3MailAddress);
+const web3MailAppWhitelist = computed(() => chainData.value.web3MailAppWhitelist);
 </script>

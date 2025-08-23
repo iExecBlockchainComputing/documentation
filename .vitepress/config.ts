@@ -103,6 +103,7 @@ export default withMermaid(
         { text: 'Get Started', link: '/get-started/welcome' },
         { text: 'Guides', link: '/guides/build-iapp/build-&-test' },
         { text: 'References', link: '/references/dataProtector' },
+        { text: 'Protocol', link: '/protocol/proof-of-contribution' },
         {
           component: 'ChainSelector',
           props: {

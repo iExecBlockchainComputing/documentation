@@ -605,9 +605,3 @@ Continue building with these guides:
   execution issues
 - **[How to Get and Decrypt Results](/guides/build-iapp/inputs-and-outputs)** -
   User-side result handling
-
-### Technical Deep Dive
-
-- **[SDK Deep Dive](/references/sdk)** - Advanced SDK concepts
-- **[Application I/O Protocol Docs](https://protocol.docs.iex.ec/for-developers/application-io)** -
-  Low-level protocol details

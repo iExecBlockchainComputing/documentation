@@ -14,15 +14,15 @@ The recipient Chat ID is stored in a `protectedData` entity. The user receiving
 message must explicitly authorize you to send them telegram communications and
 permission must be granted for the `Web3Telegram` tool to use the
 `protectedData` entity containing their chat ID. This is best done by granting
-authorization to the Web3Telegram app whitelist
-`0x192C6f5AccE52c81Fcc2670f10611a3665AAA98F` as `authorizedApp`. Refer to the
+authorization to the Web3Telegram app whitelist `{{web3TelegramAppWhitelist}}`
+as `authorizedApp`. Refer to the
 [Data Protector `grantAccess`](/references/dataProtector/dataProtectorCore/grantAccess)
 documentation for more details.
 
 ::: tip
 
-For executing the `sendTelegram` method with a voucher or <TokenSymbol />, refer
-to the dedicated section in the documentation under
+For executing the `sendTelegram` method with a voucher or RLC, refer to the
+dedicated section in the documentation under
 "[How to Pay for Executions](/guides/use-iapp/how-to-pay-executions.md)".
 
 :::
@@ -41,7 +41,6 @@ const sendTelegram = await web3telegram.sendTelegram({
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
   label: 'some-custom-id',
-  workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth',
   dataMaxPrice: 42,
   appMaxPrice: 42,
   workerpoolMaxPrice: 42,
@@ -56,7 +55,7 @@ import { type SendTelegramParams } from '@iexec/web3telegram';
 
 ### protectedData
 
-`Address`
+**Type:** `Address`
 
 The address of the `protectedData` holding the contact's telegram chat ID.
 
@@ -76,7 +75,7 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ### senderName
 
-`string`
+**Type:** `string`
 
 The name of the telegram message sender.
 
@@ -96,9 +95,7 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ### telegramContent
 
-`string`
-
-_maximum size_: 512 kb
+**Type:**`string` **Maximum siz:** `512 kb`
 
 The telegram message content that needs to be sent. The content is limited to
 512 kb in size. Telegram content is encrypted and stored in IPFS.
@@ -119,7 +116,8 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ### useVoucher <ChainNotSupportedBadge /> <OptionalBadge />
 
-**Type:** `boolean`  
+**Type:** `boolean`
+
 **Default:** `false`
 
 This optional param allows you to pay for the deal using your voucher. Make sure
@@ -137,7 +135,6 @@ const sendTelegram = await web3telegram.sendTelegram({
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
   label: 'some-custom-id',
-  workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth',
   dataMaxPrice: 42,
   appMaxPrice: 42,
   workerpoolMaxPrice: 42,
@@ -147,16 +144,16 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ::: tip
 
-If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK
-will automatically get the required amount to your iExec account. Ensure that
-your voucher is authorized to access your iExec account and that your account
-has sufficient funds for this transfer to proceed.
+If your voucher doesn't have enough RLC to cover the deal, the SDK will
+automatically get the required amount to your iExec account. Ensure that your
+voucher is authorized to access your iExec account and that your account has
+sufficient funds for this transfer to proceed.
 
 :::
 
 ### label
 
-`string | undefined`
+**Type:** `string | undefined`
 
 Allows adding a custom public label. The Web3telegram tool writes this onchain
 as `iexec_args` in the deal params.
@@ -178,9 +175,9 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ### workerpoolAddressOrEns
 
-`workerpoolAddressOrEns | undefined`
+**Type:** `workerpoolAddressOrEns | undefined`
 
-_default_: iExec's production workerpool
+**Default:** `{{workerpoolAddress}}` (iExec's workerpool)
 
 Allows specifying the workerpool that will run the Web3Telegram application.
 
@@ -195,23 +192,15 @@ const sendTelegram = await web3telegram.sendTelegram({
   protectedData: '0x123abc...',
   senderName: 'Arthur',
   telegramContent: 'My telegram message content',
-  workerpoolAddressOrEns: 'prod-v8-bellecour.main.pools.iexec.eth', // [!code focus]
+  workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
 });
 ```
 
-::: tip
-
-iExec currently offers a production workerpool located at the Ethereum Name
-Service (ENS) address `prod-v8-bellecour.main.pools.iexec.eth`. This is the
-default workerpool for running confidential computations on the iExec platform.
-
-:::
-
 ### dataMaxPrice
 
-`number | undefined`
+**Type:** `number | undefined`
 
-_default_: `0`
+**Default:** `0`
 
 Allows specifying the maximum amount (in nRLC) you are willing to pay the
 telegram chat ID owner for using their data. The owner of the protected chat ID
@@ -234,9 +223,9 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ### appMaxPrice
 
-`number | undefined`
+**Type:** `number | undefined`
 
-_default_: `0`
+**Default:** `0`
 
 Allows specifying the maximum amount (in nRLC) you are willing to pay the
 Web3telegram app provider (iExec) for using the Web3telegram application.
@@ -258,9 +247,9 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 ### workerpoolMaxPrice
 
-`number | undefined`
+**Type:** `number | undefined`
 
-_default_: `0`
+**Default:** `0`
 
 Allows specifying the maximum amount you want to pay the workerpool provider for
 using their infrastructure to run the web3telegram app in nRLC.
@@ -288,14 +277,26 @@ import { type SendTelegramResponse } from '@iexec/web3telegram';
 
 ### taskId
 
-`Addess`
+**Type:** `Address`
 
 This uniquely identifies the telegram task on the iExec side chain. You can view
 the status of the `sendTelegram` method by monitoring the task on the
-[iExec Explorer](https://explorer.iex.ec/bellecour).
+<a :href="explorerUrl" target="_blank" rel="noopener">iExec blockchain
+explorer</a> .
 
 <script setup>
+import { computed } from 'vue';
 import OptionalBadge from '@/components/OptionalBadge.vue'
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
-import TokenSymbol from '@/components/TokenSymbol.vue'
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
+
+// Get current chain info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
+const web3TelegramAppWhitelist = computed(() => chainData.value.web3TelegramAppWhitelist);
 </script>

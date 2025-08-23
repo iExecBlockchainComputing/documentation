@@ -49,5 +49,5 @@ features:
     details:
       Deep dive into core protocol concepts. Understand how iExec enables
       privacy, governance, and monetization.
-    link: /get-started/protocol/proof-of-contribution
+    link: /protocol/proof-of-contribution
 ---

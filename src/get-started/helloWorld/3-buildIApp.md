@@ -394,8 +394,8 @@ iapp run <my-iapp-address>
 
 To sum up the process, we take the **iApp** and wrap it in the iExec framework,
 allowing it to run securely in a **Trusted Execution Environment (TEE)** for
-**confidential computing**. If you want to explore further, you can check the
-protocol documentation [here](https://protocol.docs.iex.ec/).
+**confidential computing**. To learn more, check out the
+[advanced iApp build documentation](/guides/build-iapp/advanced/quick-start).
 
 <div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
   <p class="m-0!">🎉 Congratulations! You've successfully deployed and run your first iApp on iExec. This is a significant milestone - your application is now ready to securely process confidential data in a trusted environment.</p>

@@ -154,10 +154,10 @@ const processProtectedDataResponse =
 
 ::: tip
 
-If your voucher doesn't have enough <TokenSymbol /> to cover the deal, the SDK
-will automatically get the required amount to your iExec account. Ensure that
-your voucher is authorized to access your iExec account and that your account
-has sufficient funds for this transfer to proceed.
+If your voucher doesn't have enough RLC to cover the deal, the SDK will
+automatically get the required amount to your iExec account. Ensure that your
+voucher is authorized to access your iExec account and that your account has
+sufficient funds for this transfer to proceed.
 
 :::
 
@@ -208,7 +208,8 @@ const processProtectedDataResponse =
 
 Do not use this to provide any sensitive information to the application. All
 arguments passed this way are visible in plain text using the
-[iExec blockchain explorer](https://explorer.iex.ec).
+<a :href="explorerUrl" target="_blank" rel="noopener">iExec blockchain
+explorer</a> .
 
 :::
 
@@ -242,7 +243,7 @@ stored in the secrets manager needed for the application's execution.
 
 Secrets are accessible during the application's execution as environment
 variables. For more details, see
-[Access requester secrets](https://protocol.docs.iex.ec/for-developers/confidential-computing/access-confidential-assets/requester-secrets).
+[Access requester secrets](/guides/build-iapp/advanced/access-confidential-assets).
 
 <!-- prettier-ignore-start -->
 ```ts twoslash
@@ -265,24 +266,19 @@ const processProtectedDataResponse = await dataProtectorCore.processProtectedDat
 ### workerpool <OptionalBadge />
 
 **Type:** `AddressOrENS | 'any'`  
-**Default:** `prod-v8-bellecour.main.pools.iexec.eth`
+**Default:** `{{ workerpoolAddress }}`
 
-The ETH address or Ethereum Name Service (ENS) address for the iExec workerpool.
 It's the confidential computer on which the iExec application will run.
 
 ::: tip
 
-iExec currently offers a production workerpool located at the Ethereum Name
-Service (ENS) address `prod-v8-bellecour.main.pools.iexec.eth`. This is the
-default workerpool for running confidential computations on the iExec platform.
-
-If you don't specify a workerpool preference,
-0x0000000000000000000000000000000000000000 represents any randomly available
-workerpool.
+iExec currently offers a workerpool located at the address
+`{{ workerpoolAddress }}`. This is the default workerpool for running
+confidential computations on the iExec platform.
 
 :::
 
-::: info
+::: info TDX <ChainNotSupportedBadge/>
 
 🧪 While protected data are processed in **TEE** by **intel SGX** technology by
 default, `@iexec/dataprotector` can be configured to create and process
@@ -451,7 +447,9 @@ import { type ProcessProtectedDataResponse } from '@iexec/dataprotector';
 `string`
 
 The ID of the transaction that happened on iExec's side chain. You may view
-details on the transaction using the [iExec explorer](https://explorer.iex.ec).
+details on the transaction using the
+<a :href="explorerUrl" target="_blank" rel="noopener">iExec blockchain
+explorer</a> .
 
 ### dealId
 
@@ -464,8 +462,9 @@ Identifies the specific deal associated with this transaction.
 `string`
 
 A unique identifier associated with a task currently running on the iExec
-Bellecour side chain. You can monitor task execution using the
-[iExec blockchain explorer](https://explorer.iex.ec).
+protocol. You can monitor task execution using the
+<a :href="explorerUrl" target="_blank" rel="noopener">iExec blockchain
+explorer</a> .
 
 ::: tip
 
@@ -498,8 +497,18 @@ processed during the task.
 :::
 
 <script setup>
+import { computed } from 'vue';
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
-import TokenSymbol from '@/components/TokenSymbol.vue'
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
+
+// Get current chain info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
+const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
 </script>

@@ -53,7 +53,7 @@ Once you've built your first iApp, level up with these practical guides:
 
 Ready for production? Dive into specialized topics:
 
-- **[Build Intel TDX App (Experimental)](/guides/build-iapp/advanced/create-your-first-tdx-app)** -
+- **[Build Intel TDX iApp (Experimental)](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
   Next-gen TEE with traditional deployment and iApp Generator technology
 - **[Complete Guides Overview](/guides/build-iapp/build-&-test)** - All
   development guides in one place
@@ -100,8 +100,6 @@ applications:
 - **[Complete Guides](/guides/build-iapp/build-&-test)** - All development
   guides
 - **[iExec Discord](https://discord.com/invite/pbt9m98wnU)** - Community support
-- **[Protocol Documentation](https://protocol.docs.iex.ec)** - Technical deep
-  dive
 
 ---
 
