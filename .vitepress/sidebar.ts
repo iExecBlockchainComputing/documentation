@@ -50,6 +50,10 @@ export function getSidebar() {
             text: '🤖 Develop with AI',
             link: '/get-started/develop-with-ai',
           },
+          {
+            text: '🧠 iExec for AI',
+            link: '/get-started/ai',
+          },
         ],
       },
       {
@@ -153,6 +157,7 @@ export function getSidebar() {
               },
             ],
           },
+
         ],
       },
     ],
