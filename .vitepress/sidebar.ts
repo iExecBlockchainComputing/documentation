@@ -580,7 +580,7 @@ export function getSidebar() {
             ],
           },
           {
-            text: '🧠 iExec for AI',
+            text: '🤖 AI Framework Support',
             link: '/protocol/ai',
           },
         ],

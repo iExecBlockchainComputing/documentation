@@ -1,15 +1,16 @@
 ---
-title: iExec for AI
+title: AI Framework Support
 description:
-  How iExec helps develop, deploy and execute confidential AI applications with
-  framework support
+  Comprehensive guide to AI framework compatibility and support on the iExec
+  platform
 ---
 
-# 🧠 iExec for AI
+# 🤖 AI Framework Support
 
-The iExec Platform delivers powerful tools specifically for AI developers.
-Build, deploy, and execute confidential AI applications with enterprise-grade
-security and decentralized infrastructure.
+The iExec Platform provides comprehensive support for popular AI and machine
+learning frameworks. Deploy your confidential AI applications with confidence
+using our tested and optimized framework configurations, all running in secure
+Trusted Execution Environments (TEEs).
 
 ## 🚀 Quick Start
 
