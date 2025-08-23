@@ -50,7 +50,6 @@ export function getSidebar() {
             text: 'Develop with AI',
             link: '/get-started/develop-with-ai',
           },
-
         ],
       },
       {
@@ -103,8 +102,6 @@ export function getSidebar() {
           },
         ],
       },
-
-
     ],
     '/guides/': [
       {
