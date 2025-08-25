@@ -194,6 +194,9 @@ And many other use cases...
   </div>
 </div>
 
-<Container variant="green">
-  <p class="m-0!">Now that you understand the fundamentals, let's dive into protecting your first piece of data! With Alice!</p>
-</Container>
+::: info <i></i>
+
+Now that you understand the fundamentals, let's dive into protecting your first
+piece of data! With Alice!
+
+:::

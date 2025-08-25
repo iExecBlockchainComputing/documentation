@@ -185,10 +185,11 @@ query {
 }
 ```
 
-::: tip <i></i>
+::: tip 💡 Pro Tip
 
-  <h4 class="!mt-0 !mb-2">💡 Pro Tip</h4>
-  <p class="!mb-0">Use the GraphQL explorer's auto-completion feature to discover available fields and build complex queries. The schema documentation is always up-to-date with the latest protocol changes.</p>
+Use the GraphQL explorer's auto-completion feature to discover available fields
+and build complex queries. The schema documentation is always up-to-date with
+the latest protocol changes.
 
 :::
 

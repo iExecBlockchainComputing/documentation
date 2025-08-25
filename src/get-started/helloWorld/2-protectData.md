@@ -23,7 +23,7 @@ import Container from '../../components/Container.vue'
 ::: tip <i></i>
 
 <strong>Protected data</strong> is encrypted data that remains confidential
-throughout its entire lifecycle - during storage, transfer and processing.</p>
+throughout its entire lifecycle - during storage, transfer and processing.
 
 :::
 
@@ -196,6 +196,9 @@ sandbox</a> for ready-to-use examples!
 
 - 🔌 **Integration** is simple with our developer tools
 
-<Container variant="green">
-  <p class="m-0!">In the next chapter, we'll show you how to build, deploy, and run an iApp to process your protected data. Let's go! 🚀</p>
+<Container variant="success">
+
+In the next chapter, we'll show you how to build, deploy, and run an iApp to
+process your protected data. Let's go! 🚀
+
 </Container>

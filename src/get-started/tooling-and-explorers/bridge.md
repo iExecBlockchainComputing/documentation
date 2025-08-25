@@ -69,13 +69,6 @@ RLC tokens between Ethereum and Arbitrum mainnet in both directions.
   link-url="https://stargate.finance/bridge"
 />
 
-::: tip <i></i>
-
-  <h4 class="!mt-0 !mb-2">🔄 Bidirectional Bridge</h4>
-  <p class="!mb-0">The Stargate bridge interface automatically detects your wallet's network and available RLC tokens. The process is similar in both directions - simply select the appropriate source and destination networks to transfer RLC between Ethereum and Arbitrum seamlessly.</p>
-
-:::
-
 ## 🔄 Bellecour Bridge
 
 The **Bellecour Bridge** enables seamless transfer of RLC tokens between
@@ -102,10 +95,13 @@ Bellecour, RLC becomes xRLC, the native asset of the Bellecour network.
   link-url="https://bridge-bellecour.iex.ec/"
 />
 
-::: tip <i></i>
+::: tip 🔄 Bidirectional Bridge
 
-  <h4 class="!mt-0 !mb-2">🔄 Bidirectional Bridge</h4>
-  <p class="!mb-0">The bridge interface automatically detects your wallet's network and available tokens. The process is similar in both directions - simply switch to the appropriate network (source chain) in your wallet and refresh the page to update the bridge direction, then the bridge will handle the conversion between RLC and xRLC seamlessly.</p>
+The bridge interface automatically detects your wallet's network and available
+tokens. The process is similar in both directions - simply switch to the
+appropriate network (source chain) in your wallet and refresh the page to update
+the bridge direction, then the bridge will handle the conversion between RLC and
+xRLC seamlessly.
 
 :::
 

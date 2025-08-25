@@ -52,14 +52,15 @@ monitoring with detailed task execution history and real-time balance tracking.
 
 ### Current Voucher Balance & Management
 
-<Container variant="green">
-  <h4 class="!mt-0 !mb-2">💰 Voucher Balance Overview</h4>
-  <ul class="!mb-0">
-    <li><strong>Current Balance</strong>: View your remaining voucher credits and compute capacity</li>
-    <li><strong>Claim New Vouchers</strong>: Request additional vouchers directly from the dashboard</li>
-    <li><strong>Expiration Alerts</strong>: Get notified before vouchers expire</li>
-  </ul>
-</Container>
+::: warning 💰 Voucher Balance Overview
+
+- <strong>Current Balance</strong>: View your remaining voucher credits and
+  compute capacity
+- <strong>Claim New Vouchers</strong>: Request additional vouchers directly from
+  the dashboard
+- <strong>Expiration Alerts</strong>: Get notified before vouchers expire
+
+:::
 
 ### Task Execution History
 
@@ -107,15 +108,12 @@ deployed confidential iApp with detailed statistics and user insights.
 
 ### My Confidential iApp Overview
 
-::: tip <i></i>
+::: tip 📱 iApp Portfolio Metrics
 
-  <h4 class="!mt-0 !mb-2">📱 iApp Portfolio Metrics</h4>
-  <ul class="!mb-0">
-    <li><strong>Deployed Applications</strong>: Complete list of all your confidential iApp currently deployed</li>
-    <li><strong>Execution Statistics</strong>: See exactly how many times each iApp has been executed</li>
-    <li><strong>Unique Users</strong>: Track total unique users who have run each application</li>
-    <li><strong>Revenue Insights</strong>: Track earnings and profitability per application</li>
-  </ul>
+- <strong>Deployed Applications</strong>: Complete list of all your confidential iApp currently deployed
+- <strong>Execution Statistics</strong>: See exactly how many times each iApp has been executed
+- <strong>Unique Users</strong>: Track total unique users who have run each application
+- <strong>Revenue Insights</strong>: Track earnings and profitability per application<
 
 :::
 

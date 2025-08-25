@@ -62,17 +62,16 @@ Explorer displays data for the network you choose.
 
 </CardGrid>
 
-::: tip <i></i>
+::: tip 🏗️ Understanding iExec Architecture
 
-  <h4 class="!mt-0 !mb-2">🏗️ Understanding iExec Architecture</h4>
-  <p class="!mb-2"><strong>Deals</strong> are the fundamental orchestration unit - each deal coordinates a set of different stakeholders that share resources and execution parameters to execute a confidential computation task.</p>
-  <p class="!mb-0">Each <strong>Deal</strong> brings together:</p>
-  <ul class="!mb-0">
-    <li><strong>Requester</strong>: The entity requesting the computation</li>
-    <li><strong>iApp</strong>: The confidential computation logic</li>
-    <li><strong>Dataset</strong>: The data that will be processed by the iApp</li>
-    <li><strong>Workerpool</strong>: The decentralized network of workers providing computation power</li>
-  </ul>
+<strong>Deals</strong> are the fundamental orchestration unit - each deal coordinates a set of different stakeholders that share resources and execution parameters to execute a confidential computation task.
+
+Each <strong>Deal</strong> brings together:
+
+- <strong>Requester</strong>: The entity requesting the computation
+- <strong>iApp</strong>: The confidential computation logic
+- <strong>Dataset</strong>: The data that will be processed by the iApp
+- <strong>Workerpool</strong>: The decentralized network of workers providing computation power
 
 :::
 

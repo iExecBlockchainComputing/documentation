@@ -292,12 +292,14 @@ simulating how it will run in the iExec network's TEE environment.
 
 ::: tip <i></i>
 
-<strong>Common Issues:</strong></p>
+**Common Issues:**
 
-  <p class="m-0!">- If you get <code>Error: Docker daemon is not accessible</code>: Make sure Docker is installed and running.</p>
-  <p class="m-0!">- If you get <code>Error: Failed to locate iApp project root</code>: Ensure you are in your project folder before proceeding.
-  
-  :::
+- If you get <code>Error: Docker daemon is not accessible</code>: Make sure
+  Docker is installed and running.
+- if you get <code>Error: Failed to locate iApp project root</code>: Ensure you
+  are in your project folder before proceeding.
+
+:::
 
 ### 🧩 Using Arguments
 
@@ -323,8 +325,8 @@ iapp test --protectedData default
 
 ::: tip <i></i>
 
-You can check how args and protectedData are processed in <code>
-src/app.js</code> or <code> src/app.py</code></p>
+You can check how args and protectedData are processed in `src/app.js` or
+`src/app.py`
 
 :::
 
@@ -388,17 +390,22 @@ Once you have your token, you can deploy your iApp.
 📝 Make sure to save your <strong>iApp address</strong> after deployment -
 you'll need it later!
 
-  <p class="m-0!">You can find your iApp address in the <code>iexec-app.json</code> file in your project folder.</p>
-  <br>
-  <p class="m-0!">⚠️  If you encounter issues during deployment, make sure the Docker BuildKit feature is enabled and supports AMD64 architecture:</p>
+You can find your iApp address in the <code>iexec-app.json</code> file in your
+project folder.
+
+⚠️ If you encounter issues during deployment, make sure the Docker BuildKit
+feature is enabled and supports AMD64 architecture:
 
 ```sh
 docker buildx inspect --bootstrap | grep -i platforms
 ```
 
-  <p class="m-0!">The output should include <code>linux/amd64</code> in the list of supported platforms. If not, update to the latest Docker Desktop version which includes these requirements.</p>
-  <br>
-  <p class="m-0!">⚠️  If you set the wrong Docker username, you can change it by editing the <code>iapp.config.json</code> file</p>
+The output should include <code>linux/amd64</code> in the list of supported
+platforms. If not, update to the latest Docker Desktop version which includes
+these requirements.
+
+If you set the wrong Docker username, you can change it by editing the
+<code>iapp.config.json</code> file
 
 :::
 
@@ -415,8 +422,12 @@ allowing it to run securely in a **Trusted Execution Environment (TEE)** for
 **confidential computing**. If you want to explore further, you can check the
 protocol documentation [here](https://protocol.docs.iex.ec/).
 
-<Container variant="green">
-  <p class="m-0!">🎉 Congratulations! You've successfully deployed and run your first iApp on iExec. This is a significant milestone - your application is now ready to securely process confidential data in a trusted environment.</p>
+<Container variant="success">
+
+🎉 Congratulations! You've successfully deployed and run your first iApp on
+iExec. This is a significant milestone - your application is now ready to
+securely process confidential data in a trusted environment.
+
 </Container>
 
 ## 🎯 Key Takeaways
@@ -427,8 +438,11 @@ protocol documentation [here](https://protocol.docs.iex.ec/).
 - ⛓️ **Deployment:** Apps are deployed on iExec protocol to run in trusted
   environments
 
-<Container variant="green">
-  <p class="m-0!">Next up: Alice will learn how to authorize the iApp and Bob to access and use her protected data!  🚀</p>
+<Container variant="success">
+
+Next up: Alice will learn how to authorize the iApp and Bob to access and use
+her protected data! 🚀
+
 </Container>
 
 <script setup>

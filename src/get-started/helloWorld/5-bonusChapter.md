@@ -28,8 +28,12 @@ description:
   </div>
 </div>
 
-<Container variant="green">
-  <p class="m-0!">Need help setting up or got some questions? Join our <a target="_blank" href="https://discord.gg/6yrgRH6ATD" class="text-green-700 underline hover:text-green-900">Discord Community</a> for support!</p>
+<Container variant="success">
+
+Need help setting up or got some questions? Join our
+<strong><a target="_blank" href="https://discord.gg/6yrgRH6ATD">Discord
+Community</a></strong> for support!
+
 </Container>
 
 <template v-if="selectedChain !== 42161">
@@ -52,9 +56,13 @@ description:
   Claim your $20 voucher
 </Button>
 
-<Container variant="green" spacing="top">
-  <p class="m-0!">Thank you for being part of the iExec journey! We can't wait to see what you'll build next! 🚀</p>
+<Container variant="success">
+
+Thank you for being part of the iExec journey! We can't wait to see what you'll
+build next! 🚀
+
 </Container>
+
 </template>
 
 <script setup>

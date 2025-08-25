@@ -165,8 +165,13 @@ Confidential Computing made easy
   </div>
 </div>
 
-<Container variant="green">
-<p class="m-0!">The next chapters guide you through our <strong>Hello World journey</strong>. This 30-minute start teaches you everything about iExec. You'll learn <strong>protecting sensitive data</strong> and <strong>building and deploying confidential apps</strong>.</p>
+<Container variant="success">
+
+The next chapters guide you through our **Hello World journey**. This 30-minute
+start teaches you everything about iExec. You'll learn <strong>protecting
+sensitive data</strong> and <strong>building and deploying confidential
+apps</strong>.
+
 </Container>
 
 ## 🚀 Start Building
@@ -202,8 +207,14 @@ _**Join thousands of developers** who are already transforming the future of
 privacy. **You have the power** to build the next generation of trust-first
 applications. Let's build something amazing together._ 🚀
 
-<Container variant="amber" spacing="top">
-  <h4 class="!mt-0 !mb-2">🏆 Join the iExec Community</h4>
-  <p class="!mb-2">Be part of a growing movement of developers, data owners, and privacy advocates who are <strong>reshaping how the world handles sensitive data</strong>.</p>
-  <p class="!mb-0">When you build with iExec, you're not just solving a technical challenge—<strong>you're championing user rights and digital sovereignty</strong>. Every application you create makes the web more private, more secure, and more trustworthy for everyone.</p>
+<Container variant="success" title="🏆 Join the iExec Community">
+
+Be part of a growing movement of developers, data owners, and privacy advocates
+who are <strong>reshaping how the world handles sensitive data</strong>.
+
+When you build with iExec, you're not just solving a technical
+challenge—<strong>you're championing user rights and digital
+sovereignty</strong>. Every application you create makes the web more private,
+more secure, and more trustworthy for everyone.
+
 </Container>

@@ -27,7 +27,7 @@ const { protectedDataAddress } = useWalletConnection();
 
 When you protect your data, you can authorize specific <strong>users</strong>
 and <strong>applications</strong> to access it. This means an authorized user
-will be able to use an authorized iApp to compute your protected data.</p>
+will be able to use an authorized iApp to compute your protected data.
 
 :::
 
@@ -62,7 +62,7 @@ Here is a simple diagram to explain the process:
 ::: tip <i></i>
 
 Remember the <strong>iApp address</strong> you saved from the previous chapter?
-You'll need it now to grant access to your protected data.</p>
+You'll need it now to grant access to your protected data.
 
 :::
 
@@ -90,7 +90,7 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 ::: tip <i></i>
 
 As we don't have the Bob's wallet address, we'll use the zero address to grant
-access to all users.</p>
+access to all users.
 
 :::
 
@@ -102,8 +102,11 @@ You're now ready to process your protected data in a trusted environment:
 iapp run <my-iapp-address> --protectedData {{ protectedDataAddress }}
 ```
 
-<Container variant="green">
-  <p class="m-0!">🎉 Congratulations! You've successfully completed the core workflow of protecting and processing data with iExec!</p>
+<Container variant="success">
+
+🎉 Congratulations! You've successfully completed the core workflow of
+protecting and processing data with iExec!
+
 </Container>
 
 ## What's Next: Data Monetization
@@ -130,6 +133,9 @@ For more technical details, see the
 [DataProtector Sharing](/references/dataProtector/dataProtectorSharing)
 documentation.
 
-<Container variant="green">
-    <p class="m-0!">You have one more step to complete the journey, and it's the easy one. Let's go to the bonus chapter!</p>
+<Container variant="success">
+
+You have one more step to complete the journey, and it's the easy one. Let's go
+to the bonus chapter!
+
 </Container>

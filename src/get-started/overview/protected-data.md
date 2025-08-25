@@ -16,7 +16,7 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
 
 Unlike standard datasets, Protected Data exposes its <strong>data types
 on-chain</strong> (indicating types like email addresses or photos). This lets
-anyone <strong>identify entries with matching types</strong>.</p>
+anyone <strong>identify entries with matching types</strong>.
 
 :::
 
@@ -188,8 +188,12 @@ anyone <strong>identify entries with matching types</strong>.</p>
   </div>
 </div>
 
-<Container variant="green">
-  <p class="m-0!">Ready to protect your data? Start with our <strong>DataProtector guides</strong>. Learn how to secure sensitive information while unlocking its value.</p>
+<Container variant="success">
+
+Ready to protect your data? Start with our <strong>DataProtector
+guides</strong>. Learn how to secure sensitive information while unlocking its
+value.
+
 </Container>
 
 ## Next Steps

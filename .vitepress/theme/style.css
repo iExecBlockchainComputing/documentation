@@ -302,3 +302,39 @@ input {
 .vp-doc .custom-block.tip strong {
   @apply text-[var(--vp-c-brand-1)];
 }
+
+.custom-block.tip code {
+  @apply bg-[var(--vp-code-bg)];
+}
+
+.vp-doc .custom-block.warning {
+  @apply border-l-4 border-l-[var(--vp-c-warning-1)];
+}
+
+.vp-doc .custom-block.warning strong {
+  @apply text-[var(--vp-c-warning-1)];
+}
+
+.vp-doc .custom-block.info {
+  @apply border-l-4 border-l-[var(--vp-c-info-1)];
+}
+
+.vp-doc .custom-block.info strong {
+  @apply text-[var(--vp-c-info-1)];
+}
+
+.vp-doc .custom-block.danger {
+  @apply border-l-4 border-l-[var(--vp-c-danger-1)];
+}
+
+.vp-doc .custom-block.danger strong {
+  @apply text-[var(--vp-c-danger-1)];
+}
+
+.vp-doc .custom-block.details {
+  @apply border-l-4 border-l-[var(--vp-c-details-1)];
+}
+
+.vp-doc .custom-block.details strong {
+  @apply text-[var(--vp-c-details-1)];
+}
