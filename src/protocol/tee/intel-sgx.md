@@ -9,7 +9,7 @@ description:
 
 **Intel® Software Guard Extensions (Intel® SGX)** is the first-generation TEE
 technology that enables **Trusted Computing** and **Confidential Computing**. On
-the iExec platform, SGX is the **production-ready, widely-supported TEE
+the iExec platform, SGX is the **production-ready, widely supported TEE
 technology** that powers secure, privacy-preserving applications in the
 decentralized cloud.
 
@@ -21,28 +21,28 @@ can access. Neither the operating system nor any other software can see what's
 happening inside this protected area. Your code and data are completely private
 and secure.
 
-## SGX: The "Application-Level" Security
+## SGX: The "app-level" security
 
 **Intel SGX** is like having a **small, specialized safe** inside your office
 for specific valuable items. It protects individual applications or parts of
 applications.
 
-### Key Characteristics
+### Key characteristics
 
-- **Scope**: Protects specific parts of your application
+- **Scope**: Protects specific parts of your app
 - **Memory**: Limited secure memory (like a small safe)
-- **Code Changes**: Requires modifications to your application
+- **Code Changes**: Requires modifications to your app
 - **Use Case**: Perfect for focused, lightweight applications
 
 **Analogy**: SGX is like installing a small, specialized safe inside your office
 for specific valuable items.
 
-### Visual Representation
+### Visual representation
 
 ```mermaid
 graph TB
     OS[Operating System<br/>Can see everything]
-    App[Regular Application<br/>Visible & Vulnerable]
+    App[Regular App<br/>Visible & Vulnerable]
     Enclave[🔒 SGX Enclave<br/>Protected]
     Data[Sensitive Code & Data<br/>Encrypted]
     OS --> App
@@ -52,9 +52,9 @@ graph TB
     style Data fill:#ffffff,stroke:#00ff00,stroke-width:2px,color:#000000
 ```
 
-## SGX Technology Details
+## SGX technology details
 
-### How SGX Works
+### How SGX works
 
 1. **Enclave Creation**: SGX creates a secure memory region (enclave) that only
    the CPU can access
@@ -64,15 +64,15 @@ graph TB
 4. **Integrity Protection**: The enclave can prove it's running the correct,
    unmodified code
 
-### SGX Limitations
+### SGX limitations
 
 With native Intel® SGX technology, the OS is not a part of the Trusted
 Computing Base (TCB), hence system calls and kernel services are not available
 from an Intel® SGX enclave. This can be limiting as the application will not be
-able to use File System and sockets directly from the code running inside the
+able to use file system and sockets directly from the code running inside the
 enclave.
 
-### iExec's SGX Infrastructure
+### iExec's SGX infrastructure
 
 iExec provides a complete SGX ecosystem that includes:
 
@@ -90,25 +90,25 @@ To build Confidential Computing (TEE) applications with SGX, iExec uses the
 high-level **Scone framework** instead of requiring developers to manipulate the
 Intel® SGX SDK directly.
 
-#### Scone Framework Benefits
+#### Scone framework benefits
 
 At a high-level, Scone protects the confidentiality and integrity of the data
-and the code without needing to modify or recompile the application. The
+and the code without needing to modify or recompile the app. The
 [Scone](https://scontain.com/) framework resolves the limitations of native SGX
-and reduces the burden of porting the application to Intel® SGX.
+and reduces the burden of porting the app to Intel® SGX.
 
-#### How Scone Works
+#### How Scone works
 
 More precisely, Scone provides a C standard library interface to container
 processes. System calls are executed outside of the enclave, but they are
-shielded by transparently encrypting/decrypting application data. Files stored
-outside of the enclave are therefore encrypted, and network communication is
-protected by Transport Layer Security (TLS).
+shielded by transparently encrypting/decrypting app data. Files stored outside
+of the enclave are therefore encrypted, and network communication is protected
+by Transport Layer Security (TLS).
 
 For a deeper understanding, you can have a look to the official
 [Scone documentation](https://sconedocs.github.io/).
 
-### iExec SGX Workflow
+### iExec SGX workflow
 
 ```mermaid
 graph TD
@@ -131,7 +131,7 @@ graph TD
     style Execute fill:#ffffff,stroke:#0000ff,stroke-width:2px,color:#000000
 ```
 
-## What's Next?
+## What's next?
 
 **Learn about the next generation**:
 
@@ -143,6 +143,6 @@ graph TD
 **Ready to build with SGX?** Check out the practical guides:
 
 - **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Create your first SGX
-  application
+  app
 - **[Advanced SGX Development](/guides/build-iapp/advanced/build-your-first-sgx-iapp)** -
   Deep dive into SGX development

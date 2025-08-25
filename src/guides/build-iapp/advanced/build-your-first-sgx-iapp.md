@@ -1,14 +1,21 @@
 ---
 title: Build Your First Application with Scone Framework
 description:
-  Learn how to build and run Confidential Computing applications with the Scone
-  TEE framework for secure, privacy-preserving computation
+  Learn how to build and run Confidential Computing apps with the Scone TEE
+  framework for secure, privacy-preserving computation
 ---
 
-# Build your first application with Scone framework
+# Build your first app with Scone framework
 
 In this tutorial, you will learn how to build and run a Confidential Computing
-application with the Scone TEE framework.
+app with the Scone TEE framework.
+
+::: warning
+
+Before going any further, make sure you managed to
+[Build your first app](./build-your-first-iapp).
+
+:::
 
 ::: tip Prerequisites:
 
@@ -32,7 +39,15 @@ Once your account is activated, you need to
 docker login registry.scontain.com
 ```
 
-## Prepare your application
+## Prepare your app
+
+Before going further, your `<docker-hub-user>/hello-world:1.0.0` image built
+previously is required.
+
+If you missed that part, please go back to
+[Build your first app](./build-your-first-iapp).
+
+For this tutorial, you can reuse the same directory tree or create a new one.
 
 To create a new directory tree, execute the following commands in
 `~/iexec-projects/`.
@@ -244,8 +259,8 @@ docker run \
 
 ## Build the TEE docker image
 
-Before wrapping your iExec confidential application with Scone, you need to
-generate a custom signing key. This key is used for the sconification process.
+Before wrapping your iExec confidential app with Scone, you need to generate a
+custom signing key. The sconification process uses this key.
 
 Generate your enclave signing key with:
 
@@ -256,7 +271,7 @@ openssl genrsa -3 -out enclave-key.pem 3072
 This will create an `enclave-key.pem` file in your current directory. You will
 use this file in the sconify Docker command to sign your TEE image.
 
-We will use the following script to wrap the sconification process, copy the
+Use the following script to wrap the sconification process, copy the
 `sconify.sh` script in the current directory:
 
 ::: code-group
@@ -286,7 +301,7 @@ docker run -it --rm \
             --verbose \
             && echo -e "\n------------------\n" \
             && echo "successfully built TEE docker image => ${IMG_TO}" \
-            && echo "application mrenclave.fingerprint is $(docker run --rm -e SCONE_HASH=1 ${IMG_TO})"
+            && echo "app mrenclave.fingerprint is $(docker run --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
 
 ```bash [Python]
@@ -314,12 +329,12 @@ docker run -it --rm \
             --verbose \
             && echo -e "\n------------------\n" \
             && echo "successfully built TEE docker image => ${IMG_TO}" \
-            && echo "application mrenclave.fingerprint is $(docker run --rm -e SCONE_HASH=1 ${IMG_TO})"
+            && echo "app mrenclave.fingerprint is $(docker run --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
 
 :::
 
-Run the `sconify.sh` script to build the Scone TEE application:
+Run the `sconify.sh` script to build the Scone TEE app:
 
 ```bash
 ./sconify.sh
@@ -332,15 +347,19 @@ docker login
 docker push <docker-hub-user>/tee-scone-hello-world:1.0.0
 ```
 
-Congratulations, you just built your Scone TEE application.
+Congratulations, you just built your Scone TEE app.
 
-## Deploy the iApp
+## Test your iApp on iExec
 
-TEE applications require some additional information to be filled in during
-deployment.
+At this stage, your app is ready to be tested on iExec. The process is similar
+to testing any type of app on the platform, with these minor exceptions:
+
+### Deploy the TEE iApp on iExec
+
+TEE apps require some additional information to be filled in during deployment.
 
 ```bash
-# prepare the TEE application template
+# prepare the TEE app template
 iexec app init --tee
 ```
 
@@ -351,7 +370,7 @@ Edit `iexec.json` and fill in the standard keys and the `mrenclave` object:
   ...
   "app": {
     "owner": "<your-wallet-address>", // starts with 0x
-    "name": "tee-scone-hello-world", // application name
+    "name": "tee-scone-hello-world", // app name
     "type": "DOCKER",
     "multiaddr": "docker.io/<docker-hub-user>/tee-scone-hello-world:1.0.0", // app image
     "checksum": "<checksum>", // starts with 0x, update it with your own image digest
@@ -547,10 +566,10 @@ infrastructure.
 
 ## Next step?
 
-In this tutorial, you learned how to leverage your application with the power of
-Trusted Execution Environments using iExec. But according to your use case, you
-may need to use some confidential data to get the full potential of the
-**Confidential Computing** paradigm. Check out next chapters to see how:
+In this tutorial, you learned how to leverage your app with the power of Trusted
+Execution Environments using iExec. But according to your use case, you may need
+to use some confidential data to get the full potential of the **Confidential
+Computing** paradigm. Check out next chapters to see how:
 
 - [Access confidential assets from your iApp](access-confidential-assets.md)
 - [Protect the result](/guides/build-iapp/advanced/protect-the-result.md)
