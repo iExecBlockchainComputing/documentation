@@ -579,6 +579,10 @@ export function getSidebar() {
               },
             ],
           },
+          {
+            text: '🤖 AI Framework Support',
+            link: '/protocol/ai',
+          },
         ],
       },
     ],
