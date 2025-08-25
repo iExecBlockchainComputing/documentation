@@ -7,12 +7,12 @@ description:
 
 # Protect the result
 
-In previous tutorials, we saw how to build
+Previous tutorials showed how to build
 [Confidential Computing applications](/protocol/tee/intel-sgx) that run securely
 inside enclaves and combine them with confidential assets to get the most out of
-confidential computing advantages. In this chapter, we will push things further
-to protect the workflow in an end to end mode. That means the next step would be
-encrypting results.
+confidential computing advantages. This chapter pushes things further to protect
+the workflow in an end to end mode. That means the next step would be encrypting
+results.
 
 ::: warning
 

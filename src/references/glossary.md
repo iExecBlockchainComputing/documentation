@@ -7,12 +7,12 @@ description: iExec terms glossary
 
 ## A
 
-### Application
+### App
 
-A computer program designed to automate processes. An application is generally
-under the control of different communities such as product managers, project
-owners, or data center administrators. An application can also be decentralized
-thanks to the blockchain: see [DApp](#decentralized-application-dapp).
+A computer program designed to automate processes. An app is generally under the
+control of different communities such as product managers, project owners, or
+data center administrators. An app can also be decentralized thanks to the
+blockchain: see [DApp](#decentralized-application-dapp).
 
 ### Attestation
 
@@ -62,21 +62,20 @@ for more information
 
 ## D
 
-### Decentralized Application (DApp)
+### Decentralized App (DApp)
 
-An application built on a decentralized network that combines a smart contract
-and a frontend user interface. A DApp has its backend code running on a
-decentralized peer-to-peer network. Contrast this with a traditional application
-where the backend code is running in fully controlled environments.
+An app built on a decentralized network that combines a smart contract and a
+frontend user interface. A DApp has its backend code running on a decentralized
+peer-to-peer network. Contrast this with a traditional app where the backend
+code is running in fully controlled environments.
 
-See [Application](#application) for more information.
+See [App](#app) for more information.
 
 ### DApp Provider
 
-Writes, configures, and deploys applications on the iExec platform. Those
-applications can be DApps or legacy (traditional) applications. Providers can
-make their applications available for free or ask for a fixed fee for each use
-of their application.
+Writes, configures, and deploys apps on the iExec platform. Those apps can be
+DApps or legacy (traditional) apps. Providers can make their apps available for
+free or ask for a fixed fee for each use of their app.
 
 ### Dataset
 
@@ -101,7 +100,7 @@ marketplace and recorded in the PoCo smart contract.
 ### Enclave
 
 In confidential computing jargon, an "enclave" is the special memory zone
-protected by the CPU. For simplicity's sake, we can refer to private regions of
+protected by the CPU. For simplicity's sake, you can refer to private regions of
 memory defined by Intel® SGX application as "enclaves".
 
 **Key Points**:
@@ -170,7 +169,7 @@ where sensitive code and data can run safely.
 
 **Characteristics**:
 
-- **Scope**: Application-level protection
+- **Scope**: App-level protection
 - **Memory**: Limited secure memory (like a small safe)
 - **Code Changes**: Requires significant modifications
 - **Best For**: Focused, lightweight applications
@@ -216,8 +215,8 @@ A decentralized method that enables to generate a new token without the
 involvement of a central authority. It can either be a non-fungible token or a
 crypto coin.
 
-Please note that minting an NFT (non-fungible token) is a different procedure.
-To mint an NFT, users usually sign up with a cryptocurrecny wallet on an NFT
+Please note that minting a Non-Fungible Token (NFT) is a different procedure. To
+mint an NFT, users usually sign up with a cryptocurrecny wallet on an NFT
 marketplace (or other platform). Then that create an NFT by uploading a file and
 paying for the creation. Once the transaction is verified, a new NFT is minted.
 This process to add NFTs to a blockchain allows creators to sell their photos,
@@ -251,8 +250,8 @@ See [Deal](#deal) and [PoCo](#poco-proof-of-contribution) for more information.
 A term of affection used to designate the iExec community. Oilers are said to be
 holding "digital oil". This term could also be in reference to the iExec
 whitepaper that states: " iExec introduces a new paradigm in cloud computing: it
-will allow the trading of computing resources as commodities; in the same way we
-may observe with resources such as oil, gold or rice."
+will allow the trading of computing resources as commodities; in the same way
+markets may observe with resources such as oil, gold or rice."
 
 ### Oracle
 
@@ -358,7 +357,7 @@ contracts could do".
 
 ### SMS (Secret Management Service)
 
-An encrypted database where users' secrets are stored.
+An encrypted database that stores users' secrets.
 
 ### sRLC
 
@@ -430,8 +429,8 @@ special security measures that keep its contents completely private and secure.
 Explain the purpose and technology behind a project. Producing a whitepaper is a
 key step for a crypto startup to help investors understand technical information
 about its concept; whitepaper usually include a roadmap for how the project
-plans to grow and succeed. iExec’s whitepaper is available
-[here](https://www.iex.ec/whitepaper)
+plans to grow and succeed. iExec's whitepaper is available at
+[iEx.ec/whitepaper](https://www.iex.ec/whitepaper)
 
 ### Workers
 

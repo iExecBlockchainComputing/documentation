@@ -11,7 +11,7 @@ problem differently.** On the iExec platform, SGX is the **production-ready,
 widely-supported technology**, while TDX is the **experimental, next-generation
 technology** for advanced use cases.
 
-## Quick Overview
+## Quick overview
 
 | Aspect                  | Intel SGX                       | Intel TDX                 |
 | ----------------------- | ------------------------------- | ------------------------- |
@@ -24,7 +24,7 @@ technology** for advanced use cases.
 | **iExec Use Cases**     | Lightweight applications        | Complex workloads         |
 | **Platform Support**    | Full iExec ecosystem            | Experimental workerpools  |
 
-## Key Differences
+## Key differences
 
 ### 🎯 **Protection Scope**
 
@@ -53,7 +53,7 @@ technology** for advanced use cases.
 
 ## When to Use Each Technology
 
-### Use SGX When
+### Use SGX when
 
 - ✅ Building production applications
 - ✅ Need proven, stable technology
@@ -61,7 +61,7 @@ technology** for advanced use cases.
 - ✅ Require maximum worker availability
 - ✅ Need focused security for specific application parts
 
-### Use TDX When
+### Use TDX when
 
 - 🔬 Experimenting with next-generation technology
 - 💾 Working with memory-intensive applications
