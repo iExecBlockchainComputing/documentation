@@ -11,7 +11,7 @@ description:
 
 <Banner>
   <h2 class="text-2xl font-bold mt-0 border-none!">Congratulations!</h2>
-  <p class="m-0!">You've successfully completed the Hello World journey and learned how to protect data, deploy iApp, and manage data access. Now it's time to claim your rewards! 🏆</p>
+  <p>You've successfully completed the Hello World journey and learned how to protect data, deploy iApp, and manage data access. Now it's time to claim your rewards! 🏆</p>
 </Banner>
 
 ## 🏁 Any Questions?

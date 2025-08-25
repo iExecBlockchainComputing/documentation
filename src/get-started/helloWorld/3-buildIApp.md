@@ -11,7 +11,7 @@ description:
 
 <Banner>
   <h2 class="text-2xl font-bold mt-0 border-none!">Time to build!</h2>
-  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="/references/iapp-generator" target="_blank" class="!text-gray-900 !font-bold underline hover:!text-black">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApp with just a few commands.</p>
+  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="/references/iapp-generator" target="_blank">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApp with just a few commands.</p>
 </Banner>
 
 If you wanna explore and deep dive in the CLI. You can check the
