@@ -12,8 +12,8 @@ Protected Data refers to any data encrypted using the **iExec Data Protector
 tool**. This Turnkey Privacy encryption solution enables users to protect,
 manage and monetize their data within the Web3 ecosystem effortlessly.
 
-<Container variant="purple">
-  <p class="m-0!">Unlike standard datasets, Protected Data exposes its <span class="text-fuchsia-700 font-semibold">data types on-chain</span> (indicating types like email addresses or photos). This lets anyone <span class="text-fuchsia-700 font-semibold">identify entries with matching types</span>.</p>
+<Container variant="info">
+  <p class="m-0!">Unlike standard datasets, Protected Data exposes its <strong>data types on-chain</strong> (indicating types like email addresses or photos). This lets anyone <strong>identify entries with matching types</strong>.</p>
 </Container>
 
 ## Key Concepts
@@ -185,7 +185,7 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
 </div>
 
 <Container variant="green">
-  <p class="m-0!">Ready to protect your data? Start with our <span class="text-green-700 font-semibold">DataProtector guides</span>. Learn how to secure sensitive information while unlocking its value.</p>
+  <p class="m-0!">Ready to protect your data? Start with our <strong>DataProtector guides</strong>. Learn how to secure sensitive information while unlocking its value.</p>
 </Container>
 
 ## Next Steps
@@ -194,12 +194,12 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
   <div class="flex flex-col gap-4">
     <div class="flex items-start gap-3">
       <div>
-        <strong>Learn More:</strong> <a href="/guides/manage-data/manage-access" class="text-fuchsia-700 hover:text-fuchsia-600">Complete DataProtector Documentation</a>
+        <strong>Learn More:</strong> <a href="/guides/manage-data/manage-access">Complete DataProtector Documentation</a>
       </div>
     </div>
     <div class="flex items-start gap-3">
       <div>
-        <strong>Getting Started:</strong> <a href="/references/dataProtector/getting-started" class="text-fuchsia-700 hover:text-fuchsia-600">DataProtector Quick Start Guide</a>
+        <strong>Getting Started:</strong> <a href="/references/dataProtector/getting-started">DataProtector Quick Start Guide</a>
       </div>
     </div>
   </div>

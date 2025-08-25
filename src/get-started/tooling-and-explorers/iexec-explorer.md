@@ -62,7 +62,7 @@ Explorer displays data for the network you choose.
 
 </CardGrid>
 
-<Container variant="purple">
+<Container variant="info">
   <h4 class="!mt-0 !mb-2">🏗️ Understanding iExec Architecture</h4>
   <p class="!mb-2"><strong>Deals</strong> are the fundamental orchestration unit - each deal coordinates a set of different stakeholders that share resources and execution parameters to execute a confidential computation task.</p>
   <p class="!mb-0">Each <strong>Deal</strong> brings together:</p>

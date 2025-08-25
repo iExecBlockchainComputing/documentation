@@ -23,8 +23,8 @@ const { protectedDataAddress } = useWalletConnection();
   <p>Alice will learn how to grant access to her protected data and manage who can use it.</p>
 </Banner>
 
-<Container variant="purple">
-  <p class="m-0!">When you protect your data, you can authorize specific <span class="text-fuchsia-700 font-semibold">users</span> and <span class="text-fuchsia-700 font-semibold">applications</span> to access it. This means an authorized user will be able to use an authorized iApp to compute your protected data.</p>
+<Container variant="info">
+  <p class="m-0!">When you protect your data, you can authorize specific <strong>users</strong> and <strong>applications</strong> to access it. This means an authorized user will be able to use an authorized iApp to compute your protected data.</p>
 </Container>
 
 ## 🔐 The Authorization Flow
@@ -55,8 +55,8 @@ Here is a simple diagram to explain the process:
 
 ## 🔓 Grant the iApp Access to your Data
 
-<Container variant="purple">
-  <p class="m-0!">Remember the <span class="text-fuchsia-700 font-semibold">iApp address</span> you saved from the previous chapter? You'll need it now to grant access to your protected data.</p>
+<Container variant="info">
+  <p class="m-0!">Remember the <strong>iApp address</strong> you saved from the previous chapter? You'll need it now to grant access to your protected data.</p>
 </Container>
 
 <GrantAccess />
@@ -80,7 +80,7 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 - 💻 **authorizedApp**: The iApp address you want to authorize
 - 👤 **authorizedUser**: User's wallet address (0x... means all users)
 
-<Container variant="purple">
+<Container variant="info">
   <p class="m-0!">As we don't have the Bob's wallet address, we'll use the zero address to grant access to all users.</p>
 </Container>
 

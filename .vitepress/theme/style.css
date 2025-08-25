@@ -92,37 +92,6 @@
   --vp-c-default-2: var(--vp-c-gray-2);
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
-
-  --vp-c-brand-1: #917600;
-  --vp-c-brand-2: #fcd15a;
-  --vp-c-brand-3: #917600;
-  --vp-c-brand-soft: var(--vp-c-indigo-soft);
-
-  --vp-c-tip-1: var(--vp-c-brand-1);
-  --vp-c-tip-2: var(--vp-c-brand-2);
-  --vp-c-tip-3: var(--vp-c-brand-3);
-  --vp-c-tip-soft: var(--vp-c-brand-soft);
-
-  --vp-c-warning-1: var(--vp-c-yellow-1);
-  --vp-c-warning-2: var(--vp-c-yellow-2);
-  --vp-c-warning-3: var(--vp-c-yellow-3);
-  --vp-c-warning-soft: var(--vp-c-yellow-soft);
-
-  --vp-c-important-1: var(--vp-c-purple-1);
-  --vp-c-important-2: var(--vp-c-purple-2);
-  --vp-c-important-3: var(--vp-c-purple-3);
-  --vp-c-important-soft: var(--vp-c-purple-soft);
-
-  --vp-c-danger-1: var(--vp-c-red-1);
-  --vp-c-danger-2: var(--vp-c-red-2);
-  --vp-c-danger-3: var(--vp-c-red-3);
-  --vp-c-danger-soft: var(--vp-c-red-soft);
-}
-
-.dark {
-  --vp-c-brand-1: #fcd15a;
-  --vp-c-brand-2: #917600;
-  --vp-c-brand-3: #fcd15a;
 }
 
 /**
@@ -178,13 +147,10 @@
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
 
-  --vp-c-brand-1: var(--vp-c-indigo-1);
+  --vp-c-brand-1: #183ee9;
   --vp-c-brand-2: var(--vp-c-indigo-2);
   --vp-c-brand-3: var(--vp-c-indigo-3);
-  --vp-c-brand-soft: var(--vp-c-indigo-soft);
-
-  /* DEPRECATED: Use `--vp-c-brand-1` instead. */
-  --vp-c-brand: var(--vp-c-brand-1);
+  --vp-c-brand-soft: #e3e8ff;
 
   --vp-c-tip-1: var(--vp-c-brand-1);
   --vp-c-tip-2: var(--vp-c-brand-2);
@@ -196,30 +162,44 @@
   --vp-c-note-3: var(--vp-c-brand-3);
   --vp-c-note-soft: var(--vp-c-brand-soft);
 
-  --vp-c-success-1: var(--vp-c-green-1);
+  --vp-c-success-1: #00704b;
   --vp-c-success-2: var(--vp-c-green-2);
   --vp-c-success-3: var(--vp-c-green-3);
-  --vp-c-success-soft: var(--vp-c-green-soft);
+  --vp-c-success-soft: #eafcf6;
 
   --vp-c-important-1: var(--vp-c-purple-1);
   --vp-c-important-2: var(--vp-c-purple-2);
   --vp-c-important-3: var(--vp-c-purple-3);
   --vp-c-important-soft: var(--vp-c-purple-soft);
 
-  --vp-c-warning-1: var(--vp-c-yellow-1);
+  --vp-c-warning-1: #da7b0b;
   --vp-c-warning-2: var(--vp-c-yellow-2);
   --vp-c-warning-3: var(--vp-c-yellow-3);
-  --vp-c-warning-soft: var(--vp-c-yellow-soft);
+  --vp-c-warning-soft: #fdefde;
 
-  --vp-c-danger-1: var(--vp-c-red-1);
+  --vp-c-danger-1: #bf3131;
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
-  --vp-c-danger-soft: var(--vp-c-red-soft);
+  --vp-c-danger-soft: #f3d7d7;
 
   --vp-c-caution-1: var(--vp-c-red-1);
   --vp-c-caution-2: var(--vp-c-red-2);
   --vp-c-caution-3: var(--vp-c-red-3);
   --vp-c-caution-soft: var(--vp-c-red-soft);
+}
+
+.dark {
+  --vp-c-brand-1: #a2b3ff;
+  --vp-c-brand-soft: #1d2032;
+
+  --vp-c-success-1: #74ecc5;
+  --vp-c-success-soft: #243030;
+
+  --vp-c-danger-1: #bf3131;
+  --vp-c-danger-soft: #2b1d21;
+
+  --vp-c-warning-1: #f49425;
+  --vp-c-warning-soft: #312720;
 }
 
 /**

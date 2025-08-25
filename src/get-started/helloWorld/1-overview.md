@@ -64,25 +64,23 @@ import Container from '../../components/Container.vue'
   </div>
 </div>
 
-<Container variant="purple">
-  <p class="m-0!">This is where <span class="text-fuchsia-700 font-semibold">iExec</span> comes in! We provide tools to easily add <span class="text-fuchsia-700 font-semibold">privacy</span> and <span class="text-fuchsia-700 font-semibold">monetization</span> features into your iApp.</p>
+<Container variant="info">
+  <p class="m-0!">This is where <strong>iExec</strong> comes in! We provide tools to easily add <strong>privacy</strong> and <strong>monetization</strong> features into your iApp.</p>
 </Container>
 
 ## 👷 How do we Solve it?
 
 Unlike traditional tools, iExec protects your data throughout its entire
 lifecycle - during storage, transfer, and even while **being processed by
-applications.**
+applications.** This is made possible thanks to
+<strong><a target="_blank" href="https://protocol.docs.iex.ec/for-developers/confidential-computing/intel-sgx-technology">Trusted
+Execution Environment (TEE)</a></strong> and
+<strong><a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">Confidential
+Computing</a></strong> technologies.
 
-This is made possible thanks to
-<span class="text-fuchsia-700 font-semibold"><a target="_blank" href="https://protocol.docs.iex.ec/for-developers/confidential-computing/intel-sgx-technology">Trusted
-Execution Environment (TEE)</a></span> and
-<span class="text-fuchsia-700 font-semibold"><a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">Confidential
-Computing</a></span> technologies.
-
-<Container variant="purple">
-  <p class="m-0!">Our technology allows users to control the <span class="text-fuchsia-700 font-semibold">ownership</span>,
-  <span class="text-fuchsia-700 font-semibold">confidentiality</span>, and <span class="text-fuchsia-700 font-semibold">monetization</span> of their data and digital assets within the <span class="text-fuchsia-700 font-semibold">Web3</span> ecosystem.</p>
+<Container variant="info">
+  <p class="m-0!">Our technology allows users to control the <strong>ownership</strong>,
+  <strong>confidentiality</strong>, and <strong>monetization</strong> of their data and digital assets within the <strong>Web3</strong> ecosystem.</p>
 </Container>
 
 ## 🔒 The Three Key Elements?
@@ -108,8 +106,8 @@ iExec combines three fundamental elements that work together seamlessly:
 - Regain ownership of your data
 - Provides transparent governance rules for data access
 
-<Container variant="purple">
-  <p class="m-0!">By merging <span class="text-fuchsia-700 font-semibold">blockchain technology</span> with <span class="text-fuchsia-700 font-semibold">confidential computing</span>, we've pioneered <span class="text-fuchsia-700 font-semibold"><a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">DeCC</a></span> (Decentralized Confidential Computing) to take <span class="text-fuchsia-700 font-semibold">privacy</span> and <span class="text-fuchsia-700 font-semibold">security</span> to the next level in <span class="text-fuchsia-700 font-semibold">Web3</span> ecosystems.</p>
+<Container variant="info">
+  <p class="m-0!">By merging <strong>blockchain technology</strong> with <strong>confidential computing</strong>, we've pioneered <strong><a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">DeCC</a></strong> (Decentralized Confidential Computing) to take <strong>privacy</strong> and <strong>security</strong> to the next level in <strong>Web3</strong> ecosystems.</p>
 </Container>
 
 ### 🧸 DeCC Explained Like You're 5

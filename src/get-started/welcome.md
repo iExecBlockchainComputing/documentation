@@ -25,8 +25,8 @@ deserves the power** to build groundbreaking applications while **keeping user
 data completely secure**. Your users deserve **absolute confidence** that their
 privacy is protected.
 
-<Container variant="purple">
-  <p class="!m-0">iExec solves this with <span class="text-fuchsia-700 font-semibold">Turnkey Privacy</span> - a toolkit that simplifies data protection, management, and secure computation, even in untrusted environments. We believe privacy should be <span class="text-fuchsia-700 font-semibold">plug-and-play simple</span>, not an afterthought.</p>
+<Container variant="info">
+  <p class="!m-0">iExec solves this with <strong>Turnkey Privacy</strong> - a toolkit that simplifies data protection, management, and secure computation, even in untrusted environments. We believe privacy should be <strong>plug-and-play simple</strong>, not an afterthought.</p>
 </Container>
 
 ## 🛠️ How we Make it Happen
@@ -161,7 +161,7 @@ Confidential Computing made easy
 </div>
 
 <Container variant="green">
-<p class="m-0!">The next chapters guide you through our <span class="text-green-700 font-semibold">Hello World journey</span>. This 30-minute start teaches you everything about iExec. You'll learn <span class="text-green-700 font-semibold">protecting sensitive data</span> and <span class="text-green-700 font-semibold">building and deploying confidential apps</span>.</p>
+<p class="m-0!">The next chapters guide you through our <strong>Hello World journey</strong>. This 30-minute start teaches you everything about iExec. You'll learn <strong>protecting sensitive data</strong> and <strong>building and deploying confidential apps</strong>.</p>
 </Container>
 
 ## 🚀 Start Building

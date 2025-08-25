@@ -20,7 +20,7 @@ import Container from '../../components/Container.vue'
   <p>Let's follow Alice as she learns how to protect her data using DataProtector on Bob's iApp, our developer tool for protecting data creation and management.</p>
 </Banner>
 
-<Container variant="purple">
+<Container variant="info">
   <p class="m-0!"><strong>Protected data</strong> is encrypted data that remains confidential throughout its entire lifecycle - during storage, transfer and processing.</p>
 </Container>
 
@@ -53,7 +53,7 @@ their DApp with these key features:
 
 ## 🧩 What Happened Under the Hood
 
-<Container variant="purple">
+<Container variant="info">
   <p class="m-0!">You won't believe how easy it is to protect your data with DataProtector. Just a few lines of code, and you're done!</p>
 </Container>
 
@@ -171,7 +171,7 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
 });
 ```
 
-<Container variant="purple">
+<Container variant="info">
   <p class="m-0!">Check out our <a target="_blank" href="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main?file=%2Fsrc%2Fmain.tsx%3A18%2C7">code sandbox</a> for ready-to-use examples!</p>
 </Container>
 

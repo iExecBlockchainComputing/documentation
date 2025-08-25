@@ -8,12 +8,12 @@
 import { computed } from 'vue';
 
 interface Props {
-  variant?: 'purple' | 'green' | 'amber' | 'blue' | 'red';
+  variant?: 'success' | 'info' | 'danger';
   spacing?: 'default' | 'top' | 'bottom' | 'none';
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  variant: 'purple',
+  variant: 'info',
   spacing: 'default',
 });
 
@@ -21,12 +21,11 @@ const containerClasses = computed(() => {
   const baseClasses = 'rounded-[6px] p-6 border-l-4';
 
   const variantClasses = {
-    purple:
-      'bg-gradient-to-r from-purple-400/10 to-purple-400/5 border-fuchsia-700',
-    green: 'bg-gradient-to-r from-green-400/10 to-green-400/5 border-green-600',
+    success:
+      'bg-gradient-to-r from-green-400/10 to-green-400/5 border-green-600',
     amber: 'bg-gradient-to-r from-amber-400/10 to-amber-400/5 border-amber-600',
-    blue: 'bg-gradient-to-r from-blue-400/10 to-blue-400/5 border-blue-600',
-    red: 'bg-gradient-to-r from-red-400/10 to-red-400/5 border-red-600',
+    info: 'bg-[var(--vp-c-brand-soft)] border-[var(--vp-c-brand-1)] [&_strong]:text-[var(--vp-c-brand-1)]',
+    danger: 'bg-gradient-to-r from-red-400/10 to-red-400/5 border-red-600',
   };
 
   const spacingClasses = {

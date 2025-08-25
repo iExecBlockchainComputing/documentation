@@ -107,7 +107,7 @@ deployed confidential iApp with detailed statistics and user insights.
 
 ### My Confidential iApp Overview
 
-<Container variant="blue">
+<Container variant="info">
   <h4 class="!mt-0 !mb-2">📱 iApp Portfolio Metrics</h4>
   <ul class="!mb-0">
     <li><strong>Deployed Applications</strong>: Complete list of all your confidential iApp currently deployed</li>
