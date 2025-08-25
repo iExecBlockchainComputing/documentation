@@ -31,8 +31,8 @@ description:
 <Container variant="success">
 
 Need help setting up or got some questions? Join our
-<strong><a target="_blank" href="https://discord.gg/6yrgRH6ATD">Discord
-Community</a></strong> for support!
+**<a target="_blank" href="https://discord.gg/6yrgRH6ATD">Discord
+Community</a>** for support!
 
 </Container>
 

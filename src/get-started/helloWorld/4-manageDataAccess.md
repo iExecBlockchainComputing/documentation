@@ -25,9 +25,9 @@ const { protectedDataAddress } = useWalletConnection();
 
 ::: tip <i></i>
 
-When you protect your data, you can authorize specific <strong>users</strong>
-and <strong>applications</strong> to access it. This means an authorized user
-will be able to use an authorized iApp to compute your protected data.
+When you protect your data, you can authorize specific **users** and
+**applications** to access it. This means an authorized user will be able to use
+an authorized iApp to compute your protected data.
 
 :::
 
@@ -61,8 +61,8 @@ Here is a simple diagram to explain the process:
 
 ::: tip <i></i>
 
-Remember the <strong>iApp address</strong> you saved from the previous chapter?
-You'll need it now to grant access to your protected data.
+Remember the **iApp address** you saved from the previous chapter? You'll need
+it now to grant access to your protected data.
 
 :::
 

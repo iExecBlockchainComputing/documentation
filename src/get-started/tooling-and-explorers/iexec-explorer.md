@@ -64,14 +64,17 @@ Explorer displays data for the network you choose.
 
 ::: tip 🏗️ Understanding iExec Architecture
 
-<strong>Deals</strong> are the fundamental orchestration unit - each deal coordinates a set of different stakeholders that share resources and execution parameters to execute a confidential computation task.
+**Deals** are the fundamental orchestration unit - each deal coordinates a set
+of different stakeholders that share resources and execution parameters to
+execute a confidential computation task.
 
-Each <strong>Deal</strong> brings together:
+Each **Deal** brings together:
 
-- <strong>Requester</strong>: The entity requesting the computation
-- <strong>iApp</strong>: The confidential computation logic
-- <strong>Dataset</strong>: The data that will be processed by the iApp
-- <strong>Workerpool</strong>: The decentralized network of workers providing computation power
+- **Requester**: The entity requesting the computation
+- **iApp**: The confidential computation logic
+- **Dataset**: The data that will be processed by the iApp
+- **Workerpool**: The decentralized network of workers providing computation
+  power
 
 :::
 

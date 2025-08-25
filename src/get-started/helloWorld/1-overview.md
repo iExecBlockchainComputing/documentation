@@ -22,7 +22,9 @@ import Container from '../../components/Container.vue'
 
 ## 👨‍💻 Building Privacy-preserving iApp with iExec
 
-<p>Imagine you're building a decentralized application (iApp) that needs to <strong> handle sensitive user data</strong>, for example:</p>
+Imagine you're building a decentralized application (iApp) that needs to
+**handle sensitive user data**, for example:
+
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-2.5">
     <div class="flex items-center gap-2 text-base">
@@ -66,9 +68,8 @@ import Container from '../../components/Container.vue'
 
 ::: tip <i></i>
 
-This is where <strong>iExec</strong> comes in! We provide tools to easily add
-<strong>privacy</strong> and <strong>monetization</strong> features into your
-iApp.
+This is where **iExec** comes in! We provide tools to easily add **privacy** and
+**monetization** features into your iApp.
 
 :::
 
@@ -84,9 +85,9 @@ Computing</a></strong> technologies.
 
 ::: tip <i></i>
 
-Our technology allows users to control the <strong>ownership</strong>,
-<strong>confidentiality</strong>, and <strong>monetization</strong> of their
-data and digital assets within the <strong>Web3</strong> ecosystem.
+Our technology allows users to control the **ownership**, **confidentiality**,
+and **monetization** of their data and digital assets within the **Web3**
+ecosystem.
 
 :::
 
@@ -115,11 +116,11 @@ iExec combines three fundamental elements that work together seamlessly:
 
 ::: tip <i></i>
 
-By merging <strong>blockchain technology</strong> with <strong>confidential
-computing</strong>, we've pioneered
-<strong><a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">DeCC</a></strong>
-(Decentralized Confidential Computing) to take <strong>privacy</strong> and
-<strong>security</strong> to the next level in <strong>Web3</strong> ecosystems.
+By merging **blockchain technology** with **confidential computing**, we've
+pioneered
+**<a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">DeCC</a>**
+(Decentralized Confidential Computing) to take **privacy** and **security** to
+the next level in **Web3** ecosystems.
 
 :::
 

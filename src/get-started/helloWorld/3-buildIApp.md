@@ -202,8 +202,8 @@ You will be prompted with the following message:
 
 ::: tip <i></i>
 
-We recommend selecting <strong>"Hello World"</strong> to quickly discover how
-iApp works! use <strong>advanced</strong> only if you are familiar with iExec.
+We recommend selecting **"Hello World"** to quickly discover how iApp works! use
+**advanced** only if you are familiar with iExec.
 
 :::
 
@@ -387,8 +387,8 @@ Once you have your token, you can deploy your iApp.
 
 ::: tip <i></i>
 
-📝 Make sure to save your <strong>iApp address</strong> after deployment -
-you'll need it later!
+📝 Make sure to save your **iApp address** after deployment - you'll need it
+later!
 
 You can find your iApp address in the <code>iexec-app.json</code> file in your
 project folder.

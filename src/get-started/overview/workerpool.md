@@ -12,9 +12,9 @@ secure environments on the iExec network.
 
 ::: tip <i></i>
 
-Think of a workerpool as a <strong>computing cluster</strong> where your iApp
-runs. Each workerpool consists of multiple workers (machines) coordinated by a
-manager who ensures tasks are executed efficiently and securely.
+Think of a workerpool as a **computing cluster** where your iApp runs. Each
+workerpool consists of multiple workers (machines) coordinated by a manager who
+ensures tasks are executed efficiently and securely.
 
 :::
 
@@ -142,8 +142,8 @@ manager who ensures tasks are executed efficiently and securely.
 
 <Container variant="success">
 
-Want to <strong>use workerpool</strong>? Start building iApp and the protocol
-will handle workerpool selection automatically.
+Want to **use workerpool**? Start building iApp and the protocol will handle
+workerpool selection automatically.
 
 </Container>
 

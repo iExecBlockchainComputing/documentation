@@ -27,10 +27,9 @@ privacy is protected.
 
 ::: tip <i></i>
 
-iExec solves this with <strong>Turnkey Privacy</strong> - a toolkit that
-simplifies data protection, management, and secure computation, even in
-untrusted environments. We believe privacy should be <strong>plug-and-play
-simple</strong>, not an afterthought.
+iExec solves this with **Turnkey Privacy** - a toolkit that simplifies data
+protection, management, and secure computation, even in untrusted environments.
+We believe privacy should be **plug-and-play simple**, not an afterthought.
 
 :::
 
@@ -168,9 +167,8 @@ Confidential Computing made easy
 <Container variant="success">
 
 The next chapters guide you through our **Hello World journey**. This 30-minute
-start teaches you everything about iExec. You'll learn <strong>protecting
-sensitive data</strong> and <strong>building and deploying confidential
-apps</strong>.
+start teaches you everything about iExec. You'll learn **protecting sensitive
+data** and **building and deploying confidential apps**.
 
 </Container>
 
@@ -183,19 +181,19 @@ Ready to build privacy-first applications? Choose your path:
     <div class="flex items-start gap-3">
       <span class="text-xl">⚡</span>
       <div>
-        <strong>Quick Start:</strong> Follow our <a href="/get-started/helloWorld" class="text-fuchsia-700 hover:text-fuchsia-600">Hello World guide</a> to build your first confidential app in minutes
+        <strong>Quick Start:</strong> Follow our <a href="/get-started/helloWorld">Hello World guide</a> to build your first confidential app in minutes
       </div>
     </div>
     <div class="flex items-start gap-3">
       <span class="text-xl">🔍</span>
       <div>
-        <strong>Explore Use Cases:</strong> Browse <a href="/get-started/use-cases" class="text-fuchsia-700 hover:text-fuchsia-600">real-world examples</a> to see what you can build with iExec
+        <strong>Explore Use Cases:</strong> Browse <a href="/get-started/use-cases">real-world examples</a> to see what you can build with iExec
       </div>
     </div>
     <div class="flex items-start gap-3">
       <span class="text-xl">💬</span>
       <div>
-        <strong>Join the Community:</strong> Connect with other builders and get support on our <a href="https://discord.gg/9h25DQFSCU" class="text-fuchsia-700 hover:text-fuchsia-600">Discord</a>
+        <strong>Join the Community:</strong> Connect with other builders and get support on our <a href="https://discord.gg/9h25DQFSCU">Discord</a>
       </div>
     </div>
   </div>
@@ -210,11 +208,11 @@ applications. Let's build something amazing together._ 🚀
 <Container variant="success" title="🏆 Join the iExec Community">
 
 Be part of a growing movement of developers, data owners, and privacy advocates
-who are <strong>reshaping how the world handles sensitive data</strong>.
+who are **reshaping how the world handles sensitive data**.
 
 When you build with iExec, you're not just solving a technical
-challenge—<strong>you're championing user rights and digital
-sovereignty</strong>. Every application you create makes the web more private,
-more secure, and more trustworthy for everyone.
+challenge—**you're championing user rights and digital sovereignty**. Every
+application you create makes the web more private, more secure, and more
+trustworthy for everyone.
 
 </Container>

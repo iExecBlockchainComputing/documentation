@@ -54,11 +54,10 @@ monitoring with detailed task execution history and real-time balance tracking.
 
 ::: warning 💰 Voucher Balance Overview
 
-- <strong>Current Balance</strong>: View your remaining voucher credits and
-  compute capacity
-- <strong>Claim New Vouchers</strong>: Request additional vouchers directly from
-  the dashboard
-- <strong>Expiration Alerts</strong>: Get notified before vouchers expire
+- **Current Balance**: View your remaining voucher credits and compute capacity
+- **Claim New Vouchers**: Request additional vouchers directly from the
+  dashboard
+- **Expiration Alerts**: Get notified before vouchers expire
 
 :::
 
@@ -110,10 +109,12 @@ deployed confidential iApp with detailed statistics and user insights.
 
 ::: tip 📱 iApp Portfolio Metrics
 
-- <strong>Deployed Applications</strong>: Complete list of all your confidential iApp currently deployed
-- <strong>Execution Statistics</strong>: See exactly how many times each iApp has been executed
-- <strong>Unique Users</strong>: Track total unique users who have run each application
-- <strong>Revenue Insights</strong>: Track earnings and profitability per application<
+- **Deployed Applications**: Complete list of all your confidential iApp
+  currently deployed
+- **Execution Statistics**: See exactly how many times each iApp has been
+  executed
+- **Unique Users**: Track total unique users who have run each application
+- **Revenue Insights**: Track earnings and profitability per application<
 
 :::
 

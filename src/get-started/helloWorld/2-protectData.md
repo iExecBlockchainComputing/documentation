@@ -22,8 +22,8 @@ import Container from '../../components/Container.vue'
 
 ::: tip <i></i>
 
-<strong>Protected data</strong> is encrypted data that remains confidential
-throughout its entire lifecycle - during storage, transfer and processing.
+**Protected data** is encrypted data that remains confidential throughout its
+entire lifecycle - during storage, transfer and processing.
 
 :::
 
