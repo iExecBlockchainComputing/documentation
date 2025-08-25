@@ -38,62 +38,19 @@ We believe privacy should be **plug-and-play simple**, not an afterthought.
 iExec provides Turnkey Privacy tools that make confidential computing simple and
 actionable:
 
-<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
-  <div class="flex flex-col gap-3">
-    <div class="flex items-center gap-3">
-      <span class="text-xl">🔌</span>
-      <div>
-        <strong>Privacy:</strong> Integrate confidentiality features without managing complex infrastructure
-      </div>
-    </div>
-<div class="flex items-center gap-3">
-      <span class="text-xl">🎮</span>
-      <div>
-        <strong>Governance and Ownership:</strong> Control your assets through orders, choose who can access your data, with which privacy applications, and at what price
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="text-xl">⛓️</span>
-      <div>
-        <strong>Multi-Chain Interoperability:</strong> Build privacy-first applications on supported networks
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="text-xl">🔧</span>
-      <div>
-        <strong>Available Tools:</strong> Composable toolkit, SDK, and ready-to-use components for straightforward development
-      </div>
-    </div>
-  </div>
-</div>
+- **Privacy:** Integrate confidentiality features without managing complex infrastructure
+- **Governance and Ownership:** Control your assets through orders, choose who can access your data, with which privacy applications, and at what price
+- **Multi-Chain Interoperability:** Build privacy-first applications on supported networks
+- **Available Tools:** Composable toolkit, SDK, and ready-to-use components for straightforward development
 
 ## 🔧 What we Provide
 
 Ready-to-use components to protect sensitive data and computation:
 
-<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
-  <div class="flex flex-col gap-4">
-    <div class="flex items-start gap-3">
-      <span class="text-xl">🔒</span>
-      <div>
-        <strong>DataProtector:</strong> Secure and control access to sensitive information
-      </div>
-    </div>
-    <div class="flex items-start gap-3">
-      <span class="text-xl">⚡</span>
-      <div>
-        <strong>iApp Generator:</strong> Bootstrap your Privacy Apps on TEEs.
+- **DataProtector:** Secure and control access to sensitive information
+- **iApp Generator:** Bootstrap your Privacy Apps on TEEs.
 Confidential Computing made easy
-      </div>
-    </div>
-    <div class="flex items-start gap-3">
-      <span class="text-xl">🛡️</span>
-      <div>
-        <strong>Decentralized Confidential Computing:</strong> Process data securely in secure and confidential environments while controlling access and monetization through blockchain
-      </div>
-    </div>
-  </div>
-</div>
+- **Decentralized Confidential Computing:** Process data securely in secure and confidential environments while controlling access and monetization through blockchain
 
 ## 💡 Real-world Use Cases
 
@@ -176,28 +133,9 @@ data** and **building and deploying confidential apps**.
 
 Ready to build privacy-first applications? Choose your path:
 
-<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
-  <div class="flex flex-col gap-4">
-    <div class="flex items-start gap-3">
-      <span class="text-xl">⚡</span>
-      <div>
-        <strong>Quick Start:</strong> Follow our <a href="/get-started/helloWorld">Hello World guide</a> to build your first confidential app in minutes
-      </div>
-    </div>
-    <div class="flex items-start gap-3">
-      <span class="text-xl">🔍</span>
-      <div>
-        <strong>Explore Use Cases:</strong> Browse <a href="/get-started/use-cases">real-world examples</a> to see what you can build with iExec
-      </div>
-    </div>
-    <div class="flex items-start gap-3">
-      <span class="text-xl">💬</span>
-      <div>
-        <strong>Join the Community:</strong> Connect with other builders and get support on our <a href="https://discord.gg/9h25DQFSCU">Discord</a>
-      </div>
-    </div>
-  </div>
-</div>
+- **Quick Start:** Follow our <a href="/get-started/helloWorld">Hello World guide</a> to build your first confidential app in minutes
+- **Explore Use Cases:** Browse <a href="/get-started/use-cases">real-world examples</a> to see what you can build with iExec
+- **Join the Community:** Connect with other builders and get support on our <a href="https://discord.gg/9h25DQFSCU">Discord</a>
 
 ---
 
