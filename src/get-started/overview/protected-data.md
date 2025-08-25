@@ -12,9 +12,13 @@ Protected Data refers to any data encrypted using the **iExec Data Protector
 tool**. This Turnkey Privacy encryption solution enables users to protect,
 manage and monetize their data within the Web3 ecosystem effortlessly.
 
-<Container variant="info">
-  <p class="m-0!">Unlike standard datasets, Protected Data exposes its <strong>data types on-chain</strong> (indicating types like email addresses or photos). This lets anyone <strong>identify entries with matching types</strong>.</p>
-</Container>
+::: tip <i></i>
+
+Unlike standard datasets, Protected Data exposes its <strong>data types
+on-chain</strong> (indicating types like email addresses or photos). This lets
+anyone <strong>identify entries with matching types</strong>.</p>
+
+:::
 
 ## Key Concepts
 

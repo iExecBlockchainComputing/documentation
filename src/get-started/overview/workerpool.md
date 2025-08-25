@@ -10,9 +10,13 @@ A **Workerpool** is a group of computing machines (workers) managed by a
 **Workerpool Manager** that provides computational resources to execute iApp in
 secure environments on the iExec network.
 
-<Container variant="info">
-  <p class="m-0!">Think of a workerpool as a <strong>computing cluster</strong> where your iApp runs. Each workerpool consists of multiple workers (machines) coordinated by a manager who ensures tasks are executed efficiently and securely.</p>
-</Container>
+::: tip <i></i>
+
+Think of a workerpool as a <strong>computing cluster</strong> where your iApp
+runs. Each workerpool consists of multiple workers (machines) coordinated by a
+manager who ensures tasks are executed efficiently and securely.</p>
+
+:::
 
 ## Key Concepts
 

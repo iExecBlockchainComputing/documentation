@@ -290,3 +290,15 @@ input {
   --c-border: #5a5b68;
   --c-text: #b6b7c3;
 }
+
+.vp-doc .custom-block {
+  @apply p-6 text-base;
+}
+
+.vp-doc .custom-block.tip {
+  @apply border-l-4 border-l-[var(--vp-c-brand-1)];
+}
+
+.vp-doc .custom-block.tip strong {
+  @apply text-[var(--vp-c-brand-1)];
+}

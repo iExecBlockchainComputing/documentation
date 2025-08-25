@@ -127,6 +127,9 @@ Before you begin, make sure you have:
   </div>
 </div>
 
-<Container variant="green">
-  <p class="m-0! font-medium">Need help setting up or got some questions? Join our <a target="_blank" href="https://discord.gg/6yrgRH6ATD">Discord Community</a> for support!</p>
-</Container>
+::: tip Need help setting up or got some questions?
+
+Join our <a target="_blank" href="https://discord.gg/6yrgRH6ATD">Discord
+Community</a> for support!
+
+:::

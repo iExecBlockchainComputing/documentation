@@ -25,9 +25,14 @@ deserves the power** to build groundbreaking applications while **keeping user
 data completely secure**. Your users deserve **absolute confidence** that their
 privacy is protected.
 
-<Container variant="info">
-  <p class="!m-0">iExec solves this with <strong>Turnkey Privacy</strong> - a toolkit that simplifies data protection, management, and secure computation, even in untrusted environments. We believe privacy should be <strong>plug-and-play simple</strong>, not an afterthought.</p>
-</Container>
+::: tip <i></i>
+
+iExec solves this with <strong>Turnkey Privacy</strong> - a toolkit that
+simplifies data protection, management, and secure computation, even in
+untrusted environments. We believe privacy should be <strong>plug-and-play
+simple</strong>, not an afterthought.
+
+:::
 
 ## 🛠️ How we Make it Happen
 

@@ -107,7 +107,8 @@ deployed confidential iApp with detailed statistics and user insights.
 
 ### My Confidential iApp Overview
 
-<Container variant="info">
+::: tip <i></i>
+
   <h4 class="!mt-0 !mb-2">📱 iApp Portfolio Metrics</h4>
   <ul class="!mb-0">
     <li><strong>Deployed Applications</strong>: Complete list of all your confidential iApp currently deployed</li>
@@ -115,7 +116,8 @@ deployed confidential iApp with detailed statistics and user insights.
     <li><strong>Unique Users</strong>: Track total unique users who have run each application</li>
     <li><strong>Revenue Insights</strong>: Track earnings and profitability per application</li>
   </ul>
-</Container>
+
+:::
 
 ### Application Statistics Dashboard
 

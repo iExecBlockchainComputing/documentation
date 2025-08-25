@@ -74,9 +74,14 @@ Transfer, sell or rent protected content to authorized users.
 [Github](https://github.com/iExecBlockchainComputing/dataprotector-sdk/tree/main/packages/protected-data-delivery-dapp)
 | [Documentation](/references/dataProtector/dataProtectorSharing)
 
-<Container variant="info">
-  <p class="m-0!">These are just a few examples, the possibilities are endless. Want to explore iApp Generator? Check out our <a href="/references/iapp-generator" target="_blank">documentation</a> and see what you can build!</p>
-</Container>
+::: tip <i></i>
+
+These are just a few examples, the possibilities are endless. Want to explore
+iApp Generator? Check out our
+<a href="/references/iapp-generator" target="_blank">documentation</a> and see
+what you can build!
+
+:::
 
 ## 💾 Installation (Win / Mac / Linux)
 
@@ -195,9 +200,12 @@ You will be prompted with the following message:
   </div>
 </div>
 
-<Container variant="info">
-  <p class="m-0!">We recommend selecting <strong>"Hello World"</strong> to quickly discover how iApp works! use <strong>advanced</strong> only if you are familiar with iExec.</p>
-</Container>
+::: tip <i></i>
+
+We recommend selecting <strong>"Hello World"</strong> to quickly discover how
+iApp works! use <strong>advanced</strong> only if you are familiar with iExec.
+
+:::
 
 - An iApp project is setup with the selected language
 - An ethereum wallet has been created (we use it to sign the iApp creation
@@ -282,11 +290,14 @@ following steps:
 The `iapp test` command uses your local Docker to build and execute the app,
 simulating how it will run in the iExec network's TEE environment.
 
-<Container variant="info">
-  <p class="m-0!"><strong>Common Issues:</strong></p>
+::: tip <i></i>
+
+<strong>Common Issues:</strong></p>
+
   <p class="m-0!">- If you get <code>Error: Docker daemon is not accessible</code>: Make sure Docker is installed and running.</p>
-  <p class="m-0!">- If you get <code>Error: Failed to locate iApp project root</code>: Ensure you are in your project folder before proceeding.</p>
-</Container>
+  <p class="m-0!">- If you get <code>Error: Failed to locate iApp project root</code>: Ensure you are in your project folder before proceeding.
+  
+  :::
 
 ### 🧩 Using Arguments
 
@@ -310,9 +321,12 @@ default protectedData mock.
 iapp test --protectedData default
 ```
 
-<Container variant="info">
-  <p class="m-0!">You can check how args and protectedData are processed in <code> src/app.js</code> or <code> src/app.py</code></p>
-</Container>
+::: tip <i></i>
+
+You can check how args and protectedData are processed in <code>
+src/app.js</code> or <code> src/app.py</code></p>
+
+:::
 
 ## 🚀 Deploy your iApp
 
@@ -369,8 +383,11 @@ Once you have your token, you can deploy your iApp.
   />
 </template>
 
-<Container variant="info">
-  <p class="m-0!">📝 Make sure to save your <strong>iApp address</strong> after deployment - you'll need it later!</p>
+::: tip <i></i>
+
+📝 Make sure to save your <strong>iApp address</strong> after deployment -
+you'll need it later!
+
   <p class="m-0!">You can find your iApp address in the <code>iexec-app.json</code> file in your project folder.</p>
   <br>
   <p class="m-0!">⚠️  If you encounter issues during deployment, make sure the Docker BuildKit feature is enabled and supports AMD64 architecture:</p>
@@ -382,7 +399,8 @@ docker buildx inspect --bootstrap | grep -i platforms
   <p class="m-0!">The output should include <code>linux/amd64</code> in the list of supported platforms. If not, update to the latest Docker Desktop version which includes these requirements.</p>
   <br>
   <p class="m-0!">⚠️  If you set the wrong Docker username, you can change it by editing the <code>iapp.config.json</code> file</p>
-</Container>
+
+:::
 
 ## 🏃 Run your iApp
 
