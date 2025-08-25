@@ -12,13 +12,11 @@ import { computed } from 'vue';
 
 interface Props {
   variant?: 'success' | 'info' | 'danger';
-  spacing?: 'default' | 'top' | 'bottom' | 'none';
   title?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   variant: 'info',
-  spacing: 'default',
 });
 
 const containerClasses = computed(() => {
@@ -26,18 +24,13 @@ const containerClasses = computed(() => {
 
   const variantClasses = {
     success:
-      'bg-gradient-to-r from-green-400/10 to-green-400/5 border-green-600',
-    info: 'bg-[var(--vp-c-brand-soft)] border-[var(--vp-c-brand-1)] [&_strong]:text-[var(--vp-c-brand-1)]',
-    danger: 'bg-gradient-to-r from-red-400/10 to-red-400/5 border-red-600',
+      'bg-[var(--vp-c-success-soft)] border-[var(--vp-c-success-1)] [&_strong]:text-[var(--vp-c-success-1)]',
+    info: 'bg-[var(--vp-c-info-soft)] border-[var(--vp-c-info-1)] [&_strong]:text-[var(--vp-c-info-1)]',
+    tips: 'bg-[var(--vp-c-brand-soft)] border-[var(--vp-c-brand-1)] [&_strong]:text-[var(--vp-c-brand-1)]',
+    danger:
+      'bg-gradient-to-r from-[var(--vp-c-danger-1)] to-[var(--vp-c-danger-1)] border-[var(--vp-c-danger-1)]',
   };
 
-  const spacingClasses = {
-    default: 'mb-6',
-    top: 'mt-6',
-    bottom: 'mb-6',
-    none: '',
-  };
-
-  return `${baseClasses} ${variantClasses[props.variant]} ${spacingClasses[props.spacing]}`;
+  return `${baseClasses} ${variantClasses[props.variant]}`;
 });
 </script>
