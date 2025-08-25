@@ -136,8 +136,8 @@ Given an input string, the app generates an ASCII art greeting.
 
 You can deploy this app on iExec, it will run out of the box. When you are
 confident with iExec concept, you can read
-[Your first app](./build-your-first-iapp.md) and learn how to setup your own app
-on iExec.
+[Build and Test an iApp](../build-&-test) and learn how to setup your own app on
+iExec.
 
 You will now deploy your app on iExec, this will be your first transaction on
 the blockchain:

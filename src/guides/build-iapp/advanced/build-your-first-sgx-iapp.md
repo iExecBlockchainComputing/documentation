@@ -13,7 +13,7 @@ app with the Scone TEE framework.
 ::: warning
 
 Before going any further, make sure you managed to
-[Build your first app](./build-your-first-iapp).
+[Build and Test your iApp](../build-&-test).
 
 :::
 
@@ -45,7 +45,7 @@ Before going further, your `<docker-hub-user>/hello-world:1.0.0` image built
 previously is required.
 
 If you missed that part, please go back to
-[Build your first app](./build-your-first-iapp).
+[Build and Test your iApp](../build-&-test).
 
 For this tutorial, you can reuse the same directory tree or create a new one.
 
