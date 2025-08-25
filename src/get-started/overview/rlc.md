@@ -6,11 +6,11 @@ description:
   it drives privacy-first Web3 applications.
 ---
 
-<div class="flex flex-col items-center mb-8">
-  <img :src="rlcGif" alt="RLC Token Animation" class="w-80 h-80 mb-0" />
-  <h1 class="text-3xl font-bold text-center mb-2">RLC Token</h1>
-  <p class="text-lg text-center text-gray-600 max-w-2xl">The native cryptocurrency that powers the entire iExec decentralized confidential computing ecosystem</p>
-</div>
+<img :src="rlcGif" alt="RLC Token Animation" class="size-80 -my-10 mx-auto" />
+
+# RLC Token
+
+The native cryptocurrency that powers the entire iExec decentralized confidential computing ecosystem
 
 RLC (Run on Lots of Computers) powers all privacy apps on iExec. Every
 confidential computation requires RLC. Every piece of protected data consumed
@@ -51,21 +51,21 @@ protocols.
 When you pay for a task execution with RLC, your payment is automatically and
 transparently distributed to all iExec protocol participants:
 
-<div class="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-lg px-4 border border-blue-200 dark:border-blue-700 my-0">
-  <h4 class="text-lg font-semibold text-blue-800 dark:text-blue-200">🔍 How Your RLC Payment is Distributed</h4>
-  
-  **1. App Provider** - Gets paid for providing the confidential application
-  
-  **2. Protected Data Provider** - Gets paid for providing access to protected confidential datasets
-  
-  **3. Worker** - Gets paid for running the confidential computation on their decentralized machine
-</div>
+::: tip How Your RLC Payment is Distributed
 
-**💡 Transparent:** Payments are distributed based on pricing and conditions
+**1. App Provider** - Gets paid for providing the confidential application
+
+**2. Protected Data Provider** - Gets paid for providing access to protected confidential datasets
+
+**3. Worker** - Gets paid for running the confidential computation on their decentralized machine
+
+:::
+
+**Transparent:** Payments are distributed based on pricing and conditions
 defined by each provider (iApp, Protected Data, Worker) in their marketplace
 orders.
 
-**🔒 RLC Staking:** To run a task on the protocol (executing an application with
+**RLC Staking:** To run a task on the protocol (executing an application with
 protected data on a decentralized workerpool), you need to **lock RLC** in the
 protocol during the task period. In exchange, you receive **sRLC (staked RLC)**.
 Once the task is completed, you can recover the RLC that wasn't consumed for the
@@ -73,7 +73,7 @@ task payment.
 
 ### 📊 Ecosystem Growth Metrics
 
-RLC operates on a utility-driven economic model where demand for confidential
+**RLC operates** on a utility-driven economic model where demand for confidential
 computing services drives token value:
 
 **Fixed Supply**: RLC has a maximum supply of 87 million tokens, ensuring

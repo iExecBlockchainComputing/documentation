@@ -24,120 +24,32 @@ entries with matching types**.
 
 ### Data Governance
 
-<div class="mb-4"></div>
-
-<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
-  <div class="flex flex-col gap-3">
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>You own your data:</strong> The original data never leaves your control
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>Granular permissions:</strong> Decide who can access and use your data
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>Revocable access:</strong> Grant and revoke permissions at any time
-      </div>
-    </div>
-  </div>
-</div>
+- <strong>You own your data:</strong> The original data never leaves your control
+- <strong>Granular permissions:</strong> Decide who can access and use your data
+- <strong>Revocable access:</strong> Grant and revoke permissions at any time
 
 ### Privacy-preserving Computation
 
-<div class="mb-4"></div>
-
-<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
-  <div class="flex flex-col gap-3">
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>Encrypted Processing:</strong> Maintains a complete chain of trust.
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>TEE (Trusted Execution Environment):</strong> Secure enclaves protect data during processing
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>Secret storage:</strong> iExec's protocol secrets in a TEE database.
-      </div>
-    </div>
-  </div>
-</div>
+- <strong>Encrypted Processing:</strong> Maintains a complete chain of trust.
+-  <strong>TEE (Trusted Execution Environment):</strong> Secure enclaves protect data during processing
+- <strong>Secret storage:</strong> iExec's protocol secrets in a TEE database.
 
 ### Monetization
 
-<div class="mb-4"></div>
-
-<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
-  <div class="flex flex-col gap-3">
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>Data marketplaces:</strong> Sell access to your protected data
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>Usage tracking:</strong> Monitor how your data is being used
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>Fair compensation:</strong> Get paid for data usage
-      </div>
-    </div>
-  </div>
-</div>
+- <strong>Data marketplaces:</strong> Sell access to your protected data
+- <strong>Usage tracking:</strong> Monitor how your data is being used
+- <strong>Fair compensation:</strong> Get paid for data usage
 
 ## How it Works
 
-<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
-  <div class="flex flex-col gap-4">
-    <div class="flex items-center gap-3">
-      <span class="text-xl font-bold text-fuchsia-700">1.</span>
-      <div>
-        <strong>Protect:</strong> Encrypt and register your data on the iExec network
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="text-xl font-bold text-fuchsia-700">2.</span>
-      <div>
-        <strong>Share:</strong> Authorize specific users and applications to access your data
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="text-xl font-bold text-fuchsia-700">3.</span>
-      <div>
-        <strong>Monitor:</strong> Track usage and maintain control
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="text-xl font-bold text-fuchsia-700">4.</span>
-      <div>
-        <strong>Monetize:</strong> Earn from your data while keeping it private
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="text-xl font-bold text-fuchsia-700">5.</span>
-      <div>
-        <strong>Compute:</strong> Authorized users can compute on your data with authorized iApp
-      </div>
-    </div>
-  </div>
+<div class="marker:text-[var(--vp-c-brand-1)] marker:font-bold bg-[var(--vp-c-bg-soft)] border border-[var(--vp-c-default-3)] rounded-2xl p-8">
+
+1. <strong>Protect:</strong> Encrypt and register your data on the iExec network
+2. <strong>Share:</strong> Authorize specific users and applications to access your data
+3. <strong>Monitor:</strong> Track usage and maintain control
+4. <strong>Monetize:</strong> Earn from your data while keeping it private
+5. <strong>Compute:</strong> Authorized users can compute on your data with authorized iApp
+
 </div>
 
 ## Use Cases
