@@ -78,10 +78,10 @@ This is where **iExec** comes in! We provide tools to easily add **privacy** and
 Unlike traditional tools, iExec protects your data throughout its entire
 lifecycle - during storage, transfer, and even while **being processed by
 applications.** This is made possible thanks to
-<strong><a target="_blank" href="https://protocol.docs.iex.ec/for-developers/confidential-computing/intel-sgx-technology">Trusted
-Execution Environment (TEE)</a></strong> and
-<strong><a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">Confidential
-Computing</a></strong> technologies.
+**<a target="_blank" href="https://protocol.docs.iex.ec/for-developers/confidential-computing/intel-sgx-technology">Trusted
+Execution Environment (TEE)</a>** and
+**<a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">Confidential
+Computing</a>** technologies.
 
 ::: tip <i></i>
 
