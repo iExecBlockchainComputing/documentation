@@ -8,9 +8,9 @@ description:
 # 🤖 AI Framework Support
 
 The iExec Platform provides comprehensive support for popular AI and machine
-learning frameworks. Deploy your confidential AI applications with confidence
-using our tested and optimized framework configurations, all running in secure
-Trusted Execution Environments (TEEs).
+learning frameworks. Deploy confidential AI with ease. iExec supports popular
+AI/ML frameworks, running in secure Trusted Execution Environments (TEEs) with
+optimized configurations.
 
 ## 🚀 Quick Start
 
@@ -29,13 +29,13 @@ Trusted Execution Environments (TEEs).
 
 ### Confidential Computing
 
-Your AI models and data are protected end-to-end using Trusted Execution
-Environments (TEEs):
+Trusted Execution Environments (TEEs) protect your AI models and data
+end-to-end:
 
-- **Data Privacy**: AI computations are encrypted throughout processing
-- **Secure Training & Inference**: Models and data can never be accessed by
-  unauthorized entities
-- **Hardware-Level Security**: Intel SGX and TDX provide military-grade
+- **Data Privacy**: TEEs isolate AI computations in secure enclaves
+- **Secure Training & Inference**: Unauthorized entities can never access your
+  models and data
+- **Hardware-Level Security**: Intel SGX and TDX provide enterprise-grade
   protection
 
 ### AI Monetization
@@ -52,7 +52,7 @@ Monetize your AI assets easily and securely:
 Scale AI applications without centralized cloud dependencies:
 
 - **On-Demand Compute**: Access powerful resources when you need them
-- **Fair Pricing**: Transparent, blockchain-verified execution costs
+- **Fair Pricing**: Blockchain verifies execution costs transparently
 - **Global Network**: Deploy across a worldwide network of secure workers
 
 ## 🤖 AI Framework Support
@@ -85,7 +85,7 @@ Scale AI applications without centralized cloud dependencies:
 
 Our
 [AI Frameworks Hello World repository](https://github.com/iExecBlockchainComputing/ai-frameworks-hello-world)
-provides ready-to-use examples:
+includes ready-to-use examples:
 
 ```
 ai-frameworks-hello-world/
@@ -146,22 +146,28 @@ docker run --rm hello-pytorch
 - **Start with SGX** for simple ML tasks
 - **Migrate to TDX** for complex AI workloads
 
+#### Important Considerations
+
+- **SGX Limitations**: Expect potential library incompatibilities and code
+  modifications
+- **TDX Advantages**: Minimal code changes required ("lift and shift" approach)
+
 ## 📚 Next Steps
 
 ### Learn TEE Technologies
 
-- **[Intel SGX Technology](/get-started/protocol/tee/intel-sgx)** - SGX
-  limitations and capabilities
-- **[Intel TDX Technology](/get-started/protocol/tee/intel-tdx)** - TDX
-  advantages for AI
-- **[SGX vs TDX Comparison](/get-started/protocol/tee/sgx-vs-tdx)** - Detailed
-  comparison
+- **[Intel SGX Technology](/protocol/tee/intel-sgx)** - SGX limitations and
+  capabilities
+- **[Intel TDX Technology](/protocol/tee/intel-tdx)** - TDX advantages for AI
+- **[SGX vs TDX Comparison](/protocol/tee/sgx-vs-tdx)** - Detailed comparison
 
 ### Build AI Applications
 
-- **[Build & Deploy](/guides/build-iapp/build-&-deploy)** - Create your first AI
+- **[Build & Test](/guides/build-iapp/build-&-test)** - Build and test your AI
   application
-- **[Build Intel TDX App](/guides/build-iapp/advanced/create-your-first-tdx-app)** -
+- **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Deploy and run your AI
+  application
+- **[Build Intel TDX App](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
   TDX applications for AI workloads
 - **[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)** - Handle data
   flow in TEE environment
@@ -171,5 +177,3 @@ docker run --rm hello-pytorch
 - **[AI Frameworks Hello World](https://github.com/iExecBlockchainComputing/ai-frameworks-hello-world)** -
   Ready-to-use Docker examples
 - **[iExec Discord](https://discord.com/invite/pbt9m98wnU)** - Community support
-- **[Protocol Documentation](https://protocol.docs.iex.ec)** - Technical deep
-  dive
