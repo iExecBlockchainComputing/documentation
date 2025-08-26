@@ -80,7 +80,7 @@ You are now familiar with the following key iExec concepts for developers:
 
 Continue with these guides:
 
-- [Learn how to build your first condiential application running on iExec](/guides/build-iapp/advanced/build-your-first-sgx-iapp.md)
+- [Learn how to build your first confidential application running on iExec](/guides/build-iapp/advanced/build-your-first-sgx-iapp.md)
 
 <script setup>
 import { computed } from 'vue';
