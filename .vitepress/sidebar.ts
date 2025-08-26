@@ -47,6 +47,10 @@ export function getSidebar() {
             link: '/get-started/use-cases',
           },
           {
+            text: 'Dev workflow',
+            link: '/get-started/workflow',
+          },
+          {
             text: 'Develop with AI',
             link: '/get-started/develop-with-ai',
           },
