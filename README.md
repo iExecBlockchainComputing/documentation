@@ -229,7 +229,6 @@ for input parameters:
 - Add link to the new explorer feature Asset_Types in the guide =>
   `handle-schemas-dataset-types`
 - Add link to remix for deploying whitelist
-- Maybe split input and output in two diff sub section in build your iapp guide
 - Explorer l'intégration de codeSpace
 - Add a Development workflow section (1 - ProtectData, 2- ...)
 - Update context7 when doc will be deployed (Martin)
@@ -237,7 +236,6 @@ for input parameters:
 - Update the Dune Dashboard to the final version
 - Add new section in `iexec-explorer.md` file to talk about: available chain on
   the UI + SRLC/RLC on account section feature of the protocol
-- framework AI supporté
 - check glossary
 - migrate pay-per-task page into a guide
 - check pages (introduction & getting-started) for use-iapp guide
