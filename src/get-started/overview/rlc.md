@@ -10,7 +10,8 @@ description:
 
 # RLC Token
 
-The native cryptocurrency that powers the entire iExec decentralized confidential computing ecosystem
+The native cryptocurrency that powers the entire iExec decentralized
+confidential computing ecosystem
 
 RLC (Run on Lots of Computers) powers all privacy apps on iExec. Every
 confidential computation requires RLC. Every piece of protected data consumed
@@ -55,9 +56,11 @@ transparently distributed to all iExec protocol participants:
 
 **1. App Provider** - Gets paid for providing the confidential application
 
-**2. Protected Data Provider** - Gets paid for providing access to protected confidential datasets
+**2. Protected Data Provider** - Gets paid for providing access to protected
+confidential datasets
 
-**3. Worker** - Gets paid for running the confidential computation on their decentralized machine
+**3. Worker** - Gets paid for running the confidential computation on their
+decentralized machine
 
 :::
 
@@ -73,8 +76,8 @@ task payment.
 
 ### 📊 Ecosystem Growth Metrics
 
-**RLC operates** on a utility-driven economic model where demand for confidential
-computing services drives token value:
+**RLC operates** on a utility-driven economic model where demand for
+confidential computing services drives token value:
 
 **Fixed Supply**: RLC has a maximum supply of 87 million tokens, ensuring
 scarcity and value preservation.
