@@ -192,7 +192,7 @@ be used in combination with `useVoucher: true`.
 
 ## Understanding Pricing
 
-### Cost components
+### Cost Components
 
 iApp execution costs consist of several components:
 
@@ -201,7 +201,7 @@ iApp execution costs consist of several components:
 3. **Workerpool Fee**: Paid to the computation provider
 4. **Gas Fees**: Blockchain transaction costs
 
-### Setting maximum prices
+### Setting Maximum Prices
 
 You can control costs by setting maximum prices for each component:
 

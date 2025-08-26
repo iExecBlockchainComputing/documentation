@@ -320,8 +320,7 @@ explorer</a> .
 
 ### Validation Errors
 
-The system uses [yup](https://github.com/jquense/yup) to validate input
-parameters.
+We use [yup](https://github.com/jquense/yup) to validate input parameters.
 
 In case one is not valid, you'll get **a yup ValidationError**.
 
@@ -363,8 +362,8 @@ If not, you'll get a `WorkflowError` in the form of:
 
 ### iExec Protocol Errors
 
-In case the iExec stack is to blame, the system will make it clear and you'll
-get a specific `WorkflowError`:
+In case the iExec stack is to blame, we'll make it clear and you'll get a
+specific `WorkflowError`:
 
 ```json5
 {

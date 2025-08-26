@@ -9,7 +9,7 @@ description:
 # 🤖 iApp Generator
 
 **Here's the tool, what it does, and how to use it.** iApp Generator is a CLI
-that builds apps running inside TEEs. You write code, iExec handles the
+that builds applications running inside TEEs. You write code, we handle the
 confidential computing setup.
 
 ## What is iApp Generator?
@@ -65,7 +65,7 @@ Ready for production? Dive into specialized topics:
 Your code runs in Intel SGX/TDX enclaves. Even the worker running your app can't
 see what's happening inside.
 
-### You build, iExec handles the TEE complexity
+### You build, we handle the TEE complexity
 
 Write normal application code. iApp Generator handles secure deployment, worker
 coordination, and result encryption.

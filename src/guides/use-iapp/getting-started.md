@@ -51,7 +51,7 @@ Using iApp involves these main steps:
 3. **Execute** - Run the iApp
 4. **Get Results** - Retrieve your computation results
 
-### Understanding orders
+### Understanding Orders
 
 iApp are executed through a marketplace system where different actors publish
 orders:

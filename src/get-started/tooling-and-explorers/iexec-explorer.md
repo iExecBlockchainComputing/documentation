@@ -142,8 +142,7 @@ Browse and analyze all tasks across the iExec network:
 - **Real-time Progress**: Monitor task status from queued → running → completed
   with detailed state transitions
 - **Execution Environment**: See which workerpool nodes are processing your
-  tasks and their Trusted Execution Environment (TEE) capabilities (Trust Domain
-  Extensions - TDX, Software Guard Extensions - SGX)
+  tasks and their TEE capabilities (TDX, SGX)
 - **Data Flow**: Track which protected datasets are securely accessed by
   authorized iApp
 - **Result Management**:

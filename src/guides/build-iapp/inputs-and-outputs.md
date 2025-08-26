@@ -15,7 +15,7 @@ applications.
 This guide covers all input types available to your iApp and how to generate
 proper outputs that users can retrieve and decrypt.
 
-## Two perspectives on inputs
+## Two Perspectives on Inputs
 
 **Inputs work differently depending on your role:**
 
@@ -33,7 +33,7 @@ You can also execute iApps outside of DataProtector using other methods. See the
 
 This guide shows both perspectives for each input type.
 
-## Input types overview
+## Input Types Overview
 
 Inside the TEE, your iApp can work with four distinct categories of inputs:
 
@@ -107,7 +107,7 @@ try {
 
 :::
 
-### How users provide protected data
+### How Users Provide Protected Data
 
 Users specify the protected data address when executing your iApp:
 
@@ -177,7 +177,7 @@ if (args.length >= 2) {
 
 :::
 
-### How users provide args
+### How Users Provide Args
 
 Users pass args through the DataProtector `processProtectedData()` call:
 
@@ -195,7 +195,7 @@ const response = await dataProtectorCore.processProtectedData({
 });
 ```
 
-### Example use cases
+### Example Use Cases
 
 - Model configuration: `"model=sentiment-bert temperature=0.7"`
 - Processing options: `"format=json output_size=small"`
@@ -270,7 +270,7 @@ const response = await dataProtectorCore.processProtectedData({
 });
 ```
 
-### Example use cases
+### Example Use Cases
 
 - ML model files: `"https://example.com/sentiment-model.pkl"`
 - Reference datasets: `"https://data.gov/reference-corpus.csv"`

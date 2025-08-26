@@ -126,7 +126,7 @@ access revocation processes more interactive and manageable.
 
 :::
 
-## Protected data schema
+## Protected Data Schema
 
 The serialization of the data protected by `protectData()` has been changed to
 support a wider range of numbers, and extend the support for processing

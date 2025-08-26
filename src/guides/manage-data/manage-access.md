@@ -79,7 +79,7 @@ for detailed formatting instructions.
 
 :::
 
-## Grant access
+## Grant Access
 
 By default, your protected data is private. To let others use it, you need to
 grant access to both:

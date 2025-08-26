@@ -1,7 +1,7 @@
 ---
 title: Workerpool
 description:
-  Learn about Workerpool in iExec - the computing resources that execute iApp
+  Learn about workerpool in iExec - the computing resources that execute iApp
 ---
 
 # Workerpool
@@ -11,12 +11,12 @@ A **Workerpool** is a group of computing machines (workers) managed by a
 secure environments on the iExec network.
 
 <div class="bg-gradient-to-r from-blue-400/10 to-blue-400/5 rounded-[6px] p-6 border-l-4 border-blue-700 mb-6">
-  <p class="m-0!">Think of a Workerpool as a <span class="text-blue-700 font-semibold">computing cluster</span> where your iApp runs. Each Workerpool consists of multiple workers (machines) coordinated by a manager who ensures tasks are executed efficiently and securely.</p>
+  <p class="m-0!">Think of a workerpool as a <span class="text-blue-700 font-semibold">computing cluster</span> where your iApp runs. Each workerpool consists of multiple workers (machines) coordinated by a manager who ensures tasks are executed efficiently and securely.</p>
 </div>
 
-## Key concepts
+## Key Concepts
 
-### Workerpool manager
+### Workerpool Manager
 
 <div class="mb-4"></div>
 
@@ -37,7 +37,7 @@ secure environments on the iExec network.
     <div class="flex items-center gap-3">
       <span>•</span>
       <div>
-        <strong>Network Interface:</strong> Connects the Workerpool to the iExec marketplace
+        <strong>Network Interface:</strong> Connects the workerpool to the iExec marketplace
       </div>
     </div>
   </div>
@@ -97,7 +97,7 @@ secure environments on the iExec network.
   </div>
 </div>
 
-## How Workerpool work
+## How Workerpool Work
 
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-4">
@@ -110,7 +110,7 @@ secure environments on the iExec network.
     <div class="flex items-center gap-3">
       <span class="text-xl font-bold text-blue-700">2.</span>
       <div>
-        <strong>Workerpool Selection:</strong> PoCo system matches request with available Workerpool
+        <strong>Workerpool Selection:</strong> PoCo system matches request with available workerpool
       </div>
     </div>
     <div class="flex items-center gap-3">
@@ -134,19 +134,19 @@ secure environments on the iExec network.
   </div>
 </div>
 
-## Getting started
+## Getting Started
 
 <div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-  <p class="m-0!">Want to <span class="text-green-700 font-semibold">use Workerpool</span>? Start building iApp and the protocol will handle Workerpool selection automatically.</p>
+  <p class="m-0!">Want to <span class="text-green-700 font-semibold">use workerpool</span>? Start building iApp and the protocol will handle workerpool selection automatically.</p>
 </div>
 
-## Next steps
+## Next Steps
 
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-4">
     <div class="flex items-start gap-3">
       <div>
-        <strong>Start Using:</strong> <a href="/get-started/helloWorld" class="text-blue-700 hover:text-blue-600">Build your first iApp</a> and see a Workerpool in action
+        <strong>Start Using:</strong> <a href="/get-started/helloWorld" class="text-blue-700 hover:text-blue-600">Build your first iApp</a> and see a workerpool in action
       </div>
     </div>
     <div class="flex items-start gap-3">
