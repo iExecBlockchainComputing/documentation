@@ -166,7 +166,7 @@ The scheduler computes the signature at step 2.
 
 During the contribution, the system updates and verifies the consensus.
 Contributions are possible until the system reaches consensus, at which point
-the contributions close. The system then enters a 2h reveal phase.
+the contributions close. We then enter a 2h reveal phase.
 
 **7. Reveal:**
 
@@ -185,7 +185,7 @@ You must call this before the end of the consensus timer.
 
 ### Staking and Payment
 
-Among the objectives of PoCo, the protocol ensures a worker that contributes
+Among the objectives of PoCo, we want to ensure a worker that contributes
 correctly receives a reward and, at the same time, that a requester won’t pay
 unless the system achieves consensus. This locking achieves the requester’s
 funds for the duration of the consensus, and unlocking them depending on the

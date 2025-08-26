@@ -6,14 +6,14 @@ description:
   Environment (TEE) iApp and whitelist usage for secure data delivery.
 ---
 
-# Apps whitelist <ChainNotSupportedBadge />
+# Apps Whitelist <ChainNotSupportedBadge />
 
 In order to consume a protected data, an iExec TEE iApp needs to be provided.
 
 ::: tip
 
 **TEE** stands for Trusted Execution Environment. Find more details
-[in the TEE introduction guide](/protocol/tee/introduction)
+[here](/protocol/tee/introduction)
 
 :::
 
@@ -21,7 +21,7 @@ The story goes as follow:
 
 1. The collection owner adds a protected data to a collection. When doing so,
    they need to set an `addOnlyAppWhitelist` parameter (see
-   [in the addToCollection documentation](/references/dataProtector/dataProtectorSharing/collection/addToCollection#addonlyappwhitelist)).
+   [here](/references/dataProtector/dataProtectorSharing/collection/addToCollection#addonlyappwhitelist)).
    This parameter is the address of a whitelist smart contract that contains
    applications allowed to consume the protected data.
 
@@ -31,7 +31,7 @@ The story goes as follow:
    &nbsp;`app` parameter). This chosen application must be in the whitelist
    defined by the collection owner.
 
-## Protected data delivery iApp
+## Protected Data Delivery iApp
 
 Built for the needs of
 [Content Creator use case](https://demo.iex.ec/content-creator/), this iExec TEE

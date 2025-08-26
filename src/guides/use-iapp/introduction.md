@@ -10,7 +10,7 @@ description:
 In the iExec network, multiple actors work together in a coordinated process to
 ensure secure, decentralized computation. Here's how the ecosystem operates:
 
-### Key actors in the network
+### Key Actors in the Network
 
 - **👤 Requesters**: Users who need computation performed on protected data
 - **🏭 Workerpool Managers**: Operators who manage groups of workers and
@@ -20,7 +20,7 @@ ensure secure, decentralized computation. Here's how the ecosystem operates:
   iExec marketplace
 - **🔐 Data Providers**: Users who own and protect the data being processed
 
-### Network assets
+### Network Assets
 
 - **📱 iApp**: Applications that process the data securely
 - **💾 Data**: Protected information that needs to be processed
@@ -28,22 +28,22 @@ ensure secure, decentralized computation. Here's how the ecosystem operates:
 - **💰 PoCo**: Proof of Contribution system that matches all actors through
   marketplace
 
-### Network coordination
+### Network Coordination
 
 The iExec network coordinates all actors through the PoCo (Proof of
 Contribution) system, which automatically matches requesters with the
 appropriate applications, data, and computational resources based on
 availability, requirements, and pricing.
 
-### Deal execution flow
+### Deal Execution Flow
 
 When a deal is triggered, the following sequence occurs:
 
 1. **Request Creation**: Requester submits a computation request with parameters
 2. **Resource Matching**: PoCo system matches the request with available
    applications, data, and computational resources
-3. **Deal Creation**: When the system finds compatible resources, it creates a
-   deal containing multiple tasks
+3. **Deal Creation**: When compatible resources are found, a deal is created
+   containing multiple tasks
 4. **Task Distribution**: Selected workerpool manager distributes tasks to their
    workers
 5. **Secure Execution**: Workers download the iApp and execute it in TEE
@@ -55,11 +55,11 @@ When a deal is triggered, the following sequence occurs:
    network
 9. **Payment Settlement**: RLC tokens are distributed to all participants
 
-### Network architecture diagram
+### Network Architecture Diagram
 
 ![iExec Network Actors](/assets/use-iapp/iexec-actors-diagram.svg)
 
-### Detailed interaction flow
+### Detailed Interaction Flow
 
 1. **Request Submission**: Requester creates a request specifying the iApp,
    Protected Data, etc.

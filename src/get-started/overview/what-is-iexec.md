@@ -2,13 +2,13 @@
 title: What is iExec?
 description:
   Learn about iExec, the decentralized computing platform that enables
-  privacy-preserving apps
+  privacy-preserving applications
 ---
 
 # What is iExec?
 
 iExec is a **decentralized confidential computing toolkit** that helps
-developers build privacy-preserving apps.
+developers build privacy-preserving applications.
 
 ## SpeedRun The Protocol
 
@@ -21,9 +21,9 @@ access it.
 
 ### Step 2: Secure Computing (Workers)
 
-Code runs inside **secure enclaves** (Trusted Execution Environments - TEEs) on
-iExec workers. The worker can access your data to process it, but only within
-the privacy-safe TEE environment - your data never leaves the secure bubble.
+Code runs inside **secure enclaves** (TEEs) on iExec workers. The worker can
+access your data to process it, but only within the privacy-safe TEE
+environment - your data never leaves the secure bubble.
 
 ### Step 3: Run iApp
 
@@ -42,7 +42,7 @@ lose control.
 Protected Data + iApp + Worker = Task → Encrypted Result
 ```
 
-## What each piece does
+## What Each Piece Does
 
 ### **Protected Data**
 
@@ -66,7 +66,7 @@ The execution instruction that unifies the entire flow: "Run this iApp on this
 Protected Data using a TEE Worker, then return the encrypted result to me." The
 protocol takes care of worker allocation and secure coordination.
 
-## Real example walkthrough
+## Real Example Walkthrough
 
 **AI Model Training (Private)**
 
@@ -82,7 +82,7 @@ protocol takes care of worker allocation and secure coordination.
 2. **Execute**: App submits Task → "Send email via Web3Mail iApp"
 3. **Result**: Email sent, addresses stay private, sender/receiver authenticated
 
-## Start building
+## Start Building
 
 Now that you get the protocol, pick your devtools:
 
@@ -93,5 +93,5 @@ Now that you get the protocol, pick your devtools:
   your first dataset
 - **Build iApp**: Create confidential compute with
   [iApp Generator](/references/iapp-generator)
-- **Hands-On**: Follow the [Hello World](/get-started/helloWorld) to see all
+- **Hands-On**: Follow our [Hello World](/get-started/helloWorld) to see all
   devtools working together

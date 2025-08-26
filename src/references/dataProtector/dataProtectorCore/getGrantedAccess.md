@@ -191,7 +191,7 @@ const listGrantedAccess = await dataProtectorCore.getGrantedAccess({
 });
 ```
 
-## Return Value
+## Return value
 
 ```ts twoslash
 import { type GrantedAccessResponse } from '@iexec/dataprotector';

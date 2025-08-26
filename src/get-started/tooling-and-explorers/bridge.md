@@ -123,13 +123,13 @@ The RLC multichain bridge implementation has been thoroughly audited by
 audit report is accessible at
 [halborn.com/audits](https://www.halborn.com/audits/iexec/rlc-multichain-bridge-979ae0).
 
-### Open source
+### Open Source
 
 The complete source code for the RLC multichain bridge system is publicly
 available and open source on GitHub:
 [RLC Bridge Repository](https://github.com/iExecBlockchainComputing/rlc-multichain)
 
-### Security features
+### Security Features
 
 - **LayerZero Protocol**: Battle-tested cross-chain messaging protocol
 - **Smart Contract Audits**: Professional security audits by Halborn

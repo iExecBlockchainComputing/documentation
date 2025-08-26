@@ -10,7 +10,7 @@ iApp is deployed with iApp Generator, you need to publish app orders to make it
 accessible to users and define your governance rules.
 
 Think of orders as **usage proposals** - they define pricing, access
-restrictions, and execution conditions for your app.
+restrictions, and execution conditions for your application.
 
 ## What is an Order?
 
@@ -184,9 +184,9 @@ iexec order publish --app
 
 Your iApp is now accessible according to the conditions you defined!
 
-## Managing orders
+## Managing Orders
 
-### View published orders
+### View Published Orders
 
 Check active orders for your app:
 
@@ -222,7 +222,7 @@ iexec order cancel --app <orderHash>
 }
 ```
 
-## App order parameters
+## App Order Parameters
 
 Here's the detailed description of each parameter:
 
@@ -269,7 +269,7 @@ Here's the detailed description of each parameter:
 | `0x0000000000000000000000000000000000000000000000000000000000000000` | Standard execution   |
 | `0x0000000000000000000000000000000000000000000000000000000000000003` | TEE required (Scone) |
 
-### Access restrictions
+### Access Restrictions
 
 All restrictions use `0x0000000000000000000000000000000000000000` to indicate
 "no restriction".
@@ -302,7 +302,7 @@ Next steps:
 - **Adjust pricing**: Create new orders based on demand
 - **Manage revenue**: Check your earnings with `iexec account show`
 
-### Technical deep dive
+### Technical Deep Dive
 
 - **[iExec SDK Documentation](https://github.com/iExecBlockchainComputing/iexec-sdk)** -
   Complete CLI reference

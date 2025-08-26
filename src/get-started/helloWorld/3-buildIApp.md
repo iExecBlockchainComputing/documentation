@@ -5,18 +5,18 @@ description:
   processing protected data in this comprehensive tutorial.
 ---
 
-# 🛠️ Build and deploy your first iApp
+# 🛠️ Build and Deploy your First iApp
 
 > Reading time 🕒 10 min
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
-  <h2 class="text-2xl font-bold mt-0 border-none!">Time to build</h2>
-  <p>Build an iApp that can process protected data in a secure environment using the <a href="/references/iapp-generator" target="_blank" class="!text-gray-900 !font-bold underline hover:!text-black">iExec iApp generator tool</a>. This tool helps you create, test, and deploy iApp with just a few commands.</p>
+  <h2 class="text-2xl font-bold mt-0 border-none!">Time to build!</h2>
+  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="/references/iapp-generator" target="_blank" class="!text-gray-900 !font-bold underline hover:!text-black">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApp with just a few commands.</p>
 </div>
 
-If you wanna explore and deep dive in the command-line tool. You can check the
-[iApp-CLI (Command Line Interface)](https://github.com/iExecBlockchainComputing/iapp/tree/main/cli)
-GitHub repository. Follow the instructions carefully for a smooth development
+If you wanna explore and deep dive in the CLI. You can check the
+[iApp-CLI](https://github.com/iExecBlockchainComputing/iapp/tree/main/cli)
+github repository. Follow the instructions carefully for a smooth development
 experience.
 
 ## 📋 Prerequisites
@@ -46,29 +46,29 @@ Before getting started, make sure you have:
 </div>
 
 <div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">Don't worry. All secrets used in this tutorial stay on your machine and aren't shared with anyone. You'll only need them to run the <code>iapp run</code> command.</p>
+  <p class="m-0!">Don't worry! All secrets used in this tutorial stay on your machine and aren’t shared with anyone. You’ll only need them to run the <code>iapp run</code> command.</p>
 </div>
 
-## 🚀 Types of iApp you can build
+## 🚀 Types of iApp you Can Build
 
 iExec enables you to build various types of Privacy-preserving applications.
 Here are some popular use cases:
 
-### 📧 Web3 mail
+### 📧 Web3 Mail
 
 Send privacy-preserving emails to registered Ethereum account holders without
 knowing or storing their email addresses.
 [Github](https://github.com/iExecBlockchainComputing/web3mail-sdk/tree/main/dapp)
 | [Documentation](/references/web3mail)
 
-### 💬 Web3 telegram
+### 💬 Web3 Telegram
 
 Send privacy-preserving Telegram messages without knowing or storing their
 Telegram handles.
 [Github](https://github.com/iExecBlockchainComputing/web3telegram-sdk/tree/main/dapp)
 | [Documentation](/references/web3telegram)
 
-### 🌐 Content delivery
+### 🌐 Content Delivery
 
 Transfer, sell or rent protected content to authorized users.
 [Github](https://github.com/iExecBlockchainComputing/dataprotector-sdk/tree/main/packages/protected-data-delivery-dapp)
@@ -171,7 +171,7 @@ You will be prompted with the following message:
     '🐳 Added Dockerfile',
     '⚙️ Added iExec configuration'
   ]"
-  :successMessage="'Your iApp is ready'"
+  :successMessage="'Your iApp is ready!'"
 />
 
 <div class="flex flex-col gap-2.5 my-6">
@@ -196,7 +196,7 @@ You will be prompted with the following message:
 </div>
 
 <div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">We recommend selecting <span class="text-fuchsia-700 font-semibold">"Hello World"</span> to quickly discover how iApp works. Use <span class="text-fuchsia-700 font-semibold">advanced</span> only if you are familiar with iExec.</p>
+  <p class="m-0!">We recommend selecting <span class="text-fuchsia-700 font-semibold">"Hello World"</span> to quickly discover how iApp works! use <span class="text-fuchsia-700 font-semibold">advanced</span> only if you are familiar with iExec.</p>
 </div>
 
 - An iApp project is setup with the selected language
@@ -288,7 +288,7 @@ simulating how it will run in the iExec network's TEE environment.
   <p class="m-0!">- If you get <code>Error: Failed to locate iApp project root</code>: Ensure you are in your project folder before proceeding.</p>
 </div>
 
-### 🧩 Using arguments
+### 🧩 Using Arguments
 
 You can pass arguments to your iApp using the `--args` option. This allows you
 to provide necessary inputs during runtime (you can use your name for example).
@@ -297,7 +297,7 @@ to provide necessary inputs during runtime (you can use your name for example).
 iapp test --args your-name
 ```
 
-### 🔒 Using protected data
+### 🔒 Using Protected Data
 
 You can pass a protectedData that you are authorized to process to your iApp
 using the `--protectedData` option.
@@ -370,7 +370,7 @@ Once you have your token, you can deploy your iApp.
 </template>
 
 <div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">📝 Make sure to save your <span class="text-fuchsia-700 font-semibold">iApp address</span> after deployment - you'll need it later.</p>
+  <p class="m-0!">📝 Make sure to save your <span class="text-fuchsia-700 font-semibold">iApp address</span> after deployment - you'll need it later!</p>
   <p class="m-0!">You can find your iApp address in the <code>iexec-app.json</code> file in your project folder.</p>
   <br>
   <p class="m-0!">⚠️  If you encounter issues during deployment, make sure the Docker BuildKit feature is enabled and supports AMD64 architecture:</p>
@@ -401,7 +401,7 @@ allowing it to run securely in a **Trusted Execution Environment (TEE)** for
   <p class="m-0!">🎉 Congratulations! You've successfully deployed and run your first iApp on iExec. This is a significant milestone - your application is now ready to securely process confidential data in a trusted environment.</p>
 </div>
 
-## 🎯 Key takeaways
+## 🎯 Key Takeaways
 
 - 🔒 **iApp:** Special applications that run in TEEs to process protected data
 - 🛠️ **iApp CLI:** Command-line tool for building, testing, and deploying iApp
@@ -410,7 +410,7 @@ allowing it to run securely in a **Trusted Execution Environment (TEE)** for
   environments
 
 <div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-  <p class="m-0!">Next up: Alice will learn how to authorize the iApp and Bob to access and use her protected data.</p>
+  <p class="m-0!">Next up: Alice will learn how to authorize the iApp and Bob to access and use her protected data!  🚀</p>
 </div>
 
 <script setup>

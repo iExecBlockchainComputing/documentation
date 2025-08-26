@@ -19,7 +19,7 @@ memory-intensive workloads and legacy application migration.
 technology that provides VM-level protection, allowing entire virtual machines
 to run in secure, isolated environments.
 
-### Key TDX benefits
+### Key TDX Benefits
 
 1. **🔄 Lift-and-Shift Compatibility**: Run existing applications with minimal
    changes
@@ -35,7 +35,7 @@ to run in secure, isolated environments.
 your existing operations without major renovations. It protects entire virtual
 machines.
 
-### Key characteristics
+### Key Characteristics
 
 - **Scope**: Protects entire virtual machines
 - **Memory**: Large secure memory space (like a large vault)
@@ -45,7 +45,7 @@ machines.
 **Analogy**: TDX is like moving your entire office into a secure building where
 everything is protected.
 
-### Visual representation
+### Visual Representation
 
 ```mermaid
 graph TB
@@ -62,7 +62,7 @@ graph TB
 
 ## TDX Technology Details
 
-### How TDX works
+### How TDX Works
 
 1. **Trust Domain Creation**: TDX creates secure virtual machines called "trust
    domains"

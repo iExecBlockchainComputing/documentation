@@ -41,7 +41,7 @@ privacy-first applications.
 
 <ProjectCard
     title="Vue.js Starter"
-    description="Vue 3 Composition Application Programming Interface (API) template with TypeScript and optimized build configuration for iExec apps."
+    description="Vue 3 Composition API template with TypeScript and optimized build configuration for iExec apps."
     icon="logos:vue"
     status="coming-soon"
     statusLabel="Coming Soon"
