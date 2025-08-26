@@ -7,9 +7,10 @@ description:
 
 # 📤 Outputs
 
-**Your iApp must generate outputs that users can retrieve and decrypt.** Understanding
-how to structure your outputs, create the required metadata, and follow best
-practices is essential for building effective privacy-preserving applications.
+**Your iApp must generate outputs that users can retrieve and decrypt.**
+Understanding how to structure your outputs, create the required metadata, and
+follow best practices is essential for building effective privacy-preserving
+applications.
 
 This guide covers how to generate outputs from your iApp and ensure they can be
 properly retrieved by users.
@@ -138,8 +139,8 @@ with open(f"{iexec_out}/computed.json", 'w') as f:
 
 Continue building with these guides:
 
-- **[Inputs](/guides/build-iapp/inputs)** - Learn about the different input types
-  available to your iApp
+- **[Inputs](/guides/build-iapp/inputs)** - Learn about the different input
+  types available to your iApp
 - **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
   Control who can use your iApp
 - **[Debugging Your iApp](/guides/build-iapp/debugging)** - Troubleshoot

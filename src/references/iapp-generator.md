@@ -41,14 +41,14 @@ Start here to understand what iApp are and how they work:
 Once you've built your first iApp, level up with these practical guides:
 
 - **[Inputs](/guides/build-iapp/inputs)** - Handle data inputs
-- **[Outputs](/guides/build-iapp/outputs)** - Handle data outputs
-  flow in TEE environment
+- **[Outputs](/guides/build-iapp/outputs)** - Handle data outputs flow in TEE
+  environment
 - **[Debugging Your iApp](/guides/build-iapp/debugging)** - Troubleshoot
   execution issues
 - **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
   Control who can use your iApp
-- **[How to Get and Decrypt Results](/guides/build-iapp/outputs)** -
-  Retrieve and use outputs
+- **[How to Get and Decrypt Results](/guides/build-iapp/outputs)** - Retrieve
+  and use outputs
 
 ### 3. **Explore Advanced Features**
 
@@ -91,10 +91,9 @@ applications:
 1. **[Getting Started](/references/iapp-generator/getting-started)** - Build
    your first iApp (15 minutes)
 2. **[Inputs](/guides/build-iapp/inputs)** - Handle data inputs
-3. **[Outputs](/guides/build-iapp/outputs)** - Handle data outputs
-   properly
-3. **[Debugging](/guides/build-iapp/debugging)** - Fix issues quickly
-4. **[App Access Control](/guides/build-iapp/manage-access)** - Go to production
+3. **[Outputs](/guides/build-iapp/outputs)** - Handle data outputs properly
+4. **[Debugging](/guides/build-iapp/debugging)** - Fix issues quickly
+5. **[App Access Control](/guides/build-iapp/manage-access)** - Go to production
    :::
 
 ### Need Help?

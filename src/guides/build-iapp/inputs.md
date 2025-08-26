@@ -481,8 +481,8 @@ save_report(report)
 
 Continue building with these guides:
 
-- **[Outputs](/guides/build-iapp/outputs)** - Learn how to generate and structure
-  your iApp outputs
+- **[Outputs](/guides/build-iapp/outputs)** - Learn how to generate and
+  structure your iApp outputs
 - **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
   Control who can use your iApp
 - **[Debugging Your iApp](/guides/build-iapp/debugging)** - Troubleshoot
