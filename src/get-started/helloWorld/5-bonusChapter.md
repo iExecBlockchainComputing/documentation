@@ -56,6 +56,9 @@ Community</a>** for support!
   Claim your $20 voucher
 </Button>
 
+<br/>
+<br/>
+
 <Container variant="success">
 
 Thank you for being part of the iExec journey! We can't wait to see what you'll

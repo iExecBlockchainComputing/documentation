@@ -9,6 +9,7 @@ description:
 <script setup>
 import Banner from '../../components/Banner.vue'
 import Container from '../../components/Container.vue'
+import CardWithoutBorder from '../../components/CardWithoutBorder.vue'
 </script>
 
 # 🧐 iExec Overview
@@ -25,46 +26,21 @@ import Container from '../../components/Container.vue'
 Imagine you're building a decentralized application (iApp) that needs to
 **handle sensitive user data**, for example:
 
-<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
-  <div class="flex flex-col gap-2.5">
-    <div class="flex items-center gap-2 text-base">
-      <span>🤖</span>
-      <span>An AI model training on sensitive data</span>
-    </div>
-    <div class="flex items-center gap-2 text-base">
-      <span>💰</span>
-      <span>A financial app handling financial data</span>
-    </div>
-    <div class="flex items-center gap-2 text-base">
-      <span>🔬</span>
-      <span>A research platform working with private datasets</span>
-    </div>
-    <div class="flex items-center gap-2 text-base">
-      <span>🏥</span>
-      <span>A healthcare app processing confidential patient records</span>
-    </div>
-  </div>
+<CardWithoutBorder class="**:list-none *:pl-0!">
 
-  <div class="flex flex-col gap-2.5 mt-4">
-    <p><strong>You'll need a way to:</strong></p>
-    <div class="flex items-center gap-2 text-base">
-      <span>🔒</span>
-      <span>Keep the data confidential</span>
-    </div>
-    <div class="flex items-center gap-2 text-base">
-      <span>🎮</span>
-      <span>Control who can access it</span>
-    </div>
-    <div class="flex items-center gap-2 text-base">
-      <span>⚡</span>
-      <span>Process it securely</span>
-    </div>
-    <div class="flex items-center gap-2 text-base">
-      <span>💎</span>
-      <span>Potentially monetize it</span>
-    </div>
-  </div>
-</div>
+- 🤖 An AI model training on sensitive data
+- 💰 A financial app handling financial data
+- 🔬 A research platform working with private datasets
+- 🏥 A healthcare app processing confidential patient records
+
+<strong>You'll need a way to:</strong>
+
+- 🔒 Keep the data confidential
+- 🎮 Control who can access it
+- ⚡ Process it securely
+- 💎 Potentially monetize it
+
+</CardWithoutBorder>
 
 ::: tip <i></i>
 

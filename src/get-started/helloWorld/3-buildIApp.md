@@ -290,9 +290,7 @@ following steps:
 The `iapp test` command uses your local Docker to build and execute the app,
 simulating how it will run in the iExec network's TEE environment.
 
-::: tip <i></i>
-
-**Common Issues:**
+::: warning Common Issues:
 
 - If you get <code>Error: Docker daemon is not accessible</code>: Make sure
   Docker is installed and running.

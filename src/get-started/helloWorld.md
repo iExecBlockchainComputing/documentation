@@ -10,18 +10,19 @@ import InfoIcon from '@/components/InfoIcon.vue'
 import ChainSelector from '@/components/ChainSelector.vue'
 import Banner from '../components/Banner.vue'
 import Container from '../components/Container.vue'
+import CardWithBorder from '../components/CardWithBorder.vue'
 </script>
 
 # 👋 Welcome to iExec
 
 > Reading time 🕒 2 min
 
-<div class="mb-0 p-6 bg-[var(--vp-c-bg-soft)] rounded-lg border border-[var(--vp-c-divider)]">
-  <div class="flex">
+<CardWithBorder>
+  <div class="flex gap-2">
     <h3 class="m-0! py-2 text-lg font-medium">🌐 Select Your Network :</h3>
     <ChainSelector />
   </div>
-</div>
+</CardWithBorder>
 
 <Banner>
   <h2 class="text-2xl font-bold mt-0 border-none!">Start Your Web3 Privacy Journey</h2>

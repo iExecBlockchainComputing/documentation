@@ -10,6 +10,7 @@ import GrantAccess from '@/modules/helloWorld/GrantAccess.vue';
 import { useWalletConnection } from '@/hooks/useWalletConnection.vue';
 import Banner from '../../components/Banner.vue'
 import Container from '../../components/Container.vue'
+import CardWithBorder from '../../components/CardWithBorder.vue'
 
 const { protectedDataAddress } = useWalletConnection();
 </script>
@@ -38,24 +39,14 @@ Here is a simple diagram to explain the process:
 ![alt](/assets/hello-world/process_light.png){.light-only}
 ![alt](/assets/hello-world/process_dark.png){.dark-only}
 
-<div class="flex flex-col gap-2.5 my-6">
-  <div class="flex items-center gap-3">
-    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">1</span>
-    <span>Protect your data using DataProtector SDK</span>
-  </div>
-  <div class="flex items-center gap-3">
-    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">2</span>
-    <span>Authorize a user (wallet address) to access your data</span>
-  </div>
-  <div class="flex items-center gap-3">
-    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">3</span>
-    <span>Authorize the iApp to access your data</span>
-  </div>
-  <div class="flex items-center gap-3">
-    <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">4</span>
-    <span>Authorized user can now run your iApp to process your protected data</span>
-  </div>
-</div>
+<CardWithBorder>
+  
+  1. Protect your data using DataProtector SDK
+  2. Authorize a user (wallet address) to access your data
+  3. Authorize the iApp to access your data
+  4. Authorized user can now run your iApp to process your protected data
+
+</CardWithBorder>
 
 ## 🔓 Grant the iApp Access to your Data
 
