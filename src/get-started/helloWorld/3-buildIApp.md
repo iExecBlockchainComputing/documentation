@@ -71,7 +71,7 @@ Telegram handles.
 ### 🌐 Content Delivery
 
 Transfer, sell or rent protected content to authorized users.
-[Github](https://github.com/iExecBlockchainComputing/dataprotector-sdk/tree/main/packages/protected-data-delivery-dapp)
+[Github](https://github.com/iExecBlockchainComputing/protected-data-delivery-dapp)
 | [Documentation](/references/dataProtector/dataProtectorSharing)
 
 ::: tip <i></i>
