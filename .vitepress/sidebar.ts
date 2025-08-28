@@ -137,8 +137,12 @@ export function getSidebar() {
             link: '/guides/build-iapp/manage-access',
           },
           {
-            text: 'Inputs and Outputs',
-            link: '/guides/build-iapp/inputs-and-outputs',
+            text: 'Inputs',
+            link: '/guides/build-iapp/inputs',
+          },
+          {
+            text: 'Outputs',
+            link: '/guides/build-iapp/outputs',
           },
 
           {

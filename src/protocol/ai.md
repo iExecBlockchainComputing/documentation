@@ -169,8 +169,9 @@ docker run --rm hello-pytorch
   application
 - **[Build Intel TDX App](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
   TDX applications for AI workloads
-- **[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)** - Handle data
-  flow in TEE environment
+- **[Inputs](/guides/build-iapp/inputs)** - Handle data inputs
+- **[Outputs](/guides/build-iapp/outputs)** - Handle data outputs flow in TEE
+  environment
 
 ### Explore Examples
 

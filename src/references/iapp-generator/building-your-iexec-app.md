@@ -82,7 +82,7 @@ You'll set up:
 - **App Secret** – Immutable secret provisioned by the iApp owner.
 
 For more details and to learn how to use them in your application, refer here
-[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)
+[Inputs](/guides/build-iapp/inputs).
 
 ## 🚀 Build your iApp
 
