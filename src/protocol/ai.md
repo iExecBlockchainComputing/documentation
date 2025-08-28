@@ -19,10 +19,10 @@ optimized configurations.
 - 📚
   **[AI Frameworks Hello World](https://github.com/iExecBlockchainComputing/ai-frameworks-hello-world)** -
   Ready-to-use Docker examples for TensorFlow, PyTorch, and more
-- 🛠️ **[Build & Deploy](/guides/build-iapp/build-&-deploy)** - General iApp
+- 🛠️ **[Build & Test](/guides/build-iapp/build-&-test)** - General iApp
   development guide (not AI-specific)
 - 🔬
-  **[TDX App Guide](/guides/build-iapp/advanced/create-your-first-tdx-app)** -
+  **[TDX App Guide](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
   Build TDX applications (works well for AI workloads)
 
 ## 🛡️ Why iExec for AI?
@@ -169,8 +169,9 @@ docker run --rm hello-pytorch
   application
 - **[Build Intel TDX App](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
   TDX applications for AI workloads
-- **[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)** - Handle data
-  flow in TEE environment
+- **[Inputs](/guides/build-iapp/inputs)** - Handle data inputs
+- **[Outputs](/guides/build-iapp/outputs)** - Handle data outputs flow in TEE
+  environment
 
 ### Explore Examples
 

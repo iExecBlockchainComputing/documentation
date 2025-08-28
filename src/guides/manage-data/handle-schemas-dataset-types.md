@@ -253,8 +253,8 @@ don't match, you'll get runtime errors when processing the data.
 :::
 
 → **Ready to build an iApp?** Check out our detailed
-[Inputs and Outputs guide](/guides/build-iapp/inputs-and-outputs) to learn how
-to access schema fields inside your iApp using the deserializer.
+[Inputs guide](/guides/build-iapp/inputs) to learn how to access schema fields
+inside your iApp using the deserializer.
 
 ## Next steps
 
