@@ -20,7 +20,8 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const containerClasses = computed(() => {
-  const baseClasses = 'rounded-[6px] p-6 border-l-4';
+  const baseClasses =
+    'rounded-[6px] p-6 border-l-4 [&>:first-child]:mt-0! [&>:last-child]:mb-0!';
 
   const variantClasses = {
     success:
