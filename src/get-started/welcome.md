@@ -17,7 +17,7 @@ import CardGrid from '../components/CardGrid.vue'
 
 <Banner>
 
-## Welcome to iExec<
+## Welcome to iExec
 
 Your complete toolkit for building privacy-first Web3 applications that protect
 and use sensitive data
