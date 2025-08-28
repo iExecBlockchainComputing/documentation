@@ -139,12 +139,12 @@ data** and **building and deploying confidential apps**.
 
 Ready to build privacy-first applications? Choose your path:
 
-- **Quick Start:** Follow our <a href="/get-started/helloWorld">Hello World
-  guide</a> to build your first confidential app in minutes
-- **Explore Use Cases:** Browse <a href="/get-started/use-cases">real-world
-  examples</a> to see what you can build with iExec
+- **Quick Start:** Follow our [Hello World guide](/get-started/helloWorld) to
+  build your first confidential app in minutes
+- **Explore Use Cases:** Browse [real-world examples](/get-started/use-cases) to
+  see what you can build with iExec
 - **Join the Community:** Connect with other builders and get support on our
-  <a href="https://discord.gg/9h25DQFSCU">Discord</a>
+  [Discord](https://discord.gg/9h25DQFSCU)
 
 ---
 

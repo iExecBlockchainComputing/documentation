@@ -11,7 +11,7 @@ description:
 
 <Banner>
   <h2 class="text-2xl font-bold mt-0 border-none!">Time to build!</h2>
-  <p>Let's build an iApp that can process protected data in a secure environment using the <a href="/references/iapp-generator" target="_blank">iExec iApp generator tool</a>. This tool helps you create, test and deploy iApp with just a few commands.</p>
+  <p>Let's build an iApp that can process protected data in a secure environment using the [iExec iApp generator tool](/references/iapp-generator). This tool helps you create, test and deploy iApp with just a few commands.</p>
 </Banner>
 
 If you wanna explore and deep dive in the CLI. You can check the
@@ -77,8 +77,7 @@ Transfer, sell or rent protected content to authorized users.
 ::: tip <i></i>
 
 These are just a few examples, the possibilities are endless. Want to explore
-iApp Generator? Check out our
-<a href="/references/iapp-generator" target="_blank">documentation</a> and see
+iApp Generator? Check out our [documentation](/references/iapp-generator) and see
 what you can build!
 
 :::
@@ -335,11 +334,11 @@ Deploy your iApp on the iExec protocol.
 <div class="flex flex-col gap-2.5 my-6">
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">1</span>
-    <span>Go to <a href="https://hub.docker.com/settings/security" target="_blank">Docker Hub Security Settings</a></span>
+    <span>Go to [Docker Hub Security Settings](https://hub.docker.com/settings/security)</span>
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">2</span>
-    <span>Click <a href="https://app.docker.com/settings/personal-access-tokens" target="_blank">"Personal access tokens"</a> → "Generate new token"</span>
+    <span>Click ["Personal access tokens"](https://app.docker.com/settings/personal-access-tokens) → "Generate new token"</span>
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">3</span>
