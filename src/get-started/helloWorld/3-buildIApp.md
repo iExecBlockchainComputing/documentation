@@ -15,7 +15,7 @@ description:
 </div>
 
 If you wanna explore and deep dive in the command-line tool. You can check the
-[iApp-CLI (Command Line Interface)](https://github.com/iExecBlockchainComputing/iapp/tree/main/cli)
+[iApp Generator ](https://github.com/iExecBlockchainComputing/iapp/tree/main/cli)
 GitHub repository. Follow the instructions carefully for a smooth development
 experience.
 
@@ -54,14 +54,14 @@ Before getting started, make sure you have:
 iExec enables you to build various types of Privacy-preserving applications.
 Here are some popular use cases:
 
-### 📧 Web3 mail
+### 📧 Web3Mail
 
 Send privacy-preserving emails to registered Ethereum account holders without
 knowing or storing their email addresses.
 [Github](https://github.com/iExecBlockchainComputing/web3mail-sdk/tree/main/dapp)
 | [Documentation](/references/web3mail)
 
-### 💬 Web3 telegram
+### 💬 Web3Telegram
 
 Send privacy-preserving Telegram messages without knowing or storing their
 Telegram handles.

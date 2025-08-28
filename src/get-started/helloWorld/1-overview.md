@@ -17,7 +17,7 @@ description:
 
 ## 👨‍💻 Building Privacy-preserving iApp with iExec
 
-<p>Imagine you're building a decentralized app (iApp) that needs to <strong> handle sensitive user data</strong>, for example:</p>
+<p>Imagine you're building a decentralized app (dApp) that needs to <strong> handle sensitive user data</strong>, for example:</p>
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-2.5">
     <div class="flex items-center gap-2 text-base">
@@ -179,5 +179,5 @@ And many other use cases...
 </div>
 
 <div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-  <p class="m-0!">Now that you understand the fundamentals, dive into protecting your first piece of data with Alice.</p>
+  <p class="m-0!">Now that you understand the fundamentals, dive into protecting your first data with Alice.</p>
 </div>

@@ -10,13 +10,6 @@ description:
 In this tutorial, you will learn how to build and run a Confidential Computing
 app with the Scone TEE framework.
 
-::: warning
-
-Before going any further, make sure you managed to
-[Build and Test your iApp](../build-&-test).
-
-:::
-
 ::: tip Prerequisites:
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and
@@ -44,13 +37,8 @@ docker login registry.scontain.com
 Before going further, your `<docker-hub-user>/hello-world:1.0.0` image built
 previously is required.
 
-If you missed that part, please go back to
-[Build and Test your iApp](../build-&-test).
-
-For this tutorial, you can reuse the same directory tree or create a new one.
-
-To create a new directory tree, execute the following commands in
-`~/iexec-projects/`.
+For this tutorial, create a new directory tree. Execute the following commands
+in `~/iexec-projects/`:
 
 ```bash
 cd ~/iexec-projects
@@ -301,7 +289,7 @@ docker run -it --rm \
             --verbose \
             && echo -e "\n------------------\n" \
             && echo "successfully built TEE docker image => ${IMG_TO}" \
-            && echo "app mrenclave.fingerprint is $(docker run --rm -e SCONE_HASH=1 ${IMG_TO})"
+            && echo "application mrenclave.fingerprint is $(docker run --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
 
 ```bash [Python]
@@ -329,7 +317,7 @@ docker run -it --rm \
             --verbose \
             && echo -e "\n------------------\n" \
             && echo "successfully built TEE docker image => ${IMG_TO}" \
-            && echo "app mrenclave.fingerprint is $(docker run --rm -e SCONE_HASH=1 ${IMG_TO})"
+            && echo "application mrenclave.fingerprint is $(docker run --rm -e SCONE_HASH=1 ${IMG_TO})"
 ```
 
 :::

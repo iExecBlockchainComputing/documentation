@@ -149,8 +149,7 @@ the TEE execution environment.
 - **Docker**: Your application must be containerized
 - **Input/Output**: Define clear input and output schemas
 - **TEE Compatibility**: Ensure your code runs in secure enclaves
-- **Network Access**: Configure any external Application Programming Interface
-  (API) calls or dependencies
+- **Network Access**: Configure any external API calls or dependencies
 
 ## Next Steps
 

@@ -10,7 +10,7 @@ description:
 ::: warning
 
 Before going any further, make sure you managed to
-[Build your first app with Scone framework](build-your-first-sgx-iapp.md).
+[Build your first iApp with Scone framework](build-your-first-sgx-iapp.md).
 
 :::
 

@@ -112,7 +112,7 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
     <div class="flex items-center gap-3">
       <span class="text-xl font-bold text-fuchsia-700">2.</span>
       <div>
-        <strong>Share:</strong> Authorize specific users and apps to access your data
+        <strong>Share:</strong> Authorize specific users and iApps to access your data
       </div>
     </div>
     <div class="flex items-center gap-3">

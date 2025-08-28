@@ -1,8 +1,8 @@
 ---
 title: Protect Data
 description:
-  Learn how to protect your data using iExec's DataProtector Software
-  Development Kit (SDK) in this hands-on tutorial step.
+  Learn how to protect your data using iExec's DataProtector SDK in this
+  hands-on tutorial step.
 ---
 
 <script setup>
@@ -15,7 +15,7 @@ import ProtectData from '@/modules/helloWorld/ProtectData.vue';
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
   <h2 class="text-2xl font-bold mt-0 border-none!">Time to get practical</h2>
-  <p>Follow Alice as she learns how to protect her data using DataProtector on Bob's iApp, the developer tool for protecting data creation and management.</p>
+  <p>Follow Alice as she learns how to protect her data using DataProtector on Bob's dApp, the developer tool for protecting data creation and management.</p>
 </div>
 
 <div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
@@ -178,7 +178,8 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
 - 🔒 **DataProtector** ensures data protection, management, and confidentiality
 
 - 📦 **Protected Data** - DataProtector encrypts and stores data on
-  decentralized storage
+  decentralized storage such as [ar.io](https://ar.io) or
+  [IPFS](https://ipfs.io)
 
 - ⛓️ **Ownership** iExec's protocol writes ownership on the blockchain and links
   it to your wallet

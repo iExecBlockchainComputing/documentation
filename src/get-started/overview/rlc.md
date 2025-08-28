@@ -43,7 +43,7 @@ contributions.
 ### For holders
 
 **Clear positioning:** More developers using iExec's privacy tools means more
-RLC utility in real apps. iExec builds actionable privacy, not just protocols.
+RLC utility in real dApps. iExec builds actionable privacy, not just protocols.
 
 ## 💰 Transparent Payment Flow
 
@@ -53,7 +53,7 @@ transparently distributed to all iExec protocol participants:
 <div class="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-lg px-4 border border-blue-200 dark:border-blue-700 my-0">
   <h4 class="text-lg font-semibold text-blue-800 dark:text-blue-200">🔍 How Your RLC Payment is Distributed</h4>
   
-  **1. App Provider** - Gets paid for providing the confidential app
+  **1. App Provider** - Gets paid for providing the iApp
   
   **2. Protected Data Provider** - Gets paid for providing access to protected confidential datasets
   
@@ -64,7 +64,7 @@ transparently distributed to all iExec protocol participants:
 defined by each provider (iApp, Protected Data, Worker) in their marketplace
 orders.
 
-**🔒 RLC Staking:** To run a task on the protocol (executing an app with
+**🔒 RLC Staking:** To run a task on the protocol (executing an iApp with
 protected data on a decentralized workerpool), you need to **lock RLC** in the
 protocol during the task period. In exchange, you receive **sRLC (staked RLC)**.
 Once the task is completed, you can recover the RLC that wasn't consumed for the

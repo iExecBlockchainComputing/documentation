@@ -82,9 +82,9 @@ const consumeProtectedDataResult =
 
 **Type:** `AddressOrENS`
 
-Address or Ethereum Name Service (ENS) of the iExec TEE iApp that will be used
-to consume the protected data. This iExec TEE iApp is the one that runs within
-an iExec worker.
+Address or Ethereum Name Service (ENS) of the iApp that will be used to consume
+the protected data. This iExec TEE iApp is the one that runs within an iExec
+worker.
 
 ```ts twoslash
 import {

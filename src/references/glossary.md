@@ -64,7 +64,7 @@ for more information
 
 ### Decentralized App (DApp)
 
-An app built on a decentralized network that combines a smart contract and a
+A dApp built on a decentralized network that combines a smart contract and a
 frontend user interface. A DApp has its backend code running on a decentralized
 peer-to-peer network. Contrast this with a traditional app where the backend
 code is running in fully controlled environments.

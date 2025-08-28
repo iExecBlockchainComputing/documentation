@@ -21,7 +21,7 @@ data completely secure**. Your users deserve **absolute confidence** that their
 privacy is protected.
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="!m-0">iExec solves this with <span class="text-fuchsia-700 font-semibold">Turnkey Privacy</span> - a toolkit that simplifies data protection, management, and secure computation, even in untrusted environments. Privacy should be <span class="text-fuchsia-700 font-semibold">plug-and-play simple</span>, not an afterthought.</p>
+  <p class="!m-0">iExec solves this with <span class="text-fuchsia-700 font-semibold">Turnkey Privacy</span> - a toolkit that simplifies data protection, management, and secure computation, even in untrusted environments. iExec believes privacy should be <span class="text-fuchsia-700 font-semibold">plug-and-play simple</span>, not an afterthought.</p>
 </div>
 
 ## 🛠️ How iExec works
