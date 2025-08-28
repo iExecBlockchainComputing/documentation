@@ -50,9 +50,12 @@ Before getting started, make sure you have:
   </div>
 </div>
 
-<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">Don't worry! All secrets used in this tutorial stay on your machine and aren’t shared with anyone. You’ll only need them to run the <code>iapp run</code> command.</p>
-</div>
+::: info
+
+Don't worry! All secrets used in this tutorial stay on your machine and aren’t
+shared with anyone. You’ll only need them to run the `iapp run` command.
+
+:::
 
 ## 🚀 Types of iApp you Can Build
 
