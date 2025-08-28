@@ -16,7 +16,7 @@ Think of schemas as **data fingerprints** - they tell iApp "this protected data
 contains an email address and a phone number" without revealing the actual
 values.
 
-## How Schemas Work
+## How schemas work
 
 When you protect data with DataProtector, the SDK automatically analyzes your
 JSON object and generates a schema. **No manual schema definition needed** -
@@ -64,7 +64,7 @@ understand and validate.
 
 :::
 
-## Supported Data Types
+## Supported data types
 
 The schema automatically detects these types:
 
@@ -84,7 +84,7 @@ MIME types manually.
 
 :::
 
-## Why Schemas Matter
+## Why schemas matter
 
 - **Clarity**: Makes your data easier to understand and reuse
 - **Safety**: Ensures iExec apps don’t process the wrong data
@@ -129,7 +129,7 @@ const listProtectedData = await dataProtectorCore.getProtectedData({
 });
 ```
 
-## Real Examples
+## Real examples
 
 ### Simple User Profile
 
@@ -240,7 +240,7 @@ const fileData = await dataProtectorCore.protectData({
 }
 ```
 
-## Using Schemas in iApp
+## Using schemas in iApp
 
 Once you have protected data with a schema, you'll want to process it inside an
 iApp.
@@ -256,7 +256,7 @@ don't match, you'll get runtime errors when processing the data.
 [Inputs guide](/guides/build-iapp/inputs) to learn how to access schema fields
 inside your iApp using the deserializer.
 
-## Next Steps
+## Next steps
 
 **You now understand how schemas work with protected data.** Here's what to
 explore next:

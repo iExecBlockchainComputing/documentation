@@ -65,8 +65,9 @@ Turnkey Privacy iApp, they will.**
 ## How it Works
 
 Your code runs in a Trusted Execution Environment (TEE). This secure area exists
-inside specific processors (Intel SGX/TDX chipset). Everything stays private and
-protected there, even from the operating system.
+inside specific processors (Intel Software Guard Extensions (SGX)/Trust Domain
+Extensions (TDX) chipset). Everything stays private and protected there, even
+from the operating system.
 
 Authorized users trigger iApp that process protected data inside this private
 environment. Your iApp uses the data but never exposes it, not even to you.

@@ -227,7 +227,7 @@ const purchase = await dataProtectorSharing.buyProtectedData({
 - One-time valuable insights
 - When you want to exit data ownership
 
-## Which Approach to Choose?
+## Which approach to choose?
 
 | **Signed Orders (Core)**     | **Time-Based Access (Sharing)** |
 | ---------------------------- | ------------------------------- |
@@ -241,7 +241,7 @@ and usage-based billing.
 **Choose Time-Based Access when**: You want automated distribution, unlimited
 usage periods, and flexible pricing models.
 
-## Next Steps
+## Next steps
 
 **Ready to start monetizing your data?** Here are your next steps:
 

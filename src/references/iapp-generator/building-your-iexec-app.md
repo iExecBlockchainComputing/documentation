@@ -2,19 +2,19 @@
 title: Build Your iApp
 description:
   Learn how to initialize, configure, and build your iExec application using the
-  iApp Generator CLI with step-by-step guidance.
+  iApp Generator command-line tool with step-by-step guidance.
 ---
 
 # 🧑‍🏭 Build your iApp
 
 ## 🧰 Initialize your iApp
 
-The iApp (iExec Application) Generator CLI simplifies the setup of your iApp by
-guiding you through a step-by-step initialization process. This ensures your
-iApp is correctly configured and compatible with iExec's confidential computing
-environment.
+The iApp (iExec App) Generator command-line tool simplifies the setup of your
+iApp by guiding you through a step-by-step initialization process. This ensures
+your iApp is correctly configured and compatible with iExec's confidential
+computing environment.
 
-### 🏗 Define your Project
+### 🏗 Define your project
 
 <CLIDemo
   initialCommand="iapp init"

@@ -6,7 +6,7 @@ description:
   controls, and secure data monetization.
 ---
 
-# Protected Data
+# Protected data
 
 Protected Data refers to any data encrypted using the **iExec Data Protector
 tool**. This Turnkey Privacy encryption solution enables users to protect,
@@ -16,9 +16,9 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
   <p class="m-0!">Unlike standard datasets, Protected Data exposes its <span class="text-fuchsia-700 font-semibold">data types on-chain</span> (indicating types like email addresses or photos). This lets anyone <span class="text-fuchsia-700 font-semibold">identify entries with matching types</span>.</p>
 </div>
 
-## Key Concepts
+## Key concepts
 
-### Data Governance
+### Data governance
 
 <div class="mb-4"></div>
 
@@ -112,7 +112,7 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
     <div class="flex items-center gap-3">
       <span class="text-xl font-bold text-fuchsia-700">2.</span>
       <div>
-        <strong>Share:</strong> Authorize specific users and applications to access your data
+        <strong>Share:</strong> Authorize specific users and iApps to access your data
       </div>
     </div>
     <div class="flex items-center gap-3">
@@ -136,7 +136,7 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
   </div>
 </div>
 
-## Use Cases
+## Use cases
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
   <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
@@ -188,7 +188,7 @@ manage and monetize their data within the Web3 ecosystem effortlessly.
   <p class="m-0!">Ready to protect your data? Start with our <span class="text-green-700 font-semibold">DataProtector guides</span>. Learn how to secure sensitive information while unlocking its value.</p>
 </div>
 
-## Next Steps
+## Next steps
 
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-4">

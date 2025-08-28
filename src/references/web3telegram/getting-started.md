@@ -5,7 +5,7 @@ description:
   Telegram messages. Install the SDK and integrate it with your Web3 project.
 ---
 
-# Getting Started
+# Getting started
 
 [![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/iExecBlockchainComputing/web3telegram-sdk?color=green)](https://github.com/iExecBlockchainComputing/web3telegram-sdk)
 

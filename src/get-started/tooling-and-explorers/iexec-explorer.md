@@ -141,8 +141,8 @@ Browse and analyze all tasks across the iExec network:
   workerpool for each task
 - **Real-time Progress**: Monitor task status from queued → running → completed
   with detailed state transitions
-- **Execution Environment**: See which workerpool nodes are processing your
-  tasks and their TEE capabilities (TDX, SGX)
+- **Execution Environment**: See which workers are processing your tasks and
+  their TEE capabilities (SGX, TDX)
 - **Data Flow**: Track which protected datasets are securely accessed by
   authorized iApp
 - **Result Management**:

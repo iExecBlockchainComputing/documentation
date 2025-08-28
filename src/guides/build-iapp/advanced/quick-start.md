@@ -7,14 +7,14 @@ description:
 
 # Quick Start
 
-> In this tutorial we will show you how you can create decentralized application
-> over the iExec infrastructure.
+> This tutorial shows how to create decentralized app over the iExec
+> infrastructure.
 
 iExec enables decentralized docker app deployment and monetization on the
 blockchain.
 
-In this guide, we will use the iExec SDK command-line interface to deploy an
-iExec app on a test blockchain.
+This guide uses the iExec SDK command-line interface to deploy an iExec app on a
+test blockchain.
 
 ## Install the iExec SDK
 

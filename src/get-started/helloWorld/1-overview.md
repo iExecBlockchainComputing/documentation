@@ -11,13 +11,13 @@ description:
 > Reading time 🕒 8 min
 
 <div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
-  <h2 class="text-2xl font-bold mt-0 border-none!">Let's start with the basics</h2>
-  <p>and explore how iExec can help you build Privacy-preserving applications and securely manage sensitive data.</p>
+  <h2 class="text-2xl font-bold mt-0 border-none!">Start with the basics</h2>
+  <p>and explore how iExec can help you build Privacy-preserving apps and securely manage sensitive data.</p>
 </div>
 
 ## 👨‍💻 Building Privacy-preserving iApp with iExec
 
-<p>Imagine you're building a decentralized application (iApp) that needs to <strong> handle sensitive user data</strong>, for example:</p>
+<p>Imagine you're building a decentralized app (dApp) that needs to <strong> handle sensitive user data</strong>, for example:</p>
 <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
   <div class="flex flex-col gap-2.5">
     <div class="flex items-center gap-2 text-base">
@@ -60,7 +60,7 @@ description:
 </div>
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">This is where <span class="text-fuchsia-700 font-semibold">iExec</span> comes in! We provide tools to easily add <span class="text-fuchsia-700 font-semibold">privacy</span> and <span class="text-fuchsia-700 font-semibold">monetization</span> features into your iApp.</p>
+  <p class="m-0!">This is where <span class="text-fuchsia-700 font-semibold">iExec</span> comes in. iExec provides tools to easily add <span class="text-fuchsia-700 font-semibold">privacy</span> and <span class="text-fuchsia-700 font-semibold">monetization</span> features into your iApp.</p>
 </div>
 
 ## 👷 How do we Solve it?
@@ -76,7 +76,7 @@ Execution Environment (TEE)</a></span> and
 Computing</a></span> technologies.
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">Our technology allows users to control the <span class="text-fuchsia-700 font-semibold">ownership</span>,
+  <p class="m-0!">The technology allows users to control the <span class="text-fuchsia-700 font-semibold">ownership</span>,
   <span class="text-fuchsia-700 font-semibold">confidentiality</span>, and <span class="text-fuchsia-700 font-semibold">monetization</span> of their data and digital assets within the <span class="text-fuchsia-700 font-semibold">Web3</span> ecosystem.</p>
 </div>
 
@@ -104,7 +104,7 @@ iExec combines three fundamental elements that work together seamlessly:
 - Provides transparent governance rules for data access
 
 <div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">By merging <span class="text-fuchsia-700 font-semibold">blockchain technology</span> with <span class="text-fuchsia-700 font-semibold">confidential computing</span>, we've pioneered <span class="text-fuchsia-700 font-semibold"><a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">DeCC</a></span> (Decentralized Confidential Computing) to take <span class="text-fuchsia-700 font-semibold">privacy</span> and <span class="text-fuchsia-700 font-semibold">security</span> to the next level in <span class="text-fuchsia-700 font-semibold">Web3</span> ecosystems.</p>
+  <p class="m-0!">By merging <span class="text-fuchsia-700 font-semibold">blockchain technology</span> with <span class="text-fuchsia-700 font-semibold">confidential computing</span>, iExec pioneered <span class="text-fuchsia-700 font-semibold"><a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">DeCC</a></span> (Decentralized Confidential Computing) to take <span class="text-fuchsia-700 font-semibold">privacy</span> and <span class="text-fuchsia-700 font-semibold">security</span> to the next level in <span class="text-fuchsia-700 font-semibold">Web3</span> ecosystems.</p>
 </div>
 
 ### 🧸 DeCC Explained Like You're 5
@@ -174,10 +174,10 @@ And many other use cases...
   </div>
   <div class="flex items-center gap-3">
     <span class="text-xl">🔌</span>
-    <p class="m-0"><strong>Wide Application:</strong> From AI to finance, enabling confidential data processing across various industries</p>
+    <p class="m-0"><strong>Wide application:</strong> From AI to finance, enabling confidential data processing across various industries</p>
   </div>
 </div>
 
 <div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-  <p class="m-0!">Now that you understand the fundamentals, let's dive into protecting your first piece of data! With Alice!</p>
+  <p class="m-0!">Now that you understand the fundamentals, dive into protecting your first data with Alice.</p>
 </div>

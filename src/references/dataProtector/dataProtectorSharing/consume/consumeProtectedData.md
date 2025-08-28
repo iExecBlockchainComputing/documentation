@@ -3,7 +3,8 @@ title: consumeProtectedData
 description:
   Consume protected data in iExec by visualizing or downloading it. This method
   involves generating RSA keys, interacting with iExec's Secret Management
-  Service, and securely retrieving encrypted data from IPFS.
+  Service, and securely retrieving encrypted data from InterPlanetary File
+  System (IPFS).
 ---
 
 # consumeProtectedData <ChainNotSupportedBadge />
@@ -81,8 +82,9 @@ const consumeProtectedDataResult =
 
 **Type:** `AddressOrENS`
 
-Address or ENS of the iExec TEE iApp that will be used to consume the protected
-data. This iExec TEE iApp is the one that runs within an iExec worker.
+Address or Ethereum Name Service (ENS) of the iApp that will be used to consume
+the protected data. This iExec TEE iApp is the one that runs within an iExec
+worker.
 
 ```ts twoslash
 import {
@@ -212,7 +214,7 @@ public key, you can reuse it in further calls.
 
 Alternatively, you can generate a RSA keypair on your own.
 
-If a public key is provided, its corresponding private key needs also to be
+If you provide a public key, you must also provide its corresponding private key
 provided.
 
 ```ts twoslash
@@ -241,7 +243,7 @@ private key, you can reuse it in further calls.
 
 Alternatively, you can generate a RSA keypair on your own.
 
-If a private key is provided, its corresponding public key needs also to be
+If you provide a private key, you must also provide its corresponding public key
 provided.
 
 ```ts twoslash
