@@ -47,8 +47,6 @@ Once you've built your first iApp, level up with these practical guides:
   execution issues
 - **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
   Control who can use your iApp
-- **[How to Get and Decrypt Results](/guides/build-iapp/outputs)** - Retrieve
-  and use outputs
 
 ### 3. **Explore Advanced Features**
 

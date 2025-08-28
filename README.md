@@ -246,7 +246,7 @@ for input parameters:
 - Refactor "advanced" section in build-iapp
 - Rework src\get-started\protocol\iexec-doracle.md (transfer to guide or
   rewrite)
-- Talk about encrypting results in use-iapp
+- Talk about encrypting results in use-iapp (link in outputs, iapp generator...)
 - Rework src\get-started\protocol\oracle.md (transfer to guide or rewrite)
 - Talk about iApp secret
 - Improve Guide in build-iapp section - be more clear for builder ( how to
