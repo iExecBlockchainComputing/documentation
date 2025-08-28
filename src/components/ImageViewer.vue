@@ -20,10 +20,10 @@
     <p v-if="caption" class="mt-4 font-medium">
       <Button
         as="a"
+        variant="secondary"
         :href="linkUrl"
         target="_blank"
         rel="noreferrer"
-        class="text-primary hover:text-primary2 inline-flex items-center gap-2 rounded-lg no-underline transition-colors duration-200"
       >
         {{ caption }}
       </Button>
