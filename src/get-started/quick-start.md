@@ -104,8 +104,7 @@ learning and prototyping.
 
 ## Next Steps After Exploring our Starters and Sandboxes
 
-1. **Choose Your Framework**: Start with our Next.js template or wait for
-   React/Vue options
+1. **Choose Your Framework**: Start with one of our project starters
 2. **Experiment**: Try the interactive sandboxes to understand core concepts
 3. **Build**: Integrate the features you need into your application
 4. **Deploy**: Use our deployment guides for production-ready applications
