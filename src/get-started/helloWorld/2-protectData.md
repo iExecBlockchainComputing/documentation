@@ -16,8 +16,12 @@ import Container from '../../components/Container.vue'
 > Reading time: 6 minutes
 
 <Banner>
-  <h2 class="text-2xl font-bold mt-0 border-none!">Time to get practical</h2>
-  <p>Let's follow Alice as she learns how to protect her data using DataProtector on Bob's iApp, our developer tool for protecting data creation and management.</p>
+
+## Time to get practical
+
+Let's follow Alice as she learns how to protect her data using DataProtector on
+Bob's iApp, our developer tool for protecting data creation and management.
+
 </Banner>
 
 ::: tip <i></i>

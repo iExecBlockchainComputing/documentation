@@ -17,8 +17,12 @@ import CardWithoutBorder from '../../components/CardWithoutBorder.vue'
 > Reading time 🕒 8 min
 
 <Banner>
-  <h2 class="text-2xl font-bold mt-0 border-none!">Let's start with the basics</h2>
-  <p>and explore how iExec can help you build Privacy-preserving applications and securely manage sensitive data.</p>
+
+## Let's start with the basics
+
+and explore how iExec can help you build Privacy-preserving applications and
+securely manage sensitive data.
+
 </Banner>
 
 ## 👨‍💻 Building Privacy-preserving iApp with iExec

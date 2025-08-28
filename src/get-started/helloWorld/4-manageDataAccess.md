@@ -20,8 +20,12 @@ const { protectedDataAddress } = useWalletConnection();
 > Reading time 🕒 6 min
 
 <Banner>
-  <h2 class="text-2xl font-bold mt-0 border-none!">Control Your Data</h2>
-  <p>Alice will learn how to grant access to her protected data and manage who can use it.</p>
+
+## Control Your Data
+
+Alice will learn how to grant access to her protected data and manage who can
+use it.
+
 </Banner>
 
 ::: tip <i></i>

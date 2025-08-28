@@ -25,8 +25,12 @@ import CardWithBorder from '../components/CardWithBorder.vue'
 </CardWithBorder>
 
 <Banner>
-  <h2 class="text-2xl font-bold mt-0 border-none!">Start Your Web3 Privacy Journey</h2>
-  <p>And learn how to build Privacy-preserving decentralized applications (DApp) with iExec in this interactive guide.</p>
+
+## Start Your Web3 Privacy Journey
+
+And learn how to build Privacy-preserving decentralized applications (DApp) with
+iExec in this interactive guide.
+
   <div class="mt-6 flex items-center gap-4">
     <span class="bg-gray-900 text-white px-4 py-2 rounded-full font-medium">☕ 30 minutes journey</span>
     <p>Perfect for hackathons 😊</p>

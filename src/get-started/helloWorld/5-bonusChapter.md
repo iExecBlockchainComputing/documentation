@@ -10,8 +10,13 @@ description:
 > Reading time 🕒 4 min
 
 <Banner>
-  <h2 class="text-2xl font-bold mt-0 border-none!">Congratulations!</h2>
-  <p>You've successfully completed the Hello World journey and learned how to protect data, deploy iApp, and manage data access. Now it's time to claim your rewards! 🏆</p>
+  
+## Congratulations!
+
+You've successfully completed the Hello World journey and learned how to protect
+data, deploy iApp, and manage data access. Now it's time to claim your rewards!
+🏆
+
 </Banner>
 
 ## 🏁 Any Questions?
@@ -37,7 +42,8 @@ Community</a>** for support!
 </Container>
 
 <template v-if="selectedChain !== 42161">
-<h2>🎁 Claim your Voucher</h2>
+
+## 🎁 Claim your Voucher
 
 <div class="mb-6">
   <h3 class="text-xl font-semibold mb-2">What is a Voucher?</h3>
