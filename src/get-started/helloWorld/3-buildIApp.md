@@ -77,8 +77,8 @@ Transfer, sell or rent protected content to authorized users.
 ::: tip <i></i>
 
 These are just a few examples, the possibilities are endless. Want to explore
-iApp Generator? Check out our [documentation](/references/iapp-generator) and see
-what you can build!
+iApp Generator? Check out our [documentation](/references/iapp-generator) and
+see what you can build!
 
 :::
 

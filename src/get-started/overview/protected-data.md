@@ -112,8 +112,10 @@ to secure sensitive information while unlocking its value.
 
 <CardWithoutBorder>
 
-**Learn More:** [Complete DataProtector Documentation](/guides/manage-data/manage-access)
+**Learn More:**
+[Complete DataProtector Documentation](/guides/manage-data/manage-access)
 
-**Getting Started:** [DataProtector Quick Start Guide](/references/dataProtector/getting-started)
+**Getting Started:**
+[DataProtector Quick Start Guide](/references/dataProtector/getting-started)
 
 </CardWithoutBorder>

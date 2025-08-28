@@ -125,8 +125,8 @@ Collaborative research on sensitive datasets across institutions
 ## Time to build!
 
 Let's build an iApp that can process protected data in a secure environment
-using the [iExec iApp generator tool](/references/iapp-generator). This tool helps you create, test and deploy iApp with just a
-few commands.
+using the [iExec iApp generator tool](/references/iapp-generator). This tool
+helps you create, test and deploy iApp with just a few commands.
 
 </Banner>
 
@@ -147,8 +147,8 @@ few commands.
 ::: tip
 
 These are just a few examples, the possibilities are endless. Want to explore
-iApp Generator? Check out our [documentation](/references/iapp-generator) and see
-what you can build!
+iApp Generator? Check out our [documentation](/references/iapp-generator) and
+see what you can build!
 
 :::
 

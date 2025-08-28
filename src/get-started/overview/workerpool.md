@@ -66,10 +66,15 @@ workerpool selection automatically.
 
 <CardWithoutBorder>
 
-**Start Using:** [Build your first iApp](/get-started/helloWorld) and see a workerpool in action
+**Start Using:** [Build your first iApp](/get-started/helloWorld) and see a
+workerpool in action
 
-**Join as Worker:** [Contact us on Discord](https://discord.com/invite/pbt9m98wnU) for guidance and support
+**Join as Worker:**
+[Contact us on Discord](https://discord.com/invite/pbt9m98wnU) for guidance and
+support
 
-**Manage Workerpool:** [Contact us on Discord](https://discord.com/invite/pbt9m98wnU) for deployment assistance
+**Manage Workerpool:**
+[Contact us on Discord](https://discord.com/invite/pbt9m98wnU) for deployment
+assistance
 
 </CardWithoutBorder>

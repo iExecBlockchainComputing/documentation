@@ -35,8 +35,9 @@ their DApp with these key features:
 
 - 🔐 **Data Privacy and Security**
 
-  Uses end-to-end encryption and decentralized storage ([IPFS](https://ipfs.tech/) or [AR.io](https://ar.io/)) to ensure protection and
-  confidentiality, leveraging advanced confidential computing technology.
+  Uses end-to-end encryption and decentralized storage
+  ([IPFS](https://ipfs.tech/) or [AR.io](https://ar.io/)) to ensure protection
+  and confidentiality, leveraging advanced confidential computing technology.
 
 - 🎮 **Dynamic Access Management**
 
