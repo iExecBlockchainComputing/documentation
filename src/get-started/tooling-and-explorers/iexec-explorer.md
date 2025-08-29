@@ -15,7 +15,7 @@ explore apps and protectedData—all in one powerful dashboard.
   :image-url-dark="explorerGlobalImage"
   image-alt="iExec Explorer"
   :link-url="explorerUrl"
-  caption="🔗 Explore the iExec Protocol"
+  caption="Explore the iExec Protocol"
 />
 
 ::: tip
@@ -76,7 +76,7 @@ Each **Deal** brings together:
   :image-url-dark="dealViewImage"
   image-alt="Deal View"
   :link-url="`${explorerUrl}/deals`"
-  caption="🔗 Explore Deals"
+  caption="Explore Deals"
 />
 
 > **💡 Understanding Deals**: A deal is a coordinated set of stakeholders that
@@ -102,7 +102,7 @@ Each **Deal** brings together:
   :image-url-dark="taskViewImage"
   image-alt="Task View"
   :link-url="`${explorerUrl}/tasks`"
-  caption="🔗 Explore Tasks"
+  caption="Explore Tasks"
 />
 
 Browse and analyze all tasks across the iExec network:
@@ -118,14 +118,14 @@ Browse and analyze all tasks across the iExec network:
     :image-url-dark="taskDetailsStartedImage"
     image-alt="Result Decryption"
     :link-url="`${explorerUrl}/tasks`"
-    caption="🔗 Explore Tasks"
+    caption="Explore Tasks"
 />
 
 <ImageViewer
     :image-url-dark="taskDetailsCompletedImage"
     image-alt="Task Completed"
     :link-url="`${explorerUrl}/tasks`"
-    caption="🔗 Explore Tasks"
+    caption="Explore Tasks"
 />
 
 > **🔗 Task Assets**: Each task involves four key assets working together: the
@@ -154,7 +154,7 @@ Browse and analyze all tasks across the iExec network:
   :image-url-dark="appViewImage"
   image-alt="App View"
   :link-url="`${explorerUrl}/apps`"
-  caption="🔗 Explore iApp Marketplace"
+  caption="Explore iApp Marketplace"
 />
 
 Explore the iExec application marketplace:
@@ -169,7 +169,7 @@ Explore the iExec application marketplace:
   :image-url-dark="datasetViewImage"
   image-alt="Dataset View"
   :link-url="`${explorerUrl}/datasets`"
-  caption="🔗 Explore Protected Datasets"
+  caption="Explore Protected Datasets"
 />
 
 Navigate the protected data landscape:
@@ -186,7 +186,7 @@ Navigate the protected data landscape:
   :image-url-dark="workerpoolViewImage"
   image-alt="Workerpool View"
   :link-url="`${explorerUrl}/workerpools`"
-  caption="🔗 Explore Workerpools Infrastructure"
+  caption="Explore Workerpools Infrastructure"
 />
 
 Explore the decentralized computing infrastructure:

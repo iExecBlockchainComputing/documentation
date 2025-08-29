@@ -26,6 +26,7 @@
         rel="noreferrer"
       >
         {{ caption }}
+        <Icon icon="lucide:arrow-up-right" :height="20" />
       </Button>
     </p>
   </div>
@@ -33,6 +34,7 @@
 
 <script setup lang="ts">
 import Button from './ui/Button.vue';
+import { Icon } from '@iconify/vue';
 
 interface Props {
   imageUrlLight?: string;

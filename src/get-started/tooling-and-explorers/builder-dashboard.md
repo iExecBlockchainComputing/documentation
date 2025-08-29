@@ -17,7 +17,7 @@ confidential iApp deployed on the protocol.
   :image-url-dark="builderDashboardImage"
   image-alt="Builder Dashboard Overview"
   link-url="https://builder.iex.ec/"
-  caption="🔗 Access the Builder Dashboard"
+  caption="Access the Builder Dashboard"
 />
 
 ## 🎯 Key Features
@@ -43,7 +43,7 @@ monitoring with detailed task execution history and real-time balance tracking.
   :image-url-dark="buildVoucherViewImage"
   image-alt="Voucher Consumption Dashboard"
   link-url="https://builder.iex.ec/vouchers"
-  caption="🔗 Access Voucher Dashboard"
+  caption="Access Voucher Dashboard"
 />
 
 ### Current Voucher Balance & Management
@@ -90,7 +90,7 @@ deployed confidential iApp with detailed statistics and user insights.
   :image-url-dark="myIappsViewImage"
   image-alt="My Confidential iApp Dashboard"
   link-url="https://builder.iex.ec/iApp"
-  caption="🔗 Manage Your iApp"
+  caption="Manage Your iApp"
 />
 
 ### My Confidential iApp Overview
