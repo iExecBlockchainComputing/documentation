@@ -6,11 +6,12 @@ description:
   it drives privacy-first Web3 apps.
 ---
 
-<div class="flex flex-col items-center mb-8">
-  <img :src="rlcGif" alt="RLC Token Animation" class="w-80 h-80 mb-0" />
-  <h1 class="text-3xl font-bold text-center mb-2">RLC Token</h1>
-  <p class="text-lg text-center text-gray-600 max-w-2xl">The native cryptocurrency that powers the entire iExec decentralized confidential computing ecosystem</p>
-</div>
+<img :src="rlcGif" alt="RLC Token Animation" class="size-80 -my-10 mx-auto" />
+
+# RLC Token
+
+The native cryptocurrency that powers the entire iExec decentralized
+confidential computing ecosystem
 
 RLC (Run on Lots of Computers) powers all privacy apps on iExec. Every
 confidential computation requires RLC. Every piece of protected data consumed
@@ -50,30 +51,32 @@ RLC utility in real dApps. iExec builds actionable privacy, not just protocols.
 When you pay for a task execution with RLC, your payment is automatically and
 transparently distributed to all iExec protocol participants:
 
-<div class="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-lg px-4 border border-blue-200 dark:border-blue-700 my-0">
-  <h4 class="text-lg font-semibold text-blue-800 dark:text-blue-200">🔍 How Your RLC Payment is Distributed</h4>
-  
-  **1. App Provider** - Gets paid for providing the iApp
-  
-  **2. Protected Data Provider** - Gets paid for providing access to protected confidential datasets
-  
-  **3. Worker** - Gets paid for running the confidential computation on their decentralized machine
-</div>
+::: tip How Your RLC Payment is Distributed
 
-**💡 Transparent:** Payments are distributed based on pricing and conditions
+**1. App Provider** - Gets paid for providing the iApp
+
+**2. Protected Data Provider** - Gets paid for providing access to protected
+confidential datasets
+
+**3. Worker** - Gets paid for running the confidential computation on their
+decentralized machine
+
+:::
+
+**Transparent:** Payments are distributed based on pricing and conditions
 defined by each provider (iApp, Protected Data, Worker) in their marketplace
 orders.
 
-**🔒 RLC Staking:** To run a task on the protocol (executing an iApp with
-protected data on a decentralized workerpool), you need to **lock RLC** in the
-protocol during the task period. In exchange, you receive **sRLC (staked RLC)**.
-Once the task is completed, you can recover the RLC that wasn't consumed for the
-task payment.
+**RLC Staking:** To run a task on the protocol (executing an iApp with protected
+data on a decentralized workerpool), you need to **lock RLC** in the protocol
+during the task period. In exchange, you receive **sRLC (staked RLC)**. Once the
+task is completed, you can recover the RLC that wasn't consumed for the task
+payment.
 
 ### 📊 Ecosystem Growth Metrics
 
-RLC operates on a utility-driven economic model where demand for confidential
-computing services drives token value:
+**RLC operates** on a utility-driven economic model where demand for
+confidential computing services drives token value:
 
 **Fixed Supply**: RLC has a maximum supply of 87 million tokens, ensuring
 scarcity and value preservation.
@@ -96,8 +99,6 @@ You can acquire RLC tokens through several methods:
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
   <FeatureCard
     title="Centralized Exchanges"
-    icon="mdi:store"
-    icon-color="text-indigo-500"
     :features="[
       { text: 'View all available CEX on CoinMarketCap', link: 'https://coinmarketcap.com/fr/currencies/rlc/' },
       'High liquidity markets',
@@ -107,8 +108,6 @@ You can acquire RLC tokens through several methods:
   
   <FeatureCard
     title="Decentralized Exchanges"
-    icon="mdi:waves"
-    icon-color="text-purple-500"
     :features="[
       { text: 'ETH: RLC/ETH on Uniswap', link: 'https://app.uniswap.org/explore/pools/ethereum/0x56Ea002B411FD5887E55329852D5777EcB170713' },
       'ARB: RLC/ETH (coming soon)',
@@ -118,8 +117,6 @@ You can acquire RLC tokens through several methods:
   
   <FeatureCard
     title="Cross-Chain Bridging"
-    icon="mdi:bridge"
-    icon-color="text-teal-500"
     :features="[
       'Bellecour Bridge',
       'Stargate Bridge (Arbitrum)',
@@ -128,8 +125,6 @@ You can acquire RLC tokens through several methods:
   
   <FeatureCard
     title="Earn RLC"
-    icon="mdi:diamond"
-    icon-color="text-pink-500"
     :features="[
       'Develop confidential apps',
       'Monetize protected datasets',

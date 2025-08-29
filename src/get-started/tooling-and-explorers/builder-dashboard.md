@@ -17,24 +17,20 @@ confidential iApp deployed on the protocol.
   :image-url-dark="builderDashboardImage"
   image-alt="Builder Dashboard Overview"
   link-url="https://builder.iex.ec/"
-  caption="🔗 Access the Builder Dashboard"
+  caption="Access the Builder Dashboard"
 />
 
 ## 🎯 Key Features
 
 <CardGrid>
   <FeatureCard
-    icon="mdi:chart-line"
     title="Voucher consumption & Task History"
     description="View complete task execution history with status, pricing, deals, and comprehensive voucher consumption tracking"
-    icon-color="text-blue-500"
   />
   
   <FeatureCard
-    icon="mdi:apps"
     title="Confidential iApp Monitoring"
     description="Monitor deployed iApp, track execution statistics, unique users"
-    icon-color="text-green-500"
   />
 </CardGrid>
 
@@ -47,49 +43,41 @@ monitoring with detailed task execution history and real-time balance tracking.
   :image-url-dark="buildVoucherViewImage"
   image-alt="Voucher Consumption Dashboard"
   link-url="https://builder.iex.ec/vouchers"
-  caption="🔗 Access Voucher Dashboard"
+  caption="Access Voucher Dashboard"
 />
 
 ### Current Voucher Balance & Management
 
-<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-700 my-6">
-  <h4 class="!mt-0 !mb-2">💰 Voucher Balance Overview</h4>
-  <ul class="!mb-0">
-    <li><strong>Current Balance</strong>: View your remaining voucher credits and compute capacity</li>
-    <li><strong>Claim New Vouchers</strong>: Request additional vouchers directly from the dashboard</li>
-    <li><strong>Expiration Alerts</strong>: Get notified before vouchers expire</li>
-  </ul>
-</div>
+::: warning 💰 Voucher Balance Overview
+
+- **Current Balance**: View your remaining voucher credits and compute capacity
+- **Claim New Vouchers**: Request additional vouchers directly from the
+  dashboard
+- **Expiration Alerts**: Get notified before vouchers expire
+
+:::
 
 ### Task Execution History
 
 <CardGrid>
   <FeatureCard
-    icon="mdi:history"
     title="Complete Task History"
     description="Chronological list of all executed tasks with detailed execution information"
-    icon-color="text-blue-500"
   />
   
   <FeatureCard
-    icon="mdi:chart-line"
     title="Task Status Tracking"
     description="Real-time status updates: Pending, Running, Completed, Failed"
-    icon-color="text-green-500"
   />
   
   <FeatureCard
-    icon="mdi:currency-usd"
     title="Pricing & Cost Analysis"
     description="Detailed cost breakdown per task and cumulative spending analytics"
-    icon-color="text-orange-500"
   />
   
   <FeatureCard
-    icon="mdi:handshake"
     title="Deal Association"
     description="View which deal each task belongs to and track deal performance"
-    icon-color="text-purple-500"
   />
 </CardGrid>
 
@@ -102,50 +90,43 @@ deployed confidential iApp with detailed statistics and user insights.
   :image-url-dark="myIappsViewImage"
   image-alt="My Confidential iApp Dashboard"
   link-url="https://builder.iex.ec/iApp"
-  caption="🔗 Manage Your iApp"
+  caption="Manage Your iApp"
 />
 
 ### My Confidential iApp Overview
 
-<div class="bg-gradient-to-r from-blue-400/10 to-blue-400/5 rounded-[6px] p-6 border-l-4 border-blue-700 my-6">
-  <h4 class="!mt-0 !mb-2">📱 iApp Portfolio Metrics</h4>
-  <ul class="!mb-0">
-    <li><strong>Deployed Applications</strong>: Complete list of all your confidential iApp currently deployed</li>
-    <li><strong>Execution Statistics</strong>: See exactly how many times each iApp has been executed</li>
-    <li><strong>Unique Users</strong>: Track total unique users who have run each application</li>
-    <li><strong>Revenue Insights</strong>: Track earnings and profitability per application</li>
-  </ul>
-</div>
+::: tip 📱 iApp Portfolio Metrics
+
+- **Deployed Applications**: Complete list of all your confidential iApp
+  currently deployed
+- **Execution Statistics**: See exactly how many times each iApp has been
+  executed
+- **Unique Users**: Track total unique users who have run each application
+- **Revenue Insights**: Track earnings and profitability per application<
+
+:::
 
 ### Application Statistics Dashboard
 
 <CardGrid>
   <FeatureCard
-    icon="mdi:apps"
     title="Deployed iApp"
     description="View all your confidential applications with deployment status, versions, and metadata"
-    icon-color="text-blue-500"
   />
   
   <FeatureCard
-    icon="mdi:counter"
     title="Execution Count"
     description="Track how many times each iApp has been executed since deployment"
-    icon-color="text-green-500"
   />
   
   <FeatureCard
-    icon="mdi:account-group"
     title="Unique Users"
     description="Monitor total unique users who have interacted with each application"
-    icon-color="text-orange-500"
   />
   
   <FeatureCard
-    icon="mdi:trending-up"
     title="Usage Trends"
     description="Analyze usage patterns, peak times, and growth trends for each iApp"
-    icon-color="text-purple-500"
   />
 </CardGrid>
 

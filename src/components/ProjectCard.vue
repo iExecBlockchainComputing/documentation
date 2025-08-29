@@ -38,6 +38,7 @@
       <div v-if="githubUrl" class="grid gap-3">
         <Button
           as="a"
+          variant="secondary"
           :href="buttonHref"
           :disabled="buttonDisabled"
           :target="buttonTarget"
@@ -46,6 +47,7 @@
         >
           <Icon :icon="buttonIcon" :height="16" />
           {{ buttonLabel }}
+          <Icon icon="lucide:arrow-up-right" :height="20" />
         </Button>
         <Button
           as="a"
@@ -57,11 +59,13 @@
         >
           <Icon icon="mdi:github" :height="16" />
           {{ githubLabel || 'View Code' }}
+          <Icon icon="lucide:arrow-up-right" :height="20" />
         </Button>
       </div>
       <Button
         v-else
         :as="buttonHref ? 'a' : 'button'"
+        variant="secondary"
         :href="buttonHref"
         :disabled="buttonDisabled"
         :target="buttonTarget"
@@ -70,6 +74,7 @@
       >
         <Icon :icon="buttonIcon" :height="16" />
         {{ buttonLabel }}
+        <Icon v-if="buttonHref" icon="lucide:arrow-up-right" :height="20" />
       </Button>
     </div>
   </div>

@@ -2,7 +2,7 @@
   <div
     class="flex shrink-0 items-center gap-2 rounded-[30px] bg-gray-800 px-3 py-2 text-white"
   >
-    <div class="text-primary text-sm font-medium">{{ displayAddress }}</div>
+    <div class="text-sm font-medium text-[#fcd15a]">{{ displayAddress }}</div>
     <div
       :class="[
         avatarStyles[avatarVisualBg],

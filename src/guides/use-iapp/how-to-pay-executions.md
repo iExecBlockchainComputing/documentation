@@ -83,7 +83,7 @@ automated top-up (can be configured to automatically refill).
   :image-url-dark="builderDashboardImage"
   image-alt="Builder Dashboard Overview"
   link-url="https://builder.iex.ec/"
-  caption="🔗 Access the Builder Dashboard"
+  caption="Access the Builder Dashboard"
 />
 
 The iExec Builder Dashboard manages vouchers and resources with an intuitive

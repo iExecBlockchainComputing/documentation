@@ -42,22 +42,22 @@ const badgeClasses = computed(() => {
   let variantClasses = '';
   switch (props.variant) {
     case 'success':
-      variantClasses = 'bg-success-soft text-success-3 border-success-3';
+      variantClasses = 'text-success-1 border-success-1';
       break;
     case 'warning':
-      variantClasses = 'bg-warning-soft text-warning-3 border-warning-3';
+      variantClasses = 'text-warning-1 border-warning-1';
       break;
     case 'danger':
-      variantClasses = 'bg-danger-soft text-danger-3 border-danger-3';
+      variantClasses = 'text-danger-1 border-danger-1';
       break;
     case 'important':
-      variantClasses = 'bg-important-soft text-important-3 border-important-3';
+      variantClasses = 'text-important-1 border-important-1';
       break;
     case 'primary':
-      variantClasses = 'bg-primary2/10 text-primary2 border-primary2/30';
+      variantClasses = 'text-primary border-primary';
       break;
     default:
-      variantClasses = 'bg-soft-bg text-text2 border-border';
+      variantClasses = 'text-text border-border';
   }
 
   return `${baseClasses} ${sizeClasses} ${variantClasses}`;

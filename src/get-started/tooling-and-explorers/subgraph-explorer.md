@@ -47,59 +47,56 @@ comprehensive data access. Each subgraph indexes specific aspects of the iExec
 protocol.
 
 <CardGrid>
-  <ProjectCard
-    title="iExec PoCo - Arbitrum"
-    description="Indexes Proof of Contribution (PoCo) data on Arbitrum mainnet, including apps, deals, tasks, and workerpools"
-    :icon-image="arbitrumIcon"
-    status="available"
-    status-label="Live"
-    button-label="Explore Subgraph"
-    button-icon="mdi:open-in-new"
-    button-href="https://thegraph.com/explorer/subgraphs/B1comLe9SANBLrjdnoNTJSubbeC7cY7EoNu6zD82HeKy?view=Query&chain=arbitrum-one"
-    button-target="_blank"
-    button-rel="noreferrer"
-  />
-  
-  <ProjectCard
-    title="iExec DataProtector - Arbitrum"
-    description="Indexes DataProtector protocol data on Arbitrum mainnet, including protected data, access grants, and sharing mechanisms"
-    :icon-image="arbitrumIcon"
-    status="available"
-    status-label="Live"
-    button-label="Explore Subgraph"
-    button-icon="mdi:open-in-new"
-    button-href="https://thegraph.com/explorer/subgraphs/Ep5zs5zVr4tDiVuQJepUu51e5eWYJpka624X4DMBxe3u?view=Query&chain=arbitrum-one"
-    button-target="_blank"
-    button-rel="noreferrer"
-  />
 
 <ProjectCard
-    title="iExec PoCo - Bellecour"
-    description="Indexes Proof of Contribution (PoCo) data on Bellecour mainnet, including apps, deals, tasks, and workerpools"
-    :icon-image="iexecLogoIcon"
-    status="available"
-    status-label="Live"
-    button-label="Explore Subgraph"
-    button-icon="mdi:open-in-new"
-    button-href="https://thegraph.bellecour.iex.ec/subgraphs/name/bellecour/poco-v5/graphql?query=query+MyQuery+%7B%0A++apps+%7B%0A++++name%0A++++id%0A++++owner+%7B%0A++++++id%0A++++%7D%0A++%7D%0A%7D"
-    button-target="_blank"
-    button-rel="noreferrer"
-  />
+  title="iExec PoCo - Arbitrum"
+  description="Indexes Proof of Contribution (PoCo) data on Arbitrum mainnet, including apps, deals, tasks, and workerpools"
+  :icon-image="arbitrumIcon"
+  status="available"
+  status-label="Live"
+  button-label="Explore Subgraph"
+  button-href="https://thegraph.com/explorer/subgraphs/B1comLe9SANBLrjdnoNTJSubbeC7cY7EoNu6zD82HeKy?view=Query&chain=arbitrum-one"
+  button-target="_blank"
+  button-rel="noreferrer"
+/>
 
 <ProjectCard
-    title="iExec DataProtector - Bellecour"
-    description="Indexes DataProtector protocol data on Bellecour mainnet, including protected data, access grants, and sharing mechanisms"
-    :icon-image="iexecLogoIcon"
-    status="available"
-    status-label="Live"
-    button-label="Explore Subgraph"
-    button-icon="mdi:open-in-new"
-    button-href="https://thegraph.iex.ec/subgraphs/name/bellecour/dataProtector-v2/graphql?query=query+MyQuery+%7B%0A++protectedDatas+%7B%0A++++id%0A++++name%0A++++owner+%7B%0A++++++id%0A++++%7D%0A++%7D%0A%7D"
-    button-target="_blank"
-    button-rel="noreferrer"
-  />
+  title="iExec DataProtector - Arbitrum"
+  description="Indexes DataProtector protocol data on Arbitrum mainnet, including protected data, access grants, and sharing mechanisms"
+  :icon-image="arbitrumIcon"
+  status="available"
+  status-label="Live"
+  button-label="Explore Subgraph"
+  button-href="https://thegraph.com/explorer/subgraphs/Ep5zs5zVr4tDiVuQJepUu51e5eWYJpka624X4DMBxe3u?view=Query&chain=arbitrum-one"
+  button-target="_blank"
+  button-rel="noreferrer"
+/>
 
-  </CardGrid>
+<ProjectCard
+  title="iExec PoCo - Bellecour"
+  description="Indexes Proof of Contribution (PoCo) data on Bellecour mainnet, including apps, deals, tasks, and workerpools"
+  :icon-image="iexecLogoIcon"
+  status="available"
+  status-label="Live"
+  button-label="Explore Subgraph"
+  button-href="https://thegraph.bellecour.iex.ec/subgraphs/name/bellecour/poco-v5/graphql?query=query+MyQuery+%7B%0A++apps+%7B%0A++++name%0A++++id%0A++++owner+%7B%0A++++++id%0A++++%7D%0A++%7D%0A%7D"
+  button-target="_blank"
+  button-rel="noreferrer"
+/>
+
+<ProjectCard
+  title="iExec DataProtector - Bellecour"
+  description="Indexes DataProtector protocol data on Bellecour mainnet, including protected data, access grants, and sharing mechanisms"
+  :icon-image="iexecLogoIcon"
+  status="available"
+  status-label="Live"
+  button-label="Explore Subgraph"
+  button-href="https://thegraph.iex.ec/subgraphs/name/bellecour/dataProtector-v2/graphql?query=query+MyQuery+%7B%0A++protectedDatas+%7B%0A++++id%0A++++name%0A++++owner+%7B%0A++++++id%0A++++%7D%0A++%7D%0A%7D"
+  button-target="_blank"
+  button-rel="noreferrer"
+/>
+
+</CardGrid>
 
 ## 🔍 GraphQL Explorer Interface
 
@@ -185,10 +182,13 @@ query {
 }
 ```
 
-<div class="bg-gradient-to-r from-blue-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-blue-700 mb-6">
-  <h4 class="!mt-0 !mb-2">💡 Pro Tip</h4>
-  <p class="!mb-0">Use the GraphQL explorer's auto-completion feature to discover available fields and build complex queries. The schema documentation is always up-to-date with the latest protocol changes.</p>
-</div>
+::: tip 💡 Pro Tip
+
+Use the GraphQL explorer's auto-completion feature to discover available fields
+and build complex queries. The schema documentation is always up-to-date with
+the latest protocol changes.
+
+:::
 
 <script setup>
 import ImageViewer from '@/components/ImageViewer.vue';
