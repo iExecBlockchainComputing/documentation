@@ -6,11 +6,15 @@ description:
 ---
 
 <script setup>
+import { Icon } from '@iconify/vue';
 import InfoIcon from '@/components/InfoIcon.vue'
 import ChainSelector from '@/components/ChainSelector.vue'
 import Banner from '../components/Banner.vue'
 import Container from '../components/Container.vue'
 import CardWithBorder from '../components/CardWithBorder.vue'
+import CardGrid from '../components/CardGrid.vue'
+import Badge from '../components/Badge.vue'
+import TutorialCard from '../components/TutorialCard.vue'
 </script>
 
 # 👋 Welcome to iExec
@@ -39,62 +43,52 @@ iExec in this interactive guide.
 
 ## What you'll Learn and Build
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <a href="helloWorld/1-overview" class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 shadow-md hover:shadow-lg transition-all! duration-300 hover:-translate-y-1 flex gap-4 no-underline! relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-[#fcd15a] before:transform before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100">
-    <div class="text-3xl">📚</div>
-    <div class="flex flex-col h-full min-h-[120px]">
-      <h3 class="m-0! text-lg leading-tight text-[var(--vp-c-text-1)]">1 - iExec Overview</h3>
-      <p class="my-4 text-sm text-[var(--vp-c-text-2)]">Discover how iExec technologies work and the problems they solve</p>
-      <div class="mt-auto pt-3">
-        <span class="inline-block text-sm bg-[var(--vp-c-bg-soft)] rounded text-[var(--vp-c-text-4)]">8 min read</span>
-      </div>
-    </div>
-  </a>
+<CardGrid>
 
-  <a href="helloWorld/2-protectData" class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 shadow-md transition-all! hover:shadow-lg duration-300 hover:-translate-y-1 flex gap-4 no-underline! relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-[#fcd15a] before:transform before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100">
-    <div class="text-3xl">🔒</div>
-    <div class="flex flex-col h-full min-h-[120px]">
-      <h3 class="m-0! text-lg leading-tight text-[var(--vp-c-text-1)]">2. Protect Your Data</h3>
-      <p class="my-4 text-sm text-[var(--vp-c-text-2)]">Learn to secure your sensitive data using our developer tools</p>
-      <div class="mt-auto pt-3">
-        <span class="inline-block text-sm bg-[var(--vp-c-bg-soft)] rounded text-[var(--vp-c-text-4)]">6 min read</span>
-      </div>
-    </div>
-  </a>
+  <TutorialCard
+    href="helloWorld/1-overview"
+    title="1 - iExec Overview"
+    readTime="8 min read"
+    description="Discover how iExec technologies work and the problems they solve"
+    actionText="Read"
+    badgeVariant="primary"
+  />
 
-  <a href="helloWorld/3-buildIApp" class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 shadow-md hover:shadow-lg transition-all! duration-300 hover:-translate-y-1 flex gap-4 no-underline! relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-[#fcd15a] before:transform before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100">
-    <div class="text-3xl">💻</div>
-    <div class="flex flex-col h-full min-h-[120px]">
-      <h3 class="m-0! text-lg leading-tight text-[var(--vp-c-text-1)]">3. Build your iApp</h3>
-      <p class="my-4 text-sm text-[var(--vp-c-text-2)]">Build and run your first iExec App to work with protected data in a safe environment</p>
-      <div class="mt-auto pt-3">
-        <span class="inline-block text-sm bg-[var(--vp-c-bg-soft)] rounded text-[var(--vp-c-text-4)]">10 min read</span>
-      </div>
-    </div>
-  </a>
+  <TutorialCard
+    href="helloWorld/2-protectData"
+    title="2. Protect Your Data"
+    readTime="6 min read"
+    description="Learn to secure your sensitive data using our developer tools"
+    actionText="Read"
+    badgeVariant="primary"
+  />
 
-  <a href="helloWorld/4-manageDataAccess" class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 shadow-md hover:shadow-lg transition-all! duration-300 hover:-translate-y-1 flex gap-4 no-underline! relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-[#fcd15a] before:transform before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100">
-    <div class="text-3xl">🔑</div>
-    <div class="flex flex-col h-full min-h-[120px]">
-      <h3 class="m-0! text-lg leading-tight text-[var(--vp-c-text-1)]">4. Manage Data Access</h3>
-      <p class="my-4 text-sm text-[var(--vp-c-text-2)]">Learn advanced data access management, permissions and monetization</p>
-      <div class="mt-auto pt-3">
-        <span class="inline-block text-sm bg-[var(--vp-c-bg-soft)] rounded text-[var(--vp-c-text-4)]">6 min read</span>
-      </div>
-    </div>
-  </a>
+  <TutorialCard
+    href="helloWorld/3-buildIApp"
+    title="3. Build your iApp"
+    readTime="10 min read"
+    description="Build and run your first iExec App to work with protected data in a safe environment"
+    actionText="Read"
+    badgeVariant="primary"
+  />
+
+  <TutorialCard
+    href="helloWorld/4-manageDataAccess"
+    title="4. Manage Data Access"
+    readTime="6 min read"
+    description="Learn advanced data access management, permissions and monetization"
+    actionText="Read"
+    badgeVariant="primary"
+  />
   
-  <a href="helloWorld/5-bonusChapter" class="bg-gradient-to-r from-[#ce2c68] to-[#3f0d3f] text-white rounded-[6px] p-6 shadow-md hover:shadow-lg transition-all! duration-300 hover:-translate-y-1 flex gap-4 no-underline! relative overflow-hidden before:absolute before:top-0 before:left-0 before:w-full before:h-1 before:bg-gradient-to-r before:from-[#ce2c68] before:to-[#3f0d3f] before:transform before:scale-x-0 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100">
-    <div class="text-3xl">✨</div>
-    <div class="flex flex-col h-full min-h-[120px]">
-      <h3 class="m-0 text-lg leading-tight text-white">Bonus Chapter</h3>
-      <p class="my-4 text-sm text-white">Finish the journey with a surprise bonus chapter!</p>
-      <div class="mt-auto pt-3">
-        <span class="text-white">Special Content</span>
-      </div>
-    </div>
-  </a>
-</div>
+  <TutorialCard
+    href="helloWorld/5-bonusChapter"
+    title="Bonus Chapter"
+    description="Finish the journey with a surprise bonus chapter!"
+    actionText="Special content"
+    variant="bonus"
+  />
+</CardGrid>
 
 ## Getting Started
 
