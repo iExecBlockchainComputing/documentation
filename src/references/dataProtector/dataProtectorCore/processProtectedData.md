@@ -243,7 +243,7 @@ stored in the secrets manager needed for the application's execution.
 
 Secrets are accessible during the application's execution as environment
 variables. For more details, see
-[Access requester secrets](https://protocol.docs.iex.ec/for-developers/confidential-computing/access-confidential-assets/requester-secrets).
+[Access requester secrets](/guides/build-iapp/advanced/access-confidential-assets).
 
 <!-- prettier-ignore-start -->
 ```ts twoslash

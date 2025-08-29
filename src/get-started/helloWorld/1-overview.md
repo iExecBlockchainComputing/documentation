@@ -18,16 +18,16 @@ import CardWithoutBorder from '../../components/CardWithoutBorder.vue'
 
 <Banner>
 
-## Let's start with the basics
+## Start with the basics
 
-and explore how iExec can help you build Privacy-preserving applications and
+and explore how iExec can help you build Privacy-preserving apps and
 securely manage sensitive data.
 
 </Banner>
 
 ## 👨‍💻 Building Privacy-preserving iApp with iExec
 
-Imagine you're building a decentralized application (iApp) that needs to
+Imagine you're building a decentralized app (dApp) that needs to
 **handle sensitive user data**, for example:
 
 <CardWithoutBorder class="**:list-none *:pl-0!">
@@ -48,7 +48,7 @@ Imagine you're building a decentralized application (iApp) that needs to
 
 ::: tip <i></i>
 
-This is where **iExec** comes in! We provide tools to easily add **privacy** and
+This is where **iExec** comes in! iExec provides tools to easily add **privacy** and
 **monetization** features into your iApp.
 
 :::
@@ -58,14 +58,14 @@ This is where **iExec** comes in! We provide tools to easily add **privacy** and
 Unlike traditional tools, iExec protects your data throughout its entire
 lifecycle - during storage, transfer, and even while **being processed by
 applications.** This is made possible thanks to
-**<a target="_blank" href="https://protocol.docs.iex.ec/for-developers/confidential-computing/intel-sgx-technology">Trusted
+**<a target="_blank" href="/protocol/tee/introduction">Trusted
 Execution Environment (TEE)</a>** and
 **<a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">Confidential
 Computing</a>** technologies.
 
 ::: tip <i></i>
 
-Our technology allows users to control the **ownership**, **confidentiality**,
+The technology allows users to control the **ownership**, **confidentiality**,
 and **monetization** of their data and digital assets within the **Web3**
 ecosystem.
 
@@ -96,7 +96,7 @@ iExec combines three fundamental elements that work together seamlessly:
 
 ::: tip <i></i>
 
-By merging **blockchain technology** with **confidential computing**, we've
+By merging **blockchain technology** with **confidential computing**, iExec
 pioneered
 **<a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">DeCC</a>**
 (Decentralized Confidential Computing) to take **privacy** and **security** to
@@ -171,7 +171,7 @@ And many other use cases...
   </div>
   <div class="flex items-center gap-3">
     <span class="text-xl">🔌</span>
-    <p class="m-0"><strong>Wide Application:</strong> From AI to finance, enabling confidential data processing across various industries</p>
+    <p class="m-0"><strong>Wide application:</strong> From AI to finance, enabling confidential data processing across various industries</p>
   </div>
 </div>
 

@@ -1,21 +1,21 @@
 ---
-title: Inputs and Outputs
+title: Inputs
 description:
-  Understand the different input types and output formats for iApp in the TEE
+  Understand the different input types available to your iApp in the TEE
   environment
 ---
 
-# 📥📤 Inputs and Outputs
+# 📥 Inputs
 
 **Your iApp runs inside a secure TEE environment with access to different types
 of inputs.** Understanding what data you can access, how to access it, and when
 to use each type is crucial for building effective privacy-preserving
 applications.
 
-This guide covers all input types available to your iApp and how to generate
-proper outputs that users can retrieve and decrypt.
+This guide covers all input types available to your iApp and how to access them
+within the TEE environment.
 
-## Two Perspectives on Inputs
+## Two perspectives on inputs
 
 **Inputs work differently depending on your role:**
 
@@ -33,7 +33,7 @@ You can also execute iApps outside of DataProtector using other methods. See the
 
 This guide shows both perspectives for each input type.
 
-## Input Types Overview
+## Input types overview
 
 Inside the TEE, your iApp can work with four distinct categories of inputs:
 
@@ -107,7 +107,7 @@ try {
 
 :::
 
-### How Users Provide Protected Data
+### How users provide protected data
 
 Users specify the protected data address when executing your iApp:
 
@@ -177,7 +177,7 @@ if (args.length >= 2) {
 
 :::
 
-### How Users Provide Args
+### How users provide args
 
 Users pass args through the DataProtector `processProtectedData()` call:
 
@@ -195,7 +195,7 @@ const response = await dataProtectorCore.processProtectedData({
 });
 ```
 
-### Example Use Cases
+### Example use cases
 
 - Model configuration: `"model=sentiment-bert temperature=0.7"`
 - Processing options: `"format=json output_size=small"`
@@ -270,7 +270,7 @@ const response = await dataProtectorCore.processProtectedData({
 });
 ```
 
-### Example Use Cases
+### Example use cases
 
 - ML model files: `"https://example.com/sentiment-model.pkl"`
 - Reference datasets: `"https://data.gov/reference-corpus.csv"`
@@ -354,124 +354,6 @@ const processProtectedDataResponse =
       2: 'mydbpassword123', // DB password
     },
   });
-```
-
-## Creating Outputs
-
-Your iApp must generate outputs in the `IEXEC_OUT` directory. **Every iApp must
-create a `computed.json` file** with metadata about the computation.
-
-### Basic Output Structure
-
-::: code-group
-
-```python [Python]
-import os
-import json
-
-# Get output directory
-iexec_out = os.environ['IEXEC_OUT']
-
-# Create your result file
-result_data = {
-    "analysis": "positive sentiment",
-    "confidence": 0.92,
-    "processed_at": "2024-01-15T10:30:00Z"
-}
-
-# Save main result
-with open(f"{iexec_out}/result.json", 'w') as f:
-    json.dump(result_data, f)
-
-# REQUIRED: Create `computed.json` metadata
-computed_metadata = {
-    "deterministic-output-path": f"{iexec_out}/result.json",
-    "execution-timestamp": "2024-01-15T10:30:00Z",
-    "app-version": "1.0.0"
-}
-
-with open(f"{iexec_out}/computed.json", 'w') as f:
-    json.dump(computed_metadata, f)
-```
-
-```javascript [JavaScript]
-const fs = require('fs');
-const path = require('path');
-
-// Get output directory
-const iexecOut = process.env.IEXEC_OUT;
-
-// Create your result file
-const resultData = {
-  analysis: 'positive sentiment',
-  confidence: 0.92,
-  processed_at: '2024-01-15T10:30:00Z',
-};
-
-// Save main result
-fs.writeFileSync(
-  path.join(iexecOut, 'result.json'),
-  JSON.stringify(resultData, null, 2)
-);
-
-// REQUIRED: Create computed.json metadata
-const computedMetadata = {
-  'deterministic-output-path': path.join(iexecOut, 'result.json'),
-  'execution-timestamp': '2024-01-15T10:30:00Z',
-  'app-version': '1.0.0',
-};
-
-fs.writeFileSync(
-  path.join(iexecOut, 'computed.json'),
-  JSON.stringify(computedMetadata, null, 2)
-);
-```
-
-:::
-
-### Output Best Practices
-
-1. **Always create `computed.json`** - This is mandatory
-2. **Use descriptive filenames** - `analysis_result.json`, not `output.txt`
-3. **Include metadata** - Timestamps, versions, parameters used
-4. **Structure your data** - Use JSON for structured results
-5. **Keep files reasonable** - Large outputs increase retrieval time and may hit
-   memory limits
-6. **Memory awareness** - TEE enclave memory is limited, avoid generating
-   multi-GB outputs
-
-### Example: Multi-file Output
-
-```python
-import os
-import json
-
-iexec_out = os.environ['IEXEC_OUT']
-
-# Create multiple output files
-summary = {"total_processed": 1000, "success_rate": 0.95}
-with open(f"{iexec_out}/summary.json", 'w') as f:
-    json.dump(summary, f)
-
-# Create a detailed report
-with open(f"{iexec_out}/detailed_report.txt", 'w') as f:
-    f.write("Detailed analysis results...\n")
-
-# Create visualization data
-chart_data = {"labels": ["A", "B", "C"], "values": [10, 20, 30]}
-with open(f"{iexec_out}/chart_data.json", 'w') as f:
-    json.dump(chart_data, f)
-
-# Required metadata file
-computed = {
-    "deterministic-output-path": f"{iexec_out}/summary.json",
-    "additional-files": [
-        f"{iexec_out}/detailed_report.txt",
-        f"{iexec_out}/chart_data.json"
-    ]
-}
-with open(f"{iexec_out}/computed.json", 'w') as f:
-    json.dump(computed, f)
 ```
 
 ## Testing Inputs Locally
@@ -595,19 +477,13 @@ save_report(report)
 
 ## What's Next?
 
-**You now understand all input types and output requirements!**
+**You now understand all input types available to your iApp!**
 
 Continue building with these guides:
 
+- **[Outputs](/guides/build-iapp/outputs)** - Learn how to generate and
+  structure your iApp outputs
 - **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
   Control who can use your iApp
 - **[Debugging Your iApp](/guides/build-iapp/debugging)** - Troubleshoot
   execution issues
-- **[How to Get and Decrypt Results](/guides/build-iapp/inputs-and-outputs)** -
-  User-side result handling
-
-### Technical Deep Dive
-
-- **[SDK Deep Dive](/references/sdk)** - Advanced SDK concepts
-- **[Application I/O Protocol Docs](https://protocol.docs.iex.ec/for-developers/application-io)** -
-  Low-level protocol details

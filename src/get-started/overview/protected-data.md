@@ -27,9 +27,9 @@ entries with matching types**.
 
 :::
 
-## Key Concepts
+## Key concepts
 
-### Data Governance
+### Data governance
 
 - **You own your data:** The original data never leaves your control
 - **Granular permissions:** Decide who can access and use your data
@@ -53,14 +53,14 @@ entries with matching types**.
 <CardWithBorder>
 
 1. **Protect:** Encrypt and register your data on the iExec network
-2. **Share:** Authorize specific users and applications to access your data
+2. **Share:** Authorize specific users and iApps to access your data
 3. **Monitor:** Track usage and maintain control
 4. **Monetize:** Earn from your data while keeping it private
 5. **Compute:** Authorized users can compute on your data with authorized iApp
 
 </CardWithBorder>
 
-## Use Cases
+## Use cases
 
 <CardGrid>
 <CardWithoutBorder>
@@ -108,7 +108,7 @@ to secure sensitive information while unlocking its value.
 
 </Container>
 
-## Next Steps
+## Next steps
 
 <CardWithoutBorder>
 

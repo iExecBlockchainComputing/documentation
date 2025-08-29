@@ -7,7 +7,7 @@ description: A flexible and secure Oracle Solution
 
 > A flexible and secure Oracle Solution
 
-## Why do we need Oracles?
+## Why are Oracles needed?
 
 The Ethereum blockchain provides a global trustless computer: given some input
 and the smart contract code, the blockchain guarantees execution according to
@@ -31,18 +31,18 @@ party that decentralization was supposed to do away with in the first place!
 
 Oracles are systems designed to solve this problem: providing the blockchain
 with data from the real world in the most secure and robust way possible. It
-turns out we at iExec have been working on this problem for a long time. Indeed
-an update to an Oracle \(for example the price of a stock or the average
-temperature for a day\) can appear as the result of a specific type of off-chain
-computation, one that would involve calling an API and processing the response
-to return the final result. As a result the iExec infrastructure is perfectly
-suited to build an efficient and secure Oracle system: the iExec Oracle.
+iExec has been working on this problem for a long time. Indeed an update to an
+Oracle \(for example the price of a stock or the average temperature for a day\)
+can appear as the result of a specific type of off-chain computation, one that
+would involve calling an API and processing the response to return the final
+result. As a result the iExec infrastructure is perfectly suited to build an
+efficient and secure Oracle system: the iExec Oracle.
 
 ## The iExec solution: the Decentralized Oracle \(Oracle\)
 
 For two years iExec has been working on the design of the
-[Proof of Contribution protocol](/get-started/protocol/proof-of-contribution.md),
-which provides a flexible and highly robust solution to the problem of off-chain
+[Proof of Contribution protocol](/protocol/proof-of-contribution.md), which
+provides a flexible and highly robust solution to the problem of off-chain
 computation. At its core it is a simple Schelling game between off-chain
 computation providers \(Workers\): a given number of Workers are randomly chosen
 in a much bigger group, and receive the same computation. Each of them proposes

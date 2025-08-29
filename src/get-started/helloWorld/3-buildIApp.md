@@ -5,23 +5,23 @@ description:
   processing protected data in this comprehensive tutorial.
 ---
 
-# 🛠️ Build and Deploy your First iApp
+# 🛠️ Build and deploy your first iApp
 
 > Reading time 🕒 10 min
 
 <Banner>
 
-## Time to build!
+## Time to build
 
-Let's build an iApp that can process protected data in a secure environment
+Build an iApp that can process protected data in a secure environment
 using the [iExec iApp generator tool](/references/iapp-generator). This tool
 helps you create, test and deploy iApp with just a few commands.
 
 </Banner>
 
-If you wanna explore and deep dive in the CLI. You can check the
-[iApp-CLI](https://github.com/iExecBlockchainComputing/iapp/tree/main/cli)
-github repository. Follow the instructions carefully for a smooth development
+If you wanna explore and deep dive in the command-line tool. You can check the
+[iApp Generator ](https://github.com/iExecBlockchainComputing/iapp/tree/main/cli)
+GitHub repository. Follow the instructions carefully for a smooth development
 experience.
 
 ## 📋 Prerequisites
@@ -52,31 +52,31 @@ Before getting started, make sure you have:
 
 ::: info
 
-Don't worry! All secrets used in this tutorial stay on your machine and aren’t
-shared with anyone. You’ll only need them to run the `iapp run` command.
+Don't worry. All secrets used in this tutorial stay on your machine and aren't
+shared with anyone. You'll only need them to run the `iapp run` command.
 
 :::
 
-## 🚀 Types of iApp you Can Build
+## 🚀 Types of iApp you can build
 
 iExec enables you to build various types of Privacy-preserving applications.
 Here are some popular use cases:
 
-### 📧 Web3 Mail
+### 📧 Web3Mail
 
 Send privacy-preserving emails to registered Ethereum account holders without
 knowing or storing their email addresses.
 [Github](https://github.com/iExecBlockchainComputing/web3mail-sdk/tree/main/dapp)
 | [Documentation](/references/web3mail)
 
-### 💬 Web3 Telegram
+### 💬 Web3Telegram
 
 Send privacy-preserving Telegram messages without knowing or storing their
 Telegram handles.
 [Github](https://github.com/iExecBlockchainComputing/web3telegram-sdk/tree/main/dapp)
 | [Documentation](/references/web3telegram)
 
-### 🌐 Content Delivery
+### 🌐 Content delivery
 
 Transfer, sell or rent protected content to authorized users.
 [Github](https://github.com/iExecBlockchainComputing/protected-data-delivery-dapp)
@@ -183,7 +183,7 @@ You will be prompted with the following message:
     '🐳 Added Dockerfile',
     '⚙️ Added iExec configuration'
   ]"
-  :successMessage="'Your iApp is ready!'"
+  :successMessage="'Your iApp is ready'"
 />
 
 <div class="flex flex-col gap-2.5 my-6">
@@ -209,7 +209,7 @@ You will be prompted with the following message:
 
 ::: tip <i></i>
 
-We recommend selecting **"Hello World"** to quickly discover how iApp works! use
+We recommend selecting **"Hello World"** to quickly discover how iApp works. Use
 **advanced** only if you are familiar with iExec.
 
 :::
@@ -306,7 +306,7 @@ simulating how it will run in the iExec network's TEE environment.
 
 :::
 
-### 🧩 Using Arguments
+### 🧩 Using arguments
 
 You can pass arguments to your iApp using the `--args` option. This allows you
 to provide necessary inputs during runtime (you can use your name for example).
@@ -315,7 +315,7 @@ to provide necessary inputs during runtime (you can use your name for example).
 iapp test --args your-name
 ```
 
-### 🔒 Using Protected Data
+### 🔒 Using protected data
 
 You can pass a protectedData that you are authorized to process to your iApp
 using the `--protectedData` option.
@@ -393,7 +393,7 @@ Once you have your token, you can deploy your iApp.
 ::: tip <i></i>
 
 📝 Make sure to save your **iApp address** after deployment - you'll need it
-later!
+later.
 
 You can find your iApp address in the <code>iexec-app.json</code> file in your
 project folder.
@@ -435,7 +435,7 @@ securely process confidential data in a trusted environment.
 
 </Container>
 
-## 🎯 Key Takeaways
+## 🎯 Key takeaways
 
 - 🔒 **iApp:** Special applications that run in TEEs to process protected data
 - 🛠️ **iApp CLI:** Command-line tool for building, testing, and deploying iApp
@@ -446,7 +446,7 @@ securely process confidential data in a trusted environment.
 <Container variant="success">
 
 Next up: Alice will learn how to authorize the iApp and Bob to access and use
-her protected data! 🚀
+her protected data.
 
 </Container>
 

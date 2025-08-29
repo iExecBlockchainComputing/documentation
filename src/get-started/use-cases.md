@@ -34,13 +34,40 @@ technologies.
 />
 
 <UseCaseCard
-  title="AI Agent"
-  description="Showcase of artificial intelligence applications running on iExec's confidential computing infrastructure. Experience privacy-preserving AI inference, machine learning model execution, and secure data analysis with TEE protection."
-  :imageUrl="elizaosImage"
-  imageAlt="AI Applications Demo Screenshot"
-  :features="['AI', 'TEE', 'Confidential Computing']"
-  githubUrl="https://github.com/iExecBlockchainComputing/iexec-elizaos-agent"
-/>
+    title="AI Agent"
+    description="Execute ElizaOS AI agents with full confidentiality in iExec TDX Trusted Execution Environments (TEEs)"
+    :imageUrl="elizaosImage"
+    imageAlt="AI Applications Demo Screenshot"
+    :features="['AI Agents', 'TDX TEE', 'Confidential Computing']"
+    githubUrl="https://github.com/iExecBlockchainComputing/iexec-elizaos-agent"
+  />
+
+<UseCaseCard
+    title="MCP Server"
+    description="A Model Context Protocol (MCP) compatible server to interact with the iExec protocol — built for Claude, agents, and AI tooling"
+    :imageUrl="mpcServer"
+    imageAlt="AI Applications Demo Screenshot"
+    :features="['MCP Protocol', 'AI Integration', 'Claude Support']"
+    githubUrl="https://github.com/iExecBlockchainComputing/iexec-mcp-server"
+  />
+
+<UseCaseCard
+    title="Image Caption Matcher"
+    description="The Image-Caption Matcher Project validates how well an image matches a textual description using Artificial Intelligence (AI)"
+    :imageUrl="imageCaptionMatcher"
+    imageAlt="AI Applications Demo Screenshot"
+    :features="['Image Analysis', 'Text Matching', 'AI Validation']"
+    githubUrl="https://github.com/iExecBlockchainComputing/image-caption-matcher-poc"
+  />
+
+<UseCaseCard
+    title="Image Generator iApp"
+    description="The Image Generator iApp is a Confidential Computing application that generates an image based on a provided text prompt. It leverages iExec's Trusted Execution Environments (TEE) and the CompVis/stable-diffusion-v1-4 model from Hugging Face for secure, private computation."
+    :imageUrl="privateImageGenerator"
+    imageAlt="AI Applications Demo Screenshot"
+    :features="['Image Generation', 'Text-to-Image']"
+    githubUrl="https://github.com/iExecBlockchainComputing/image-generation-poc"
+  />
 
 </div>
 
@@ -51,4 +78,7 @@ import UseCaseCard from '@/components/UseCaseCard.vue';
 import contentCreatorImage from '@/assets/use-cases/content-creator.png';
 import web3MessagingImage from '@/assets/use-cases/web3-messaging.png';
 import elizaosImage from '@/assets/use-cases/elizaos.png';
+import mpcServer from '@/assets/use-cases/mpc-server.jpg';
+import privateImageGenerator from '@/assets/use-cases/private-image-generator.png';
+import imageCaptionMatcher from '@/assets/use-cases/image-caption-matcher.png';
 </script>

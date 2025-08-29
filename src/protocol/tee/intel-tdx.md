@@ -19,7 +19,7 @@ memory-intensive workloads and legacy application migration.
 technology that provides VM-level protection, allowing entire virtual machines
 to run in secure, isolated environments.
 
-### Key TDX Benefits
+### Key TDX benefits
 
 1. **🔄 Lift-and-Shift Compatibility**: Run existing applications with minimal
    changes
@@ -35,7 +35,7 @@ to run in secure, isolated environments.
 your existing operations without major renovations. It protects entire virtual
 machines.
 
-### Key Characteristics
+### Key characteristics
 
 - **Scope**: Protects entire virtual machines
 - **Memory**: Large secure memory space (like a large vault)
@@ -45,7 +45,7 @@ machines.
 **Analogy**: TDX is like moving your entire office into a secure building where
 everything is protected.
 
-### Visual Representation
+### Visual representation
 
 ```mermaid
 graph TB
@@ -62,7 +62,7 @@ graph TB
 
 ## TDX Technology Details
 
-### How TDX Works
+### How TDX works
 
 1. **Trust Domain Creation**: TDX creates secure virtual machines called "trust
    domains"
@@ -130,16 +130,16 @@ graph TD
 
 **Learn about the foundation**:
 
-- **[Intel SGX Technology](/get-started/protocol/tee/intel-sgx)** -
-  First-generation application-level TEE technology
-- **[SGX vs TDX Comparison](/get-started/protocol/tee/sgx-vs-tdx)** - Detailed
-  comparison of both technologies
+- **[Intel SGX Technology](/protocol/tee/intel-sgx)** - First-generation
+  application-level TEE technology
+- **[SGX vs TDX Comparison](/protocol/tee/sgx-vs-tdx)** - Detailed comparison of
+  both technologies
 
 **Ready to experiment with TDX?** Check out the practical guides:
 
-- **[Build Intel TDX App (Experimental)](/guides/build-iapp/advanced/create-your-first-tdx-app)** -
+- **[Build Intel TDX iApp (Experimental)](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
   Build TDX applications with traditional deployment and iApp Generator
-- **[Create Your First TDX App](/guides/build-iapp/advanced/create-your-first-tdx-app)** -
+- **[Build Your First TDX iApp](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
   Build TDX applications
 
 **For production applications, use SGX**:

@@ -35,11 +35,11 @@ privacy is protected.
 
 iExec solves this with **Turnkey Privacy** - a toolkit that simplifies data
 protection, management, and secure computation, even in untrusted environments.
-We believe privacy should be **plug-and-play simple**, not an afterthought.
+iExec believes privacy should be **plug-and-play simple**, not an afterthought.
 
 :::
 
-## How we Make it Happen
+## 🛠️ How iExec works
 
 iExec provides Turnkey Privacy tools that make confidential computing simple and
 actionable:

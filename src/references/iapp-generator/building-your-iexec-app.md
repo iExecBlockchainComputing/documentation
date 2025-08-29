@@ -2,19 +2,19 @@
 title: Build Your iApp
 description:
   Learn how to initialize, configure, and build your iExec application using the
-  iApp Generator CLI with step-by-step guidance.
+  iApp Generator command-line tool with step-by-step guidance.
 ---
 
 # 🧑‍🏭 Build your iApp
 
 ## 🧰 Initialize your iApp
 
-The iApp (iExec Application) Generator CLI simplifies the setup of your iApp by
-guiding you through a step-by-step initialization process. This ensures your
-iApp is correctly configured and compatible with iExec’s confidential computing
-environment.
+The iApp (iExec App) Generator command-line tool simplifies the setup of your
+iApp by guiding you through a step-by-step initialization process. This ensures
+your iApp is correctly configured and compatible with iExec's confidential
+computing environment.
 
-### 🏗 Define your Project
+### 🏗 Define your project
 
 <CLIDemo
   initialCommand="iapp init"
@@ -81,21 +81,10 @@ You'll set up:
 - **Protected Data** – Encrypted data accessible only inside the TEE.
 - **App Secret** – Immutable secret provisioned by the iApp owner.
 
-::: warning 💡
-
-The Secret Management Service (SMS) securely stores application developer
-secrets. Once set, the App Secret is immutable and cannot be updated. Use with
-caution.
-
-For more information on **App Secrets**, refer to
-[Access confidential assets from your app](https://protocol.docs.iex.ec/for-developers/confidential-computing/access-confidential-assets)
-
-:::
-
 For more details and to learn how to use them in your application, refer here
-[Application I/O](https://protocol.docs.iex.ec/for-developers/application-io)
+[Inputs](/guides/build-iapp/inputs).
 
-## 🚀 Launch your iApp
+## 🚀 Build your iApp
 
 After initialization, the following essential files and directories are
 generated:
@@ -107,8 +96,6 @@ generated:
   - `input/`
   - `output/`
   - `cache/`
-
-### 📝 Update your iApp
 
 To modify your main application logic open:
 
@@ -124,39 +111,116 @@ algorithms and data processing here.
 
 :::
 
-### 🧪 Test and Deploy your iApp
+## 🛠️ CLI Commands Reference
 
-Use the following CLI commands to **validate**, **deploy**, and **execute** your
-iApp:
+### `iapp init`
 
-```sh
-iapp test                 # Runs a basic test locally.
-iapp deploy               # Turns your code into a TEE app and registers the iApp on iExec.
+**Purpose**: Initialize a new iApp project  
+**Usage**: `iapp init [options]`  
+**What it does**: Creates project structure, configuration files, and basic
+templates through interactive prompts.
 
-iapp run <iAppAddress>    # Executes the deployed iApp on a worker node.
-iapp debug <taskId>       # Retrieve detailed execution logs from worker nodes for a specific task
+### `iapp test`
 
-iapp mock <inputType>     # Creates a mocked input for testing.
-iapp --help               # Displays available commands.
-```
+**Purpose**: Test your iApp locally before deployment  
+**Usage**: `iapp test [options]`  
+**Options**:
 
-::: info
+- `-v, --version` [boolean] – Show version number
+- `--args <string>` – Arguments accessible inside the iApp (use quotes to group)
+- `--protectedData <string>` – Specify the protected data mock name (default or
+  custom via `iapp mock`)
+- `--inputFile <string>` – One or multiple input files (public URLs) available
+  inside the iApp at `$IEXEC_INPUT_FILE_NAME_*`
+- `--requesterSecret <array>` – Key-value requester secrets (`index=value`)
+  available inside the iApp at `$IEXEC_REQUESTER_SECRET_*`
 
-use `iapp debug <taskId>` if execution exceeds the timeout (default: 5 min).
+### `iapp deploy`
 
-:::
+**Purpose**: Deploy your iApp to the iExec network  
+**Usage**: `iapp deploy [options]`  
+**Options**:
 
-Once deployed, your iApp will run **securely in a TEE-enabled workerpool**
-within the iExec network.
+- `--chain <string>` – Specify the blockchain network for deployment (e.g.,
+  `goerli`, `mainnet`)
 
-::: info
+### `iapp run <iAppAddress>`
 
-💡 A **workerpool** is a decentralized network of nodes that execute iApp
-securely within a **Trusted Execution Environment (TEE)**.
+**Purpose**: Execute your deployed iApp on a worker node  
+**Usage**: `iapp run <iAppAddress> [options]`  
+**Positional arguments**:
 
-:::
+- `<iAppAddress>` – Address of the deployed iApp to run
 
-::: info
+**Options**:
+
+- `--args <string>` – Arguments accessible inside the iApp (use quotes to group)
+- `--protectedData <string>` – Specify the protected data mock name (default or
+  custom via `iapp mock`)
+- `--inputFile <string>` – One or multiple input files (public URLs) available
+  inside the iApp at `$IEXEC_INPUT_FILE_NAME_*`
+- `--requesterSecret <array>` – Key-value requester secrets (`index=value`)
+  available inside the iApp at `$IEXEC_REQUESTER_SECRET_*`
+- `--chain <string>` – Specify the blockchain network to run the iApp on (e.g.,
+  `goerli`, `mainnet`)
+
+### `iapp debug <taskId>`
+
+**Purpose**: Retrieve detailed execution logs from worker nodes  
+**Usage**: `iapp debug <taskId> [options]`  
+**Positional arguments**:
+
+- `<taskId>` – The ID of the task to debug
+
+**Options**:
+
+- `--chain <string>` – Specify the blockchain network of the task (e.g.,
+  `goerli`, `mainnet`)
+
+### `iapp mock <inputType>`
+
+**Purpose**: Create mocked input for testing purposes  
+**Usage**: `iapp mock <inputType> [options]`  
+**Positional arguments**:
+
+- `<inputType>` – Type of input to mock (e.g., `default`, `custom`)
+
+**Options**:
+
+- `--args <string>` – Arguments to use in the mock data
+- `--protectedData <string>` – Protected data mock name to use
+- `--inputFile <string>` – Input files to mock
+- `--requesterSecret <array>` – Requester secrets to mock
+
+### `iapp wallet <action>`
+
+**Purpose**: Manage wallet-related operations  
+**Usage**: `iapp wallet <action> [options]`  
+**Positional arguments**:
+
+- `<action>` – Wallet action to perform (e.g., `balance`, `address`, `sign`)
+
+**Options**:
+
+- `--chain <string>` – Specify the blockchain network (e.g., `goerli`,
+  `mainnet`)
+- `--data <string>` – Data to sign (for `sign` action)
+
+## Advanced Options <ChainNotSupportedBadge />
+
+### `EXPERIMENTAL_TDX_APP=true`
+
+**Purpose**: Enable experimental Intel TDX support  
+**Usage**: Set as environment variable before running commands  
+**Example**: `EXPERIMENTAL_TDX_APP=true iapp test`
+
+**Available with**:
+
+- `iapp test`
+- `iapp deploy`
+- `iapp run <app-address>`
+
+::: info TDX <ChainNotSupportedBadge />
 
 🧪 While **TEE** iApp are based on **intel SGX** technology by default, iApp has
 an experimental support for **intel TDX** applications.
@@ -164,31 +228,19 @@ an experimental support for **intel TDX** applications.
 TDX mode is enabled by setting the environment variable
 `EXPERIMENTAL_TDX_APP=true`.
 
-examples:
-
-- `EXPERIMENTAL_TDX_APP=true iapp test`
-- `EXPERIMENTAL_TDX_APP=true iapp deploy`
-- `EXPERIMENTAL_TDX_APP=true iapp run <app-address>`
-
 ⚠️ Keep in mind: TDX mode is experimental and can be subject to instabilities or
 discontinuity.
 
 :::
 
-### 🚀 Next Steps
+## 🚀 Next Steps
 
 Your iApp is now running on iExec!
 
-Once your application is **stable** and **functional**, you can:
-
-- Learn how to **manage orders** and integrate with the **iExec protocol**.
-
-#### 📚 Recommended Resources
-
-- 🔗
-  [Order Management](https://protocol.docs.iex.ec/for-developers/advanced/manage-your-apporders)
-- 🔗 [iExec Protocol Documentation](https://protocol.docs.iex.ec/)
+Once your application is **stable** and **functional**, you can learn how to
+[manage access to your iApp](/guides/build-iapp/manage-access)
 
 <script setup>
 import CLIDemo from '@/components/CLIDemo.vue';
+import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

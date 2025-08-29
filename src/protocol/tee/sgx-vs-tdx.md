@@ -11,7 +11,7 @@ problem differently.** On the iExec platform, SGX is the **production-ready,
 widely-supported technology**, while TDX is the **experimental, next-generation
 technology** for advanced use cases.
 
-## Quick Overview
+## Quick overview
 
 | Aspect                  | Intel SGX                       | Intel TDX                 |
 | ----------------------- | ------------------------------- | ------------------------- |
@@ -24,11 +24,11 @@ technology** for advanced use cases.
 | **iExec Use Cases**     | Lightweight applications        | Complex workloads         |
 | **Platform Support**    | Full iExec ecosystem            | Experimental workerpools  |
 
-## Key Differences
+## Key differences
 
 ### 🎯 **Protection Scope**
 
-| Aspect               | [Intel SGX](/get-started/protocol/tee/intel-sgx)             | [Intel TDX](/get-started/protocol/tee/intel-tdx)               |
+| Aspect               | [Intel SGX](/protocol/tee/intel-sgx)                         | [Intel TDX](/protocol/tee/intel-tdx)                           |
 | -------------------- | ------------------------------------------------------------ | -------------------------------------------------------------- |
 | **What it protects** | Individual applications or parts of applications             | Trusted domains (secure virtual machines)                      |
 | **Scope**            | Small, focused secure areas within larger applications       | Multiple trusted domains can run on a single TDX machine       |
@@ -53,7 +53,7 @@ technology** for advanced use cases.
 
 ## When to Use Each Technology
 
-### Use SGX When:
+### Use SGX when
 
 - ✅ Building production applications
 - ✅ Need proven, stable technology
@@ -61,7 +61,7 @@ technology** for advanced use cases.
 - ✅ Require maximum worker availability
 - ✅ Need focused security for specific application parts
 
-### Use TDX When:
+### Use TDX when
 
 - 🔬 Experimenting with next-generation technology
 - 💾 Working with memory-intensive applications
@@ -72,14 +72,14 @@ technology** for advanced use cases.
 
 **Learn about specific TEE technologies**:
 
-- **[Intel SGX Technology](/get-started/protocol/tee/intel-sgx)** -
-  First-generation application-level TEE
-- **[Intel TDX Technology](/get-started/protocol/tee/intel-tdx)** -
-  Next-generation VM-level TEE
+- **[Intel SGX Technology](/protocol/tee/intel-sgx)** - First-generation
+  application-level TEE
+- **[Intel TDX Technology](/protocol/tee/intel-tdx)** - Next-generation VM-level
+  TEE
 
 **Ready to build with TEE?** Check out the practical guides:
 
-- **[Build Intel TDX App (Experimental)](/guides/build-iapp/advanced/create-your-first-tdx-app)** -
+- **[Build Intel TDX iApp (Experimental)](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
   Build TDX applications with traditional deployment and iApp Generator
 - **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Create your first TEE
   application

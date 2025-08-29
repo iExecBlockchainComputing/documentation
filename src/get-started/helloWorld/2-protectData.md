@@ -1,5 +1,5 @@
 ---
-title: Let's Protect Data
+title: Protect Data
 description:
   Learn how to protect your data using iExec's DataProtector SDK in this
   hands-on tutorial step.
@@ -11,7 +11,7 @@ import Banner from '../../components/Banner.vue'
 import Container from '../../components/Container.vue'
 </script>
 
-# 🛡️ Let's Protect Data
+# 🛡️ Protect Data
 
 > Reading time: 6 minutes
 
@@ -19,14 +19,14 @@ import Container from '../../components/Container.vue'
 
 ## Time to get practical
 
-Let's follow Alice as she learns how to protect her data using DataProtector on
-Bob's iApp, our developer tool for protecting data creation and management.
+Follow Alice as she learns how to protect her data using DataProtector on
+Bob's dApp, the developer tool for protecting data creation and management.
 
 </Banner>
 
 ::: tip <i></i>
 
-**Protected data** is encrypted data that remains confidential throughout its
+**Protected data** refers to encrypted data that remains confidential throughout its
 entire lifecycle - during storage, transfer and processing.
 
 :::
@@ -53,7 +53,7 @@ their DApp with these key features:
   Features an SDK for easy integration into your DApp, enhancing functionality
   and user experience.
 
-## 🧩 Let's Create Protected Data
+## 🧩 Create protected data
 
 <ProtectData />
 
@@ -88,12 +88,12 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
 
 For this tutorial, you can try out the code directly in our interactive
 CodeSandbox demo
-[here](https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main?file=%2Fsrc%2FApp.tsx&preventWorkspaceRedirect=true).
+[try the interactive DataProtector sandbox](https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main?file=%2Fsrc%2FApp.tsx&preventWorkspaceRedirect=true).
 Here's a quick overview of what happened when you clicked the **Protect Data**
 button:
 
-![alt](/assets/hello-world/dataprotector_light.png){.light-only}
-![alt](/assets/hello-world/dataprotector_dark.png){.dark-only}
+![DataProtector workflow diagram showing the 4-step process: SDK called, data encrypted with symmetric key, protected data address returned to user, and protected data encrypted and stored on decentralized storage](/assets/hello-world/dataprotector_light.png){.light-only}
+![DataProtector workflow diagram showing the 4-step process: SDK called, data encrypted with symmetric key, protected data address returned to user, and protected data encrypted and stored on decentralized storage](/assets/hello-world/dataprotector_dark.png){.dark-only}
 
 <div class="flex flex-col gap-2.5 my-6">
   <div class="flex items-center gap-3">
@@ -102,7 +102,7 @@ button:
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">2</span>
-    <span>The data is encrypted with a symmetric key</span>
+    <span>DataProtector encrypts the data with a symmetric key</span>
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">3</span>
@@ -118,7 +118,7 @@ button:
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">6</span>
-    <span>The protected data address is returned to the user</span>
+    <span>The system returns the protected data address to the user</span>
   </div>
 </div>
 
@@ -192,7 +192,9 @@ sandbox</a> for ready-to-use examples!
 
 - 🔒 **DataProtector** ensures data protection, management, and confidentiality
 
-- 📦 **Protected Data** is encrypted and stored on decentralized storage
+- 📦 **Protected Data** - DataProtector encrypts and stores data on
+  decentralized storage such as [ar.io](https://ar.io) or
+  [IPFS](https://ipfs.io)
 
 - ⛓️ **Ownership** iExec's protocol writes ownership on the blockchain and links
   it to your wallet
@@ -201,7 +203,7 @@ sandbox</a> for ready-to-use examples!
 
 <Container variant="success">
 
-In the next chapter, we'll show you how to build, deploy, and run an iApp to
-process your protected data. Let's go! 🚀
+In the next chapter, learn how to build, deploy, and run an iApp to
+process your protected data.
 
 </Container>

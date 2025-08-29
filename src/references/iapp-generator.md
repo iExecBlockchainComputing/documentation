@@ -9,7 +9,7 @@ description:
 # 🤖 iApp Generator
 
 **Here's the tool, what it does, and how to use it.** iApp Generator is a CLI
-that builds applications running inside TEEs. You write code, we handle the
+that builds apps running inside TEEs. You write code, iExec handles the
 confidential computing setup.
 
 ## What is iApp Generator?
@@ -40,20 +40,19 @@ Start here to understand what iApp are and how they work:
 
 Once you've built your first iApp, level up with these practical guides:
 
-- **[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)** - Handle data
-  flow in TEE environment
+- **[Inputs](/guides/build-iapp/inputs)** - Handle data inputs
+- **[Outputs](/guides/build-iapp/outputs)** - Handle data outputs flow in TEE
+  environment
 - **[Debugging Your iApp](/guides/build-iapp/debugging)** - Troubleshoot
   execution issues
 - **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
   Control who can use your iApp
-- **[How to Get and Decrypt Results](/guides/build-iapp/inputs-and-outputs)** -
-  Retrieve and use outputs
 
 ### 3. **Explore Advanced Features**
 
 Ready for production? Dive into specialized topics:
 
-- **[Build Intel TDX App (Experimental)](/guides/build-iapp/advanced/create-your-first-tdx-app)** -
+- **[Build Intel TDX iApp (Experimental)](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
   Next-gen TEE with traditional deployment and iApp Generator technology
 - **[Complete Guides Overview](/guides/build-iapp/build-&-test)** - All
   development guides in one place
@@ -65,7 +64,7 @@ Ready for production? Dive into specialized topics:
 Your code runs in Intel SGX/TDX enclaves. Even the worker running your app can't
 see what's happening inside.
 
-### You build, we handle the TEE complexity
+### You build, iExec handles the TEE complexity
 
 Write normal application code. iApp Generator handles secure deployment, worker
 coordination, and result encryption.
@@ -89,10 +88,10 @@ applications:
 
 1. **[Getting Started](/references/iapp-generator/getting-started)** - Build
    your first iApp (15 minutes)
-2. **[Inputs and Outputs](/guides/build-iapp/inputs-and-outputs)** - Handle data
-   properly
-3. **[Debugging](/guides/build-iapp/debugging)** - Fix issues quickly
-4. **[App Access Control](/guides/build-iapp/manage-access)** - Go to production
+2. **[Inputs](/guides/build-iapp/inputs)** - Handle data inputs
+3. **[Outputs](/guides/build-iapp/outputs)** - Handle data outputs properly
+4. **[Debugging](/guides/build-iapp/debugging)** - Fix issues quickly
+5. **[App Access Control](/guides/build-iapp/manage-access)** - Go to production
    :::
 
 ### Need Help?
@@ -100,8 +99,6 @@ applications:
 - **[Complete Guides](/guides/build-iapp/build-&-test)** - All development
   guides
 - **[iExec Discord](https://discord.com/invite/pbt9m98wnU)** - Community support
-- **[Protocol Documentation](https://protocol.docs.iex.ec)** - Technical deep
-  dive
 
 ---
 

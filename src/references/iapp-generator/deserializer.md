@@ -13,7 +13,7 @@ protected data that your wallet and iApp are authorized to use. To achieve this,
 you must deserialize the content of the protected data with the expected data
 schema.
 
-To simplify this process, you can use our lightweight utility package,
+To simplify this process, you can use the lightweight utility package,
 `@iexec/dataprotector-deserializer`, in your iApp. This package streamlines the
 deserialization of protected data, making it easy for you to access and use the
 information securely.
@@ -21,8 +21,9 @@ information securely.
 ## Overview
 
 This deserializer is built on the
-[Borsh technical specification](https://borsh.io/). We developed this JavaScript
-library to simplify deserialization in your iApp built with JavaScript.
+[Borsh technical specification](https://borsh.io/). iExec developed this
+JavaScript library to simplify deserialization in your iApp built with
+JavaScript.
 
 ::: warning
 
@@ -31,8 +32,8 @@ deserialize a protected data.
 
 Under the hood, protected data are **zip files** replicating the tree structure
 of the original data object. iExec's protocol stores each value in a dedicated
-file, binary values are stored as is while boolean, numbers, and strings are
-serialized with Borsh.
+file, the system stores binary values as is while it handles boolean, numbers,
+and strings serialized with Borsh.
 
 To access a value from a protected data, your app will need to unzip the iExec
 dataset file at `$IEXEC_IN/$IEXEC_DATASET_FILENAME`. Then for `'bool'`, `'f64'`,
