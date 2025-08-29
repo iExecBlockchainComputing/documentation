@@ -29,35 +29,27 @@ Explorer displays data for the network you choose.
 
 <CardGrid>
   <FeatureCard
-    icon="mdi:briefcase"
     title="Deals & Tasks"
     description="Monitor deal orchestration and task execution with their asset relationships (app + dataset + workerpool) from initialization to result download, including pricing"
     link-url="#deals-tasks"
-    icon-color="text-blue-500"
   />
   
   <FeatureCard
-    icon="mdi:apps"
     title="iApp Listing"
     description="Explore the catalog of trusted execution environment (TEE) applications, including their use cases and ownership details"
     link-url="#iApp-listing"
-    icon-color="text-green-500"
   />
   
   <FeatureCard
-    icon="mdi:database"
     title="Protected Data Listing"
     description="Discover encrypted datasets with their asset types, including usage and ownership details"
     link-url="#protected-data-listing"
-    icon-color="text-orange-500"
   />
 
 <FeatureCard
-    icon="mdi:lightning-bolt"
     title="Workerpools"
     description="Explore the decentralized computing infrastructure, including usage and ownership details"
     link-url="#workerpools"
-    icon-color="text-purple-500"
   />
 
 </CardGrid>

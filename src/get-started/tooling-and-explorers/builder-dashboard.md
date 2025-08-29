@@ -24,17 +24,13 @@ confidential iApp deployed on the protocol.
 
 <CardGrid>
   <FeatureCard
-    icon="mdi:chart-line"
     title="Voucher consumption & Task History"
     description="View complete task execution history with status, pricing, deals, and comprehensive voucher consumption tracking"
-    icon-color="text-blue-500"
   />
   
   <FeatureCard
-    icon="mdi:apps"
     title="Confidential iApp Monitoring"
     description="Monitor deployed iApp, track execution statistics, unique users"
-    icon-color="text-green-500"
   />
 </CardGrid>
 
@@ -65,31 +61,23 @@ monitoring with detailed task execution history and real-time balance tracking.
 
 <CardGrid>
   <FeatureCard
-    icon="mdi:history"
     title="Complete Task History"
     description="Chronological list of all executed tasks with detailed execution information"
-    icon-color="text-blue-500"
   />
   
   <FeatureCard
-    icon="mdi:chart-line"
     title="Task Status Tracking"
     description="Real-time status updates: Pending, Running, Completed, Failed"
-    icon-color="text-green-500"
   />
   
   <FeatureCard
-    icon="mdi:currency-usd"
     title="Pricing & Cost Analysis"
     description="Detailed cost breakdown per task and cumulative spending analytics"
-    icon-color="text-orange-500"
   />
   
   <FeatureCard
-    icon="mdi:handshake"
     title="Deal Association"
     description="View which deal each task belongs to and track deal performance"
-    icon-color="text-purple-500"
   />
 </CardGrid>
 
@@ -122,31 +110,23 @@ deployed confidential iApp with detailed statistics and user insights.
 
 <CardGrid>
   <FeatureCard
-    icon="mdi:apps"
     title="Deployed iApp"
     description="View all your confidential applications with deployment status, versions, and metadata"
-    icon-color="text-blue-500"
   />
   
   <FeatureCard
-    icon="mdi:counter"
     title="Execution Count"
     description="Track how many times each iApp has been executed since deployment"
-    icon-color="text-green-500"
   />
   
   <FeatureCard
-    icon="mdi:account-group"
     title="Unique Users"
     description="Monitor total unique users who have interacted with each application"
-    icon-color="text-orange-500"
   />
   
   <FeatureCard
-    icon="mdi:trending-up"
     title="Usage Trends"
     description="Analyze usage patterns, peak times, and growth trends for each iApp"
-    icon-color="text-purple-500"
   />
 </CardGrid>
 
