@@ -220,31 +220,32 @@ discontinuity.
 ## Sandbox
 
 <CardGrid>
-  <ProjectCard
-    title="DataProtector Core"
-    description="Essential data protection features including encryption, access control, and secure storage."
-    icon="mdi:shield-lock"
-    status="interactive"
-    statusLabel="Interactive"
-    buttonLabel="Open Sandbox"
-    buttonIcon="mdi:code-braces"
-    buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main"
-    githubUrl="https://github.com/iExecBlockchainComputing/dataprotector-sandbox"
-    githubLabel="GitHub repository sandbox"
-  />
 
 <ProjectCard
-    title="DataProtector Sharing"
-    description="Advanced data sharing capabilities with granular permissions and monetization features."
-    icon="mdi:share-variant"
-    status="interactive"
-    statusLabel="Interactive"
-    buttonLabel="Open Sandbox"
-    buttonIcon="mdi:code-braces"
-    buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sharing-sandbox/main"
-    githubUrl="https://github.com/iExecBlockchainComputing/dataprotector-sharing-sandbox"
-    githubLabel="GitHub repository sandbox"
-  /> </CardGrid>
+  title="DataProtector Core"
+  description="Essential data protection features including encryption, access control, and secure storage."
+  icon="mdi:shield-lock"
+  status="interactive"
+  statusLabel="Interactive"
+  buttonLabel="Open Sandbox"
+  buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main"
+  githubUrl="https://github.com/iExecBlockchainComputing/dataprotector-sandbox"
+  githubLabel="GitHub repository sandbox"
+/>
+
+<ProjectCard
+  title="DataProtector Sharing"
+  description="Advanced data sharing capabilities with granular permissions and monetization features."
+  icon="mdi:share-variant"
+  status="interactive"
+  statusLabel="Interactive"
+  buttonLabel="Open Sandbox"
+  buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sharing-sandbox/main"
+  githubUrl="https://github.com/iExecBlockchainComputing/dataprotector-sharing-sandbox"
+  githubLabel="GitHub repository sandbox"
+/>
+
+</CardGrid>
 
 <script setup>
 import CardGrid from '@/components/CardGrid.vue';
