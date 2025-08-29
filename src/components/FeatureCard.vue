@@ -2,7 +2,7 @@
   <component
     :is="linkUrl ? 'a' : 'div'"
     :href="linkUrl || undefined"
-    class="rounded-2xl border border-[var(--vp-c-default-3)] text-[var(--color-text2)]! bg-[var(--vp-c-bg-soft)] p-8 flex h-full flex-col transition-all! duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-md"
+    class="flex h-full flex-col rounded-2xl border border-[var(--vp-c-default-3)] bg-[var(--vp-c-bg-soft)] p-8 text-[var(--color-text2)]! transition-all! duration-200 ease-in-out hover:-translate-y-0.5 hover:shadow-md"
     :class="{ 'cursor-pointer no-underline!': linkUrl }"
   >
     <h3 class="text-text1 !mt-0 !mb-0 text-base font-semibold">

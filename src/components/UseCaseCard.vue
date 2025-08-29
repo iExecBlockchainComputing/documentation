@@ -3,7 +3,12 @@
     class="bg-soft-bg group border-border hover:border-primary overflow-hidden rounded-xl border shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
   >
     <!-- Image -->
-    <a :href="demoUrl" target="_blank" rel="noreferrer" class="group relative overflow-hidden">
+    <a
+      :href="demoUrl"
+      target="_blank"
+      rel="noreferrer"
+      class="group relative overflow-hidden"
+    >
       <img
         :src="imageUrl"
         :alt="imageAlt"
