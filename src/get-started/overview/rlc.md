@@ -67,11 +67,11 @@ decentralized machine
 defined by each provider (iApp, Protected Data, Worker) in their marketplace
 orders.
 
-**RLC Staking:** To run a task on the protocol (executing an iApp with
-protected data on a decentralized workerpool), you need to **lock RLC** in the
-protocol during the task period. In exchange, you receive **sRLC (staked RLC)**.
-Once the task is completed, you can recover the RLC that wasn't consumed for the
-task payment.
+**RLC Staking:** To run a task on the protocol (executing an iApp with protected
+data on a decentralized workerpool), you need to **lock RLC** in the protocol
+during the task period. In exchange, you receive **sRLC (staked RLC)**. Once the
+task is completed, you can recover the RLC that wasn't consumed for the task
+payment.
 
 ### 📊 Ecosystem Growth Metrics
 

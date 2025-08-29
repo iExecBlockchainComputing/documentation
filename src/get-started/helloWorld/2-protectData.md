@@ -19,15 +19,15 @@ import Container from '../../components/Container.vue'
 
 ## Time to get practical
 
-Follow Alice as she learns how to protect her data using DataProtector on
-Bob's dApp, the developer tool for protecting data creation and management.
+Follow Alice as she learns how to protect her data using DataProtector on Bob's
+dApp, the developer tool for protecting data creation and management.
 
 </Banner>
 
 ::: tip <i></i>
 
-**Protected data** refers to encrypted data that remains confidential throughout its
-entire lifecycle - during storage, transfer and processing.
+**Protected data** refers to encrypted data that remains confidential throughout
+its entire lifecycle - during storage, transfer and processing.
 
 :::
 
@@ -203,7 +203,7 @@ sandbox</a> for ready-to-use examples!
 
 <Container variant="success">
 
-In the next chapter, learn how to build, deploy, and run an iApp to
-process your protected data.
+In the next chapter, learn how to build, deploy, and run an iApp to process your
+protected data.
 
 </Container>

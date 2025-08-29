@@ -57,7 +57,8 @@ ensures tasks are executed efficiently and securely.
 
 <Container variant="success">
 
-Want to **use Workerpool**? Start building iApp and the protocol will handle Workerpool selection automatically.
+Want to **use Workerpool**? Start building iApp and the protocol will handle
+Workerpool selection automatically.
 
 </Container>
 
@@ -65,7 +66,8 @@ Want to **use Workerpool**? Start building iApp and the protocol will handle Wor
 
 <CardWithoutBorder>
 
-**Start Using:** [Build your first iApp](/get-started/helloWorld) and see a Workerpool in action
+**Start Using:** [Build your first iApp](/get-started/helloWorld) and see a
+Workerpool in action
 
 **Join as Worker:**
 [Contact us on Discord](https://discord.com/invite/pbt9m98wnU) for guidance and

@@ -13,9 +13,9 @@ description:
 
 ## Time to build
 
-Build an iApp that can process protected data in a secure environment
-using the [iExec iApp generator tool](/references/iapp-generator). This tool
-helps you create, test and deploy iApp with just a few commands.
+Build an iApp that can process protected data in a secure environment using the
+[iExec iApp generator tool](/references/iapp-generator). This tool helps you
+create, test and deploy iApp with just a few commands.
 
 </Banner>
 

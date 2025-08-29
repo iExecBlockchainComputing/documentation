@@ -20,15 +20,15 @@ import CardWithoutBorder from '../../components/CardWithoutBorder.vue'
 
 ## Start with the basics
 
-and explore how iExec can help you build Privacy-preserving apps and
-securely manage sensitive data.
+and explore how iExec can help you build Privacy-preserving apps and securely
+manage sensitive data.
 
 </Banner>
 
 ## 👨‍💻 Building Privacy-preserving iApp with iExec
 
-Imagine you're building a decentralized app (dApp) that needs to
-**handle sensitive user data**, for example:
+Imagine you're building a decentralized app (dApp) that needs to **handle
+sensitive user data**, for example:
 
 <CardWithoutBorder class="**:list-none *:pl-0!">
 
@@ -48,8 +48,8 @@ Imagine you're building a decentralized app (dApp) that needs to
 
 ::: tip <i></i>
 
-This is where **iExec** comes in! iExec provides tools to easily add **privacy** and
-**monetization** features into your iApp.
+This is where **iExec** comes in! iExec provides tools to easily add **privacy**
+and **monetization** features into your iApp.
 
 :::
 
@@ -58,8 +58,8 @@ This is where **iExec** comes in! iExec provides tools to easily add **privacy**
 Unlike traditional tools, iExec protects your data throughout its entire
 lifecycle - during storage, transfer, and even while **being processed by
 applications.** This is made possible thanks to
-**<a target="_blank" href="/protocol/tee/introduction">Trusted
-Execution Environment (TEE)</a>** and
+**<a target="_blank" href="/protocol/tee/introduction">Trusted Execution
+Environment (TEE)</a>** and
 **<a target="_blank" href="https://www.iex.ec/academy/iexec-decentralized-confidential-computing">Confidential
 Computing</a>** technologies.
 
