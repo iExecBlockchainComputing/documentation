@@ -1,9 +1,9 @@
 <template>
-  <a 
-    :href="href" 
+  <a
+    :href="href"
     :class="[
-      'rounded-xl bg-[var(--vp-c-bg-soft)] p-6 no-underline! text-[var(--vp-c-text-1)]! relative before:duration-300 before:absolute before:inset-x-0 before:top-0 before:h-10 hover:before:-translate-y-0.5 before:bg-primary before:-z-10 before:rounded-xl',
-      variant === 'bonus' ? 'border-2 border-primary' : ''
+      'before:bg-primary relative rounded-xl bg-[var(--vp-c-bg-soft)] p-6 text-[var(--vp-c-text-1)]! no-underline! before:absolute before:inset-x-0 before:top-0 before:-z-10 before:h-10 before:rounded-xl before:duration-300 hover:before:-translate-y-0.5',
+      variant === 'bonus' ? 'border-primary border-2' : '',
     ]"
   >
     <h3 class="mt-0! mb-3!">{{ title }}</h3>
@@ -12,20 +12,17 @@
       :label="readTime"
       :variant="badgeVariant"
     />
-    <p class="text-[var(--vp-c-text-2)] my-4">
+    <p class="my-4 text-[var(--vp-c-text-2)]">
       {{ description }}
     </p>
-    <div 
+    <div
       v-if="variant === 'bonus'"
-      class="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-full font-medium hover:bg-primary/90 transition-colors"
+      class="bg-primary hover:bg-primary/90 inline-flex items-center gap-2 rounded-full px-4 py-2 font-medium text-white transition-colors"
     >
       {{ actionText }}
       <Icon icon="lucide:arrow-right" :height="20" />
     </div>
-    <div 
-      v-else
-      class="inline-flex gap-2 items-center"
-    >
+    <div v-else class="inline-flex items-center gap-2">
       {{ actionText }}
       <Icon icon="lucide:arrow-right" :height="20" />
     </div>
@@ -42,7 +39,13 @@ interface Props {
   readTime: string;
   description: string;
   actionText?: string;
-  badgeVariant?: 'primary' | 'default' | 'success' | 'warning' | 'danger' | 'important';
+  badgeVariant?:
+    | 'primary'
+    | 'default'
+    | 'success'
+    | 'warning'
+    | 'danger'
+    | 'important';
   variant?: 'default' | 'bonus';
 }
 

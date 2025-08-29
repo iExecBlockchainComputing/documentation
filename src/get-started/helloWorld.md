@@ -45,7 +45,7 @@ iExec in this interactive guide.
 
 <CardGrid>
 
-  <TutorialCard
+<TutorialCard
     href="helloWorld/1-overview"
     title="1 - iExec Overview"
     readTime="8 min read"
@@ -54,7 +54,7 @@ iExec in this interactive guide.
     badgeVariant="primary"
   />
 
-  <TutorialCard
+<TutorialCard
     href="helloWorld/2-protectData"
     title="2. Protect Your Data"
     readTime="6 min read"
@@ -63,7 +63,7 @@ iExec in this interactive guide.
     badgeVariant="primary"
   />
 
-  <TutorialCard
+<TutorialCard
     href="helloWorld/3-buildIApp"
     title="3. Build your iApp"
     readTime="10 min read"
@@ -72,7 +72,7 @@ iExec in this interactive guide.
     badgeVariant="primary"
   />
 
-  <TutorialCard
+<TutorialCard
     href="helloWorld/4-manageDataAccess"
     title="4. Manage Data Access"
     readTime="6 min read"
@@ -80,15 +80,14 @@ iExec in this interactive guide.
     actionText="Read"
     badgeVariant="primary"
   />
-  
-  <TutorialCard
+
+<TutorialCard
     href="helloWorld/5-bonusChapter"
     title="Bonus Chapter"
     description="Finish the journey with a surprise bonus chapter!"
     actionText="Special content"
     variant="bonus"
-  />
-</CardGrid>
+  /> </CardGrid>
 
 ## Getting Started
 
