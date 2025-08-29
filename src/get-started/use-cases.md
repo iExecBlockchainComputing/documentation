@@ -20,7 +20,6 @@ technologies.
     :features="['DataProtector Core', 'DataProtector Sharing']"
     demoUrl="https://demo.iex.ec/content-creator/"
     githubUrl="https://github.com/iExecBlockchainComputing/content-creator-usecase-demo"
-    demoIcon="mdi:art"
   />
 
 <UseCaseCard
@@ -31,7 +30,6 @@ technologies.
     :features="['DataProtector Core', 'Web3Mail', 'Web3Telegram']"
     demoUrl="https://demo.iex.ec/web3messaging"
     githubUrl="https://github.com/iExecBlockchainComputing/web3-messaging-usecase-demo"
-    demoIcon="mdi:message-processing"
   />
 
 <UseCaseCard
@@ -41,7 +39,6 @@ technologies.
     imageAlt="AI Applications Demo Screenshot"
     :features="['AI', 'TEE', 'Confidential Computing']"
     githubUrl="https://github.com/iExecBlockchainComputing/iexec-elizaos-agent"
-    demoIcon="mdi:brain"
   />
 
 </div>
