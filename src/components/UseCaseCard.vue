@@ -41,6 +41,7 @@
           rel="noreferrer"
         >
           {{ demoLabel }}
+          <Icon icon="lucide:arrow-up-right" :height="20" />
         </Button>
         <Button
           v-if="githubUrl"
@@ -52,6 +53,7 @@
         >
           <Icon icon="mdi:github" height="18" />
           {{ githubLabel }}
+          <Icon icon="lucide:arrow-up-right" :height="20" />
         </Button>
       </div>
     </div>
