@@ -368,10 +368,6 @@ article.box .icon {
     12.835px 12.835px 21.392px 0 var(--vp-c-bg);
 }
 
-/**
- * Background SVG for VitePress image
- * -------------------------------------------------------------------------- */
-
 .image .image-container {
   @apply relative flex items-center justify-center;
 }
@@ -389,10 +385,6 @@ article.box .icon {
 .VPHero.has-image.VPHomeHero {
   @apply pb-0;
 }
-
-/**
- * Component: VPFeature styling
- * -------------------------------------------------------------------------- */
 
 .VPLink.link.VPFeature {
   @apply relative rounded-[32px] border bg-gradient-to-b from-[var(--vp-c-white)] to-[var(--vp-c-white)] transition-all duration-300 *:relative *:z-20 after:absolute after:inset-px after:z-10 after:rounded-[31px] after:bg-[var(--vp-c-bg-soft)] hover:shadow-lg;
