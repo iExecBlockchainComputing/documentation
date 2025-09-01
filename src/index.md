@@ -19,7 +19,8 @@ hero:
       link: /get-started/helloWorld
 
 features:
-  - icon: 🚀
+  - icon: <img src="/icon_build_app.svg" />
+    src:
     title: Quick Start
     details: Jump in and start building on iExec in minutes.
     link: /get-started/helloWorld

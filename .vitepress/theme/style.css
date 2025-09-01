@@ -346,10 +346,26 @@ input {
 :root {
   --vp-home-hero-name-color: var(--vp-c-text-1);
   --vp-button-brand-bg: #fcd15a;
+  --vp-button-brand-hover-bg: #fcd15a;
+}
+
+.VPHero .VPButton {
+  @apply font-medium transition hover:-translate-y-0.5 hover:shadow-md;
+}
+
+.VPHero .VPButton.brand {
+  @apply text-[var(--vp-c-black)]!;
 }
 
 .VPImage.image-src {
   @apply max-h-none max-w-none lg:size-[448px]!;
+}
+
+article.box .icon {
+  @apply size-14 rounded-[14px] bg-[var(--vp-c-bg-soft)] p-2;
+  box-shadow:
+    -12.835px -12.835px 21.392px 0 var(--vp-c-bg),
+    12.835px 12.835px 21.392px 0 var(--vp-c-bg);
 }
 
 /**
@@ -368,4 +384,20 @@ input {
 
 .image .image-container .VPImage.image-src {
   @apply relative z-10;
+}
+
+.VPHero.has-image.VPHomeHero {
+  @apply pb-0;
+}
+
+/**
+ * Component: VPFeature styling
+ * -------------------------------------------------------------------------- */
+
+.VPLink.link.VPFeature {
+  @apply relative rounded-[32px] border bg-gradient-to-b from-[var(--vp-c-white)] to-[var(--vp-c-white)] transition-all duration-300 *:relative *:z-20 after:absolute after:inset-px after:z-10 after:rounded-[31px] after:bg-[var(--vp-c-bg-soft)] hover:shadow-lg;
+}
+
+.dark .VPLink.link.VPFeature {
+  @apply from-[var(--c-border)] to-transparent;
 }
