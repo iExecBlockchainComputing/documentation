@@ -8,7 +8,6 @@ description:
 <script setup>
 import { Icon } from '@iconify/vue';
 import InfoIcon from '@/components/InfoIcon.vue'
-import ChainSelector from '@/components/ChainSelector.vue'
 import Banner from '../components/Banner.vue'
 import Container from '../components/Container.vue'
 import CardWithBorder from '../components/CardWithBorder.vue'
