@@ -301,7 +301,7 @@ simulating how it will run in the iExec network's TEE environment.
 
 - If you get <code>Error: Docker daemon is not accessible</code>: Make sure
   Docker is installed and running.
-- if you get <code>Error: Failed to locate iApp project root</code>: Ensure you
+- If you get <code>Error: Failed to locate iApp project root</code>: Ensure you
   are in your project folder before proceeding.
 
 :::
