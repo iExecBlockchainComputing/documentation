@@ -342,11 +342,11 @@ Deploy your iApp on the iExec protocol.
 <div class="flex flex-col gap-2.5 my-6">
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">1</span>
-    <span>Go to [Docker Hub Security Settings](https://hub.docker.com/settings/security)</span>
+    <span>Go to <a href="https://hub.docker.com/settings/security" target="_blank">Docker Hub Security Settings</a></span>
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">2</span>
-    <span>Click ["Personal access tokens"](https://app.docker.com/settings/personal-access-tokens) → "Generate new token"</span>
+    <span>Click [<a href="https://app.docker.com/settings/personal-access-tokens" target="_blank">"Personal access tokens"</a> → "Generate new token"</span>
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">3</span>

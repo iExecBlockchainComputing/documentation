@@ -26,7 +26,7 @@ data, deploy iApp, and manage data access. Now it's time to claim your rewards!
     If you have any questions, please schedule an appointment with our DevRel team who will be happy to help!
     <br>
     <br>
-    [📅 Book a meeting](https://calendly.com/martin-leclercq-iexec/30min)
+    <a href="https://calendly.com/martin-leclercq-iexec/30min" target="_blank">📅 Book a meeting</a>
   </p>
   <div class="flex-1 flex justify-center">
     <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExenE3ZW42enUydnl5b2F3ZDcyNHZkdXF6bzFydjl6bmc4MzYydHRweSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/g9582DNuQppxC/giphy.gif" alt="Funny waiting animation" width="300" height="300" />
