@@ -346,7 +346,7 @@ Deploy your iApp on the iExec protocol.
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">2</span>
-    <span>Click [<a href="https://app.docker.com/settings/personal-access-tokens" target="_blank">"Personal access tokens"</a> → "Generate new token"</span>
+    <span>Click <a href="https://app.docker.com/settings/personal-access-tokens" target="_blank">"Personal access tokens"</a> → "Generate new token"</span>
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">3</span>
