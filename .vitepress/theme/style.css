@@ -338,3 +338,34 @@ input {
 .vp-doc .custom-block.details strong {
   @apply text-[var(--vp-c-details-1)];
 }
+
+/**
+   * HomePage: rewrite
+   * -------------------------------------------------------------------------- */
+
+:root {
+  --vp-home-hero-name-color: var(--vp-c-text-1);
+  --vp-button-brand-bg: #fcd15a;
+}
+
+.VPImage.image-src {
+  @apply max-h-none max-w-none lg:size-[448px]!;
+}
+
+/**
+ * Background SVG for VitePress image
+ * -------------------------------------------------------------------------- */
+
+.image .image-container {
+  @apply relative flex items-center justify-center;
+}
+
+.image .image-container::before {
+  @apply pointer-events-none absolute top-[60%] left-1/2 -z-10 h-[929px] w-[995px] -translate-x-1/2 -translate-y-1/2 bg-contain bg-center bg-no-repeat;
+  content: '';
+  background-image: url('/bg-gradient.svg');
+}
+
+.image .image-container .VPImage.image-src {
+  @apply relative z-10;
+}

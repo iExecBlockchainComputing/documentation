@@ -3,10 +3,13 @@
 layout: home
 
 hero:
-  name: 'Privacy Made Easy'
+  name: 'Build on iExec Privacy Layer '
   tagline:
     'Build decentralized applications that combine governance, privacy, and
     monetization.'
+  image:
+    src: /iexec-illustration-large.webp
+    alt: VitePress
   actions:
     - theme: brand
       text: Get Started
