@@ -15,7 +15,7 @@ explore apps and protectedData—all in one powerful dashboard.
   :image-url-dark="explorerGlobalImage"
   image-alt="iExec Explorer"
   :link-url="explorerUrl"
-  caption="🔗 Explore the iExec Protocol"
+  caption="Explore the iExec Protocol"
 />
 
 ::: tip
@@ -29,50 +29,46 @@ Explorer displays data for the network you choose.
 
 <CardGrid>
   <FeatureCard
-    icon="mdi:briefcase"
     title="Deals & Tasks"
     description="Monitor deal orchestration and task execution with their asset relationships (app + dataset + workerpool) from initialization to result download, including pricing"
     link-url="#deals-tasks"
-    icon-color="text-blue-500"
   />
   
   <FeatureCard
-    icon="mdi:apps"
     title="iApp Listing"
     description="Explore the catalog of trusted execution environment (TEE) applications, including their use cases and ownership details"
     link-url="#iApp-listing"
-    icon-color="text-green-500"
   />
   
   <FeatureCard
-    icon="mdi:database"
     title="Protected Data Listing"
     description="Discover encrypted datasets with their asset types, including usage and ownership details"
     link-url="#protected-data-listing"
-    icon-color="text-orange-500"
   />
 
 <FeatureCard
-    icon="mdi:lightning-bolt"
     title="Workerpools"
     description="Explore the decentralized computing infrastructure, including usage and ownership details"
     link-url="#workerpools"
-    icon-color="text-purple-500"
   />
 
 </CardGrid>
 
-<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 my-6">
-  <h4 class="!mt-0 !mb-2">🏗️ Understanding iExec Architecture</h4>
-  <p class="!mb-2"><strong>Deals</strong> are the fundamental orchestration unit - each deal coordinates a set of different stakeholders that share resources and execution parameters to execute a confidential computation task.</p>
-  <p class="!mb-0">Each <strong>Deal</strong> brings together:</p>
-  <ul class="!mb-0">
-    <li><strong>Requester</strong>: The entity requesting the computation</li>
-    <li><strong>iApp</strong>: The confidential computation logic</li>
-    <li><strong>Dataset</strong>: The data that will be processed by the iApp</li>
-    <li><strong>Workerpool</strong>: The decentralized network of workers providing computation power</li>
-  </ul>
-</div>
+::: tip 🏗️ Understanding iExec Architecture
+
+**Deals** are the fundamental orchestration unit - each deal coordinates a set
+of different stakeholders that share resources and execution parameters to
+execute a confidential computation task.
+
+Each **Deal** brings together:
+
+- **Requester**: The entity requesting the computation
+- **iApp**: The confidential computation logic
+- **Dataset**: The data that will be processed by the iApp
+- **Workerpool**: The decentralized network of workers providing computation
+  power
+
+:::
 
 ## 💼 Deals & Tasks
 
@@ -80,7 +76,7 @@ Explorer displays data for the network you choose.
   :image-url-dark="dealViewImage"
   image-alt="Deal View"
   :link-url="`${explorerUrl}/deals`"
-  caption="🔗 Explore Deals"
+  caption="Explore Deals"
 />
 
 > **💡 Understanding Deals**: A deal is a coordinated set of stakeholders that
@@ -106,7 +102,7 @@ Explorer displays data for the network you choose.
   :image-url-dark="taskViewImage"
   image-alt="Task View"
   :link-url="`${explorerUrl}/tasks`"
-  caption="🔗 Explore Tasks"
+  caption="Explore Tasks"
 />
 
 Browse and analyze all tasks across the iExec network:
@@ -122,14 +118,14 @@ Browse and analyze all tasks across the iExec network:
     :image-url-dark="taskDetailsStartedImage"
     image-alt="Result Decryption"
     :link-url="`${explorerUrl}/tasks`"
-    caption="🔗 Explore Tasks"
+    caption="Explore Tasks"
 />
 
 <ImageViewer
     :image-url-dark="taskDetailsCompletedImage"
     image-alt="Task Completed"
     :link-url="`${explorerUrl}/tasks`"
-    caption="🔗 Explore Tasks"
+    caption="Explore Tasks"
 />
 
 > **🔗 Task Assets**: Each task involves four key assets working together: the
@@ -158,7 +154,7 @@ Browse and analyze all tasks across the iExec network:
   :image-url-dark="appViewImage"
   image-alt="App View"
   :link-url="`${explorerUrl}/apps`"
-  caption="🔗 Explore iApp Marketplace"
+  caption="Explore iApp Marketplace"
 />
 
 Explore the iExec application marketplace:
@@ -173,7 +169,7 @@ Explore the iExec application marketplace:
   :image-url-dark="datasetViewImage"
   image-alt="Dataset View"
   :link-url="`${explorerUrl}/datasets`"
-  caption="🔗 Explore Protected Datasets"
+  caption="Explore Protected Datasets"
 />
 
 Navigate the protected data landscape:
@@ -190,7 +186,7 @@ Navigate the protected data landscape:
   :image-url-dark="workerpoolViewImage"
   image-alt="Workerpool View"
   :link-url="`${explorerUrl}/workerpools`"
-  caption="🔗 Explore Workerpools Infrastructure"
+  caption="Explore Workerpools Infrastructure"
 />
 
 Explore the decentralized computing infrastructure:

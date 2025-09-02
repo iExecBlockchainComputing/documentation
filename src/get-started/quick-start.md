@@ -56,49 +56,46 @@ Explore and experiment with iExec features directly in your browser. Perfect for
 learning and prototyping.
 
 <CardGrid>
-  <ProjectCard
-    title="DataProtector Core"
-    description="Essential data protection features including encryption, access control, and secure storage."
-    icon="mdi:shield-lock"
-    status="interactive"
-    statusLabel="Interactive"
-    buttonLabel="Open Sandbox"
-    buttonIcon="mdi:code-braces"
-    buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main"
-  />
 
 <ProjectCard
-    title="DataProtector Sharing"
-    description="Advanced data sharing capabilities with granular permissions and monetization features."
-    icon="mdi:share-variant"
-    status="interactive"
-    statusLabel="Interactive"
-    buttonLabel="Open Sandbox"
-    buttonIcon="mdi:code-braces"
-    buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sharing-sandbox/main"
-  />
+  title="DataProtector Core"
+  description="Essential data protection features including encryption, access control, and secure storage."
+  icon="mdi:shield-lock"
+  status="interactive"
+  statusLabel="Interactive"
+  buttonLabel="Open Sandbox"
+  buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main"
+/>
 
 <ProjectCard
-    title="Web3 Telegram"
-    description="Privacy-preserving Telegram messaging integration with user consent management."
-    icon="mdi:message-lock"
-    status="interactive"
-    statusLabel="Interactive"
-    buttonLabel="Open Sandbox"
-    buttonIcon="mdi:code-braces"
-    buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/web3-telegram-sandbox/main"
-  />
+  title="DataProtector Sharing"
+  description="Advanced data sharing capabilities with granular permissions and monetization features."
+  icon="mdi:share-variant"
+  status="interactive"
+  statusLabel="Interactive"
+  buttonLabel="Open Sandbox"
+  buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sharing-sandbox/main"
+/>
 
 <ProjectCard
-    title="Web3 Mail"
-    description="Secure email communication for Web3 users without revealing personal email addresses."
-    icon="mdi:email-lock"
-    status="interactive"
-    statusLabel="Interactive"
-    buttonLabel="Open Sandbox"
-    buttonIcon="mdi:code-braces"
-    buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/web3mail-sandbox/main"
-  />
+  title="Web3 Telegram"
+  description="Privacy-preserving Telegram messaging integration with user consent management."
+  icon="mdi:message-lock"
+  status="interactive"
+  statusLabel="Interactive"
+  buttonLabel="Open Sandbox"
+  buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/web3-telegram-sandbox/main"
+/>
+
+<ProjectCard
+  title="Web3 Mail"
+  description="Secure email communication for Web3 users without revealing personal email addresses."
+  icon="mdi:email-lock"
+  status="interactive"
+  statusLabel="Interactive"
+  buttonLabel="Open Sandbox"
+  buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/web3mail-sandbox/main"
+/>
 
 </CardGrid>
 

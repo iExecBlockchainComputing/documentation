@@ -20,12 +20,13 @@
     <p v-if="caption" class="mt-4 font-medium">
       <Button
         as="a"
+        variant="secondary"
         :href="linkUrl"
         target="_blank"
         rel="noreferrer"
-        class="text-primary hover:text-primary2 inline-flex items-center gap-2 rounded-lg no-underline transition-colors duration-200"
       >
         {{ caption }}
+        <Icon icon="lucide:arrow-up-right" :height="20" />
       </Button>
     </p>
   </div>
@@ -33,6 +34,7 @@
 
 <script setup lang="ts">
 import Button from './ui/Button.vue';
+import { Icon } from '@iconify/vue';
 
 interface Props {
   imageUrlLight?: string;

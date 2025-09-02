@@ -129,93 +129,20 @@ npm run build
 
 ## 🤝 Contributing
 
-We welcome contributions to improve the iExec documentation! Please follow these
-steps to contribute:
+We welcome contributions to improve the iExec documentation!
 
-### 1. Fork the Repository
+📖 **For detailed contribution guidelines, component usage, and best practices,
+please see our [CONTRIBUTING.md](CONTRIBUTING.md) guide.**
 
-Fork this repository and ensure you're working on the `main` branch:
+### Quick Contribution Steps
+
+1. **Fork** this repository
+2. **Clone** your fork and install dependencies (`npm install`)
+3. **Create** a feature branch (`git checkout -b feature/your-feature-name`)
+4. **Make** your changes and test locally (`npm run dev`)
+5. **Submit** a pull request
 
 [![fork-button](/src/public/fork-button.png)](https://github.com/iExecBlockchainComputing/documentation/fork)
-
-### 2. Set Up Your Development Environment
-
-1. Clone your forked repository:
-
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/documentation.git
-   cd documentation
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-
-   ```bash
-   npm run dev
-   ```
-
-### 3. Make Your Changes
-
-1. Create a new branch for your feature/fix:
-
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-2. Make your changes to the documentation
-3. Test your changes locally to ensure they work as expected
-
-### 4. Submit Your Changes
-
-1. Stage and commit your changes with a descriptive message:
-
-   ```bash
-   git add .
-   git commit -m "Add: descriptive commit message"
-   ```
-
-2. Push your changes to your forked repository:
-
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-3. Open a pull request from your feature branch to our `main` branch
-
-### 5. Review Process
-
-> **💡 Tips:**
->
-> - You can open a draft pull request and mark it as "Ready for review" once
->   you're satisfied with the preview
-> - All pull requests are reviewed by our team before being merged
-> - Feel free to ask questions in the pull request if you need clarification
-> - **Documentation Quality**: Vale will automatically check your documentation
->   for style and clarity
-
-### Some conventions
-
-In order to keep the documentation consistent, we have some naming conventions
-for input parameters:
-
-- `protectedData`: '0x123abc...',
-- `protectedDataAddress`: '0x123abc...',
-- `authorizedApp`: '0x456def...',
-- `authorizedUser`: '0x789cba...',
-- `userAddress`: '0x789cba...',
-- `appWhitelist`: '0xba46d6...',
-- `owner`: '0xa0c15e...',
-- `newOwner`: '0xc5e9f4...',
-- `voucherOwner`: '0x5714eB...',
-- `renterAddress`: '0x246bdf...'
-- `subscriberAddress`: '0x246bdf...'
-- `workerpool`: '0xa5de76...'
-- `taskId`: '0x7ac398...'
 
 ## 🆘 Support
 

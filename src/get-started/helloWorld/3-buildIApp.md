@@ -9,10 +9,15 @@ description:
 
 > Reading time 🕒 10 min
 
-<div class="bg-gradient-to-r from-[#fcd15a] to-[#ffad4d] rounded-[6px] px-8 pb-4 text-gray-800 max-w-3xl mx-auto mb-6">
-  <h2 class="text-2xl font-bold mt-0 border-none!">Time to build</h2>
-  <p>Build an iApp that can process protected data in a secure environment using the <a href="/references/iapp-generator" target="_blank" class="!text-gray-900 !font-bold underline hover:!text-black">iExec iApp generator tool</a>. This tool helps you create, test, and deploy iApp with just a few commands.</p>
-</div>
+<Banner>
+
+## Time to build
+
+Build an iApp that can process protected data in a secure environment using the
+[iExec iApp generator tool](/references/iapp-generator). This tool helps you
+create, test and deploy iApp with just a few commands.
+
+</Banner>
 
 If you wanna explore and deep dive in the command-line tool. You can check the
 [iApp Generator ](https://github.com/iExecBlockchainComputing/iapp/tree/main/cli)
@@ -45,9 +50,12 @@ Before getting started, make sure you have:
   </div>
 </div>
 
-<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">Don't worry. All secrets used in this tutorial stay on your machine and aren't shared with anyone. You'll only need them to run the <code>iapp run</code> command.</p>
-</div>
+::: info
+
+Don't worry. All secrets used in this tutorial stay on your machine and aren't
+shared with anyone. You'll only need them to run the `iapp run` command.
+
+:::
 
 ## 🚀 Types of iApp you can build
 
@@ -71,12 +79,16 @@ Telegram handles.
 ### 🌐 Content delivery
 
 Transfer, sell or rent protected content to authorized users.
-[Github](https://github.com/iExecBlockchainComputing/dataprotector-sdk/tree/main/packages/protected-data-delivery-dapp)
+[Github](https://github.com/iExecBlockchainComputing/protected-data-delivery-dapp)
 | [Documentation](/references/dataProtector/dataProtectorSharing)
 
-<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">These are just a few examples, the possibilities are endless. Want to explore iApp Generator? Check out our <a href="/references/iapp-generator" target="_blank">documentation</a> and see what you can build!</p>
-</div>
+::: tip <i></i>
+
+These are just a few examples, the possibilities are endless. Want to explore
+iApp Generator? Check out our [documentation](/references/iapp-generator) and
+see what you can build!
+
+:::
 
 ## 💾 Installation (Win / Mac / Linux)
 
@@ -195,9 +207,12 @@ You will be prompted with the following message:
   </div>
 </div>
 
-<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">We recommend selecting <span class="text-fuchsia-700 font-semibold">"Hello World"</span> to quickly discover how iApp works. Use <span class="text-fuchsia-700 font-semibold">advanced</span> only if you are familiar with iExec.</p>
-</div>
+::: tip <i></i>
+
+We recommend selecting **"Hello World"** to quickly discover how iApp works. Use
+**advanced** only if you are familiar with iExec.
+
+:::
 
 - An iApp project is setup with the selected language
 - An ethereum wallet has been created (we use it to sign the iApp creation
@@ -282,11 +297,14 @@ following steps:
 The `iapp test` command uses your local Docker to build and execute the app,
 simulating how it will run in the iExec network's TEE environment.
 
-<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!"><strong>Common Issues:</strong></p>
-  <p class="m-0!">- If you get <code>Error: Docker daemon is not accessible</code>: Make sure Docker is installed and running.</p>
-  <p class="m-0!">- If you get <code>Error: Failed to locate iApp project root</code>: Ensure you are in your project folder before proceeding.</p>
-</div>
+::: warning Common Issues:
+
+- If you get <code>Error: Docker daemon is not accessible</code>: Make sure
+  Docker is installed and running.
+- If you get <code>Error: Failed to locate iApp project root</code>: Ensure you
+  are in your project folder before proceeding.
+
+:::
 
 ### 🧩 Using arguments
 
@@ -310,9 +328,12 @@ default protectedData mock.
 iapp test --protectedData default
 ```
 
-<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">You can check how args and protectedData are processed in <code> src/app.js</code> or <code> src/app.py</code></p>
-</div>
+::: tip <i></i>
+
+You can check how args and protectedData are processed in `src/app.js` or
+`src/app.py`
+
+:::
 
 ## 🚀 Deploy your iApp
 
@@ -369,20 +390,29 @@ Once you have your token, you can deploy your iApp.
   />
 </template>
 
-<div class="bg-gradient-to-r from-fuchsia-400/10 to-fuchsia-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">📝 Make sure to save your <span class="text-fuchsia-700 font-semibold">iApp address</span> after deployment - you'll need it later.</p>
-  <p class="m-0!">You can find your iApp address in the <code>iexec-app.json</code> file in your project folder.</p>
-  <br>
-  <p class="m-0!">⚠️  If you encounter issues during deployment, make sure the Docker BuildKit feature is enabled and supports AMD64 architecture:</p>
+::: tip <i></i>
+
+📝 Make sure to save your **iApp address** after deployment - you'll need it
+later.
+
+You can find your iApp address in the <code>iexec-app.json</code> file in your
+project folder.
+
+⚠️ If you encounter issues during deployment, make sure the Docker BuildKit
+feature is enabled and supports AMD64 architecture:
 
 ```sh
 docker buildx inspect --bootstrap | grep -i platforms
 ```
 
-  <p class="m-0!">The output should include <code>linux/amd64</code> in the list of supported platforms. If not, update to the latest Docker Desktop version which includes these requirements.</p>
-  <br>
-  <p class="m-0!">⚠️  If you set the wrong Docker username, you can change it by editing the <code>iapp.config.json</code> file</p>
-</div>
+The output should include <code>linux/amd64</code> in the list of supported
+platforms. If not, update to the latest Docker Desktop version which includes
+these requirements.
+
+If you set the wrong Docker username, you can change it by editing the
+<code>iapp.config.json</code> file
+
+:::
 
 ## 🏃 Run your iApp
 
@@ -394,12 +424,16 @@ iapp run <my-iapp-address>
 
 To sum up the process, we take the **iApp** and wrap it in the iExec framework,
 allowing it to run securely in a **Trusted Execution Environment (TEE)** for
-**confidential computing**. To learn more, check out the
-[advanced iApp build documentation](/guides/build-iapp/advanced/quick-start).
+**confidential computing**. If you want to explore further, you can check the
+protocol documentation [here](https://protocol.docs.iex.ec/).
 
-<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-  <p class="m-0!">🎉 Congratulations! You've successfully deployed and run your first iApp on iExec. This is a significant milestone - your application is now ready to securely process confidential data in a trusted environment.</p>
-</div>
+<Container variant="success">
+
+🎉 Congratulations! You've successfully deployed and run your first iApp on
+iExec. This is a significant milestone - your application is now ready to
+securely process confidential data in a trusted environment.
+
+</Container>
 
 ## 🎯 Key takeaways
 
@@ -409,15 +443,20 @@ allowing it to run securely in a **Trusted Execution Environment (TEE)** for
 - ⛓️ **Deployment:** Apps are deployed on iExec protocol to run in trusted
   environments
 
-<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-  <p class="m-0!">Next up: Alice will learn how to authorize the iApp and Bob to access and use her protected data.</p>
-</div>
+<Container variant="success">
+
+Next up: Alice will learn how to authorize the iApp and Bob to access and use
+her protected data.
+
+</Container>
 
 <script setup>
 import InfoIcon from '@/components/InfoIcon.vue'
 import CLIDemo from '@/components/CLIDemo.vue';
 import { computed } from 'vue';
 import useUserStore from '@/stores/useUser.store';
+import Banner from '../../components/Banner.vue'
+import Container from '../../components/Container.vue'
 
 const userStore = useUserStore();
 const selectedChain = computed(() => userStore.getCurrentChainId());

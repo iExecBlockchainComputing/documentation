@@ -7,7 +7,6 @@
       <a
         :href="`https://chainlist.org/chain/${userStore.getCurrentChainId() || 134}`"
         target="_blank"
-        class="text-fuchsia-700 underline hover:text-fuchsia-900"
       >
         ({{ networkName }})
       </a>

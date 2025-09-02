@@ -6,7 +6,7 @@ export function getSidebar() {
       {
         text: 'GET STARTED',
         items: [
-          { text: '💡 Welcome', link: '/get-started/welcome' },
+          { text: 'Welcome', link: '/get-started/welcome' },
           {
             text: 'Toolkit',
             link: '/get-started/toolkit',

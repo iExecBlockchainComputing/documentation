@@ -11,28 +11,27 @@ Explore our demo applications showcasing iExec's confidential computing toolkit
 in action. Each use case shows real-world applications of privacy-preserving
 technologies.
 
-<div class="grid grid-cols-1 gap-8 my-8">
-  <UseCaseCard
-    title="Content Creator"
-    description="A comprehensive demo showcasing iExec's DataProtector Sharing module. Experience privacy-first data sharing where content creators can securely share their work while maintaining full control over access permissions and monetization."
-    :imageUrl="contentCreatorImage"
-    imageAlt="Content Creator Demo Screenshot"
-    :features="['DataProtector Core', 'DataProtector Sharing']"
-    demoUrl="https://demo.iex.ec/content-creator/"
-    githubUrl="https://github.com/iExecBlockchainComputing/content-creator-usecase-demo"
-    demoIcon="mdi:art"
-  />
+<div class="space-y-8">
 
 <UseCaseCard
-    title="Web3 Messaging"
-    description="Secure communication platform for Web3 users enabling privacy-preserving messaging through Web3Mail and Web3Telegram. Users maintain control over their data while enabling targeted communication and monetizing their engagement."
-    :imageUrl="web3MessagingImage"
-    imageAlt="Web3Messaging Demo Screenshot"
-    :features="['DataProtector Core', 'Web3Mail', 'Web3Telegram']"
-    demoUrl="https://demo.iex.ec/web3messaging"
-    githubUrl="https://github.com/iExecBlockchainComputing/web3-messaging-usecase-demo"
-    demoIcon="mdi:message-processing"
-  />
+  title="Content Creator"
+  description="A comprehensive demo showcasing iExec's DataProtector Sharing module. Experience privacy-first data sharing where content creators can securely share their work while maintaining full control over access permissions and monetization."
+  :imageUrl="contentCreatorImage"
+  imageAlt="Content Creator Demo Screenshot"
+  :features="['DataProtector Core', 'DataProtector Sharing']"
+  demoUrl="https://demo.iex.ec/content-creator/"
+  githubUrl="https://github.com/iExecBlockchainComputing/content-creator-usecase-demo"
+/>
+
+<UseCaseCard
+  title="Web3 Messaging"
+  description="Secure communication platform for Web3 users enabling privacy-preserving messaging through Web3Mail and Web3Telegram. Users maintain control over their data while enabling targeted communication and monetizing their engagement."
+  :imageUrl="web3MessagingImage"
+  imageAlt="Web3Messaging Demo Screenshot"
+  :features="['DataProtector Core', 'Web3Mail', 'Web3Telegram']"
+  demoUrl="https://demo.iex.ec/web3messaging"
+  githubUrl="https://github.com/iExecBlockchainComputing/web3-messaging-usecase-demo"
+/>
 
 <UseCaseCard
     title="AI Agent"
@@ -41,7 +40,6 @@ technologies.
     imageAlt="AI Applications Demo Screenshot"
     :features="['AI Agents', 'TDX TEE', 'Confidential Computing']"
     githubUrl="https://github.com/iExecBlockchainComputing/iexec-elizaos-agent"
-    demoIcon="mdi:robot"
   />
 
 <UseCaseCard
@@ -51,7 +49,6 @@ technologies.
     imageAlt="AI Applications Demo Screenshot"
     :features="['MCP Protocol', 'AI Integration', 'Claude Support']"
     githubUrl="https://github.com/iExecBlockchainComputing/iexec-mcp-server"
-    demoIcon="mdi:server"
   />
 
 <UseCaseCard
@@ -61,7 +58,6 @@ technologies.
     imageAlt="AI Applications Demo Screenshot"
     :features="['Image Analysis', 'Text Matching', 'AI Validation']"
     githubUrl="https://github.com/iExecBlockchainComputing/image-caption-matcher-poc"
-    demoIcon="mdi:image-text"
   />
 
 <UseCaseCard
@@ -71,7 +67,6 @@ technologies.
     imageAlt="AI Applications Demo Screenshot"
     :features="['Image Generation', 'Text-to-Image']"
     githubUrl="https://github.com/iExecBlockchainComputing/image-generation-poc"
-    demoIcon="mdi:image-plus"
   />
 
 </div>

@@ -6,201 +6,116 @@ description:
   controls, and secure data monetization.
 ---
 
-# Protected data
+<script setup>
+import CardWithBorder from '@/components/CardWithBorder.vue';
+import CardGrid from '@/components/CardGrid.vue';
+import CardWithoutBorder from '@/components/CardWithoutBorder.vue';
+import Container from '@/components/Container.vue';
+</script>
+
+# Protected Data
 
 Protected Data refers to any data encrypted using the **iExec Data Protector
 tool**. This Turnkey Privacy encryption solution enables users to protect,
 manage and monetize their data within the Web3 ecosystem effortlessly.
 
-<div class="bg-gradient-to-r from-purple-400/10 to-purple-400/5 rounded-[6px] p-6 border-l-4 border-fuchsia-700 mb-6">
-  <p class="m-0!">Unlike standard datasets, Protected Data exposes its <span class="text-fuchsia-700 font-semibold">data types on-chain</span> (indicating types like email addresses or photos). This lets anyone <span class="text-fuchsia-700 font-semibold">identify entries with matching types</span>.</p>
-</div>
+::: tip <i></i>
+
+Unlike standard datasets, Protected Data exposes its **data types on-chain**
+(indicating types like email addresses or photos). This lets anyone **identify
+entries with matching types**.
+
+:::
 
 ## Key concepts
 
 ### Data governance
 
-<div class="mb-4"></div>
-
-<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
-  <div class="flex flex-col gap-3">
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>You own your data:</strong> The original data never leaves your control
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>Granular permissions:</strong> Decide who can access and use your data
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>Revocable access:</strong> Grant and revoke permissions at any time
-      </div>
-    </div>
-  </div>
-</div>
+- **You own your data:** The original data never leaves your control
+- **Granular permissions:** Decide who can access and use your data
+- **Revocable access:** Grant and revoke permissions at any time
 
 ### Privacy-preserving Computation
 
-<div class="mb-4"></div>
-
-<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
-  <div class="flex flex-col gap-3">
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>Encrypted Processing:</strong> Maintains a complete chain of trust.
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>TEE (Trusted Execution Environment):</strong> Secure enclaves protect data during processing
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>Secret storage:</strong> iExec's protocol secrets in a TEE database.
-      </div>
-    </div>
-  </div>
-</div>
+- **Encrypted Processing:** Maintains a complete chain of trust.
+- **TEE (Trusted Execution Environment):** Secure enclaves protect data during
+  processing
+- **Secret storage:** iExec's protocol secrets in a TEE database.
 
 ### Monetization
 
-<div class="mb-4"></div>
-
-<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
-  <div class="flex flex-col gap-3">
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>Data marketplaces:</strong> Sell access to your protected data
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>Usage tracking:</strong> Monitor how your data is being used
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span>•</span>
-      <div>
-        <strong>Fair compensation:</strong> Get paid for data usage
-      </div>
-    </div>
-  </div>
-</div>
+- **Data marketplaces:** Sell access to your protected data
+- **Usage tracking:** Monitor how your data is being used
+- **Fair compensation:** Get paid for data usage
 
 ## How it Works
 
-<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
-  <div class="flex flex-col gap-4">
-    <div class="flex items-center gap-3">
-      <span class="text-xl font-bold text-fuchsia-700">1.</span>
-      <div>
-        <strong>Protect:</strong> Encrypt and register your data on the iExec network
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="text-xl font-bold text-fuchsia-700">2.</span>
-      <div>
-        <strong>Share:</strong> Authorize specific users and iApps to access your data
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="text-xl font-bold text-fuchsia-700">3.</span>
-      <div>
-        <strong>Monitor:</strong> Track usage and maintain control
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="text-xl font-bold text-fuchsia-700">4.</span>
-      <div>
-        <strong>Monetize:</strong> Earn from your data while keeping it private
-      </div>
-    </div>
-    <div class="flex items-center gap-3">
-      <span class="text-xl font-bold text-fuchsia-700">5.</span>
-      <div>
-        <strong>Compute:</strong> Authorized users can compute on your data with authorized iApp
-      </div>
-    </div>
-  </div>
-</div>
+<CardWithBorder>
+
+1. **Protect:** Encrypt and register your data on the iExec network
+2. **Share:** Authorize specific users and iApps to access your data
+3. **Monitor:** Track usage and maintain control
+4. **Monetize:** Earn from your data while keeping it private
+5. **Compute:** Authorized users can compute on your data with authorized iApp
+
+</CardWithBorder>
 
 ## Use cases
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
-    <div class="flex items-baseline gap-2 text-lg">
-      <h3 class="font-semibold m-0!">Personal Data</h3>
-    </div>
-    <ul class="list-disc ml-6">
-      <li>Health records</li>
-      <li>Financial data</li>
-      <li>Personal preferences</li>
-    </ul>
-  </div>
+<CardGrid>
+<CardWithoutBorder>
+  
+  ### Personal Data
+  
+  - Health records
+  - Financial data
+  - Personal preferences
 
-  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
-    <div class="flex items-baseline gap-2 text-lg">
-      <h3 class="font-semibold m-0!">Business Intelligence</h3>
-    </div>
-    <ul class="list-disc ml-6">
-      <li>Market research</li>
-      <li>Customer analytics</li>
-      <li>Proprietary datasets</li>
-    </ul>
-  </div>
+</CardWithoutBorder>
 
-  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
-    <div class="flex items-baseline gap-2 text-lg">
-      <h3 class="font-semibold m-0!">AI Training</h3>
-    </div>
-    <ul class="list-disc ml-6">
-      <li>Training models without exposing sensitive data</li>
-      <li>Federated learning</li>
-      <li>Privacy-preserving ML</li>
-    </ul>
-  </div>
+<CardWithoutBorder>
+  
+  ### Business Intelligence
+  - Market research
+  - Customer analytics
+  - Proprietary datasets
 
-  <div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 flex flex-col gap-2">
-    <div class="flex items-baseline gap-2 text-lg">
-      <h3 class="font-semibold m-0!">Research</h3>
-    </div>
-    <ul class="list-disc ml-6">
-      <li>Collaborative research with privacy guarantees</li>
-      <li>Cross-institutional studies</li>
-      <li>Clinical trial data</li>
-    </ul>
-  </div>
-</div>
+</CardWithoutBorder>
 
-<div class="bg-gradient-to-r from-green-400/10 to-green-400/5 rounded-[6px] p-6 border-l-4 border-green-600 mb-6">
-  <p class="m-0!">Ready to protect your data? Start with our <span class="text-green-700 font-semibold">DataProtector guides</span>. Learn how to secure sensitive information while unlocking its value.</p>
-</div>
+<CardWithoutBorder>
+  
+  ### AI Training
+  - Training models without exposing sensitive data
+  - Federated learning
+  - Privacy-preserving ML
+
+</CardWithoutBorder>
+
+<CardWithoutBorder>
+  
+  ### Research
+  - Collaborative research with privacy guarantees
+  - Cross-institutional studies
+  - Clinical trial data
+
+</CardWithoutBorder>
+</CardGrid>
+
+<Container variant="success">
+
+Ready to protect your data? Start with our **DataProtector guides**. Learn how
+to secure sensitive information while unlocking its value.
+
+</Container>
 
 ## Next steps
 
-<div class="bg-[var(--vp-c-bg-soft)] rounded-[6px] p-6 mb-6">
-  <div class="flex flex-col gap-4">
-    <div class="flex items-start gap-3">
-      <div>
-        <strong>Learn More:</strong> <a href="/guides/manage-data/manage-access" class="text-fuchsia-700 hover:text-fuchsia-600">Complete DataProtector Documentation</a>
-      </div>
-    </div>
-    <div class="flex items-start gap-3">
-      <div>
-        <strong>Getting Started:</strong> <a href="/references/dataProtector/getting-started" class="text-fuchsia-700 hover:text-fuchsia-600">DataProtector Quick Start Guide</a>
-      </div>
-    </div>
-  </div>
-</div>
+<CardWithoutBorder>
+
+<!-- prettier-ignore -->
+**Learn More:** [Complete DataProtector Documentation](/guides/manage-data/manage-access)
+
+<!-- prettier-ignore -->
+**Getting Started:** [DataProtector Quick Start Guide](/references/dataProtector/getting-started)
+
+</CardWithoutBorder>
