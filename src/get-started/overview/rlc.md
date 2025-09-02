@@ -13,23 +13,16 @@ description:
 The native cryptocurrency that powers the entire iExec decentralized
 confidential computing ecosystem
 
-RLC (Run on Lots of Computers) powers all privacy apps on iExec. Every
-confidential computation requires RLC. Every piece of protected data consumed
-requires RLC. Every app execution requires RLC. The more builders use iExec
-tools, the more utility RLC gains in real apps.
-
-::: tip Info
-
-On the iExec sidechain (Bellecour), the RLC token symbol becomes **xRLC**. xRLC
-is the native token of the Bellecour chain and is used for all transactions and
-payments on this network.
-
-:::
+RLC powers all privacy apps running on iExec. Every confidential computation
+requires RLC. Every piece of protected data consumed requires RLC. Every app
+execution requires RLC. The more builders use iExec tools, the more RLC has to
+be bought and used by builder leveraging iExec's technology.
 
 ## 🎯 Why RLC Matters
 
-**Stack adoption = token usage.** When developers build with iExec tools, RLC
-gets used. More privacy apps deployed means more RLC demand.
+**iExec's adoption is linearly correlated to the real-time usage of the RLC
+token** When developers build with iExec tools, RLC gets used. More privacy apps
+deployed means more RLC demand.
 
 ### For users
 
@@ -38,13 +31,13 @@ data private while making it usable.
 
 ### For providers
 
-Build apps, provide data, or run workers. All earn RLC when people use your
-contributions.
+Build apps, provide data, or [run workers](/get-started/overview/workerpool).
+All stakeholders earn RLC when people use their contributions.
 
 ### For holders
 
-**Clear positioning:** More developers using iExec's privacy tools means more
-RLC utility in real dApps. iExec builds actionable privacy, not just protocols.
+More developers using iExec's privacy tools means more RLC utility in real
+dApps. iExec builds actionable privacy, not just protocols.
 
 ## 💰 Transparent Payment Flow
 
@@ -80,6 +73,10 @@ confidential computing services drives token value:
 
 **Fixed Supply**: RLC has a maximum supply of 87 million tokens, ensuring
 scarcity and value preservation.
+
+The entire circulating supply of RLC has already been minted. There are no
+pending token unlocks or private allocations that could impact the market. Since
+launch, iExec has been self-funded, without relying on VCs.
 
 **Network Effects**: As more users and providers join the iExec ecosystem, the
 demand for RLC increases, driving token value through network effects.

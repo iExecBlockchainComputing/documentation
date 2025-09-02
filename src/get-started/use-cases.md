@@ -37,7 +37,9 @@ technologies.
 
 ### At the crossroads of DePIN and AI
 
-iExec provides the confidential computing infrastructure for AI, enabling developers to protect and monetize the entire AI pipeline. With the Confidential AI framework, you can:
+iExec provides the confidential computing infrastructure for AI, enabling
+developers to protect and monetize the entire AI pipeline. With the Confidential
+AI framework, you can:
 
 - **Train models collaboratively.**
 - **Monetize and reward contributors.**
@@ -45,9 +47,12 @@ iExec provides the confidential computing infrastructure for AI, enabling develo
 
 ### End-to-end confidential AI pipeline
 
-- **Trusted Execution Environments (TEEs):** Secure, tamper-proof enclaves for AI training and inference.
-- **Models and data stay encrypted at all times—processed without being exposed.**
-- **Execution and results are traced on-chain, ensuring verifiability and accountability.**
+- **Trusted Execution Environments (TEEs):** Secure, tamper-proof enclaves for
+  AI training and inference.
+- **Models and data stay encrypted at all times—processed without being
+  exposed.**
+- **Execution and results are traced on-chain, ensuring verifiability and
+  accountability.**
 
 <UseCaseCard
     title="AI Agent"
