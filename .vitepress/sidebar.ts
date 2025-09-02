@@ -162,10 +162,6 @@ export function getSidebar() {
                 link: '/guides/build-iapp/advanced/build-your-first-sgx-iapp',
               },
               {
-                text: 'End-to-end Encryption',
-                link: '/guides/build-iapp/advanced/protect-the-result',
-              },
-              {
                 text: 'Access Confidential Assets',
                 link: '/guides/build-iapp/advanced/access-confidential-assets',
               },
@@ -199,6 +195,10 @@ export function getSidebar() {
           {
             text: 'Run iApp without ProtectedData',
             link: '/guides/use-iapp/run-iapp-without-ProtectedData',
+          },
+          {
+            text: 'Encrypt results and decrypt them',
+            link: '/guides/use-iapp/encrypt-and-decrypt-results',
           },
           {
             text: 'Integrate Web3 Messaging',
