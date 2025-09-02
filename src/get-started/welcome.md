@@ -13,14 +13,14 @@ import CardWithoutBorder from '../components/CardWithoutBorder.vue'
 import CardGrid from '../components/CardGrid.vue'
 </script>
 
-# Turnkey Privacy Toolkit
+# iExec technical documentation
 
 <Banner>
 
 ## Welcome to iExec
 
-Your complete toolkit for building privacy-first Web3 applications that protect
-and use sensitive data
+Your complete toolkit for building privacy-first crypto applications that
+protect and use sensitive data
 
 </Banner>
 
@@ -33,7 +33,7 @@ privacy is protected.
 
 ::: tip <i></i>
 
-iExec solves this with **Turnkey Privacy** - a toolkit that simplifies data
+iExec solves this with **Privacy tools** - a toolkit that simplifies data
 protection, management, and secure computation, even in untrusted environments.
 iExec believes privacy should be **plug-and-play simple**, not an afterthought.
 
@@ -41,7 +41,7 @@ iExec believes privacy should be **plug-and-play simple**, not an afterthought.
 
 ## 🛠️ How iExec works
 
-iExec provides Turnkey Privacy tools that make confidential computing simple and
+iExec provides Privacy tools that make confidential computing simple and
 actionable:
 
 - **Privacy:** Integrate confidentiality features without managing complex
