@@ -169,3 +169,31 @@ for input parameters:
 - 💬 [Discord Community](https://discord.com/invite/pbt9m98wnU)
 - 🐛
   [Issue Tracker](https://github.com/iExecBlockchainComputing/documentation/issues)
+
+## TODO
+
+- Add link to the new explorer feature Asset_Types in the guide =>
+  `handle-schemas-dataset-types`
+- Add link to remix for deploying whitelist
+- Explorer l'intégration de codeSpace
+- Add a Development workflow section (1 - ProtectData, 2- ...)
+- Update context7 when doc will be deployed (Martin)
+- Check theGraph Images with design Team
+- Update the Dune Dashboard to the final version
+- Add new section in `iexec-explorer.md` file to talk about: available chain on
+  the UI + SRLC/RLC on account section feature of the protocol
+- check glossary
+- migrate pay-per-task page into a guide
+- check pages (introduction & getting-started) for use-iapp guide
+- Schema what is iexec to do and implement
+- Give recap of Workerpool address fo chains
+- Talk about ENS on Bellecour(it's not supported on arbitrum)
+- Talk about encrypting results in use-iapp
+- Refactor "advanced" section in build-iapp
+- Rework src\get-started\protocol\iexec-doracle.md (transfer to guide or
+  rewrite)
+- Rework src\get-started\protocol\oracle.md (transfer to guide or rewrite)
+- Talk about iApp secret
+- Improve Guide in build-iapp section - be more clear for builder ( how to
+  process process protectedData, clarify input-output guide)
+- Add illustration in the different pages

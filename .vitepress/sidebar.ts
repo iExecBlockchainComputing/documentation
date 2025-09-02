@@ -207,6 +207,13 @@ export function getSidebar() {
           {
             text: 'Run iApp without ProtectedData',
             link: '/guides/use-iapp/run-iapp-without-ProtectedData',
+            collapsed: true,
+            items: [
+              {
+                text: 'Encrypt iApp Results',
+                link: '/guides/use-iapp/encrypt-result',
+              },
+            ],
           },
           {
             text: 'Integrate Web3 Messaging',
