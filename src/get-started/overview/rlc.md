@@ -1,12 +1,12 @@
 ---
 title: RLC Token
 description:
-  RLC (Run on Lots of Computers) is the cryptocurrency powering iExec's
-  confidential computing ecosystem. Learn about RLC tokenomics, utility, and how
-  it drives privacy-first Web3 apps.
+  RLC is the cryptocurrency powering iExec's confidential computing ecosystem.
+  Learn about RLC tokenomics, utility, and how it drives privacy-first Web3
+  apps.
 ---
 
-<img :src="rlcGif" alt="RLC Token Animation" class="size-80 -my-10 mx-auto" />
+<img :src="rlcPng" alt="RLC Token" class="size-80 -my-10 mx-auto" />
 
 # RLC Token
 
@@ -81,7 +81,7 @@ launch, iExec has been self-funded, without relying on VCs.
 **Network Effects**: As more users and providers join the iExec ecosystem, the
 demand for RLC increases, driving token value through network effects.
 
-**Utility-Driven Growth**: Every interaction in the **Turnkey Privacy**
+**Utility-Driven Growth**: Every interaction in the **Privacy Toolkit**
 ecosystem requires RLC:
 
 - iApp executions consume RLC for computation
@@ -145,5 +145,5 @@ Ready to dive into the iExec ecosystem? Here are the next steps:
 import FeatureCard from '@/components/FeatureCard.vue';
 
 // Assets
-import rlcGif from '@/assets/rlc/rlc.gif';
+import rlcPng from '@/assets/rlc/rlc.png';
 </script>

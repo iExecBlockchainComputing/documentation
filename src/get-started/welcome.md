@@ -1,7 +1,7 @@
 ---
 title: About iExec
 description:
-  Build privacy-first Web3 applications with iExec's turnkey privacy toolkit.
+  Build privacy-first Web3 applications with iExec's privacy toolkit.
   Confidential computing, TEE technology, and blockchain data protection made
   simple for developers.
 ---

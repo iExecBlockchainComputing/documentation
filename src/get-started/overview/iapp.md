@@ -15,14 +15,14 @@ import CardWithoutBorder from '@/components/CardWithoutBorder.vue';
 
 # iApp
 
-An iExec Application (iApp) brings Turnkey Privacy to your regular application
-code. Your Python scripts, AI models, or data processors can securely process
+An iExec Application (iApp) brings privacy to your regular application code.
+Your Python scripts, AI models, or data processors can securely process
 protected data inside a TEE (Trusted Execution Environment).
 
 ## Why iApp Matter ?
 
-iApp provide Turnkey Privacy capabilities. Process sensitive data while keeping
-it private and secure.
+iApp provide privacy capabilities. Process sensitive data while keeping it
+private and secure.
 
 Imagine you want to build:
 
@@ -36,7 +36,7 @@ Imagine you want to build:
 </CardWithoutBorder>
 
 Users have this data, but they won't trust your regular app with it. **With
-Turnkey Privacy iApp, they will.**
+Privacy iApp, they will.**
 
 **You gain their trust. They gain their privacy. Everyone wins.**
 
