@@ -33,6 +33,22 @@ technologies.
   githubUrl="https://github.com/iExecBlockchainComputing/web3-messaging-usecase-demo"
 />
 
+## iExec Confidential AI
+
+### At the crossroads of DePIN and AI
+
+iExec provides the confidential computing infrastructure for AI, enabling developers to protect and monetize the entire AI pipeline. With the Confidential AI framework, you can:
+
+- **Train models collaboratively.**
+- **Monetize and reward contributors.**
+- **Ensure integral, end-to-end encryption across the workflow.**
+
+### End-to-end confidential AI pipeline
+
+- **Trusted Execution Environments (TEEs):** Secure, tamper-proof enclaves for AI training and inference.
+- **Models and data stay encrypted at all times—processed without being exposed.**
+- **Execution and results are traced on-chain, ensuring verifiability and accountability.**
+
 <UseCaseCard
     title="AI Agent"
     description="Execute ElizaOS AI agents with full confidentiality in iExec TDX Trusted Execution Environments (TEEs)"
