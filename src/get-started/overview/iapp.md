@@ -17,7 +17,7 @@ import CardWithoutBorder from '@/components/CardWithoutBorder.vue';
 
 An iExec Application (iApp) brings privacy to your regular application code.
 Your Python scripts, AI models, or data processors can securely process
-protected data inside a TEE (Trusted Execution Environment).
+protected data inside a TEE.
 
 ## Why iApp Matter ?
 

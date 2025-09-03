@@ -53,16 +53,25 @@ actionable:
 - **Available Tools:** Composable toolkit, SDK, and ready-to-use components for
   straightforward development
 
-## What we Provide
+## Tools & support to build with confidence
 
-Ready-to-use components to protect sensitive data and computation:
+Building with iExec means you don't just get the tech—you get a partner.
 
-- **DataProtector:** Secure and control access to sensitive information
-- **iApp Generator:** Bootstrap your Privacy Apps on TEEs. Confidential
-  Computing made easy
-- **Decentralized Confidential Computing:** Process data securely in secure and
-  confidential environments while controlling access and monetization through
-  blockchain
+### The iExec toolkit
+
+**DataProtector:** Secure and control access to sensitive information
+
+**App Generator:** Bootstrap your Privacy Apps on TEEs. Confidential Computing made easy
+
+**Web3Messaging:** Integrate Web3Mail and/or Web3Telegram to communicate with Ethereum accounts without having access to their personal data.
+
+### Support & guidance
+
+**Grants & Incentives:** Financial support to help builders bring their ideas to life
+
+**Hands-on Guidance:** Our team works alongside you to overcome challenges and scale your project
+
+**Shared Vision:** Join a community that's shaping the future of privacy-first applications
 
 ## Real-world Use Cases
 
@@ -108,7 +117,7 @@ Ready-to-use components to protect sensitive data and computation:
 ### 🎮 Gaming
 
 - Protect player data and game assets
-- Process in-game transactions securely<
+- Process in-game transactions securely
 
 </CardWithoutBorder>
 
