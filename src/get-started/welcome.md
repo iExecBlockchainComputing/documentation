@@ -35,6 +35,7 @@ privacy is protected.
 
 iExec solves this with **Privacy tools** - a toolkit that simplifies data
 protection, management, and secure computation, even in untrusted environments.
+
 iExec believes privacy should be **plug-and-play simple**, not an afterthought.
 
 :::
@@ -61,17 +62,22 @@ Building with iExec means you don't just get the tech—you get a partner.
 
 **DataProtector:** Secure and control access to sensitive information
 
-**App Generator:** Bootstrap your Privacy Apps on TEEs. Confidential Computing made easy
+**App Generator:** Bootstrap your Privacy Apps on TEEs. Confidential Computing
+made easy
 
-**Web3Messaging:** Integrate Web3Mail and/or Web3Telegram to communicate with Ethereum accounts without having access to their personal data.
+**Web3Messaging:** Integrate Web3Mail and/or Web3Telegram to communicate with
+Ethereum accounts without having access to their personal data.
 
 ### Support & guidance
 
-**Grants & Incentives:** Financial support to help builders bring their ideas to life
+**Grants & Incentives:** Financial support to help builders bring their ideas to
+life
 
-**Hands-on Guidance:** Our team works alongside you to overcome challenges and scale your project
+**Hands-on Guidance:** Our team works alongside you to overcome challenges and
+scale your project
 
-**Shared Vision:** Join a community that's shaping the future of privacy-first applications
+**Shared Vision:** Join a community that's shaping the future of privacy-first
+applications
 
 ## Real-world Use Cases
 
