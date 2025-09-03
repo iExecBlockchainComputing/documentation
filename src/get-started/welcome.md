@@ -108,7 +108,7 @@ Ready-to-use components to protect sensitive data and computation:
 ### Gaming
 
 - Protect player data and game assets
-- Process in-game transactions securely<
+- Process in-game transactions securely
 
 </CardWithoutBorder>
 
