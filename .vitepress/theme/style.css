@@ -222,9 +222,9 @@
 
 .dark {
   --vp-c-bg: #14141b;
-  --vp-c-bg-alt: #161618;
+  --vp-c-bg-alt: #17171e;
   --vp-c-bg-elv: #202127;
-  --vp-c-bg-soft: #202127;
+  --vp-c-bg-soft: #17171e;
 }
 
 /**
@@ -263,6 +263,8 @@
   --vp-button-brand-active-border: transparent;
   --vp-button-brand-active-text: #1b1b1f;
   --vp-button-brand-active-bg: #f9dd90;
+
+  --vp-button-alt-hover-bg: #00000020;
 }
 
 /**
