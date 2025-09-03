@@ -13,14 +13,14 @@ import CardWithoutBorder from '../components/CardWithoutBorder.vue'
 import CardGrid from '../components/CardGrid.vue'
 </script>
 
-# iExec technical documentation
+# Your Toolkit to Build Privacy Apps
 
 <Banner>
 
 ## Welcome to iExec
 
 Your complete toolkit for building privacy-first crypto applications that
-protect and use sensitive data
+protect and use sensitive data.
 
 </Banner>
 
