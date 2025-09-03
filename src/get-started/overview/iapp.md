@@ -13,13 +13,15 @@ import CardGrid from '@/components/CardGrid.vue';
 import CardWithoutBorder from '@/components/CardWithoutBorder.vue';
 </script>
 
-# iApp
+# Privacy iApp
 
-An iExec Application (iApp) brings privacy to your regular application code.
+An iExec App (iApp) is an application that runs inside a confidential
+environment (TEEs) to process Protected Data (created with DataProtector).
+
 Your Python scripts, AI models, or data processors can securely process
 protected data inside a TEE.
 
-## Why iApp Matter ?
+## Why iApp Matters ?
 
 iApp provide privacy capabilities. Process sensitive data while keeping it
 private and secure.
