@@ -100,10 +100,26 @@ export default withMermaid(
     themeConfig: {
       // https://vitepress.dev/reference/default-theme-config
       nav: [
-        { text: 'Get Started', link: '/get-started/welcome' },
-        { text: 'Guides', link: '/guides/build-iapp/build-&-test' },
-        { text: 'References', link: '/references/dataProtector' },
-        { text: 'Protocol', link: '/protocol/proof-of-contribution' },
+        {
+          text: 'Get Started',
+          link: '/get-started/welcome',
+          activeMatch: '^/get-started/',
+        },
+        {
+          text: 'Guides',
+          link: '/guides/build-iapp/build-&-test',
+          activeMatch: '^/guides/',
+        },
+        {
+          text: 'References',
+          link: '/references/dataProtector',
+          activeMatch: '^/references/',
+        },
+        {
+          text: 'Protocol',
+          link: '/protocol/proof-of-contribution',
+          activeMatch: '^/protocol/',
+        },
         {
           component: 'ChainSelector',
           props: {
@@ -113,6 +129,9 @@ export default withMermaid(
       ],
       outline: {
         level: [2, 4],
+      },
+      footer: {
+        copyright: '© All Rights Reserved iExec 2018-present',
       },
 
       sidebar: getSidebar(),
