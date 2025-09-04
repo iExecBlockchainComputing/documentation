@@ -31,7 +31,7 @@ its entire lifecycle - during storage, transfer and processing.
 
 :::
 
-## 🧩 DataProtector, Key Features
+## DataProtector, Key Features
 
 DataProtector is a developer tool built on top of our technology. It helps
 developers easily add data protection, management, and monetization features to
@@ -53,11 +53,11 @@ their DApp with these key features:
   Features an SDK for easy integration into your DApp, enhancing functionality
   and user experience.
 
-## 🧩 Create protected data
+## Create protected data
 
 <ProtectData />
 
-## 🧩 What Happened Under the Hood
+## What Happened Under the Hood
 
 ::: tip <i></i>
 
@@ -122,7 +122,7 @@ button:
   </div>
 </div>
 
-## 🧩 How to Install and Use DataProtector
+## How to Install and Use DataProtector
 
 Decentralized confidential computing might sound complex, but we've made it
 simple through our developer tools.

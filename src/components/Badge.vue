@@ -54,7 +54,7 @@ const badgeClasses = computed(() => {
       variantClasses = 'text-important-1 border-important-1';
       break;
     case 'primary':
-      variantClasses = 'text-primary border-primary';
+      variantClasses = 'text-primary2 border-primary';
       break;
     default:
       variantClasses = 'text-text border-border';

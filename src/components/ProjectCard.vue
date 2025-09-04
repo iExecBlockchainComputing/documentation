@@ -27,7 +27,7 @@
 
     <!-- Content -->
     <div class="flex-1">
-      <p class="text-text2 mb-3 h-14 overflow-hidden text-sm leading-relaxed">
+      <p class="text-text2 mb-3 overflow-hidden text-sm leading-relaxed">
         {{ description }}
       </p>
 

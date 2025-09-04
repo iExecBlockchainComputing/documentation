@@ -306,7 +306,7 @@ simulating how it will run in the iExec network's TEE environment.
 
 :::
 
-### 🧩 Using arguments
+### Using arguments
 
 You can pass arguments to your iApp using the `--args` option. This allows you
 to provide necessary inputs during runtime (you can use your name for example).

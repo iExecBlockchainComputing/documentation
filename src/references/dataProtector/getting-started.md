@@ -230,7 +230,7 @@ discontinuity.
   buttonLabel="Open Sandbox"
   buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main"
   githubUrl="https://github.com/iExecBlockchainComputing/dataprotector-sandbox"
-  githubLabel="GitHub repository sandbox"
+  githubLabel="Sandbox Github"
 />
 
 <ProjectCard
@@ -242,7 +242,7 @@ discontinuity.
   buttonLabel="Open Sandbox"
   buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sharing-sandbox/main"
   githubUrl="https://github.com/iExecBlockchainComputing/dataprotector-sharing-sandbox"
-  githubLabel="GitHub repository sandbox"
+  githubLabel="Sandbox Github"
 />
 
 </CardGrid>

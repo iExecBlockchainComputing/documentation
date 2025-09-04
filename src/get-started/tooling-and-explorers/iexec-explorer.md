@@ -37,7 +37,7 @@ Explorer displays data for the network you choose.
   <FeatureCard
     title="iApp Listing"
     description="Explore the catalog of trusted execution environment (TEE) applications, including their use cases and ownership details"
-    link-url="#iApp-listing"
+    link-url="#iapp-listing"
   />
   
   <FeatureCard
@@ -70,7 +70,7 @@ Each **Deal** brings together:
 
 :::
 
-## 💼 Deals & Tasks
+## Deals & Tasks
 
 <ImageViewer
   :image-url-dark="dealViewImage"
@@ -148,7 +148,7 @@ Browse and analyze all tasks across the iExec network:
     requester specifications
   - **Result Verification**: Validate computation correctness and integrity
 
-## 📱 iApp Listing
+## iApp Listing
 
 <ImageViewer
   :image-url-dark="appViewImage"
@@ -163,7 +163,7 @@ Explore the iExec application marketplace:
 - **Usage Analytics**: View execution counts, and user adoption
 - **Performance Metrics**: Analyze execution success rates
 
-## 🗄️ Protected Data Listing
+## Protected Data Listing
 
 <ImageViewer
   :image-url-dark="datasetViewImage"
@@ -180,7 +180,7 @@ Navigate the protected data landscape:
 - **Schema Validation**: Ensure data structure compatibility with your
   applications
 
-## ⚡ Workerpools
+## Workerpools
 
 <ImageViewer
   :image-url-dark="workerpoolViewImage"
