@@ -66,7 +66,7 @@ AI framework, you can:
 <UseCaseCard
     title="MCP Server"
     description="A Model Context Protocol (MCP) compatible server to interact with the iExec protocol — built for Claude, agents, and AI tooling"
-    :imageUrl="mpcServer"
+    :imageUrl="mcpServer"
     imageAlt="AI Applications Demo Screenshot"
     :features="['MCP Protocol', 'AI Integration', 'Claude Support']"
     githubUrl="https://github.com/iExecBlockchainComputing/iexec-mcp-server"
@@ -99,7 +99,7 @@ import UseCaseCard from '@/components/UseCaseCard.vue';
 import contentCreatorImage from '@/assets/use-cases/content-creator.png';
 import web3MessagingImage from '@/assets/use-cases/web3-messaging.png';
 import elizaosImage from '@/assets/use-cases/elizaos.png';
-import mpcServer from '@/assets/use-cases/mpc-server.jpg';
+import mcpServer from '@/assets/use-cases/mcp-server.png';
 import privateImageGenerator from '@/assets/use-cases/private-image-generator.png';
 import imageCaptionMatcher from '@/assets/use-cases/image-caption-matcher.png';
 </script>

@@ -13,18 +13,18 @@ import CardGrid from '@/components/CardGrid.vue';
 import CardWithoutBorder from '@/components/CardWithoutBorder.vue';
 </script>
 
-# Privacy iApp
+# What is an iApp?
 
-An iExec App (iApp) is an application that runs inside a confidential
+An iExec Application (iApp) is an application that runs inside a confidential
 environment (TEEs) to process Protected Data (created with DataProtector).
 
 Your Python scripts, AI models, or data processors can securely process
 protected data inside a TEE.
 
-## Why iApp Matters ?
+## Why iApp Matters?
 
-iApp provide privacy capabilities. Process sensitive data while keeping it
-private and secure.
+iApps provide privacy capabilities, allowing you to process sensitive data while
+keeping it private and secure.
 
 Imagine you want to build:
 
@@ -38,15 +38,16 @@ Imagine you want to build:
 </CardWithoutBorder>
 
 Users have this data, but they won't trust your regular app with it. **With
-Privacy iApp, they will.**
+Privacy iApps, they will.**
 
 **You gain their trust. They gain their privacy. Everyone wins.**
 
 ## Key Concepts
 
 <CardWithBorder>
-  
-  ✅ **True Privacy:** Users never expose their raw data. Your app processes it privately inside secure enclaves
+
+✅ **True Privacy:** Users never expose their raw data. Your app processes it
+privately inside secure enclaves.
 
 ✅ **Trusted Execution:** iExec ensures your code runs inside a Trusted
 Execution Environment (TEE), guaranteeing only the specified Docker image
@@ -64,18 +65,19 @@ operating system during execution.
 ## How it Works
 
 Your code runs in a Trusted Execution Environment (TEE). This secure area exists
-inside specific processors (Intel Software Guard Extensions (SGX)/Trust Domain
-Extensions (TDX) chipset). Everything stays private and protected there, even
-from the operating system.
+inside specific processors (Intel Software Guard Extensions (SGX) or Trust
+Domain Extensions (TDX) chipsets). Everything stays private and protected there,
+even from the operating system.
 
-Authorized users trigger iApp that process protected data inside this private
-environment. Your iApp uses the data but never exposes it, not even to you.
+Authorized users trigger an iApp that processes protected data inside this
+private environment. Your iApp uses the data but never exposes it, not even to
+you.
 
 <CardWithBorder>
 
 1. User provides private data
 2. Data is protected with DataProtector
-3. User builds and deploys a confidential iApp that processes protected data
+3. You build and deploy a confidential iApp that processes protected data
 4. Run the iApp with the corresponding protected data, performing confidential
    computing
 
@@ -90,8 +92,8 @@ the TEE execution environment.
 
 <CardGrid>
   <CardWithoutBorder>
-  
-   ### Healthcare
+
+### Healthcare
 
 Process medical data for AI diagnosis without exposing patient information
 
@@ -110,14 +112,16 @@ Analyze financial data for credit scoring while maintaining privacy
 ### Media
 
 Content recommendation engines that don't track user behavior
-</CardWithoutBorder>
+
+  </CardWithoutBorder>
 
   <CardWithoutBorder>
 
 ### Research
 
 Collaborative research on sensitive datasets across institutions
-</CardWithoutBorder>
+
+  </CardWithoutBorder>
 
 </CardGrid>
 
@@ -129,7 +133,7 @@ Collaborative research on sensitive datasets across institutions
 
 Let's build an iApp that can process protected data in a secure environment
 using the [iExec iApp generator tool](/references/iapp-generator). This tool
-helps you create, test and deploy iApp with just a few commands.
+helps you create, test and deploy iApps with just a few commands.
 
 </Banner>
 
