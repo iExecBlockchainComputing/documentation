@@ -349,6 +349,22 @@ input {
 }
 
 /**
+ * Component: AskIaButton
+ * -------------------------------------------------------------------------- */
+
+:root {
+  --c-askIa-bg: #f4f7fc;
+  --c-askIa-bg-hover: #e3e7f7;
+  --c-askIa-bg-active: #d1d5db;
+}
+
+.dark {
+  --c-askIa-bg: #1d1d24;
+  --c-askIa-bg-hover: #2b304b;
+  --c-askIa-bg-active: #3b426e;
+}
+
+/**
  * Component: Banner
  * -------------------------------------------------------------------------- */
 
