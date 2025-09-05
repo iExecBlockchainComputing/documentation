@@ -203,9 +203,13 @@ const taskId = await iexec.order.matchOrders({
 
 ## 🔐 Encrypt Results (Advanced)
 
-::: info DataProtector handles encryption automatically If you're using
-DataProtector, result encryption is handled automatically. This section is only
-needed for manual encryption when not using DataProtector. :::
+::: info
+
+DataProtector handles encryption automatically If you're using DataProtector,
+result encryption is handled automatically. This section is only needed for
+manual encryption when not using DataProtector.
+
+:::
 
 Secure your outputs with end‑to‑end encryption so only you (the beneficiary) can
 read them. Results leave the enclave and may traverse untrusted storage and
