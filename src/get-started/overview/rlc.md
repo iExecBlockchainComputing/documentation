@@ -6,7 +6,7 @@ description:
   apps.
 ---
 
-<img :src="rlcPng" alt="RLC Token" class="size-80 mx-auto mb-8" />
+<img :src="rlcWebp" alt="RLC Token" class="size-80 mx-auto mb-8" />
 
 # RLC Token
 
@@ -149,5 +149,5 @@ Ready to dive into the iExec ecosystem? Here are the next steps:
 import FeatureCard from '@/components/FeatureCard.vue';
 
 // Assets
-import rlcPng from '@/assets/rlc/rlc.png';
+import rlcWebp from '@/assets/rlc/rlc.webp';
 </script>
