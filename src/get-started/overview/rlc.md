@@ -68,10 +68,13 @@ payment.
 
 ### 📊 Ecosystem Growth Metrics
 
-::: info Circulating Supply The entire circulating supply of RLC has already
-been minted. There are no pending token unlocks or private allocations that
-could impact the market. Since launch, iExec has been self-funded, without
-relying on VCs. :::
+::: info
+
+Circulating Supply The entire circulating supply of RLC has already been minted.
+There are no pending token unlocks or private allocations that could impact the
+market. Since launch, iExec has been self-funded, without relying on VCs.
+
+:::
 
 **RLC operates** on a utility-driven economic model where demand for
 confidential computing services drives token value:
