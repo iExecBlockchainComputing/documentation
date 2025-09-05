@@ -6,7 +6,7 @@ description:
   apps.
 ---
 
-<img :src="rlcPng" alt="RLC Token" class="size-80 -my-10 mx-auto" />
+<img :src="rlcPng" alt="RLC Token" class="size-80 mx-auto mb-8" />
 
 # RLC Token
 

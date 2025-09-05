@@ -54,6 +54,10 @@ AI framework, you can:
 - **Execution and results are traced on-chain, ensuring verifiability and
   accountability.**
 
+</div>
+
+<div class="space-y-8 mt-8">
+
 <UseCaseCard
     title="AI Agent"
     description="Execute ElizaOS AI agents with full confidentiality in iExec TDX Trusted Execution Environments (TEEs)"
