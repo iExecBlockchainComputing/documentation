@@ -141,8 +141,6 @@ Continue building with these guides:
 
 - **[Inputs](/guides/build-iapp/inputs)** - Learn about the different input
   types available to your iApp
-- **[Encrypt results and decrypt them](/guides/use-iapp/encrypt-and-decrypt-results)** -
-  End-to-end result protection and local decryption
 - **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
   Control who can use your iApp
 - **[Debugging Your iApp](/guides/build-iapp/debugging)** - Troubleshoot

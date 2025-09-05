@@ -197,10 +197,6 @@ export function getSidebar() {
             link: '/guides/use-iapp/run-iapp-without-ProtectedData',
           },
           {
-            text: 'Encrypt results and decrypt them',
-            link: '/guides/use-iapp/encrypt-and-decrypt-results',
-          },
-          {
             text: 'Integrate Web3 Messaging',
             link: '/guides/use-iapp/integrate-web3-messaging',
           },
