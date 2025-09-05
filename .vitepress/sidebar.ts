@@ -551,6 +551,7 @@ export function getSidebar() {
           },
           {
             text: 'Workers & Workerpools',
+            collapsed: false,
             items: [
               {
                 text: 'Worker Quick Start',
@@ -564,6 +565,7 @@ export function getSidebar() {
           },
           {
             text: '🔒 TEE Technology',
+            collapsed: false,
             items: [
               {
                 text: 'Introduction to TEE Technologies',

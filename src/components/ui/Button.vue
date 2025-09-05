@@ -26,13 +26,13 @@ const props = defineProps({
 
 const buttonClasses = computed(() => {
   const baseClasses =
-    'inline-flex h-11 cursor-pointer gap-1.5 items-center justify-center rounded-full px-5! py-2 text-base font-medium no-underline! transition-all! duration-200 not-disabled:hover:-translate-y-0.5 not-disabled:hover:transform not-disabled:hover:shadow-md focus:outline-none disabled:cursor-not-allowed disabled:opacity-60';
+    'inline-flex h-11 cursor-pointer gap-1.5 items-center justify-center rounded-full px-5! py-2 text-base font-medium no-underline! transition-all! duration-200 not-disabled:hover:transform focus:outline-none disabled:cursor-not-allowed disabled:opacity-60';
 
   if (props.variant === 'secondary') {
-    return `${baseClasses} text-text1! border border-[var(--c-border)] not-disabled:hover:!bg-primary/10 focus:shadow-[0_0_0_2px_rgba(252,209,90,0.3)] bg-[var(--vp-c-bg)]!`;
+    return `${baseClasses} text-[var(--vp-button-alt-text)]! border border-[var(--vp-button-alt-border)]! not-disabled:hover:bg-[var(--vp-button-alt-hover-bg)]!`;
   }
 
   // Primary variant (default)
-  return `${baseClasses} border-none bg-[#fcd15a]! text-[#1e1e1e]! focus:shadow-[0_0_0_2px_rgba(252,209,90,0.3)] disabled:opacity-60`;
+  return `${baseClasses} border-none bg-[var(--vp-button-brand-bg)]! text-[var(--vp-button-brand-text)]! hover:bg-[var(--vp-button-brand-hover-bg)]! disabled:opacity-60`;
 });
 </script>

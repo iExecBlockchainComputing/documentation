@@ -12,7 +12,7 @@ import Container from '../../components/Container.vue'
 import CardWithoutBorder from '../../components/CardWithoutBorder.vue'
 </script>
 
-# 🧐 iExec Overview
+# iExec Overview
 
 > Reading time 🕒 8 min
 
@@ -25,7 +25,7 @@ manage sensitive data.
 
 </Banner>
 
-## 👨‍💻 Building Privacy-preserving iApp with iExec
+## Building Privacy-preserving iApp with iExec
 
 Imagine you're building a decentralized app (dApp) that needs to **handle
 sensitive user data**, for example:
@@ -53,7 +53,7 @@ and **monetization** features into your iApp.
 
 :::
 
-## 👷 How do we Solve it?
+## How do we Solve it?
 
 Unlike traditional tools, iExec protects your data throughout its entire
 lifecycle - during storage, transfer, and even while **being processed by
@@ -71,7 +71,7 @@ ecosystem.
 
 :::
 
-## 🔒 The Three Key Elements?
+## The Three Key Elements?
 
 iExec combines three fundamental elements that work together seamlessly:
 
@@ -104,7 +104,7 @@ the next level in **Web3** ecosystems.
 
 :::
 
-### 🧸 DeCC Explained Like You're 5
+### DeCC Explained Like You're 5
 
 Imagine a **secure room**, like a private bank vault for data, where everything
 inside stays **safe** and **private**.
@@ -117,7 +117,7 @@ environments) can enter the room to work with your data. You stay in **control**
 by setting **access rules** that only you can modify about who can access it and
 when.
 
-## 🔍 Building your First Privacy-preserving iApp
+## Building your First Privacy-preserving iApp
 
 Let's meet Bob and Alice to understand how iExec enables Privacy-preserving
 applications:
@@ -149,7 +149,7 @@ Depending on the iApp's use case, Alice could:
 
 And many other use cases...
 
-## 🎯 Key Takeaways
+## Key Takeaways
 
 <div class="flex flex-col my-6">
 <p>In this chapter, we covered the core concepts of iExec:</p>

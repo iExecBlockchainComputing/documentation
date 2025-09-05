@@ -3,12 +3,12 @@ title: iExec Toolkit
 description: Essential tools and resources for building on iExec
 ---
 
-# 🛠️ iExec Toolkit
+# iExec Toolkit
 
 Build faster and smarter with our privacy toolkit designed to streamline your
 iExec development experience.
 
-## 🚀 iApp Generator
+## iApp Generator
 
 The **iApp Generator** is your quick-start solution for creating iExec
 confidential decentralized applications. Generate production-ready iApp with
@@ -26,7 +26,7 @@ just a few commands, let free your imagination.
 Jump right into building with our comprehensive guide:
 [Building Your iApp →](/references/iapp-generator/building-your-iexec-app.md)
 
-## 🔒 DataProtector-SDK
+## DataProtector-SDK
 
 The **DataProtector-SDK** provides a complete toolkit for managing confidential
 data on iExec. Protect, share, and monetize your data by exposing the protected
