@@ -162,10 +162,6 @@ export function getSidebar() {
                 link: '/guides/build-iapp/advanced/build-your-first-sgx-iapp',
               },
               {
-                text: 'End-to-end Encryption',
-                link: '/guides/build-iapp/advanced/protect-the-result',
-              },
-              {
                 text: 'Access Confidential Assets',
                 link: '/guides/build-iapp/advanced/access-confidential-assets',
               },
