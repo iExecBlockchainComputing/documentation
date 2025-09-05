@@ -44,8 +44,6 @@ Once you've built your first iApp, level up with these practical guides:
 - **[Inputs](/guides/build-iapp/inputs)** - Handle data inputs
 - **[Outputs](/guides/build-iapp/outputs)** - Handle data outputs flow in TEE
   environment
-- **[Encrypt results and decrypt them](/guides/use-iapp/encrypt-and-decrypt-results)** -
-  Enable end-to-end result encryption and local decryption
 - **[Debugging Your iApp](/guides/build-iapp/debugging)** - Troubleshoot
   execution issues
 - **[App Access Control and Pricing](/guides/build-iapp/manage-access)** -
