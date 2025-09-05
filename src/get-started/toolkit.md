@@ -5,7 +5,7 @@ description: Essential tools and resources for building on iExec
 
 # iExec Toolkit
 
-Build faster and smarter with our turnkey toolkit designed to streamline your
+Build faster and smarter with our privacy toolkit designed to streamline your
 iExec development experience.
 
 ## iApp Generator

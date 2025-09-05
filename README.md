@@ -171,11 +171,8 @@ please see our [CONTRIBUTING.md](CONTRIBUTING.md) guide.**
 - Talk about ENS on Bellecour(it's not supported on arbitrum)
 - Talk about encrypting results in use-iapp
 - Refactor "advanced" section in build-iapp
-- Rework src\get-started\protocol\iexec-doracle.md (transfer to guide or
-  rewrite)
 - Talk about encrypting results in use-iapp (link in outputs, iapp generator...)
 - Rework src\get-started\protocol\oracle.md (transfer to guide or rewrite)
-- Talk about iApp secret
 - Improve Guide in build-iapp section - be more clear for builder ( how to
   process process protectedData, clarify input-output guide)
 - Add illustration in the different pages

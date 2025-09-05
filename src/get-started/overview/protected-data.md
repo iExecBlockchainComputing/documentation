@@ -16,8 +16,11 @@ import Container from '@/components/Container.vue';
 # Protected Data
 
 Protected Data refers to any data encrypted using the **iExec Data Protector
-tool**. This Turnkey Privacy encryption solution enables users to protect,
+tool**. This Privacy Toolkit encryption solution enables users to protect,
 manage and monetize their data within the Web3 ecosystem effortlessly.
+
+This Protected Data can only be decrypted and used inside TEE enclaves, by
+authorized actors (Requester, iApp, Worker)
 
 ::: tip <i></i>
 

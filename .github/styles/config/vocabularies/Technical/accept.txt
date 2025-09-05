@@ -173,7 +173,7 @@ presale
 presigned
 untrusted
 dev
-cryptocurrecny
+cryptocurrency
 Unmatching
 incentivized
 Whitepaper
@@ -190,3 +190,12 @@ chipset
 auditable
 Composable
 Activable
+RLC
+API
+dApp
+iApp
+IPFS
+TEE
+SGX
+TDX
+MCP
