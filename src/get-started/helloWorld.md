@@ -21,8 +21,8 @@ import TutorialCard from '../components/TutorialCard.vue'
 > Reading time 🕒 2 min
 
 <CardWithBorder>
-  <div class="flex gap-2">
-    <h3 class="m-0! py-2 text-lg font-medium">🌐 Select Your Network :</h3>
+  <div class="flex gap-2 items-center flex-wrap">
+    <h3 class="my-0! text-lg font-medium">🌐 Select Your Network :</h3>
     <ChainSelector />
   </div>
 </CardWithBorder>
@@ -34,9 +34,9 @@ import TutorialCard from '../components/TutorialCard.vue'
 And learn how to build Privacy-preserving decentralized applications (DApp) with
 iExec in this interactive guide.
 
-  <div class="mt-6 flex items-center gap-4">
+  <div class="mt-6 w-fit grid justify-center mx-auto sm:mx-0 sm:grid-cols-2 items-center gap-4">
     <span class="bg-gray-900 text-white px-4 py-2 rounded-full font-medium">☕ 30 minutes journey</span>
-    <p>Perfect for hackathons 😊</p>
+    <p class="my-0!">Perfect for hackathons 😊</p>
   </div>
 </Banner>
 

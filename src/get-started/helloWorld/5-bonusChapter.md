@@ -33,7 +33,7 @@ data, deploy iApp, and manage data access. Now it's time to claim your rewards!
   </div>
 </div>
 
-<Container variant="success">
+<Container class="mt-4" variant="success">
 
 Need help setting up or got some questions? Join our
 **<a target="_blank" href="https://discord.gg/6yrgRH6ATD">Discord

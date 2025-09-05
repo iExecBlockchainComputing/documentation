@@ -40,7 +40,7 @@ iExec believes privacy should be **plug-and-play simple**, not an afterthought.
 
 :::
 
-## 🛠️ How iExec works
+## How iExec works
 
 iExec provides Privacy tools that make confidential computing simple and
 actionable:
@@ -84,7 +84,7 @@ applications
 <CardGrid>
 <CardWithoutBorder>
     
-### 💰 Finance
+### Finance
 
 - Analyze sensitive financial data
 - Process credit scores without exposing personal information
@@ -93,7 +93,7 @@ applications
 
 <CardWithoutBorder>
   
-### 🤖 AI/ML
+### AI/ML
 
 - Train models on private datasets
 - Perform confidential predictions
@@ -102,7 +102,7 @@ applications
 
 <CardWithoutBorder>
   
-### 🔬 Research
+### Research
 
 - Share and analyze research data securely
 - Collaborate while protecting intellectual property
@@ -111,7 +111,7 @@ applications
 
 <CardWithoutBorder>
 
-### 📊 Business Analytics
+### Business Analytics
 
 - Process competitive market data
 - Analyze business metrics confidentially
@@ -120,7 +120,7 @@ applications
 
 <CardWithoutBorder>
 
-### 🎮 Gaming
+### Gaming
 
 - Protect player data and game assets
 - Process in-game transactions securely
@@ -129,7 +129,7 @@ applications
 
 <CardWithoutBorder>
 
-### 🏥 Healthcare
+### Healthcare
 
 - Process patient records privately
 - Run medical analyses while preserving patient confidentiality
