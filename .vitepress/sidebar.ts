@@ -65,7 +65,7 @@ export function getSidebar() {
           },
           {
             text: 'Privacy iApp',
-            link: '/get-started/overview/iapp',
+            link: '/get-started/overview/privacy-iapp',
           },
           {
             text: 'Workerpool',
