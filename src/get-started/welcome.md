@@ -62,7 +62,7 @@ Building with iExec means you don't just get the tech—you get a partner.
 
 **DataProtector:** Secure and control access to sensitive information
 
-**App Generator:** Bootstrap your Privacy Apps on TEEs. Confidential Computing
+**iApp Generator:** Bootstrap your Privacy Apps on TEEs. Confidential Computing
 made easy
 
 **Web3Messaging:** Integrate Web3Mail and/or Web3Telegram to communicate with
