@@ -306,7 +306,7 @@ token is used on the iExec marketplace to buy and sell computing assets.
 Describes business and technical developments towards the adoption of the iExec
 protocol. The timeline for this roadmap is organized by quarter for an overview
 on ongoing projects and the future work. It is available here
-<https://trello.com/b/oSCT5z09/iexec-adoption-roadmap>
+<https://www.iex.ec/news/iexec-2025-roadmap-and-rlc-ecosystem>
 
 ## S
 

@@ -5,7 +5,7 @@ description: Essential tools and resources for building on iExec
 
 # iExec Toolkit
 
-Build faster and smarter with our turnkey toolkit designed to streamline your
+Build faster and smarter with our privacy toolkit designed to streamline your
 iExec development experience.
 
 ## iApp Generator
@@ -39,7 +39,7 @@ users to pay for access.
 - **Asset visualization** to easily view and explore protected asset types on
   the iExec protocol
 - **Content consumption** capabilities for accessing protected data through
-  confidential iExec applications (iApps)
+  confidential iExec applications (iApp)
 - **Governance management** to control who accesses your data, when, and at what
   price
 

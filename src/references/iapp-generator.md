@@ -30,7 +30,8 @@ SGX/TDX secure enclaves where data stays private during processing.
 
 Start here to understand what iApp are and how they work:
 
-- **[iApp](/get-started/overview/iapp)** - Core concepts and TEE overview
+- **[iApp](/get-started/overview/privacy-iapp)** - Core concepts and TEE
+  overview
 - **[Getting Started](/references/iapp-generator/getting-started)** - Your first
   iApp in 15 minutes
 - **[Building Your iApp](/references/iapp-generator/building-your-iexec-app)** -

@@ -161,7 +161,7 @@ bun add @iexec/dataprotector
 import { Address, IExecDataProtector } from '@iexec/dataprotector';
 ```
 
-Create a new instance and call the methods you need
+Create a new instance and call the methods you need.
 
   </div>
 </div>

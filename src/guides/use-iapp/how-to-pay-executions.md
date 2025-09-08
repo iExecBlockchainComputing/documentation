@@ -55,7 +55,7 @@ await iexec.account.deposit(1_000_000_000); // Deposit 1 RLC
 
 Now you are ready to run a task on the iExec Protocol and pay for it. See our
 guide on
-[running iApps with ProtectedData](/guides/use-iapp/run-iapp-with-ProtectedData.md)
+[running iApp with ProtectedData](/guides/use-iapp/run-iapp-with-ProtectedData.md)
 for detailed execution steps.
 
 ## Paying with Vouchers <ChainNotSupportedBadge />

@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: 'Build on iExec Privacy Layer '
+  name: 'Build with iExec’s Privacy Stack '
   tagline:
-    'Build decentralized applications that combine governance, privacy, and
+    'Build decentralized applications that combine data governance, privacy, and
     monetization.'
   image:
     src: /iexec-illustration-large.webp
@@ -182,7 +182,7 @@ features:
     details:
       Create revenue streams from your data while maintaining full control and
       privacy
-    link: /guides/use-iapp/how-to-pay-executions
+    link: /guides/manage-data/monetize-protected-data
   - icon:
       <svg class="_fill" width="37" height="36" viewBox="0 0 37 36" fill="none"
       xmlns="http://www.w3.org/2000/svg"> <path fill-rule="evenodd"

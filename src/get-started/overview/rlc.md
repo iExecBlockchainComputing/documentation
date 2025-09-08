@@ -1,35 +1,28 @@
 ---
 title: RLC Token
 description:
-  RLC (Run on Lots of Computers) is the cryptocurrency powering iExec's
-  confidential computing ecosystem. Learn about RLC tokenomics, utility, and how
-  it drives privacy-first Web3 apps.
+  RLC is the cryptocurrency powering iExec's confidential computing ecosystem.
+  Learn about RLC tokenomics, utility, and how it drives privacy-first Web3
+  apps.
 ---
 
-<img :src="rlcGif" alt="RLC Token Animation" class="size-80 -my-10 mx-auto" />
+<img :src="rlcWebp" alt="RLC Token" class="size-80 mx-auto mb-8" />
 
 # RLC Token
 
 The native cryptocurrency that powers the entire iExec decentralized
 confidential computing ecosystem
 
-RLC (Run on Lots of Computers) powers all privacy apps on iExec. Every
-confidential computation requires RLC. Every piece of protected data consumed
-requires RLC. Every app execution requires RLC. The more builders use iExec
-tools, the more utility RLC gains in real apps.
-
-::: tip Info
-
-On the iExec sidechain (Bellecour), the RLC token symbol becomes **xRLC**. xRLC
-is the native token of the Bellecour chain and is used for all transactions and
-payments on this network.
-
-:::
+RLC powers all privacy apps running on iExec. Every confidential computation
+requires RLC. Every piece of protected data consumed requires RLC. Every app
+execution requires RLC. The more builders use iExec tools, the more RLC has to
+be bought and used by builder leveraging iExec's technology.
 
 ## 🎯 Why RLC Matters
 
-**Stack adoption = token usage.** When developers build with iExec tools, RLC
-gets used. More privacy apps deployed means more RLC demand.
+**iExec's adoption is linearly correlated to the real-time usage of the RLC
+token** When developers build with iExec tools, RLC gets used. More privacy apps
+deployed means more RLC demand.
 
 ### For users
 
@@ -38,13 +31,13 @@ data private while making it usable.
 
 ### For providers
 
-Build apps, provide data, or run workers. All earn RLC when people use your
-contributions.
+Build apps, provide data, or [run workers](/get-started/overview/workerpool).
+All stakeholders earn RLC when people use their contributions.
 
 ### For holders
 
-**Clear positioning:** More developers using iExec's privacy tools means more
-RLC utility in real dApps. iExec builds actionable privacy, not just protocols.
+More developers using iExec's privacy tools means more RLC utility in real
+dApps. iExec builds actionable privacy, not just protocols.
 
 ## 💰 Transparent Payment Flow
 
@@ -75,6 +68,14 @@ payment.
 
 ### 📊 Ecosystem Growth Metrics
 
+::: info
+
+Circulating Supply The entire circulating supply of RLC has already been minted.
+There are no pending token unlocks or private allocations that could impact the
+market. Since launch, iExec has been self-funded, without relying on VCs.
+
+:::
+
 **RLC operates** on a utility-driven economic model where demand for
 confidential computing services drives token value:
 
@@ -84,7 +85,7 @@ scarcity and value preservation.
 **Network Effects**: As more users and providers join the iExec ecosystem, the
 demand for RLC increases, driving token value through network effects.
 
-**Utility-Driven Growth**: Every interaction in the **Turnkey Privacy**
+**Utility-Driven Growth**: Every interaction in the **Privacy Toolkit**
 ecosystem requires RLC:
 
 - iApp executions consume RLC for computation
@@ -148,5 +149,5 @@ Ready to dive into the iExec ecosystem? Here are the next steps:
 import FeatureCard from '@/components/FeatureCard.vue';
 
 // Assets
-import rlcGif from '@/assets/rlc/rlc.gif';
+import rlcWebp from '@/assets/rlc/rlc.webp';
 </script>

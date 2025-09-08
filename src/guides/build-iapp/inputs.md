@@ -26,7 +26,7 @@ within the TEE environment.
 
 ::: tip
 
-You can also execute iApps outside of DataProtector using other methods. See the
+You can also execute iApp outside of DataProtector using other methods. See the
 [Use an iApp guide](/guides/use-iapp/introduction) for more information.
 
 :::
