@@ -39,7 +39,7 @@ users to pay for access.
 - **Asset visualization** to easily view and explore protected asset types on
   the iExec protocol
 - **Content consumption** capabilities for accessing protected data through
-  confidential iExec applications (iApps)
+  confidential iExec applications (iApp)
 - **Governance management** to control who accesses your data, when, and at what
   price
 

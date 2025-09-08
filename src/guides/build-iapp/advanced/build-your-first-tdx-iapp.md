@@ -62,7 +62,7 @@ application need to be changed in order to run securely in a TEE. Only two files
 need to be changed compared to the usual SGX workflow: `chain.json` and
 `iexec.json`.
 
-iApps using Intel TDX technology follow the same format as non-TEE applications;
+iApp using Intel TDX technology follow the same format as non-TEE applications;
 follow the instructions on
 [Build your first application](/guides/build-iapp/advanced/build-your-first-sgx-iapp)
 to create and Dockerize your iApp.
@@ -223,8 +223,8 @@ await dataProtector.core.processProtectedData({
 
 :::warning Protected Data Requirements
 
-**TDX iApps may require TDX-compatible protected data.** Check compatibility
-before using protected data with TDX iApps.
+**TDX iApp may require TDX-compatible protected data.** Check compatibility
+before using protected data with TDX iApp.
 
 :::
 
@@ -237,7 +237,7 @@ documentation for TDX-specific requirements.
 #### 1. **Local Testing**
 
 ```bash
-# Test locally (same as regular iApps)
+# Test locally (same as regular iApp)
 iapp test --protectedData "mock_name"
 
 # TDX only affects remote deployment/execution

@@ -56,7 +56,7 @@ entries with matching types**.
 <CardWithBorder>
 
 1. **Protect:** Encrypt and register your data on the iExec network
-2. **Share:** Authorize specific users and iApps to access your data
+2. **Share:** Authorize specific users and iApp to access your data
 3. **Monitor:** Track usage and maintain control
 4. **Monetize:** Earn from your data while keeping it private
 5. **Compute:** Authorized users can compute on your data with authorized iApp

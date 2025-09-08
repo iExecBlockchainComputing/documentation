@@ -23,7 +23,7 @@ protected data inside a TEE.
 
 ## Why iApp Matters?
 
-iApps provide privacy capabilities, allowing you to process sensitive data while
+iApp provide privacy capabilities, allowing you to process sensitive data while
 keeping it private and secure.
 
 Imagine you want to build:
@@ -38,7 +38,7 @@ Imagine you want to build:
 </CardWithoutBorder>
 
 Users have this data, but they won't trust your regular app with it. **With
-Privacy iApps, they will.**
+Privacy iApp, they will.**
 
 **You gain their trust. They gain their privacy. Everyone wins.**
 
@@ -133,7 +133,7 @@ Collaborative research on sensitive datasets across institutions
 
 Let's build an iApp that can process protected data in a secure environment
 using the [iExec iApp generator tool](/references/iapp-generator). This tool
-helps you create, test and deploy iApps with just a few commands.
+helps you create, test and deploy iApp with just a few commands.
 
 </Banner>
 
