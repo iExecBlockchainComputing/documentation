@@ -1,3 +1,60 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/tools/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/overview/what-we-do",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/overview/helloWorld",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/overview/helloWorld/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/overview/use-case-demo",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/overview/use-case-demo/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for-developers/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for-workers/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-concepts/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/help/:path*",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }

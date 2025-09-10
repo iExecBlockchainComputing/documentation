@@ -445,6 +445,9 @@ input {
 :root {
   --vp-home-hero-name-color: var(--vp-c-text-1);
 }
+.VPContent.is-home {
+  @apply overflow-x-hidden;
+}
 
 .VPHero.has-image.VPHomeHero {
   @apply lg:pb-0;
