@@ -3,47 +3,58 @@
   "redirects": [
     {
       "source": "/tools/:path*",
-      "destination": "/"
+      "destination": "/",
+      "permanent": true
     },
     {
       "source": "/overview/what-we-do",
-      "destination": "/"
+      "destination": "/",
+      "permanent": true
     },
     {
       "source": "/overview/helloWorld",
-      "destination": "/"
+      "destination": "/",
+      "permanent": true
     },
     {
       "source": "/overview/helloWorld/:path*",
-      "destination": "/"
+      "destination": "/",
+      "permanent": true
     },
     {
       "source": "/overview/use-case-demo",
-      "destination": "/"
+      "destination": "/",
+      "permanent": true
     },
     {
       "source": "/overview/use-case-demo/:path*",
-      "destination": "/"
+      "destination": "/",
+      "permanent": true
     },
     {
       "source": "/for-developers/:path*",
-      "destination": "/"
+      "destination": "/",
+      "permanent": true
     },
     {
       "source": "/for-workers/:path*",
-      "destination": "/"
+      "destination": "/",
+      "permanent": true
     },
     {
       "source": "/key-concepts/:path*",
-      "destination": "/"
+      "destination": "/",
+      "permanent": true
     },
     {
       "source": "/use-cases/:path*",
-      "destination": "/"
+      "destination": "/",
+      "permanent": true
     },
     {
       "source": "/help/:path*",
-      "destination": "/"
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
