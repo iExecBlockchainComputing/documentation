@@ -1,3 +1,49 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/tools/:path*",
+      "destination": "/"
+    },
+    {
+      "source": "/overview/what-we-do",
+      "destination": "/"
+    },
+    {
+      "source": "/overview/helloWorld",
+      "destination": "/"
+    },
+    {
+      "source": "/overview/helloWorld/:path*",
+      "destination": "/"
+    },
+    {
+      "source": "/overview/use-case-demo",
+      "destination": "/"
+    },
+    {
+      "source": "/overview/use-case-demo/:path*",
+      "destination": "/"
+    },
+    {
+      "source": "/for-developers/:path*",
+      "destination": "/"
+    },
+    {
+      "source": "/for-workers/:path*",
+      "destination": "/"
+    },
+    {
+      "source": "/key-concepts/:path*",
+      "destination": "/"
+    },
+    {
+      "source": "/use-cases/:path*",
+      "destination": "/"
+    },
+    {
+      "source": "/help/:path*",
+      "destination": "/"
+    }
+  ]
 }
