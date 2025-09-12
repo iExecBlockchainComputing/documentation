@@ -56,7 +56,6 @@ protocol.
   status-label="Live"
   button-label="Explore Subgraph"
   button-href="https://thegraph.com/explorer/subgraphs/B1comLe9SANBLrjdnoNTJSubbeC7cY7EoNu6zD82HeKy?view=Query&chain=arbitrum-one"
-  button-target="_blank"
   button-rel="noreferrer"
 />
 
@@ -68,7 +67,6 @@ protocol.
   status-label="Live"
   button-label="Explore Subgraph"
   button-href="https://thegraph.com/explorer/subgraphs/Ep5zs5zVr4tDiVuQJepUu51e5eWYJpka624X4DMBxe3u?view=Query&chain=arbitrum-one"
-  button-target="_blank"
   button-rel="noreferrer"
 />
 
@@ -80,7 +78,6 @@ protocol.
   status-label="Live"
   button-label="Explore Subgraph"
   button-href="https://thegraph.bellecour.iex.ec/subgraphs/name/bellecour/poco-v5/graphql?query=query+MyQuery+%7B%0A++apps+%7B%0A++++name%0A++++id%0A++++owner+%7B%0A++++++id%0A++++%7D%0A++%7D%0A%7D"
-  button-target="_blank"
   button-rel="noreferrer"
 />
 
@@ -92,7 +89,6 @@ protocol.
   status-label="Live"
   button-label="Explore Subgraph"
   button-href="https://thegraph.iex.ec/subgraphs/name/bellecour/dataProtector-v2/graphql?query=query+MyQuery+%7B%0A++protectedDatas+%7B%0A++++id%0A++++name%0A++++owner+%7B%0A++++++id%0A++++%7D%0A++%7D%0A%7D"
-  button-target="_blank"
   button-rel="noreferrer"
 />
 

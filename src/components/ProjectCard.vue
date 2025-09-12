@@ -41,7 +41,7 @@
           variant="secondary"
           :href="buttonHref"
           :disabled="buttonDisabled"
-          :target="buttonTarget"
+          target="_blank"
           :rel="buttonRel"
           class="flex-1"
         >
@@ -68,7 +68,7 @@
         variant="secondary"
         :href="buttonHref"
         :disabled="buttonDisabled"
-        :target="buttonTarget"
+        v-bind="{ target: '_blank' }"
         :rel="buttonRel"
         class="w-full"
       >
@@ -89,14 +89,13 @@ import Button from './ui/Button.vue';
 interface Props {
   title: string;
   description: string;
-  icon?: string;
+  icon: string;
   iconImage?: string;
   status: 'available' | 'coming-soon' | 'interactive';
   statusLabel: string;
   buttonLabel: string;
   buttonIcon: string;
-  buttonHref?: string;
-  buttonTarget?: string;
+  buttonHref: string;
   buttonRel?: string;
   buttonDisabled?: boolean;
   githubUrl?: string;
