@@ -68,7 +68,7 @@
         variant="secondary"
         :href="buttonHref"
         :disabled="buttonDisabled"
-        v-bind="buttonHref ? { target: '_blank' } : {}"
+        v-bind="{ target: '_blank' }"
         :rel="buttonRel"
         class="w-full"
       >
@@ -89,7 +89,7 @@ import Button from './ui/Button.vue';
 interface Props {
   title: string;
   description: string;
-  icon?: string;
+  icon: string;
   iconImage?: string;
   status: 'available' | 'coming-soon' | 'interactive';
   statusLabel: string;
