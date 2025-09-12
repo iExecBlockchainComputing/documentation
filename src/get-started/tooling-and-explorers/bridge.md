@@ -29,7 +29,6 @@ networks:
     button-label="Access Bridge"
     button-icon="mdi:bridge"
     button-href="https://bridge-bellecour.iex.ec/"
-    button-target="_blank"
     button-rel="noreferrer"
   />
   
@@ -42,7 +41,6 @@ networks:
     button-label="Access Bridge"
     button-icon="mdi:bridge"
     button-href="https://stargate.finance/bridge"
-    button-target="_blank"
     button-rel="noreferrer"
   />
 </CardGrid>

@@ -41,7 +41,7 @@
           variant="secondary"
           :href="buttonHref"
           :disabled="buttonDisabled"
-          :target="buttonTarget"
+          target="_blank"
           :rel="buttonRel"
           class="flex-1"
         >
@@ -68,7 +68,7 @@
         variant="secondary"
         :href="buttonHref"
         :disabled="buttonDisabled"
-        :target="buttonTarget"
+        v-bind="buttonHref ? { target: '_blank' } : {}"
         :rel="buttonRel"
         class="w-full"
       >
@@ -95,8 +95,7 @@ interface Props {
   statusLabel: string;
   buttonLabel: string;
   buttonIcon: string;
-  buttonHref?: string;
-  buttonTarget?: string;
+  buttonHref: string;
   buttonRel?: string;
   buttonDisabled?: boolean;
   githubUrl?: string;
