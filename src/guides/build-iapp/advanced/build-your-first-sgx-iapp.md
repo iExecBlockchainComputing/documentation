@@ -395,7 +395,7 @@ You can check your deployed apps with their index, let's check your last
 deployed app:
 
 ```bash twoslash
-iexec app show --chain arbitrum-mainnet
+iexec app show --chain {{chainName}}
 ```
 
 ## Run the iApp
@@ -420,20 +420,20 @@ At any time you can:
 - view your balance
 
 ```bash twoslash
-iexec account show --chain arbitrum-mainnet
+iexec account show --chain {{chainName}}
 ```
 
 - deposit RLC from your wallet to your iExec Account
 
 ```bash twoslash
-iexec account deposit --chain arbitrum-mainnet <amount>
+iexec account deposit --chain {{chainName}} <amount>
 ```
 
 - withdraw RLC from your iExec account to your wallet \(only stake can be
   withdrawn\)
 
 ```bash twoslash
-iexec account withdraw --chain arbitrum-mainnet <amount>
+iexec account withdraw --chain {{chainName}} <amount>
 ```
 
 :::
@@ -478,13 +478,13 @@ is a 32Bytes hexadecimal string\).
 Download the result of your task
 
 ```bash twoslash
-iexec task show --chain arbitrum-mainnet <taskid> --download my-result
+iexec task show --chain {{chainName}} <taskid> --download my-result
 ```
 
 You can get your taskid with the command:
 
 ```bash twoslash
-iexec deal show --chain arbitrum-mainnet <dealid>
+iexec deal show --chain {{chainName}} <dealid>
 ```
 
 ::: info
@@ -526,7 +526,7 @@ The conditions to use an app are defined in the **apporder**.
 Publish a new apporder for your application.
 
 ```bash twoslash
-iexec app publish --chain arbitrum-mainnet
+iexec app publish --chain {{chainName}}
 ```
 
 ::: info
@@ -545,7 +545,7 @@ conditions defined in apporder.
 You can check the published apporders for your app
 
 ```bash twoslash
-iexec orderbook app --chain arbitrum-mainnet <your app address>
+iexec orderbook app --chain {{chainName}} <your app address>
 ```
 
 Congratulation you just created a decentralized application! Anyone can now

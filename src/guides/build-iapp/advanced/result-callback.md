@@ -48,7 +48,7 @@ const scaled = '9';
 // ---cut---
 
 async function main() {
-  // Your business logic here
+  // Your business logic here ...
 
   const abiCoder = new AbiCoder();
   const abiPayload = abiCoder.encode(
@@ -73,13 +73,13 @@ must implement `receiveResult(bytes32,bytes)`interface from
 
 ```solidity
 contract IExecCallbackReceiver {
+    // Your business logic here ...
+
     // ERC1154 - Callback processing
     function receiveResult(bytes32 _callID, bytes memory callback) external {
         // Parse results
         (uint256 timestamp, string memory pairAndPrecision, uint256 scaledValue) =
             abi.decode(callback, (uint256, string, uint256));
-
-        ...business logic...
     }
 }
 ```
