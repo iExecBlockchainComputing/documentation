@@ -20,43 +20,15 @@ Use a callback whenever a smart contract should:
 ## 🧩 High-Level Flow
 
 1. A requester executes an iApp on iExec.
-2. The iApp writes in the file `${IEXEC_OUT}/computed.json` under the filed `callback-data`.
-3. iExec decentralized Protocol trigger corresponding on-chain contract based on `callback-data` field.
-4. Your smart contract (receiver) pulls, verifies, and ingests it.
+2. The iApp writes in the file `${IEXEC_OUT}/computed.json` under the filed `callback-data` the necessary calldata to make on-chain call.
+3. iExec decentralized Protocol trigger corresponding on-chain contract based on the deal & task result `callback-data` field.
+4. Your smart contract (receiver) callback data, verifies, and ingests it.
 
-## 🗂️ computed.json Expected Format
+## Step-by-Step Implementation
 
-Minimal example:
+### Step 1: Write the iApp
 
-```json
-{
-  "callback-data": "0x...(ABI-encoded bytes)",
-  "deterministic-output-path": "result.bin",
-  "status": "success",
-  "metadata": {
-    "source": "coingecko",
-    "pair": "BTC-USD",
-    "ts": 1731412345
-  }
-}
-```
-
-Required key:
-
-- `callback-data`: ABI-encoded payload (hex string) – you control the schema
-
-Best practices:
-
-- Encode with `abi.encode(...)`
-- Include an internal timestamp (anti-replay)
-- Use a stable struct (avoid free-form JSON inside the bytes)
-
-## 🧪 Example iApp
-
-```bash
-# Inside the container
-node app.js "$PAIR" "$PRECISION"
-```
+Your iApp must write a JSON file named `computed.json` in the directory pointed to by the environment variable `IEXEC_OUT`. This file must contain at least the key `callback-data`, which holds the ABI-encoded data you want to send to your smart contract.
 
 ```js
 import fs from 'node:fs';
@@ -86,7 +58,9 @@ async function main() {
 main().catch(() => process.exit(1));
 ```
 
-## 🧩 Base Contract (Generic Receiver)
+### Step 2: Deploy the Callback Contract
+
+The callback contract is the receiver of the off-chain computed data. Implement your custom logic based on your use case.
 
 ```solidity
 interface IIexecProxy {
@@ -110,40 +84,9 @@ abstract contract IExecCallbackReceiver {
 }
 ```
 
-## 🧾 Specialized Receiver (Price Feed)
+### Step 3: Run the iApp with Callback
 
-```solidity
-contract PriceFeed is IExecCallbackReceiver {
-    struct FeedValue {
-        uint256 date;
-        uint256 value;
-        string  key;
-    }
-
-    mapping(bytes32 => FeedValue) public feeds;
-    event FeedUpdate(bytes32 indexed id, uint256 date, uint256 value, string key);
-
-    constructor(address _iexec) IExecCallbackReceiver(_iexec) {}
-
-    function ingest(bytes32 taskid) external {
-        bytes memory payload = _getCallback(taskid);
-        (uint256 date, string memory pairPrecision, uint256 scaled) =
-            abi.decode(payload, (uint256,string,uint256));
-        bytes32 id = keccak256(bytes(pairPrecision));
-        require(date > feeds[id].date, "stale");
-        feeds[id] = FeedValue(date, scaled, pairPrecision);
-        emit FeedUpdate(id, date, scaled, pairPrecision);
-    }
-
-    function latest(string calldata pairPrecision)
-        external
-        view
-        returns (FeedValue memory)
-    {
-        return feeds[keccak256(bytes(pairPrecision))];
-    }
-}
-```
+When running the iApp, specify the callback contract address in the deal parameters. The iExec protocol will automatically call the specified contract with the `callback-data` once the task is completed.
 
 ## 🔄 Other Use Cases
 
