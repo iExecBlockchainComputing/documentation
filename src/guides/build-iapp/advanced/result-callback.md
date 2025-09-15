@@ -1,57 +1,77 @@
 ---
 title: Result Callback Guide
-description: Practical guide to using the iExec Result Callback mechanism to push an off-chain task result (iApp) directly into a smart contract—Oracles, automation, triggers, proofs, and more.
+description: Guide to using the iExec result callback to push an off-chain iApp task result directly into a smart contract (price feeds, automation, triggers, proofs, scoring, etc.).
 ---
 
 # Result Callback
 
-This guide explains how to securely push an iExec task result into a smart contract using the “callback” mechanism.  
-Oracles are only **one** of the possible use cases.
+This guide explains how to securely push an iExec task result into a smart contract using the callback mechanism.  
+Oracles are only one of many possible use cases.
 
 ## When to Use a Callback
 
-Use a callback whenever a smart contract should:
+Use a callback when a smart contract should:
 
-- Consume off-chain computed data (API aggregation, ML inference, analytics) and store it on-chain
-- React on-chain to an execution outcome (conditional trigger, state transition)
-- Store a timestamped record (price feed, score, KPI, proof hash) on-chain
+- Ingest off-chain computed data (API aggregation, ML inference, analytics) and persist it on-chain
+- React to an execution outcome (conditional trigger, state transition)
+- Store a timestamped record (price feed, score, KPI, proof hash)
 - Act as a logic bridge between external systems and on-chain logic
 
 ## 🧩 High-Level Flow
 
 1. A requester executes an iApp on iExec.
-2. The iApp writes in the file `${IEXEC_OUT}/computed.json` under the filed `callback-data` the necessary calldata to make on-chain call.
-3. iExec decentralized Protocol trigger corresponding on-chain contract based on the deal & task result `callback-data` field.
-4. Your smart contract (receiver) callback data, verifies, and ingests it.
+2. The iApp writes `${IEXEC_OUT}/computed.json` with a `callback-data` field containing ABI‑encoded calldata.
+3. The iExec protocol, once the task is completed, invokes the specified callback contract with that data.
+4. Your callback smart contract (receiver) ingests the data.
 
 ## Step-by-Step Implementation
 
 ### Step 1: Write the iApp
 
-Your iApp must write a JSON file named `computed.json` in the directory pointed to by the environment variable `IEXEC_OUT`. This file must contain at least the key `callback-data`, which holds the ABI-encoded data you want to send to your smart contract.
+The iApp MUST write a file named `computed.json` in the directory pointed to by `IEXEC_OUT`.  
+Required key: `callback-data` (raw ABI‑encoded bytes you want passed to your contract).
+
+Replaced Web3.js example with ethers v6:
 
 ```js
-import fs from 'node:fs';
-import Web3 from 'web3';
-const web3 = new Web3();
+// ethers v6 example producing ABI-encoded callback data
+
+import { writeFileSync } from 'node:fs';
+import { AbiCoder } from 'ethers';
+
+// Placeholder: replace with real price retrieval / aggregation logic
+async function fetchPrice(pair) {
+  // e.g. query multiple APIs, median, etc.
+  return 12345.6789;
+}
 
 async function main() {
   const [pair = 'BTC-USD', precision = '9'] = process.argv.slice(2);
-  const price = await fetchPrice(pair); // Your logic
-  const scaled = BigInt(Math.round(price * 10 ** Number(precision)));
 
-  const now = Math.floor(Date.now() / 1000);
-  const abiPayload = web3.eth.abi.encodeParameters(
-    ['uint256','string','uint256'],
-    [now, `${pair}-${precision}`, scaled.toString()]
+  const price = await fetchPrice(pair);
+  const scale = 10n ** BigInt(Number(precision));
+  const scaled = BigInt(Math.round(price * Number(scale)));
+
+  const timestamp = Math.floor(Date.now() / 1000);
+
+  const abiCoder = new AbiCoder();
+  const abiPayload = abiCoder.encode(
+    ['uint256', 'string', 'uint256'],
+    [timestamp, `${pair}-${precision}`, scaled]
   );
 
-  fs.writeFileSync(
-    process.env.IEXEC_OUT + '/computed.json',
-    JSON.stringify({
-      'callback-data': abiPayload,
-      metadata: { pair, precision, now, source: 'demo' }
-    })
+  writeFileSync(
+    `${process.env.IEXEC_OUT}/computed.json`,
+    JSON.stringify(
+      {
+        'callback-data': abiPayload,
+        metadata: {
+          pair,
+          precision,
+          timestamp,
+        }
+      }
+    )
   );
 }
 
@@ -60,7 +80,8 @@ main().catch(() => process.exit(1));
 
 ### Step 2: Deploy the Callback Contract
 
-The callback contract is the receiver of the off-chain computed data. Implement your custom logic based on your use case.
+The callback contract receives and processes the off-chain result.  
+It can read the stored `resultsCallback` from the iExec hub (or proxy) to independently verify the task state.
 
 ```solidity
 interface IIexecProxy {
@@ -78,7 +99,7 @@ abstract contract IExecCallbackReceiver {
 
     function _getCallback(bytes32 taskid) internal view returns (bytes memory) {
         IIexecProxy.Task memory t = iexec.viewTask(taskid);
-        require(t.status == 3, "task-not-completed"); // Example: 3 = COMPLETED
+        require(t.status == 3, "task-not-completed"); // 3 = COMPLETED (example)
         return t.resultsCallback;
     }
 }
@@ -86,7 +107,14 @@ abstract contract IExecCallbackReceiver {
 
 ### Step 3: Run the iApp with Callback
 
-When running the iApp, specify the callback contract address in the deal parameters. The iExec protocol will automatically call the specified contract with the `callback-data` once the task is completed.
+When requesting the execution, set the callback contract address in the deal (or order) parameters.  
+After completion, the protocol calls your contract passing the `callback-data` bytes.
+
+Checklist:
+
+- Ensure the contract adheres to the expected callback function signature.
+- Guard against replay (e.g. track processed task IDs).
+- Validate business invariants (timestamps, ranges, freshness).
 
 ## 🔄 Other Use Cases
 
