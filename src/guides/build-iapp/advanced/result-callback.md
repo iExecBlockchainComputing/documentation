@@ -2,7 +2,7 @@
 title: Result Callback Guide
 description:
   Use the iExec result callback to have the protocol invoke a function on your
-  smart contract at the end of an (optionally confidential TEE) task execution.
+  smart contract at the end of a (optionally confidential TEE) task execution.
 ---
 
 # Result Callback
@@ -10,7 +10,7 @@ description:
 This guide explains how to trigger a callback function at the end of a
 successful task on your smart contract.
 
-Use a callback when a smart contract should:
+Use a callback when your smart contract should:
 
 - Ingest off-chain computed data (API aggregation, ML inference, analytics) and
   persist it
@@ -23,10 +23,10 @@ Use a callback when a smart contract should:
 1. A requester executes an iApp.
 2. The iApp writes `${IEXEC_OUT}/computed.json` with a `callback-data` field
    (ABI‑encoded bytes you crafted).
-3. Once the task is completed and validated, the iExec protocol invokes your
+3. After the task completes and is validated, the iExec protocol invokes your
    contract’s `receiveResult(bytes32,bytes)`.
 4. Your contract decodes and processes those bytes if callback data have been
-   pushed.
+   provided.
 
 ## Step-by-Step Implementation
 
@@ -34,8 +34,8 @@ Use a callback when a smart contract should:
 
 You only need to write `computed.json` containing the key `callback-data`.  
 That value must be the ABI‑encoded bytes your contract knows how to decode.  
-Example schema we’ll use: (uint256 timestamp, string pairAndPrecision, uint256
-scaledValue).
+Example tuple schema we'll use:
+`(uint256 timestamp, string pairAndPrecision, uint256 scaledValue)`.
 
 ```ts twoslash
 import { writeFileSync } from 'node:fs';
@@ -66,14 +66,15 @@ async function main() {
 
 ### Step 2: Implement the Callback Contract
 
-Your contract must expose `receiveResult(bytes32,bytes)` (ERC1154). The protocol
-calls it with:
+Your contract must expose `receiveResult(bytes32,bytes)`
+[ERC1154](https://github.com/iExecBlockchainComputing/iexec-solidity/blob/master/contracts/ERC1154/IERC1154.sol).
+The protocol calls it with:
 
-- `_callID`: the task / call identifier.
-- `callback`: exactly the bytes you encoded as `callback-data`.
+- `_callID`: the first arg the taskId
+- `callback`: exactly the bytes you encoded as `callback-data`
 
-You decode using the same tuple. Add (optional) protections: authorized caller
-check (the iExec hub / proxy address), replay guard, bounds checks.
+Decode using the same tuple. (Optional) Add protections: authorized caller check
+(iExec hub / proxy), replay guard, bounds checks.
 
 ```solidity
 contract IExecCallbackReceiver {
@@ -88,18 +89,60 @@ contract IExecCallbackReceiver {
 }
 ```
 
-### Step 3: Run the iApp with Callback
+### Step 3: Run the iApp with a Callback
 
-When requesting the execution, set the callback contract address in the deal (or
-order) parameters.  
-After completion, the protocol calls your contract passing the `callback-data`
+When creating the request order, set the `callback` field to your callback
+contract address.  
+After completion, the protocol calls your contract, passing the `callback-data`
 bytes.
 
-Checklist:
+First install the iExec SDK if you have not already (see
+[Getting Started](/guides/use-iapp/getting-started)).
 
-- Ensure the contract adheres to the expected callback function signature.
-- Guard against replay (e.g. track processed task IDs).
-- Validate business invariants (timestamps, ranges, freshness).
+```ts twoslash
+import { IExec, utils } from 'iexec';
+
+const ethProvider = utils.getSignerFromPrivateKey(
+  'chain', // blockchain node URL
+  'PRIVATE_KEY'
+);
+const iexec = new IExec({
+  ethProvider,
+});
+// ---cut---
+// Basic arguments
+const requestorderToSign = await iexec.order.createRequestorder({
+  app: '0x456def...',
+  category: 0,
+  appmaxprice: 10,
+  workerpool: '0xa5de76...',
+  callback: '0x8e5bB6...', // Callback contract address
+});
+const requestOrder = await iexec.order.signRequestorder(requestorderToSign);
+
+// Fetch app orders
+const appOrders = await iexec.orderbook.fetchAppOrderbook(
+  '0x456def...' // Filter by specific app
+);
+if (appOrders.orders.length === 0) {
+  throw new Error('No app orders found for the specified app');
+}
+
+// Fetch workerpool orders
+const workerpoolOrders = await iexec.orderbook.fetchWorkerpoolOrderbook({
+  workerpool: '0xa5de76...', // Filter by specific workerpool
+});
+if (workerpoolOrders.orders.length === 0) {
+  throw new Error('No workerpool orders found for the specified workerpool');
+}
+
+// Execute the task
+const taskId = await iexec.order.matchOrders({
+  requestorder: requestOrder,
+  apporder: appOrders.orders[0].order,
+  workerpoolorder: workerpoolOrders.orders[0].order,
+});
+```
 
 ## 🔄 Other Use Cases
 
