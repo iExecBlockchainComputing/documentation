@@ -281,8 +281,7 @@ import { type SendTelegramResponse } from '@iexec/web3telegram';
 
 This uniquely identifies the telegram task on the iExec side chain. You can view
 the status of the `sendTelegram` method by monitoring the task on the
-<a :href="explorerUrl" target="_blank" rel="noopener">iExec blockchain
-explorer</a> .
+<a :href="explorerUrl" target="_blank" rel="noopener">iExec explorer</a> .
 
 <script setup>
 import { computed } from 'vue';

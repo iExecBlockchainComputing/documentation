@@ -313,8 +313,7 @@ import { type SendEmailResponse } from '@iexec/web3mail';
 
 This uniquely identifies the email task on the iExec side chain. You can view
 the status of the `sendEmail` method by monitoring the task on the
-<a :href="explorerUrl" target="_blank" rel="noopener">iExec blockchain
-explorer</a> .
+<a :href="explorerUrl" target="_blank" rel="noopener">iExec explorer</a> .
 
 ## Error Handling
 

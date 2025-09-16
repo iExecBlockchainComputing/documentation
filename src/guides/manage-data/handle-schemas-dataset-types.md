@@ -16,6 +16,11 @@ Think of schemas as **data fingerprints** - they tell iApp "this protected data
 contains an email address and a phone number" without revealing the actual
 values.
 
+Use the
+<a :href="`${explorerUrl}/datasets`" target="_blank" rel="noopener">iExec
+explorer</a> to browse protected data and see their asset types. Make filtered
+searches based on schema to find data that fits your needs.
+
 ## How schemas work
 
 When you protect data with DataProtector, the SDK automatically analyzes your
@@ -269,3 +274,16 @@ explore next:
   for running computations
 - **See it in action**: Try our [Hello World tutorial](/get-started/helloWorld)
   for a complete example
+
+<script setup>
+import { computed } from 'vue';
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
+
+// Get current chain info
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
+
+const chainData = computed(() => getChainById(selectedChain.value));
+const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
+</script>
