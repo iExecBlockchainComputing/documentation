@@ -154,7 +154,7 @@ Browse and analyze all tasks across the iExec network:
   :image-url-dark="appViewImage"
   image-alt="App View"
   :link-url="`${explorerUrl}/apps`"
-  caption="Explore iApp Marketplace"
+  caption="Explore iApp"
 />
 
 Explore the iExec application marketplace:
@@ -169,16 +169,16 @@ Explore the iExec application marketplace:
   :image-url-dark="datasetViewImage"
   image-alt="Dataset View"
   :link-url="`${explorerUrl}/datasets`"
-  caption="Explore Protected Datasets"
+  caption="Explore Protected Data"
 />
 
 Navigate the protected data landscape:
 
-- **Data Catalog**: Discover available datasets with their metadata and asset
-  type
-- **Usage Patterns**: Analyze dataset popularity and user adoption
-- **Schema Validation**: Ensure data structure compatibility with your
-  applications
+- **Data Catalog**: Discover available datasets along with their metadata and
+  asset types.
+- **Usage Patterns**: Analyze dataset popularity and usage trends.
+- **Schema Validation**: Filter by schema to find protected data that matches
+  your use case and ensure data structure compatibility with your applications.
 
 ## Workerpools
 
@@ -186,7 +186,7 @@ Navigate the protected data landscape:
   :image-url-dark="workerpoolViewImage"
   image-alt="Workerpool View"
   :link-url="`${explorerUrl}/workerpools`"
-  caption="Explore Workerpools Infrastructure"
+  caption="Explore Workerpools"
 />
 
 Explore the decentralized computing infrastructure:
