@@ -89,6 +89,33 @@ MIME types manually.
 
 :::
 
+Use the
+<a :href="`${explorerUrl}/datasets`" target="_blank" rel="noopener">iExec
+explorer</a> and its advanced filter to find datasets matching your required
+asset type. The explorer provides a powerful filtering system that lets you
+search for protected data based on their schema structure.
+
+<ImageViewer
+  :image-url-dark="assetTypesAdvanceFilterViewImage"
+  image-alt="asset Types Advance Filter View"
+  :link-url="`${explorerUrl}/datasets`"
+  caption="Explore Asset Types Filter"
+/>
+
+**How to use the asset type filter:**
+
+1. **Select asset type criteria** - Choose from predefined types and enter the
+   field names
+2. **Apply multiple filters** - Combine asset type filters with other criteria
+   like date range, owner, or tags
+3. **Browse matching datasets** - View only the protected data that matches your
+   schema requirements
+
+This filtering capability is essential when building iApps that need specific
+data structures. For example, if your iApp processes user profiles, you can
+filter for datasets containing `email: string` and `age: f64` fields to ensure
+compatibility.
+
 ## Why schemas matter
 
 - **Clarity**: Makes your data easier to understand and reuse
@@ -279,6 +306,7 @@ explore next:
 import { computed } from 'vue';
 import useUserStore  from '@/stores/useUser.store';
 import {getChainById} from '@/utils/chain.utils';
+import ImageViewer from '@/components/ImageViewer.vue';
 
 // Get current chain info
 const userStore = useUserStore();
@@ -286,4 +314,7 @@ const selectedChain = computed(() => userStore.getCurrentChainId());
 
 const chainData = computed(() => getChainById(selectedChain.value));
 const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
+
+// Assets
+import assetTypesAdvanceFilterViewImage from '@/assets/tooling-&-explorers/iexec-explorer/asset-types-advance-filter.png';
 </script>
