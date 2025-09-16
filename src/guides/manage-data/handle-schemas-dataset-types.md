@@ -163,6 +163,8 @@ const listProtectedData = await dataProtectorCore.getProtectedData({
 
 ## Real examples
 
+For real-world applications built by developers using various asset types, check out the [iExec case studies](https://www.iex.ec/case-studies) to see how schemas are used in production environments.
+
 ### Simple User Profile
 
 ```ts twoslash
