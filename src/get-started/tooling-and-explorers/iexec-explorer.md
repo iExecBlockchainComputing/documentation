@@ -115,13 +115,6 @@ Browse and analyze all tasks across the iExec network:
 ### Task Execution Monitoring
 
 <ImageViewer
-    :image-url-dark="taskDetailsStartedImage"
-    image-alt="Result Decryption"
-    :link-url="`${explorerUrl}/tasks`"
-    caption="Explore Tasks"
-/>
-
-<ImageViewer
     :image-url-dark="taskDetailsCompletedImage"
     image-alt="Task Completed"
     :link-url="`${explorerUrl}/tasks`"
@@ -174,11 +167,37 @@ Explore the iExec application marketplace:
 
 Navigate the protected data landscape:
 
-- **Data Catalog**: Discover available datasets along with their metadata and
-  asset types.
-- **Usage Patterns**: Analyze dataset popularity and usage trends.
-- **Schema Validation**: Filter by schema to find protected data that matches
-  your use case and ensure data structure compatibility with your applications.
+- **Data Catalog**: Discover available protected data with their metadata and asset
+  types
+- **Usage Analytics**: Analyze protected data popularity and adoption trends across the
+  network
+- **Schema Discovery**: Find protected data that matches your requirements using
+  advanced filtering
+
+The explorer provides a powerful filtering system that lets you search for
+protected data based on their schema structure, making it easy to find datasets
+compatible with your iApp.
+
+<ImageViewer
+  :image-url-dark="assetTypesAdvanceFilterViewImage"
+  image-alt="asset Types Advance Filter View"
+  :link-url="`${explorerUrl}/datasets`"
+  caption="Explore Asset Types Filter"
+/>
+
+**How to use the asset type filter:**
+
+1. **Select asset type criteria** - Choose from predefined types and enter the
+   field names
+2. **Apply multiple filters** - Combine asset type filters with other criteria
+   like date range, owner, or tags
+3. **Browse matching datasets** - View only the protected data that matches your
+   schema requirements
+
+This filtering capability is essential when building iApps that need specific
+data structures. For example, if your iApp processes user profiles, you can
+filter for datasets containing `email: string` and `age: f64` fields to ensure
+compatibility.
 
 ## Workerpools
 
@@ -216,9 +235,9 @@ const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
 import explorerGlobalImage from '@/assets/tooling-&-explorers/iexec-explorer/explorer-global.png';
 import dealViewImage from '@/assets/tooling-&-explorers/iexec-explorer/deal-view.png';
 import taskViewImage from '@/assets/tooling-&-explorers/iexec-explorer/task-view.png';
-import taskDetailsStartedImage from '@/assets/tooling-&-explorers/iexec-explorer/task-details-started.png';
 import taskDetailsCompletedImage from '@/assets/tooling-&-explorers/iexec-explorer/task-details-completed.png';
 import appViewImage from '@/assets/tooling-&-explorers/iexec-explorer/app-view.png';
 import datasetViewImage from '@/assets/tooling-&-explorers/iexec-explorer/dataset-view.png';
 import workerpoolViewImage from '@/assets/tooling-&-explorers/iexec-explorer/workerpool-view.png';
+import assetTypesAdvanceFilterViewImage from '@/assets/tooling-&-explorers/iexec-explorer/asset-types-advance-filter.png';
 </script>
