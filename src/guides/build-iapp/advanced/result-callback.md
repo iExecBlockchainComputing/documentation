@@ -67,7 +67,7 @@ async function main() {
 
 ### Step 2: Implement the Callback Contract
 
-Your contract must expose `receiveResult(bytes32,bytes)`
+Your contract must expose the function `receiveResult(bytes32,bytes)`
 [ERC1154](https://github.com/iExecBlockchainComputing/iexec-solidity/blob/master/contracts/ERC1154/IERC1154.sol).
 The protocol calls it with:
 
