@@ -30,7 +30,39 @@ Use a callback when your smart contract should:
 
 ## Step-by-Step Implementation
 
-### Step 1: Prepare the Callback Payload in the iApp
+### Step 1: Implement the Callback Contract
+
+Your contract must expose `receiveResult(bytes32,bytes)`
+[ERC1154](https://github.com/iExecBlockchainComputing/iexec-solidity/blob/master/contracts/ERC1154/IERC1154.sol).
+The protocol calls it with:
+
+- `_callID`: the first arg the taskId
+- `callback`: exactly the bytes you encoded as `callback-data`
+
+Decode using the same tuple. (Optional) Add protections: authorized caller check
+(iExec hub / proxy), replay guard, bounds checks.
+
+```solidity
+contract IExecCallbackReceiver {
+    // Your business logic here ...
+
+    // ERC1154 - Callback processing
+    function receiveResult(bytes32 _callID, bytes memory callback) external {
+        // Parse results
+        (uint256 timestamp, string memory pairAndPrecision, uint256 scaledValue) =
+            abi.decode(callback, (uint256, string, uint256));
+    }
+}
+```
+
+::: tip Important
+
+The callback transaction is subject to a gas limit of {{ gasLimit }}.  
+Ensure your callback logic fits within this limit to avoid out-of-gas errors.
+
+:::
+
+### Step 2: Prepare the Callback Payload in the iApp
 
 You only need to write `computed.json` containing the key `callback-data`.  
 That value must be the ABI‑encoded bytes your contract knows how to decode.  
@@ -63,38 +95,6 @@ async function main() {
   );
 }
 ```
-
-### Step 2: Implement the Callback Contract
-
-Your contract must expose `receiveResult(bytes32,bytes)`
-[ERC1154](https://github.com/iExecBlockchainComputing/iexec-solidity/blob/master/contracts/ERC1154/IERC1154.sol).
-The protocol calls it with:
-
-- `_callID`: the first arg the taskId
-- `callback`: exactly the bytes you encoded as `callback-data`
-
-Decode using the same tuple. (Optional) Add protections: authorized caller check
-(iExec hub / proxy), replay guard, bounds checks.
-
-```solidity
-contract IExecCallbackReceiver {
-    // Your business logic here ...
-
-    // ERC1154 - Callback processing
-    function receiveResult(bytes32 _callID, bytes memory callback) external {
-        // Parse results
-        (uint256 timestamp, string memory pairAndPrecision, uint256 scaledValue) =
-            abi.decode(callback, (uint256, string, uint256));
-    }
-}
-```
-
-::: tip Important
-
-The callback transaction is subject to a gas limit of {{ gasLimit }}.  
-Ensure your callback logic fits within this limit to avoid out-of-gas errors.
-
-:::
 
 ### Step 3: Run the iApp with a Callback
 
