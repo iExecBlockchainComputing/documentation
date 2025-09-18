@@ -1,8 +1,8 @@
 ---
 title: Result callback guide
 description:
-  Use the iExec result callback feature to have the protocol invoke a function on your
-  smart contract at the end of a task execution.
+  Use the iExec result callback feature to have the protocol invoke a function
+  on your smart contract at the end of a task execution.
 ---
 
 # Result Callback
@@ -20,23 +20,25 @@ Use a callback when your smart contract should:
 
 ## 🧩 High-level flow
 
-1. A requester executes an iApp.
-2. The iApp writes `${IEXEC_OUT}/computed.json` with a `callback-data` field
+1. A requester deploys the smart contract that should receive the callback data.
+2. The requester executes an iApp and specifies the callback address.
+3. The iApp writes `${IEXEC_OUT}/computed.json` with a `callback-data` field
    (ABI‑encoded bytes you crafted).
-3. After the task completes and is validated, the iExec protocol invokes your
+4. After the task completes and is validated, the iExec protocol invokes your
    contract’s `receiveResult(bytes32,bytes)`.
-4. Your contract decodes and processes those bytes if callback data have been
+5. Your contract decodes and processes those bytes if callback data have been
    provided.
 
 ## Step-by-Step Implementation
 
 ### Step 1: Implement the Callback Contract
 
-Your contract must expose `receiveResult(bytes32,bytes)`
+Your contract must expose the function `receiveResult(bytes32,bytes)`
 [ERC1154](https://github.com/iExecBlockchainComputing/iexec-solidity/blob/master/contracts/ERC1154/IERC1154.sol).
 The protocol calls it with:
 
-- `_callID`: the first arg the taskId
+- `_callID`: This parameter represents the `taskId`, passed as the first
+  argument
 - `callback`: exactly the bytes you encoded as `callback-data`
 
 Decode using the same tuple. (Optional) Add protections: authorized caller check
