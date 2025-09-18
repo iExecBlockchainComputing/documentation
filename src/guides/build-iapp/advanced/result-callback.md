@@ -71,7 +71,7 @@ Your contract must expose the function `receiveResult(bytes32,bytes)`
 [ERC1154](https://github.com/iExecBlockchainComputing/iexec-solidity/blob/master/contracts/ERC1154/IERC1154.sol).
 The protocol calls it with:
 
-- `_callID`: the first arg the taskId
+- `_callID`: This parameter represents the `taskId`, passed as the first argument
 - `callback`: exactly the bytes you encoded as `callback-data`
 
 Decode using the same tuple. (Optional) Add protections: authorized caller check
