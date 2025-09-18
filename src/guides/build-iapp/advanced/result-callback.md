@@ -18,7 +18,7 @@ Use a callback when your smart contract should:
 - Store a timestamped record (price feed, score, KPI, proof hash)
 - Bridge logic between external systems and on-chain state
 
-## 🧩 High-Level Flow
+## 🧩 High-level flow
 
 1. A requester executes an iApp.
 2. The iApp writes `${IEXEC_OUT}/computed.json` with a `callback-data` field
