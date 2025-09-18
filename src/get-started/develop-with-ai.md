@@ -14,7 +14,7 @@ assistants while maintaining security best practices.
 ## 📚 Documentation for LLMs and AI Code Editors
 
 You can use MCP (Model Control Protocol) servers like
-[Context7](https://context7.com/iexecblockchaincomputing/documentation-tools) to
+[Context7](https://context7.com/iexecblockchaincomputing/documentation) to
 provide:
 
 - Code completion with iExec-specific knowledge
