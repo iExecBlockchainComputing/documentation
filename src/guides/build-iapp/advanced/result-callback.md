@@ -5,7 +5,7 @@ description:
   on your smart contract at the end of a task execution.
 ---
 
-# Result Callback
+# Result callback
 
 This guide explains how to trigger a callback function at the end of a
 successful task on your smart contract.
@@ -29,9 +29,9 @@ Use a callback when your smart contract should:
 5. Your contract decodes and processes those bytes if callback data have been
    provided.
 
-## Step-by-Step Implementation
+## Step-by-step implementation
 
-### Step 1: Implement the Callback Contract
+### Step 1: Implement the callback contract
 
 Your contract must expose the function `receiveResult(bytes32,bytes)`
 [ERC1154](https://github.com/iExecBlockchainComputing/iexec-solidity/blob/master/contracts/ERC1154/IERC1154.sol).
@@ -64,7 +64,7 @@ Ensure your callback logic fits within this limit to avoid out-of-gas errors.
 
 :::
 
-### Step 2: Prepare the Callback Payload in the iApp
+### Step 2: Prepare the callback payload in the iApp
 
 You only need to write `computed.json` containing the key `callback-data`.  
 That value must be the ABI‑encoded bytes your contract knows how to decode.  
@@ -98,7 +98,7 @@ async function main() {
 }
 ```
 
-### Step 3: Run the iApp with a Callback
+### Step 3: Run the iApp with a callback
 
 When creating the request order, set the `callback` field to your callback
 contract address.  
@@ -153,7 +153,7 @@ const taskId = await iexec.order.matchOrders({
 });
 ```
 
-## 🔄 Other Use Cases
+## 🔄 Other use cases
 
 | Use Case             | Description                              |
 | -------------------- | ---------------------------------------- |
