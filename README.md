@@ -140,7 +140,6 @@ In order to keep the documentation consistent, we have some naming conventions
 for input parameters:
 
 - `protectedData`: '0x123abc...',
-- `protectedDataAddress`: '0x123abc...',
 - `authorizedApp`: '0x456def...',
 - `authorizedUser`: '0x789cba...',
 - `userAddress`: '0x789cba...',
