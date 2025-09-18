@@ -1,8 +1,8 @@
 ---
 title: Result callback guide
 description:
-  Use the iExec result callback to have the protocol invoke a function on your
-  smart contract at the end of a (optionally confidential TEE) task execution.
+  Use the iExec result callback feature to have the protocol invoke a function on your
+  smart contract at the end of a task execution.
 ---
 
 # Result Callback
