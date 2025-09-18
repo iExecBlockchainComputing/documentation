@@ -20,7 +20,8 @@ Use a callback when your smart contract should:
 
 ## 🧩 High-level flow
 
-1. A requester executes an iApp.
+1. A requester deploys the smart contract that should receive the callback data.
+2. The requester executes an iApp and specifies the callback address.
 2. The iApp writes `${IEXEC_OUT}/computed.json` with a `callback-data` field
    (ABI‑encoded bytes you crafted).
 3. After the task completes and is validated, the iExec protocol invokes your
