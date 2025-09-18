@@ -1,5 +1,5 @@
 ---
-title: Result Callback Guide
+title: Result callback guide
 description:
   Use the iExec result callback to have the protocol invoke a function on your
   smart contract at the end of a (optionally confidential TEE) task execution.
