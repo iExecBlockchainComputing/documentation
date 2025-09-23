@@ -413,7 +413,8 @@ Add your App Secret to the project configuration:
 
 ### How to Access App Secrets
 
-App secrets are exposed as environment variables following the `IEXEC_APP_DEVELOPER_SECRET` naming pattern.
+App secrets are exposed as environment variables following the
+`IEXEC_APP_DEVELOPER_SECRET` naming pattern.
 
 ::: code-group
 
