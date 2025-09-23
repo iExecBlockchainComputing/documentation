@@ -7,69 +7,11 @@ description:
 
 # 🧑‍🏭 Build your iApp
 
-## 📋 Prerequisites
+::: tip 📋 Prerequisites
 
-Before building your iApp, ensure you have the following installed:
-
-<div class="flex flex-col gap-2 my-4 pl-0">
-  <div class="flex items-center gap-4 text-left">
-    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
-      📦 Node.js v20+
-    </div>
-    <a target="_blank" href="https://nodejs.org/en/" class="no-underline! text-sm ml-auto hover:underline!">Download →</a>
-  </div>
-   <div class="flex items-center gap-4 text-left">
-    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
-      🐍 Python 3.8+ (for Python iApps)
-    </div>
-    <a target="_blank" href="https://www.python.org/downloads/" class="no-underline! text-sm ml-auto hover:underline!">Download →</a>
-  </div>
-   <div class="flex items-center gap-4 text-left">
-    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
-      🐳 Docker installed
-    </div>
-    <a target="_blank" href="https://docker.com/" class="no-underline! text-sm ml-auto hover:underline!">Download →</a>
-  </div>
-  
-  <div class="flex items-center gap-4 text-left">
-    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
-      🐳 DockerHub Account
-    </div>
-    <a target="_blank" href="https://hub.docker.com/" class="no-underline! text-sm ml-auto hover:underline!">Sign Up →</a>
-  </div>
-</div>
-
-::: tip 🔍 Verify Docker Compatibility
-
-```bash
-docker buildx inspect --bootstrap | grep -i platforms
-```
-
-If `linux/amd64` is not listed, **update your Docker installation.**
-
-:::
-
-### 📦 Install iApp Generator
-
-Install the iApp Generator CLI tool using your preferred package manager:
-
-::: code-group
-
-```sh [npm]
-npm install -g @iexec/iapp
-```
-
-```sh [yarn]
-yarn global add @iexec/iapp
-```
-
-```sh [pnpm]
-pnpm add -g @iexec/iapp
-```
-
-```sh [bun]
-bun add -g @iexec/iapp
-```
+Before building your iApp, make sure you have the required tools installed. See
+the [Getting Started guide](/references/iapp-generator/getting-started) for
+detailed prerequisites and installation instructions.
 
 :::
 

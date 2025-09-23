@@ -26,29 +26,9 @@ experience.
 
 ## 📋 Prerequisites
 
-Before getting started, make sure you have:
-
-<div class="flex flex-col gap-2 my-4 pl-0">
-  <div class="flex items-center gap-4 text-left">
-    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
-      📦 Node.js v20+
-    </div>
-    <a target="_blank" href="https://nodejs.org/en/" class="no-underline! text-sm ml-auto hover:underline!">Download →</a>
-  </div>
-   <div class="flex items-center gap-4 text-left">
-    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
-      🐳 Docker installed
-    </div>
-    <a target="_blank" href="https://docker.com/" class="no-underline! text-sm ml-auto hover:underline!">Download →</a>
-  </div>
-  
-  <div class="flex items-center gap-4 text-left">
-    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
-      🐳 DockerHub Account
-    </div>
-    <a target="_blank" href="https://hub.docker.com/" class="no-underline! text-sm ml-auto hover:underline!">Sign Up →</a>
-  </div>
-</div>
+Before getting started, make sure you have the required tools installed. See the
+[iApp Generator Getting Started guide](/references/iapp-generator/getting-started)
+for detailed prerequisites and installation instructions.
 
 ::: info
 
