@@ -167,10 +167,10 @@ Explore the iExec application marketplace:
 
 Navigate the protected data landscape:
 
-- **Data Catalog**: Discover available protected data with their metadata and asset
-  types
-- **Usage Analytics**: Analyze protected data popularity and adoption trends across the
-  network
+- **Data Catalog**: Discover available protected data with their metadata and
+  asset types
+- **Usage Analytics**: Analyze protected data popularity and adoption trends
+  across the network
 - **Schema Discovery**: Find protected data that matches your requirements using
   advanced filtering
 
