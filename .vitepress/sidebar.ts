@@ -166,6 +166,10 @@ export function getSidebar() {
                 link: '/guides/build-iapp/advanced/protect-the-result',
               },
               {
+                text: 'Result Callback',
+                link: '/guides/build-iapp/advanced/result-callback',
+              },
+              {
                 text: 'Access Confidential Assets',
                 link: '/guides/build-iapp/advanced/access-confidential-assets',
               },
@@ -544,10 +548,6 @@ export function getSidebar() {
           {
             text: 'Pay Per Task Model',
             link: '/protocol/pay-per-task',
-          },
-          {
-            text: 'Oracle',
-            link: '/protocol/oracle',
           },
           {
             text: 'Workers & Workerpools',

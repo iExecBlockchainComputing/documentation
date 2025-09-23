@@ -35,14 +35,15 @@ This guide shows both perspectives for each input type.
 
 ## Input types overview
 
-Inside the TEE, your iApp can work with four distinct categories of inputs:
+Inside the TEE, your iApp can work with five distinct categories of inputs:
 
-| Input Type            | Visibility | Security Level | Purpose                  | How iApp Accesses It   |
-| --------------------- | ---------- | -------------- | ------------------------ | ---------------------- |
-| **Protected Data**    | Public     | Encrypted      | Data to be processed     | Clear files in TEE     |
-| **Args**              | Public     | Clear          | Configuration parameters | Command line arguments |
-| **Input Files**       | Public     | Clear          | Large datasets, models   | Clear files in TEE     |
-| **Requester Secrets** | Private    | Encrypted      | User's sensitive data    | Environment variables  |
+| Input Type            | Visibility | Security Level | Purpose                    | How iApp Accesses It   |
+| --------------------- | ---------- | -------------- | -------------------------- | ---------------------- |
+| **Protected Data**    | Public     | Encrypted      | Data to be processed       | Clear files in TEE     |
+| **Args**              | Public     | Clear          | Configuration parameters   | Command line arguments |
+| **Input Files**       | Public     | Clear          | Large datasets, models     | Clear files in TEE     |
+| **Requester Secrets** | Private    | Encrypted      | User's sensitive data      | Environment variables  |
+| **App Secrets**       | Private    | Encrypted      | Developer's sensitive data | Environment variables  |
 
 ## 1. Protected Data
 
@@ -355,6 +356,94 @@ const processProtectedDataResponse =
     },
   });
 ```
+
+## 5. App Secrets
+
+**What they are:** App Secrets are confidential data owned by the iApp developer
+that are provisioned during app deployment and made available to your iApp
+during execution. They are stored securely in the Secret Management Service
+(SMS) and only accessible within the Trusted Execution Environment (TEE).
+
+**When to use:** Use App Secrets for API keys, private keys, tokens, database
+credentials, or any sensitive data that belongs to the app developer and needs
+to be available to the iApp during execution. Unlike Requester Secrets (which
+are provided by users), App Secrets are configured once by the developer and
+remain constant across all executions.
+
+::: info
+
+App Secrets are different from Requester Secrets:
+
+- **App Secrets**: Owned by the app developer, configured once during deployment
+- **Requester Secrets**: Owned by the user executing the iApp, provided per
+  execution
+
+:::
+
+### How to Use App Secrets in Your iApp
+
+App Secrets are configured in your `iapp.config.json` during development and
+automatically deployed with your iApp. For deployment details, see the
+[Build Your iApp guide](/references/iapp-generator/building-your-iexec-app).
+
+#### Configuration in iapp.config.json
+
+Add your App Secret to the project configuration:
+
+```json
+{
+  "defaultChain": "arbitrum",
+  "projectName": "my-iapp",
+  "template": "JavaScript",
+  "appSecret": "{\"API_KEY\":\"sk-1234567890abcdef\",\"DATABASE_URL\":\"postgresql://user:pass@host:5432/db\"}"
+}
+```
+
+::: warning
+
+- **Size limit**: App secrets are limited to 4096 kB maximum
+- **Immutable**: Once set, app secrets cannot be changed without redeploying the
+  iApp
+- **Security**: App secrets are encrypted and only accessible within the TEE
+  environment
+- **Ownership**: App secrets belong to the iApp developer, not the user
+  executing the iApp
+
+:::
+
+### How to Access App Secrets
+
+App secrets are exposed as environment variables following the `IEXEC_APP_DEVELOPER_SECRET` naming pattern.
+
+::: code-group
+
+```python [Python]
+import os
+import json
+
+# Get your app secret
+app_secret = os.environ.get('IEXEC_APP_DEVELOPER_SECRET')
+
+if app_secret:
+    # Parse JSON (multiple secrets)
+    secrets = json.loads(app_secret)
+    api_key = secrets.get('API_KEY')
+    database_url = secrets.get('DATABASE_URL')
+```
+
+```javascript [JavaScript]
+// Get your app secret
+const appSecret = process.env.IEXEC_APP_DEVELOPER_SECRET;
+
+if (appSecret) {
+  // Parse JSON (multiple secrets)
+  const secrets = JSON.parse(appSecret);
+  const apiKey = secrets.API_KEY;
+  const databaseUrl = secrets.DATABASE_URL;
+}
+```
+
+:::
 
 ## Testing Inputs Locally
 

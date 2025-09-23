@@ -134,6 +134,25 @@ We welcome contributions to improve the iExec documentation!
 📖 **For detailed contribution guidelines, component usage, and best practices,
 please see our [CONTRIBUTING.md](CONTRIBUTING.md) guide.**
 
+### Some conventions
+
+In order to keep the documentation consistent, we have some naming conventions
+for input parameters:
+
+- `protectedData`: '0x123abc...',
+- `authorizedApp`: '0x456def...',
+- `authorizedUser`: '0x789cba...',
+- `userAddress`: '0x789cba...',
+- `appWhitelist`: '0xba46d6...',
+- `owner`: '0xa0c15e...',
+- `newOwner`: '0xc5e9f4...',
+- `voucherOwner`: '0x5714eB...',
+- `renterAddress`: '0x246bdf...'
+- `subscriberAddress`: '0x246bdf...'
+- `workerpool`: '0xa5de76...'
+- `taskId`: '0x7ac398...'
+- `smartContractAddress`: '0x8e5bB6...'
+
 ### Quick Contribution Steps
 
 1. **Fork** this repository
