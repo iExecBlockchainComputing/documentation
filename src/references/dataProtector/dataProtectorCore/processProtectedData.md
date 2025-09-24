@@ -208,8 +208,7 @@ const processProtectedDataResponse =
 
 Do not use this to provide any sensitive information to the application. All
 arguments passed this way are visible in plain text using the
-<a :href="explorerUrl" target="_blank" rel="noopener">iExec blockchain
-explorer</a> .
+<a :href="explorerUrl" target="_blank" rel="noopener">iExec explorer</a> .
 
 :::
 
@@ -448,8 +447,7 @@ import { type ProcessProtectedDataResponse } from '@iexec/dataprotector';
 
 The ID of the transaction that happened on iExec's side chain. You may view
 details on the transaction using the
-<a :href="explorerUrl" target="_blank" rel="noopener">iExec blockchain
-explorer</a> .
+<a :href="explorerUrl" target="_blank" rel="noopener">iExec explorer</a> .
 
 ### dealId
 
@@ -463,8 +461,7 @@ Identifies the specific deal associated with this transaction.
 
 A unique identifier associated with a task currently running on the iExec
 protocol. You can monitor task execution using the
-<a :href="explorerUrl" target="_blank" rel="noopener">iExec blockchain
-explorer</a> .
+<a :href="explorerUrl" target="_blank" rel="noopener">iExec explorer</a> .
 
 ::: tip
 
