@@ -7,6 +7,14 @@ description:
 
 # 🧑‍🏭 Build your iApp
 
+::: tip 📋 Prerequisites
+
+Before building your iApp, make sure you have the required tools installed. See
+the [Getting Started guide](/references/iapp-generator/getting-started) for
+detailed prerequisites and installation instructions.
+
+:::
+
 ## 🧰 Initialize your iApp
 
 The iApp (iExec App) Generator command-line tool simplifies the setup of your
