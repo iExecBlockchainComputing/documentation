@@ -2,7 +2,8 @@
 title: runIApp
 description:
   Execute iApps securely with iExec's runIApp method. Run confidential computing
-  applications with optional protected data while maintaining privacy and security.
+  applications with optional protected data while maintaining privacy and
+  security.
 ---
 
 # runIApp
@@ -11,10 +12,9 @@ Allows executing an iApp with optional protected data processing.
 
 > [!IMPORTANT]
 >
-> You must ensure the iApp has authorization to use the `protectedData` if provided.
-> You may grant this permission using the
-> [`grantAccess`](/references/iapp-generator/sdk/grantAccess)
-> method.
+> You must ensure the iApp has authorization to use the `protectedData` if
+> provided. You may grant this permission using the
+> [`grantAccess`](/references/iapp-generator/sdk/grantAccess) method.
 
 ## Usage
 
@@ -26,7 +26,7 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
-  protectedData: '0x123abc...',
+  protectedData: '0x456def....',
   args: 'arg1 arg2',
   inputFiles: ['https://example.com/file1', 'https://example.com/file2'],
   secrets: {
@@ -59,7 +59,7 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...', // [!code focus]
-  protectedData: '0x123abc...',
+  protectedData: '0x456def....',
 });
 ```
 
@@ -77,7 +77,7 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
-  protectedData: '0x123abc...', // [!code focus]
+  protectedData: '0x456def....', // [!code focus]
 });
 ```
 
@@ -96,7 +96,7 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
-  protectedData: '0x123abc...',
+  protectedData: '0x456def....',
   dataMaxPrice: 10, // [!code focus]
 });
 ```
@@ -116,7 +116,7 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
-  protectedData: '0x123abc...',
+  protectedData: '0x456def....',
   appMaxPrice: 5, // [!code focus]
 });
 ```
@@ -136,7 +136,7 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
-  protectedData: '0x123abc...',
+  protectedData: '0x456def....',
   workerpoolMaxPrice: 2, // [!code focus]
 });
 ```
@@ -155,7 +155,7 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
-  protectedData: '0x123abc...',
+  protectedData: '0x456def....',
   path: 'my-content', // [!code focus]
 });
 ```
@@ -174,7 +174,7 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
-  protectedData: '0x123abc...',
+  protectedData: '0x456def....',
   args: 'arg1 arg2', // [!code focus]
 });
 ```
@@ -193,7 +193,7 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
-  protectedData: '0x123abc...',
+  protectedData: '0x456def....',
   inputFiles: ['https://example.com/file1', 'https://example.com/file2'], // [!code focus]
 });
 ```
@@ -202,8 +202,8 @@ const runIAppResponse = await iapp.runIApp({
 
 **Type:** `Record<number, string>`
 
-Requester secrets necessary for the application's execution.
-It is represented as a mapping of numerical identifiers to corresponding secrets.
+Requester secrets necessary for the application's execution. It is represented
+as a mapping of numerical identifiers to corresponding secrets.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -213,8 +213,9 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
-  protectedData: '0x123abc...',
-  secrets: { // [!code focus]
+  protectedData: '0x456def....',
+  secrets: {
+    // [!code focus]
     1: 'secret1', // [!code focus]
     2: 'secret2', // [!code focus]
   }, // [!code focus]
@@ -225,7 +226,8 @@ const runIAppResponse = await iapp.runIApp({
 
 **Type:** `AddressOrENS`
 
-Address or ENS of the smart contract to be called back once the task is completed.
+Address or ENS of the smart contract to be called back once the task is
+completed.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -235,7 +237,7 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
-  protectedData: '0x123abc...',
+  protectedData: '0x456def....',
   callbackContract: '0x789ghi...', // [!code focus]
 });
 ```
@@ -244,7 +246,8 @@ const runIAppResponse = await iapp.runIApp({
 
 **Type:** `AddressOrENS`
 
-The workerpool to use for the application's execution. (default iExec production workerpool)
+The workerpool to use for the application's execution. (default iExec production
+workerpool)
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -254,7 +257,7 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
-  protectedData: '0x123abc...',
+  protectedData: '0x456def....',
   workerpool: '0xabc123...', // [!code focus]
 });
 ```
@@ -273,7 +276,7 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
-  protectedData: '0x123abc...',
+  protectedData: '0x456def....',
   useVoucher: true, // [!code focus]
 });
 ```
@@ -282,7 +285,8 @@ const runIAppResponse = await iapp.runIApp({
 
 **Type:** `AddressOrENS`
 
-Override the voucher contract to use, must be combined with useVoucher: true the user must be authorized by the voucher's owner to use it.
+Override the voucher contract to use, must be combined with useVoucher: true the
+user must be authorized by the voucher's owner to use it.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -292,7 +296,7 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
-  protectedData: '0x123abc...',
+  protectedData: '0x456def....',
   useVoucher: true,
   voucherOwner: '0xdef456...', // [!code focus]
 });
@@ -312,8 +316,9 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
-  protectedData: '0x123abc...',
-  onStatusUpdate: ({ title, isDone }) => { // [!code focus]
+  protectedData: '0x456def....',
+  onStatusUpdate: ({ title, isDone }) => {
+    // [!code focus]
     console.log(title, isDone); // [!code focus]
   }, // [!code focus]
 });

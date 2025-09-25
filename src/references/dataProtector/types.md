@@ -22,11 +22,13 @@ Types in DataProtector.
 
 ### volume: <span class="text-yellow">`string`</span>
 
-- Total number of authorized accesses for processing a Protected Data when the access was signed and published
+- Total number of authorized accesses for processing a Protected Data when the
+  access was signed and published
 
 ### remainingAccess: <span class="text-yellow">`number`</span>
 
-- Number of remaining authorized accesses for processing a protected data; each use decrements this counter
+- Number of remaining authorized accesses for processing a protected data; each
+  use decrements this counter
 
 ### tag: <span class="text-yellow">`string`</span>
 

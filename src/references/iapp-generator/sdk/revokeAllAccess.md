@@ -8,10 +8,10 @@ description:
 
 # revokeAllAccess
 
-This method allows revoking authorizations granted to an `iApp` entity.
-You may optionally specify protected data or user addresses for revocation. If you
-do not specify either of these optional values, this method will revoke all
-access for all users and protected data.
+This method allows revoking authorizations granted to an `iApp` entity. You may
+optionally specify protected data or user addresses for revocation. If you do
+not specify either of these optional values, this method will revoke all access
+for all users and protected data.
 
 You must be the owner of the iApp.
 
@@ -30,8 +30,8 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const revokeAllAccessResult = await iapp.revokeAllAccess({
-  iapp: '0x123abc...',
-  authorizedProtectedData: '0x456def...',
+  iapp: '0x456def....',
+  authorizedProtectedData: '0x123abc...',
   authorizedUser: '0x789cba...',
 });
 ```
@@ -55,7 +55,7 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const revokeAllAccessResult = await iapp.revokeAllAccess({
-  iapp: '0x123abc...', // [!code focus]
+  iapp: '0x456def....', // [!code focus]
 });
 ```
 
@@ -64,8 +64,8 @@ const revokeAllAccessResult = await iapp.revokeAllAccess({
 **Type:** `AddressOrENS`
 
 The protected data address to be removed from the authorization list for the
-specified `iApp`. If no address is specified, it will revoke all access
-from the iApp, regardless of the protected data.
+specified `iApp`. If no address is specified, it will revoke all access from the
+iApp, regardless of the protected data.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -74,8 +74,8 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const revokeAllAccessResult = await iapp.revokeAllAccess({
-  iapp: '0x123abc...',
-  authorizedProtectedData: '0x456def...', // [!code focus]
+  iapp: '0x456def....',
+  authorizedProtectedData: '0x123abc...', // [!code focus]
   authorizedUser: '0x789cba...',
 });
 ```
@@ -85,8 +85,8 @@ const revokeAllAccessResult = await iapp.revokeAllAccess({
 **Type:** `AddressOrENS`
 
 The user address to be removed from the authorization list for the specified
-`iApp`. If no address is specified, it will revoke all access from the
-iApp, regardless of the authorized user.
+`iApp`. If no address is specified, it will revoke all access from the iApp,
+regardless of the authorized user.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -95,8 +95,8 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const revokeAllAccessResult = await iapp.revokeAllAccess({
-  iapp: '0x123abc...',
-  authorizedProtectedData: '0x456def...',
+  iapp: '0x456def....',
+  authorizedProtectedData: '0x123abc...',
   authorizedUser: '0x789cba...', // [!code focus]
 });
 ```
@@ -115,8 +115,8 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const revokeAllAccessResult = await iapp.revokeAllAccess({
-  iapp: '0x123abc...',
-  authorizedProtectedData: '0x456def...',
+  iapp: '0x456def....',
+  authorizedProtectedData: '0x123abc...',
   authorizedUser: '0x789cba...',
   onStatusUpdate: ({ title, isDone }) => { // [!code focus]
     console.log(title, isDone); // [!code focus]

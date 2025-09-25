@@ -1,16 +1,16 @@
 ---
 title: getGrantedAccess
 description:
-  Retrieve all granted access details for an iApp with iExec's
-  getGrantedAccess method. Filter access by user, application, or both, and
-  manage access with pagination.
+  Retrieve all granted access details for an iApp with iExec's getGrantedAccess
+  method. Filter access by user, application, or both, and manage access with
+  pagination.
 ---
 
 # getGrantedAccess
 
 This method provides a listing of all access grants given for the specified
-iApp. Options for filtering include specifying an authorized
-user, an authorized protected data, or both.
+iApp. Options for filtering include specifying an authorized user, an authorized
+protected data, or both.
 
 ## Usage
 
@@ -25,8 +25,8 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const listGrantedAccess = await iapp.getGrantedAccess({
-  iapp: '0x123abc...',
-  authorizedProtectedData: '0x456def...',
+  iapp: '0x456def....',
+  authorizedProtectedData: '0x123abc...',
   authorizedUser: '0x789cba...',
   page: 1,
   pageSize: 100,
@@ -43,10 +43,9 @@ import { type GetGrantedAccessParams } from '@mage-sombre/iapp';
 
 **Type:** `AddressOrENS`
 
-Address of the iApp for which you are querying access
-authorization grants. It's a representation of ethereum address or ENS name
-(Ethereum Name Service). If no address is specified, it will return all granted
-access for any iApp.
+Address of the iApp for which you are querying access authorization grants. It's
+a representation of ethereum address or ENS name (Ethereum Name Service). If no
+address is specified, it will return all granted access for any iApp.
 
 **Usage example:**
 
@@ -57,7 +56,7 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const listGrantedAccess = await iapp.getGrantedAccess({
-  iapp: '0x123abc...', // [!code focus]
+  iapp: '0x456def....', // [!code focus]
 });
 ```
 
@@ -79,19 +78,20 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const listGrantedAccess = await iapp.getGrantedAccess({
-  authorizedProtectedData: '0x456def...', // [!code focus]
+  authorizedProtectedData: '0x123abc...', // [!code focus]
 });
 ```
 
 ::: tip
 
 If you specified a protected data whitelist when using
-[`grantAccess`](/references/iapp-generator/sdk/grantAccess), you
-must specify that same whitelist address when using this filtering option. The
+[`grantAccess`](/references/iapp-generator/sdk/grantAccess), you must specify
+that same whitelist address when using this filtering option. The
 `getGrantedAccess` method does not check against whitelist smart contracts when
 aggregating results. If you granted authorization to a whitelist but specify a
-protected data address for the `authorizedProtectedData` parameter, you will not receive any
-results unless you _also_ explicitly granted access to that protected data address.
+protected data address for the `authorizedProtectedData` parameter, you will not
+receive any results unless you _also_ explicitly granted access to that
+protected data address.
 
 :::
 
@@ -133,8 +133,8 @@ const iapp = new IExecIApp(web3Provider);
 // ---cut---
 
 const listGrantedAccess = await iapp.getGrantedAccess({
-  iapp: '0x123abc...',
-  authorizedProtectedData: '0x456def...',
+  iapp: '0x456def....',
+  authorizedProtectedData: '0x123abc...',
   authorizedUser: '0x789cba...',
   isUserStrict: true, // [!code focus]
 });
@@ -160,7 +160,7 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const listGrantedAccess = await iapp.getGrantedAccess({
-  iapp: '0x123abc...',
+  iapp: '0x456def....',
   page: 1, // [!code focus]
   pageSize: 100,
 });
@@ -185,7 +185,7 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const listGrantedAccess = await iapp.getGrantedAccess({
-  iapp: '0x123abc...',
+  iapp: '0x456def....',
   page: 1,
   pageSize: 100, // [!code focus]
 });
@@ -201,8 +201,9 @@ The return value for this method has two fields: a `count` parameter indicating
 the number of results, and an array of `GrantedAccess` objects containing all
 access data. When using the optional paging parameters, the `count` will be
 limited by the selected `pageSize` parameter. You may use these result objects
-in conjunction with the [revokeOneAccess](/references/iapp-generator/sdk/revokeOneAccess) method to revoke a
-previously granted authorization for access.
+in conjunction with the
+[revokeOneAccess](/references/iapp-generator/sdk/revokeOneAccess) method to
+revoke a previously granted authorization for access.
 
 ### count
 

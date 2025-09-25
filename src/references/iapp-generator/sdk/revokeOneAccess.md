@@ -1,17 +1,17 @@
 ---
 title: revokeOneAccess
 description:
-  Revoke specific access permissions to an iApp with iExec's
-  revokeOneAccess method. Manage and remove access granted to users or
-  protected data through blockchain transactions.
+  Revoke specific access permissions to an iApp with iExec's revokeOneAccess
+  method. Manage and remove access granted to users or protected data through
+  blockchain transactions.
 ---
 
 # revokeOneAccess
 
-This method allows revoking a specific access authorization from an
-`iApp` entity. The input parameter for this method is sourced from the
-[getGrantedAccess](/references/iapp-generator/sdk/getGrantedAccess) method, which provides a list of all
-authorizations on single `iApp` entity.
+This method allows revoking a specific access authorization from an `iApp`
+entity. The input parameter for this method is sourced from the
+[getGrantedAccess](/references/iapp-generator/sdk/getGrantedAccess) method,
+which provides a list of all authorizations on single `iApp` entity.
 
 As this will generate a blockchain transaction, expect it to take a least 5sec
 (a block time).
@@ -20,8 +20,7 @@ As this will generate a blockchain transaction, expect it to take a least 5sec
 
 The `revokeOneAccess` method requires a `grantedAccess` object as an input
 parameter. This object is retrieved from the
-[`getGrantedAccess`](/references/iapp-generator/sdk/getGrantedAccess)
-method.
+[`getGrantedAccess`](/references/iapp-generator/sdk/getGrantedAccess) method.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';

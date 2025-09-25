@@ -1,21 +1,23 @@
 ---
 title: getIApp
 description:
-  Retrieve all iApps for a specific owner or filter by creation date with the getIApp
-  method in iExec iApp Generator SDK. Easily access iApp metadata and information,
-  sorted by creation date.
+  Retrieve all iApps for a specific owner or filter by creation date with the
+  getIApp method in iExec iApp Generator SDK. Easily access iApp metadata and
+  information, sorted by creation date.
 ---
 
 # getIApp
 
-This method allows the user to retrieve all iApps for a given owner or filter by creation timestamp.
+This method allows the user to retrieve all iApps for a given owner or filter by
+creation timestamp.
 
 Results are ordered by `creationTimestamp` desc.
 
 ::: tip
 
-An iApp is a confidential computing application that runs in secure TEE environments.
-The method returns iApp metadata including name, address, owner, and creation timestamp.
+An iApp is a confidential computing application that runs in secure TEE
+environments. The method returns iApp metadata including name, address, owner,
+and creation timestamp.
 
 :::
 
@@ -55,7 +57,7 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const oneIApp = await iapp.getIApp({
-  iapp: '0x123abc...', // [!code focus]
+  iapp: '0x456def....', // [!code focus]
 });
 ```
 
@@ -74,6 +76,8 @@ const iapp = new IExecIApp(web3Provider);
 const iAppsByOwner = await iapp.getIApp({
   owner: '0xa0c15e...', // [!code focus]
 });
+```
+
 ### createdAfterTimestamp <OptionalBadge />
 
 **Type:** `number`
@@ -96,7 +100,8 @@ const recentIApps = await iapp.getIApp({
 **Type:** `number`  
 **Default:** `0`
 
-Specifies the page number of the result set to return. Pages are zero-based indexed.
+Specifies the page number of the result set to return. Pages are zero-based
+indexed.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';

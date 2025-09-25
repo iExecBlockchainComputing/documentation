@@ -1,23 +1,23 @@
 ---
 title: transferOwnership
 description:
-  Transfer ownership of an iApp to a new owner with iExec's
-  transferOwnership method. Securely update iApp ownership and automatically
-  revoke previous access permissions.
+  Transfer ownership of an iApp to a new owner with iExec's transferOwnership
+  method. Securely update iApp ownership and automatically revoke previous
+  access permissions.
 ---
 
 # transferOwnership
 
-Allows transferring ownership of an `iApp` entity to a new owner,
-identified by their ETH address. The return value provides a transaction hash
-and confirmation of the new owner of the `iApp`. Only the current owner
-of the `iApp` may invoke this method.
+Allows transferring ownership of an `iApp` entity to a new owner, identified by
+their ETH address. The return value provides a transaction hash and confirmation
+of the new owner of the `iApp`. Only the current owner of the `iApp` may invoke
+this method.
 
-When transferring the `iApp`, the grantedAccess created by the previous
-owner are revoked automatically.
+When transferring the `iApp`, the grantedAccess created by the previous owner
+are revoked automatically.
 
-Ownership of the `iApp` can be renounced by transferring it to the burn
-address `0x000000000000000000000000000000000000dEaD`.
+Ownership of the `iApp` can be renounced by transferring it to the burn address
+`0x000000000000000000000000000000000000dEaD`.
 
 ## Usage
 
@@ -28,7 +28,7 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const transferResponse = await iapp.transferOwnership({
-  iapp: '0x123abc...',
+  iapp: '0x456def....',
   newOwner: '0xc5e9f4...',
 });
 ```
@@ -43,8 +43,8 @@ import { type TransferParams } from '@mage-sombre/iapp';
 
 **Type:** `AddressOrENS`
 
-ETH address of the `iApp` owned by you which is to be transferred to a
-new owner.
+ETH address of the `iApp` owned by you which is to be transferred to a new
+owner.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -53,7 +53,7 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const transferResponse = await iapp.transferOwnership({
-  iapp: '0x123abc...', // [!code focus]
+  iapp: '0x456def....', // [!code focus]
   newOwner: '0xc5e9f4...',
 });
 ```
@@ -71,7 +71,7 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const transferResponse = await iapp.transferOwnership({
-  iapp: '0x123abc...',
+  iapp: '0x456def....',
   newOwner: '0xc5e9f4...', // [!code focus]
 });
 ```
