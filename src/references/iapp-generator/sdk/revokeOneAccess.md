@@ -1,17 +1,17 @@
 ---
 title: revokeOneAccess
 description:
-  Revoke specific access permissions to protected data with iExec's
+  Revoke specific access permissions to an iApp with iExec's
   revokeOneAccess method. Manage and remove access granted to users or
-  applications through blockchain transactions.
+  protected data through blockchain transactions.
 ---
 
 # revokeOneAccess
 
-This method allows revoking a specific access authorization from a
-`protectedData` entity. The input parameter for this method is sourced from the
-[getGrantedAccess](getGrantedAccess.md) method, which provides a list of all
-authorizations on single `protectedData` entity.
+This method allows revoking a specific access authorization from an
+`iApp` entity. The input parameter for this method is sourced from the
+[getGrantedAccess](/references/iapp-generator/sdk/getGrantedAccess) method, which provides a list of all
+authorizations on single `iApp` entity.
 
 As this will generate a blockchain transaction, expect it to take a least 5sec
 (a block time).
@@ -20,7 +20,7 @@ As this will generate a blockchain transaction, expect it to take a least 5sec
 
 The `revokeOneAccess` method requires a `grantedAccess` object as an input
 parameter. This object is retrieved from the
-[`getGrantedAccess`](/references/dataProtector/dataProtectorCore/getGrantedAccess)
+[`getGrantedAccess`](/references/iapp-generator/sdk/getGrantedAccess)
 method.
 
 ```ts twoslash
@@ -30,15 +30,16 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const revokeAccess = await dataProtectorCore.revokeOneAccess({
-  apprestrict: '0xea...',
-  dataset: '0xA0C...',
-  datasetprice: '0',
+  app: '0xea...',
+  appprice: '0',
+  volume: '1',
+  tag: '0x0000000000000000000000000000000000000000000000000000000000000003',
+  datasetrestrict: '0xA0C...',
+  workerpoolrestrict: '0x000...',
   requesterrestrict: '0xecb..',
   salt: '0x0147...',
   sign: '0xc22c1...',
-  tag: '0x0000000000000000000000000000000000000000000000000000000000000003',
-  volume: '1',
-  workerpoolrestrict: '0x000...',
+  remainingAccess: 1,
 });
 ```
 
@@ -53,7 +54,7 @@ import { type GrantedAccess } from '@mage-sombre/iapp';
 **Type:** `GrantedAccess`
 
 This is the complete `granted access` object retrieved from an invocation of
-`getGrantedAccess`.
+`getGrantedAccess` for an iApp.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -62,15 +63,16 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const revokeAccess = await dataProtectorCore.revokeOneAccess({
-  apprestrict: '0xea...', // [!code focus]
-  dataset: '0xA0C...', // [!code focus]
-  datasetprice: '0', // [!code focus]
+  app: '0xea...', // [!code focus]
+  appprice: '0', // [!code focus]
+  volume: '1', // [!code focus]
+  tag: '0x0000000000000000000000000000000000000000000000000000000000000003', // [!code focus]
+  datasetrestrict: '0xA0C...', // [!code focus]
+  workerpoolrestrict: '0x000...', // [!code focus]
   requesterrestrict: '0xecb..', // [!code focus]
   salt: '0x0147...', // [!code focus]
   sign: '0xc22c1...', // [!code focus]
-  tag: '0x0000000000000000000000000000000000000000000000000000000000000003', // [!code focus]
-  volume: '1', // [!code focus]
-  workerpoolrestrict: '0x000...', // [!code focus]
+  remainingAccess: 1, // [!code focus]
 });
 ```
 
@@ -78,8 +80,7 @@ const revokeAccess = await dataProtectorCore.revokeOneAccess({
 
 The tag must always be set to
 `0x0000000000000000000000000000000000000000000000000000000000000003`. This
-specific value indicates that the order is for a confidential asset (a protected
-data).
+specific value indicates that the order is for a confidential asset (an iApp).
 
 :::
 

@@ -1,21 +1,19 @@
 ---
 title: runIApp
 description:
-  Process encrypted data securely with iExec's runIApp method. Use authorized
-  applications to process protected datasets while maintaining data privacy and
-  security.
+  Execute iApps securely with iExec's runIApp method. Run confidential computing
+  applications with optional protected data while maintaining privacy and security.
 ---
 
 # runIApp
 
-Allows processing a protected dataset through use of a specified iExec
-application.
+Allows executing an iApp with optional protected data processing.
 
 > [!IMPORTANT]
 >
-> You must ensure this application has authorization to use the `protectedData`.
+> You must ensure the iApp has authorization to use the `protectedData` if provided.
 > You may grant this permission using the
-> [`grantAccess`](/references/dataProtector/dataProtectorCore/grantAccess)
+> [`grantAccess`](/references/iapp-generator/sdk/grantAccess)
 > method.
 
 ## Usage
@@ -26,30 +24,32 @@ import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await dataProtectorCore.runIApp({
+  iapp: '0x456def...',
   protectedData: '0x123abc...',
-  app: '0x456def...',
   args: 'arg1 arg2',
   inputFiles: ['https://example.com/file1', 'https://example.com/file2'],
   secrets: {
     1: 'secret1',
     2: 'secret2',
   },
+  dataMaxPrice: 10,
+  appMaxPrice: 5,
+  workerpoolMaxPrice: 2,
 });
 ```
 
 ## Parameters
 
 ```ts twoslash
-import { type ProcessProtectedDataParams } from '@mage-sombre/iapp';
+import { type RunIAppParams } from '@mage-sombre/iapp';
 ```
 
-### protectedData <RequiredBadge />
+### iapp <RequiredBadge />
 
 **Type:** `AddressOrENS`
 
-The ETH address or Ethereum Name Service (ENS) reference for the protected data
-you wish the `app` to process.
+The address or ENS of the iApp to execute.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -57,265 +57,27 @@ import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await dataProtectorCore.runIApp({
+  iapp: '0x456def...', // [!code focus]
+  protectedData: '0x123abc...',
+});
+```
+
+### protectedData <OptionalBadge />
+
+**Type:** `AddressOrENS`
+
+The address or ENS of the authorized protected data that the iApp will process.
+
+```ts twoslash
+import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecIApp(web3Provider);
+// ---cut---
+const runIAppResponse = await dataProtectorCore.runIApp({
+  iapp: '0x456def...',
   protectedData: '0x123abc...', // [!code focus]
-  app: '0x456def...',
-});
-```
-
-### app <RequiredBadge />
-
-**Type:** `AddressOrENS`
-
-The ETH address or Ethereum Name Service (ENS) address for the iExec application
-to process the protected data.
-
-```ts twoslash
-import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
-// ---cut---
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
-  protectedData: '0x123abc...',
-  app: '0x456def...', // [!code focus]
-});
-```
-
-### path <OptionalBadge />
-
-**Type:** `string`
-
-Under the hood, a protected data is a zip file. With this `path` parameter, you
-can specify the file you're interested in. The zip file will be uncompressed for
-you, and only the desired file will be given as the `result`.
-
-```ts twoslash
-import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
-// ---cut---
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
-  protectedData: '0x123abc...',
-  app: '0x456def...',
-  path: 'my-content', // [!code focus]
-});
-```
-
-### userWhitelist <OptionalBadge />
-
-**Type:** `Address`
-
-If access to the protected data is granted to a group of users via a whitelist
-contract, you must use this `userWhitelist` parameter. The value should be the
-whitelist contract address that has access to the protected data.
-
-```ts twoslash
-import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
-// ---cut---
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
-  protectedData: '0x123abc...',
-  app: '0x456def...',
-  userWhitelist: '0x656def...', // [!code focus]
-});
-```
-
-### useVoucher <ChainNotSupportedBadge /> <OptionalBadge />
-
-**Type:** `boolean`  
-**Default:** `false`
-
-This optional parameter allows you to pay for the task using a voucher. By
-default, it uses the voucher associated with your connected wallet, but you can
-override this by specifying a voucherAddress.
-
-```ts twoslash
-import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
-// ---cut---
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
-  protectedData: '0x123abc...',
-  app: '0x456def...',
-  useVoucher: true, // [!code focus]
-});
-```
-
-::: tip
-
-If your voucher doesn't have enough RLC to cover the deal, the SDK will
-automatically get the required amount to your iExec account. Ensure that your
-voucher is authorized to access your iExec account and that your account has
-sufficient funds for this transfer to proceed.
-
-:::
-
-### voucherOwner <ChainNotSupportedBadge /> <OptionalBadge />
-
-**Type:** `Address`
-
-This optional parameter allows you to pay for the task using someone else’s
-voucher. Make sure the voucher's owner has authorized you to use it. This
-parameter must be used in combination with `useVoucher: true`.
-
-```ts twoslash
-import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
-// ---cut---
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
-  protectedData: '0x123abc...',
-  app: '0x456def...',
-  useVoucher: true, // [!code focus]
-  voucherOwner: '0x5714eB...', // [!code focus]
-});
-```
-
-### args <OptionalBadge />
-
-**Type:** `string`
-
-Set of execution arguments for the application.
-
-```ts twoslash
-import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
-// ---cut---
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
-  protectedData: '0x123abc...',
-  app: '0x456def...',
-  args: 'arg1 arg2', // [!code focus]
-});
-```
-
-::: danger
-
-Do not use this to provide any sensitive information to the application. All
-arguments passed this way are visible in plain text using the
-<a :href="explorerUrl" target="_blank" rel="noopener">iExec explorer</a> .
-
-:::
-
-### inputFiles <OptionalBadge />
-
-**Type:** `string[]`
-
-A set of URLs representing the input files required for application execution.
-
-```ts twoslash
-import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
-// ---cut---
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
-  protectedData: '0x123abc...',
-  app: '0x456def...',
-  inputFiles: ['https://example.com/file1', 'https://example.com/file2'], // [!code focus]
-});
-```
-
-### secrets <OptionalBadge />
-
-**Type:** `Record<number, string>`
-
-A set of requester secrets necessary for the application's execution. This is
-represented as a mapping of numerical identifiers to corresponding secrets
-stored in the secrets manager needed for the application's execution.
-
-Secrets are accessible during the application's execution as environment
-variables. For more details, see
-[Access requester secrets](/guides/build-iapp/advanced/access-confidential-assets).
-
-<!-- prettier-ignore-start -->
-```ts twoslash
-import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
-// ---cut---
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
-  protectedData: '0x123abc...',
-  app: '0x456def...',
-  secrets: { // [!code focus]
-    1: 'secret1', // [!code focus]
-    2: 'secret2', // [!code focus]
-  }, // [!code focus]
-});
-```
-<!-- prettier-ignore-end -->
-
-### workerpool <OptionalBadge />
-
-**Type:** `AddressOrENS | 'any'`  
-**Default:** `{{ workerpoolAddress }}`
-
-It's the confidential computer on which the iExec application will run.
-
-::: tip
-
-iExec currently offers a workerpool located at the address
-`{{ workerpoolAddress }}`. This is the default workerpool for running
-confidential computations on the iExec platform.
-
-:::
-
-::: info TDX <ChainNotSupportedBadge/>
-
-🧪 While protected data are processed in **TEE** by **intel SGX** technology by
-default, `@mage-sombre/iapp` can be configured to create and process protected
-data in the experimental **intel TDX** environment.
-
-TDX mode is enabled by setting connecting the **TDX SMS** and using the **TDX
-workerpool**.
-
-```ts twoslash [Browser]
-declare global {
-  interface Window {
-    ethereum: any;
-  }
-}
-// ---cut---
-import { IExecIApp } from '@mage-sombre/iapp';
-
-const web3Provider = window.ethereum;
-// Instantiate dataProtector connected to the TDX SMS
-const dataProtectorCore = new IExecIApp(web3Provider, {
-  iexecOptions: {
-    smsURL: 'https://sms.labs.iex.ec', // [!code focus]
-  },
-});
-
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
-  protectedData: '0x123abc...',
-  app: '0x456def...',
-  workerpool: 'tdx-labs.pools.iexec.eth', // [!code focus]
-});
-```
-
-⚠️ Keep in mind: TDX mode is experimental and can be subject to instabilities or
-discontinuity.
-
-:::
-
-```ts twoslash
-import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
-// ---cut---
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
-  protectedData: '0x123abc...',
-  app: '0x456def...',
-  workerpool: '0xa5de76...', // [!code focus]
 });
 ```
 
@@ -324,9 +86,7 @@ const processProtectedDataResponse = await dataProtectorCore.runIApp({
 **Type:** `number`  
 **Default:** `0`
 
-Allows specifying the maximum amount (in nRLC) you are willing to pay the
-protected data owner for using their data. The owner of the protected data
-receives this as a payment for sharing their data.
+The maximum price of dataset per task for processing the protected data.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -334,10 +94,10 @@ import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await dataProtectorCore.runIApp({
+  iapp: '0x456def...',
   protectedData: '0x123abc...',
-  app: '0x456def...',
-  dataMaxPrice: 42, // [!code focus]
+  dataMaxPrice: 10, // [!code focus]
 });
 ```
 
@@ -346,8 +106,7 @@ const processProtectedDataResponse = await dataProtectorCore.runIApp({
 **Type:** `number`  
 **Default:** `0`
 
-Allows specifying the maximum amount (in nRLC) you are willing to pay the iApp
-provider for using the deployed application.
+The maximum price of application per task for processing the protected data.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -355,10 +114,10 @@ import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await dataProtectorCore.runIApp({
+  iapp: '0x456def...',
   protectedData: '0x123abc...',
-  app: '0x456def...',
-  appMaxPrice: 42, // [!code focus]
+  appMaxPrice: 5, // [!code focus]
 });
 ```
 
@@ -367,8 +126,7 @@ const processProtectedDataResponse = await dataProtectorCore.runIApp({
 **Type:** `number`  
 **Default:** `0`
 
-Allows specifying the maximum amount you want to pay the workerpool provider for
-using their infrastructure to run the iApp in nRLC.
+The maximum price of workerpool per task for processing the protected data.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -376,44 +134,200 @@ import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await dataProtectorCore.runIApp({
+  iapp: '0x456def...',
   protectedData: '0x123abc...',
-  app: '0x456def...',
-  workerpoolMaxPrice: 42, // [!code focus]
+  workerpoolMaxPrice: 2, // [!code focus]
+});
+```
+
+### path <OptionalBadge />
+
+**Type:** `string`
+
+The file name of the desired file in the returned ZIP file.
+
+```ts twoslash
+import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecIApp(web3Provider);
+// ---cut---
+const runIAppResponse = await dataProtectorCore.runIApp({
+  iapp: '0x456def...',
+  protectedData: '0x123abc...',
+  path: 'my-content', // [!code focus]
+});
+```
+
+### args <OptionalBadge />
+
+**Type:** `string`
+
+Arguments to pass to the application during execution.
+
+```ts twoslash
+import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecIApp(web3Provider);
+// ---cut---
+const runIAppResponse = await dataProtectorCore.runIApp({
+  iapp: '0x456def...',
+  protectedData: '0x123abc...',
+  args: 'arg1 arg2', // [!code focus]
+});
+```
+
+### inputFiles <OptionalBadge />
+
+**Type:** `string[]`
+
+The input file required for the application's execution (direct download URL).
+
+```ts twoslash
+import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecIApp(web3Provider);
+// ---cut---
+const runIAppResponse = await dataProtectorCore.runIApp({
+  iapp: '0x456def...',
+  protectedData: '0x123abc...',
+  inputFiles: ['https://example.com/file1', 'https://example.com/file2'], // [!code focus]
+});
+```
+
+### secrets <OptionalBadge />
+
+**Type:** `Record<number, string>`
+
+Requester secrets necessary for the application's execution.
+It is represented as a mapping of numerical identifiers to corresponding secrets.
+
+```ts twoslash
+import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecIApp(web3Provider);
+// ---cut---
+const runIAppResponse = await dataProtectorCore.runIApp({
+  iapp: '0x456def...',
+  protectedData: '0x123abc...',
+  secrets: { // [!code focus]
+    1: 'secret1', // [!code focus]
+    2: 'secret2', // [!code focus]
+  }, // [!code focus]
+});
+```
+
+### callbackContract <OptionalBadge />
+
+**Type:** `AddressOrENS`
+
+Address or ENS of the smart contract to be called back once the task is completed.
+
+```ts twoslash
+import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecIApp(web3Provider);
+// ---cut---
+const runIAppResponse = await dataProtectorCore.runIApp({
+  iapp: '0x456def...',
+  protectedData: '0x123abc...',
+  callbackContract: '0x789ghi...', // [!code focus]
+});
+```
+
+### workerpool <OptionalBadge />
+
+**Type:** `AddressOrENS`
+
+The workerpool to use for the application's execution. (default iExec production workerpool)
+
+```ts twoslash
+import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecIApp(web3Provider);
+// ---cut---
+const runIAppResponse = await dataProtectorCore.runIApp({
+  iapp: '0x456def...',
+  protectedData: '0x123abc...',
+  workerpool: '0xabc123...', // [!code focus]
+});
+```
+
+### useVoucher <OptionalBadge />
+
+**Type:** `boolean`
+
+A boolean that indicates whether to use a voucher or no.
+
+```ts twoslash
+import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecIApp(web3Provider);
+// ---cut---
+const runIAppResponse = await dataProtectorCore.runIApp({
+  iapp: '0x456def...',
+  protectedData: '0x123abc...',
+  useVoucher: true, // [!code focus]
+});
+```
+
+### voucherOwner <OptionalBadge />
+
+**Type:** `AddressOrENS`
+
+Override the voucher contract to use, must be combined with useVoucher: true the user must be authorized by the voucher's owner to use it.
+
+```ts twoslash
+import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecIApp(web3Provider);
+// ---cut---
+const runIAppResponse = await dataProtectorCore.runIApp({
+  iapp: '0x456def...',
+  protectedData: '0x123abc...',
+  useVoucher: true,
+  voucherOwner: '0xdef456...', // [!code focus]
 });
 ```
 
 ### onStatusUpdate <OptionalBadge />
 
-**Type:** `OnStatusUpdateFn<ProcessProtectedDataStatuses>`
+**Type:** `OnStatusUpdateFn<RunIAppStatuses>`
 
 Callback function to be notified at intermediate steps.
 
-<!-- prettier-ignore-start -->
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
-const processProtectedDataResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await dataProtectorCore.runIApp({
+  iapp: '0x456def...',
   protectedData: '0x123abc...',
-  app: '0x456def...',
   onStatusUpdate: ({ title, isDone }) => { // [!code focus]
     console.log(title, isDone); // [!code focus]
   }, // [!code focus]
 });
 ```
-<!-- prettier-ignore-end -->
 
 You can expect this callback function to be called with the following titles:
 
 ```ts
+'FETCH_ORDERS';
 'FETCH_PROTECTED_DATA_ORDERBOOK';
 'FETCH_APP_ORDERBOOK';
 'FETCH_WORKERPOOL_ORDERBOOK';
 'PUSH_REQUESTER_SECRET';
-'REQUEST_TO_PROCESS_PROTECTED_DATA';
+'REQUEST_TO_RUN_IAPP';
 'CONSUME_TASK';
 'CONSUME_RESULT_DOWNLOAD';
 'CONSUME_RESULT_DECRYPT';
@@ -424,74 +338,35 @@ Once with `isDone: false`, and then with `isDone: true`
 ## Return Value
 
 ```ts twoslash
-import { type ProcessProtectedDataResponse } from '@mage-sombre/iapp';
+import { type RunIAppResponse } from '@mage-sombre/iapp';
 ```
+
+The method returns a `RunIAppResponse` object containing the following fields:
 
 ### txHash
 
 `string`
 
-The ID of the transaction that happened on iExec's side chain. You may view
-details on the transaction using the
-<a :href="explorerUrl" target="_blank" rel="noopener">iExec explorer</a> .
+The transaction hash of the task creation transaction.
 
 ### dealId
 
 `string`
 
-Identifies the specific deal associated with this transaction.
+The deal ID associated with the task execution.
 
 ### taskId
 
 `string`
 
-A unique identifier associated with a task currently running on the iExec
-protocol. You can monitor task execution using the
-<a :href="explorerUrl" target="_blank" rel="noopener">iExec explorer</a> .
-
-::: tip
-
-The
-[getResultFromCompletedTask()](/references/dataProtector/dataProtectorCore/getResultFromCompletedTask)
-function allows you to retrieve the result of a completed task using its
-`taskId`.
-
-Additionally, you can specify a **file path** within the ZIP archive to extract
-a specific file when required.
-
-:::
+The task ID for tracking the execution.
 
 ### result
 
-`ArrayBuffer`
+`ArrayBuffer` (optional)
 
-The result is a ZIP file containing at least one mandatory file:
-
-- **computed.json**: This file contains metadata about the computation performed
-  by the application.
-- additional files may be included depending on the dapp used.
-
-::: info
-
-In the case of the **Content Creator Delivery DApp**, the ZIP file will also
-include a file named **content**, which corresponds to the protected data
-processed during the task.
-
-:::
+The result of the iApp execution, if available.
 
 <script setup>
-import { computed } from 'vue';
-import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
-import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
-import useUserStore  from '@/stores/useUser.store';
-import {getChainById} from '@/utils/chain.utils';
-
-// Get current chain info
-const userStore = useUserStore();
-const selectedChain = computed(() => userStore.getCurrentChainId());
-
-const chainData = computed(() => getChainById(selectedChain.value));
-const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
-const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
 </script>

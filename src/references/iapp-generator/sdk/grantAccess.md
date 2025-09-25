@@ -1,19 +1,17 @@
 ---
 title: grantAccess
 description:
-  Grant secure access to encrypted data with iExec's grantAccess method.
-  Authorize specific applications or users to process protected data, with
+  Grant secure access to an iApp with iExec's grantAccess method.
+  Authorize specific protected data or users to use the iApp, with
   customizable access limits and pricing.
 ---
 
 # grantAccess
 
-Data encrypted through the Data Protector tool requires explicit authorization
-for runtime access. A newly created `protectedData` object has no inherent
+iApps require explicit authorization for runtime access. A newly created `iApp` has no inherent
 authorizations. This method grants permission to securely access the specified
-`protectedData` for processing using the `processProtectedData` method.
-Authorization to use the `protectedData` is given to a user in the context of an
-application (or a designated list of applications).
+`iApp` for processing. Authorization to use the `iApp` is given to a user in the context of
+protected data (or a designated list of protected data).
 
 ## Usage
 
@@ -24,8 +22,8 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const grantedAccess = await dataProtectorCore.grantAccess({
-  protectedData: '0x123abc...',
-  authorizedApp: '0x456def...',
+  iapp: '0x123abc...',
+  authorizedProtectedData: '0x456def...',
   authorizedUser: '0x789cba...',
   pricePerAccess: 3,
   numberOfAccess: 10,
@@ -41,12 +39,11 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 import { type GrantAccessParams } from '@mage-sombre/iapp';
 ```
 
-### protectedData <RequiredBadge />
+### iapp <RequiredBadge />
 
 **Type:** `AddressOrENS`
 
-The ethereum address of the protected data supplied by the user (returned when
-you created it). **You must own this data** to grant access.
+The ethereum address of the iApp you wish to grant access to. **You must own this iApp** to grant access.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -55,19 +52,19 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const grantedAccess = await dataProtectorCore.grantAccess({
-  protectedData: '0x123abc...', // [!code focus]
-  authorizedApp: '0x456def...',
+  iapp: '0x123abc...', // [!code focus]
+  authorizedProtectedData: '0x456def...',
   authorizedUser: '0x789cba...',
 });
 ```
 
-### authorizedApp <RequiredBadge />
+### authorizedProtectedData <OptionalBadge />
 
 **Type:** `AddressOrENS`
 
-The address of the application you wish to authorize to process the
-`protectedData` within a secure execution environment. You may specify either a
-single application or an application whitelist. To specify a whitelist, you
+The address of the protected data you wish to authorize to use the
+`iApp` within a secure execution environment. You may specify either a
+single protected data or a protected data whitelist. To specify a whitelist, you
 provide the ETH address of an
 [iExec Whitelist Smart Contract](https://github.com/iExecBlockchainComputing/whitelist-smart-contract/tree/main).
 This smart contract should aggregates multiple application versions. This allows
@@ -81,16 +78,15 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const grantedAccess = await dataProtectorCore.grantAccess({
-  protectedData: '0x123abc...',
-  authorizedApp: '0x456def...', // [!code focus]
+  iapp: '0x123abc...',
+  authorizedProtectedData: '0x456def...', // [!code focus]
   authorizedUser: '0x789cba...',
 });
 ```
 
 ::: tip
 
-You may authorize a specific app or a whitelist of apps to use the protected
-data.
+You may authorize a specific protected data or a whitelist of protected data to use the iApp.
 
 The latest version of the iExec Web3Mail decentralized application is
 `{{web3MailAddress}}`.
@@ -102,13 +98,13 @@ access once. The ETH address for this whitelist is **{{web3MailAppWhitelist}}**.
 
 :::
 
-### authorizedUser <RequiredBadge />
+### authorizedUser <OptionalBadge />
 
 **Type:** `AddressOrENS`
 
-The address of the user you wish to authorize to use the `protectedData`. Note
+The address of the user you wish to authorize to use the `iApp`. Note
 that these users may not view or manipulate the data. This only grants
-permission for the user to submit the data to an iExec application.
+permission for the user to submit the protected data to the iApp.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -117,15 +113,15 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const grantedAccess = await dataProtectorCore.grantAccess({
-  protectedData: '0x123abc...',
-  authorizedApp: '0x456def...',
+  iapp: '0x123abc...',
+  authorizedProtectedData: '0x456def...',
   authorizedUser: '0x789cba...', // [!code focus]
 });
 ```
 
 ::: tip
 
-You may authorize all users to use the protected data by setting this to
+You may authorize all users to use the iApp by setting this to
 **0x0000000000000000000000000000000000000000**.
 
 :::
@@ -136,15 +132,15 @@ You may authorize all users to use the protected data by setting this to
 **Default:** `0`
 
 Specifies the usage fee in nano RLC (nRLC) associated with each access of the
-data. It represents the cost incurred for each individual interaction with
-application.
+iApp. It represents the cost incurred for each individual interaction with
+the iApp.
 
 By invoking the grantAccess method with a specific `pricePerAccess` you define
 the fee that the specified user (`authorizedUser` parameter) must pay for each
-access to the data when used with the specified application (`authorizedApp`
+access to the iApp when used with the specified protected data (`authorizedProtectedData`
 parameter).
 
-The fee is paid to the owner of the protected data.
+The fee is paid to the owner of the iApp.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -153,8 +149,8 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const grantedAccess = await dataProtectorCore.grantAccess({
-  protectedData: '0x123abc...',
-  authorizedApp: '0x456def...',
+  iapp: '0x123abc...',
+  authorizedProtectedData: '0x456def...',
   authorizedUser: '0x789cba...',
   pricePerAccess: 3, // [!code focus]
   numberOfAccess: 10,
@@ -175,7 +171,7 @@ When provided, `pricePerAccess` must be a non-negative integer value.
 **Type:** `number`  
 **Default:** `1`
 
-Allows restricting the number of times the protected data may be processed and
+Allows restricting the number of times the iApp may be accessed and
 used.
 
 It is not technically possible to set an unlimited number of accesses, but you
@@ -183,7 +179,7 @@ can set `numberOfAccess` to `10000` for example.
 
 ::: info
 
-If you attempt to process the protected data more times than specified in
+If you attempt to access the iApp more times than specified in
 `numberOfAccess`, you will encounter a **"no dataset orders"** error.
 
 To prevent this error, ensure the `numberOfAccess` is properly set when calling
@@ -198,8 +194,8 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const grantedAccess = await dataProtectorCore.grantAccess({
-  protectedData: '0x123abc...',
-  authorizedApp: '0x456def...',
+  iapp: '0x123abc...',
+  authorizedProtectedData: '0x456def...',
   authorizedUser: '0x789cba...',
   pricePerAccess: 3,
   numberOfAccess: 10, // [!code focus]

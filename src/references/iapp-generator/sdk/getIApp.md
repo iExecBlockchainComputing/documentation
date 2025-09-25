@@ -1,23 +1,21 @@
 ---
 title: getIApp
 description:
-  Retrieve all protected data for a specific owner or schema with the getIApp
-  method in iExec DataProtector. Easily access encrypted data and metadata,
+  Retrieve all iApps for a specific owner or filter by creation date with the getIApp
+  method in iExec iApp Generator SDK. Easily access iApp metadata and information,
   sorted by creation date.
 ---
 
 # getIApp
 
-This method allows the user to retrieve all protected data for a given owner,
-data schema, or both.
+This method allows the user to retrieve all iApps for a given owner or filter by creation timestamp.
 
 Results are ordered by `creationTimestamp` desc.
 
 ::: tip
 
-A data schema is the metadata describing the contents of the protected data
-object. The schema is returned as part of the [protectData](protectData.md)
-method invocation.
+An iApp is a confidential computing application that runs in secure TEE environments.
+The method returns iApp metadata including name, address, owner, and creation timestamp.
 
 :::
 
@@ -29,26 +27,26 @@ import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
-const listProtectedData = await dataProtectorCore.getIApp({
+const listIApps = await dataProtectorCore.getIApp({
   owner: '0xa0c15e...',
-  requiredSchema: {
-    email: 'string',
-  },
+  createdAfterTimestamp: 1640995200,
+  page: 1,
+  pageSize: 20,
 });
 ```
 
 ## Parameters
 
 ```ts twoslash
-import { type GetProtectedDataParams } from '@mage-sombre/iapp';
+import { type GetIAppParams } from '@mage-sombre/iapp';
 ```
 
-### protectedDataAddress <OptionalBadge />
+### iapp <OptionalBadge />
 
 **Type:** `AddressOrENS`
 
-Returns the protected data associated with this address.  
-Returns an empty array if the protected data is not found.
+Returns the iApp associated with this address.  
+Returns an empty array if the iApp is not found.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -56,58 +54,16 @@ import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
-const oneProtectedData = await dataProtectorCore.getIApp({
-  protectedDataAddress: '0x123abc...', // [!code focus]
+const oneIApp = await dataProtectorCore.getIApp({
+  iapp: '0x123abc...', // [!code focus]
 });
 ```
-
-### requiredSchema <OptionalBadge />
-
-**Type:** `SearchableDataSchema`
-
-Provides a list of protected data objects matching this schema.
-
-<!-- prettier-ignore-start -->
-```ts twoslash
-import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
-// ---cut---
-const listProtectedData = await dataProtectorCore.getIApp({
-  requiredSchema: { // [!code focus]
-    email: 'string', // [!code focus]
-  }, // [!code focus]
-});
-```
-<!-- prettier-ignore-end -->
-
-It's also possible to provide a list of accepted types for one schema field:
-
-<!-- prettier-ignore-start -->
-```ts twoslash
-import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
-// ---cut---
-const listProtectedData = await dataProtectorCore.getIApp({
-  requiredSchema: { // [!code focus]
-    picture: ['image/png', 'image/jpeg'], // [!code focus]
-  }, // [!code focus]
-});
-```
-<!-- prettier-ignore-end -->
-
-Available types are listed
-[here](/references/dataProtector/dataProtectorCore/protectData#schema).
 
 ### owner <OptionalBadge />
 
 **Type:** `AddressOrENS`
 
-Provides a list of protected data objects owned by the user with this ETH
-address.
+Returns all iApps owned by this address.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -115,17 +71,14 @@ import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
-const listProtectedData = await dataProtectorCore.getIApp({
+const iAppsByOwner = await dataProtectorCore.getIApp({
   owner: '0xa0c15e...', // [!code focus]
 });
-```
-
 ### createdAfterTimestamp <OptionalBadge />
 
 **Type:** `number`
 
-Provides a list of protected data objects created after this timestamp value.
-The provided value should be in seconds.
+Returns all iApps created after this timestamp (Unix timestamp in seconds).
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -133,9 +86,8 @@ import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
-const listProtectedData = await dataProtectorCore.getIApp({
-  owner: '0xa0c15e...',
-  createdAfterTimestamp: 1710257612, // March 12, 2024 15:33:32 GMT // [!code focus]
+const recentIApps = await dataProtectorCore.getIApp({
+  createdAfterTimestamp: 1640995200, // [!code focus]
 });
 ```
 
@@ -144,9 +96,7 @@ const listProtectedData = await dataProtectorCore.getIApp({
 **Type:** `number`  
 **Default:** `0`
 
-Specifies the results page to return. Pages are indexed starting at page 0. If
-using this field you may also specify a `pageSize` to control the size of the
-results.
+Specifies the page number of the result set to return. Pages are zero-based indexed.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -154,22 +104,18 @@ import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
-const listProtectedData = await dataProtectorCore.getIApp({
-  owner: '0xa0c15e...',
-  createdAfterTimestamp: 1710257612, // March 12, 2024 15:33:32 GMT
+const iAppsPage = await dataProtectorCore.getIApp({
   page: 1, // [!code focus]
+  pageSize: 20,
 });
 ```
 
 ### pageSize <OptionalBadge />
 
 **Type:** `number`  
-**Default:** `1000`  
-**Range:** `[10...1000]`
+**Default:** `20`
 
-Specifies the number of records in each page of the result set. This is used in
-conjunction with the optional `page` parameter to constrain the size of the
-result.
+Specifies the number of records to include in each page of the result set.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -177,21 +123,49 @@ import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
-const listProtectedData = await dataProtectorCore.getIApp({
-  owner: '0xa0c15e...',
-  createdAfterTimestamp: 1710257612, // March 12, 2024 15:33:32 GMT
+const iAppsPage = await dataProtectorCore.getIApp({
   page: 1,
-  pageSize: 100, // [!code focus]
+  pageSize: 50, // [!code focus]
 });
 ```
 
 ## Return Value
 
 ```ts twoslash
-import { type ProtectedData } from '@mage-sombre/iapp';
+import { type IApp } from '@mage-sombre/iapp';
 ```
 
-See [`ProtectedData`](/references/iapp-generator/sdk/types#protecteddata)
+The method returns an array of `IApp` objects containing the following fields:
+
+### name
+
+`string`
+
+The name of the iApp.
+
+### address
+
+`Address`
+
+The Ethereum address of the iApp.
+
+### owner
+
+`Address`
+
+The Ethereum address of the iApp owner.
+
+### creationTimestamp
+
+`number`
+
+The Unix timestamp (in seconds) when the iApp was created.
+
+### multiaddr
+
+`string` (optional)
+
+The multiaddress for P2P communication with the iApp.
 
 <script setup>
 import OptionalBadge from '@/components/OptionalBadge.vue'
