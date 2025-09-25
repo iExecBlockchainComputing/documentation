@@ -1,22 +1,22 @@
 ---
 title: transferOwnership
 description:
-  Transfer ownership of protected data to a new owner with iExec's
-  transferOwnership method. Securely update data ownership and automatically
+  Transfer ownership of an iApp to a new owner with iExec's
+  transferOwnership method. Securely update iApp ownership and automatically
   revoke previous access permissions.
 ---
 
 # transferOwnership
 
-Allows transferring ownership of a `protectedData` entity to a new owner,
+Allows transferring ownership of an `iApp` entity to a new owner,
 identified by their ETH address. The return value provides a transaction hash
-and confirmation of the new owner of the `protectedData`. Only the current owner
-of the `protectedData` may invoke this method.
+and confirmation of the new owner of the `iApp`. Only the current owner
+of the `iApp` may invoke this method.
 
-When transferring the `protectedData`, the grantedAccess created by the previous
+When transferring the `iApp`, the grantedAccess created by the previous
 owner are revoked automatically.
 
-Ownership of the `protectedData` can be renounced by transferring it to the burn
+Ownership of the `iApp` can be renounced by transferring it to the burn
 address `0x000000000000000000000000000000000000dEaD`.
 
 ## Usage
@@ -28,7 +28,7 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const transferResponse = await dataProtectorCore.transferOwnership({
-  protectedData: '0x123abc...',
+  iapp: '0x123abc...',
   newOwner: '0xc5e9f4...',
 });
 ```
@@ -39,11 +39,11 @@ const transferResponse = await dataProtectorCore.transferOwnership({
 import { type TransferParams } from '@mage-sombre/iapp';
 ```
 
-### protectedData <RequiredBadge />
+### iapp <RequiredBadge />
 
 **Type:** `AddressOrENS`
 
-ETH address of the `protectedData` owned by you which is to be transferred to a
+ETH address of the `iApp` owned by you which is to be transferred to a
 new owner.
 
 ```ts twoslash
@@ -53,7 +53,7 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const transferResponse = await dataProtectorCore.transferOwnership({
-  protectedData: '0x123abc...', // [!code focus]
+  iapp: '0x123abc...', // [!code focus]
   newOwner: '0xc5e9f4...',
 });
 ```
@@ -62,7 +62,7 @@ const transferResponse = await dataProtectorCore.transferOwnership({
 
 **Type:** `AddressOrENS`
 
-ETH address for the new owner for the `protectedData`.
+ETH address for the new owner for the `iApp`.
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
@@ -71,7 +71,7 @@ const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const transferResponse = await dataProtectorCore.transferOwnership({
-  protectedData: '0x123abc...',
+  iapp: '0x123abc...',
   newOwner: '0xc5e9f4...', // [!code focus]
 });
 ```
@@ -89,13 +89,13 @@ objects contain the three fields:
 
 `Address`
 
-The ETH address of the `protectedData` you transferred.
+The ETH address of the `iApp` you transferred.
 
 ### to
 
 `AddressOrENS`
 
-The ETH address of the new owner of the `protectedData`.
+The ETH address of the new owner of the `iApp`.
 
 ### txHash
 

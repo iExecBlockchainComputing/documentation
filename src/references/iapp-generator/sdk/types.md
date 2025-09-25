@@ -1,13 +1,13 @@
 ---
 title: Types
 description:
-  Complete reference for iApp types including GrantedAccess,
-  ProtectedData, Collection, and other essential data structures.
+  Complete reference for iApp Generator SDK types including GrantedAccess,
+  IApp and other essential data structures.
 ---
 
 # Types
 
-Types in DataProtector.
+Types in iApp Generator SDK.
 
 ## 🔑 GrantedAccess
 
@@ -30,18 +30,18 @@ Types in DataProtector.
 
 ### tag: <span class="text-yellow">`string`</span>
 
-- Defines whether a `protectedData` is usable in a TEE environment; `0x00` is
+- Defines whether an `iApp` is usable in a TEE environment; `0x00` is
   TEE while `0x03` is non-TEE
 
 ### datasetrestrict: <span class="text-yellow">`string`</span>
 
 - Address of the authorized protected data; a value of 0x0 indicates any
-  protected data may run with this iapp
+  protected data may run with this iApp
 
 ### requesterrestrict: <span class="text-yellow">`string`</span>
 
-- Address of the requester authorized to run this `iapp` in workloads;
-  a value of 0x0 indicates any requester may use this data
+- Address of the requester authorized to run this `iApp` in workloads;
+  a value of 0x0 indicates any requester may use this iApp
 
 ### workerpoolrestrict: <span class="text-yellow">`string`</span>
 
