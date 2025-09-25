@@ -13,10 +13,10 @@ Method to get the result of a completed task.
 ## Usage
 
 ```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const completedTaskResult = await dataProtectorCore.getResultFromCompletedTask({
   taskId: '0x7ac398...',
@@ -26,7 +26,7 @@ const completedTaskResult = await dataProtectorCore.getResultFromCompletedTask({
 ## Parameters
 
 ```ts twoslash
-import { type GetResultFromCompletedTaskParams } from '@iexec/dataprotector';
+import { type GetResultFromCompletedTaskParams } from '@mage-sombre/iapp';
 ```
 
 ### taskId <RequiredBadge />
@@ -36,10 +36,10 @@ import { type GetResultFromCompletedTaskParams } from '@iexec/dataprotector';
 Address of the task ID data you'd like to get the result from.
 
 ```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const completedTaskResult = await dataProtectorCore.getResultFromCompletedTask({
   taskId: '0x7ac398...', // [!code focus]
@@ -55,10 +55,10 @@ can specify the file you're interested in. The zip file will be uncompressed for
 you, and only the desired file will be given as the `result`.
 
 ```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const completedTaskResult = await dataProtectorCore.getResultFromCompletedTask({
   taskId: '0x7ac398...',
@@ -77,10 +77,10 @@ It needs to be the private key corresponding to the public key initially used to
 encrypt the protected data.
 
 ```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const completedTaskResult = await dataProtectorCore.getResultFromCompletedTask({
   taskId: '0x7ac398...',
@@ -97,12 +97,12 @@ Callback function to be notified at intermediate steps.
 <!-- prettier-ignore-start -->
 ```ts twoslash
 import {
-  IExecDataProtectorCore,
+  IExecIApp,
   getWeb3Provider,
-} from '@iexec/dataprotector';
+} from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+const dataProtectorCore = new IExecIApp(web3Provider);
 // ---cut---
 const completedTaskResult =
   await dataProtectorCore.getResultFromCompletedTask({
@@ -126,7 +126,7 @@ Once with `isDone: false`, and then with `isDone: true`
 ## Return Value
 
 ```ts twoslash
-import { type GetResultFromCompletedTaskResponse } from '@iexec/dataprotector';
+import { type GetResultFromCompletedTaskResponse } from '@mage-sombre/iapp';
 ```
 
 ### result
