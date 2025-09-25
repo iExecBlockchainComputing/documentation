@@ -16,9 +16,9 @@ Method to get the result of a completed task.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const completedTaskResult = await dataProtectorCore.getResultFromCompletedTask({
+const completedTaskResult = await iapp.getResultFromCompletedTask({
   taskId: '0x7ac398...',
 });
 ```
@@ -39,9 +39,9 @@ Address of the task ID data you'd like to get the result from.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const completedTaskResult = await dataProtectorCore.getResultFromCompletedTask({
+const completedTaskResult = await iapp.getResultFromCompletedTask({
   taskId: '0x7ac398...', // [!code focus]
 });
 ```
@@ -58,9 +58,9 @@ you, and only the desired file will be given as the `result`.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const completedTaskResult = await dataProtectorCore.getResultFromCompletedTask({
+const completedTaskResult = await iapp.getResultFromCompletedTask({
   taskId: '0x7ac398...',
   path: 'content', // [!code focus]
 });
@@ -80,9 +80,9 @@ encrypt the protected data.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const completedTaskResult = await dataProtectorCore.getResultFromCompletedTask({
+const completedTaskResult = await iapp.getResultFromCompletedTask({
   taskId: '0x7ac398...',
   pemPrivateKey: '-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----', // [!code focus]
 });
@@ -102,10 +102,10 @@ import {
 } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
 const completedTaskResult =
-  await dataProtectorCore.getResultFromCompletedTask({
+  await iapp.getResultFromCompletedTask({
     taskId: '0x7ac398...',
     onStatusUpdate: ({ title, isDone }) => { // [!code focus]
       console.log(title, isDone); // [!code focus]

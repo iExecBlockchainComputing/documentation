@@ -27,9 +27,9 @@ method.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const revokeAccess = await dataProtectorCore.revokeOneAccess({
+const revokeAccess = await iapp.revokeOneAccess({
   app: '0xea...',
   appprice: '0',
   volume: '1',
@@ -60,9 +60,9 @@ This is the complete `granted access` object retrieved from an invocation of
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const revokeAccess = await dataProtectorCore.revokeOneAccess({
+const revokeAccess = await iapp.revokeOneAccess({
   app: '0xea...', // [!code focus]
   appprice: '0', // [!code focus]
   volume: '1', // [!code focus]

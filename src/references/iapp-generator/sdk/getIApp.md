@@ -25,9 +25,9 @@ The method returns iApp metadata including name, address, owner, and creation ti
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const listIApps = await dataProtectorCore.getIApp({
+const listIApps = await iapp.getIApp({
   owner: '0xa0c15e...',
   createdAfterTimestamp: 1640995200,
   page: 1,
@@ -52,9 +52,9 @@ Returns an empty array if the iApp is not found.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const oneIApp = await dataProtectorCore.getIApp({
+const oneIApp = await iapp.getIApp({
   iapp: '0x123abc...', // [!code focus]
 });
 ```
@@ -69,9 +69,9 @@ Returns all iApps owned by this address.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const iAppsByOwner = await dataProtectorCore.getIApp({
+const iAppsByOwner = await iapp.getIApp({
   owner: '0xa0c15e...', // [!code focus]
 });
 ### createdAfterTimestamp <OptionalBadge />
@@ -84,9 +84,9 @@ Returns all iApps created after this timestamp (Unix timestamp in seconds).
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const recentIApps = await dataProtectorCore.getIApp({
+const recentIApps = await iapp.getIApp({
   createdAfterTimestamp: 1640995200, // [!code focus]
 });
 ```
@@ -102,9 +102,9 @@ Specifies the page number of the result set to return. Pages are zero-based inde
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const iAppsPage = await dataProtectorCore.getIApp({
+const iAppsPage = await iapp.getIApp({
   page: 1, // [!code focus]
   pageSize: 20,
 });
@@ -121,9 +121,9 @@ Specifies the number of records to include in each page of the result set.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const iAppsPage = await dataProtectorCore.getIApp({
+const iAppsPage = await iapp.getIApp({
   page: 1,
   pageSize: 50, // [!code focus]
 });

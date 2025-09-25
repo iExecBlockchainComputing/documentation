@@ -19,9 +19,9 @@ protected data (or a designated list of protected data).
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const grantedAccess = await dataProtectorCore.grantAccess({
+const grantedAccess = await iapp.grantAccess({
   iapp: '0x123abc...',
   authorizedProtectedData: '0x456def...',
   authorizedUser: '0x789cba...',
@@ -49,9 +49,9 @@ The ethereum address of the iApp you wish to grant access to. **You must own thi
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const grantedAccess = await dataProtectorCore.grantAccess({
+const grantedAccess = await iapp.grantAccess({
   iapp: '0x123abc...', // [!code focus]
   authorizedProtectedData: '0x456def...',
   authorizedUser: '0x789cba...',
@@ -75,9 +75,9 @@ access for the `protectedData` each time you do so.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const grantedAccess = await dataProtectorCore.grantAccess({
+const grantedAccess = await iapp.grantAccess({
   iapp: '0x123abc...',
   authorizedProtectedData: '0x456def...', // [!code focus]
   authorizedUser: '0x789cba...',
@@ -110,9 +110,9 @@ permission for the user to submit the protected data to the iApp.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const grantedAccess = await dataProtectorCore.grantAccess({
+const grantedAccess = await iapp.grantAccess({
   iapp: '0x123abc...',
   authorizedProtectedData: '0x456def...',
   authorizedUser: '0x789cba...', // [!code focus]
@@ -146,9 +146,9 @@ The fee is paid to the owner of the iApp.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const grantedAccess = await dataProtectorCore.grantAccess({
+const grantedAccess = await iapp.grantAccess({
   iapp: '0x123abc...',
   authorizedProtectedData: '0x456def...',
   authorizedUser: '0x789cba...',
@@ -191,9 +191,9 @@ the `grantAccess` method.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const grantedAccess = await dataProtectorCore.grantAccess({
+const grantedAccess = await iapp.grantAccess({
   iapp: '0x123abc...',
   authorizedProtectedData: '0x456def...',
   authorizedUser: '0x789cba...',
@@ -213,9 +213,9 @@ Callback function to be notified at intermediate steps.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const grantedAccess = await dataProtectorCore.grantAccess({
+const grantedAccess = await iapp.grantAccess({
   protectedData: '0x123abc...',
   authorizedApp: '0x456def...',
   authorizedUser: '0x789cba...',

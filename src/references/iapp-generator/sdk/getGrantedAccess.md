@@ -22,9 +22,9 @@ the object is a string representation of an ethereum address or ENS name
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const listGrantedAccess = await dataProtectorCore.getGrantedAccess({
+const listGrantedAccess = await iapp.getGrantedAccess({
   iapp: '0x123abc...',
   authorizedProtectedData: '0x456def...',
   authorizedUser: '0x789cba...',
@@ -54,9 +54,9 @@ access for any iApp.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const listGrantedAccess = await dataProtectorCore.getGrantedAccess({
+const listGrantedAccess = await iapp.getGrantedAccess({
   iapp: '0x123abc...', // [!code focus]
 });
 ```
@@ -76,9 +76,9 @@ access for any protected data.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const listGrantedAccess = await dataProtectorCore.getGrantedAccess({
+const listGrantedAccess = await iapp.getGrantedAccess({
   authorizedProtectedData: '0x456def...', // [!code focus]
 });
 ```
@@ -110,9 +110,9 @@ access for any user.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const listGrantedAccess = await dataProtectorCore.getGrantedAccess({
+const listGrantedAccess = await iapp.getGrantedAccess({
   authorizedUser: '0x789cba...', // [!code focus]
 });
 ```
@@ -129,10 +129,10 @@ specified user. Authorizations made for `any` user are not returned.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
 
-const listGrantedAccess = await dataProtectorCore.getGrantedAccess({
+const listGrantedAccess = await iapp.getGrantedAccess({
   iapp: '0x123abc...',
   authorizedProtectedData: '0x456def...',
   authorizedUser: '0x789cba...',
@@ -157,9 +157,9 @@ first page (page 0) containing `20` elements.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const listGrantedAccess = await dataProtectorCore.getGrantedAccess({
+const listGrantedAccess = await iapp.getGrantedAccess({
   iapp: '0x123abc...',
   page: 1, // [!code focus]
   pageSize: 100,
@@ -182,9 +182,9 @@ each page.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const listGrantedAccess = await dataProtectorCore.getGrantedAccess({
+const listGrantedAccess = await iapp.getGrantedAccess({
   iapp: '0x123abc...',
   page: 1,
   pageSize: 100, // [!code focus]

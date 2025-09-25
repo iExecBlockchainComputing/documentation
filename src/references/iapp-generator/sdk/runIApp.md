@@ -22,9 +22,9 @@ Allows executing an iApp with optional protected data processing.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const runIAppResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
   protectedData: '0x123abc...',
   args: 'arg1 arg2',
@@ -55,9 +55,9 @@ The address or ENS of the iApp to execute.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const runIAppResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...', // [!code focus]
   protectedData: '0x123abc...',
 });
@@ -73,9 +73,9 @@ The address or ENS of the authorized protected data that the iApp will process.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const runIAppResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
   protectedData: '0x123abc...', // [!code focus]
 });
@@ -92,9 +92,9 @@ The maximum price of dataset per task for processing the protected data.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const runIAppResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
   protectedData: '0x123abc...',
   dataMaxPrice: 10, // [!code focus]
@@ -112,9 +112,9 @@ The maximum price of application per task for processing the protected data.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const runIAppResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
   protectedData: '0x123abc...',
   appMaxPrice: 5, // [!code focus]
@@ -132,9 +132,9 @@ The maximum price of workerpool per task for processing the protected data.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const runIAppResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
   protectedData: '0x123abc...',
   workerpoolMaxPrice: 2, // [!code focus]
@@ -151,9 +151,9 @@ The file name of the desired file in the returned ZIP file.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const runIAppResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
   protectedData: '0x123abc...',
   path: 'my-content', // [!code focus]
@@ -170,9 +170,9 @@ Arguments to pass to the application during execution.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const runIAppResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
   protectedData: '0x123abc...',
   args: 'arg1 arg2', // [!code focus]
@@ -189,9 +189,9 @@ The input file required for the application's execution (direct download URL).
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const runIAppResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
   protectedData: '0x123abc...',
   inputFiles: ['https://example.com/file1', 'https://example.com/file2'], // [!code focus]
@@ -209,9 +209,9 @@ It is represented as a mapping of numerical identifiers to corresponding secrets
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const runIAppResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
   protectedData: '0x123abc...',
   secrets: { // [!code focus]
@@ -231,9 +231,9 @@ Address or ENS of the smart contract to be called back once the task is complete
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const runIAppResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
   protectedData: '0x123abc...',
   callbackContract: '0x789ghi...', // [!code focus]
@@ -250,9 +250,9 @@ The workerpool to use for the application's execution. (default iExec production
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const runIAppResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
   protectedData: '0x123abc...',
   workerpool: '0xabc123...', // [!code focus]
@@ -269,9 +269,9 @@ A boolean that indicates whether to use a voucher or no.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const runIAppResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
   protectedData: '0x123abc...',
   useVoucher: true, // [!code focus]
@@ -288,9 +288,9 @@ Override the voucher contract to use, must be combined with useVoucher: true the
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const runIAppResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
   protectedData: '0x123abc...',
   useVoucher: true,
@@ -308,9 +308,9 @@ Callback function to be notified at intermediate steps.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const runIAppResponse = await dataProtectorCore.runIApp({
+const runIAppResponse = await iapp.runIApp({
   iapp: '0x456def...',
   protectedData: '0x123abc...',
   onStatusUpdate: ({ title, isDone }) => { // [!code focus]

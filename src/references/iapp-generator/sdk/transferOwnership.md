@@ -25,9 +25,9 @@ address `0x000000000000000000000000000000000000dEaD`.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const transferResponse = await dataProtectorCore.transferOwnership({
+const transferResponse = await iapp.transferOwnership({
   iapp: '0x123abc...',
   newOwner: '0xc5e9f4...',
 });
@@ -50,9 +50,9 @@ new owner.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const transferResponse = await dataProtectorCore.transferOwnership({
+const transferResponse = await iapp.transferOwnership({
   iapp: '0x123abc...', // [!code focus]
   newOwner: '0xc5e9f4...',
 });
@@ -68,9 +68,9 @@ ETH address for the new owner for the `iApp`.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const transferResponse = await dataProtectorCore.transferOwnership({
+const transferResponse = await iapp.transferOwnership({
   iapp: '0x123abc...',
   newOwner: '0xc5e9f4...', // [!code focus]
 });

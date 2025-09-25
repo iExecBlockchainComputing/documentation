@@ -27,9 +27,9 @@ all done.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const revokeAllAccessResult = await dataProtectorCore.revokeAllAccess({
+const revokeAllAccessResult = await iapp.revokeAllAccess({
   iapp: '0x123abc...',
   authorizedProtectedData: '0x456def...',
   authorizedUser: '0x789cba...',
@@ -52,9 +52,9 @@ The address of the `iApp` subject to access revocation.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const revokeAllAccessResult = await dataProtectorCore.revokeAllAccess({
+const revokeAllAccessResult = await iapp.revokeAllAccess({
   iapp: '0x123abc...', // [!code focus]
 });
 ```
@@ -71,9 +71,9 @@ from the iApp, regardless of the protected data.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const revokeAllAccessResult = await dataProtectorCore.revokeAllAccess({
+const revokeAllAccessResult = await iapp.revokeAllAccess({
   iapp: '0x123abc...',
   authorizedProtectedData: '0x456def...', // [!code focus]
   authorizedUser: '0x789cba...',
@@ -92,9 +92,9 @@ iApp, regardless of the authorized user.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const revokeAllAccessResult = await dataProtectorCore.revokeAllAccess({
+const revokeAllAccessResult = await iapp.revokeAllAccess({
   iapp: '0x123abc...',
   authorizedProtectedData: '0x456def...',
   authorizedUser: '0x789cba...', // [!code focus]
@@ -112,9 +112,9 @@ Callback function to be notified at intermediate steps.
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecIApp(web3Provider);
+const iapp = new IExecIApp(web3Provider);
 // ---cut---
-const revokeAllAccessResult = await dataProtectorCore.revokeAllAccess({
+const revokeAllAccessResult = await iapp.revokeAllAccess({
   iapp: '0x123abc...',
   authorizedProtectedData: '0x456def...',
   authorizedUser: '0x789cba...',
