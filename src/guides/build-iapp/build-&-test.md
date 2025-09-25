@@ -30,7 +30,7 @@ iApp Generator handles all the low-level complexity for you.
 ## Prerequisites
 
 Before getting started, make sure you have the required tools installed. See the
-[iApp Generator Getting Started guide](/references/iapp-generator/getting-started)
+[iApp Generator Getting Started guide](/references/iapp-generator/cli/getting-started)
 for detailed prerequisites and installation instructions.
 
 ## Quick Start

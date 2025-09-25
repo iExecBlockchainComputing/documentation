@@ -447,19 +447,33 @@ export function getSidebar() {
             link: '/references/iapp-generator/getting-started',
           },
           {
-            text: 'Building your iApp',
-            link: '/references/iapp-generator/building-your-iexec-app',
-          },
-          {
-            text: 'Deserialize ProtectedData',
-            link: '/references/iapp-generator/deserializer',
+            text: 'CLI',
             collapsed: true,
             items: [
               {
-                text: 'getValue',
-                link: '/references/iapp-generator/deserializer/getValue',
+                text: 'Getting Started',
+                link: '/references/iapp-generator/cli/getting-started',
+              },
+              {
+                text: 'Building your iApp',
+                link: '/references/iapp-generator/cli/building-your-iexec-app',
+              },
+              {
+                text: 'Deserialize ProtectedData',
+                link: '/references/iapp-generator/cli/deserializer',
+                collapsed: true,
+                items: [
+                  {
+                    text: 'getValue',
+                    link: '/references/iapp-generator/cli/deserializer/getValue',
+                  },
+                ],
               },
             ],
+          },
+          {
+            text: 'SDK',
+            link: '/references/iapp-generator/sdk',
           },
         ],
       },
