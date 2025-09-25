@@ -22,8 +22,11 @@ Types in DataProtector.
 
 ### volume: <span class="text-yellow">`string`</span>
 
-- Number of authorized uses of this `protectedData`; each use decrements this
-  counter
+- Total number of authorized accesses for processing a Protected Data when the access was signed and published
+
+### remainingAccess: <span class="text-yellow">`number`</span>
+
+- Number of remaining authorized accesses for processing a protected data; each use decrements this counter
 
 ### tag: <span class="text-yellow">`string`</span>
 
@@ -120,6 +123,3 @@ You can read more about the
 <!-- prettier-ignore-start -->
 _Hash example:_ `0xc9c2d58fc01fe54149b7daf49a0026d4ab1fdd3d10fb7c76350790fff03fe24d`
 <!-- prettier-ignore-end -->
-
-You can read more about the [iExec Explorer]
-(/get-started/tooling-and-explorers/iexec-explorer).
