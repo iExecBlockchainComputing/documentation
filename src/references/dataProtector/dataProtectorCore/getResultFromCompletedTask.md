@@ -135,10 +135,7 @@ import { type GetResultFromCompletedTaskResponse } from '@iexec/dataprotector';
 
 The actual content of the protected file.
 
-```
-
 <script setup>
 import RequiredBadge from '@/components/RequiredBadge.vue'
 import OptionalBadge from '@/components/OptionalBadge.vue'
 </script>
-```
