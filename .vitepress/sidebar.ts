@@ -443,17 +443,69 @@ export function getSidebar() {
             link: '/references/iapp-generator/getting-started',
           },
           {
-            text: 'Building your iApp',
-            link: '/references/iapp-generator/building-your-iexec-app',
-          },
-          {
-            text: 'Deserialize ProtectedData',
-            link: '/references/iapp-generator/deserializer',
+            text: 'CLI',
             collapsed: true,
             items: [
               {
-                text: 'getValue',
-                link: '/references/iapp-generator/deserializer/getValue',
+                text: 'Getting Started',
+                link: '/references/iapp-generator/cli/getting-started',
+              },
+              {
+                text: 'Building your iApp',
+                link: '/references/iapp-generator/cli/building-your-iexec-app',
+              },
+              {
+                text: 'Deserialize ProtectedData',
+                link: '/references/iapp-generator/cli/deserializer',
+                collapsed: true,
+                items: [
+                  {
+                    text: 'getValue',
+                    link: '/references/iapp-generator/cli/deserializer/getValue',
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            text: 'SDK',
+            collapsed: true,
+            items: [
+              {
+                text: 'getIApp',
+                link: '/references/iapp-generator/sdk/getIApp',
+              },
+              {
+                text: 'transferOwnership',
+                link: '/references/iapp-generator/sdk/transferOwnership',
+              },
+              {
+                text: 'grantAccess',
+                link: '/references/iapp-generator/sdk/grantAccess',
+              },
+              {
+                text: 'getGrantedAccess',
+                link: '/references/iapp-generator/sdk/getGrantedAccess',
+              },
+              {
+                text: 'revokeOneAccess',
+                link: '/references/iapp-generator/sdk/revokeOneAccess',
+              },
+              {
+                text: 'revokeAllAccess',
+                link: '/references/iapp-generator/sdk/revokeAllAccess',
+              },
+              {
+                text: 'runIApp',
+                link: '/references/iapp-generator/sdk/runIApp',
+              },
+              {
+                text: 'getResultFromCompletedTask',
+                link: '/references/iapp-generator/sdk/getResultFromCompletedTask',
+              },
+              {
+                text: 'Types',
+                link: '/references/iapp-generator/sdk/types',
               },
             ],
           },

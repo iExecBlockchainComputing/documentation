@@ -32,9 +32,9 @@ Start here to understand what iApp are and how they work:
 
 - **[iApp](/get-started/overview/privacy-iapp)** - Core concepts and TEE
   overview
-- **[Getting Started](/references/iapp-generator/getting-started)** - Your first
-  iApp in 15 minutes
-- **[Building Your iApp](/references/iapp-generator/building-your-iexec-app)** -
+- **[Getting Started](/references/iapp-generator/cli/getting-started)** - Your
+  first iApp in 15 minutes
+- **[Building Your iApp](/references/iapp-generator/cli/building-your-iexec-app)** -
   Complete development guide
 
 ### 2. **Master the Development Workflow**
@@ -87,7 +87,7 @@ applications:
 
 ::: tip Quick Path
 
-1. **[Getting Started](/references/iapp-generator/getting-started)** - Build
+1. **[Getting Started](/references/iapp-generator/cli/getting-started)** - Build
    your first iApp (15 minutes)
 2. **[Inputs](/guides/build-iapp/inputs)** - Handle data inputs
 3. **[Outputs](/guides/build-iapp/outputs)** - Handle data outputs properly

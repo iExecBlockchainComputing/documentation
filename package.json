@@ -15,6 +15,7 @@
     "@iexec/dataprotector-deserializer": "^0.1.1",
     "@iexec/web3mail": "^1.5.0",
     "@iexec/web3telegram": "^0.1.0-alpha.4",
+    "@mage-sombre/iapp": "^1.0.0-beta.2",
     "@reown/appkit": "^1.7.17",
     "@reown/appkit-adapter-wagmi": "^1.7.17",
     "@tailwindcss/vite": "^4.1.11",

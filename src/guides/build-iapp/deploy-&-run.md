@@ -74,7 +74,7 @@ The iApp Generator CLI provides a streamlined way to execute iApp, especially
 for developers who have built their own iApp.
 
 > **Note**: For installation instructions, see the
-> [iApp Generator Getting Started guide](/references/iapp-generator/getting-started).
+> [iApp Generator Getting Started guide](/references/iapp-generator/cli/getting-started).
 
 <template v-if="selectedChain === 42161">
   <CLIDemo
