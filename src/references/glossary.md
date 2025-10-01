@@ -245,14 +245,6 @@ See [Deal](#deal) and [PoCo](#poco-proof-of-contribution) for more information.
 
 ## O
 
-### Oilers
-
-A term of affection used to designate the iExec community. Oilers are said to be
-holding "digital oil". This term could also be in reference to the iExec
-whitepaper that states: " iExec introduces a new paradigm in cloud computing: it
-will allow the trading of computing resources as commodities; in the same way
-markets may observe with resources such as oil, gold or rice."
-
 ### Oracle
 
 Data feeds that connect the off-chain world to blockchain products. Oracles act
@@ -423,14 +415,6 @@ building (your computer) can be accessed by many people, but the vault (TEE) has
 special security measures that keep its contents completely private and secure.
 
 ## W
-
-### Whitepaper
-
-Explain the purpose and technology behind a project. Producing a whitepaper is a
-key step for a crypto startup to help investors understand technical information
-about its concept; whitepaper usually include a roadmap for how the project
-plans to grow and succeed. iExec's whitepaper is available at
-[iEx.ec/whitepaper](https://www.iex.ec/whitepaper)
 
 ### Workers
 
