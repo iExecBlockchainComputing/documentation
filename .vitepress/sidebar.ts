@@ -197,12 +197,8 @@ export function getSidebar() {
             link: '/guides/use-iapp/how-to-pay-executions',
           },
           {
-            text: 'Run iApp with ProtectedData',
-            link: '/guides/use-iapp/run-iapp-with-ProtectedData',
-          },
-          {
-            text: 'Run iApp without ProtectedData',
-            link: '/guides/use-iapp/run-iapp-without-ProtectedData',
+            text: 'Run iApp',
+            link: '/guides/use-iapp/run-iapp',
           },
           {
             text: 'Integrate Web3 Messaging',
