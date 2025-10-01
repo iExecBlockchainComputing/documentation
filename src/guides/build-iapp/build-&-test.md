@@ -164,8 +164,7 @@ The CLI will build a Docker image, run your app, and show you the results:
 
 ## Next Steps
 
-- When everything is ready
-  [deploy and run your iApp](/guides/use-iapp/run-iapp-with-ProtectedData)
+- When everything is ready [deploy and run your iApp](/guides/use-iapp/run-iapp)
 
 <script setup>
 import CLIDemo from '@/components/CLIDemo.vue';

@@ -54,9 +54,8 @@ await iexec.account.deposit(1_000_000_000); // Deposit 1 RLC
 ```
 
 Now you are ready to run a task on the iExec Protocol and pay for it. See our
-guide on
-[running iApp with ProtectedData](/guides/use-iapp/run-iapp-with-ProtectedData.md)
-for detailed execution steps.
+guide on [running iApp](/guides/use-iapp/run-iapp.md) for detailed execution
+steps.
 
 ## Paying with Vouchers <ChainNotSupportedBadge />
 
@@ -231,10 +230,7 @@ parameters is 0, which means only free resources are accepted.
 
 Now that you understand payment methods:
 
-- Learn about
-  [Run iApp with ProtectedData](/guides/use-iapp/run-iapp-with-ProtectedData)
-- Learn about
-  [Run iApp without ProtectedData](/guides/use-iapp/run-iapp-without-ProtectedData)
+- Learn about [Run iApp](/guides/use-iapp/run-iapp)
 
 <script setup>
 import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
