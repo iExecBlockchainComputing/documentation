@@ -17,13 +17,18 @@ Types in DataProtector.
 
 ### datasetprice: <span class="text-yellow">`string`</span>
 
-- Price (in nRLC) to charge the user specified in `requesterrestrict` for each
-  use of this `protectedData`
+- Total number of authorized accesses for processing a Protected Data when the
+  access was signed and published
 
 ### volume: <span class="text-yellow">`string`</span>
 
 - Total number of authorized accesses for processing a Protected Data when the
   access was signed and published
+
+### remainingAccess: <span class="text-yellow">`number`</span>
+
+- Number of remaining authorized accesses for processing a protected data; each
+  use decrements this counter
 
 ### remainingAccess: <span class="text-yellow">`number`</span>
 

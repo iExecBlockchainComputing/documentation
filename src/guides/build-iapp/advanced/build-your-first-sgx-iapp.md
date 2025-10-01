@@ -277,6 +277,7 @@ docker run -it --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
             registry.scontain.com/scone-production/iexec-sconify-image:5.9.1-v16\
             sconify_iexec \
+            --scone-signer=/sig/enclave-key.pem \
             --from=${IMG_FROM} \
             --to=${IMG_TO} \
             --binary-fs \

@@ -428,10 +428,6 @@ export function getSidebar() {
               },
             ],
           },
-          {
-            text: 'Migrate from v1 to v2',
-            link: '/references/dataProtector/migrate-from-v1',
-          },
         ],
       },
       {
