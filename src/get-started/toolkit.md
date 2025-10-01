@@ -24,7 +24,7 @@ just a few commands, let free your imagination.
 ### Get Started
 
 Jump right into building with our comprehensive guide:
-[Building Your iApp →](/references/iapp-generator/building-your-iexec-app.md)
+[Building Your iApp →](/references/iapp-generator/cli/building-your-iexec-app.md)
 
 ## DataProtector-SDK
 
