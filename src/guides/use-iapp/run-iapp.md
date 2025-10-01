@@ -45,9 +45,9 @@ const result = await iappGenerator.runIApp({
 });
 ```
 
-The `runIApp` function will automatically download and decrypt the
-results for you. Nevertheless, if you want to retrieve results from a completed
-task, you can do so as follows:
+The `runIApp` function will automatically download and decrypt the results for
+you. Nevertheless, if you want to retrieve results from a completed task, you
+can do so as follows:
 
 ```ts twoslash
 import { IExecIApp, getWeb3Provider } from '@mage-sombre/iapp';
