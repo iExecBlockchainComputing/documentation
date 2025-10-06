@@ -384,7 +384,7 @@ App Secrets are different from Requester Secrets:
 
 App Secrets are configured in your `iapp.config.json` during development and
 automatically deployed with your iApp. For deployment details, see the
-[Build Your iApp guide](/references/iapp-generator/building-your-iexec-app).
+[Build Your iApp guide](/references/iapp-generator/cli/building-your-iexec-app).
 
 #### Configuration in iapp.config.json
 
