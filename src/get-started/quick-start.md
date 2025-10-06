@@ -32,23 +32,25 @@ privacy-first applications.
     title="React Starter"
     description="React application template with hooks, components, and utilities for seamless iExec integration."
     icon="logos:react"
-    status="coming-soon"
-    statusLabel="Coming Soon"
-    buttonLabel="Coming Soon"
+    status="available"
+    statusLabel="Available"
+    buttonLabel="Get Started"
     buttonIcon="mdi:github"
-    buttonDisabled
+    buttonHref="https://github.com/iExecBlockchainComputing/iexec-react-starter"
   />
 
 <ProjectCard
     title="Vue.js Starter"
     description="Vue 3 Composition API template with TypeScript and optimized build configuration for iExec apps."
     icon="logos:vue"
-    status="coming-soon"
-    statusLabel="Coming Soon"
-    buttonLabel="Coming Soon"
+    status="available"
+    statusLabel="Available"
+    buttonLabel="Get Started"
     buttonIcon="mdi:github"
-    buttonDisabled
-  /> </CardGrid>
+    buttonHref="https://github.com/iExecBlockchainComputing/iexec-vuejs-starter"
+  />
+
+</CardGrid>
 
 ## Interactive Sandboxes
 
