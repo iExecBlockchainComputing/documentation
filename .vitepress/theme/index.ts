@@ -14,6 +14,16 @@ import { wagmiAdapter } from '@/utils/wagmiConfig';
 import ChainSelector from '@/components/ChainSelector.vue';
 import './style.css';
 
+declare global {
+  interface Window {
+    dataLayer: any[];
+    axeptioSettings: {
+      clientId: string;
+      cookiesVersion: string;
+    };
+  }
+}
+
 export default {
   extends: DefaultTheme,
   Layout,
@@ -33,5 +43,32 @@ export default {
     googleAnalytics({
       id: 'GTM-P7KSD4T',
     });
+
+    if (typeof window !== 'undefined') {
+      // Ensure dataLayer exists
+      window.dataLayer = window.dataLayer || [];
+
+      // Define a map of event types and their corresponding actions
+      const eventMap = {
+        connectWallet: 'hw_connectWallet',
+        protectData: 'hw_protectData',
+        grantAccess: 'hw_grantAccess',
+        claimVoucher: 'hw_claimVoucher',
+      };
+
+      // Add a global click listener
+      document.addEventListener('click', (event) => {
+        if (event.target instanceof Element) {
+          // Iterate through eventMap to check which event matches
+          Object.keys(eventMap).forEach((key) => {
+            if ((event.target as Element).matches(`[data-track="${key}"]`)) {
+              window.dataLayer.push({
+                event: eventMap[key],
+              });
+            }
+          });
+        }
+      });
+    }
   },
 } satisfies Theme;
