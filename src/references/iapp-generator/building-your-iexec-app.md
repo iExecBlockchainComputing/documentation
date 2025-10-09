@@ -187,7 +187,7 @@ templates through interactive prompts.
 
 ### `iapp mock <inputType>`
 
-**Purpose**: Create a mocked input for test  
+**Purpose**: Create a mocked input for testing  
 **Usage**: `iapp mock <inputType> [options]`  
 **Positional arguments**:
 
