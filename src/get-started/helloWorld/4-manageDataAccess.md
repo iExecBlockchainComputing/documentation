@@ -114,7 +114,7 @@ But here's where it gets even more exciting... **monetization!**.
 
 Our SDK offers flexible **monetization mechanisms**, allowing you to monetize
 your protected data. For more technical details, see the guide
-[Monetize you Protected Data](/guides/manage-data-monetize-protected-data).
+[Monetize your Protected Data](/guides/manage-data/monetize-protected-data).
 
 <Container variant="success">
 
