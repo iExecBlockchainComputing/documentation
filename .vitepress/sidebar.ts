@@ -222,7 +222,7 @@ export function getSidebar() {
             link: '/references/dataProtector/getting-started',
           },
           {
-            text: 'DataProtector Core',
+            text: 'Methods',
             link: '/references/dataProtector/methods',
             collapsed: true,
             items: [
