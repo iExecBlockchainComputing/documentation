@@ -71,16 +71,6 @@ learning and prototyping.
 />
 
 <ProjectCard
-  title="DataProtector Sharing"
-  description="Advanced data sharing capabilities with granular permissions and monetization features."
-  icon="mdi:share-variant"
-  status="interactive"
-  statusLabel="Interactive"
-  buttonLabel="Open Sandbox"
-  buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sharing-sandbox/main"
-/>
-
-<ProjectCard
   title="Web3 Telegram"
   description="Privacy-preserving Telegram messaging integration with user consent management."
   icon="mdi:message-lock"

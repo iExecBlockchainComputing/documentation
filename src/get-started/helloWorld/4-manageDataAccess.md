@@ -112,21 +112,9 @@ users and iApp, and **process it safely**.
 
 But here's where it gets even more exciting... **monetization!**.
 
-Our SDK offers flexible **monetization mechanisms**, allowing you to create
-**protected data collections** and implement advanced models like
-**subscriptions**, **rentals**, or **direct sales**. The choice is yours!
-
-Want to see it in action? Check out our
-[Content Creator Demo](https://demo.iex.ec/content-creator/) where you can:
-
-- Create and protect your own content
-- Set pricing and access rules
-- Manage subscriptions and rentals
-- Track your earnings
-
-For more technical details, see the
-[DataProtector Sharing](/references/dataProtector/dataProtectorSharing)
-documentation.
+Our SDK offers flexible **monetization mechanisms**, allowing you to monetize
+your protected data. For more technical details, see the guide
+[Monetize you Protected Data](/guides/manage-data-monetize-protected-data).
 
 <Container variant="success">
 

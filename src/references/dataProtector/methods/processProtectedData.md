@@ -15,8 +15,7 @@ application.
 >
 > You must ensure this application has authorization to use the `protectedData`.
 > You may grant this permission using the
-> [`grantAccess`](/references/dataProtector/dataProtectorCore/grantAccess)
-> method.
+> [`grantAccess`](/references/dataProtector/methods/grantAccess) method.
 
 ## Usage
 
@@ -466,7 +465,7 @@ protocol. You can monitor task execution using the
 ::: tip
 
 The
-[getResultFromCompletedTask()](/references/dataProtector/dataProtectorCore/getResultFromCompletedTask)
+[getResultFromCompletedTask()](/references/dataProtector/methods/getResultFromCompletedTask)
 function allows you to retrieve the result of a completed task using its
 `taskId`.
 

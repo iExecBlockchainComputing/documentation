@@ -197,12 +197,10 @@ get a "no dataset orders" error. Set this high enough for your use case.
 steps:
 
 - **Process the data**: Use
-  [processProtectedData](/references/dataProtector/dataProtectorCore/processProtectedData)
+  [processProtectedData](/references/dataProtector/methods/processProtectedData)
   to run computations
-- **Manage access**:
-  [Revoke](/references/dataProtector/dataProtectorCore/revokeOneAccess) or
-  [modify permissions](/references/dataProtector/dataProtectorCore/grantAccess)
-  anytime
+- **Manage access**: [Revoke](/references/dataProtector/methods/revokeOneAccess)
+  or [modify permissions](/references/dataProtector/methods/grantAccess) anytime
 - **Learn data types**: Deep dive into
   [schemas and dataset types](/guides/manage-data/handle-schemas-dataset-types)
 - **Monetize data**: Explore

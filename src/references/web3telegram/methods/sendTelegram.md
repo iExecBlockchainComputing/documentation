@@ -16,7 +16,7 @@ permission must be granted for the `Web3Telegram` tool to use the
 `protectedData` entity containing their chat ID. This is best done by granting
 authorization to the Web3Telegram app whitelist `{{web3TelegramAppWhitelist}}`
 as `authorizedApp`. Refer to the
-[Data Protector `grantAccess`](/references/dataProtector/dataProtectorCore/grantAccess)
+[Data Protector `grantAccess`](/references/dataProtector/methods/grantAccess)
 documentation for more details.
 
 ::: tip

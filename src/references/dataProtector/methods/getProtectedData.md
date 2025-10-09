@@ -100,7 +100,7 @@ const listProtectedData = await dataProtectorCore.getProtectedData({
 <!-- prettier-ignore-end -->
 
 Available types are listed
-[here](/references/dataProtector/dataProtectorCore/protectData#schema).
+[here](/references/dataProtector/methods/protectData#schema).
 
 ### owner <OptionalBadge />
 

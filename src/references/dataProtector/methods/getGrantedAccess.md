@@ -86,8 +86,8 @@ const listGrantedAccess = await dataProtectorCore.getGrantedAccess({
 ::: tip
 
 If you specified an application whitelist when using
-[`grantAccess`](/references/dataProtector/dataProtectorCore/grantAccess), you
-must specify that same whitelist address when using this filtering option. The
+[`grantAccess`](/references/dataProtector/methods/grantAccess), you must specify
+that same whitelist address when using this filtering option. The
 `getGrantedAccess` method does not check against whitelist smart contracts when
 aggregating results. If you granted authorization to a whitelist but specify an
 application address for the `authorizedApp` parameter, you will not receive any
