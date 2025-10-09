@@ -17,38 +17,39 @@ Bootstrap your project with our framework-specific templates and start building
 privacy-first applications.
 
 <CardGrid>
-  <ProjectCard
-    title="Next.js Starter"
-    description="Full-featured Next.js template with Reown integration, TypeScript support, and seamless iExec connectivity."
-    icon="logos:nextjs-icon"
-    status="available"
-    statusLabel="Available"
-    buttonLabel="Get Started"
-    buttonIcon="mdi:github"
-    buttonHref="https://github.com/iExecBlockchainComputing/iexec-nextjs-starter"
-  />
 
 <ProjectCard
-    title="React Starter"
-    description="React starter template with Privy SDK for seamless iExec wallet integration."
-    icon="logos:react"
-    status="available"
-    statusLabel="Available"
-    buttonLabel="Get Started"
-    buttonIcon="mdi:github"
-    buttonHref="https://github.com/iExecBlockchainComputing/iexec-react-starter"
-  />
+  title="Next.js Starter"
+  description="Full-featured Next.js template with Reown integration, TypeScript support, and seamless iExec connectivity."
+  icon="logos:nextjs-icon"
+  status="available"
+  statusLabel="Available"
+  buttonLabel="Get Started"
+  buttonIcon="mdi:github"
+  buttonHref="https://github.com/iExecBlockchainComputing/iexec-nextjs-starter"
+/>
 
 <ProjectCard
-    title="Vue.js Starter"
-    description="Vue 3 starter template  with TypeScript and Reown integration for iExec apps."
-    icon="logos:vue"
-    status="available"
-    statusLabel="Available"
-    buttonLabel="Get Started"
-    buttonIcon="mdi:github"
-    buttonHref="https://github.com/iExecBlockchainComputing/iexec-vuejs-starter"
-  />
+  title="React Starter"
+  description="React starter template with Privy SDK for seamless iExec wallet integration."
+  icon="logos:react"
+  status="available"
+  statusLabel="Available"
+  buttonLabel="Get Started"
+  buttonIcon="mdi:github"
+  buttonHref="https://github.com/iExecBlockchainComputing/iexec-react-starter"
+/>
+
+<ProjectCard
+  title="Vue.js Starter"
+  description="Vue 3 starter template  with TypeScript and Reown integration for iExec apps."
+  icon="logos:vue"
+  status="available"
+  statusLabel="Available"
+  buttonLabel="Get Started"
+  buttonIcon="mdi:github"
+  buttonHref="https://github.com/iExecBlockchainComputing/iexec-vuejs-starter"
+/>
 
 </CardGrid>
 
