@@ -332,8 +332,20 @@ html {
   @apply scroll-smooth;
 }
 
+.VPDocAside {
+  @apply h-full;
+}
+
 .aside .aside-container {
   @apply overflow-visible;
+}
+
+.aside .aside-container .aside-content {
+  @apply h-[calc(100%+32px)];
+}
+
+.VPDocAsideOutline.has-outline {
+  @apply overflow-y-auto pb-8;
 }
 
 html.dark .light-only {
