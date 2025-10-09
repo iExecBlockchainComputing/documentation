@@ -150,7 +150,7 @@ templates through interactive prompts.
 **Options**:
 
 - `--chain <string>` – Specify the blockchain network for deployment (e.g.,
-  `goerli`, `mainnet`)
+  `arbitrum-mainnet`, `bellecour`)
 
 ### `iapp run <iAppAddress>`
 
@@ -170,7 +170,7 @@ templates through interactive prompts.
 - `--requesterSecret <array>` – Key-value requester secrets (`index=value`)
   available inside the iApp at `$IEXEC_REQUESTER_SECRET_*`
 - `--chain <string>` – Specify the blockchain network to run the iApp on (e.g.,
-  `goerli`, `mainnet`)
+  `arbitrum-mainnet`, `bellecour`)
 
 ### `iapp debug <taskId>`
 
@@ -183,7 +183,7 @@ templates through interactive prompts.
 **Options**:
 
 - `--chain <string>` – Specify the blockchain network of the task (e.g.,
-  `goerli`, `mainnet`)
+  `arbitrum-mainnet`, `bellecour`)
 
 ### `iapp mock <inputType>`
 
@@ -191,7 +191,7 @@ templates through interactive prompts.
 **Usage**: `iapp mock <inputType> [options]`  
 **Positional arguments**:
 
-- `<inputType>` – Type of input to mock [required] [choices: "protectedData"]
+- `<inputType>` – Type of input to mock [choices: "protectedData"]
 
 ### `iapp wallet <action>`
 
@@ -199,8 +199,8 @@ templates through interactive prompts.
 **Usage**: `iapp wallet <action> [options]`  
 **Positional arguments**:
 
-- `<action>` – Import a new wallet or select one from the keystore [required]
-  [choices: "import", "select"]
+- `<action>` – Import a new wallet or select one from the keystore [choices:
+  "import", "select"]
 
 ## Advanced Options <ChainNotSupportedBadge />
 
