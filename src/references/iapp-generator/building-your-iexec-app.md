@@ -124,7 +124,7 @@ algorithms and data processing here.
 ### `iapp init`
 
 **Purpose**: Initialize a new iApp project  
-**Usage**: `iapp init [options]`  
+**Usage**: `iapp init`  
 **What it does**: Creates project structure, configuration files, and basic
 templates through interactive prompts.
 
@@ -187,18 +187,11 @@ templates through interactive prompts.
 
 ### `iapp mock <inputType>`
 
-**Purpose**: Create mocked input for testing purposes  
+**Purpose**: Create a mocked input for test  
 **Usage**: `iapp mock <inputType> [options]`  
 **Positional arguments**:
 
-- `<inputType>` – Type of input to mock (e.g., `default`, `custom`)
-
-**Options**:
-
-- `--args <string>` – Arguments to use in the mock data
-- `--protectedData <string>` – Protected data mock name to use
-- `--inputFile <string>` – Input files to mock
-- `--requesterSecret <array>` – Requester secrets to mock
+- `<inputType>` – Type of input to mock [required] [choices: "protectedData"]
 
 ### `iapp wallet <action>`
 
@@ -206,13 +199,8 @@ templates through interactive prompts.
 **Usage**: `iapp wallet <action> [options]`  
 **Positional arguments**:
 
-- `<action>` – Wallet action to perform (e.g., `balance`, `address`, `sign`)
-
-**Options**:
-
-- `--chain <string>` – Specify the blockchain network (e.g., `goerli`,
-  `mainnet`)
-- `--data <string>` – Data to sign (for `sign` action)
+- `<action>` – Import a new wallet or select one from the keystore [required]
+  [choices: "import", "select"]
 
 ## Advanced Options <ChainNotSupportedBadge />
 
