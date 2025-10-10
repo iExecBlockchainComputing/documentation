@@ -14,16 +14,6 @@ technologies.
 <div class="space-y-8">
 
 <UseCaseCard
-  title="Content Creator"
-  description="A comprehensive demo showcasing iExec's DataProtector Sharing module. Experience privacy-first data sharing where content creators can securely share their work while maintaining full control over access permissions and monetization."
-  :imageUrl="contentCreatorImage"
-  imageAlt="Content Creator Demo Screenshot"
-  :features="['DataProtector Core', 'DataProtector Sharing']"
-  demoUrl="https://demo.iex.ec/content-creator/"
-  githubUrl="https://github.com/iExecBlockchainComputing/content-creator-usecase-demo"
-/>
-
-<UseCaseCard
   title="Web3 Messaging"
   description="Secure communication platform for Web3 users enabling privacy-preserving messaging through Web3Mail and Web3Telegram. Users maintain control over their data while enabling targeted communication and monetizing their engagement."
   :imageUrl="web3MessagingImage"

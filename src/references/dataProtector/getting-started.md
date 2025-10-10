@@ -52,53 +52,6 @@ minimal working project
 
 ### Instantiate SDK
 
-Depending on your project's requirements, you can instantiate the SDK using the
-umbrella module for full functionality or opt for one of the submodules to
-access specific sets of features.
-
-#### Instantiate Using the Umbrella Module
-
-For projects requiring the full functionality of the SDK, including both core
-and sharing functions.
-
-::: code-group
-
-```ts twoslash [Browser]
-declare global {
-  interface Window {
-    ethereum: any;
-  }
-}
-// ---cut---
-import { IExecDataProtector } from '@iexec/dataprotector';
-
-const web3Provider = window.ethereum;
-// Instantiate using the umbrella module for full functionality
-const dataProtector = new IExecDataProtector(web3Provider);
-
-const dataProtectorCore = dataProtector.core;
-const dataProtectorSharing = dataProtector.sharing;
-```
-
-```ts twoslash [NodeJS]
-import { IExecDataProtector, getWeb3Provider } from '@iexec/dataprotector';
-
-// Get Web3 provider from a private key
-const web3Provider = getWeb3Provider('YOUR_PRIVATE_KEY');
-
-// Instantiate using the umbrella module for full functionality
-const dataProtector = new IExecDataProtector(web3Provider);
-
-const dataProtectorCore = dataProtector.core; // access to core methods
-const dataProtectorSharing = dataProtector.sharing; // access to methods
-```
-
-:::
-
-#### Instantiate Only the `Core` Module
-
-For projects focusing solely on core data protection functions.
-
 ::: code-group
 
 ```ts twoslash [Browser]
@@ -121,43 +74,8 @@ import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 // Get Web3 provider from a private key
 const web3Provider = getWeb3Provider('YOUR_PRIVATE_KEY');
 
-// Instantiate only the Core module
+// Instantiate the Core module
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-```
-
-:::
-
-#### Instantiate Only the `Sharing` Module
-
-For projects that need access management functions specifically.
-
-::: code-group
-
-```ts twoslash [Browser]
-declare global {
-  interface Window {
-    ethereum: any;
-  }
-}
-// ---cut---
-import { IExecDataProtectorSharing } from '@iexec/dataprotector';
-
-const web3Provider = window.ethereum;
-// Instantiate only the Sharing module
-const dataProtectorSharing = new IExecDataProtectorSharing(web3Provider);
-```
-
-```ts twoslash [NodeJS]
-import {
-  IExecDataProtectorSharing,
-  getWeb3Provider,
-} from '@iexec/dataprotector';
-
-// Get Web3 provider from a private key
-const web3Provider = getWeb3Provider('YOUR_PRIVATE_KEY');
-
-// Instantiate only the Sharing module
-const dataProtectorSharing = new IExecDataProtectorSharing(web3Provider);
 ```
 
 :::
@@ -177,8 +95,6 @@ import {
 
 // Instantiate only the Core module for read-only core methods
 const dataProtectorCore = new IExecDataProtectorCore();
-// Instantiate only the Sharing module for read-only sharing methods
-const dataProtectorSharing = new IExecDataProtectorSharing();
 ```
 
 ```ts twoslash [Umbrella Module]
@@ -189,8 +105,6 @@ const dataProtector = new IExecDataProtector();
 
 // Access to read-only core methods
 const dataProtectorCore = dataProtector.core;
-// Access to read-only sharing methods
-const dataProtectorSharing = dataProtector.sharing;
 ```
 
 :::
@@ -198,7 +112,7 @@ const dataProtectorSharing = dataProtector.sharing;
 #### Advanced Configuration
 
 To add optional parameters, see
-[advanced configuration](/references/dataProtector/advanced/advanced-configuration).
+[advanced configuration](/references/dataProtector/advanced-configuration).
 
 ::: info
 
@@ -208,9 +122,7 @@ protected data in the experimental **intel TDX** environment.
 
 For more details see:
 
-- [configure DataProtector TDX](/references/dataProtector/advanced/advanced-configuration#iexecoptions)
-- [create TDX protected data](/references/dataProtector/dataProtectorCore/protectData#usage)
-- [process TDX protected data](/references/dataProtector/dataProtectorCore/processProtectedData#workerpool)
+- [process TDX protected data](/references/dataProtector/methods/processProtectedData#workerpool)
 
 ⚠️ Keep in mind: TDX mode is experimental and can be subject to instabilities or
 discontinuity.
@@ -230,18 +142,6 @@ discontinuity.
   buttonLabel="Open Sandbox"
   buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main"
   githubUrl="https://github.com/iExecBlockchainComputing/dataprotector-sandbox"
-  githubLabel="Sandbox Github"
-/>
-
-<ProjectCard
-  title="DataProtector Sharing"
-  description="Advanced data sharing capabilities with granular permissions and monetization features."
-  icon="mdi:share-variant"
-  status="interactive"
-  statusLabel="Interactive"
-  buttonLabel="Open Sandbox"
-  buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sharing-sandbox/main"
-  githubUrl="https://github.com/iExecBlockchainComputing/dataprotector-sharing-sandbox"
   githubLabel="Sandbox Github"
 />
 

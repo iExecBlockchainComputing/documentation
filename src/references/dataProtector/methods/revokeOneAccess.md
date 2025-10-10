@@ -20,8 +20,7 @@ As this will generate a blockchain transaction, expect it to take a least 5sec
 
 The `revokeOneAccess` method requires a `grantedAccess` object as an input
 parameter. This object is retrieved from the
-[`getGrantedAccess`](/references/dataProtector/dataProtectorCore/getGrantedAccess)
-method.
+[`getGrantedAccess`](/references/dataProtector/methods/getGrantedAccess) method.
 
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
