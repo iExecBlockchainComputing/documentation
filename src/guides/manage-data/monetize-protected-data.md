@@ -12,9 +12,16 @@ description:
 
 **Transform your encrypted data into a sustainable revenue stream.**
 
-iExec DataProtector enables you to monetize your protected data through **signed orders** - a flexible system that lets you specify exact conditions for data access. Whether you're a data provider, researcher, or business owner, you can generate income from your valuable datasets while maintaining complete privacy and control.
+iExec DataProtector enables you to monetize your protected data through **signed
+orders** - a flexible system that lets you specify exact conditions for data
+access. Whether you're a data provider, researcher, or business owner, you can
+generate income from your valuable datasets while maintaining complete privacy
+and control.
 
-**How it works**: You create and publish signed orders that define who can access your data, how much they pay per use, and how many times they can access it. Users pay automatically each time they process your data, giving you precise control over monetization.
+**How it works**: You create and publish signed orders that define who can
+access your data, how much they pay per use, and how many times they can access
+it. Users pay automatically each time they process your data, giving you precise
+control over monetization.
 
 ## 📝 Signed Orders (DataProtector Core)
 
