@@ -41,24 +41,6 @@ const dataProtector = new IExecDataProtector(web3Provider, {
 });
 ```
 
-### sharingContractAddress
-
-`AddressOrENS`
-
-The Ethereum contract address or ENS (Ethereum Name Service) for dataProtector
-sharing smart contract. If not provided, the default dataProtector sharing
-contract address will be used.
-
-```ts twoslash
-import { IExecDataProtector, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-// ---cut---
-const dataProtector = new IExecDataProtector(web3Provider, {
-  sharingContractAddress: '0x123abc...', // [!code focus]
-});
-```
-
 ### subgraphUrl
 
 `string`

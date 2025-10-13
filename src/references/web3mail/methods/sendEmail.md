@@ -16,7 +16,7 @@ permission must be granted for the `Web3Mail` tool to use the `protectedData`
 entity containing their email address. This is best done by granting
 authorization to the Web3Mail app whitelist `{{web3MailAppWhitelist}}` as
 `authorizedApp`. Refer to the
-[Data Protector `grantAccess`](/references/dataProtector/dataProtectorCore/grantAccess)
+[Data Protector `grantAccess`](/references/dataProtector/methods/grantAccess)
 documentation for more details.
 
 ::: tip

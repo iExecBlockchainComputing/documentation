@@ -274,7 +274,7 @@ explore next:
   [iApp Generator guide](/references/iapp-generator) to create your first data
   processor
 - **Process data**: Learn about
-  [processProtectedData](/references/dataProtector/dataProtectorCore/processProtectedData)
+  [processProtectedData](/references/dataProtector/methods/processProtectedData)
   for running computations
 - **See it in action**: Try our [Hello World tutorial](/get-started/helloWorld)
   for a complete example
