@@ -88,10 +88,7 @@ without a Web3 provider.
 ::: code-group
 
 ```ts twoslash [Singleton Modules]
-import {
-  IExecDataProtectorSharing,
-  IExecDataProtectorCore,
-} from '@iexec/dataprotector';
+import { IExecDataProtectorCore } from '@iexec/dataprotector';
 
 // Instantiate only the Core module for read-only core methods
 const dataProtectorCore = new IExecDataProtectorCore();
