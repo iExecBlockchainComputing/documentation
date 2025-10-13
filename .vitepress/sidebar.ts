@@ -222,7 +222,6 @@ export function getSidebar() {
           },
           {
             text: 'Methods',
-            link: '/references/dataProtector/methods',
             collapsed: true,
             items: [
               {
