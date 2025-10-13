@@ -215,7 +215,6 @@ export function getSidebar() {
       {
         text: '🔐 DataProtector',
         link: '/references/dataProtector',
-        collapsed: true,
         items: [
           {
             text: 'Getting Started',
