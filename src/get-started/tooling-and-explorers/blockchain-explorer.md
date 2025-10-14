@@ -7,7 +7,7 @@ description:
 
 # 🔍 Blockchain Explorers
 
-Monitor iExec protocol smart contracts on both supported networks through
+Monitor iExec protocol smart contracts on all supported networks through
 verified blockchain explorers. All protocol contracts have been verified and are
 publicly auditable.
 
@@ -26,6 +26,17 @@ publicly auditable.
   />
   
   <UseCaseCard
+    title="🔷 Arbitrum Sepolia"
+    description="Test network for development and testing with verified smart contracts and comprehensive transaction tracking."
+    :image-url="arbitrumExplorerImage"
+    image-alt="Arbitrum Sepolia Explorer"
+    :features="['Verified Contracts', 'Transaction History', 'Token Tracking', 'Contract Interactions']"
+    demo-url="https://sepolia.arbiscan.io/"
+    demo-icon="mdi:eye"
+    demo-label="Visit Arbiscan"
+  />
+  
+  <UseCaseCard
     title="⚡ Bellecour"
     description="iExec's dedicated sidechain for optimized performance with native integration and enhanced protocol analytics."
     :image-url="bellecourExplorerImage"
@@ -39,8 +50,8 @@ publicly auditable.
 
 ::: tip 💡 Dev Tip
 
-Use **Bellecour** for development and testing as it's a gas-free blockchain,
-then deploy to **Arbitrum** for production workloads.
+Use **Arbitrum Sepolia** for development and testing then deploy to **Arbitrum**
+for production workloads.
 
 :::
 
