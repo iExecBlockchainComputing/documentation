@@ -2,7 +2,8 @@
 title: The Graph Explorer
 description:
   Explore and query blockchain data using The Graph's decentralized indexing
-  protocol. Access iExec subgraphs on Arbitrum and Bellecour networks.
+  protocol. Access iExec subgraphs on Arbitrum, Arbitrum Sepolia, and Bellecour
+  networks.
 ---
 
 # 🔍 The Graph Explorer
@@ -67,6 +68,28 @@ protocol.
   status-label="Live"
   button-label="Explore Subgraph"
   button-href="https://thegraph.com/explorer/subgraphs/Ep5zs5zVr4tDiVuQJepUu51e5eWYJpka624X4DMBxe3u?view=Query&chain=arbitrum-one"
+  button-rel="noreferrer"
+/>
+
+<ProjectCard
+  title="iExec PoCo - Arbitrum Sepolia"
+  description="Indexes Proof of Contribution (PoCo) data on Arbitrum Sepolia testnet, including apps, deals, tasks and workerpools"
+  :icon-image="arbitrumIcon"
+  status="available"
+  status-label="Live"
+  button-label="Explore Subgraph"
+  button-href="https://thegraph.com/explorer/subgraphs/2GCj8gzLCihsiEDq8cYvC5nUgK6VfwZ6hm3Wj8A3kcxz?view=Query&chain=arbitrum-one"
+  button-rel="noreferrer"
+/>
+
+<ProjectCard
+  title="iExec DataProtector - Arbitrum Sepolia"
+  description="Comprehensive indexing service for iExec DataProtector on Arbitrum Sepolia testnet, tracking protected data assets, their schemas and owner"
+  :icon-image="arbitrumIcon"
+  status="available"
+  status-label="Live"
+  button-label="Explore Subgraph"
+  button-href="https://thegraph.com/explorer/subgraphs/5YjRPLtjS6GH6bB4yY55Qg4HzwtRGQ8TaHtGf9UBWWd?view=Query&chain=arbitrum-one"
   button-rel="noreferrer"
 />
 

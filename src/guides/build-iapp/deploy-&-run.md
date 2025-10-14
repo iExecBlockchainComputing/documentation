@@ -31,7 +31,7 @@ specify your app version, and push both standard and TEE-compatible images:
 
 <template v-else-if="selectedChain === 421614">
   <CLIDemo
-    initialCommand="iapp deploy --chain arbitrum-sepolia"
+    initialCommand="iapp deploy --chain arbitrum-sepolia-testnet"
     asciiText="Deploy"
     :steps="arbitrumSepoliaSteps"
     :completionStep="15"
@@ -104,7 +104,7 @@ for developers who have built their own iApp.
 
 <template v-else-if="selectedChain === 421614">
   <CLIDemo
-    initialCommand="iapp run 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923 --chain arbitrum-sepolia"
+    initialCommand="iapp run 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923 --chain arbitrum-sepolia-testnet"
     asciiText="Execute"
     :steps="arbitrumSepoliaRunSteps"
     :completionStep="16"
@@ -523,7 +523,7 @@ const bellecourRunCompletionItems = [
 const arbitrumSepoliaSteps = [
   {
     showAt: 2,
-    question: 'Using chain arbitrum-sepolia',
+    question: 'Using chain arbitrum-sepolia-testnet',
     answer: '',
     showTyping: false,
     isComplete: true
@@ -609,7 +609,7 @@ const arbitrumSepoliaCompletionItems = [
 const arbitrumSepoliaRunSteps = [
   {
     showAt: 2,
-    question: 'Using chain arbitrum-sepolia',
+    question: 'Using chain arbitrum-sepolia-testnet',
     answer: '',
     showTyping: false,
     isComplete: true
