@@ -59,7 +59,7 @@ contract IExecCallbackReceiver {
 
 ::: tip Important
 
-The callback transaction is subject to a gas limit of 200 000.  
+The callback transaction is subject to a maximum gas limit of 200,000 enforced by the protocol.  
 Ensure your callback logic fits within this limit to avoid out-of-gas errors.
 
 :::
