@@ -672,7 +672,7 @@ const arbitrumSepoliaRunSteps = [
   {
     showAt: 11,
     completeAt: 13,
-    question:'Would you like to download the result ?',
+    question:'Would you like to download the result?',
     answer: 'Yes',
     options: [
       { label: 'Yes', selected: true },
