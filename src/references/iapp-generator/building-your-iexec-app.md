@@ -150,7 +150,7 @@ templates through interactive prompts.
 **Options**:
 
 - `--chain <string>` – Specify the blockchain network for deployment (e.g.,
-  `arbitrum-mainnet`, `bellecour`)
+  `arbitrum-mainnet`, `arbitrum-sepolia-testnet`, `bellecour`)
 
 ### `iapp run <iAppAddress>`
 
@@ -170,7 +170,7 @@ templates through interactive prompts.
 - `--requesterSecret <array>` – Key-value requester secrets (`index=value`)
   available inside the iApp at `$IEXEC_REQUESTER_SECRET_*`
 - `--chain <string>` – Specify the blockchain network to run the iApp on (e.g.,
-  `arbitrum-mainnet`, `bellecour`)
+  `arbitrum-mainnet`, `arbitrum-sepolia-testnet`, `bellecour`)
 
 ### `iapp debug <taskId>`
 
@@ -183,7 +183,7 @@ templates through interactive prompts.
 **Options**:
 
 - `--chain <string>` – Specify the blockchain network of the task (e.g.,
-  `arbitrum-mainnet`, `bellecour`)
+  `arbitrum-mainnet`, `arbitrum-sepolia-testnet`, `bellecour`)
 
 ### `iapp mock <inputType>`
 

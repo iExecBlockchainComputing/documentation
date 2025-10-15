@@ -5,9 +5,9 @@ import useUserStore from '@/stores/useUser.store';
 
 const userStore = useUserStore();
 
-// Check if Arbitrum is selected (Arbitrum chain ID is 42161)
+// Check if Arbitrum or Arbitrum Sepolia is selected (chain IDs are 42161 and 421614)
 const isArbitrumSelected = computed(() => {
-  return userStore.chainId === 42161;
+  return userStore.chainId === 42161 || userStore.chainId === 421614;
 });
 
 // Only show the badge when Arbitrum is selected
