@@ -93,7 +93,7 @@ export function getSidebar() {
             link: '/get-started/tooling-and-explorers/bridge',
           },
           {
-            text: 'RLCFaucet',
+            text: 'RLC Faucet',
             link: '/get-started/tooling-and-explorers/faucet',
           },
           {
