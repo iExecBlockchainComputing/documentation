@@ -93,6 +93,10 @@ export function getSidebar() {
             link: '/get-started/tooling-and-explorers/bridge',
           },
           {
+            text: 'RLCFaucet',
+            link: '/get-started/tooling-and-explorers/faucet',
+          },
+          {
             text: 'Subgraph Explorer',
             link: '/get-started/tooling-and-explorers/subgraph-explorer',
           },
