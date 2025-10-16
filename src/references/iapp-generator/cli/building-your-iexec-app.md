@@ -10,7 +10,7 @@ description:
 ::: tip 📋 Prerequisites
 
 Before building your iApp, make sure you have the required tools installed. See
-the [Getting Started guide](/references/iapp-generator/getting-started) for
+the [Getting Started guide](/references/iapp-generator/cli/getting-started) for
 detailed prerequisites and installation instructions.
 
 :::

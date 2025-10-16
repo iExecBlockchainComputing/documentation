@@ -22,8 +22,13 @@ Types in DataProtector.
 
 ### volume: <span class="text-yellow">`string`</span>
 
-- Number of authorized uses of this `protectedData`; each use decrements this
-  counter
+- Total number of authorized accesses for processing a Protected Data when the
+  access was signed and published
+
+### remainingAccess: <span class="text-yellow">`number`</span>
+
+- Number of remaining authorized accesses for processing a protected data; each
+  use decrements this counter
 
 ### remainingAccess: <span class="text-yellow">`number`</span>
 

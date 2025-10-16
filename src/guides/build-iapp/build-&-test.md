@@ -30,7 +30,7 @@ iApp Generator handles all the low-level complexity for you.
 ## Prerequisites
 
 Before getting started, make sure you have the required tools installed. See the
-[iApp Generator Getting Started guide](/references/iapp-generator/getting-started)
+[iApp Generator Getting Started guide](/references/iapp-generator/cli/getting-started)
 for detailed prerequisites and installation instructions.
 
 ## Quick Start
@@ -164,8 +164,7 @@ The CLI will build a Docker image, run your app, and show you the results:
 
 ## Next Steps
 
-- When everything is ready
-  [deploy and run your iApp](/guides/use-iapp/run-iapp-with-ProtectedData)
+- When everything is ready [deploy and run your iApp](/guides/use-iapp/run-iapp)
 
 <script setup>
 import CLIDemo from '@/components/CLIDemo.vue';

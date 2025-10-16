@@ -71,9 +71,8 @@ the Build iApp section.
 
 For step-by-step instructions, check out these guides:
 
-- **[Run iApp without ProtectedData](/guides/use-iapp/run-iapp-without-ProtectedData)** -
-  iExec CLI, lib, and other execution methods
-- **[Run iApp with ProtectedData](/guides/use-iapp/run-iapp-with-ProtectedData)** -
-  How to provide data and parameters to iApp
+- **[Run iApp](/guides/use-iapp/run-iapp)** - Learn how to run an iApp with
+  various input types including protected data, arguments, input files, and
+  secrets
 - **[How to Pay for Executions](/guides/use-iapp/how-to-pay-executions)** -
   Understanding costs and payment options
