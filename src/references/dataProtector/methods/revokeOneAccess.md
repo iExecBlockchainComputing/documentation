@@ -38,6 +38,7 @@ const revokeAccess = await dataProtectorCore.revokeOneAccess({
   tag: '0x0000000000000000000000000000000000000000000000000000000000000003',
   volume: '1',
   workerpoolrestrict: '0x000...',
+  remainingAccess: 1,
 });
 ```
 
@@ -70,6 +71,7 @@ const revokeAccess = await dataProtectorCore.revokeOneAccess({
   tag: '0x0000000000000000000000000000000000000000000000000000000000000003', // [!code focus]
   volume: '1', // [!code focus]
   workerpoolrestrict: '0x000...', // [!code focus]
+  remainingAccess: 1, // [!code focus]
 });
 ```
 

@@ -41,7 +41,7 @@ Community</a>** for support!
 
 </Container>
 
-<template v-if="selectedChain !== 42161">
+<template v-if="selectedChain !== 42161 && selectedChain !== 421614">
 
 ## 🎁 Claim your Voucher
 
