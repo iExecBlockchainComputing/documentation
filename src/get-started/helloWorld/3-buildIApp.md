@@ -20,7 +20,7 @@ create, test and deploy iApp with just a few commands.
 </Banner>
 
 If you wanna explore and deep dive in the command-line tool. You can check the
-[iApp Generator ](https://github.com/iExecBlockchainComputing/iapp/tree/main/cli)
+[iApp Generator](https://github.com/iExecBlockchainComputing/iapp/tree/main/cli)
 GitHub repository. Follow the instructions carefully for a smooth development
 experience.
 
@@ -400,6 +400,19 @@ If you set the wrong Docker username, you can change it by editing the
 <code>iapp.config.json</code> file
 
 :::
+
+### 💰 Getting RLC Tokens
+
+To deploy and run your iApp, you'll need RLC tokens to pay for:
+
+- **Workerpool execution costs** for running your iApp on decentralized compute resources
+- **Protected Data access fees** if your iApp requires confidential datasets (and you're not the data provider)
+- **iApp execution costs** if you're not the owner of the iApp you're running
+
+**Getting RLC tokens:**
+
+- **For Testing**: Get free RLC tokens on Arbitrum Sepolia testnet using the [iExec RLC Faucet](https://explorer.iex.ec/arbitrum-sepolia-testnet/faucet)
+- **For Production**: Purchase RLC from [exchanges](/get-started/overview/rlc) or bridge from Ethereum using the [RLC Bridge](/get-started/tooling-and-explorers/bridge)
 
 ## 🏃 Run your iApp
 

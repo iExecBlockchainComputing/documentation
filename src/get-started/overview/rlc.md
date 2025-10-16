@@ -111,7 +111,7 @@ You can acquire RLC tokens through several methods:
     title="Decentralized Exchanges"
     :features="[
       { text: 'ETH: RLC/ETH on Uniswap', link: 'https://app.uniswap.org/explore/pools/ethereum/0x56Ea002B411FD5887E55329852D5777EcB170713' },
-      'ARB: RLC/ETH (coming soon)',
+        { text: 'ARB: RLC/WETH on Uniswap', link: 'https://app.uniswap.org/explore/pools/arbitrum/0x0EB43B37539a4261Aa1860f9476094Bb2C00A894' },
       'High liquidity DEX trading'
     ]"
   />
@@ -119,8 +119,8 @@ You can acquire RLC tokens through several methods:
   <FeatureCard
     title="Cross-Chain Bridging"
     :features="[
-      'Bellecour Bridge',
-      'Stargate Bridge (Arbitrum)',
+      { text: 'Bellecour Bridge', link: 'https://bridge-bellecour.iex.ec/' },
+      { text: 'Stargate Bridge (Arbitrum)', link: 'https://stargate.finance/bridge' }
     ]"
   />
   

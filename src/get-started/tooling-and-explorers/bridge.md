@@ -14,6 +14,12 @@ the iExec confidential computing network.
 This guide helps you bridge RLC tokens to **Bellecour** (becoming xRLC) and
 **Arbitrum** networks using the Bellecour Bridge and Stargate Bridge.
 
+::: tip 🧪 Testing on Arbitrum Sepolia
+
+For development and testing purposes, you can get free RLC tokens on **Arbitrum Sepolia testnet** using the [iExec RLC Faucet](https://explorer.iex.ec/arbitrum-sepolia-testnet/faucet). This allows you to test your iApps, pay for workerpool executions, and access protected datasets without spending real tokens.
+
+:::
+
 ## 🗂️ Available Bridges
 
 iExec provides officially supported bridges for seamless token transfer across
