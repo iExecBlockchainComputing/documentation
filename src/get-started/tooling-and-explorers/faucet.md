@@ -7,24 +7,31 @@ description:
 
 # 🚰 RLC Faucet
 
-Get free RLC tokens on **Arbitrum Sepolia testnet** to test your iApps, pay for workerpool executions, and access protected datasets without spending real tokens.
+Get free RLC tokens on **Arbitrum Sepolia testnet** to test your iApps, pay for
+workerpool executions, and access protected datasets without spending real
+tokens.
 
 ## What are RLC Tokens Used For?
 
 In the iExec ecosystem, RLC tokens are used to pay for various services:
 
-- **Pay Workerpools** - Compensate computational resources for executing your iApps
-- **Pay Protected Data Providers** - Access and use protected datasets in your applications
-- **Pay iApp Providers** - Use decentralized applications deployed on the network
+- **Pay Workerpools** - Compensate computational resources for executing your
+  iApps
+- **Pay Protected Data Providers** - Access and use protected datasets in your
+  applications
+- **Pay iApp Providers** - Use decentralized applications deployed on the
+  network
 
-These testnet RLC tokens allow you to test all these payment flows without spending real tokens.
+These testnet RLC tokens allow you to test all these payment flows without
+spending real tokens.
 
 ## Eligibility Requirements
 
 To be eligible for RLC claims, builders must meet these criteria:
 
 - **GitHub or Google login** required for verification
-- **Maximum 1 RLC** in your wallet to claim (prevents abuse and ensures fair distribution)
+- **Maximum 1 RLC** in your wallet to claim (prevents abuse and ensures fair
+  distribution)
 - **One claim per 24 hours** per authenticated account
 
 ## 💰 Claim Details
@@ -48,7 +55,8 @@ To be eligible for RLC claims, builders must meet these criteria:
 
 ::: tip 💡 Development Workflow
 
-Use the RLC Faucet for development and testing, then bridge real RLC tokens when ready for production deployment on Arbitrum mainnet.
+Use the RLC Faucet for development and testing, then bridge real RLC tokens when
+ready for production deployment on Arbitrum mainnet.
 
 :::
 

@@ -12,17 +12,25 @@ to a supported network and then execute it.
 
 ## Prerequisites
 
-Before deploying and running your iApp, ensure you have sufficient RLC tokens to cover:
+Before deploying and running your iApp, ensure you have sufficient RLC tokens to
+cover:
 
-- **Workerpool execution costs** for running your iApp on decentralized compute resources
-- **Protected Data access fees** if your iApp requires confidential datasets (and you're not the data provider)
+- **Workerpool execution costs** for running your iApp on decentralized compute
+  resources
+- **Protected Data access fees** if your iApp requires confidential datasets
+  (and you're not the data provider)
 - **iApp execution costs** if you're not the owner of the iApp you're running
 
 **Getting RLC tokens:**
 
-- **Arbitrum Mainnet**: Purchase RLC from [exchanges](/get-started/overview/rlc) or bridge from Ethereum using the [RLC Bridge](/get-started/tooling-and-explorers/bridge)
-- **Arbitrum Sepolia Testnet**: Get free RLC tokens from the [iExec RLC Faucet](https://explorer.iex.ec/arbitrum-sepolia-testnet/faucet) for testing purposes
-- **Bellecour**: Bridge RLC from Ethereum using the [RLC Bridge](/get-started/tooling-and-explorers/bridge)
+- **Arbitrum Mainnet**: Purchase RLC from [exchanges](/get-started/overview/rlc)
+  or bridge from Ethereum using the
+  [RLC Bridge](/get-started/tooling-and-explorers/bridge)
+- **Arbitrum Sepolia Testnet**: Get free RLC tokens from the
+  [iExec RLC Faucet](https://explorer.iex.ec/arbitrum-sepolia-testnet/faucet)
+  for testing purposes
+- **Bellecour**: Bridge RLC from Ethereum using the
+  [RLC Bridge](/get-started/tooling-and-explorers/bridge)
 
 ## Deploy your iApp
 

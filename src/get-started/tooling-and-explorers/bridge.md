@@ -16,7 +16,11 @@ This guide helps you bridge RLC tokens to **Bellecour** (becoming xRLC) and
 
 ::: tip 🧪 Testing on Arbitrum Sepolia
 
-For development and testing purposes, you can get free RLC tokens on **Arbitrum Sepolia testnet** using the [iExec RLC Faucet](https://explorer.iex.ec/arbitrum-sepolia-testnet/faucet). This allows you to test your iApps, pay for workerpool executions, and access protected datasets without spending real tokens.
+For development and testing purposes, you can get free RLC tokens on **Arbitrum
+Sepolia testnet** using the
+[iExec RLC Faucet](https://explorer.iex.ec/arbitrum-sepolia-testnet/faucet).
+This allows you to test your iApps, pay for workerpool executions, and access
+protected datasets without spending real tokens.
 
 :::
 
