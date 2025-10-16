@@ -56,12 +56,6 @@ Telegram handles.
 [Github](https://github.com/iExecBlockchainComputing/web3telegram-sdk/tree/main/dapp)
 | [Documentation](/references/web3telegram)
 
-### 🌐 Content delivery
-
-Transfer, sell or rent protected content to authorized users.
-[Github](https://github.com/iExecBlockchainComputing/protected-data-delivery-dapp)
-| [Documentation](/references/dataProtector/dataProtectorSharing)
-
 ::: tip <i></i>
 
 These are just a few examples, the possibilities are endless. Want to explore

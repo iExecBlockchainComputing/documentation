@@ -211,187 +211,50 @@ export function getSidebar() {
       {
         text: '🔐 DataProtector',
         link: '/references/dataProtector',
-        collapsed: true,
         items: [
           {
             text: 'Getting Started',
             link: '/references/dataProtector/getting-started',
           },
           {
-            text: 'DataProtector Core',
-            link: '/references/dataProtector/dataProtectorCore',
+            text: 'Methods',
             collapsed: true,
             items: [
               {
                 text: 'protectData',
-                link: '/references/dataProtector/dataProtectorCore/protectData',
+                link: '/references/dataProtector/methods/protectData',
               },
               {
                 text: 'getProtectedData',
-                link: '/references/dataProtector/dataProtectorCore/getProtectedData',
+                link: '/references/dataProtector/methods/getProtectedData',
               },
               {
                 text: 'transferOwnership',
-                link: '/references/dataProtector/dataProtectorCore/transferOwnership',
+                link: '/references/dataProtector/methods/transferOwnership',
               },
               {
                 text: 'grantAccess',
-                link: '/references/dataProtector/dataProtectorCore/grantAccess',
+                link: '/references/dataProtector/methods/grantAccess',
               },
               {
                 text: 'getGrantedAccess',
-                link: '/references/dataProtector/dataProtectorCore/getGrantedAccess',
+                link: '/references/dataProtector/methods/getGrantedAccess',
               },
               {
                 text: 'revokeOneAccess',
-                link: '/references/dataProtector/dataProtectorCore/revokeOneAccess',
+                link: '/references/dataProtector/methods/revokeOneAccess',
               },
               {
                 text: 'revokeAllAccess',
-                link: '/references/dataProtector/dataProtectorCore/revokeAllAccess',
+                link: '/references/dataProtector/methods/revokeAllAccess',
               },
               {
                 text: 'processProtectedData',
-                link: '/references/dataProtector/dataProtectorCore/processProtectedData',
+                link: '/references/dataProtector/methods/processProtectedData',
               },
               {
                 text: 'getResultFromCompletedTask',
-                link: '/references/dataProtector/dataProtectorCore/getResultFromCompletedTask',
-              },
-            ],
-          },
-          {
-            text: 'DataProtector Sharing',
-            link: '/references/dataProtector/dataProtectorSharing',
-            collapsed: true,
-            items: [
-              {
-                text: 'Collection',
-                link: '/references/dataProtector/dataProtectorSharing/collection',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'createCollection',
-                    link: '/references/dataProtector/dataProtectorSharing/collection/createCollection',
-                  },
-                  {
-                    text: 'removeCollection',
-                    link: '/references/dataProtector/dataProtectorSharing/collection/removeCollection',
-                  },
-                  {
-                    text: 'addToCollection',
-                    link: '/references/dataProtector/dataProtectorSharing/collection/addToCollection',
-                  },
-                  {
-                    text: 'removeProtectedDataFromCollection',
-                    link: '/references/dataProtector/dataProtectorSharing/collection/removeProtectedDataFromCollection',
-                  },
-                ],
-              },
-              {
-                text: 'Renting',
-                link: '/references/dataProtector/dataProtectorSharing/renting',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'setProtectedDataToRenting',
-                    link: '/references/dataProtector/dataProtectorSharing/renting/setProtectedDataToRenting',
-                  },
-                  {
-                    text: 'setProtectedDataRentingParams',
-                    link: '/references/dataProtector/dataProtectorSharing/renting/setProtectedDataRentingParams',
-                  },
-                  {
-                    text: 'rentProtectedData',
-                    link: '/references/dataProtector/dataProtectorSharing/renting/rentProtectedData',
-                  },
-                  {
-                    text: 'removeProtectedDataFromRenting',
-                    link: '/references/dataProtector/dataProtectorSharing/renting/removeProtectedDataFromRenting',
-                  },
-                ],
-              },
-              {
-                text: 'Selling',
-                link: '/references/dataProtector/dataProtectorSharing/selling',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'setProtectedDataForSale',
-                    link: '/references/dataProtector/dataProtectorSharing/selling/setProtectedDataForSale',
-                  },
-                  {
-                    text: 'buyProtectedData',
-                    link: '/references/dataProtector/dataProtectorSharing/selling/buyProtectedData',
-                  },
-                  {
-                    text: 'removeProtectedDataForSale',
-                    link: '/references/dataProtector/dataProtectorSharing/selling/removeProtectedDataForSale',
-                  },
-                ],
-              },
-              {
-                text: 'Subscription',
-                link: '/references/dataProtector/dataProtectorSharing/subscription',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'setProtectedDataToSubscription',
-                    link: '/references/dataProtector/dataProtectorSharing/subscription/setProtectedDataToSubscription',
-                  },
-                  {
-                    text: 'setSubscriptionParams',
-                    link: '/references/dataProtector/dataProtectorSharing/subscription/setSubscriptionParams',
-                  },
-                  {
-                    text: 'subscribeToCollection',
-                    link: '/references/dataProtector/dataProtectorSharing/subscription/subscribeToCollection',
-                  },
-                  {
-                    text: 'removeProtectedDataFromSubscription',
-                    link: '/references/dataProtector/dataProtectorSharing/subscription/removeProtectedDataFromSubscription',
-                  },
-                ],
-              },
-              {
-                text: 'Consume',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'consumeProtectedData',
-                    link: '/references/dataProtector/dataProtectorSharing/consume/consumeProtectedData',
-                  },
-                ],
-              },
-              {
-                text: 'Read Data',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'getProtectedDataInCollections',
-                    link: '/references/dataProtector/dataProtectorSharing/read/getProtectedDataInCollections',
-                  },
-                  {
-                    text: 'getProtectedDataPricingParams',
-                    link: '/references/dataProtector/dataProtectorSharing/read/getProtectedDataPricingParams',
-                  },
-                  {
-                    text: 'getCollectionOwners',
-                    link: '/references/dataProtector/dataProtectorSharing/read/getCollectionOwners',
-                  },
-                  {
-                    text: 'getCollectionsByOwner',
-                    link: '/references/dataProtector/dataProtectorSharing/read/getCollectionsByOwner',
-                  },
-                  {
-                    text: 'getCollectionSubscriptions',
-                    link: '/references/dataProtector/dataProtectorSharing/read/getCollectionSubscriptions',
-                  },
-                  {
-                    text: 'getRentals',
-                    link: '/references/dataProtector/dataProtectorSharing/read/getRentals',
-                  },
-                ],
+                link: '/references/dataProtector/methods/getResultFromCompletedTask',
               },
             ],
           },
@@ -400,33 +263,8 @@ export function getSidebar() {
             link: '/references/dataProtector/types',
           },
           {
-            text: 'Advanced',
-            collapsed: true,
-            items: [
-              {
-                text: 'Advanced Configuration',
-                link: '/references/dataProtector/advanced/advanced-configuration',
-              },
-              {
-                text: 'Apps whitelist',
-                link: '/references/dataProtector/advanced/apps-whitelist',
-                collapsed: true,
-                items: [
-                  {
-                    text: 'createAddOnlyAppWhitelist',
-                    link: '/references/dataProtector/advanced/apps-whitelist/createAddOnlyAppWhitelist',
-                  },
-                  {
-                    text: 'addAppToAddOnlyAppWhitelist',
-                    link: '/references/dataProtector/advanced/apps-whitelist/addAppToAddOnlyAppWhitelist',
-                  },
-                  {
-                    text: 'getUserAddOnlyAppWhitelist',
-                    link: '/references/dataProtector/advanced/apps-whitelist/getUserAddOnlyAppWhitelist',
-                  },
-                ],
-              },
-            ],
+            text: 'Advanced Configuration',
+            link: '/references/dataProtector/advanced-configuration',
           },
         ],
       },

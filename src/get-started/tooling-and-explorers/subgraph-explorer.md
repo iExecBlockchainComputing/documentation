@@ -50,7 +50,7 @@ protocol.
 
 <ProjectCard
   title="iExec PoCo - Arbitrum"
-  description="Indexes Proof of Contribution (PoCo) data on Arbitrum mainnet, including apps, deals, tasks, and workerpools"
+  description="Indexes Proof of Contribution (PoCo) data on Arbitrum mainnet, including apps, deals, tasks and workerpools"
   :icon-image="arbitrumIcon"
   status="available"
   status-label="Live"
@@ -61,7 +61,7 @@ protocol.
 
 <ProjectCard
   title="iExec DataProtector - Arbitrum"
-  description="Indexes DataProtector protocol data on Arbitrum mainnet, including protected data, access grants, and sharing mechanisms"
+  description="Comprehensive indexing service for iExec DataProtector on Arbitrum mainnet, tracking protected data assets, their schemas and owner"
   :icon-image="arbitrumIcon"
   status="available"
   status-label="Live"
@@ -72,7 +72,7 @@ protocol.
 
 <ProjectCard
   title="iExec PoCo - Bellecour"
-  description="Indexes Proof of Contribution (PoCo) data on Bellecour mainnet, including apps, deals, tasks, and workerpools"
+  description="Indexes Proof of Contribution (PoCo) data on Bellecour mainnet, including apps, deals, tasks and workerpools"
   :icon-image="iexecLogoIcon"
   status="available"
   status-label="Live"
@@ -83,7 +83,7 @@ protocol.
 
 <ProjectCard
   title="iExec DataProtector - Bellecour"
-  description="Indexes DataProtector protocol data on Bellecour mainnet, including protected data, access grants, and sharing mechanisms"
+  description="Comprehensive indexing service for iExec DataProtector on Bellecour, tracking protected data assets, their schemas and owner"
   :icon-image="iexecLogoIcon"
   status="available"
   status-label="Live"
