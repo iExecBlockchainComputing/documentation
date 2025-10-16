@@ -351,6 +351,19 @@ Once you have your token, you can deploy your iApp.
   />
 </template>
 
+<template v-else-if="selectedChain === 421614">
+  <CLIDemo
+    initialCommand="iapp deploy --chain arbitrum-sepolia-testnet"
+    asciiText="Deploy"
+    :steps="arbitrumSepoliaSteps"
+    :completionStep="15"
+    :completionMessage="'Deployment of your iApp completed successfully:'"
+    :completionItems="arbitrumSepoliaCompletionItems"
+    :successMessage="'Run iapp run 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923 to execute your iApp on an iExec TEE worker'"
+    :autoRestart="true"
+  />
+</template>
+
 <template v-else>
   <CLIDemo
     initialCommand="iapp deploy"
@@ -591,6 +604,92 @@ const arbitrumCompletionItems = [
 ];
 
 const bellecourCompletionItems = [
+  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7',
+  '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
+];
+
+const arbitrumSepoliaSteps = [
+  {
+    showAt: 2,
+    question: 'Using chain arbitrum-sepolia',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 3,
+    question: 'This method requires sending blockchain transactions, transaction fees will be applied. Would you like to continue?',
+    answer: 'Yes',
+    options: [
+      { label: 'Yes', selected: true },
+      { label: 'no', selected: false }
+    ],
+    highlighted: false,
+    showTyping: false,
+    isComplete: false
+  },
+  {
+    showAt: 4,
+    question: 'Using saved walletPrivateKey (from iapp.config.json)',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 5,
+    completeAt: 7,
+    question: 'What is your username on DockerHub? (It will be used to properly tag the Docker image)',
+    answer: 'bob',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 7,
+    completeAt: 9,
+    question: 'What is your DockerHub access token?',
+    answer: '**********************',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 9,
+    completeAt: 11,
+    question: 'What is the version of your iApp?',
+    answer: '0.0.1',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 11,
+    question: 'Docker image built (sha256:a53fc4c480f482c384a13266ea2cb6cc5572733c866c44a5f604f4bfab3a744a) and tagged bob/hello-world:0.0.1',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 12,
+    question: 'Pushed image bob/hello-world:0.0.1 on dockerhub',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 13,
+    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7 on dockerhub',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 14,
+    question: 'TEE app deployed',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  }
+];
+
+const arbitrumSepoliaCompletionItems = [
   '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7',
   '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
 ];

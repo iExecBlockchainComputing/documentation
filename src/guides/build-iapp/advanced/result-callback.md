@@ -59,7 +59,8 @@ contract IExecCallbackReceiver {
 
 ::: tip Important
 
-The callback transaction is subject to a gas limit of {{ gasLimit }}.  
+The callback transaction is subject to a maximum gas limit of 200,000 enforced
+by the protocol.  
 Ensure your callback logic fits within this limit to avoid out-of-gas errors.
 
 :::
@@ -163,22 +164,3 @@ const taskId = await iexec.order.matchOrders({
 | Automation           | Workflow step completion signal          |
 | Dynamic parameters   | Adjust rates / thresholds / quorums      |
 | Logical bridge       | Sync external (IoT / legacy) state       |
-
-<script setup>
-import { computed } from 'vue';
-import useUserStore from '@/stores/useUser.store';
-import { getChainById } from '@/utils/chain.utils';
-
-// Get current chain info
-const userStore = useUserStore();
-const selectedChain = computed(() => userStore.getCurrentChainId());
-const chainData = computed(() => getChainById(selectedChain.value));
-const chainName = computed(() => chainData.value.chainName);
-
-const gasLimit = computed(() => {
-  const chainId = selectedChain.value;
-  if (chainId === 42161) return '100,000'; // Arbitrum One
-  if (chainId === 134) return '200,000'; // Bellecour
-  return '100,000'; // default
-});
-</script>

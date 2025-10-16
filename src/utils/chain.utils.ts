@@ -1,4 +1,4 @@
-import { arbitrum } from 'viem/chains';
+import { arbitrum, arbitrumSepolia } from 'viem/chains';
 import { bellecour } from './wagmiNetworks';
 import arbitrumLogo from '@/assets/icons/arbitrum.svg';
 import iexecLogo from '@/assets/icons/iexec-logo.png';
@@ -50,6 +50,22 @@ export function getSupportedChains(): Chain[] {
       web3MailAppWhitelist: '0xD5054a18565c4a9E5c1aa3cEB53258bd59d4c78C',
       web3TelegramAddress: '0xD8614ad70A73A426A15F6474EB4aE633e0015805',
       web3TelegramAppWhitelist: '0x53AFc09a647e7D5Fa9BDC784Eb3623385C45eF89',
+    },
+    {
+      id: arbitrumSepolia.id,
+      name: arbitrumSepolia.name,
+      icon: arbitrumLogo,
+      nativeCurrency: arbitrumSepolia.nativeCurrency,
+      rpcUrls: arbitrumSepolia.rpcUrls,
+      blockExplorers: arbitrumSepolia.blockExplorers,
+      chainName: 'arbitrum-sepolia',
+      iexecExplorerUrl: 'https://explorer.iex.ec/arbitrum-sepolia-testnet',
+      workerpoolAddress: '0xB967057a21dc6A66A29721d96b8Aa7454B7c383F',
+      ipfsGateway: 'https://ipfs-gateway.arbitrum-sepolia-testnet.iex.ec',
+      web3MailAddress: '0x54f48937d1a26dd250dc8adbef07bc76f6e27df3',
+      web3MailAppWhitelist: '0x8d46d40840f1Aa2264F96184Ffadf04e5D573B9B',
+      web3TelegramAddress: '0x54cb7f6d417b2b29c2a4b2e95a66f670812c869d',
+      web3TelegramAppWhitelist: '0x7291ff96100DA6CF97933C225B86124ef95aEc9b',
     },
     {
       id: Number(bellecour.id),

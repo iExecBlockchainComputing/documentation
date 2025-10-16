@@ -29,6 +29,19 @@ specify your app version, and push both standard and TEE-compatible images:
   />
 </template>
 
+<template v-else-if="selectedChain === 421614">
+  <CLIDemo
+    initialCommand="iapp deploy --chain arbitrum-sepolia-testnet"
+    asciiText="Deploy"
+    :steps="arbitrumSepoliaSteps"
+    :completionStep="15"
+    :completionMessage="'Deployment of your iApp completed successfully:'"
+    :completionItems="arbitrumSepoliaCompletionItems"
+    :successMessage="'Run iapp run 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923 to execute your iApp on an iExec TEE worker'"
+    :autoRestart="true"
+  />
+</template>
+
 <template v-else>
   <CLIDemo
     initialCommand="iapp deploy"
@@ -84,6 +97,19 @@ for developers who have built their own iApp.
     :completionStep="16"
     :completionMessage="'iApp execution completed successfully:'"
     :completionItems="arbitrumRunCompletionItems"
+    :successMessage="'Your iApp has been executed successfully on an iExec TEE worker'"
+    :autoRestart="true"
+  />
+</template>
+
+<template v-else-if="selectedChain === 421614">
+  <CLIDemo
+    initialCommand="iapp run 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923 --chain arbitrum-sepolia-testnet"
+    asciiText="Execute"
+    :steps="arbitrumSepoliaRunSteps"
+    :completionStep="16"
+    :completionMessage="'iApp execution completed successfully:'"
+    :completionItems="arbitrumSepoliaRunCompletionItems"
     :successMessage="'Your iApp has been executed successfully on an iExec TEE worker'"
     :autoRestart="true"
   />
@@ -489,6 +515,196 @@ const arbitrumRunCompletionItems = [
 ];
 
 const bellecourRunCompletionItems = [
+  '└ Deal: 0x26d758de1be51697c33fa606cd0c5243082a6e675a4463b106d71fde2893280f',
+  '└ Task: 0x1a58dd6018b30b022eb35be53ad9374eb630925458d14643a1dfd9c686b964d8',
+  '└ Result: Downloaded to output directory'
+];
+
+const arbitrumSepoliaSteps = [
+  {
+    showAt: 2,
+    question: 'Using chain arbitrum-sepolia-testnet',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 3,
+    question: 'This method requires sending blockchain transactions, transaction fees will be applied. Would you like to continue?',
+    answer: 'Yes',
+    options: [
+      { label: 'Yes', selected: true },
+      { label: 'no', selected: false }
+    ],
+    highlighted: false,
+    showTyping: false,
+    isComplete: false
+  },
+  {
+    showAt: 4,
+    question: 'Using saved walletPrivateKey (from iapp.config.json)',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 5,
+    completeAt: 7,
+    question: 'What is your username on DockerHub? (It will be used to properly tag the Docker image)',
+    answer: 'bob',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 7,
+    completeAt: 9,
+    question: 'What is your DockerHub access token?',
+    answer: '**********************',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 9,
+    completeAt: 11,
+    question: 'What is the version of your iApp?',
+    answer: '0.0.1',
+    showTyping: true,
+    isComplete: false
+  },
+  {
+    showAt: 11,
+    question: 'Docker image built (sha256:a53fc4c480f482c384a13266ea2cb6cc5572733c866c44a5f604f4bfab3a744a) and tagged bob/hello-world:0.0.1',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 12,
+    question: 'Pushed image bob/hello-world:0.0.1 on dockerhub',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 13,
+    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7 on dockerhub',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 14,
+    question: 'TEE app deployed',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  }
+];
+
+const arbitrumSepoliaCompletionItems = [
+  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7',
+  '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
+];
+
+const arbitrumSepoliaRunSteps = [
+  {
+    showAt: 2,
+    question: 'Using chain arbitrum-sepolia-testnet',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 3,
+    completeAt: 5,
+    question: 'This method requires sending blockchain transactions, transaction fees will be applied. Would you like to continue?',
+    answer: 'Yes',
+    options: [
+      { label: 'Yes', selected: true },
+      { label: 'no', selected: false }
+    ],
+    highlighted: false,
+    showTyping: false,
+    isComplete: false
+  },
+  {
+    showAt: 5,
+    question: 'Using saved walletPrivateKey (from iapp.config.json)',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 6,
+    question: 'Workerpool order fetched',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 7,
+    question: 'AppOrder created',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 8,
+    question: 'RequestOrder created',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 9,
+    question: 'Deal created successfully',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 10,
+    question: 'Task finalized',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 11,
+    completeAt: 13,
+    question:'Would you like to download the result?',
+    answer: 'Yes',
+    options: [
+      { label: 'Yes', selected: true },
+      { label: 'no', selected: false }
+    ],
+    highlighted: false,
+    showTyping: false,
+    isComplete: false
+  },
+  {
+    showAt: 13,
+    question: 'Result downloaded to output',
+    answer: '',
+    showTyping: false,
+    isComplete: true
+  },
+  {
+    showAt: 14,
+    completeAt: 16,
+    question:'Would you like to see the result ?',
+    answer: 'Yes',
+    options: [
+      { label: 'Yes', selected: true },
+      { label: 'no', selected: false }
+    ],
+    highlighted: false,
+    showTyping: false,
+    isComplete: false
+  }
+];
+
+const arbitrumSepoliaRunCompletionItems = [
   '└ Deal: 0x26d758de1be51697c33fa606cd0c5243082a6e675a4463b106d71fde2893280f',
   '└ Task: 0x1a58dd6018b30b022eb35be53ad9374eb630925458d14643a1dfd9c686b964d8',
   '└ Result: Downloaded to output directory'
