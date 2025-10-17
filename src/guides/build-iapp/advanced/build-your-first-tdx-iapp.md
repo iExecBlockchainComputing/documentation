@@ -15,7 +15,8 @@ iApp Generator.
 
 - Please don’t share sensitive data or secrets.
 - Features and availability may change or be discontinued.
-- Please share feedbacks, ideas, and suggestions on [Discord](https://discord.com/invite/pbt9m98wnU) or support bot.
+- Please share feedbacks, ideas, and suggestions on
+  [Discord](https://discord.com/invite/pbt9m98wnU) or support bot.
 
 :::
 
@@ -23,7 +24,6 @@ Before implementing TDX, make sure you understand the foundational concepts and
 differences between TEE technologies. Check out our
 **[Intel TDX Technology](/protocol/tee/intel-tdx)** guide for comprehensive
 explanations of TDX technology and its benefits.
-
 
 ## Prerequisites
 
