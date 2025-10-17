@@ -204,5 +204,5 @@ const taskId = await iexec.order.matchOrders({
 ## Next Steps
 
 For advanced use cases where you need to encrypt the results of your iApp
-execution, refer to the [Encrypt iApp Results](/guides/use-iapp/encrypt-result)
-guide.
+execution, refer to the
+[Encrypt iApp Results](/guides/use-iapp/encrypt-iapp-result) guide.
