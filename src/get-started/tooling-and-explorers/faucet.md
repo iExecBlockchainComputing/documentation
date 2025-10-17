@@ -43,7 +43,7 @@ To be eligible for RLC claims, builders must meet these criteria:
   image-alt="iExec RLC Faucet Interface"
   :features="[
     '5 RLC per claim',
-    'GitHub/Google authentication',
+    'GitHub authentication',
     '24-hour cooldown period',
     'Balance verification (max 1 RLC)',
     'Arbitrum Sepolia testnet only'
