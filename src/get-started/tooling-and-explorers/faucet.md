@@ -29,7 +29,7 @@ spending real tokens.
 
 To be eligible for RLC claims, builders must meet these criteria:
 
-- **GitHub or Google login** required for verification
+- **GitHub** required for verification
 - **Maximum 1 RLC** in your wallet to claim (prevents abuse and ensures fair
   distribution)
 - **One claim per 24 hours** per authenticated account
