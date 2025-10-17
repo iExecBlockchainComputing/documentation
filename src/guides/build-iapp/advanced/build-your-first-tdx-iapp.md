@@ -13,10 +13,11 @@ iApp Generator.
 
 ::: info **Experimental**
 
-- Please don’t share sensitive data or secrets.
-- Features and availability may change or be discontinued.
-- Please share feedbacks, ideas, and suggestions on
-  [Discord](https://discord.com/invite/pbt9m98wnU) or support bot.
+TDX support is currently in experimental phase:
+
+- Stability and confidentiality features are still being tested and refined.
+- Features may evolve based on user feedback, please share your experience on
+  [Discord](https://discord.com/invite/pbt9m98wnU).
 
 :::
 
