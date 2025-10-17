@@ -29,7 +29,7 @@ spending real tokens.
 
 To be eligible for RLC claims, builders must meet these criteria:
 
-- **GitHub or Google login** required for verification
+- **GitHub login** required for verification
 - **Maximum 1 RLC** in your wallet to claim (prevents abuse and ensures fair
   distribution)
 - **One claim per 24 hours** per authenticated account
@@ -43,7 +43,7 @@ To be eligible for RLC claims, builders must meet these criteria:
   image-alt="iExec RLC Faucet Interface"
   :features="[
     '5 RLC per claim',
-    'GitHub/Google authentication',
+    'GitHub authentication',
     '24-hour cooldown period',
     'Balance verification (max 1 RLC)',
     'Arbitrum Sepolia testnet only'
