@@ -1,3 +1,0 @@
-# robots.txt keep it only during development
-User-agent: *
-Disallow:
