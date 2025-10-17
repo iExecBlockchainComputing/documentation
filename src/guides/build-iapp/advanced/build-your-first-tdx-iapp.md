@@ -11,7 +11,7 @@ In this tutorial, you will learn how to build and run a Confidential Computing
 application with Intel TDX technology using both traditional deployment and the
 iApp Generator.
 
-::: info **Experimental**
+::: info **Experimental Feature**
 
 TDX support is currently in experimental phase:
 
