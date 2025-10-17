@@ -11,11 +11,13 @@ In this tutorial, you will learn how to build and run a Confidential Computing
 application with Intel TDX technology using both traditional deployment and the
 iApp Generator.
 
-:::danger ⚠️ EXPERIMENTAL FEATURE
+::: info **Experimental Feature**
 
-**TDX support is currently experimental and should NOT be used in production.**
-This feature is provided for testing and development purposes only. Expect
-instabilities, limited compatibility, and potential outages.
+TDX support is currently in experimental phase:
+
+- Stability and confidentiality features are still being tested and refined.
+- Features may evolve based on user feedback, please share your experience on
+  [Discord](https://discord.com/invite/pbt9m98wnU).
 
 :::
 
@@ -23,21 +25,6 @@ Before implementing TDX, make sure you understand the foundational concepts and
 differences between TEE technologies. Check out our
 **[Intel TDX Technology](/protocol/tee/intel-tdx)** guide for comprehensive
 explanations of TDX technology and its benefits.
-
-::: info
-
-**Request access to the experimental feature**
-
-- The TDX-powered workerpool is currently in a development environment and not
-  intended for production use.
-- Expect occasional instability or incomplete features. Service is subject to
-  change or discontinuation
-- Development environment only - do not share sensitive data or secrets.
-- Please share any bug reports, suggestions for improvement, or general feedback
-  on your experience.
-- To request early access, please [contact us](https://discord.gg/9h25DQFSCU)
-
-:::
 
 ## Prerequisites
 
