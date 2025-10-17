@@ -388,6 +388,10 @@ export function getSidebar() {
             link: '/protocol/pay-per-task',
           },
           {
+            text: 'Debug Your Tasks',
+            link: '/protocol/debugging',
+          },
+          {
             text: 'Workers & Workerpools',
             collapsed: false,
             items: [
