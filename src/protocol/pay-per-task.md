@@ -1,8 +1,6 @@
-
 # Task Size: Pay-Per-Task
 
 Pay-per-task categories, time limits, and claim rules.
-
 
 ## Pay-per-task model
 
