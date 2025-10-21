@@ -11,7 +11,7 @@ two limits:
   exceeds C, the worker stops the task and marks it as failed.
 - Maximum Deal Time (D): overall time window for a task in the deal. If the task
   isn’t completed within D, the requester can claim the task. On claim, the
-  requester recovers the RLC engaged for this task.
+  requester can recover the RLC engaged for this task.
 
 **Categories Description:**
 
