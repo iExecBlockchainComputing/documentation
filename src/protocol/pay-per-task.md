@@ -1,18 +1,18 @@
-# Task Size: Pay-Per-Task
+# Task size: pay-per-task
 
 Pay-per-task categories, time limits, and claim rules.
 
 ## Pay-per-task model
 
-The pay-per-task model is based on task size categories. Each category defines
+We base the pay-per-task model on task size categories. Each category defines
 two limits:
 
 - Maximum Computing Time (C): per-task execution time on the worker. If the task
-  exceeds C, the task is stopped and failed.
+  exceeds C, the worker stops the task and marks it as failed.
 - Maximum Deal Time (D): overall time window for a task in the deal. If the task
-  isn’t completed within D, the requester can claim (i.e., recover according to
-  protocol rules). On claim, the requester recovers the RLC escrowed for that
-  task, no payout is made to the worker and workerpool.
+  isn’t completed within D, the requester can claim the task. On claim, the
+  requester recovers the RLC held in escrow for this task, the protocol does not
+  pay the Workerpool.
 
 **Categories Description:**
 
@@ -24,8 +24,8 @@ two limits:
 | 3 – L        | 3 hours                        | 30h (1d6h)                |
 | 4 – XL       | 10 hours                       | 100h (4d4h)               |
 
-- Workers allocate up to C per task. Beyond C, the app is stopped.
-- Requesters can claim after D if the task isn’t completed.
+- Worker allocates up to C per task. Beyond C, the worker stops the task.
+- Requesters can claim the task after D if the task isn’t completed.
 
 ## How to pick a category (quick guide)
 
@@ -37,7 +37,7 @@ Use this decision table to choose a safe category for your workload.
 | Medium data processing (10-15min)     | Cat 2                  |
 | Heavy ML inference / long simulations | Cat 3–4                |
 
-Use the iExec SDK (CLI/API) to **set the category** in app, request, or
-workerpool orders.  
+Use the iExec SDK to **set the category** in app, request, or workerpool
+orders.  
 For commands and examples, see the
-[iExec SDK GitHub repository](https://github.com/iExecBlockchainComputing/iexec-sdk/blob/master/docs/README.md).
+[iExec SDK Github repository](https://github.com/iExecBlockchainComputing/iexec-sdk/blob/master/docs/README.md).
