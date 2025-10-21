@@ -11,8 +11,7 @@ two limits:
   exceeds C, the worker stops the task and marks it as failed.
 - Maximum Deal Time (D): overall time window for a task in the deal. If the task
   isn’t completed within D, the requester can claim the task. On claim, the
-  requester recovers the RLC held in escrow for this task, the protocol does not
-  pay the Workerpool.
+  requester recovers the RLC engaged for this task.
 
 **Categories Description:**
 
