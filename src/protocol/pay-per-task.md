@@ -19,9 +19,9 @@ two limits:
 | ------------ | ------------------------------ | ------------------------- |
 | 0 – XS       | 5 min                          | 50 min                    |
 | 1 – S        | 20 min                         | 200 min                   |
-| 2 – M        | 1 hour                         | 10h                       |
-| 3 – L        | 3 hours                        | 30h                       |
-| 4 – XL       | 10 hours                       | 100h                      |
+| 2 – M        | 1 hour                         | 10 hours                  |
+| 3 – L        | 3 hours                        | 30 hours                  |
+| 4 – XL       | 10 hours                       | 100 hours                 |
 
 - Worker allocates up to C per task. Beyond C, the worker stops the task.
 - Requesters can claim the task after D if the task isn’t completed.
