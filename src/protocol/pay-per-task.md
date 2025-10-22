@@ -1,7 +1,6 @@
 ---
 title: Pay Per Task Model
-description:
-  Pay-per-task categories, time limits, and claim rules..
+description: Pay-per-task categories, time limits, and claim rules..
 ---
 
 # Task size: pay-per-task
@@ -47,7 +46,7 @@ orders.
 For commands and examples, see the
 [iExec SDK Github repository](https://github.com/iExecBlockchainComputing/iexec-sdk/blob/master/docs/README.md).
 
-::: info Need help
-Can’t find an order that fits your needs or unsure which category to choose?
-[Contact us on Discord](https://discord.com/invite/pbt9m98wnU) and we will help you pick the right setup.
-:::
+::: info Need help Can’t find an order that fits your needs or unsure which
+category to choose?
+[Contact us on Discord](https://discord.com/invite/pbt9m98wnU) and we will help
+you pick the right setup. :::
