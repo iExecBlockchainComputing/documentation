@@ -1,3 +1,9 @@
+---
+title: Pay Per Task Model
+description:
+  Pay-per-task categories, time limits, and claim rules..
+---
+
 # Task size: pay-per-task
 
 Pay-per-task categories, time limits, and claim rules.
