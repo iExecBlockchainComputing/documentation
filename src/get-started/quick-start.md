@@ -98,7 +98,9 @@ learning and prototyping.
    React/Vue options
 2. **Experiment**: Try the interactive sandboxes to understand core concepts
 3. **Build**: Integrate the features you need into your application
-4. **Deploy**: Use our deployment guides for production-ready applications
+4. **Get RLC Tokens**: Use the
+   [iExec RLC Faucet](https://explorer.iex.ec/arbitrum-sepolia-testnet/faucet)
+5. **Deploy**: Use our deployment guides for production-ready applications
 
 <script setup>
 import CardGrid from '@/components/CardGrid.vue';

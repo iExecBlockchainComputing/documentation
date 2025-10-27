@@ -93,6 +93,10 @@ export function getSidebar() {
             link: '/get-started/tooling-and-explorers/bridge',
           },
           {
+            text: 'RLC Faucet',
+            link: '/get-started/tooling-and-explorers/faucet',
+          },
+          {
             text: 'Subgraph Explorer',
             link: '/get-started/tooling-and-explorers/subgraph-explorer',
           },
@@ -382,6 +386,10 @@ export function getSidebar() {
           {
             text: 'Pay Per Task Model',
             link: '/protocol/pay-per-task',
+          },
+          {
+            text: 'Debug Your Tasks',
+            link: '/protocol/debugging',
           },
           {
             text: 'Workers & Workerpools',

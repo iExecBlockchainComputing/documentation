@@ -37,6 +37,13 @@ Before using the iApp Generator, make sure you have:
     </div>
     <a target="_blank" href="https://hub.docker.com/" class="no-underline! text-sm ml-auto hover:underline!">Sign Up →</a>
   </div>
+  
+  <div class="flex items-center gap-4 text-left">
+    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
+      💰 RLC Tokens
+    </div>
+    <a href="/get-started/overview/rlc" class="no-underline! text-sm ml-auto hover:underline!">Learn More →</a>
+  </div>
 </div>
 
 ::: tip 🔍 Verify Docker Compatibility
