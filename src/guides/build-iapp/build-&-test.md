@@ -29,7 +29,8 @@ iApp Generator handles all the low-level complexity for you.
 
 ## Prerequisites
 
-First, install iApp Generator in your project (for more details see [iApp Generator Getting Started](/references/iapp-generator/getting-started)):
+First, install iApp Generator in your project (for more details see
+[iApp Generator Getting Started](/references/iapp-generator/getting-started)):
 
 ::: code-group
 

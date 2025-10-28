@@ -16,7 +16,8 @@ perfect for customizing the iApp's behavior for each specific run.
 
 ## Prerequisites
 
-First, install DataProtector in your project (for more details see [DataProtector Getting Started](/references/dataProtector/getting-started)):
+First, install DataProtector in your project (for more details see
+[DataProtector Getting Started](/references/dataProtector/getting-started)):
 
 ::: code-group
 

@@ -27,7 +27,8 @@ within the TEE environment.
 ::: tip
 
 You can also execute iApp outside of DataProtector using other methods. See the
-[Use an iApp guide](/guides/use-iapp/introduction) for more information.
+[Run iApp without ProtectedData](/guides/use-iapp/run-iapp-without-ProtectedData)
+guide for more information.
 
 :::
 

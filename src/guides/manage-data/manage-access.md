@@ -15,7 +15,8 @@ only accessible in secure enclaves (TEEs) by authorized users and iApp.
 
 ## Prerequisites
 
-First, install DataProtector in your project (for more details see [DataProtector Getting Started](/references/dataProtector/getting-started)):
+First, install DataProtector in your project (for more details see
+[DataProtector Getting Started](/references/dataProtector/getting-started)):
 
 ::: code-group
 

@@ -68,6 +68,10 @@ export function getSidebar() {
             link: '/get-started/overview/privacy-iapp',
           },
           {
+            text: 'Deal',
+            link: '/get-started/overview/deal',
+          },
+          {
             text: 'Workerpool',
             link: '/get-started/overview/workerpool',
           },
@@ -188,10 +192,6 @@ export function getSidebar() {
       {
         text: 'USE AN iAPP',
         items: [
-          {
-            text: 'Introduction',
-            link: '/guides/use-iapp/introduction',
-          },
           {
             text: 'How to Pay the Executions',
             link: '/guides/use-iapp/how-to-pay-executions',
