@@ -18,6 +18,9 @@ test blockchain.
 
 ## Install the iExec SDK
 
+For complete installation instructions and requirements, see the
+[iExec SDK documentation](/references/sdk).
+
 Requirements:
 [![npm version](https://img.shields.io/badge/nodejs-%3E=18.0.0-brightgreen.svg)](https://nodejs.org/en/)
 

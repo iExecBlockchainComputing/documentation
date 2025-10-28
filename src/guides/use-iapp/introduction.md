@@ -79,6 +79,8 @@ protected throughout the computation.
 
 ## Getting Started
 
-Ready to start using iApp? Check out our
-[Getting Started Guide](/guides/use-iapp/getting-started) to learn how to find,
-execute, and interact with iApp on the iExec network.
+Ready to start using iApp? Check out our guides to learn how to find, execute,
+and interact with iApp on the iExec network:
+
+- [Run iApp with ProtectedData](/guides/use-iapp/run-iapp-with-ProtectedData)
+- [Run iApp without ProtectedData](/guides/use-iapp/run-iapp-without-ProtectedData)

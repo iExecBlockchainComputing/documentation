@@ -145,5 +145,3 @@ Continue building with these guides:
   Control who can use your iApp
 - **[Debugging Your iApp](/guides/build-iapp/debugging)** - Troubleshoot
   execution issues
-- **[How to Get and Decrypt Results](/guides/use-iapp/getting-started)** -
-  User-side result handling
