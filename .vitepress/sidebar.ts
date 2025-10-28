@@ -68,10 +68,6 @@ export function getSidebar() {
             link: '/get-started/overview/privacy-iapp',
           },
           {
-            text: 'Deal',
-            link: '/get-started/overview/deal',
-          },
-          {
             text: 'Workerpool',
             link: '/get-started/overview/workerpool',
           },
