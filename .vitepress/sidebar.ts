@@ -193,10 +193,6 @@ export function getSidebar() {
             link: '/guides/use-iapp/introduction',
           },
           {
-            text: 'Getting Started',
-            link: '/guides/use-iapp/getting-started',
-          },
-          {
             text: 'How to Pay the Executions',
             link: '/guides/use-iapp/how-to-pay-executions',
           },
