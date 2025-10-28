@@ -14,6 +14,30 @@ inputs that come directly from you (the requester) and can change between each
 execution: Arguments, Input Files, and Secrets. These non-persistent inputs are
 perfect for customizing the iApp's behavior for each specific run.
 
+## Prerequisites
+
+First, install DataProtector in your project (for more details see [DataProtector Getting Started](/references/dataProtector/getting-started)):
+
+::: code-group
+
+```bash [npm]
+npm install @iexec/dataprotector
+```
+
+```bash [yarn]
+yarn add @iexec/dataprotector
+```
+
+```bash [pnpm]
+pnpm add @iexec/dataprotector
+```
+
+```bash [bun]
+bun add @iexec/dataprotector
+```
+
+:::
+
 ## Adding Protected Data
 
 When working with protected data that contains multiple files, you can specify
