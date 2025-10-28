@@ -125,47 +125,6 @@ Collaborative research on sensitive datasets across institutions
 
 </CardGrid>
 
-## Getting Started
-
-<Banner>
-
-## Time to build!
-
-Let's build an iApp that can process protected data in a secure environment
-using the [iExec iApp generator tool](/references/iapp-generator). This tool
-helps you create, test and deploy iApp with just a few commands.
-
-</Banner>
-
-### Quick Start Path
-
-1. **Protect your data** with [DataProtector](/references/dataProtector)
-2. **Build your iApp** using the [iApp Generator](/references/iapp-generator)
-3. **Deploy and test** your application
-4. **Process protected data** securely
-
-### What You'll Learn
-
-- How to create a Docker container for your application
-- How to handle inputs and outputs securely
-- How to deploy to the iExec network
-- How to process protected data in TEE environments
-
-::: tip
-
-These are just a few examples, the possibilities are endless. Want to explore
-iApp Generator? Check out our [documentation](/references/iapp-generator) and
-see what you can build!
-
-:::
-
-## Technical Requirements
-
-- **Docker**: Your application must be containerized
-- **Input/Output**: Define clear input and output schemas
-- **TEE Compatibility**: Ensure your code runs in secure enclaves
-- **Network Access**: Configure any external API calls or dependencies
-
 ## Next Steps
 
 Ready to build your first privacy-preserving application? Start with our
