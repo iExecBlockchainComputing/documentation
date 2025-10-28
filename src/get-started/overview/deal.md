@@ -49,7 +49,7 @@ When a deal is triggered, the following sequence occurs:
 The diagram below illustrates how different actors interact in the iExec
 network:
 
-![iExec Network Actors](/assets/use-iapp/iexec-actors-diagram.svg)
+![iExec Deal Lifecycle](/assets/overview/deal-lifecycle.png)
 
 ## Detailed Interaction Flow
 
