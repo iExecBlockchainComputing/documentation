@@ -64,6 +64,11 @@
       "source": "/help/:path*",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/get-started/overview/iapp",
+      "destination": "/get-started/overview/privacy-iapp",
+      "permanent": true
     }
   ]
 }
