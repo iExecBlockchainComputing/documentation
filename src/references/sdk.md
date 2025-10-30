@@ -22,22 +22,25 @@ system:
 
 ### Installation
 
+For complete installation instructions and requirements, see the
+[iExec SDK documentation](https://github.com/iExecBlockchainComputing/iexec-sdk/blob/master/docs/README.md).
+
 ::: code-group
 
 ```sh [npm]
-npm install @iexec/dataprotector
+npm install iexec
 ```
 
 ```sh [yarn]
-yarn add @iexec/dataprotector
+yarn add iexec
 ```
 
 ```sh [pnpm]
-pnpm add @iexec/dataprotector
+pnpm add iexec
 ```
 
 ```sh [bun]
-bun add @iexec/dataprotector
+bun add iexec
 ```
 
 :::

@@ -16,7 +16,8 @@ configuration to enable processing and customize functionality.
 
 ## Prerequisites
 
-Before you begin, make sure you have the iExec SDK installed.
+First, install iExec SDK in your project (for more details see
+[iExec SDK documentation](/references/sdk)):
 
 ::: code-group
 

@@ -28,7 +28,7 @@ Currently, order management is not yet available in iApp Generator. This guide
 shows you how to use the iExec SDK CLI to create and manage your app orders.
 
 For complete SDK documentation, check the
-[iExec SDK GitHub repository](https://github.com/iExecBlockchainComputing/iexec-sdk).
+[iExec SDK documentation](/references/sdk).
 
 :::
 
@@ -67,7 +67,8 @@ Here's an example app order for a sentiment analysis iApp:
 ### Step 1: Install the iExec SDK
 
 Since iApp Generator doesn't handle orders yet, you need to use the iExec SDK
-CLI:
+CLI. For detailed installation instructions, see the
+[iExec SDK documentation](/references/sdk).
 
 ::: code-group
 
@@ -304,8 +305,7 @@ Next steps:
 
 ### Technical deep dive
 
-- **[iExec SDK Documentation](https://github.com/iExecBlockchainComputing/iexec-sdk)** -
-  Complete CLI reference
+- **[iExec SDK Documentation](/references/sdk)** - Complete CLI reference
 
 <script setup>
 import { computed } from 'vue';

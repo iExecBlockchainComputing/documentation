@@ -106,8 +106,8 @@ contract address.
 After completion, the protocol calls your contract, passing the `callback-data`
 bytes.
 
-First install the iExec SDK if you have not already (see
-[Getting Started](/guides/use-iapp/getting-started)).
+First install the iExec SDK if you have not already (see the
+[iExec SDK documentation](/references/sdk)).
 
 ```ts twoslash
 import { IExec, utils } from 'iexec';
