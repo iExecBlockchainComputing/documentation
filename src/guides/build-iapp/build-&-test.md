@@ -29,9 +29,28 @@ iApp Generator handles all the low-level complexity for you.
 
 ## Prerequisites
 
-Before getting started, make sure you have the required tools installed. See the
-[iApp Generator Getting Started guide](/references/iapp-generator/getting-started)
-for detailed prerequisites and installation instructions.
+First, install iApp Generator in your project (for more details see
+[iApp Generator Getting Started](/references/iapp-generator/getting-started)):
+
+::: code-group
+
+```bash [npm]
+npm install -g @iexec/iapp-generator
+```
+
+```bash [yarn]
+yarn global add @iexec/iapp-generator
+```
+
+```bash [pnpm]
+pnpm add -g @iexec/iapp-generator
+```
+
+```bash [bun]
+bun add -g @iexec/iapp-generator
+```
+
+:::
 
 ## Quick Start
 

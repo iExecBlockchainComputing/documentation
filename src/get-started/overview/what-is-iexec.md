@@ -12,35 +12,37 @@ developers build privacy-preserving apps.
 
 ## SpeedRun The Protocol
 
-### Step 1: Protect Data
+![iExec Deal Lifecycle](/assets/overview/deal-lifecycle.png)
 
-Your sensitive data gets encrypted and stored online. Only you control who can
-access it.
+### Step 1: Prepare Resources
 
-→ **DevTool**: [DataProtector](/references/dataProtector) handles this for you
+- **Data Provider** protects sensitive data with encryption and sets access
+  rules.
+  - → **DevTool**: [DataProtector](/references/dataProtector)
+- **App Provider** deploys an iApp to process data securely.
+  - → **DevTool**: [iApp Generator](/references/iapp-generator)
 
-### Step 2: Secure Computing (Workers)
+### Step 2: Create a Deal
 
-Code runs inside **secure enclaves** (Trusted Execution Environments - TEEs) on
-iExec workers. The worker can access your data to process it, but only within
-the privacy-safe TEE environment - your data never leaves the secure bubble.
+**Requester** submits a computation request. The **PoCo smart contract**
+automatically matches and brings together all required resources: the iApp,
+protected data, and available workerpool.
 
-### Step 3: Run iApp
+→ **Guides**:
+[Run iApp with ProtectedData](/guides/use-iapp/run-iapp-with-ProtectedData),
+[Run iApp without ProtectedData](/guides/use-iapp/run-iapp-without-ProtectedData)
 
-You submit a **Task** = "Run this iApp on this protected data". The protocol
-finds available workers and executes everything confidentially.
+### Step 3: Execute in TEE
 
-→ **DevTool**: [iApp Generator](/references/iapp-generator) helps you create and
-deploy iApp
+**Workers** from the selected workerpool download the iApp and execute it inside
+**secure enclaves** (TEEs). Your data is processed confidentially - workers can
+run computations but never access raw data outside the TEE.
 
-### Step 4: Get Results
+### Step 4: Deliver Results & Pay
 
-Results come back **encrypted to you**. Workers never see raw data, you never
-lose control.
-
-```
-Protected Data + iApp + Worker = Task → Encrypted Result
-```
+Results are encrypted and delivered back to the requester. **RLC tokens** are
+automatically distributed to all participants (app provider, data provider,
+workerpool) based on their contribution.
 
 ## What each piece does
 

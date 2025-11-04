@@ -134,7 +134,7 @@ features:
     details:
       Execute privacy-preserving apps like Web3Mail and Web3Telegram. Use what
       others built, extend what you need.
-    link: /guides/use-iapp/introduction
+    link: /guides/use-iapp/run-iapp-with-ProtectedData
   - icon:
       <svg class="_fill" width="37" height="36" viewBox="0 0 37 36" fill="none"
       xmlns="http://www.w3.org/2000/svg"> <path d="M35.2516 10.9932C34.345
