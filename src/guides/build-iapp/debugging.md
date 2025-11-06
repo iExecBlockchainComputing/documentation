@@ -4,7 +4,7 @@ description:
   Troubleshoot and optimize your iApp execution in the TEE environment
 ---
 
-# 🐛 Debugging
+# Debugging
 
 **When your iApp doesn't work as expected, debugging in the TEE environment
 requires specific techniques.** This guide helps you identify issues and
@@ -99,7 +99,7 @@ iexec task show <taskId> --download
 - **Cause**: Loading large files, memory leaks, TEE constraints
 - **Solution**: Process data in chunks, use streaming, optimize memory usage
 
-### 📁 **Input/Output Problems**
+### **Input/Output Problems**
 
 - **Cause**: Wrong file paths, missing `computed.json`
 - **Solution**: Always create `computed.json`, verify environment variables

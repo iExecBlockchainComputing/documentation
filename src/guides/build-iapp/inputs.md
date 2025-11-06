@@ -5,7 +5,7 @@ description:
   environment
 ---
 
-# 📥 Inputs
+# Inputs
 
 **Your iApp runs inside a secure TEE environment with access to different types
 of inputs.** Understanding what data you can access, how to access it, and when

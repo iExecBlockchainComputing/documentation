@@ -5,7 +5,7 @@ description:
   platform
 ---
 
-# 🤖 AI Framework Support
+# AI Framework Support
 
 The iExec Platform provides comprehensive support for popular AI and machine
 learning frameworks. Deploy confidential AI with ease. iExec supports popular
@@ -55,7 +55,7 @@ Scale AI applications without centralized cloud dependencies:
 - **Fair Pricing**: Blockchain verifies execution costs transparently
 - **Global Network**: Deploy across a worldwide network of secure workers
 
-## 🤖 AI Framework Support
+## AI Framework Support
 
 ### Overview
 
@@ -79,7 +79,7 @@ Scale AI applications without centralized cloud dependencies:
 | **NumPy**        | 2.0.2       | Fundamental package for scientific computing  | ✅ 1.25GB   | ✅ 1.08GB           | Scientific computing, data analysis    | [Docs](https://numpy.org/doc/) • [User Guide](https://numpy.org/doc/stable/user/index.html) • [Docker](https://github.com/iExecBlockchainComputing/ai-frameworks-hello-world/tree/main/numpy)                                       |
 | **Matplotlib**   | 3.9.4       | Comprehensive library for data visualization  | ✅ 1.25GB   | ✅ 1.08GB           | Data visualization, plotting           | [Docs](https://matplotlib.org/) • [Gallery](https://matplotlib.org/stable/gallery/index.html) • [Docker](https://github.com/iExecBlockchainComputing/ai-frameworks-hello-world/tree/main/matplotlib)                                |
 
-## 🐳 Getting Started with Docker Examples
+## Getting Started with Docker Examples
 
 ### What's Included
 

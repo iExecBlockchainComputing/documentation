@@ -39,7 +39,7 @@ All stakeholders earn RLC when people use their contributions.
 More developers using iExec's privacy tools means more RLC utility in real
 dApps. iExec builds actionable privacy, not just protocols.
 
-## 💰 Transparent Payment Flow
+## Transparent Payment Flow
 
 When you pay for a task execution with RLC, your payment is automatically and
 transparently distributed to all iExec protocol participants:
@@ -93,7 +93,7 @@ ecosystem requires RLC:
 - Confidential computations need RLC for execution
 - Staking mechanisms lock RLC, reducing circulating supply
 
-## 🔄 Getting RLC
+## Getting RLC
 
 You can acquire RLC tokens through several methods:
 

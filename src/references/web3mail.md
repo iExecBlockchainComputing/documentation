@@ -10,7 +10,7 @@ description:
 import { Icon } from '@iconify/vue';
 </script>
 
-# ✉ Web3Mail
+# Web3Mail
 
 The Web3Mail tool offers a secure method to manage email-based communications
 via the blockchain. This mechanism helps protect the personal information of the

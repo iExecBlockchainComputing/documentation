@@ -154,7 +154,7 @@ const taskId = await iexec.order.matchOrders({
 });
 ```
 
-## 🔄 Other use cases
+## Other use cases
 
 | Use Case             | Description                              |
 | -------------------- | ---------------------------------------- |

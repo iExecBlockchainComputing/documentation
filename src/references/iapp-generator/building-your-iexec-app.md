@@ -5,7 +5,7 @@ description:
   iApp Generator command-line tool with step-by-step guidance.
 ---
 
-# 🧑‍🏭 Build your iApp
+# Build your iApp
 
 ::: tip 📋 Prerequisites
 

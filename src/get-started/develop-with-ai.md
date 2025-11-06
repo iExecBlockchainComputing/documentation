@@ -5,7 +5,7 @@ description:
   privacy-first applications with iExec
 ---
 
-# 🤖 Develop with AI
+# Develop with AI
 
 AI tools accelerate building privacy-first applications with iExec using
 AI-powered development tools. This guide covers how to effectively use AI

@@ -5,7 +5,7 @@ description:
   workerpools, and protected datasets without spending real tokens.
 ---
 
-# 🚰 RLC Faucet
+# RLC Faucet
 
 Get free RLC tokens on **Arbitrum Sepolia testnet** to test your iApps, pay for
 workerpool executions, and access protected datasets without spending real
@@ -34,7 +34,7 @@ To be eligible for RLC claims, builders must meet these criteria:
   distribution)
 - **One claim per 24 hours** per authenticated account
 
-## 💰 Claim Details
+## Claim Details
 
 <UseCaseCard
   title="🚰 iExec RLC Faucet"

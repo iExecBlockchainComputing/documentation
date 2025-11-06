@@ -77,7 +77,7 @@ RLC tokens between Ethereum and Arbitrum mainnet in both directions.
   link-url="https://stargate.finance/bridge"
 />
 
-## 🔄 Bellecour Bridge
+## Bellecour Bridge
 
 The **Bellecour Bridge** enables seamless transfer of RLC tokens between
 Ethereum mainnet and the Bellecour sidechain in both directions. When bridged to
