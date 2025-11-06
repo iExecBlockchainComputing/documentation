@@ -5,7 +5,7 @@ description:
   technology using both traditional deployment and the iApp Generator
 ---
 
-# 🛡️ Build Intel TDX iApp <ChainNotSupportedBadge/>
+# Build Intel TDX iApp <ChainNotSupportedBadge/>
 
 In this tutorial, you will learn how to build and run a Confidential Computing
 application with Intel TDX technology using both traditional deployment and the
@@ -257,7 +257,7 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
 
 ## What's Next?
 
-### 🔧 **Continue with TDX Development**
+### **Continue with TDX Development**
 
 **Enhance your TDX application**:
 
@@ -269,7 +269,7 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
 - **[iApp Access Control and Pricing](/guides/build-iapp/manage-access)** -
   Configure access control for your TDX applications
 
-### 📚 **Learn More About TEE Technologies**
+### **Learn More About TEE Technologies**
 
 **Deepen your understanding**:
 
@@ -280,7 +280,7 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
 - **[Introduction to TEE Technologies](/protocol/tee/introduction)** -
   Foundation concepts of TEE technologies
 
-### 🚀 **Production Considerations**
+### **Production Considerations**
 
 **For production applications**:
 
@@ -291,7 +291,7 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
 - **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Standard iApp deployment
   guide
 
-### 🔗 **Related Resources**
+### **Related Resources**
 
 **Explore the iExec ecosystem**:
 

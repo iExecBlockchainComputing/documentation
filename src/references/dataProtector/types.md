@@ -9,7 +9,7 @@ description:
 
 Types in DataProtector.
 
-## 🔑 GrantedAccess
+## GrantedAccess
 
 ### dataset: <span class="text-yellow">`string`</span>
 
@@ -60,7 +60,7 @@ Types in DataProtector.
 
 - Order signature of all the `grantedAccess` fields
 
-## 🔐 ProtectedData
+## ProtectedData
 
 ### name: <span class="text-yellow">`string`</span>
 

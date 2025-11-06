@@ -12,7 +12,7 @@ learning frameworks. Deploy confidential AI with ease. iExec supports popular
 AI/ML frameworks, running in secure Trusted Execution Environments (TEEs) with
 optimized configurations.
 
-## 🚀 Quick Start
+## Quick Start
 
 **Want to get started immediately?**
 
@@ -25,7 +25,7 @@ optimized configurations.
   **[TDX App Guide](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
   Build TDX applications (works well for AI workloads)
 
-## 🛡️ Why iExec for AI?
+## Why iExec for AI?
 
 ### Confidential Computing
 
@@ -122,7 +122,7 @@ docker run --rm hello-pytorch
 - **✅ TDX Ready**: All containers tested for Intel TDX compatibility
 - **✅ Easy Deployment**: Simple build and run commands
 
-## 📊 Technology Comparison
+## Technology Comparison
 
 ### TDX vs SGX for AI
 
@@ -152,7 +152,7 @@ docker run --rm hello-pytorch
   modifications
 - **TDX Advantages**: Minimal code changes required ("lift and shift" approach)
 
-## 📚 Next Steps
+## Next Steps
 
 ### Learn TEE Technologies
 

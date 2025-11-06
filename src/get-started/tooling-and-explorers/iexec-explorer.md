@@ -5,7 +5,7 @@ description:
   platform. Monitor deals, tasks, apps, and datasets in real-time.
 ---
 
-# 🔍 iExec Explorer
+# iExec Explorer
 
 The **iExec Explorer** is your real-time window into the iExec confidential
 decentralized computing protocol. Track deals, monitor task execution, and
@@ -25,7 +25,7 @@ Explorer displays data for the network you choose.
 
 :::
 
-## 🎯 What you Can Explore
+## What you Can Explore
 
 <CardGrid>
   <FeatureCard

@@ -18,7 +18,7 @@ requires RLC. Every piece of protected data consumed requires RLC. Every app
 execution requires RLC. The more builders use iExec tools, the more RLC has to
 be bought and used by builder leveraging iExec's technology.
 
-## 🎯 Why RLC Matters
+## Why RLC Matters
 
 **iExec's adoption is linearly correlated to the real-time usage of the RLC
 token** When developers build with iExec tools, RLC gets used. More privacy apps
@@ -66,7 +66,7 @@ during the task period. In exchange, you receive **sRLC (staked RLC)**. Once the
 task is completed, you can recover the RLC that wasn't consumed for the task
 payment.
 
-### 📊 Ecosystem Growth Metrics
+### Ecosystem Growth Metrics
 
 ::: info Circulating Supply
 
@@ -134,7 +134,7 @@ You can acquire RLC tokens through several methods:
   />
 </div>
 
-## 🚀 Ready to Get Started?
+## Ready to Get Started?
 
 Ready to dive into the iExec ecosystem? Here are the next steps:
 

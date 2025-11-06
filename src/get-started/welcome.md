@@ -145,7 +145,7 @@ data** and **building and deploying confidential apps**.
 
 </Container>
 
-## 🚀 Start Building
+## Start Building
 
 Ready to build privacy-first applications? Choose your path:
 

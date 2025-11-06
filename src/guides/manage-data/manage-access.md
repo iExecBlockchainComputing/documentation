@@ -4,7 +4,7 @@ description:
   Learn how to protect data and grant secure access for specific apps and users
 ---
 
-# 🛡️ Manage Access
+# Manage Access
 
 **Want to keep your data private while still using it in confidential
 applications?**

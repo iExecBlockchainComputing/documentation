@@ -6,7 +6,7 @@ description:
   networks.
 ---
 
-# 🔍 The Graph Explorer
+# The Graph Explorer
 
 The **iExec protocol** uses **The Graph** as a decentralized protocol for
 indexing and querying blockchain data across multiple networks. This powerful
@@ -19,7 +19,7 @@ data through GraphQL queries.
   link-url="https://thegraph.com/docs/en/subgraphs/quick-start/"
 />
 
-## 🎯 What is the Graph?
+## What is the Graph?
 
 The Graph is a decentralized protocol for indexing and querying blockchain data.
 It enables developers to build and publish open API called **subgraphs** that
@@ -41,7 +41,7 @@ data without having to run your own indexing infrastructure.
 - **GraphQL Interface**: Powerful query language for flexible data retrieval
 - **Multi-network Support**: Access data across different blockchain networks
 
-## 🗂️ Available Subgraphs
+## Available Subgraphs
 
 iExec has deployed several subgraphs across different networks to provide
 comprehensive data access. Each subgraph indexes specific aspects of the iExec
@@ -117,7 +117,7 @@ protocol.
 
 </CardGrid>
 
-## 🔍 GraphQL Explorer Interface
+## GraphQL Explorer Interface
 
 The Graph provides an interactive GraphQL explorer that allows you to build and
 test queries directly in your browser. This powerful interface makes it easy to

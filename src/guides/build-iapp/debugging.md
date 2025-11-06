@@ -88,13 +88,13 @@ iexec task show <taskId> --download
 
 ## Common Issues
 
-### ⏱️ **Task Timeout**
+### **Task Timeout**
 
 - **Cause**: Code takes too long to execute
 - **Solution**: Optimize algorithms, reduce input sizes, use appropriate task
   category
 
-### 💾 **Memory Issues**
+### **Memory Issues**
 
 - **Cause**: Loading large files, memory leaks, TEE constraints
 - **Solution**: Process data in chunks, use streaming, optimize memory usage
@@ -112,7 +112,7 @@ with open(f"{os.environ['IEXEC_OUT']}/computed.json", 'w') as f:
     json.dump(computed, f)
 ```
 
-### ⚠️ **Dataset Type Unmatching**
+### **Dataset Type Unmatching**
 
 - **Cause**: The dataset type specified in the frontend (protectData) does not
   match with the dataset type specified in the iApp
@@ -120,7 +120,7 @@ with open(f"{os.environ['IEXEC_OUT']}/computed.json", 'w') as f:
 
 ## Best Practices
 
-### 🔍 **Input Validation**
+### **Input Validation**
 
 ```python
 import os, sys
@@ -136,7 +136,7 @@ if len(sys.argv) < 2:
     sys.exit(1)
 ```
 
-### 📝 **Clear Error Messages**
+### **Clear Error Messages**
 
 ```python
 try:
@@ -147,7 +147,7 @@ except Exception as e:
     sys.exit(1)
 ```
 
-### 🔒 **Safe File Operations**
+### **Safe File Operations**
 
 ```python
 import os, json

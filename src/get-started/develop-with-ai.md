@@ -11,7 +11,7 @@ AI tools accelerate building privacy-first applications with iExec using
 AI-powered development tools. This guide covers how to effectively use AI
 assistants while maintaining security best practices.
 
-## 📚 Documentation for LLMs and AI Code Editors
+## Documentation for LLMs and AI Code Editors
 
 You can use MCP (Model Control Protocol) servers like
 [Context7](https://context7.com/iexecblockchaincomputing/documentation) to
@@ -21,7 +21,7 @@ provide:
 - Architecture suggestions for privacy-first apps
 - Code explanation and best practices
 
-## 🎨 Vibe Coding Integration
+## Vibe Coding Integration
 
 Vibe coding lets you build applications by describing what you want in plain
 language. An AI assistant (like Cursor or ChatGPT) then generates code based on
@@ -37,7 +37,7 @@ users can:
 
 - You review and adjust until it works
 
-## ⚠️ Security Considerations
+## Security Considerations
 
 While vibe coding is powerful, it's important to keep privacy and security in
 mind:

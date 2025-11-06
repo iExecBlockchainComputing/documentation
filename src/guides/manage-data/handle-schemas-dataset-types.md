@@ -4,7 +4,7 @@ description:
   Learn how schemas work in DataProtector and how to use them in your iApp
 ---
 
-# 🏷️ Handle Schemas and Dataset Types
+# Handle Schemas and Dataset Types
 
 **Schemas are like content labels that describe what's inside your protected
 data.**
@@ -96,7 +96,7 @@ MIME types manually.
 - **Structure**: Facilitates structured communication between **front-end and
   iApp logic**
 
-### 🎯 **For iApp Development**
+### **For iApp Development**
 
 Schemas let your iApp validate and process data safely:
 
@@ -113,11 +113,11 @@ const preferences = await deserializer.getValue(
 );
 ```
 
-### 🛡️ **For Type Safety**
+### **For Type Safety**
 
 Prevents your iApp from processing incompatible data types.
 
-### 🔍 **For Data Discovery**
+### **For Data Discovery**
 
 Users can find relevant protected data without seeing the actual content:
 

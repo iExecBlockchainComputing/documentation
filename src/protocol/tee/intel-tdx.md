@@ -5,7 +5,7 @@ description:
   technology
 ---
 
-# 🛡️ Intel TDX Technology
+# Intel TDX Technology
 
 **Intel TDX (Trust Domain Extensions)** is Intel's next-generation confidential
 computing technology, representing the evolution from application-level to
