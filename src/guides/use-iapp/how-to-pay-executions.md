@@ -1,34 +1,23 @@
 ---
 title: How to Pay for iApp Executions
 description:
-  Learn about payment methods, pricing, and cost management for iApp executions
+  Learn how to use RLC tokens, manage pricing, and control costs for iApp executions
 ---
 
 # How to Pay for iApp Executions
 
-Understanding how to pay for iApp executions is crucial for using the iExec
-network effectively. This guide covers all payment methods, pricing structures,
-and cost management strategies.
+iExec uses RLC tokens as the native currency for executing iApps. This guide
+covers how to acquire RLC, stake it on the protocol, and manage execution costs.
 
-## Payment Methods Overview
+## Getting RLC Tokens
 
-iExec uses RLC tokens for executing iApp. You need to have RLC in your wallet to
-pay for executions.
+To execute iApps, you need RLC tokens in your wallet. For detailed information
+on how to obtain RLC tokens, see our [RLC guide](/get-started/overview/rlc.md).
 
-## Paying with RLC Tokens
+## Staking RLC
 
-RLC tokens are the native currency of the iExec network. You need to have RLC in
-your wallet to pay for executions.
-
-### Step 1: Get RLC Tokens
-
-For detailed information on how to obtain RLC tokens, see our
-[RLC guide](/get-started/overview/rlc.md).
-
-### Step 2: Stake RLC to Power Your iExec Tasks
-
-RLC tokens need to be staked on the iExec protocol to allow task payment. To do
-this, you should use the [iExec SDK](/references/sdk.md).
+RLC tokens need to be staked on the iExec protocol to allow task payment. Use
+the [iExec SDK](/references/sdk.md) to deposit and manage your RLC:
 
 ```ts twoslash
 import { IExec, utils } from 'iexec';
@@ -94,9 +83,7 @@ parameters is 0, which means only free resources are accepted.
 
 ## Next Steps
 
-Now that you understand payment methods:
+Now that you know how to pay for iApp executions:
 
-- Learn about
-  [Run iApp with ProtectedData](/guides/use-iapp/run-iapp-with-ProtectedData)
-- Learn about
-  [Run iApp without ProtectedData](/guides/use-iapp/run-iapp-without-ProtectedData)
+- [Run iApp with ProtectedData](/guides/use-iapp/run-iapp-with-ProtectedData)
+- [Run iApp without ProtectedData](/guides/use-iapp/run-iapp-without-ProtectedData)
