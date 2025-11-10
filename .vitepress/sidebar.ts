@@ -85,10 +85,6 @@ export function getSidebar() {
             link: '/get-started/tooling-and-explorers/iexec-explorer',
           },
           {
-            text: 'Builder Dashboard',
-            link: '/get-started/tooling-and-explorers/builder-dashboard',
-          },
-          {
             text: 'RLC Bridge',
             link: '/get-started/tooling-and-explorers/bridge',
           },

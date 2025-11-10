@@ -99,7 +99,6 @@ const sendEmail = await web3mail.sendEmail({
   protectedData: '0x123abc...',
   emailSubject: 'My email subject',
   emailContent: 'My email content',
-  // useVoucher: true,
 });
 ```
 
@@ -123,6 +122,6 @@ const sendTelegram = await web3telegram.sendTelegram({
 Each message sent through Web3Mail or Web3Telegram requires payment in RLC
 tokens.
 
-For detailed information about payment methods, pricing, and voucher usage, see
-the comprehensive guide:
+For detailed information about payment methods and pricing, see the
+comprehensive guide:
 [How to pay for executions](/guides/use-iapp/how-to-pay-executions)

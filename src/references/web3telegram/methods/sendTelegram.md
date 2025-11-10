@@ -21,8 +21,8 @@ documentation for more details.
 
 ::: tip
 
-For executing the `sendTelegram` method with a voucher or RLC, refer to the
-dedicated section in the documentation under
+For executing the `sendTelegram` method with RLC, refer to the dedicated section
+in the documentation under
 "[How to Pay for Executions](/guides/use-iapp/how-to-pay-executions.md)".
 
 :::
@@ -113,43 +113,6 @@ const sendTelegram = await web3telegram.sendTelegram({
   telegramContent: 'My telegram message content', // [!code focus]
 });
 ```
-
-### useVoucher <ChainNotSupportedBadge /> <OptionalBadge />
-
-**Type:** `boolean`
-
-**Default:** `false`
-
-This optional param allows you to pay for the deal using your voucher. Make sure
-that your voucher is held by your connected wallet.
-
-```ts twoslash
-import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const web3telegram = new IExecWeb3telegram(web3Provider);
-// ---cut---
-
-const sendTelegram = await web3telegram.sendTelegram({
-  protectedData: '0x123abc...',
-  telegramContent: 'My telegram message content',
-  senderName: 'Awesome project team',
-  label: 'some-custom-id',
-  dataMaxPrice: 42,
-  appMaxPrice: 42,
-  workerpoolMaxPrice: 42,
-  useVoucher: true, // [!code focus]
-});
-```
-
-::: tip
-
-If your voucher doesn't have enough RLC to cover the deal, the SDK will
-automatically get the required amount to your iExec account. Ensure that your
-voucher is authorized to access your iExec account and that your account has
-sufficient funds for this transfer to proceed.
-
-:::
 
 ### label
 
@@ -286,7 +249,6 @@ the status of the `sendTelegram` method by monitoring the task on the
 <script setup>
 import { computed } from 'vue';
 import OptionalBadge from '@/components/OptionalBadge.vue'
-import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 import useUserStore  from '@/stores/useUser.store';
 import {getChainById} from '@/utils/chain.utils';
 
