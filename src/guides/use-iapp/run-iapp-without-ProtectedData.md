@@ -5,7 +5,7 @@ description:
   files, and secrets using the iexec SDK
 ---
 
-# 📥 Run iApp without a ProtectedData
+# Run iApp without a ProtectedData
 
 When running an iApp, you can use multiple types of inputs even without
 ProtectedData. Non-persistent inputs come directly from you (the requester) and

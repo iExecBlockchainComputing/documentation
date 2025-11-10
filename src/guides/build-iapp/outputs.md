@@ -5,7 +5,7 @@ description:
   environment
 ---
 
-# 📤 Outputs
+# Outputs
 
 **Your iApp must generate outputs that users can retrieve and decrypt.**
 Understanding how to structure your outputs, create the required metadata, and

@@ -4,7 +4,7 @@ description:
   Learn about payment methods, pricing, and cost management for iApp executions
 ---
 
-# 💰 How to Pay for iApp Executions
+# How to Pay for iApp Executions
 
 Understanding how to pay for iApp executions is crucial for using the iExec
 network effectively. This guide covers all payment methods, pricing structures,

@@ -8,7 +8,7 @@ description:
   (usage-based) and time-based access (time-period payments)
 ---
 
-# 💰 Monetize Protected Data
+# Monetize Protected Data
 
 **Transform your encrypted data into a sustainable revenue stream.**
 
@@ -23,7 +23,7 @@ access your data, how much they pay per use, and how many times they can access
 it. Users pay automatically each time they process your data, giving you precise
 control over monetization.
 
-## 📝 Signed Orders (DataProtector Core)
+## Signed Orders (DataProtector Core)
 
 **How it works**: You create and publish signed orders that specify the exact
 conditions for accessing your protected data. Each order defines:

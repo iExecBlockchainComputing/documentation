@@ -5,7 +5,7 @@ description:
   Computing
 ---
 
-# 🛡️ Introduction to TEE Technologies
+# Introduction to TEE Technologies
 
 **Trusted Execution Environments (TEE)** are the foundation of confidential
 computing, providing hardware-level security for sensitive applications and data

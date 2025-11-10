@@ -5,9 +5,9 @@ description:
   installation, and first steps.
 ---
 
-# 🛠 Getting Started
+# Getting Started
 
-## 🕕 Prerequisites
+## Prerequisites
 
 Before using the iApp Generator, make sure you have:
 
@@ -56,7 +56,7 @@ If `linux/amd64` is not listed, **update your Docker installation.**
 
 :::
 
-### 📦 Installation
+### Installation
 
 ::: code-group
 

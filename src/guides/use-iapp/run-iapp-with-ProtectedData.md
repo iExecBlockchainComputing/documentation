@@ -5,7 +5,7 @@ description:
   files using the DataProtector toolkit for secure data processing
 ---
 
-# 📥 Run iApp with a ProtectedData
+# Run iApp with a ProtectedData
 
 When running an iApp, you can use multiple types of inputs. While ProtectedData
 is not mandatory to run an iApp, it's a powerful input type that allows you to

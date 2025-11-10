@@ -4,7 +4,7 @@ description:
   Comprehensive comparison of Intel SGX and Intel TDX TEE technologies
 ---
 
-# 🛡️ SGX vs TDX: Technology Comparison
+# SGX vs TDX: Technology Comparison
 
 **Intel SGX and Intel TDX are both TEE technologies, but they solve the security
 problem differently.** On the iExec platform, SGX is the **production-ready,
@@ -26,7 +26,7 @@ technology** for advanced use cases.
 
 ## Key differences
 
-### 🎯 **Protection Scope**
+### **Protection Scope**
 
 | Aspect               | [Intel SGX](/protocol/tee/intel-sgx)                         | [Intel TDX](/protocol/tee/intel-tdx)                           |
 | -------------------- | ------------------------------------------------------------ | -------------------------------------------------------------- |
@@ -34,7 +34,7 @@ technology** for advanced use cases.
 | **Scope**            | Small, focused secure areas within larger applications       | Multiple trusted domains can run on a single TDX machine       |
 | **Analogy**          | Like installing a small, specialized safe inside your office | Like having multiple secure offices within one secure building |
 
-### 💾 **Memory and Performance**
+### **Memory and Performance**
 
 | Aspect                     | Intel SGX                                           | Intel TDX                                          |
 | -------------------------- | --------------------------------------------------- | -------------------------------------------------- |
@@ -42,7 +42,7 @@ technology** for advanced use cases.
 | **Performance**            | Optimized for lightweight applications              | Optimized for complex, memory-intensive workloads  |
 | **Limitations/Advantages** | Memory constraints can limit application complexity | Can handle large datasets and complex applications |
 
-### 🔧 **Development and Integration**
+### **Development and Integration**
 
 | Aspect             | Intel SGX                                            | Intel TDX                                          |
 | ------------------ | ---------------------------------------------------- | -------------------------------------------------- |

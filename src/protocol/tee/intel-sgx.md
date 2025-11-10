@@ -5,7 +5,7 @@ description:
   technology
 ---
 
-# 🛡️ Intel SGX Technology
+# Intel SGX Technology
 
 **Intel® Software Guard Extensions (Intel® SGX)** is the first-generation TEE
 technology that enables **Trusted Computing** and **Confidential Computing**. On

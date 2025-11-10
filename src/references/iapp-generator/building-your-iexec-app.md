@@ -5,7 +5,7 @@ description:
   iApp Generator command-line tool with step-by-step guidance.
 ---
 
-# 🧑‍🏭 Build your iApp
+# Build your iApp
 
 ::: tip 📋 Prerequisites
 
@@ -15,14 +15,14 @@ detailed prerequisites and installation instructions.
 
 :::
 
-## 🧰 Initialize your iApp
+## Initialize your iApp
 
 The iApp (iExec App) Generator command-line tool simplifies the setup of your
 iApp by guiding you through a step-by-step initialization process. This ensures
 your iApp is correctly configured and compatible with iExec's confidential
 computing environment.
 
-### 🏗 Define your project
+### Define your project
 
 <CLIDemo
   initialCommand="iapp init"
@@ -78,7 +78,7 @@ Follow the prompts to specify:
 - **Language** – Choose between JavaScript, Python, etc.
 - **Project mode** – Choose Basic (Hello-World setup) or Advanced mode.
 
-### ⚙ Configure
+### Configure
 
 You'll set up:
 
@@ -92,7 +92,7 @@ You'll set up:
 For more details and to learn how to use them in your application, refer here
 [Inputs](/guides/build-iapp/inputs).
 
-## 🚀 Build your iApp
+## Build your iApp
 
 After initialization, the following essential files and directories are
 generated:
@@ -119,7 +119,7 @@ algorithms and data processing here.
 
 :::
 
-## 🛠️ CLI Commands Reference
+## CLI Commands Reference
 
 ### `iapp init`
 
@@ -229,7 +229,7 @@ discontinuity.
 
 :::
 
-## 🚀 Next Steps
+## Next Steps
 
 Your iApp is now running on iExec!
 

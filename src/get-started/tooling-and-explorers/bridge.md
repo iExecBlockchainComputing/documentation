@@ -24,7 +24,7 @@ protected datasets without spending real tokens.
 
 :::
 
-## 🗂️ Available Bridges
+## Available Bridges
 
 iExec provides officially supported bridges for seamless token transfer across
 networks:
@@ -55,7 +55,7 @@ networks:
   />
 </CardGrid>
 
-## ⚡ Stargate Bridge
+## Stargate Bridge
 
 The **Stargate Bridge** powered by LayerZero enables cross-chain transfers of
 RLC tokens between Ethereum and Arbitrum mainnet in both directions.
@@ -77,7 +77,7 @@ RLC tokens between Ethereum and Arbitrum mainnet in both directions.
   link-url="https://stargate.finance/bridge"
 />
 
-## 🔄 Bellecour Bridge
+## Bellecour Bridge
 
 The **Bellecour Bridge** enables seamless transfer of RLC tokens between
 Ethereum mainnet and the Bellecour sidechain in both directions. When bridged to
@@ -113,7 +113,7 @@ xRLC seamlessly.
 
 :::
 
-## 🔒 Security & Audits
+## Security & Audits
 
 The **Stargate Bridge** uses the **LayerZero protocol** under the hood, which
 provides secure cross-chain communication infrastructure. LayerZero is a

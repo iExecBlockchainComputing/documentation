@@ -5,13 +5,13 @@ description:
   Arbitrum mainnet and Bellecour network.
 ---
 
-# 🔍 Blockchain Explorers
+# Blockchain Explorers
 
 Monitor iExec protocol smart contracts on all supported networks through
 verified blockchain explorers. All protocol contracts have been verified and are
 publicly auditable.
 
-## 🌐 Supported Networks
+## Supported Networks
 
 <div class="grid grid-cols-1 gap-8 my-8">
   <UseCaseCard

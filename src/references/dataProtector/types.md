@@ -9,7 +9,7 @@ description:
 
 Types in DataProtector.
 
-## 🔑 GrantedAccess
+## GrantedAccess
 
 ### dataset: <span class="text-yellow">`string`</span>
 
@@ -60,7 +60,7 @@ Types in DataProtector.
 
 - Order signature of all the `grantedAccess` fields
 
-## 🔐 ProtectedData
+## ProtectedData
 
 ### name: <span class="text-yellow">`string`</span>
 
@@ -94,7 +94,7 @@ Types in DataProtector.
 
 - The multiaddr field is the IPFS path of your encrypted data.
 
-## ❌ RevokedAccess
+## RevokedAccess
 
 ### access: <span class="text-yellow">[`GrantedAccess`](#-grantedaccess)</span>
 
@@ -113,7 +113,7 @@ _Hash example:_ `0xc9c2d58fc01fe54149b7daf49a0026d4ab1fdd3d10fb7c76350790fff03fe
 You can read more about the
 [iExec Explorer](/get-started/tooling-and-explorers/iexec-explorer).
 
-## ✅ SuccessWithTransactionHash
+## SuccessWithTransactionHash
 
 ### txHash: <span class="text-yellow">`string`</span>
 

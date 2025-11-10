@@ -5,7 +5,7 @@ description:
   iApp and your manage vouchers
 ---
 
-# 🏗️ Builder Dashboard
+# Builder Dashboard
 
 The **Builder Dashboard** is your comprehensive development hub for iExec
 protocol. Monitor voucher usage, track your remaining compute capacity for TEE
@@ -20,7 +20,7 @@ confidential iApp deployed on the protocol.
   caption="Access the Builder Dashboard"
 />
 
-## 🎯 Key Features
+## Key Features
 
 <CardGrid>
   <FeatureCard
@@ -34,7 +34,7 @@ confidential iApp deployed on the protocol.
   />
 </CardGrid>
 
-## 📊 Voucher Consumption & Task History
+## Voucher Consumption & Task History
 
 The first screen of the Builder Dashboard provides comprehensive voucher
 monitoring with detailed task execution history and real-time balance tracking.
@@ -81,7 +81,7 @@ monitoring with detailed task execution history and real-time balance tracking.
   />
 </CardGrid>
 
-## 📱 Confidential iApp Management
+## Confidential iApp Management
 
 The second screen provides comprehensive management and analytics for your
 deployed confidential iApp with detailed statistics and user insights.

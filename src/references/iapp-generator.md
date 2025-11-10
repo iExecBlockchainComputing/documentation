@@ -6,7 +6,7 @@ description:
   TEE environments. Deploy in minutes
 ---
 
-# 🤖 iApp Generator
+# iApp Generator
 
 **Here's the tool, what it does, and how to use it.** iApp Generator is a CLI
 that builds apps running inside TEEs. You write code, iExec handles the

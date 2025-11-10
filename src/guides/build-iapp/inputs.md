@@ -5,7 +5,7 @@ description:
   environment
 ---
 
-# 📥 Inputs
+# Inputs
 
 **Your iApp runs inside a secure TEE environment with access to different types
 of inputs.** Understanding what data you can access, how to access it, and when
@@ -466,7 +466,7 @@ iapp test --protectedData "mock_name"
 
 ## Common Patterns
 
-### 🔍 **Data Analysis iApp**
+### **Data Analysis iApp**
 
 **User execution (DataProtector):**
 
@@ -498,7 +498,7 @@ results = analyze_data(protected_data, args, api_key)
 save_results(results)
 ```
 
-### 🤖 **AI Model iApp**
+### **AI Model iApp**
 
 **User execution (DataProtector):**
 
@@ -533,7 +533,7 @@ predictions = model.predict(user_data)
 save_encrypted_results(predictions)
 ```
 
-### 📊 **Report Generator iApp**
+### **Report Generator iApp**
 
 **User execution (DataProtector):**
 
