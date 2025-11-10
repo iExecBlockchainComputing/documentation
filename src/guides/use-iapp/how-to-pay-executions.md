@@ -1,7 +1,8 @@
 ---
 title: How to Pay for iApp Executions
 description:
-  Learn how to use RLC tokens, manage pricing, and control costs for iApp executions
+  Learn how to use RLC tokens, manage pricing, and control costs for iApp
+  executions
 ---
 
 # How to Pay for iApp Executions
