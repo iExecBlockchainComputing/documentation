@@ -39,7 +39,7 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
 // Prepare the campaign
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
   emailContent: 'My email content',
   contentType: 'text/plain',
@@ -58,7 +58,7 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
 // Prepare the campaign
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
   emailContent: 'My email content',
   contentType: 'text/plain',
@@ -73,7 +73,7 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
 import { type PrepareEmailCampaignParams } from '@iexec/web3mail';
 ```
 
-### grantedAccess <RequiredBadge />
+### grantedAccesses <RequiredBadge />
 
 **Type:** `GrantedAccess[]`
 
@@ -82,7 +82,7 @@ access to their protected data with bulk processing capability.
 
 ```ts twoslash
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray, // [!code focus]
+  grantedAccesses: grantedAccessArray, // [!code focus]
   emailSubject: 'My subject',
   emailContent: 'My content',
 });
@@ -96,7 +96,7 @@ The email subject that will be sent to all recipients.
 
 ```ts twoslash
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject', // [!code focus]
   emailContent: 'My email content',
 });
@@ -113,7 +113,7 @@ and stored in IPFS.
 
 ```ts twoslash
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
   emailContent: 'My email content', // [!code focus]
 });
@@ -129,7 +129,7 @@ The MIME type of the email content (e.g., `'text/plain'`, `'text/html'`).
 
 ```ts twoslash
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
   emailContent: 'My email content',
   contentType: 'text/html', // [!code focus]
@@ -146,7 +146,7 @@ Limits the number of protected data items processed per task.
 
 ```ts twoslash
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
   emailContent: 'My email content',
   maxProtectedDataPerTask: 10, // [!code focus]
@@ -164,7 +164,7 @@ You can specify this during preparation or when sending the campaign.
 
 ```ts twoslash
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
   emailContent: 'My email content',
   workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
@@ -183,7 +183,7 @@ preparation or when sending the campaign.
 
 ```ts twoslash
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
   emailContent: 'My email content',
   workerpoolMaxPrice: 0.1 * 1e9, // [!code focus]
@@ -198,7 +198,7 @@ An optional label to identify or categorize the campaign.
 
 ```ts twoslash
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
   emailContent: 'My email content',
   label: 'Newsletter Campaign', // [!code focus]
@@ -216,7 +216,7 @@ data.
 
 ```ts twoslash
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
   emailContent: 'My email content',
   dataMaxPrice: 0.1 * 1e9, // [!code focus]
@@ -234,7 +234,7 @@ for using the Web3Mail application.
 
 ```ts twoslash
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
   emailContent: 'My email content',
   appMaxPrice: 0.1 * 1e9, // [!code focus]
@@ -280,7 +280,7 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
 // Step 2: Prepare the campaign
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'Hello from My Awesome App!',
   emailContent:
     'Hello! This is a bulk email sent to all recipients. Thank you for subscribing!',
@@ -308,7 +308,7 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
 // Step 2: Prepare the campaign
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'Hello from My Awesome App!',
   emailContent:
     'Hello! This is a bulk email sent to all recipients. Thank you for subscribing!',

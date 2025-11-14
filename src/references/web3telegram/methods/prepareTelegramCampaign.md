@@ -41,7 +41,7 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
 // Prepare the campaign
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
 });
@@ -59,7 +59,7 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
 // Prepare the campaign
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
 });
@@ -73,7 +73,7 @@ const telegramCampaign = await web3telegram.prepareTelegramCampaign({
 import { type PrepareTelegramCampaignParams } from '@iexec/web3telegram';
 ```
 
-### grantedAccess <RequiredBadge />
+### grantedAccesses <RequiredBadge />
 
 **Type:** `GrantedAccess[]`
 
@@ -82,7 +82,7 @@ access to their protected data with bulk processing capability.
 
 ```ts twoslash
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray, // [!code focus]
+  grantedAccesses: grantedAccessArray, // [!code focus]
   telegramContent: 'My message',
   senderName: 'My App',
 });
@@ -99,7 +99,7 @@ encrypted and stored in IPFS.
 
 ```ts twoslash
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent: 'My telegram message content', // [!code focus]
   senderName: 'Awesome project team',
 });
@@ -113,7 +113,7 @@ The name of the telegram message sender that will be displayed to recipients.
 
 ```ts twoslash
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team', // [!code focus]
 });
@@ -129,7 +129,7 @@ Limits the number of protected data items processed per task.
 
 ```ts twoslash
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
   maxProtectedDataPerTask: 10, // [!code focus]
@@ -147,7 +147,7 @@ You can specify this during preparation or when sending the campaign.
 
 ```ts twoslash
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
   workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
@@ -166,7 +166,7 @@ during preparation or when sending the campaign.
 
 ```ts twoslash
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
   workerpoolMaxPrice: 0.1 * 1e9, // [!code focus]
@@ -181,7 +181,7 @@ An optional label to identify or categorize the campaign.
 
 ```ts twoslash
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
   label: 'Newsletter Campaign', // [!code focus]
@@ -199,7 +199,7 @@ data.
 
 ```ts twoslash
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
   dataMaxPrice: 0.1 * 1e9, // [!code focus]
@@ -217,7 +217,7 @@ provider for using the Web3Telegram application.
 
 ```ts twoslash
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
   appMaxPrice: 0.1 * 1e9, // [!code focus]
@@ -263,7 +263,7 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
 // Step 2: Prepare the campaign
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent:
     'Hello! This is a bulk message sent to all recipients. Thank you for subscribing!',
   senderName: 'My Awesome App',
@@ -292,7 +292,7 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
 // Step 2: Prepare the campaign
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent:
     'Hello! This is a bulk message sent to all recipients. Thank you for subscribing!',
   senderName: 'My Awesome App',

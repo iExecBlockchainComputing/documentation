@@ -190,7 +190,7 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
 // Step 2: Prepare the campaign
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'Hello from My Awesome App!',
   emailContent: 'Hello! This is a bulk email sent to all recipients.',
   contentType: 'text/html',
@@ -216,7 +216,7 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
 // Step 2: Prepare the campaign
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent: 'Hello! This is a bulk message sent to all recipients.',
   senderName: 'My Awesome App',
 });

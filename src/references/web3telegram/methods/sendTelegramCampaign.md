@@ -39,7 +39,7 @@ const web3telegram = new IExecWeb3telegram(web3Provider);
 
 // Step 1: Prepare the campaign
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
 });
@@ -59,7 +59,7 @@ const web3telegram = new IExecWeb3telegram(web3Provider);
 
 // Step 1: Prepare the campaign
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
 });
@@ -165,7 +165,7 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 // Step 3: Prepare the campaign
 // See: prepareTelegramCampaign method
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent: 'Hello! This is a bulk message to all recipients.',
   senderName: 'My Awesome App',
 });
@@ -204,7 +204,7 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 // Step 3: Prepare the campaign
 // See: prepareTelegramCampaign method
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   telegramContent: 'Hello! This is a bulk message to all recipients.',
   senderName: 'My Awesome App',
 });

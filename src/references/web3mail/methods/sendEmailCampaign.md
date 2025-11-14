@@ -39,7 +39,7 @@ const web3mail = new IExecWeb3mail(web3Provider);
 
 // Step 1: Prepare the campaign
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
   emailContent: 'My email content',
 });
@@ -59,7 +59,7 @@ const web3mail = new IExecWeb3mail(web3Provider);
 
 // Step 1: Prepare the campaign
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
   emailContent: 'My email content',
 });
@@ -165,7 +165,7 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 // Step 3: Prepare the campaign
 // See: prepareEmailCampaign method
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'Hello from My Awesome App!',
   emailContent: 'Hello! This is a bulk email to all recipients.',
   contentType: 'text/html',
@@ -205,7 +205,7 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 // Step 3: Prepare the campaign
 // See: prepareEmailCampaign method
 const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccess: grantedAccessArray,
+  grantedAccesses: grantedAccessArray,
   emailSubject: 'Hello from My Awesome App!',
   emailContent: 'Hello! This is a bulk email to all recipients.',
   contentType: 'text/html',
