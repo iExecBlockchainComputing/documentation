@@ -54,6 +54,33 @@ const contactsList = await web3mail.fetchMyContacts({
 });
 ```
 
+### bulkOnly <OptionalBadge />
+
+**Type:** `boolean`
+
+**Default:** `false`
+
+When set to `true`, this parameter filters contacts to only return those who
+have granted access with bulk processing capability. These contacts can be used
+with [`prepareEmailCampaign`](/references/web3mail/methods/prepareEmailCampaign)
+and [`sendEmailCampaign`](/references/web3mail/methods/sendEmailCampaign) for
+bulk campaigns.
+
+::: warning
+
+To enable bulk processing, recipients must grant access with `allowBulk: true`
+when calling [`grantAccess`](/references/dataProtector/methods/grantAccess) on
+the Data Protector SDK.
+
+:::
+
+```ts twoslash
+// Fetch contacts with bulk access
+const bulkContacts = await web3mail.fetchMyContacts({
+  bulkOnly: true, // [!code focus]
+});
+```
+
 ## Return Value
 
 The result object contains a list of `contact` objects. Each `contact`
@@ -67,5 +94,5 @@ import { type Contact } from '@iexec/web3mail';
 [`Contact[]`](/references/dataProtector/types#contact)
 
 <script setup>
-import OptionalBadge from '@/components/OptionalBadge.vue'
+import OptionalBadge from '@/components/OptionalBadge.vue';
 </script>

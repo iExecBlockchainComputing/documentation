@@ -19,6 +19,15 @@ as `authorizedApp`. Refer to the
 [Data Protector `grantAccess`](/references/dataProtector/methods/grantAccess)
 documentation for more details.
 
+::: info
+
+For sending bulk campaigns to multiple recipients, use
+[`prepareTelegramCampaign`](/references/web3telegram/methods/prepareTelegramCampaign)
+and
+[`sendTelegramCampaign`](/references/web3telegram/methods/sendTelegramCampaign).
+
+:::
+
 ::: tip
 
 For executing the `sendTelegram` method with a voucher or RLC, refer to the

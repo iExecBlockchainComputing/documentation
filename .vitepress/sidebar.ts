@@ -317,6 +317,14 @@ export function getSidebar() {
                 text: 'sendEmail',
                 link: '/references/web3mail/methods/sendEmail',
               },
+              {
+                text: 'prepareEmailCampaign',
+                link: '/references/web3mail/methods/prepareEmailCampaign',
+              },
+              {
+                text: 'sendEmailCampaign',
+                link: '/references/web3mail/methods/sendEmailCampaign',
+              },
             ],
           },
           {
@@ -348,6 +356,14 @@ export function getSidebar() {
               {
                 text: 'sendTelegram',
                 link: '/references/web3telegram/methods/sendTelegram',
+              },
+              {
+                text: 'prepareTelegramCampaign',
+                link: '/references/web3telegram/methods/prepareTelegramCampaign',
+              },
+              {
+                text: 'sendTelegramCampaign',
+                link: '/references/web3telegram/methods/sendTelegramCampaign',
               },
             ],
           },

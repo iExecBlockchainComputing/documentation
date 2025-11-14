@@ -71,7 +71,9 @@ const protectedData = await dataProtectorCore.protectData({
 
 Grant permission for a sender and/or an app to contact the user.
 
-```ts twoslash
+::: code-group
+
+```ts twoslash [Single Message]
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
@@ -85,11 +87,47 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 });
 ```
 
+```ts twoslash [Bulk Campaigns]
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+
+// For bulk campaigns, recipients must grant access with allowBulk: true
+const grantedAccess = await dataProtectorCore.grantAccess({
+  protectedData: '0x123abc...',
+  authorizedApp: '0x456def...',
+  authorizedUser: '0x789cba...',
+  allowBulk: true, // [!code focus] Enable bulk processing
+});
+```
+
+:::
+
+::: info
+
+Setting `allowBulk: true` automatically configures `pricePerAccess` to `0` and
+`numberOfAccess` to `Number.MAX_SAFE_INTEGER`, enabling unlimited bulk
+processing at no cost per access.
+
+:::
+
 ## 4. Send the Message
+
+You can send messages in two modes:
+
+- **Single Processing**: Send to one recipient using `sendEmail` or
+  `sendTelegram`
+- **Bulk Processing**: Send the same message to multiple recipients efficiently
+  using `prepareEmailCampaign` + `sendEmailCampaign` or
+  `prepareTelegramCampaign` + `sendTelegramCampaign`
+
+### Single Message Processing
+
+Send a message to a single recipient:
 
 ::: code-group
 
-```ts twoslash [Web3Mail]
+```ts twoslash [Web3Mail - Single]
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
@@ -99,11 +137,10 @@ const sendEmail = await web3mail.sendEmail({
   protectedData: '0x123abc...',
   emailSubject: 'My email subject',
   emailContent: 'My email content',
-  // useVoucher: true,
 });
 ```
 
-```ts twoslash [Web3Telegram]
+```ts twoslash [Web3Telegram - Single]
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
@@ -117,6 +154,88 @@ const sendTelegram = await web3telegram.sendTelegram({
 ```
 
 :::
+
+### Bulk Message Processing
+
+Send the same message to multiple recipients efficiently in a single
+transaction.
+
+**How it works:**
+
+1. **Fetch contacts** with bulk access capability using `fetchMyContacts` or
+   `fetchUserContacts` with `bulkOnly: true`
+2. **Prepare the campaign** using `prepareEmailCampaign` or
+   `prepareTelegramCampaign` to create a bulk request
+3. **Send the campaign** using `sendEmailCampaign` or `sendTelegramCampaign` to
+   process the bulk request
+
+::: warning Prerequisites
+
+Before using bulk processing, ensure that recipients have granted access with
+`allowBulk: true` when calling `grantAccess` (see step 3 above).
+
+:::
+
+::: code-group
+
+```ts twoslash [Web3Mail - Bulk]
+import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3mail = new IExecWeb3mail(web3Provider);
+
+// Step 1: Fetch contacts with bulk access
+const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
+// Step 2: Prepare the campaign
+const emailCampaign = await web3mail.prepareEmailCampaign({
+  grantedAccess: grantedAccessArray,
+  emailSubject: 'Hello from My Awesome App!',
+  emailContent: 'Hello! This is a bulk email sent to all recipients.',
+  contentType: 'text/html',
+});
+
+// Step 3: Send the bulk campaign
+const result = await web3mail.sendEmailCampaign({
+  campaignRequest: emailCampaign.campaignRequest,
+});
+
+console.log(`Campaign sent! Created ${result.tasks.length} tasks`);
+```
+
+```ts twoslash [Web3Telegram - Bulk]
+import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3telegram = new IExecWeb3telegram(web3Provider);
+
+// Step 1: Fetch contacts with bulk access
+const contacts = await web3telegram.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
+// Step 2: Prepare the campaign
+const telegramCampaign = await web3telegram.prepareTelegramCampaign({
+  grantedAccess: grantedAccessArray,
+  telegramContent: 'Hello! This is a bulk message sent to all recipients.',
+  senderName: 'My Awesome App',
+});
+
+// Step 3: Send the bulk campaign
+const result = await web3telegram.sendTelegramCampaign({
+  campaignRequest: telegramCampaign.campaignRequest,
+});
+
+console.log(`Campaign sent! Created ${result.tasks.length} tasks`);
+```
+
+:::
+
+**Benefits:**
+
+- Lower costs: fewer transactions reduce gas fees
+- Higher performance: multiple recipients processed in parallel
+- Better scalability: efficiently handle hundreds or thousands of recipients
 
 ## Payment
 

@@ -206,6 +206,33 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 });
 ```
 
+### allowBulk <OptionalBadge />
+
+**Type:** `boolean`
+
+**Default:** `false`
+
+When set to `true`, enables bulk processing for this access grant. This allows
+multiple protected data items to be processed together in a single task, which
+is more efficient for bulk operations like sending campaigns to multiple
+recipients.
+
+When `allowBulk: true` is set, the following parameters are automatically
+configured:
+
+- **Price per access**: Set to `0` (no price per access)
+- **Number of accesses**: Set to `Number.MAX_SAFE_INTEGER` (maximum number of
+  accesses)
+
+```ts twoslash
+const grantedAccess = await dataProtectorCore.grantAccess({
+  protectedData: '0x123abc...',
+  authorizedApp: '0x456def...',
+  authorizedUser: '0x789cba...',
+  allowBulk: true, // [!code focus] Enable bulk processing
+});
+```
+
 ### onStatusUpdate <OptionalBadge />
 
 **Type:** `OnStatusUpdateFn<GrantAccessStatuses>`
