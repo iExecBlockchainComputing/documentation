@@ -179,11 +179,16 @@ const result = await web3mail.sendEmailCampaign({
 });
 
 console.log(`Created ${result.tasks.length} tasks`);
-result.tasks.forEach((task: { taskId: string; dealId: string; bulkIndex: number }, index: number) => {
-  console.log(
-    `Task ${index + 1}: ${task.taskId} (Deal: ${task.dealId}, Bulk Index: ${task.bulkIndex})`
-  );
-});
+result.tasks.forEach(
+  (
+    task: { taskId: string; dealId: string; bulkIndex: number },
+    index: number
+  ) => {
+    console.log(
+      `Task ${index + 1}: ${task.taskId} (Deal: ${task.dealId}, Bulk Index: ${task.bulkIndex})`
+    );
+  }
+);
 ```
 
 ## Complete Example
