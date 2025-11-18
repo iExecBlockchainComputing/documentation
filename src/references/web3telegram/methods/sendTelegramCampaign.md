@@ -34,10 +34,13 @@ Before using this method, make sure you have:
 ```ts twoslash [Browser]
 import { IExecWeb3telegram } from '@iexec/web3telegram';
 
-const web3Provider = window.ethereum;
+const web3Provider = (window as any).ethereum;
 const web3telegram = new IExecWeb3telegram(web3Provider);
 
-// Step 1: Prepare the campaign
+// Step 1: Fetch contacts and prepare the campaign
+const contacts = await web3telegram.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
   grantedAccesses: grantedAccessArray,
   telegramContent: 'My telegram message content',
@@ -57,7 +60,10 @@ import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 
-// Step 1: Prepare the campaign
+// Step 1: Fetch contacts and prepare the campaign
+const contacts = await web3telegram.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
   grantedAccesses: grantedAccessArray,
   telegramContent: 'My telegram message content',
@@ -88,6 +94,19 @@ all the necessary information to process the bulk campaign, including the
 grouped protected data and campaign metadata.
 
 ```ts twoslash
+import { IExecWeb3telegram } from '@iexec/web3telegram';
+
+const web3Provider = (window as any).ethereum;
+const web3telegram = new IExecWeb3telegram(web3Provider);
+// Fetch contacts and prepare campaign
+const contacts = await web3telegram.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+const telegramCampaign = await web3telegram.prepareTelegramCampaign({
+  grantedAccesses: grantedAccessArray,
+  telegramContent: 'My telegram message content',
+  senderName: 'Awesome project team',
+});
+
 const result = await web3telegram.sendTelegramCampaign({
   campaignRequest: telegramCampaign.campaignRequest, // [!code focus]
 });
@@ -102,6 +121,19 @@ const result = await web3telegram.sendTelegramCampaign({
 The workerpool address or ENS name that will execute the bulk campaign tasks.
 
 ```ts twoslash
+import { IExecWeb3telegram } from '@iexec/web3telegram';
+
+const web3Provider = (window as any).ethereum;
+const web3telegram = new IExecWeb3telegram(web3Provider);
+// Fetch contacts and prepare campaign
+const contacts = await web3telegram.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+const telegramCampaign = await web3telegram.prepareTelegramCampaign({
+  grantedAccesses: grantedAccessArray,
+  telegramContent: 'My telegram message content',
+  senderName: 'Awesome project team',
+});
+
 const result = await web3telegram.sendTelegramCampaign({
   campaignRequest: telegramCampaign.campaignRequest,
   workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
@@ -129,16 +161,34 @@ Each task may process multiple protected data items depending on the bulk
 request configuration.
 
 ```ts twoslash
+import { IExecWeb3telegram } from '@iexec/web3telegram';
+
+const web3Provider = (window as any).ethereum;
+const web3telegram = new IExecWeb3telegram(web3Provider);
+// Fetch contacts and prepare campaign
+const contacts = await web3telegram.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+const telegramCampaign = await web3telegram.prepareTelegramCampaign({
+  grantedAccesses: grantedAccessArray,
+  telegramContent: 'My telegram message content',
+  senderName: 'Awesome project team',
+});
+
 const result = await web3telegram.sendTelegramCampaign({
   campaignRequest: telegramCampaign.campaignRequest,
 });
 
 console.log(`Created ${result.tasks.length} tasks`);
-result.tasks.forEach((task, index) => {
-  console.log(
-    `Task ${index + 1}: ${task.taskId} (Deal: ${task.dealId}, Bulk Index: ${task.bulkIndex})`
-  );
-});
+result.tasks.forEach(
+  (
+    task: { taskId: string; dealId: string; bulkIndex: number },
+    index: number
+  ) => {
+    console.log(
+      `Task ${index + 1}: ${task.taskId} (Deal: ${task.dealId}, Bulk Index: ${task.bulkIndex})`
+    );
+  }
+);
 ```
 
 ## Complete Example
@@ -149,10 +199,9 @@ sending the campaign:
 ::: code-group
 
 ```ts twoslash [Browser]
-// ---cut---
 import { IExecWeb3telegram } from '@iexec/web3telegram';
 
-const web3Provider = window.ethereum;
+const web3Provider = (window as any).ethereum;
 const web3telegram = new IExecWeb3telegram(web3Provider);
 
 // Step 1: Fetch contacts with bulk access capability
@@ -195,7 +244,7 @@ if (contacts.length === 0) {
   console.log('No contacts with bulk access found.');
   // Recipients need to grant access with bulk processing enabled
   // See: grantAccess method in Data Protector SDK
-  return;
+  // Note: In a real application, you would handle this case appropriately
 }
 
 // Step 2: Extract grantedAccess from contacts

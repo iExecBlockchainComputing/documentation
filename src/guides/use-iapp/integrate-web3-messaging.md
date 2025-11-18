@@ -91,7 +91,7 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-
+// ---cut---
 // For bulk campaigns, recipients must grant access with allowBulk: true
 const grantedAccess = await dataProtectorCore.grantAccess({
   protectedData: '0x123abc...',

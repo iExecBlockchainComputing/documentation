@@ -89,7 +89,13 @@ and
 for bulk campaigns.
 
 ```ts twoslash
+import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3telegram = new IExecWeb3telegram(web3Provider);
+// ---cut---
 const contactsList = await web3telegram.fetchUserContacts({
+  userAddress: '0x789cba...',
   bulkOnly: true, // [!code focus]
 });
 ```

@@ -95,8 +95,14 @@ the Data Protector SDK.
 :::
 
 ```ts twoslash
+import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3mail = new IExecWeb3mail(web3Provider);
+// ---cut---
 // Fetch contacts with bulk access for a specific user
 const bulkContacts = await web3mail.fetchUserContacts({
+  userAddress: '0x789cba...',
   bulkOnly: true, // [!code focus]
 });
 ```

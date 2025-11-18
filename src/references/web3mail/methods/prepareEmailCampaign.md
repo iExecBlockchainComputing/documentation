@@ -30,7 +30,7 @@ This method is part of a two-step bulk campaign process:
 ```ts twoslash [Browser]
 import { IExecWeb3mail } from '@iexec/web3mail';
 
-const web3Provider = window.ethereum;
+const web3Provider = (window as any).ethereum;
 const web3mail = new IExecWeb3mail(web3Provider);
 
 // Fetch contacts with bulk access
@@ -81,6 +81,14 @@ An array of `GrantedAccess` objects representing contacts who have granted you
 access to their protected data with bulk processing capability.
 
 ```ts twoslash
+import { IExecWeb3mail } from '@iexec/web3mail';
+
+const web3Provider = (window as any).ethereum;
+const web3mail = new IExecWeb3mail(web3Provider);
+// Fetch contacts with bulk access
+const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
 const emailCampaign = await web3mail.prepareEmailCampaign({
   grantedAccesses: grantedAccessArray, // [!code focus]
   emailSubject: 'My subject',
@@ -95,6 +103,14 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
 The email subject that will be sent to all recipients.
 
 ```ts twoslash
+import { IExecWeb3mail } from '@iexec/web3mail';
+
+const web3Provider = (window as any).ethereum;
+const web3mail = new IExecWeb3mail(web3Provider);
+// Fetch contacts with bulk access
+const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
 const emailCampaign = await web3mail.prepareEmailCampaign({
   grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject', // [!code focus]
@@ -112,6 +128,14 @@ The email content that will be sent to all recipients. The content is encrypted
 and stored in IPFS.
 
 ```ts twoslash
+import { IExecWeb3mail } from '@iexec/web3mail';
+
+const web3Provider = (window as any).ethereum;
+const web3mail = new IExecWeb3mail(web3Provider);
+// Fetch contacts with bulk access
+const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
 const emailCampaign = await web3mail.prepareEmailCampaign({
   grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
@@ -128,6 +152,14 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
 The MIME type of the email content (e.g., `'text/plain'`, `'text/html'`).
 
 ```ts twoslash
+import { IExecWeb3mail } from '@iexec/web3mail';
+
+const web3Provider = (window as any).ethereum;
+const web3mail = new IExecWeb3mail(web3Provider);
+// Fetch contacts with bulk access
+const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
 const emailCampaign = await web3mail.prepareEmailCampaign({
   grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
@@ -145,6 +177,14 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
 Limits the number of protected data items processed per task.
 
 ```ts twoslash
+import { IExecWeb3mail } from '@iexec/web3mail';
+
+const web3Provider = (window as any).ethereum;
+const web3mail = new IExecWeb3mail(web3Provider);
+// Fetch contacts with bulk access
+const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
 const emailCampaign = await web3mail.prepareEmailCampaign({
   grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
@@ -163,6 +203,14 @@ The workerpool address or ENS name that will execute the bulk campaign tasks.
 You can specify this during preparation or when sending the campaign.
 
 ```ts twoslash
+import { IExecWeb3mail } from '@iexec/web3mail';
+
+const web3Provider = (window as any).ethereum;
+const web3mail = new IExecWeb3mail(web3Provider);
+// Fetch contacts with bulk access
+const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
 const emailCampaign = await web3mail.prepareEmailCampaign({
   grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
@@ -182,6 +230,14 @@ using their infrastructure to run the Web3Mail app. You can specify this during
 preparation or when sending the campaign.
 
 ```ts twoslash
+import { IExecWeb3mail } from '@iexec/web3mail';
+
+const web3Provider = (window as any).ethereum;
+const web3mail = new IExecWeb3mail(web3Provider);
+// Fetch contacts with bulk access
+const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
 const emailCampaign = await web3mail.prepareEmailCampaign({
   grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
@@ -197,6 +253,14 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
 An optional label to identify or categorize the campaign.
 
 ```ts twoslash
+import { IExecWeb3mail } from '@iexec/web3mail';
+
+const web3Provider = (window as any).ethereum;
+const web3mail = new IExecWeb3mail(web3Provider);
+// Fetch contacts with bulk access
+const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
 const emailCampaign = await web3mail.prepareEmailCampaign({
   grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
@@ -215,6 +279,14 @@ The maximum amount (in nRLC) you are willing to pay for accessing the protected
 data.
 
 ```ts twoslash
+import { IExecWeb3mail } from '@iexec/web3mail';
+
+const web3Provider = (window as any).ethereum;
+const web3mail = new IExecWeb3mail(web3Provider);
+// Fetch contacts with bulk access
+const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
 const emailCampaign = await web3mail.prepareEmailCampaign({
   grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
@@ -233,6 +305,14 @@ The maximum amount (in nRLC) you are willing to pay the Web3Mail app provider
 for using the Web3Mail application.
 
 ```ts twoslash
+import { IExecWeb3mail } from '@iexec/web3mail';
+
+const web3Provider = (window as any).ethereum;
+const web3mail = new IExecWeb3mail(web3Provider);
+// Fetch contacts with bulk access
+const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
 const emailCampaign = await web3mail.prepareEmailCampaign({
   grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
@@ -255,7 +335,20 @@ The prepared bulk request object that contains all the necessary information to
 process the bulk campaign. This object should be passed to `sendEmailCampaign`
 to execute the campaign.
 
-```ts
+```ts twoslash
+import { IExecWeb3mail } from '@iexec/web3mail';
+
+const web3Provider = (window as any).ethereum;
+const web3mail = new IExecWeb3mail(web3Provider);
+// Fetch contacts and prepare campaign
+const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+const emailCampaign = await web3mail.prepareEmailCampaign({
+  grantedAccesses: grantedAccessArray,
+  emailSubject: 'My email subject',
+  emailContent: 'My email content',
+});
+
 // Use the campaignRequest to send the campaign
 const result = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest, // [!code focus]
@@ -271,7 +364,7 @@ Here's a complete example showing the two-step campaign process:
 ```ts twoslash [Browser]
 import { IExecWeb3mail } from '@iexec/web3mail';
 
-const web3Provider = window.ethereum;
+const web3Provider = (window as any).ethereum;
 const web3mail = new IExecWeb3mail(web3Provider);
 
 // Step 1: Fetch contacts with bulk access
