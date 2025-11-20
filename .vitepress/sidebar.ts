@@ -253,6 +253,14 @@ export function getSidebar() {
                 link: '/references/dataProtector/methods/processProtectedData',
               },
               {
+                text: 'prepareBulkRequest',
+                link: '/references/dataProtector/methods/prepareBulkRequest',
+              },
+              {
+                text: 'processBulkRequest',
+                link: '/references/dataProtector/methods/processBulkRequest',
+              },
+              {
                 text: 'getResultFromCompletedTask',
                 link: '/references/dataProtector/methods/getResultFromCompletedTask',
               },

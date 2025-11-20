@@ -32,9 +32,15 @@ Before using this method, make sure you have:
 ::: code-group
 
 ```ts twoslash [Browser]
+declare global {
+  interface Window {
+    ethereum: any;
+  }
+}
+// ---cut---
 import { IExecWeb3mail } from '@iexec/web3mail';
 
-const web3Provider = (window as any).ethereum;
+const web3Provider = window.ethereum;
 const web3mail = new IExecWeb3mail(web3Provider);
 
 // Step 1: Fetch contacts and prepare the campaign
@@ -48,7 +54,7 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
 });
 
 // Step 2: Send the campaign
-const result = await web3mail.sendEmailCampaign({
+const { tasks } = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
   workerpoolAddressOrEns: '0xa5de76...',
 });
@@ -94,9 +100,15 @@ the necessary information to process the bulk campaign, including the grouped
 protected data and campaign metadata.
 
 ```ts twoslash
+declare global {
+  interface Window {
+    ethereum: any;
+  }
+}
+// ---cut---
 import { IExecWeb3mail } from '@iexec/web3mail';
 
-const web3Provider = (window as any).ethereum;
+const web3Provider = window.ethereum;
 const web3mail = new IExecWeb3mail(web3Provider);
 // Fetch contacts and prepare campaign
 const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
@@ -107,7 +119,7 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
   emailContent: 'My email content',
 });
 
-const result = await web3mail.sendEmailCampaign({
+const { tasks } = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest, // [!code focus]
 });
 ```
@@ -121,9 +133,15 @@ const result = await web3mail.sendEmailCampaign({
 The workerpool address or ENS name that will execute the bulk campaign tasks.
 
 ```ts twoslash
+declare global {
+  interface Window {
+    ethereum: any;
+  }
+}
+// ---cut---
 import { IExecWeb3mail } from '@iexec/web3mail';
 
-const web3Provider = (window as any).ethereum;
+const web3Provider = window.ethereum;
 const web3mail = new IExecWeb3mail(web3Provider);
 // Fetch contacts and prepare campaign
 const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
@@ -134,7 +152,7 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
   emailContent: 'My email content',
 });
 
-const result = await web3mail.sendEmailCampaign({
+const { tasks } = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
   workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
 });
@@ -161,9 +179,15 @@ Each task may process multiple protected data items depending on the bulk
 request configuration.
 
 ```ts twoslash
+declare global {
+  interface Window {
+    ethereum: any;
+  }
+}
+// ---cut---
 import { IExecWeb3mail } from '@iexec/web3mail';
 
-const web3Provider = (window as any).ethereum;
+const web3Provider = window.ethereum;
 const web3mail = new IExecWeb3mail(web3Provider);
 // Fetch contacts and prepare campaign
 const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
@@ -174,21 +198,9 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
   emailContent: 'My email content',
 });
 
-const result = await web3mail.sendEmailCampaign({
+const { tasks } = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
 });
-
-console.log(`Created ${result.tasks.length} tasks`);
-result.tasks.forEach(
-  (
-    task: { taskId: string; dealId: string; bulkIndex: number },
-    index: number
-  ) => {
-    console.log(
-      `Task ${index + 1}: ${task.taskId} (Deal: ${task.dealId}, Bulk Index: ${task.bulkIndex})`
-    );
-  }
-);
 ```
 
 ## Complete Example
@@ -199,9 +211,15 @@ sending the campaign:
 ::: code-group
 
 ```ts twoslash [Browser]
+declare global {
+  interface Window {
+    ethereum: any;
+  }
+}
+// ---cut---
 import { IExecWeb3mail } from '@iexec/web3mail';
 
-const web3Provider = (window as any).ethereum;
+const web3Provider = window.ethereum;
 const web3mail = new IExecWeb3mail(web3Provider);
 
 // Step 1: Fetch contacts with bulk access capability
@@ -221,13 +239,8 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
 });
 
 // Step 4: Send the campaign
-const result = await web3mail.sendEmailCampaign({
+const { tasks } = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
-});
-
-console.log(`Campaign sent! Created ${result.tasks.length} tasks`);
-result.tasks.forEach((task, index) => {
-  console.log(`Task ${index + 1}: ${task.taskId}`);
 });
 ```
 
@@ -241,13 +254,6 @@ const web3mail = new IExecWeb3mail(web3Provider);
 // See: fetchMyContacts method with bulkOnly: true
 const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
 
-if (contacts.length === 0) {
-  console.log('No contacts with bulk access found.');
-  // Recipients need to grant access with bulk processing enabled
-  // See: grantAccess method in Data Protector SDK
-  // Note: In a real application, you would handle this case appropriately
-}
-
 // Step 2: Extract grantedAccess from contacts
 const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
@@ -261,13 +267,8 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
 });
 
 // Step 4: Send the campaign
-const result = await web3mail.sendEmailCampaign({
+const { tasks } = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
-});
-
-console.log(`Campaign sent! Created ${result.tasks.length} tasks`);
-result.tasks.forEach((task, index) => {
-  console.log(`Task ${index + 1}: ${task.taskId}`);
 });
 ```
 

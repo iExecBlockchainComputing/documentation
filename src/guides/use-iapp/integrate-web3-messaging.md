@@ -118,8 +118,9 @@ You can send messages in two modes:
 - **Single Processing**: Send to one recipient using `sendEmail` or
   `sendTelegram`
 - **Bulk Processing**: Send the same message to multiple recipients efficiently
-  using `prepareEmailCampaign` + `sendEmailCampaign` or
-  `prepareTelegramCampaign` + `sendTelegramCampaign`
+  using a two-step process: first call `prepareEmailCampaign` or
+  `prepareTelegramCampaign` to prepare the campaign, then call
+  `sendEmailCampaign` or `sendTelegramCampaign` to send it
 
 ### Single Message Processing
 
@@ -160,14 +161,16 @@ const sendTelegram = await web3telegram.sendTelegram({
 Send the same message to multiple recipients efficiently in a single
 transaction.
 
-**How it works:**
+**To send a bulk campaign, follow these steps in order:**
 
 1. **Fetch contacts** with bulk access capability using `fetchMyContacts` or
    `fetchUserContacts` with `bulkOnly: true`
-2. **Prepare the campaign** using `prepareEmailCampaign` or
-   `prepareTelegramCampaign` to create a bulk request
-3. **Send the campaign** using `sendEmailCampaign` or `sendTelegramCampaign` to
-   process the bulk request
+2. **Prepare the campaign** by calling `prepareEmailCampaign` (for Web3Mail) or
+   `prepareTelegramCampaign` (for Web3Telegram). This creates a bulk request
+   object that groups all recipients together
+3. **Send the campaign** by calling `sendEmailCampaign` (for Web3Mail) or
+   `sendTelegramCampaign` (for Web3Telegram) with the prepared bulk request.
+   This processes all recipients in one or more efficient transactions
 
 ::: warning Prerequisites
 
@@ -197,11 +200,9 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
 });
 
 // Step 3: Send the bulk campaign
-const result = await web3mail.sendEmailCampaign({
+const { tasks } = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
 });
-
-console.log(`Campaign sent! Created ${result.tasks.length} tasks`);
 ```
 
 ```ts twoslash [Web3Telegram - Bulk]
@@ -222,11 +223,9 @@ const telegramCampaign = await web3telegram.prepareTelegramCampaign({
 });
 
 // Step 3: Send the bulk campaign
-const result = await web3telegram.sendTelegramCampaign({
+const { tasks } = await web3telegram.sendTelegramCampaign({
   campaignRequest: telegramCampaign.campaignRequest,
 });
-
-console.log(`Campaign sent! Created ${result.tasks.length} tasks`);
 ```
 
 :::
