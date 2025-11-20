@@ -213,16 +213,10 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 **Default:** `false`
 
 When set to `true`, enables bulk processing for this access grant. This allows
-multiple protected data items to be processed together in a single task, which
-is more efficient for bulk operations like sending campaigns to multiple
-recipients.
+multiple protected data items to be processed together.
 
-When `allowBulk: true` is set, the following parameters are automatically
-configured:
-
-- **Price per access**: Set to `0` (no price per access)
-- **Number of accesses**: Set to `Number.MAX_SAFE_INTEGER` (maximum number of
-  accesses)
+When `allowBulk: true` is set, the price per access is automatically set to `0`
+and the number of accesses is unlimited.
 
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';

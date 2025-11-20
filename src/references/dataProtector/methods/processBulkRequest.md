@@ -3,7 +3,8 @@ title: processBulkRequest
 description:
   Use the processBulkRequest method from DataProtector Core to process a
   prepared bulk request. This method executes bulk processing of multiple
-  protected data items efficiently in a single transaction.
+  protected data items efficiently, creating one or more tasks/deals depending
+  on the number of protected data items and the `maxProtectedDataPerTask` limit.
 ---
 
 # processBulkRequest
@@ -102,23 +103,7 @@ This object contains all the necessary information to process multiple protected
 data items together.
 
 ```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-// Get granted accesses with bulk capability
-const { grantedAccess } = await dataProtectorCore.getGrantedAccess({
-  bulkOnly: true,
-});
-
-// Prepare the bulk request
-const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
-  bulkAccesses: grantedAccess,
-  app: '0x456def...',
-});
-
-// Process the bulk request
+// @errors: 2304 7034 7005
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest, // [!code focus]
 });
@@ -140,20 +125,7 @@ confidential computations on the iExec platform.
 :::
 
 ```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-const { grantedAccess } = await dataProtectorCore.getGrantedAccess({
-  bulkOnly: true,
-});
-
-const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
-  bulkAccesses: grantedAccess,
-  app: '0x456def...',
-});
-
+// @errors: 2304 7034 7005
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest,
   workerpool: '0xa5de76...', // [!code focus]
@@ -171,20 +143,7 @@ default, it uses the voucher associated with your connected wallet, but you can
 override this by specifying a `voucherOwner`.
 
 ```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-const { grantedAccess } = await dataProtectorCore.getGrantedAccess({
-  bulkOnly: true,
-});
-
-const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
-  bulkAccesses: grantedAccess,
-  app: '0x456def...',
-});
-
+// @errors: 2304 7034 7005
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest,
   useVoucher: true, // [!code focus]
@@ -200,20 +159,7 @@ voucher. Make sure the voucher's owner has authorized you to use it. This
 parameter must be used in combination with `useVoucher: true`.
 
 ```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-const { grantedAccess } = await dataProtectorCore.getGrantedAccess({
-  bulkOnly: true,
-});
-
-const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
-  bulkAccesses: grantedAccess,
-  app: '0x456def...',
-});
-
+// @errors: 2304 7034 7005
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest,
   useVoucher: true, // [!code focus]
@@ -231,20 +177,7 @@ you, and only the desired file will be given as the `result`. This applies to
 all protected data items in the bulk request.
 
 ```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-const { grantedAccess } = await dataProtectorCore.getGrantedAccess({
-  bulkOnly: true,
-});
-
-const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
-  bulkAccesses: grantedAccess,
-  app: '0x456def...',
-});
-
+// @errors: 2304 7034 7005
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest,
   path: 'my-content', // [!code focus]
@@ -260,22 +193,7 @@ result encryption (when `encryptResult` was set to `true` in
 `prepareBulkRequest`) and `waitForResult` is `true`.
 
 ```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-const { grantedAccess } = await dataProtectorCore.getGrantedAccess({
-  bulkOnly: true,
-});
-
-const { bulkRequest, pemPrivateKey } =
-  await dataProtectorCore.prepareBulkRequest({
-    bulkAccesses: grantedAccess,
-    app: '0x456def...',
-    encryptResult: true,
-  });
-
+// @errors: 2304 7034 7005
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest,
   pemPrivateKey: pemPrivateKey, // [!code focus]
@@ -294,20 +212,7 @@ method will wait for all tasks to complete and return results. If `false`, it
 will return immediately with task IDs.
 
 ```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-const { grantedAccess } = await dataProtectorCore.getGrantedAccess({
-  bulkOnly: true,
-});
-
-const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
-  bulkAccesses: grantedAccess,
-  app: '0x456def...',
-});
-
+// @errors: 2304 7034 7005
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest,
   waitForResult: true, // [!code focus]
@@ -339,20 +244,7 @@ You can expect this callback function to be called with the following titles:
 Each status is called once with `isDone: false`, and then with `isDone: true`.
 
 ```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-const { grantedAccess } = await dataProtectorCore.getGrantedAccess({
-  bulkOnly: true,
-});
-
-const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
-  bulkAccesses: grantedAccess,
-  app: '0x456def...',
-});
-
+// @errors: 2304 7034 7005 7031
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest,
   onStatusUpdate: ({ title, isDone, payload }) => {
@@ -399,33 +291,10 @@ represents a batch of protected data items being processed together.
 - **error**: Error object if the task failed (only present if failed)
 
 ```ts twoslash
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-// ---cut---
-const { grantedAccess } = await dataProtectorCore.getGrantedAccess({
-  bulkOnly: true,
-});
-
-const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
-  bulkAccesses: grantedAccess,
-  app: '0x456def...',
-});
-
+// @errors: 2304 7034 7005
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest,
 });
-
-// Access task information
-tasks.forEach(
-  (
-    task: { taskId: string; dealId: string; bulkIndex: number },
-    index: number
-  ) => {
-    // Handle each task
-  }
-);
 ```
 
 ## Complete Example

@@ -191,6 +191,30 @@ const listGrantedAccess = await dataProtectorCore.getGrantedAccess({
 });
 ```
 
+### bulkOnly <OptionalBadge />
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Filter to retrieve only bulk orders. When set to `true`, only granted accesses
+that have been created with `allowBulk: true` in
+[`grantAccess`](/references/dataProtector/methods/grantAccess) will be returned.
+This is useful when preparing bulk requests using
+[`prepareBulkRequest`](/references/dataProtector/methods/prepareBulkRequest).
+
+**Usage example:**
+
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
+const { grantedAccess } = await dataProtectorCore.getGrantedAccess({
+  bulkOnly: true, // [!code focus]
+});
+```
+
 ## Return Value
 
 ```ts twoslash

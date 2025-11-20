@@ -39,6 +39,8 @@ declare global {
 }
 // ---cut---
 import { IExecWeb3mail } from '@iexec/web3mail';
+import { type PrepareEmailCampaignResponse } from '@iexec/web3mail';
+import { type SendEmailCampaignResponse } from '@iexec/web3mail';
 
 const web3Provider = window.ethereum;
 const web3mail = new IExecWeb3mail(web3Provider);
@@ -47,14 +49,15 @@ const web3mail = new IExecWeb3mail(web3Provider);
 const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
 const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
-const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccesses: grantedAccessArray,
-  emailSubject: 'My email subject',
-  emailContent: 'My email content',
-});
+const emailCampaign: PrepareEmailCampaignResponse =
+  await web3mail.prepareEmailCampaign({
+    grantedAccesses: grantedAccessArray,
+    emailSubject: 'My email subject',
+    emailContent: 'My email content',
+  });
 
 // Step 2: Send the campaign
-const { tasks } = await web3mail.sendEmailCampaign({
+const { tasks }: SendEmailCampaignResponse = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
   workerpoolAddressOrEns: '0xa5de76...',
 });
@@ -62,6 +65,8 @@ const { tasks } = await web3mail.sendEmailCampaign({
 
 ```ts twoslash [NodeJS]
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
+import { type PrepareEmailCampaignResponse } from '@iexec/web3mail';
+import { type SendEmailCampaignResponse } from '@iexec/web3mail';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const web3mail = new IExecWeb3mail(web3Provider);
@@ -70,14 +75,15 @@ const web3mail = new IExecWeb3mail(web3Provider);
 const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
 const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
-const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccesses: grantedAccessArray,
-  emailSubject: 'My email subject',
-  emailContent: 'My email content',
-});
+const emailCampaign: PrepareEmailCampaignResponse =
+  await web3mail.prepareEmailCampaign({
+    grantedAccesses: grantedAccessArray,
+    emailSubject: 'My email subject',
+    emailContent: 'My email content',
+  });
 
 // Step 2: Send the campaign
-const result = await web3mail.sendEmailCampaign({
+const { tasks }: SendEmailCampaignResponse = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
   workerpoolAddressOrEns: '0xa5de76...',
 });
@@ -100,25 +106,7 @@ the necessary information to process the bulk campaign, including the grouped
 protected data and campaign metadata.
 
 ```ts twoslash
-declare global {
-  interface Window {
-    ethereum: any;
-  }
-}
-// ---cut---
-import { IExecWeb3mail } from '@iexec/web3mail';
-
-const web3Provider = window.ethereum;
-const web3mail = new IExecWeb3mail(web3Provider);
-// Fetch contacts and prepare campaign
-const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
-const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
-const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccesses: grantedAccessArray,
-  emailSubject: 'My email subject',
-  emailContent: 'My email content',
-});
-
+// @errors: 2304 7034 7005
 const { tasks } = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest, // [!code focus]
 });
@@ -126,32 +114,14 @@ const { tasks } = await web3mail.sendEmailCampaign({
 
 ### workerpoolAddressOrEns <OptionalBadge />
 
-**Type:** `string | undefined`
+**Type:** `AddressOrENS | undefined`
 
 **Default:** Default workerpool from chain configuration
 
 The workerpool address or ENS name that will execute the bulk campaign tasks.
 
 ```ts twoslash
-declare global {
-  interface Window {
-    ethereum: any;
-  }
-}
-// ---cut---
-import { IExecWeb3mail } from '@iexec/web3mail';
-
-const web3Provider = window.ethereum;
-const web3mail = new IExecWeb3mail(web3Provider);
-// Fetch contacts and prepare campaign
-const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
-const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
-const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccesses: grantedAccessArray,
-  emailSubject: 'My email subject',
-  emailContent: 'My email content',
-});
-
+// @errors: 2304
 const { tasks } = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
   workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
@@ -166,38 +136,20 @@ import { type SendEmailCampaignResponse } from '@iexec/web3mail';
 
 ### tasks
 
-**Type:** `Array<{ bulkIndex: number; taskId: string; dealId: string }>`
+**Type:** `Array<{ taskId: string; dealId: string; bulkIndex: number }>`
 
 An array of task objects created for the bulk processing campaign. Each task
 object contains:
 
-- `bulkIndex`: The index of the bulk request within the campaign
 - `taskId`: The task ID created on the iExec network
 - `dealId`: The deal ID associated with the task
+- `bulkIndex`: The index of the task in the bulk request
 
 Each task may process multiple protected data items depending on the bulk
 request configuration.
 
 ```ts twoslash
-declare global {
-  interface Window {
-    ethereum: any;
-  }
-}
-// ---cut---
-import { IExecWeb3mail } from '@iexec/web3mail';
-
-const web3Provider = window.ethereum;
-const web3mail = new IExecWeb3mail(web3Provider);
-// Fetch contacts and prepare campaign
-const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
-const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
-const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccesses: grantedAccessArray,
-  emailSubject: 'My email subject',
-  emailContent: 'My email content',
-});
-
+// @errors: 2304 7034 7005
 const { tasks } = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
 });
@@ -211,6 +163,7 @@ sending the campaign:
 ::: code-group
 
 ```ts twoslash [Browser]
+// @errors: 7034 7005
 declare global {
   interface Window {
     ethereum: any;
@@ -218,6 +171,8 @@ declare global {
 }
 // ---cut---
 import { IExecWeb3mail } from '@iexec/web3mail';
+import { type PrepareEmailCampaignResponse } from '@iexec/web3mail';
+import { type SendEmailCampaignResponse } from '@iexec/web3mail';
 
 const web3Provider = window.ethereum;
 const web3mail = new IExecWeb3mail(web3Provider);
@@ -231,21 +186,25 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
 // Step 3: Prepare the campaign
 // See: prepareEmailCampaign method
-const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccesses: grantedAccessArray,
-  emailSubject: 'Hello from My Awesome App!',
-  emailContent: 'Hello! This is a bulk email to all recipients.',
-  contentType: 'text/html',
-});
+const emailCampaign: PrepareEmailCampaignResponse =
+  await web3mail.prepareEmailCampaign({
+    grantedAccesses: grantedAccessArray,
+    emailSubject: 'Hello from My Awesome App!',
+    emailContent: 'Hello! This is a bulk email to all recipients.',
+    contentType: 'text/html',
+  });
 
 // Step 4: Send the campaign
-const { tasks } = await web3mail.sendEmailCampaign({
+const { tasks }: SendEmailCampaignResponse = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
 });
 ```
 
 ```ts twoslash [NodeJS]
+// @errors: 7034 7005
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
+import { type PrepareEmailCampaignResponse } from '@iexec/web3mail';
+import { type SendEmailCampaignResponse } from '@iexec/web3mail';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const web3mail = new IExecWeb3mail(web3Provider);
@@ -259,15 +218,16 @@ const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
 // Step 3: Prepare the campaign
 // See: prepareEmailCampaign method
-const emailCampaign = await web3mail.prepareEmailCampaign({
-  grantedAccesses: grantedAccessArray,
-  emailSubject: 'Hello from My Awesome App!',
-  emailContent: 'Hello! This is a bulk email to all recipients.',
-  contentType: 'text/html',
-});
+const emailCampaign: PrepareEmailCampaignResponse =
+  await web3mail.prepareEmailCampaign({
+    grantedAccesses: grantedAccessArray,
+    emailSubject: 'Hello from My Awesome App!',
+    emailContent: 'Hello! This is a bulk email to all recipients.',
+    contentType: 'text/html',
+  });
 
 // Step 4: Send the campaign
-const { tasks } = await web3mail.sendEmailCampaign({
+const { tasks }: SendEmailCampaignResponse = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
 });
 ```
