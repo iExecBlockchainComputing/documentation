@@ -164,7 +164,7 @@ sufficient funds for this transfer to proceed.
 
 **Type:** `Address`
 
-This optional parameter allows you to pay for the task using someone else’s
+This optional parameter allows you to pay for the task using someone else's
 voucher. Make sure the voucher's owner has authorized you to use it. This
 parameter must be used in combination with `useVoucher: true`.
 
@@ -182,6 +182,92 @@ const processProtectedDataResponse =
     voucherOwner: '0x5714eB...', // [!code focus]
   });
 ```
+
+### encryptResult <OptionalBadge />
+
+**Type:** `boolean`  
+**Default:** `false`
+
+When set to `true`, the computation result will be encrypted using RSA
+encryption. This ensures that only you can decrypt and access the result,
+providing an additional layer of privacy and security for sensitive computation
+outputs.
+
+If `encryptResult` is `true` and no `pemPrivateKey` is provided, a new RSA key
+pair will be automatically generated. The generated private key will be returned
+in the response as `pemPrivateKey`, which you must securely store to decrypt the
+result later.
+
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
+const processProtectedDataResponse =
+  await dataProtectorCore.processProtectedData({
+    protectedData: '0x123abc...',
+    app: '0x456def...',
+    encryptResult: true, // [!code focus]
+  });
+```
+
+::: tip
+
+When `encryptResult` is enabled, the `onStatusUpdate` callback will be notified
+with the following additional status titles:
+
+- `'GENERATE_ENCRYPTION_KEY'` - When a new key pair is being generated
+- `'PUSH_ENCRYPTION_KEY'` - When the public key is being pushed to the secrets
+  manager
+
+:::
+
+### pemPrivateKey <OptionalBadge />
+
+**Type:** `string`
+
+A PEM-formatted RSA private key used to decrypt the encrypted computation
+result. This parameter can only be used when `encryptResult` is set to `true`.
+
+If you provide a `pemPrivateKey`, it will be used to decrypt the result. If you
+don't provide one but have `encryptResult: true`, a new key pair will be
+generated automatically, and the private key will be returned in the response
+for you to store securely.
+
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
+const processProtectedDataResponse =
+  await dataProtectorCore.processProtectedData({
+    protectedData: '0x123abc...',
+    app: '0x456def...',
+    encryptResult: true, // [!code focus]
+    pemPrivateKey:
+      '-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----', // [!code focus]
+  });
+```
+
+::: danger
+
+If you provide a `pemPrivateKey`, you must also set `encryptResult: true`. The
+method will throw a validation error if `pemPrivateKey` is provided without
+`encryptResult` being enabled.
+
+:::
+
+::: tip
+
+The `pemPrivateKey` (whether provided or auto-generated) will be included in the
+response object when `encryptResult` is `true`. Make sure to securely store this
+key if you need to decrypt the result later using the
+[getResultFromCompletedTask()](/references/dataProtector/methods/getResultFromCompletedTask)
+method.
+
+:::
 
 ### args <OptionalBadge />
 
@@ -422,17 +508,25 @@ const processProtectedDataResponse = await dataProtectorCore.processProtectedDat
 You can expect this callback function to be called with the following titles:
 
 ```ts
-'FETCH_PROTECTED_DATA_ORDERBOOK';
-'FETCH_APP_ORDERBOOK';
-'FETCH_WORKERPOOL_ORDERBOOK';
+'FETCH_ORDERS';
 'PUSH_REQUESTER_SECRET';
+'GENERATE_ENCRYPTION_KEY';
+'PUSH_ENCRYPTION_KEY';
 'REQUEST_TO_PROCESS_PROTECTED_DATA';
+'TASK_EXECUTION';
 'CONSUME_TASK';
 'CONSUME_RESULT_DOWNLOAD';
 'CONSUME_RESULT_DECRYPT';
 ```
 
 Once with `isDone: false`, and then with `isDone: true`
+
+::: info
+
+The `'GENERATE_ENCRYPTION_KEY'` and `'PUSH_ENCRYPTION_KEY'` status titles are
+only triggered when `encryptResult` is set to `true`.
+
+:::
 
 ## Return Value
 
@@ -489,6 +583,27 @@ The result is a ZIP file containing at least one mandatory file:
 In the case of the **Content Creator Delivery DApp**, the ZIP file will also
 include a file named **content**, which corresponds to the protected data
 processed during the task.
+
+:::
+
+### pemPrivateKey
+
+`string`
+
+The PEM-formatted RSA private key used to decrypt the encrypted computation
+result. This property is only present in the response when `encryptResult` is
+set to `true`.
+
+If you provided a `pemPrivateKey` in the parameters, the same key will be
+returned. If you didn't provide one but enabled `encryptResult`, a newly
+generated private key will be returned, which you must securely store to decrypt
+the result.
+
+::: tip
+
+You can use this `pemPrivateKey` with the
+[getResultFromCompletedTask()](/references/dataProtector/methods/getResultFromCompletedTask)
+method to decrypt and retrieve the result of a completed task.
 
 :::
 
