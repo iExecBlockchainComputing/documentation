@@ -87,6 +87,10 @@ An array of `GrantedAccess` objects representing contacts who have granted you
 access to their protected data with bulk processing capability.
 
 ```ts twoslash
+import { IExecWeb3telegram, type GrantedAccess } from '@iexec/web3telegram';
+const web3telegram = {} as IExecWeb3telegram;
+const grantedAccessArray = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
   grantedAccesses: grantedAccessArray, // [!code focus]
@@ -105,6 +109,10 @@ The telegram message content that will be sent to all recipients. The content is
 encrypted and stored in IPFS.
 
 ```ts twoslash
+import { IExecWeb3telegram, type GrantedAccess } from '@iexec/web3telegram';
+const web3telegram = {} as IExecWeb3telegram;
+const grantedAccessArray = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
   grantedAccesses: grantedAccessArray,
@@ -120,6 +128,10 @@ const telegramCampaign = await web3telegram.prepareTelegramCampaign({
 The name of the telegram message sender that will be displayed to recipients.
 
 ```ts twoslash
+import { IExecWeb3telegram, type GrantedAccess } from '@iexec/web3telegram';
+const web3telegram = {} as IExecWeb3telegram;
+const grantedAccessArray = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
   grantedAccesses: grantedAccessArray,
@@ -137,6 +149,10 @@ const telegramCampaign = await web3telegram.prepareTelegramCampaign({
 Limits the number of protected data items processed per task.
 
 ```ts twoslash
+import { IExecWeb3telegram, type GrantedAccess } from '@iexec/web3telegram';
+const web3telegram = {} as IExecWeb3telegram;
+const grantedAccessArray = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
   grantedAccesses: grantedAccessArray,
@@ -156,6 +172,10 @@ The workerpool address or ENS name that will execute the bulk campaign tasks.
 You can specify this during preparation or when sending the campaign.
 
 ```ts twoslash
+import { IExecWeb3telegram, type GrantedAccess } from '@iexec/web3telegram';
+const web3telegram = {} as IExecWeb3telegram;
+const grantedAccessArray = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
   grantedAccesses: grantedAccessArray,
@@ -176,6 +196,10 @@ using their infrastructure to run the Web3Telegram app. You can specify this
 during preparation or when sending the campaign.
 
 ```ts twoslash
+import { IExecWeb3telegram, type GrantedAccess } from '@iexec/web3telegram';
+const web3telegram = {} as IExecWeb3telegram;
+const grantedAccessArray = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
   grantedAccesses: grantedAccessArray,
@@ -192,6 +216,10 @@ const telegramCampaign = await web3telegram.prepareTelegramCampaign({
 An optional label to identify or categorize the campaign.
 
 ```ts twoslash
+import { IExecWeb3telegram, type GrantedAccess } from '@iexec/web3telegram';
+const web3telegram = {} as IExecWeb3telegram;
+const grantedAccessArray = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
   grantedAccesses: grantedAccessArray,
@@ -211,6 +239,10 @@ The maximum amount (in nRLC) you are willing to pay for accessing the protected
 data.
 
 ```ts twoslash
+import { IExecWeb3telegram, type GrantedAccess } from '@iexec/web3telegram';
+const web3telegram = {} as IExecWeb3telegram;
+const grantedAccessArray = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
   grantedAccesses: grantedAccessArray,
@@ -230,6 +262,10 @@ The maximum amount (in nRLC) you are willing to pay the Web3Telegram app
 provider for using the Web3Telegram application.
 
 ```ts twoslash
+import { IExecWeb3telegram, type GrantedAccess } from '@iexec/web3telegram';
+const web3telegram = {} as IExecWeb3telegram;
+const grantedAccessArray = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
   grantedAccesses: grantedAccessArray,
@@ -254,87 +290,18 @@ process the bulk campaign. This object should be passed to
 `sendTelegramCampaign` to execute the campaign.
 
 ```ts twoslash
+import {
+  IExecWeb3telegram,
+  type PrepareTelegramCampaignResponse,
+} from '@iexec/web3telegram';
+const web3telegram = {} as IExecWeb3telegram;
+const telegramCampaign = {} as PrepareTelegramCampaignResponse;
+// ---cut---
 // @errors: 2304 7034 7005
 const { tasks } = await web3telegram.sendTelegramCampaign({
   campaignRequest: telegramCampaign.campaignRequest, // [!code focus]
 });
 ```
-
-## Complete Example
-
-Here's a complete example showing the two-step campaign process:
-
-::: code-group
-
-```ts twoslash [Browser]
-declare global {
-  interface Window {
-    ethereum: any;
-  }
-}
-// ---cut---
-import { IExecWeb3telegram } from '@iexec/web3telegram';
-import {
-  type PrepareTelegramCampaignResponse,
-  type SendTelegramCampaignResponse,
-} from '@iexec/web3telegram';
-
-const web3Provider = window.ethereum;
-const web3telegram = new IExecWeb3telegram(web3Provider);
-
-// Step 1: Fetch contacts with bulk access
-const contacts = await web3telegram.fetchMyContacts({ bulkOnly: true });
-const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
-
-// Step 2: Prepare the campaign
-const telegramCampaign: PrepareTelegramCampaignResponse =
-  await web3telegram.prepareTelegramCampaign({
-    grantedAccesses: grantedAccessArray,
-    telegramContent:
-      'Hello! This is a bulk message sent to all recipients. Thank you for subscribing!',
-    senderName: 'My Awesome App',
-    maxProtectedDataPerTask: 10,
-  });
-
-// Step 3: Send the campaign
-const result: SendTelegramCampaignResponse =
-  await web3telegram.sendTelegramCampaign({
-    campaignRequest: telegramCampaign.campaignRequest,
-  });
-```
-
-```ts twoslash [NodeJS]
-import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
-import {
-  type PrepareTelegramCampaignResponse,
-  type SendTelegramCampaignResponse,
-} from '@iexec/web3telegram';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const web3telegram = new IExecWeb3telegram(web3Provider);
-
-// Step 1: Fetch contacts with bulk access
-const contacts = await web3telegram.fetchMyContacts({ bulkOnly: true });
-const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
-
-// Step 2: Prepare the campaign
-const telegramCampaign: PrepareTelegramCampaignResponse =
-  await web3telegram.prepareTelegramCampaign({
-    grantedAccesses: grantedAccessArray,
-    telegramContent:
-      'Hello! This is a bulk message sent to all recipients. Thank you for subscribing!',
-    senderName: 'My Awesome App',
-    maxProtectedDataPerTask: 10,
-  });
-
-// Step 3: Send the campaign
-const result: SendTelegramCampaignResponse =
-  await web3telegram.sendTelegramCampaign({
-    campaignRequest: telegramCampaign.campaignRequest,
-  });
-```
-
-:::
 
 ## Related Documentation
 

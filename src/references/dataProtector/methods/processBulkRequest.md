@@ -103,7 +103,15 @@ This object contains all the necessary information to process multiple protected
 data items together.
 
 ```ts twoslash
-// @errors: 2304 7034 7005
+import {
+  IExecDataProtectorCore,
+  getWeb3Provider,
+  type BulkRequest,
+} from '@iexec/dataprotector';
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+const bulkRequest = {} as BulkRequest;
+// ---cut---
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest, // [!code focus]
 });
@@ -125,45 +133,13 @@ confidential computations on the iExec platform.
 :::
 
 ```ts twoslash
-// @errors: 2304 7034 7005
+import { IExecDataProtectorCore, type BulkRequest } from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const bulkRequest = {} as BulkRequest;
+// ---cut---
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest,
   workerpool: '0xa5de76...', // [!code focus]
-});
-```
-
-### useVoucher <ChainNotSupportedBadge /> <OptionalBadge />
-
-**Type:** `boolean`
-
-**Default:** `false`
-
-This optional parameter allows you to pay for the tasks using a voucher. By
-default, it uses the voucher associated with your connected wallet, but you can
-override this by specifying a `voucherOwner`.
-
-```ts twoslash
-// @errors: 2304 7034 7005
-const { tasks } = await dataProtectorCore.processBulkRequest({
-  bulkRequest: bulkRequest,
-  useVoucher: true, // [!code focus]
-});
-```
-
-### voucherOwner <ChainNotSupportedBadge /> <OptionalBadge />
-
-**Type:** `Address | undefined`
-
-This optional parameter allows you to pay for the tasks using someone else's
-voucher. Make sure the voucher's owner has authorized you to use it. This
-parameter must be used in combination with `useVoucher: true`.
-
-```ts twoslash
-// @errors: 2304 7034 7005
-const { tasks } = await dataProtectorCore.processBulkRequest({
-  bulkRequest: bulkRequest,
-  useVoucher: true, // [!code focus]
-  voucherOwner: '0x5714eB...', // [!code focus]
 });
 ```
 
@@ -177,6 +153,10 @@ you, and only the desired file will be given as the `result`. This applies to
 all protected data items in the bulk request.
 
 ```ts twoslash
+import { IExecDataProtectorCore, type BulkRequest } from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const bulkRequest = {} as BulkRequest;
+// ---cut---
 // @errors: 2304 7034 7005
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest,
@@ -193,6 +173,12 @@ result encryption (when `encryptResult` was set to `true` in
 `prepareBulkRequest`) and `waitForResult` is `true`.
 
 ```ts twoslash
+import { IExecDataProtectorCore, type BulkRequest } from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const bulkRequest = {} as BulkRequest;
+const pemPrivateKey =
+  '-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----';
+// ---cut---
 // @errors: 2304 7034 7005
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest,
@@ -212,6 +198,10 @@ method will wait for all tasks to complete and return results. If `false`, it
 will return immediately with task IDs.
 
 ```ts twoslash
+import { IExecDataProtectorCore, type BulkRequest } from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const bulkRequest = {} as BulkRequest;
+// ---cut---
 // @errors: 2304 7034 7005
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest,
@@ -244,6 +234,10 @@ You can expect this callback function to be called with the following titles:
 Each status is called once with `isDone: false`, and then with `isDone: true`.
 
 ```ts twoslash
+import { IExecDataProtectorCore, type BulkRequest } from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const bulkRequest = {} as BulkRequest;
+// ---cut---
 // @errors: 2304 7034 7005 7031
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest,
@@ -291,95 +285,15 @@ represents a batch of protected data items being processed together.
 - **error**: Error object if the task failed (only present if failed)
 
 ```ts twoslash
+import { IExecDataProtectorCore, type BulkRequest } from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const bulkRequest = {} as BulkRequest;
+// ---cut---
 // @errors: 2304 7034 7005
 const { tasks } = await dataProtectorCore.processBulkRequest({
   bulkRequest: bulkRequest,
 });
 ```
-
-## Complete Example
-
-Here's a complete example showing the two-step bulk processing process:
-
-::: code-group
-
-```ts twoslash [NodeJS]
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-
-// Step 1: Get granted accesses with bulk capability
-const { grantedAccess } = await dataProtectorCore.getGrantedAccess({
-  bulkOnly: true,
-});
-
-// Step 2: Prepare the bulk request
-const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
-  bulkAccesses: grantedAccess,
-  app: '0x456def...',
-  args: 'arg1 arg2',
-  maxProtectedDataPerTask: 50,
-});
-
-// Step 3: Process the bulk request
-const { tasks } = await dataProtectorCore.processBulkRequest({
-  bulkRequest: bulkRequest,
-});
-
-// Handle the created tasks
-tasks.forEach(
-  (
-    task: { taskId: string; dealId: string; bulkIndex: number },
-    index: number
-  ) => {
-    // Monitor or process each task
-  }
-);
-```
-
-```ts twoslash [Browser]
-declare global {
-  interface Window {
-    ethereum: any;
-  }
-}
-// ---cut---
-import { IExecDataProtectorCore } from '@iexec/dataprotector';
-
-const web3Provider = window.ethereum;
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-
-// Step 1: Get granted accesses with bulk capability
-const { grantedAccess } = await dataProtectorCore.getGrantedAccess({
-  bulkOnly: true,
-});
-
-// Step 2: Prepare the bulk request
-const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
-  bulkAccesses: grantedAccess,
-  app: '0x456def...',
-  args: 'arg1 arg2',
-  maxProtectedDataPerTask: 50,
-});
-
-// Step 3: Process the bulk request
-const { tasks } = await dataProtectorCore.processBulkRequest({
-  bulkRequest: bulkRequest,
-});
-
-// Handle the created tasks
-tasks.forEach(
-  (
-    task: { taskId: string; dealId: string; bulkIndex: number },
-    index: number
-  ) => {
-    // Monitor or process each task
-  }
-);
-```
-
-:::
 
 ## Related Documentation
 
@@ -408,3 +322,7 @@ const chainData = computed(() => getChainById(selectedChain.value));
 const explorerUrl = computed(() => chainData.value.iexecExplorerUrl);
 const workerpoolAddress = computed(() => chainData.value.workerpoolAddress);
 </script>
+
+```
+
+```

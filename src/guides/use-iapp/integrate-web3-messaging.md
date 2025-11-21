@@ -18,7 +18,11 @@ flow is the same, except that:
 1. (Telegram only) Get a Chat ID from the iExec bot
 2. Create the Protected Data using DataProtector Toolkit
 3. Grant access of your Protected Data
-4. Send the message using the relevant SDK ( Web3Mail / Web3Telegram )
+4. Send the message using the relevant SDK (Web3Mail / Web3Telegram)
+
+You can send messages in two modes: single messages (one recipient at a time) or
+bulk campaigns (same message to multiple recipients efficiently). See step 4
+below for details.
 
 ## 1. Retrieve the Telegram Chat ID (Telegram only)
 
@@ -69,7 +73,9 @@ const protectedData = await dataProtectorCore.protectData({
 
 ## 3. Grant Access
 
-Grant permission for a sender and/or an app to contact the user.
+Grant permission for a sender and/or an app to contact the user. Choose the mode
+based on your use case: use **Single Message** mode for individual messages, or
+**Bulk Campaigns** mode for sending the same message to multiple recipients.
 
 ::: code-group
 
@@ -92,37 +98,20 @@ import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
-// For bulk campaigns, recipients must grant access with allowBulk: true
+// allowBulk: true automatically sets pricePerAccess to 0 and numberOfAccess to unlimited
 const grantedAccess = await dataProtectorCore.grantAccess({
   protectedData: '0x123abc...',
   authorizedApp: '0x456def...',
   authorizedUser: '0x789cba...',
-  allowBulk: true, // [!code focus] Enable bulk processing
+  allowBulk: true, // [!code focus]
 });
 ```
 
 :::
 
-::: info
-
-Setting `allowBulk: true` automatically configures `pricePerAccess` to `0` and
-`numberOfAccess` to `Number.MAX_SAFE_INTEGER`, enabling unlimited bulk
-processing at no cost per access.
-
-:::
-
 ## 4. Send the Message
 
-You can send messages in two modes:
-
-- **Single Processing**: Send to one recipient using `sendEmail` or
-  `sendTelegram`
-- **Bulk Processing**: Send the same message to multiple recipients efficiently
-  using a two-step process: first call `prepareEmailCampaign` or
-  `prepareTelegramCampaign` to prepare the campaign, then call
-  `sendEmailCampaign` or `sendTelegramCampaign` to send it
-
-### Single Message Processing
+### Single Messages
 
 Send a message to a single recipient:
 
@@ -156,10 +145,12 @@ const sendTelegram = await web3telegram.sendTelegram({
 
 :::
 
-### Bulk Message Processing
+### Bulk Campaigns
 
-Send the same message to multiple recipients efficiently in a single
-transaction.
+Send the same message to multiple recipients efficiently. Bulk processing groups
+multiple protected data items (emails for Web3Mail or chat IDs for Web3Telegram)
+together, reducing gas fees and processing recipients in parallel across one or
+more transactions.
 
 **To send a bulk campaign, follow these steps in order:**
 
@@ -169,8 +160,7 @@ transaction.
    `prepareTelegramCampaign` (for Web3Telegram). This creates a bulk request
    object that groups all recipients together
 3. **Send the campaign** by calling `sendEmailCampaign` (for Web3Mail) or
-   `sendTelegramCampaign` (for Web3Telegram) with the prepared bulk request.
-   This processes all recipients in one or more efficient transactions
+   `sendTelegramCampaign` (for Web3Telegram) with the prepared bulk request
 
 ::: warning Prerequisites
 
@@ -182,16 +172,35 @@ Before using bulk processing, ensure that recipients have granted access with
 ::: code-group
 
 ```ts twoslash [Web3Mail - Bulk]
-import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+import { IExecWeb3mail } from '@iexec/web3mail';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 const web3mail = new IExecWeb3mail(web3Provider);
 
-// Step 1: Fetch contacts with bulk access
+// Steps 1-2: Executed by the recipient (protected data provider)
+// Step 1: Create Protected Data (see section 2)
+const protectedData = await dataProtectorCore.protectData({
+  data: {
+    email: 'user@example.com',
+  },
+});
+
+// Step 2: Grant access with bulk processing enabled (see section 3)
+const grantedAccess = await dataProtectorCore.grantAccess({
+  protectedData: protectedData.address,
+  authorizedApp: '0x456def...',
+  authorizedUser: '0x789cba...',
+  allowBulk: true,
+});
+
+// Steps 3-5: Executed by the sender (who wants to contact recipients)
+// Step 3: Fetch contacts with bulk access
 const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
 const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
-// Step 2: Prepare the campaign
+// Step 4: Prepare the campaign
 const emailCampaign = await web3mail.prepareEmailCampaign({
   grantedAccesses: grantedAccessArray,
   emailSubject: 'Hello from My Awesome App!',
@@ -199,42 +208,55 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
   contentType: 'text/html',
 });
 
-// Step 3: Send the bulk campaign
+// Step 5: Send the bulk campaign
 const { tasks } = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
 });
 ```
 
 ```ts twoslash [Web3Telegram - Bulk]
-import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+import { IExecWeb3telegram } from '@iexec/web3telegram';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 const web3telegram = new IExecWeb3telegram(web3Provider);
 
-// Step 1: Fetch contacts with bulk access
+// Steps 1-2: Executed by the recipient (protected data provider)
+// Step 1: Create Protected Data (see section 2)
+const protectedData = await dataProtectorCore.protectData({
+  data: {
+    telegram_chatId: '12345678',
+  },
+});
+
+// Step 2: Grant access with bulk processing enabled (see section 3)
+const grantedAccess = await dataProtectorCore.grantAccess({
+  protectedData: protectedData.address,
+  authorizedApp: '0x456def...',
+  authorizedUser: '0x789cba...',
+  allowBulk: true,
+});
+
+// Steps 3-5: Executed by the sender (who wants to contact recipients)
+// Step 3: Fetch contacts with bulk access
 const contacts = await web3telegram.fetchMyContacts({ bulkOnly: true });
 const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
 
-// Step 2: Prepare the campaign
+// Step 4: Prepare the campaign
 const telegramCampaign = await web3telegram.prepareTelegramCampaign({
   grantedAccesses: grantedAccessArray,
   telegramContent: 'Hello! This is a bulk message sent to all recipients.',
   senderName: 'My Awesome App',
 });
 
-// Step 3: Send the bulk campaign
+// Step 5: Send the bulk campaign
 const { tasks } = await web3telegram.sendTelegramCampaign({
   campaignRequest: telegramCampaign.campaignRequest,
 });
 ```
 
 :::
-
-**Benefits:**
-
-- Lower costs: fewer transactions reduce gas fees
-- Higher performance: multiple recipients processed in parallel
-- Better scalability: efficiently handle hundreds or thousands of recipients
 
 ## Payment
 

@@ -93,6 +93,13 @@ obtain bulk accesses. Each `GrantedAccess` must have been created with
 [`grantAccess`](/references/dataProtector/methods/grantAccess).
 
 ```ts twoslash
+import {
+  IExecDataProtectorCore,
+  type GrantedAccess,
+} from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const grantedAccess = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
   bulkAccesses: grantedAccess, // [!code focus]
@@ -108,6 +115,13 @@ The ETH address or Ethereum Name Service (ENS) address for the iExec application
 that will process the protected data items in the bulk request.
 
 ```ts twoslash
+import {
+  IExecDataProtectorCore,
+  type GrantedAccess,
+} from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const grantedAccess = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
   bulkAccesses: grantedAccess,
@@ -125,6 +139,13 @@ Limits the number of protected data items processed per task. If you have more
 protected data items than this limit, multiple tasks will be created.
 
 ```ts twoslash
+import {
+  IExecDataProtectorCore,
+  type GrantedAccess,
+} from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const grantedAccess = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
   bulkAccesses: grantedAccess,
@@ -151,6 +172,13 @@ confidential computations on the iExec platform.
 You can specify this during preparation or when processing the bulk request.
 
 ```ts twoslash
+import {
+  IExecDataProtectorCore,
+  type GrantedAccess,
+} from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const grantedAccess = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
   bulkAccesses: grantedAccess,
@@ -170,6 +198,13 @@ using their infrastructure to run the application. You can specify this during
 preparation or when processing the bulk request.
 
 ```ts twoslash
+import {
+  IExecDataProtectorCore,
+  type GrantedAccess,
+} from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const grantedAccess = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
   bulkAccesses: grantedAccess,
@@ -188,6 +223,13 @@ The maximum amount (in nRLC) you are willing to pay the application provider for
 using the application.
 
 ```ts twoslash
+import {
+  IExecDataProtectorCore,
+  type GrantedAccess,
+} from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const grantedAccess = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
   bulkAccesses: grantedAccess,
@@ -204,6 +246,13 @@ Set of execution arguments for the application that will be used for all tasks
 in the bulk request.
 
 ```ts twoslash
+import {
+  IExecDataProtectorCore,
+  type GrantedAccess,
+} from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const grantedAccess = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
   bulkAccesses: grantedAccess,
@@ -228,6 +277,13 @@ A set of URLs representing the input files required for application execution.
 These files will be used for all tasks in the bulk request.
 
 ```ts twoslash
+import {
+  IExecDataProtectorCore,
+  type GrantedAccess,
+} from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const grantedAccess = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
   bulkAccesses: grantedAccess,
@@ -249,6 +305,13 @@ variables. For more details, see
 [Access requester secrets](/guides/build-iapp/advanced/access-confidential-assets).
 
 ```ts twoslash
+import {
+  IExecDataProtectorCore,
+  type GrantedAccess,
+} from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const grantedAccess = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
   bulkAccesses: grantedAccess,
@@ -272,6 +335,13 @@ provide the `pemPrivateKey` when processing the bulk request to decrypt the
 results.
 
 ```ts twoslash
+import {
+  IExecDataProtectorCore,
+  type GrantedAccess,
+} from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const grantedAccess = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const { bulkRequest, pemPrivateKey } =
   await dataProtectorCore.prepareBulkRequest({
@@ -290,12 +360,20 @@ Private key in PEM format for result encryption/decryption. If not provided and
 response.
 
 ```ts twoslash
+import {
+  IExecDataProtectorCore,
+  type GrantedAccess,
+} from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const grantedAccess = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005
 const { bulkRequest, pemPrivateKey } =
   await dataProtectorCore.prepareBulkRequest({
     bulkAccesses: grantedAccess,
     app: '0x456def...',
     encryptResult: true,
+    // [!code focus]
     pemPrivateKey:
       '-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----', // [!code focus]
   });
@@ -320,6 +398,13 @@ following titles:
 Each status is called once with `isDone: false`, and then with `isDone: true`.
 
 ```ts twoslash
+import {
+  IExecDataProtectorCore,
+  type GrantedAccess,
+} from '@iexec/dataprotector';
+const dataProtectorCore = {} as IExecDataProtectorCore;
+const grantedAccess = [] as GrantedAccess[];
+// ---cut---
 // @errors: 2304 7034 7005 7031
 const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
   bulkAccesses: grantedAccess,
@@ -381,70 +466,6 @@ const { tasks } = await dataProtectorCore.processBulkRequest({
   waitForResult: true,
 });
 ```
-
-## Complete Example
-
-Here's a complete example showing the two-step bulk processing process:
-
-::: code-group
-
-```ts twoslash [NodeJS]
-import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-
-// Step 1: Get granted accesses with bulk capability
-const { grantedAccess } = await dataProtectorCore.getGrantedAccess({
-  bulkOnly: true,
-});
-
-// Step 2: Prepare the bulk request
-const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
-  bulkAccesses: grantedAccess,
-  app: '0x456def...',
-  args: 'arg1 arg2',
-  maxProtectedDataPerTask: 50,
-});
-
-// Step 3: Process the bulk request
-const { tasks } = await dataProtectorCore.processBulkRequest({
-  bulkRequest: bulkRequest,
-});
-```
-
-```ts twoslash [Browser]
-declare global {
-  interface Window {
-    ethereum: any;
-  }
-}
-// ---cut---
-import { IExecDataProtectorCore } from '@iexec/dataprotector';
-
-const web3Provider = window.ethereum;
-const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
-
-// Step 1: Get granted accesses with bulk capability
-const { grantedAccess } = await dataProtectorCore.getGrantedAccess({
-  bulkOnly: true,
-});
-
-// Step 2: Prepare the bulk request
-const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
-  bulkAccesses: grantedAccess,
-  app: '0x456def...',
-  args: 'arg1 arg2',
-  maxProtectedDataPerTask: 50,
-});
-
-// Step 3: Process the bulk request
-const { tasks } = await dataProtectorCore.processBulkRequest({
-  bulkRequest: bulkRequest,
-});
-```
-
-:::
 
 ## Related Documentation
 

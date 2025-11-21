@@ -106,6 +106,13 @@ the necessary information to process the bulk campaign, including the grouped
 protected data and campaign metadata.
 
 ```ts twoslash
+import {
+  IExecWeb3mail,
+  type PrepareEmailCampaignResponse,
+} from '@iexec/web3mail';
+const web3mail = {} as IExecWeb3mail;
+const emailCampaign = {} as PrepareEmailCampaignResponse;
+// ---cut---
 // @errors: 2304 7034 7005
 const { tasks } = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest, // [!code focus]
@@ -121,7 +128,14 @@ const { tasks } = await web3mail.sendEmailCampaign({
 The workerpool address or ENS name that will execute the bulk campaign tasks.
 
 ```ts twoslash
-// @errors: 2304
+import {
+  IExecWeb3mail,
+  type PrepareEmailCampaignResponse,
+} from '@iexec/web3mail';
+const web3mail = {} as IExecWeb3mail;
+const emailCampaign = {} as PrepareEmailCampaignResponse;
+// ---cut---
+// @errors: 2304 7034 7005
 const { tasks } = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
   workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
@@ -149,90 +163,18 @@ Each task may process multiple protected data items depending on the bulk
 request configuration.
 
 ```ts twoslash
+import {
+  IExecWeb3mail,
+  type PrepareEmailCampaignResponse,
+} from '@iexec/web3mail';
+const web3mail = {} as IExecWeb3mail;
+const emailCampaign = {} as PrepareEmailCampaignResponse;
+// ---cut---
 // @errors: 2304 7034 7005
 const { tasks } = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
 });
 ```
-
-## Complete Example
-
-Here's a complete example showing the full workflow from fetching contacts to
-sending the campaign:
-
-::: code-group
-
-```ts twoslash [Browser]
-// @errors: 7034 7005
-declare global {
-  interface Window {
-    ethereum: any;
-  }
-}
-// ---cut---
-import { IExecWeb3mail } from '@iexec/web3mail';
-import { type PrepareEmailCampaignResponse } from '@iexec/web3mail';
-import { type SendEmailCampaignResponse } from '@iexec/web3mail';
-
-const web3Provider = window.ethereum;
-const web3mail = new IExecWeb3mail(web3Provider);
-
-// Step 1: Fetch contacts with bulk access capability
-// See: fetchMyContacts method with bulkOnly: true
-const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
-
-// Step 2: Extract grantedAccess from contacts
-const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
-
-// Step 3: Prepare the campaign
-// See: prepareEmailCampaign method
-const emailCampaign: PrepareEmailCampaignResponse =
-  await web3mail.prepareEmailCampaign({
-    grantedAccesses: grantedAccessArray,
-    emailSubject: 'Hello from My Awesome App!',
-    emailContent: 'Hello! This is a bulk email to all recipients.',
-    contentType: 'text/html',
-  });
-
-// Step 4: Send the campaign
-const { tasks }: SendEmailCampaignResponse = await web3mail.sendEmailCampaign({
-  campaignRequest: emailCampaign.campaignRequest,
-});
-```
-
-```ts twoslash [NodeJS]
-// @errors: 7034 7005
-import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
-import { type PrepareEmailCampaignResponse } from '@iexec/web3mail';
-import { type SendEmailCampaignResponse } from '@iexec/web3mail';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const web3mail = new IExecWeb3mail(web3Provider);
-
-// Step 1: Fetch contacts with bulk access capability
-// See: fetchMyContacts method with bulkOnly: true
-const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
-
-// Step 2: Extract grantedAccess from contacts
-const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
-
-// Step 3: Prepare the campaign
-// See: prepareEmailCampaign method
-const emailCampaign: PrepareEmailCampaignResponse =
-  await web3mail.prepareEmailCampaign({
-    grantedAccesses: grantedAccessArray,
-    emailSubject: 'Hello from My Awesome App!',
-    emailContent: 'Hello! This is a bulk email to all recipients.',
-    contentType: 'text/html',
-  });
-
-// Step 4: Send the campaign
-const { tasks }: SendEmailCampaignResponse = await web3mail.sendEmailCampaign({
-  campaignRequest: emailCampaign.campaignRequest,
-});
-```
-
-:::
 
 ## Related Documentation
 

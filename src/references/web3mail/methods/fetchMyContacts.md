@@ -79,7 +79,7 @@ import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
 const web3Provider = getWeb3Provider('PRIVATE_KEY');
 const web3mail = new IExecWeb3mail(web3Provider);
-// Fetch contacts with bulk access
+// ---cut---
 const bulkContacts = await web3mail.fetchMyContacts({
   bulkOnly: true, // [!code focus]
 });

@@ -104,7 +104,14 @@ all the necessary information to process the bulk campaign, including the
 grouped protected data and campaign metadata.
 
 ```ts twoslash
-// @errors: 2304
+import {
+  IExecWeb3telegram,
+  type PrepareTelegramCampaignResponse,
+} from '@iexec/web3telegram';
+const web3telegram = {} as IExecWeb3telegram;
+const telegramCampaign = {} as PrepareTelegramCampaignResponse;
+// ---cut---
+// @errors: 2304 7034 7005
 const { tasks } = await web3telegram.sendTelegramCampaign({
   campaignRequest: telegramCampaign.campaignRequest, // [!code focus]
 });
@@ -119,7 +126,14 @@ const { tasks } = await web3telegram.sendTelegramCampaign({
 The workerpool address or ENS name that will execute the bulk campaign tasks.
 
 ```ts twoslash
-// @errors: 2304
+import {
+  IExecWeb3telegram,
+  type PrepareTelegramCampaignResponse,
+} from '@iexec/web3telegram';
+const web3telegram = {} as IExecWeb3telegram;
+const telegramCampaign = {} as PrepareTelegramCampaignResponse;
+// ---cut---
+// @errors: 2304 7034 7005
 const { tasks } = await web3telegram.sendTelegramCampaign({
   campaignRequest: telegramCampaign.campaignRequest,
   workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
@@ -147,92 +161,18 @@ Each task may process multiple protected data items depending on the bulk
 request configuration.
 
 ```ts twoslash
-// @errors: 2304
+import {
+  IExecWeb3telegram,
+  type PrepareTelegramCampaignResponse,
+} from '@iexec/web3telegram';
+const web3telegram = {} as IExecWeb3telegram;
+const telegramCampaign = {} as PrepareTelegramCampaignResponse;
+// ---cut---
+// @errors: 2304 7034 7005
 const { tasks } = await web3telegram.sendTelegramCampaign({
   campaignRequest: telegramCampaign.campaignRequest,
 });
 ```
-
-## Complete Example
-
-Here's a complete example showing the full workflow from fetching contacts to
-sending the campaign:
-
-::: code-group
-
-```ts twoslash [Browser]
-declare global {
-  interface Window {
-    ethereum: any;
-  }
-}
-// ---cut---
-import { IExecWeb3telegram } from '@iexec/web3telegram';
-
-const web3Provider = window.ethereum;
-const web3telegram = new IExecWeb3telegram(web3Provider);
-
-// Step 1: Fetch contacts with bulk access capability
-// See: fetchMyContacts method with bulkOnly: true
-const contacts = await web3telegram.fetchMyContacts({ bulkOnly: true });
-
-// Step 2: Extract grantedAccess from contacts
-const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
-
-// Step 3: Prepare the campaign
-// See: prepareTelegramCampaign method
-import {
-  type PrepareTelegramCampaignResponse,
-  type SendTelegramCampaignResponse,
-} from '@iexec/web3telegram';
-const telegramCampaign: PrepareTelegramCampaignResponse =
-  await web3telegram.prepareTelegramCampaign({
-    grantedAccesses: grantedAccessArray,
-    telegramContent: 'Hello! This is a bulk message to all recipients.',
-    senderName: 'My Awesome App',
-  });
-
-// Step 4: Send the campaign
-const { tasks }: SendTelegramCampaignResponse =
-  await web3telegram.sendTelegramCampaign({
-    campaignRequest: telegramCampaign.campaignRequest,
-  });
-```
-
-```ts twoslash [NodeJS]
-import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
-import {
-  type PrepareTelegramCampaignResponse,
-  type SendTelegramCampaignResponse,
-} from '@iexec/web3telegram';
-
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
-const web3telegram = new IExecWeb3telegram(web3Provider);
-
-// Step 1: Fetch contacts with bulk access capability
-// See: fetchMyContacts method with bulkOnly: true
-const contacts = await web3telegram.fetchMyContacts({ bulkOnly: true });
-
-// Step 2: Extract grantedAccess from contacts
-const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
-
-// Step 3: Prepare the campaign
-// See: prepareTelegramCampaign method
-const telegramCampaign: PrepareTelegramCampaignResponse =
-  await web3telegram.prepareTelegramCampaign({
-    grantedAccesses: grantedAccessArray,
-    telegramContent: 'Hello! This is a bulk message to all recipients.',
-    senderName: 'My Awesome App',
-  });
-
-// Step 4: Send the campaign
-const { tasks }: SendTelegramCampaignResponse =
-  await web3telegram.sendTelegramCampaign({
-    campaignRequest: telegramCampaign.campaignRequest,
-  });
-```
-
-:::
 
 ## Related Documentation
 
