@@ -41,30 +41,6 @@ Community</a>** for support!
 
 </Container>
 
-<template v-if="selectedChain !== 42161 && selectedChain !== 421614">
-
-## 🎁 Claim your Voucher
-
-<div class="mb-6">
-  <h3 class="text-xl font-semibold mb-2">What is a Voucher?</h3>
-  <p>A Voucher is your all-in-one solution for iExec development to use iExec's technology, access to premium support, technical guidance and mentorship to help you build and monetize your projects. 🚀</p>
-  <p>Claim your <strong>$20 voucher</strong> to kickstart your development journey. Want to learn more about [Voucher](https://www.iex.ec/voucher) ? 🎁</p>
-</div>
-
-<div class="mb-6">
-  <p>Here's your unique coupon code based on your wallet address. You'll need to provide this code when claiming your voucher on Discord:</p>
-  <ClientOnly>
-    <CouponCode />
-  </ClientOnly>
-</div>
-
-<Button as="a" href="https://www.iex.ec/voucher" target="_blank" data-track="claimVoucher">
-  Claim your $20 voucher
-</Button>
-
-<br/>
-<br/>
-
 <Container variant="success">
 
 Thank you for being part of the iExec journey! We can't wait to see what you'll
@@ -72,16 +48,7 @@ build next! 🚀
 
 </Container>
 
-</template>
-
 <script setup>
-import CouponCode from '@/modules/helloWorld/CouponCode.vue';
-import Button from '@/components/ui/Button.vue';
-import useUserStore from '@/stores/useUser.store';
 import Banner from '../../components/Banner.vue'
 import Container from '../../components/Container.vue'
-import { computed } from 'vue';
-
-const userStore = useUserStore();
-const selectedChain = computed(() => userStore.getCurrentChainId());
 </script>
