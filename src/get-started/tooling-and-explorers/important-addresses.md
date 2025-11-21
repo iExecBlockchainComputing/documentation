@@ -73,10 +73,10 @@ decentralized computing marketplace.
 
 | Contract               | Address                                      |
 | ---------------------- | -------------------------------------------- |
-| **Diamond Proxy**      | `0x3eca1B216A7DF1C7689aEb259eFB04Ad753aafE5` |
-| **AppRegistry**        | `0x9950D94fb074182ee93ff79A50Cd698C4983281F` |
-| **DatasetRegistry**    | `0x07Cc4E1EA30dD02796795876509A3BfC5053128D` |
-| **WorkerpoolRegistry** | `0xe3c13bb4A5068601c6A08041Cb50887B07B5F398` |
+| **Diamond Proxy**      | `0x3eca1B216A7DF1C7689aEb259fFB83ADFB894E7f` |
+| **AppRegistry**        | `0xB1C52075b276f87b1834919167312221d50c9D16` |
+| **DatasetRegistry**    | `0x799DAa22654128d0C64d5b79eac9283008158730` |
+| **WorkerpoolRegistry** | `0xC76A18c78B7e530A165c5683CB1aB134E21938B4` |
 
 ## Data Protector Contracts
 
@@ -86,20 +86,17 @@ Smart contracts for managing protected data and access control.
 
 | Contract                                 | Address                                      |
 | ---------------------------------------- | -------------------------------------------- |
-| **Core (Prod)**                          | `0xF08f91F7646FDb95a4E24977b8Db91318252A667` |
+| **Core**                                 | `0xF08f91F7646FDb95a4E24977b8Db91318252A667` |
 | **Sharing: AddOnlyAppWhitelistRegistry** | `0xe4f319aDf2f3DbFD3270f35CEc90575dC858A0dA` |
 | **Sharing Contract**                     | `0x2dA2D268281d79b81D609D68e4507e7ACDfd7E05` |
 
 ### Arbitrum Sepolia
 
-| Contract                                        | Address                                      |
-| ----------------------------------------------- | -------------------------------------------- |
-| **Core (Prod)**                                 | `0x168eAF6C33a77E3caD9db892452f51a5D91df621` |
-| **Core (Dev)**                                  | `0x623d86D427f9D28F6F53675db3a5B3922cC2F4cA` |
-| **Sharing: AddOnlyAppWhitelistRegistry (Prod)** | `0x36a1544cE8c72f9b80dB39Fd8A193b6B94FD92B3` |
-| **Sharing: AddOnlyAppWhitelist (Dev)**          | `0xA3C47f052A7a9fa5F8f7A5264e22330EE93c607d` |
-| **Sharing Contract (Prod)**                     | `0x34AD9D161E815D7696777a9D2d668aF2d6e675e9` |
-| **Sharing Contract (Dev)**                      | `0x8E13528E645dB655Ed992411d668c42A6CC3dD03` |
+| Contract                                 | Address                                      |
+| ---------------------------------------- | -------------------------------------------- |
+| **Core**                                 | `0x168eAF6C33a77E3caD9db892452f51a5D91df621` |
+| **Sharing: AddOnlyAppWhitelistRegistry** | `0x36a1544cE8c72f9b80dB39Fd8A193b6B94FD92B3` |
+| **Sharing Contract**                     | `0x34AD9D161E815D7696777a9D2d668aF2d6e675e9` |
 
 ## Application Addresses
 
@@ -108,23 +105,21 @@ Smart contracts for managing protected data and access control.
 Web3Mail enables decentralized email communication with privacy-preserving
 features.
 
-| Network              | Environment | Whitelist Address                            |
-| -------------------- | ----------- | -------------------------------------------- |
-| **Arbitrum Mainnet** | Prod        | `0xD5054a18565c4a9E5c1aa3cEB53258bd59d4c78C` |
-| **Arbitrum Sepolia** | Prod        | `0x8d46d40840f1Aa2264F96184Ffadf04e5D573B9B` |
-| **Arbitrum Sepolia** | Dev         | `0xe2563F35cd22F9a1E95Dbd39e9e096D1e693eFd7` |
-| **Bellecour**        | Prod        | `0x781482C39CcE25546583EaC4957Fb7Bf04C277D2` |
+| Network              | Whitelist Address                            |
+| -------------------- | -------------------------------------------- |
+| **Arbitrum Mainnet** | `0xD5054a18565c4a9E5c1aa3cEB53258bd59d4c78C` |
+| **Arbitrum Sepolia** | `0x8d46d40840f1Aa2264F96184Ffadf04e5D573B9B` |
+| **Bellecour**        | `0x781482C39CcE25546583EaC4957Fb7Bf04C277D2` |
 
 ### Web3Telegram
 
 Web3Telegram enables decentralized Telegram messaging with Web3 integration.
 
-| Network              | Environment | Whitelist Address                            |
-| -------------------- | ----------- | -------------------------------------------- |
-| **Arbitrum Mainnet** | Prod        | `0x53AFc09a647e7D5Fa9BDC784Eb3623385C45eF89` |
-| **Arbitrum Sepolia** | Prod        | `0x7291ff96100DA6CF97933C225B86124ef95aEc9b` |
-| **Arbitrum Sepolia** | Dev         | `0x5EB4D71371a067572C6c5b4E05606bd2b127580b` |
-| **Bellecour**        | Prod        | `0x192C6f5AccE52c81Fcc2670f10611a3665AAA98F` |
+| Network              | Whitelist Address                            |
+| -------------------- | -------------------------------------------- |
+| **Arbitrum Mainnet** | `0x53AFc09a647e7D5Fa9BDC784Eb3623385C45eF89` |
+| **Arbitrum Sepolia** | `0x7291ff96100DA6CF97933C225B86124ef95aEc9b` |
+| **Bellecour**        | `0x192C6f5AccE52c81Fcc2670f10611a3665AAA98F` |
 
 ## Workerpool Addresses
 
