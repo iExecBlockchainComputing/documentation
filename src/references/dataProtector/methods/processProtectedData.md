@@ -367,17 +367,25 @@ const processProtectedDataResponse = await dataProtectorCore.processProtectedDat
 You can expect this callback function to be called with the following titles:
 
 ```ts
-'FETCH_PROTECTED_DATA_ORDERBOOK';
-'FETCH_APP_ORDERBOOK';
-'FETCH_WORKERPOOL_ORDERBOOK';
+'FETCH_ORDERS';
 'PUSH_REQUESTER_SECRET';
+'GENERATE_ENCRYPTION_KEY';
+'PUSH_ENCRYPTION_KEY';
 'REQUEST_TO_PROCESS_PROTECTED_DATA';
+'TASK_EXECUTION';
 'CONSUME_TASK';
 'CONSUME_RESULT_DOWNLOAD';
 'CONSUME_RESULT_DECRYPT';
 ```
 
 Once with `isDone: false`, and then with `isDone: true`
+
+::: info
+
+The `'GENERATE_ENCRYPTION_KEY'` and `'PUSH_ENCRYPTION_KEY'` status titles are
+only triggered when `encryptResult` is set to `true`.
+
+:::
 
 ## Return Value
 
@@ -434,6 +442,27 @@ The result is a ZIP file containing at least one mandatory file:
 In the case of the **Content Creator Delivery DApp**, the ZIP file will also
 include a file named **content**, which corresponds to the protected data
 processed during the task.
+
+:::
+
+### pemPrivateKey
+
+`string`
+
+The PEM-formatted RSA private key used to decrypt the encrypted computation
+result. This property is only present in the response when `encryptResult` is
+set to `true`.
+
+If you provided a `pemPrivateKey` in the parameters, the same key will be
+returned. If you didn't provide one but enabled `encryptResult`, a newly
+generated private key will be returned, which you must securely store to decrypt
+the result.
+
+::: tip
+
+You can use this `pemPrivateKey` with the
+[getResultFromCompletedTask()](/references/dataProtector/methods/getResultFromCompletedTask)
+method to decrypt and retrieve the result of a completed task.
 
 :::
 
