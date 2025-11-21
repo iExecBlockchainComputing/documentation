@@ -11,10 +11,10 @@
     "format": "prettier --ignore-path .gitignore --write ."
   },
   "dependencies": {
-    "@iexec/dataprotector": "^2.0.0-beta.20",
+    "@iexec/dataprotector": "^2.0.0-beta.21",
     "@iexec/dataprotector-deserializer": "^0.1.1",
-    "@iexec/web3mail": "^1.6.0",
-    "@iexec/web3telegram": "^0.1.0-alpha.4",
+    "@iexec/web3mail": "^1.7.0",
+    "@iexec/web3telegram": "^0.1.0-alpha.7",
     "@reown/appkit": "^1.7.17",
     "@reown/appkit-adapter-wagmi": "^1.7.17",
     "@tailwindcss/vite": "^4.1.11",
@@ -23,7 +23,7 @@
     "@wagmi/vue": "^0.1.24",
     "clsx": "^2.1.1",
     "figlet": "^1.8.2",
-    "iexec": "^8.18.0",
+    "iexec": "^8.22.2",
     "pinia": "^3.0.3",
     "reka-ui": "^2.4.1",
     "tailwind-merge": "^3.3.1",

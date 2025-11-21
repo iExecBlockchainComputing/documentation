@@ -54,6 +54,31 @@ const contactsList = await web3telegram.fetchMyContacts({
 });
 ```
 
+### bulkOnly <OptionalBadge />
+
+**Type:** `boolean`
+
+**Default:** `false`
+
+When set to `true`, this parameter filters contacts to only return those who
+have granted access with bulk processing capability. These contacts can be used
+with
+[`prepareTelegramCampaign`](/references/web3telegram/methods/prepareTelegramCampaign)
+and
+[`sendTelegramCampaign`](/references/web3telegram/methods/sendTelegramCampaign)
+for bulk campaigns.
+
+```ts twoslash
+import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3telegram = new IExecWeb3telegram(web3Provider);
+// ---cut---
+const contactsList = await web3telegram.fetchMyContacts({
+  bulkOnly: true, // [!code focus]
+});
+```
+
 ## Return Value
 
 The result object contains a list of `contact` objects. Each `contact`

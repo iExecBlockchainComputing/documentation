@@ -1,0 +1,192 @@
+---
+title: sendEmailCampaign
+description:
+  Use the sendEmailCampaign method from Web3Mail to send bulk email campaigns
+  using a prepared campaign request. This method processes a bulk request that
+  has been prepared using prepareEmailCampaign.
+---
+
+# sendEmailCampaign
+
+This method sends a bulk email campaign using a prepared campaign request. It
+processes a bulk request that has been created using the
+[`prepareEmailCampaign`](/references/web3mail/methods/prepareEmailCampaign)
+method.
+
+::: warning Prerequisites
+
+Before using this method, make sure you have:
+
+1. **Recipients granted access with bulk processing**: When calling
+   [`grantAccess`](/references/dataProtector/methods/grantAccess) on the Data
+   Protector SDK, recipients must set `allowBulk: true`
+
+2. **Prepared the campaign**: Use
+   [`prepareEmailCampaign`](/references/web3mail/methods/prepareEmailCampaign)
+   to create the bulk request that will be passed to this method
+
+:::
+
+## Usage
+
+::: code-group
+
+```ts twoslash [Browser]
+declare global {
+  interface Window {
+    ethereum: any;
+  }
+}
+// ---cut---
+import { IExecWeb3mail } from '@iexec/web3mail';
+import { type PrepareEmailCampaignResponse } from '@iexec/web3mail';
+import { type SendEmailCampaignResponse } from '@iexec/web3mail';
+
+const web3Provider = window.ethereum;
+const web3mail = new IExecWeb3mail(web3Provider);
+
+// Step 1: Fetch contacts and prepare the campaign
+const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
+const emailCampaign: PrepareEmailCampaignResponse =
+  await web3mail.prepareEmailCampaign({
+    grantedAccesses: grantedAccessArray,
+    emailSubject: 'My email subject',
+    emailContent: 'My email content',
+  });
+
+// Step 2: Send the campaign
+const { tasks }: SendEmailCampaignResponse = await web3mail.sendEmailCampaign({
+  campaignRequest: emailCampaign.campaignRequest,
+  workerpoolAddressOrEns: '0xa5de76...',
+});
+```
+
+```ts twoslash [NodeJS]
+import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
+import { type PrepareEmailCampaignResponse } from '@iexec/web3mail';
+import { type SendEmailCampaignResponse } from '@iexec/web3mail';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3mail = new IExecWeb3mail(web3Provider);
+
+// Step 1: Fetch contacts and prepare the campaign
+const contacts = await web3mail.fetchMyContacts({ bulkOnly: true });
+const grantedAccessArray = contacts.map((contact) => contact.grantedAccess);
+
+const emailCampaign: PrepareEmailCampaignResponse =
+  await web3mail.prepareEmailCampaign({
+    grantedAccesses: grantedAccessArray,
+    emailSubject: 'My email subject',
+    emailContent: 'My email content',
+  });
+
+// Step 2: Send the campaign
+const { tasks }: SendEmailCampaignResponse = await web3mail.sendEmailCampaign({
+  campaignRequest: emailCampaign.campaignRequest,
+  workerpoolAddressOrEns: '0xa5de76...',
+});
+```
+
+:::
+
+## Parameters
+
+```ts twoslash
+import { type SendEmailCampaignParams } from '@iexec/web3mail';
+```
+
+### campaignRequest <RequiredBadge />
+
+**Type:** `BulkRequest`
+
+The bulk request object returned from `prepareEmailCampaign`. This contains all
+the necessary information to process the bulk campaign, including the grouped
+protected data and campaign metadata.
+
+```ts twoslash
+import {
+  IExecWeb3mail,
+  type PrepareEmailCampaignResponse,
+} from '@iexec/web3mail';
+const web3mail = {} as IExecWeb3mail;
+const emailCampaign = {} as PrepareEmailCampaignResponse;
+// ---cut---
+// @errors: 2304 7034 7005
+const { tasks } = await web3mail.sendEmailCampaign({
+  campaignRequest: emailCampaign.campaignRequest, // [!code focus]
+});
+```
+
+### workerpoolAddressOrEns <OptionalBadge />
+
+**Type:** `AddressOrENS | undefined`
+
+**Default:** Default workerpool from chain configuration
+
+The workerpool address or ENS name that will execute the bulk campaign tasks.
+
+```ts twoslash
+import {
+  IExecWeb3mail,
+  type PrepareEmailCampaignResponse,
+} from '@iexec/web3mail';
+const web3mail = {} as IExecWeb3mail;
+const emailCampaign = {} as PrepareEmailCampaignResponse;
+// ---cut---
+// @errors: 2304 7034 7005
+const { tasks } = await web3mail.sendEmailCampaign({
+  campaignRequest: emailCampaign.campaignRequest,
+  workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
+});
+```
+
+## Return Value
+
+```ts twoslash
+import { type SendEmailCampaignResponse } from '@iexec/web3mail';
+```
+
+### tasks
+
+**Type:** `Array<{ taskId: string; dealId: string; bulkIndex: number }>`
+
+An array of task objects created for the bulk processing campaign. Each task
+object contains:
+
+- `taskId`: The task ID created on the iExec network
+- `dealId`: The deal ID associated with the task
+- `bulkIndex`: The index of the task in the bulk request
+
+Each task may process multiple protected data items depending on the bulk
+request configuration.
+
+```ts twoslash
+import {
+  IExecWeb3mail,
+  type PrepareEmailCampaignResponse,
+} from '@iexec/web3mail';
+const web3mail = {} as IExecWeb3mail;
+const emailCampaign = {} as PrepareEmailCampaignResponse;
+// ---cut---
+// @errors: 2304 7034 7005
+const { tasks } = await web3mail.sendEmailCampaign({
+  campaignRequest: emailCampaign.campaignRequest,
+});
+```
+
+## Related Documentation
+
+- [grantAccess Method](/references/dataProtector/methods/grantAccess) - Grant
+  access to protected data (recipients must set `allowBulk: true` to enable bulk
+  processing)
+- [fetchMyContacts Method](/references/web3mail/methods/fetchMyContacts) - Fetch
+  your contacts (use `bulkOnly: true` for bulk campaigns)
+- [fetchUserContacts Method](/references/web3mail/methods/fetchUserContacts) -
+  Fetch contacts for a user (use `bulkOnly: true` for bulk campaigns)
+
+<script setup>
+import RequiredBadge from '@/components/RequiredBadge.vue';
+import OptionalBadge from '@/components/OptionalBadge.vue';
+</script>
