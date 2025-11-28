@@ -32,10 +32,6 @@ export function getSidebar() {
                 text: 'Manage Data Access',
                 link: '/get-started/helloWorld/4-manageDataAccess',
               },
-              {
-                text: 'Bonus Chapter !',
-                link: '/get-started/helloWorld/5-bonusChapter',
-              },
             ],
           },
           {
