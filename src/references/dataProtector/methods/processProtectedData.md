@@ -128,6 +128,92 @@ const processProtectedDataResponse =
   });
 ```
 
+### encryptResult <OptionalBadge />
+
+**Type:** `boolean`  
+**Default:** `false`
+
+When set to `true`, the computation result will be encrypted using RSA
+encryption. This ensures that only you can decrypt and access the result,
+providing an additional layer of privacy and security for sensitive computation
+outputs.
+
+If `encryptResult` is `true` and no `pemPrivateKey` is provided, a new RSA key
+pair will be automatically generated. The generated private key will be returned
+in the response as `pemPrivateKey`, which you must securely store to decrypt the
+result later.
+
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
+const processProtectedDataResponse =
+  await dataProtectorCore.processProtectedData({
+    protectedData: '0x123abc...',
+    app: '0x456def...',
+    encryptResult: true, // [!code focus]
+  });
+```
+
+::: tip
+
+When `encryptResult` is enabled, the `onStatusUpdate` callback will be notified
+with the following additional status titles:
+
+- `'GENERATE_ENCRYPTION_KEY'` - When a new key pair is being generated
+- `'PUSH_ENCRYPTION_KEY'` - When the public key is being pushed to the secrets
+  manager
+
+:::
+
+### pemPrivateKey <OptionalBadge />
+
+**Type:** `string`
+
+A PEM-formatted RSA private key used to decrypt the encrypted computation
+result. This parameter can only be used when `encryptResult` is set to `true`.
+
+If you provide a `pemPrivateKey`, it will be used to decrypt the result. If you
+don't provide one but have `encryptResult: true`, a new key pair will be
+generated automatically, and the private key will be returned in the response
+for you to store securely.
+
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
+const processProtectedDataResponse =
+  await dataProtectorCore.processProtectedData({
+    protectedData: '0x123abc...',
+    app: '0x456def...',
+    encryptResult: true, // [!code focus]
+    pemPrivateKey:
+      '-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----', // [!code focus]
+  });
+```
+
+::: danger
+
+If you provide a `pemPrivateKey`, you must also set `encryptResult: true`. The
+method will throw a validation error if `pemPrivateKey` is provided without
+`encryptResult` being enabled.
+
+:::
+
+::: tip
+
+The `pemPrivateKey` (whether provided or auto-generated) will be included in the
+response object when `encryptResult` is `true`. Make sure to securely store this
+key if you need to decrypt the result later using the
+[getResultFromCompletedTask()](/references/dataProtector/methods/getResultFromCompletedTask)
+method.
+
+:::
+
 ### args <OptionalBadge />
 
 **Type:** `string`
