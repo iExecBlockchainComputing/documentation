@@ -263,6 +263,6 @@ const { tasks } = await web3telegram.sendTelegramCampaign({
 Each message sent through Web3Mail or Web3Telegram requires payment in RLC
 tokens.
 
-For detailed information about payment methods, pricing, and voucher usage, see
-the comprehensive guide:
+For detailed information about payment methods and pricing, see the
+comprehensive guide:
 [How to pay for executions](/guides/use-iapp/how-to-pay-executions)

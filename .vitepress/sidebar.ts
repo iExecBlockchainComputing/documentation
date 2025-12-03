@@ -32,10 +32,6 @@ export function getSidebar() {
                 text: 'Manage Data Access',
                 link: '/get-started/helloWorld/4-manageDataAccess',
               },
-              {
-                text: 'Bonus Chapter !',
-                link: '/get-started/helloWorld/5-bonusChapter',
-              },
             ],
           },
           {
@@ -83,10 +79,6 @@ export function getSidebar() {
           {
             text: 'iExec Explorer',
             link: '/get-started/tooling-and-explorers/iexec-explorer',
-          },
-          {
-            text: 'Builder Dashboard',
-            link: '/get-started/tooling-and-explorers/builder-dashboard',
           },
           {
             text: 'RLC Bridge',

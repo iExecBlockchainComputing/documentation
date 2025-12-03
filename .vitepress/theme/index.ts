@@ -53,7 +53,6 @@ export default {
         connectWallet: 'hw_connectWallet',
         protectData: 'hw_protectData',
         grantAccess: 'hw_grantAccess',
-        claimVoucher: 'hw_claimVoucher',
       };
 
       // Add a global click listener
