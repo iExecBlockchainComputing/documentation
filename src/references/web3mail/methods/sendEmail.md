@@ -19,6 +19,14 @@ authorization to the Web3Mail app whitelist `{{web3MailAppWhitelist}}` as
 [Data Protector `grantAccess`](/references/dataProtector/methods/grantAccess)
 documentation for more details.
 
+::: info
+
+For sending bulk campaigns to multiple recipients, use
+[`prepareEmailCampaign`](/references/web3mail/methods/prepareEmailCampaign) and
+[`sendEmailCampaign`](/references/web3mail/methods/sendEmailCampaign).
+
+:::
+
 ::: tip
 
 For executing the `sendEmail` method with RLC, refer to the dedicated section in

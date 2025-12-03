@@ -191,7 +191,31 @@ const listGrantedAccess = await dataProtectorCore.getGrantedAccess({
 });
 ```
 
-## Return Value
+### bulkOnly <OptionalBadge />
+
+**Type:** `boolean`  
+**Default:** `false`
+
+Filter to retrieve only bulk access grants. When set to `true`, this method
+returns only granted accesses that were created with `allowBulk: true` when
+calling [`grantAccess`](/references/dataProtector/methods/grantAccess). This is
+useful when preparing bulk requests using
+[`prepareBulkRequest`](/references/dataProtector/methods/prepareBulkRequest).
+
+**Usage example:**
+
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
+const { grantedAccess } = await dataProtectorCore.getGrantedAccess({
+  bulkOnly: true, // [!code focus]
+});
+```
+
+## Return value
 
 ```ts twoslash
 import { type GrantedAccessResponse } from '@iexec/dataprotector';
@@ -199,12 +223,12 @@ import { type GrantedAccessResponse } from '@iexec/dataprotector';
 
 The return value for this method has two fields: a `count` parameter indicating
 the number of results, and an array of `GrantedAccess` objects containing all
-access data. When using the optional paging parameters, the `count` will be
-limited by the selected `pageSize` parameter. You may use these result objects
-in conjunction with the [revokeOneAccess](revokeOneAccess.md) method to revoke a
+access data. When using the optional paging parameters, the `count` is limited
+by the selected `pageSize` parameter. You may use these result objects in
+conjunction with the [revokeOneAccess](revokeOneAccess.md) method to revoke a
 previously granted authorization for access.
 
-### count
+### Count
 
 **Type:** `number`
 
@@ -214,7 +238,7 @@ smaller than the page size.
 
 ### grantedAccess
 
-**Type:** GrantedAccess
+git comm**Type:** `GrantedAccess`
 
 See [`GrantedAccess`](/references/dataProtector/types#grantedaccess)
 

@@ -206,6 +206,32 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 });
 ```
 
+### allowBulk <OptionalBadge />
+
+**Type:** `boolean`
+
+**Default:** `false`
+
+When set to `true`, enables bulk processing for this access grant. This allows
+multiple protected data items to be processed together.
+
+When `allowBulk: true` is set, the price per access is automatically set to `0`
+and the number of accesses is unlimited.
+
+```ts twoslash
+import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
+
+const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
+// ---cut---
+const grantedAccess = await dataProtectorCore.grantAccess({
+  protectedData: '0x123abc...',
+  authorizedApp: '0x456def...',
+  authorizedUser: '0x789cba...',
+  allowBulk: true, // [!code focus] Enable bulk processing
+});
+```
+
 ### onStatusUpdate <OptionalBadge />
 
 **Type:** `OnStatusUpdateFn<GrantAccessStatuses>`

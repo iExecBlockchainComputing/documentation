@@ -40,3 +40,7 @@ DataProtector Core module contains the following set of methods:
   user for a protected data
 - **processProtectedData** — process a protected data with a specified iExec
   application
+- **prepareBulkRequest** — prepare a bulk request for processing multiple
+  protected data items efficiently
+- **processBulkRequest** — process a prepared bulk request to execute bulk
+  processing of multiple protected data items

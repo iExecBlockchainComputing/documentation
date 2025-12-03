@@ -245,6 +245,14 @@ export function getSidebar() {
                 link: '/references/dataProtector/methods/processProtectedData',
               },
               {
+                text: 'prepareBulkRequest',
+                link: '/references/dataProtector/methods/prepareBulkRequest',
+              },
+              {
+                text: 'processBulkRequest',
+                link: '/references/dataProtector/methods/processBulkRequest',
+              },
+              {
                 text: 'getResultFromCompletedTask',
                 link: '/references/dataProtector/methods/getResultFromCompletedTask',
               },
@@ -309,6 +317,14 @@ export function getSidebar() {
                 text: 'sendEmail',
                 link: '/references/web3mail/methods/sendEmail',
               },
+              {
+                text: 'prepareEmailCampaign',
+                link: '/references/web3mail/methods/prepareEmailCampaign',
+              },
+              {
+                text: 'sendEmailCampaign',
+                link: '/references/web3mail/methods/sendEmailCampaign',
+              },
             ],
           },
           {
@@ -340,6 +356,14 @@ export function getSidebar() {
               {
                 text: 'sendTelegram',
                 link: '/references/web3telegram/methods/sendTelegram',
+              },
+              {
+                text: 'prepareTelegramCampaign',
+                link: '/references/web3telegram/methods/prepareTelegramCampaign',
+              },
+              {
+                text: 'sendTelegramCampaign',
+                link: '/references/web3telegram/methods/sendTelegramCampaign',
               },
             ],
           },

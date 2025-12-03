@@ -46,9 +46,9 @@ export function getSupportedChains(): Chain[] {
       iexecExplorerUrl: 'https://explorer.iex.ec/arbitrum-mainnet',
       workerpoolAddress: '0x2C06263943180Cc024dAFfeEe15612DB6e5fD248',
       ipfsGateway: 'https://ipfs-gateway.arbitrum-mainnet.iex.ec',
-      web3MailAddress: '0x9E37767A18B7E7ac2bbeba0900e3B5b0613FA385',
+      web3MailAddress: '0xe7945ddc8241A877c6e59F50a61e91eBb57AfD84',
       web3MailAppWhitelist: '0xD5054a18565c4a9E5c1aa3cEB53258bd59d4c78C',
-      web3TelegramAddress: '0xD8614ad70A73A426A15F6474EB4aE633e0015805',
+      web3TelegramAddress: '0xa201D2C9F3464c55639589d25FA6A3ec49C9f238',
       web3TelegramAppWhitelist: '0x53AFc09a647e7D5Fa9BDC784Eb3623385C45eF89',
     },
     {
@@ -62,9 +62,9 @@ export function getSupportedChains(): Chain[] {
       iexecExplorerUrl: 'https://explorer.iex.ec/arbitrum-sepolia-testnet',
       workerpoolAddress: '0xB967057a21dc6A66A29721d96b8Aa7454B7c383F',
       ipfsGateway: 'https://ipfs-gateway.arbitrum-sepolia-testnet.iex.ec',
-      web3MailAddress: '0x54f48937d1a26dd250dc8adbef07bc76f6e27df3',
+      web3MailAddress: '0x97792094EDf25a3AA607ed198aa22c32D7B33b62',
       web3MailAppWhitelist: '0x8d46d40840f1Aa2264F96184Ffadf04e5D573B9B',
-      web3TelegramAddress: '0x54cb7f6d417b2b29c2a4b2e95a66f670812c869d',
+      web3TelegramAddress: '0x3476685f4166d4a639c85feca00e2897afd807c6',
       web3TelegramAppWhitelist: '0x7291ff96100DA6CF97933C225B86124ef95aEc9b',
     },
     {
