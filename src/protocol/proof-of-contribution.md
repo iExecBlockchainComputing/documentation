@@ -44,7 +44,7 @@ monetization layers.
 
 This reflects the default workflow used today on iExec networks.
 
-1. The user triggers match orders on-chain operation
+1. ### The user triggers match orders on-chain operation
 
 A requester matches the app, dataset, and workerpool orders. This creates a
 **Deal** on-chain and locks the requester’s funds.
@@ -55,14 +55,15 @@ PoCo now governs:
 - what is paid
 - under which conditions the task is considered valid
 
-2. The scheduler assigns the task to a TEE-enabled worker
+2. ### The scheduler assigns the task to a TEE-enabled worker
 
 The workerpool selects an available worker with the required TEE capabilities.
 No replication is needed, trust comes from hardware attestation, not from
 multiple workers.
 
-3. The worker executes the app inside a secure enclave The worker runs a
-   confidential application inside its enclave:
+3. ### The worker executes the app inside a secure enclave
+
+The worker runs a confidential application inside its enclave:
 
 - the code is measured
 - the environment is verified
@@ -75,7 +76,7 @@ This guarantees:
 - the worker cannot tamper with the execution
 - results come from a genuine, verified enclave
 
-4. Secrets are transferred securely (SMS → Enclave)
+4. ### Secrets are transferred securely (SMS → Enclave)
 
 If the task uses secrets (dataset decryption key, ...):
 
@@ -85,7 +86,7 @@ If the task uses secrets (dataset decryption key, ...):
 
 This is fundamental for confidential and monetizable datasets.
 
-5. The enclave computes and produces the result
+5. ### The enclave computes and produces the result
 
 At the end of execution, the enclave:
 
@@ -93,7 +94,7 @@ At the end of execution, the enclave:
 - signs a challenge to prove that the execution happened inside an enclave
 - sends the proof to the PoCo via the worker
 
-6. PoCo validates and finalizes the task on-chain
+6. ### PoCo validates and finalizes the task on-chain
 
 PoCo checks:
 
