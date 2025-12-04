@@ -461,7 +461,7 @@ struct AppOrder
 - `sign` cryptographic signature of the order, the smart contract is securely
   linked to application owner.
 
-### **DatasetOrder**
+#### **DatasetOrder**
 
 ```text
 struct DatasetOrder
@@ -494,7 +494,7 @@ struct DatasetOrder
 - `sign` cryptographic signature of the order, the smart contract is securely
   linked to dataset owner.
 
-### **WorkerpoolOrder**
+#### **WorkerpoolOrder**
 
 ```text
 struct WorkerpoolOrder
@@ -531,7 +531,7 @@ struct WorkerpoolOrder
 - `sign` cryptographic signature of the order, the smart contract is securely
   linked to worker pool manager.
 
-### **RequesterOrder**
+#### **RequesterOrder**
 
 ```text
 struct RequestOrder
