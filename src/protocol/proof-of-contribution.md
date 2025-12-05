@@ -255,3 +255,45 @@ struct RequestOrder
   bytes   sign;
 }
 ```
+
+## Additional protocol concepts
+
+### Tag
+
+The tag specifies the need or the availability of features that go beyond the
+specifications of the category. The tag is a requirement when it is part of an
+app order, a dataset order or a requester order. On the other hand, the tag in
+the workerpool order expresses the availability of the corresponding features.
+
+Tags are 32 bytes (256 bits) long array where each bit corresponds to a feature.
+
+**Pre-defined tags:**
+
+| **Value**                                                                       | **Description**        |
+| ------------------------------------------------------------------------------- | ---------------------- |
+| `0x0000000000000000000000000000000000000000000000000000000000000001` (`0b0001`) | TEE                    |
+| `0x0000000000000000000000000000000000000000000000000000000000000003` (`0b0011`) | TEE Scone              |
+| `0x0000000000000000000000000000000000000000000000000000000000000005` (`0b0101`) | TEE Gramine            |
+| `0x0000000000000000000000000000000000000000000000000000000000000009` (`0b1001`) | TEE TDX                |
+
+For orders matching, the worker pool order must enable all bits that enable in
+any of the app order, dataset order and requester order. Meaning that if the app
+order tag is `0x12 = 0x10 | 0x02`, the dataset order is `0x81 = 0x80 | 0x01` and
+the requester order is `0x03 = 0x02 | 0x01`, then the worker pool order must, at
+least, have a tag `0x93 = 0x80 | 0x10 | 0x02 | 0x01`.
+
+### Reward kitty
+
+When a task fails, the requester gets a refund and the scheduler loses its
+stake. In order to remove an attack vector, the requester does not get any of
+the seized stake. If this was a feature, anyone could build a flawed application
+that would not reach consensus to drain money from the scheduler. This would
+force the scheduler to whitelist all applications thus reducing the usability of
+the platform. Seized stake from the scheduler goes into a specific account
+called the _reward kitty_. No one controls this account, nor can withdraw from
+it. However, the tokens are not burned. Whenever a task finalizes, the scheduler
+that organized the execution of this task receives a reward by the requester and
+also gets a small part of the reward kitty.
+
+As described in the protocol parameters section, this reward is
+`reward = kitty.percentage(KITTY_RATIO).max(KITTY_MIN).min(kitty)`.
