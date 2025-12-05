@@ -89,6 +89,10 @@ export function getSidebar() {
             link: '/get-started/tooling-and-explorers/faucet',
           },
           {
+            text: 'Important Addresses',
+            link: '/get-started/tooling-and-explorers/important-addresses',
+          },
+          {
             text: 'Subgraph Explorer',
             link: '/get-started/tooling-and-explorers/subgraph-explorer',
           },
