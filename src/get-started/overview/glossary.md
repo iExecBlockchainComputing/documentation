@@ -450,4 +450,3 @@ mainchain.
 
 See [Sidechain](#sidechain), [Bellecour Sidechain](#bellecour-sidechain) or
 [Minting](#minting) for more information.
-
