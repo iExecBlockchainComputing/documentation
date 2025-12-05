@@ -71,6 +71,10 @@ export function getSidebar() {
             text: 'RLC Token',
             link: '/get-started/overview/rlc',
           },
+          {
+            text: '📖 Glossary',
+            link: '/get-started/overview/glossary',
+          },
         ],
       },
       {
@@ -377,10 +381,6 @@ export function getSidebar() {
       {
         text: 'iExec SDK',
         link: '/references/sdk',
-      },
-      {
-        text: '📖 Glossary',
-        link: '/references/glossary',
       },
     ],
     '/protocol/': [
