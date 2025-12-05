@@ -112,24 +112,28 @@ the on-chain rules:
 
 ## Brokering
 
-On iExec, **brokering** is the mechanism that matches all parties involved in a computation:
+On iExec, **brokering** is the mechanism that matches all parties involved in a
+computation:
 
 - the **application** (the logic to run)
 - the **dataset** (optional, confidential input data)
 - the **workerpool** (TEE-enabled workers)
 - the **requester** (the user paying for the execution)
 
-Each party publishes an **order** describing what they offer or request.
-When compatible orders are combined, a **deal** is created and PoCo enforces all economic, confidentiality, and governance rules.
+Each party publishes an **order** describing what they offer or request. When
+compatible orders are combined, a **deal** is created and PoCo enforces all
+economic, confidentiality, and governance rules.
 
 ### Why off-chain brokering?
 
-iExec uses an **off-chain order book and off-chain matching** system because it provides major advantages:
+iExec uses an **off-chain order book and off-chain matching** system because it
+provides major advantages:
 
 - orders can be created, shared, and canceled **without gas costs**
 - signatures make orders **trustless and verifiable**
 - brokering is fast and flexible
-- the blockchain is used only to **validate signatures** and **create the final deal**
+- the blockchain is used only to **validate signatures** and **create the final
+  deal**
 
 Although off-chain, the system is secure because each order is:
 
@@ -137,32 +141,33 @@ Although off-chain, the system is secure because each order is:
 - hashed using **EIP-712**
 - **signed** by the resource owner
 
-This makes an order **as authoritative as if it were published on-chain**, without paying gas.
-The **PoCo** smart contract validates every signature and ensures correct matching.
+This makes an order **as authoritative as if it were published on-chain**,
+without paying gas. The **PoCo** smart contract validates every signature and
+ensures correct matching.
 
 ### What brokering enables?
 
-- **Access control / permissioning**
-  Different actors define who can use their resources (specific apps, requesters, or workerpools).
+- **Access control / permissioning** Different actors define who can use their
+  resources (specific apps, requesters, or workerpools).
 
-- **Dynamic pricing & monetization**
-  Apps, datasets, and workerpools set prices; requesters set maximum prices.
+- **Dynamic pricing & monetization** Apps, datasets, and workerpools set prices;
+  requesters set maximum prices.
 
-- **Asynchronous, trust-minimized execution**
-  After a successful `matchorders`, the PoCo ensures that all parties can operate
-  asynchronously and without direct trust:
+- **Asynchronous, trust-minimized execution** After a successful `matchorders`,
+  the PoCo ensures that all parties can operate asynchronously and without
+  direct trust:
   - the deal is created on-chain and acts as the single source of truth
   - the requester does not need to stay online during execution
   - TEE-enabled workers independently fetch tasks when ready
   - results, proofs, and outputs are submitted later when execution completes
 
-  PoCo guarantees that even though all actors act at different times, the workflow
-  remains secure, deterministic, and economically enforced.
+  PoCo guarantees that even though all actors act at different times, the
+  workflow remains secure, deterministic, and economically enforced.
 
 ### Order structures
 
-Each actor expresses intent through a signed **order**.
-There are four order types, all using **EIP-712 signatures**:
+Each actor expresses intent through a signed **order**. There are four order
+types, all using **EIP-712 signatures**:
 
 1. **AppOrder** — how the application can be used
 2. **DatasetOrder** — how the dataset can be accessed
@@ -269,12 +274,12 @@ Tags are 32 bytes (256 bits) long array where each bit corresponds to a feature.
 
 **Pre-defined tags:**
 
-| **Value**                                                                       | **Description**        |
-| ------------------------------------------------------------------------------- | ---------------------- |
-| `0x0000000000000000000000000000000000000000000000000000000000000001` (`0b0001`) | TEE                    |
-| `0x0000000000000000000000000000000000000000000000000000000000000003` (`0b0011`) | TEE Scone              |
-| `0x0000000000000000000000000000000000000000000000000000000000000005` (`0b0101`) | TEE Gramine            |
-| `0x0000000000000000000000000000000000000000000000000000000000000009` (`0b1001`) | TEE TDX                |
+| **Value**                                                                       | **Description** |
+| ------------------------------------------------------------------------------- | --------------- |
+| `0x0000000000000000000000000000000000000000000000000000000000000001` (`0b0001`) | TEE             |
+| `0x0000000000000000000000000000000000000000000000000000000000000003` (`0b0011`) | TEE Scone       |
+| `0x0000000000000000000000000000000000000000000000000000000000000005` (`0b0101`) | TEE Gramine     |
+| `0x0000000000000000000000000000000000000000000000000000000000000009` (`0b1001`) | TEE TDX         |
 
 For orders matching, the worker pool order must enable all bits that enable in
 any of the app order, dataset order and requester order. Meaning that if the app

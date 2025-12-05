@@ -1,8 +1,7 @@
 ---
 title: Proof of Contribution
 description:
-  PoCo protocol for trust, and secure payment in decentralized iExec
-  computing.
+  PoCo protocol for trust, and secure payment in decentralized iExec computing.
 ---
 
 # Proof of Contribution
