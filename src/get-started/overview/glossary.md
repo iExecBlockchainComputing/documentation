@@ -115,7 +115,7 @@ authorized people can enter and where everything inside is protected.
 
 ### Explorer (iExec Explorer)
 
-Tracks and displays all transactions occurring on iExec’s platform. It provides
+Tracks and displays all transactions occurring on iExec's platform. It provides
 detailed information on the latest deals, tasks, apps, and datasets deployed.
 
 ### ERC-20
