@@ -234,7 +234,7 @@ features:
       23.625H11.5835C12.2038 23.625 12.7085 24.1297 12.7085
       24.75V27.0538C12.7084 27.0595 12.7085 27.0652 12.7085
       27.0709V29.25C12.7085 29.8703 12.2038 30.375 11.5835 30.375Z" /> </svg>
-    title: Protocols
+    title: Protocol
     details:
       Deep dive into core protocol concepts. Understand how iExec enables
       privacy, governance, and monetization.
