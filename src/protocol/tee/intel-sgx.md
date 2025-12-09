@@ -15,9 +15,9 @@ decentralized cloud.
 
 ## What is Intel SGX?
 
-[Intel® SGX](https://software.intel.com/en-us/sgx) creates a special secure
-zone in memory called an "enclave" - think of it as a vault that only the CPU
-can access. Neither the operating system nor any other software can see what's
+[Intel® SGX](https://software.intel.com/en-us/sgx) creates a special secure zone
+in memory called an "enclave" - think of it as a vault that only the CPU can
+access. Neither the operating system nor any other software can see what's
 happening inside this protected area. Your code and data are completely private
 and secure.
 
@@ -66,11 +66,10 @@ graph TB
 
 ### SGX limitations
 
-With native Intel® SGX technology, the OS is not a part of the Trusted
-Computing Base (TCB), hence system calls and kernel services are not available
-from an Intel® SGX enclave. This can be limiting as the application will not be
-able to use file system and sockets directly from the code running inside the
-enclave.
+With native Intel® SGX technology, the OS is not a part of the Trusted Computing
+Base (TCB), hence system calls and kernel services are not available from an
+Intel® SGX enclave. This can be limiting as the application will not be able to
+use file system and sockets directly from the code running inside the enclave.
 
 ### iExec's SGX infrastructure
 
