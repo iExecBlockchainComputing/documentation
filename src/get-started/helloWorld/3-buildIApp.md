@@ -324,7 +324,7 @@ Deploy your iApp on the iExec protocol.
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">3</span>
-    <span>Name it "Test iExec iApp CLI" (expiration date is optional)</span>
+    <span>Name it "Test iExec iApp CLI". We highly recommend specifying an expiration date, typically a few days, weeks, or months in advance</span>
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">4</span>
