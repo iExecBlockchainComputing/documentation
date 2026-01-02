@@ -373,7 +373,7 @@ vale src/
 ## 🆘 Support and Help
 
 - 📖 [Documentation](https://docs.iex.ec)
-- 💬 [Discord Community](https://discord.com/invite/pbt9m98wnU)
+- 💬 [Discord Community](https://discord.com/invite/5TewNUnJHN)
 - 🐛
   [Issue Tracker](https://github.com/iExecBlockchainComputing/documentation/issues)
 

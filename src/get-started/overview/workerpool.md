@@ -70,11 +70,11 @@ Workerpool selection automatically.
 Workerpool in action
 
 **Join as Worker:**
-[Contact us on Discord](https://discord.com/invite/pbt9m98wnU) for guidance and
+[Contact us on Discord](https://discord.com/invite/5TewNUnJHN) for guidance and
 support
 
 **Manage Workerpool:**
-[Contact us on Discord](https://discord.com/invite/pbt9m98wnU) for deployment
+[Contact us on Discord](https://discord.com/invite/5TewNUnJHN) for deployment
 assistance
 
 </CardWithoutBorder>
