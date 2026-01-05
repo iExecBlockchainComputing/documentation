@@ -17,7 +17,7 @@ TDX support is currently in experimental phase:
 
 - Stability and confidentiality features are still being tested and refined.
 - Features may evolve based on user feedback, please share your experience on
-  [Discord](https://discord.com/invite/pbt9m98wnU).
+  [Discord](https://discord.com/invite/5TewNUnJHN).
 
 :::
 

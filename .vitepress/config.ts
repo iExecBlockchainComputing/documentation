@@ -143,7 +143,7 @@ export default withMermaid(
       socialLinks: [
         { icon: 'github', link: 'https://github.com/iExecBlockchainComputing' },
         { icon: 'x', link: 'https://x.com/iEx_ec' },
-        { icon: 'discord', link: 'https://discord.com/invite/pbt9m98wnU' },
+        { icon: 'discord', link: 'https://discord.com/invite/5TewNUnJHN' },
       ],
 
       editLink: {

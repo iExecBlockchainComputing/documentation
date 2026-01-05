@@ -99,7 +99,7 @@ applications:
 
 - **[Complete Guides](/guides/build-iapp/build-&-test)** - All development
   guides
-- **[iExec Discord](https://discord.com/invite/pbt9m98wnU)** - Community support
+- **[iExec Discord](https://discord.com/invite/5TewNUnJHN)** - Community support
 
 ---
 

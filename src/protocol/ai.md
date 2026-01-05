@@ -177,4 +177,4 @@ docker run --rm hello-pytorch
 
 - **[AI Frameworks Hello World](https://github.com/iExecBlockchainComputing/ai-frameworks-hello-world)** -
   Ready-to-use Docker examples
-- **[iExec Discord](https://discord.com/invite/pbt9m98wnU)** - Community support
+- **[iExec Discord](https://discord.com/invite/5TewNUnJHN)** - Community support

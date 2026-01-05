@@ -48,5 +48,5 @@ For commands and examples, see the
 
 ::: info Need help Can’t find an order that fits your needs or unsure which
 category to choose?
-[Contact us on Discord](https://discord.com/invite/pbt9m98wnU) and we will help
+[Contact us on Discord](https://discord.com/invite/5TewNUnJHN) and we will help
 you pick the right setup. :::
