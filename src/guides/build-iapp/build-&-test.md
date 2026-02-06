@@ -35,19 +35,19 @@ First, install iApp Generator in your project (for more details see
 ::: code-group
 
 ```bash [npm]
-npm install -g @iexec/iapp-generator
+npm install -g @iexec/iapp
 ```
 
 ```bash [yarn]
-yarn global add @iexec/iapp-generator
+yarn global add @iexec/iapp
 ```
 
 ```bash [pnpm]
-pnpm add -g @iexec/iapp-generator
+pnpm add -g @iexec/iapp
 ```
 
 ```bash [bun]
-bun add -g @iexec/iapp-generator
+bun add -g @iexec/iapp
 ```
 
 :::
