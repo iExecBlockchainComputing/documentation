@@ -275,7 +275,7 @@ IMG_TO=<docker-hub-user>/tee-scone-hello-world:1.0.0
 docker run -it --rm \
             -v $PWD/enclave-key.pem:/sig/enclave-key.pem \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com/scone-production/iexec-sconify-image:5.9.1-v16\
+            registry.scontain.com/scone-production/iexec-sconify-image:5.9.2-v16 \
             sconify_iexec \
             --scone-signer=/sig/enclave-key.pem \
             --from=${IMG_FROM} \
@@ -304,7 +304,7 @@ IMG_TO=<docker-hub-user>/tee-scone-hello-world:1.0.0
 docker run -it --rm \
             -v $PWD/enclave-key.pem:/sig/enclave-key.pem \
             -v /var/run/docker.sock:/var/run/docker.sock \
-            registry.scontain.com/scone-production/iexec-sconify-image:5.9.1-v16\
+            registry.scontain.com/scone-production/iexec-sconify-image:5.9.2-v16 \
             sconify_iexec \
             --from=${IMG_FROM} \
             --to=${IMG_TO} \
