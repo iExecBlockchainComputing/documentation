@@ -8,11 +8,6 @@
   ],
   "redirects": [
     {
-      "source": "/",
-      "has": [{ "type": "host", "value": "docs.iex.ec" }],
-      "destination": "/nox-protocol/"
-    },
-    {
       "source": "/robots.txt",
       "destination": "/robots-prod.txt",
       "has": [{ "type": "host", "value": "docs.iex.ec" }]
