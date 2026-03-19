@@ -1,5 +1,16 @@
 {
   "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "docs.iex.ec" }],
+      "destination": "https://documentation-yi1w.vercel.app/nox-protocol/"
+    },
+    {
+      "source": "/nox-protocol/:path*",
+      "destination": "https://documentation-yi1w.vercel.app/nox-protocol/:path*"
+    }
+  ],
   "redirects": [
     {
       "source": "/robots.txt",
