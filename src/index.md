@@ -1,5 +1,6 @@
 ---
 layout: home
+titleTemplate: iExec Documentation
 ---
 
 <script setup>
