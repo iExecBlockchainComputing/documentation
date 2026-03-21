@@ -8,11 +8,8 @@ import helloWorldIcon from '@/assets/icons/hello-world.svg';
 import teeIcon from '@/assets/icons/tee.svg';
 import govIcon from '@/assets/icons/gov.svg';
 
-function toHref(link: string) {
-  if (link.startsWith('/nox-protocol')) {
-    return typeof window !== 'undefined' ? window.location.origin + link : link;
-  }
-  return link;
+function goToNox(link: string) {
+  window.location.assign(link);
 }
 
 const protocolCards = [
@@ -115,8 +112,9 @@ const dappFeatures = [
         <a
           v-for="card in protocolCards"
           :key="card.title"
-          :href="toHref(card.link)"
+          :href="card.link"
           class="protocol-card"
+          @click.prevent="goToNox(card.link)"
         >
           <div class="protocol-card-header">
             <div class="icon-box">
@@ -140,8 +138,9 @@ const dappFeatures = [
           <a
             v-for="feature in financialFeatures"
             :key="feature.title"
-            :href="toHref(feature.link)"
+            :href="feature.link"
             class="feature-card"
+            @click.prevent="goToNox(feature.link)"
           >
             <div class="feature-card-header">
               <div class="icon-box">
@@ -165,8 +164,9 @@ const dappFeatures = [
           <a
             v-for="feature in dappFeatures"
             :key="feature.title"
-            :href="toHref(feature.link)"
+            :href="feature.link"
             class="feature-card"
+            @click.prevent="goToNox(feature.link)"
           >
             <div class="feature-card-header">
               <div class="icon-box">
