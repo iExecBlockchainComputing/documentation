@@ -10,9 +10,7 @@ import govIcon from '@/assets/icons/gov.svg';
 
 function toHref(link: string) {
   if (link.startsWith('/nox-protocol')) {
-    return typeof window !== 'undefined'
-      ? window.location.origin + link
-      : link;
+    return typeof window !== 'undefined' ? window.location.origin + link : link;
   }
   return link;
 }
