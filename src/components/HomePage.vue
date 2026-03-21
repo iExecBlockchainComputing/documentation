@@ -8,6 +8,13 @@ import helloWorldIcon from '@/assets/icons/hello-world.svg';
 import teeIcon from '@/assets/icons/tee.svg';
 import govIcon from '@/assets/icons/gov.svg';
 
+function navigate(event: MouseEvent, link: string) {
+  if (link.startsWith('/nox-protocol')) {
+    event.preventDefault();
+    window.location.href = link;
+  }
+}
+
 const protocolCards = [
   {
     icon: noxIcon,
@@ -110,6 +117,7 @@ const dappFeatures = [
           :key="card.title"
           :href="card.link"
           class="protocol-card"
+          @click="navigate($event, card.link)"
         >
           <div class="protocol-card-header">
             <div class="icon-box">
@@ -135,6 +143,7 @@ const dappFeatures = [
             :key="feature.title"
             :href="feature.link"
             class="feature-card"
+            @click="navigate($event, feature.link)"
           >
             <div class="feature-card-header">
               <div class="icon-box">
@@ -160,6 +169,7 @@ const dappFeatures = [
             :key="feature.title"
             :href="feature.link"
             class="feature-card"
+            @click="navigate($event, feature.link)"
           >
             <div class="feature-card-header">
               <div class="icon-box">
