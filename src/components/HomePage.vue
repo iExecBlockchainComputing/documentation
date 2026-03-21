@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useRouter } from 'vitepress';
 import heroImage from '@/assets/images/doc-landing.png';
 import noxIcon from '@/assets/icons/nox.svg';
 import pocoIcon from '@/assets/icons/poco.svg';
@@ -7,6 +8,20 @@ import smartContractsIcon from '@/assets/icons/smart-contracts.svg';
 import helloWorldIcon from '@/assets/icons/hello-world.svg';
 import teeIcon from '@/assets/icons/tee.svg';
 import govIcon from '@/assets/icons/gov.svg';
+
+const router = useRouter();
+
+function isNoxLink(link: string) {
+  return link.startsWith('/nox-protocol');
+}
+
+function handleCardClick(link: string) {
+  if (isNoxLink(link)) {
+    window.location.href = link;
+  } else {
+    router.go(link);
+  }
+}
 
 const protocolCards = [
   {
@@ -108,8 +123,9 @@ const dappFeatures = [
         <a
           v-for="card in protocolCards"
           :key="card.title"
-          :href="card.link"
+          :href="isNoxLink(card.link) ? undefined : card.link"
           class="protocol-card"
+          @click.stop.prevent="handleCardClick(card.link)"
         >
           <div class="protocol-card-header">
             <div class="icon-box">
@@ -133,8 +149,9 @@ const dappFeatures = [
           <a
             v-for="feature in financialFeatures"
             :key="feature.title"
-            :href="feature.link"
+            :href="isNoxLink(feature.link) ? undefined : feature.link"
             class="feature-card"
+            @click.stop.prevent="handleCardClick(feature.link)"
           >
             <div class="feature-card-header">
               <div class="icon-box">
@@ -158,8 +175,9 @@ const dappFeatures = [
           <a
             v-for="feature in dappFeatures"
             :key="feature.title"
-            :href="feature.link"
+            :href="isNoxLink(feature.link) ? undefined : feature.link"
             class="feature-card"
+            @click.stop.prevent="handleCardClick(feature.link)"
           >
             <div class="feature-card-header">
               <div class="icon-box">
@@ -396,6 +414,7 @@ const dappFeatures = [
   overflow: hidden;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
   transition:
     box-shadow 0.3s,
     border-color 0.3s;
@@ -514,6 +533,7 @@ const dappFeatures = [
   overflow: hidden;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
   transition:
     box-shadow 0.3s,
     border-color 0.3s;
