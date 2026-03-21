@@ -15,7 +15,7 @@ const env = loadEnv('', process.cwd());
 // https://vitepress.dev/reference/site-config
 export default withMermaid(
   defineConfig({
-    title: 'iExec documentation',
+    title: 'PoCo Documentation',
     description:
       'Build decentralized applications that combine ownership, privacy, and monetization.',
     cleanUrls: true,
