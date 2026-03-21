@@ -11,8 +11,12 @@ import govIcon from '@/assets/icons/gov.svg';
 
 const router = useRouter();
 
+function isNoxLink(link: string) {
+  return link.startsWith('/nox-protocol');
+}
+
 function handleCardClick(link: string) {
-  if (link.startsWith('/nox-protocol')) {
+  if (isNoxLink(link)) {
     window.location.href = link;
   } else {
     router.go(link);
@@ -119,7 +123,7 @@ const dappFeatures = [
         <a
           v-for="card in protocolCards"
           :key="card.title"
-          :href="card.link"
+          :href="isNoxLink(card.link) ? undefined : card.link"
           class="protocol-card"
           @click.stop.prevent="handleCardClick(card.link)"
         >
@@ -145,7 +149,7 @@ const dappFeatures = [
           <a
             v-for="feature in financialFeatures"
             :key="feature.title"
-            :href="feature.link"
+            :href="isNoxLink(feature.link) ? undefined : feature.link"
             class="feature-card"
             @click.stop.prevent="handleCardClick(feature.link)"
           >
@@ -171,7 +175,7 @@ const dappFeatures = [
           <a
             v-for="feature in dappFeatures"
             :key="feature.title"
-            :href="feature.link"
+            :href="isNoxLink(feature.link) ? undefined : feature.link"
             class="feature-card"
             @click.stop.prevent="handleCardClick(feature.link)"
           >
@@ -410,6 +414,7 @@ const dappFeatures = [
   overflow: hidden;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
   transition:
     box-shadow 0.3s,
     border-color 0.3s;
@@ -528,6 +533,7 @@ const dappFeatures = [
   overflow: hidden;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
   transition:
     box-shadow 0.3s,
     border-color 0.3s;
