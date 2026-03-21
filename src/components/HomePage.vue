@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useRouter } from 'vitepress';
 import heroImage from '@/assets/images/doc-landing.png';
 import noxIcon from '@/assets/icons/nox.svg';
 import pocoIcon from '@/assets/icons/poco.svg';
@@ -8,8 +9,14 @@ import helloWorldIcon from '@/assets/icons/hello-world.svg';
 import teeIcon from '@/assets/icons/tee.svg';
 import govIcon from '@/assets/icons/gov.svg';
 
-function goToNox(link: string) {
-  window.location.assign(link);
+const router = useRouter();
+
+function handleCardClick(link: string) {
+  if (link.startsWith('/nox-protocol')) {
+    window.location.href = link;
+  } else {
+    router.go(link);
+  }
 }
 
 const protocolCards = [
@@ -114,7 +121,7 @@ const dappFeatures = [
           :key="card.title"
           :href="card.link"
           class="protocol-card"
-          @click.prevent="goToNox(card.link)"
+          @click.stop.prevent="handleCardClick(card.link)"
         >
           <div class="protocol-card-header">
             <div class="icon-box">
@@ -140,7 +147,7 @@ const dappFeatures = [
             :key="feature.title"
             :href="feature.link"
             class="feature-card"
-            @click.prevent="goToNox(feature.link)"
+            @click.stop.prevent="handleCardClick(feature.link)"
           >
             <div class="feature-card-header">
               <div class="icon-box">
@@ -166,7 +173,7 @@ const dappFeatures = [
             :key="feature.title"
             :href="feature.link"
             class="feature-card"
-            @click.prevent="goToNox(feature.link)"
+            @click.stop.prevent="handleCardClick(feature.link)"
           >
             <div class="feature-card-header">
               <div class="icon-box">
