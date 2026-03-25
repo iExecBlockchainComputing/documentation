@@ -250,7 +250,7 @@ const dappFeatures = [
   font-family: 'Mulish', sans-serif;
   font-size: 24px;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 36px;
   letter-spacing: 0.2px;
   color: #303038;
   margin: 0;
