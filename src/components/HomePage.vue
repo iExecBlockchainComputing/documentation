@@ -28,6 +28,8 @@ const protocolCards = [
     icon: noxIcon,
     title: 'Nox Protocol',
     subtitle: 'Confidential DeFi',
+    persona:
+      "I'm a Solidity developer and I want to build a confidential smart contract.",
     description:
       'Nox is a privacy layer that empowers smart contracts with confidential computation. Encrypted types are executed inside Trusted Execution Environments (TEE), composable with DeFi, without ever exposing plaintext on-chain.',
     link: '/nox-protocol/getting-started/welcome',
@@ -37,6 +39,8 @@ const protocolCards = [
     icon: pocoIcon,
     title: 'iExec PoCo',
     subtitle: 'Off-chain Privacy',
+    persona:
+      "I'm a full-stack developer and I want to build a TEE-powered dApp.",
     description:
       'PoCo is a trust and coordination layer that secures off-chain execution in Trusted Execution Environments (TEE), enforcing correctness, privacy, and clear economic governance.',
     link: '/get-started/welcome',
@@ -136,6 +140,7 @@ const dappFeatures = [
               <span class="protocol-card-subtitle">{{ card.subtitle }}</span>
             </div>
           </div>
+          <p class="protocol-card-persona">{{ card.persona }}</p>
           <p class="protocol-card-desc">{{ card.description }}</p>
         </a>
       </div>
@@ -456,6 +461,15 @@ const dappFeatures = [
   color: var(--vp-c-text-1);
 }
 
+.protocol-card-persona {
+  font-size: 18px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--vp-c-brand-1);
+  margin: 0;
+}
+
 .protocol-card-desc {
   font-size: 18px;
   line-height: 1.6;
@@ -474,6 +488,10 @@ const dappFeatures = [
 
   .protocol-card-subtitle {
     font-size: 16px;
+  }
+
+  .protocol-card-persona {
+    font-size: 15px;
   }
 
   .protocol-card-desc {
