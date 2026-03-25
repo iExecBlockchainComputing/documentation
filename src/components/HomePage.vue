@@ -53,13 +53,13 @@ const financialFeatures = [
     icon: ctokenIcon,
     title: 'Confidential Token',
     description: 'Transform any ERC-20 into a confidential asset.',
-    link: '/nox-protocol/guides/build-confidential-tokens/erc7984-token',
+    link: '/nox-protocol/guides/build-confidential-tokens/intro',
   },
   {
     icon: smartContractsIcon,
     title: 'Confidential Smart Contracts',
     description: 'Write standard Solidity contracts using the Nox Library.',
-    link: '/nox-protocol/guides/build-confidential-smart-contracts/hardhat',
+    link: '/nox-protocol/guides/build-confidential-smart-contracts/intro',
   },
   {
     icon: helloWorldIcon,
