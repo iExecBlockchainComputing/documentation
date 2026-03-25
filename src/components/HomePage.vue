@@ -105,8 +105,8 @@ const dappFeatures = [
             Privacy
           </h1>
           <p class="hero-tagline">
-            Build, deploy, and govern confidential execution across Web3, with
-            programmable access control and hardware-enforced computation.
+            Build on a programmable privacy stack: TEE-secured off-chain
+            computation and confidential on-chain smart contracts.
           </p>
         </div>
         <div class="hero-image-container">
