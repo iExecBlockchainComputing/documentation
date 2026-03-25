@@ -18,7 +18,7 @@ export default withMermaid(
     title: 'iExec Documentation',
     titleTemplate: ':title | PoCo Documentation',
     description:
-      'Build decentralized applications that combine ownership, privacy, and monetization.',
+      'Build on a programmable privacy stack: TEE-secured off-chain computation and confidential on-chain smart contracts.',
     cleanUrls: true,
     lastUpdated: true,
     vite: {
@@ -59,7 +59,7 @@ export default withMermaid(
         'link',
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap',
         },
       ],
       [
