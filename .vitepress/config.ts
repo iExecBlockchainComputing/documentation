@@ -45,6 +45,8 @@ export default withMermaid(
 
     head: [
       ['link', { rel: 'icon', href: '/Logo-RLC-Yellow.png' }],
+      // Open Graph / Social metadata
+      ['meta', { property: 'og:image', content: 'https://docs.iex.ec/og-image.png' }],
       // Google Tag Manager
       [
         'script',
