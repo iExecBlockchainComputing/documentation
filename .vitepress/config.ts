@@ -12,6 +12,10 @@ import { withMermaid } from 'vitepress-plugin-mermaid';
 // Charger les variables d'environnement
 const env = loadEnv('', process.cwd());
 
+const siteUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : 'https://docs.iex.ec';
+
 // https://vitepress.dev/reference/site-config
 export default withMermaid(
   defineConfig({
@@ -46,10 +50,7 @@ export default withMermaid(
     head: [
       ['link', { rel: 'icon', href: '/Logo-RLC-Yellow.png' }],
       // Open Graph / Social metadata
-      [
-        'meta',
-        { property: 'og:image', content: 'https://docs.iex.ec/og-image.png' },
-      ],
+      ['meta', { property: 'og:image', content: `${siteUrl}/og-image.png` }],
       // Google Tag Manager
       [
         'script',
