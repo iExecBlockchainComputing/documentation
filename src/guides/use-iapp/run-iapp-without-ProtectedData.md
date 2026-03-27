@@ -201,3 +201,9 @@ const taskId = await iexec.order.matchOrders({
   workerpoolorder: workerpoolOrders.orders[0].order,
 });
 ```
+
+## Next Steps
+
+For advanced use cases where you need to encrypt the results of your iApp
+execution, refer to the
+[Encrypt iApp Results](/guides/use-iapp/encrypt-iapp-result) guide.
