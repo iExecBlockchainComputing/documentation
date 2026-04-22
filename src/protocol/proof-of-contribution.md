@@ -16,8 +16,8 @@ clear economic rules.
 
 PoCo provides three core guarantees:
 
-- **Confidentiality**: data and secrets are only processed inside secure
-  enclaves.
+- **Confidentiality**: data and secrets are only processed inside
+  [TDX](/protocol/tee/intel-tdx) Trust Domains.
 - **Governance and access control**: users decide who can access their data.
 - **Trusted payments and penalties**: contributors get paid automatically, and
   misbehavior is economically discouraged.
@@ -31,9 +31,9 @@ private way.
 
 PoCo uses this model to guarantee:
 
-- execution happens **inside a genuine enclave**
+- execution happens **inside a genuine Trust Domain**
 - secrets are handled **securely and privately**
-- results come from **verified enclaves**
+- results come from **verified Trust Domains**
 - payments and penalties are applied **automatically** on-chain.
 
 In short: PoCo allows building production-grade confidential compute workflows,
@@ -61,37 +61,37 @@ The workerpool selects an available worker with the required TEE capabilities.
 No replication is needed, trust comes from hardware attestation, not from
 multiple workers.
 
-3. ### The worker executes the app inside a secure enclave
+3. ### The worker executes the app inside a TDX Trust Domain
 
-The worker runs a confidential application inside its enclave:
+The worker runs a confidential application inside its Trust Domain:
 
 - the code is measured
 - the environment is verified
-- the enclave proves its authenticity through remote attestation
+- the Trust Domain proves its authenticity through remote attestation
 - PoCo verifies this attestation through the SMS
 
 This guarantees:
 
 - no one can inspect the data
 - the worker cannot tamper with the execution
-- results come from a genuine, verified enclave
+- results come from a genuine, verified Trust Domain
 
-4. ### Secrets are transferred securely (SMS → Enclave)
+4. ### Secrets are transferred securely (SMS → Trust Domain)
 
 If the task uses secrets (dataset decryption key, ...):
 
-- the Secret Management Service (SMS) enclave verifies the worker’s enclave
-- secrets are provisioned for the specific enclave only
-- secrets are only accessible and processed inside the TEE enclave.
+- the Secret Management Service (SMS) verifies the worker’s Trust Domain
+- secrets are provisioned for the specific Trust Domain only
+- secrets are only accessible and processed inside the TDX Trust Domain.
 
 This is fundamental for confidential and monetizable datasets.
 
-5. ### The enclave computes and produces the result
+5. ### The Trust Domain computes and produces the result
 
-At the end of execution, the enclave:
+At the end of execution, the Trust Domain:
 
 - makes the result available for the requester (on IPFS for example)
-- signs a challenge to prove that the execution happened inside an enclave
+- signs a challenge to prove that the execution happened inside a Trust Domain
 - sends the proof to the PoCo via the worker
 
 6. ### PoCo validates and finalizes the task on-chain
@@ -100,7 +100,7 @@ PoCo checks:
 
 - worker permission to push a result for the task (through an off-chain
   scheduler authorization)
-- enclave authenticity by validating the the enclave challenge signature
+- Trust Domain authenticity by validating the Trust Domain challenge signature
 
 If everything is valid the ask is finalized and funds are released according to
 the on-chain rules:
@@ -277,8 +277,6 @@ Tags are 32 bytes (256 bits) long array where each bit corresponds to a feature.
 | **Value**                                                                       | **Description** |
 | ------------------------------------------------------------------------------- | --------------- |
 | `0x0000000000000000000000000000000000000000000000000000000000000001` (`0b0001`) | TEE             |
-| `0x0000000000000000000000000000000000000000000000000000000000000003` (`0b0011`) | TEE Scone       |
-| `0x0000000000000000000000000000000000000000000000000000000000000005` (`0b0101`) | TEE Gramine     |
 | `0x0000000000000000000000000000000000000000000000000000000000000009` (`0b1001`) | TEE TDX         |
 
 For orders matching, the worker pool order must enable all bits that enable in

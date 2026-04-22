@@ -110,7 +110,7 @@ button:
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">4</span>
-    <span>iExec's protocol stores the symmetric key in a secure enclave (TEE) in the Secret Management Service</span>
+    <span>iExec's protocol stores the symmetric key in a [TDX](/protocol/tee/intel-tdx) Trust Domain (TEE) in the Secret Management Service</span>
   </div>
   <div class="flex items-center gap-3">
     <span class="bg-gray-950 text-sm text-white w-6 h-6 rounded-full flex items-center justify-center font-medium">5</span>

@@ -29,8 +29,6 @@ cover:
 - **Arbitrum Sepolia Testnet**: Get free RLC tokens from the
   [iExec RLC Faucet](https://explorer.iex.ec/arbitrum-sepolia-testnet/faucet)
   for testing purposes
-- **Bellecour**: Bridge RLC from Ethereum using the
-  [RLC Bridge](/get-started/tooling-and-explorers/bridge)
 
 ## Deploy your iApp
 
@@ -64,19 +62,6 @@ specify your app version, and push both standard and TEE-compatible images:
   />
 </template>
 
-<template v-else>
-  <CLIDemo
-    initialCommand="iapp deploy"
-    asciiText="Deploy"
-    :steps="bellecourSteps"
-    :completionStep="14"
-    :completionMessage="'Deployment of your iApp completed successfully:'"
-    :completionItems="bellecourCompletionItems"
-    :successMessage="'Run iapp run 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923 to execute your iApp on an iExec TEE worker'"
-    :autoRestart="true"
-  />
-</template>
-
 Now that your iApp has been deployed on the iExec protocol, you can navigate to
 the `cache` folder to see your deployments saved. A file named
 `deployments.json` in the folder corresponding to your target network will be
@@ -88,7 +73,7 @@ Here is an example:
 ```json
 [
   {
-    "sconifiedImage": "robiniexec/iapp:0.0.1-tee-scone-5.9.1-v16-5aea8b4aa71d",
+    "tdxImage": "robiniexec/iapp:0.0.1-tee-tdx-1.0.0",
     "appContractAddress": "0x9665136c599ec361C8eE627eC4F35A23fBa94897",
     "owner": "0xbabE8270aC9857Af3aaC06877888F1939FbeC578",
     "date": "2025-08-12T13:16:18.252Z"
@@ -132,19 +117,6 @@ for developers who have built their own iApp.
     :completionStep="16"
     :completionMessage="'iApp execution completed successfully:'"
     :completionItems="arbitrumSepoliaRunCompletionItems"
-    :successMessage="'Your iApp has been executed successfully on an iExec TEE worker'"
-    :autoRestart="true"
-  />
-</template>
-
-<template v-else>
-  <CLIDemo
-    initialCommand="iapp run 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923"
-    asciiText="Execute"
-    :steps="bellecourRunSteps"
-    :completionStep="14"
-    :completionMessage="'iApp execution completed successfully:'"
-    :completionItems="bellecourRunCompletionItems"
     :successMessage="'Your iApp has been executed successfully on an iExec TEE worker'"
     :autoRestart="true"
   />
@@ -253,7 +225,7 @@ const arbitrumSteps = [
   },
   {
     showAt: 13,
-    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7 on dockerhub',
+    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-tdx-1.0.0 on dockerhub',
     answer: '',
     showTyping: false,
     isComplete: true
@@ -267,82 +239,8 @@ const arbitrumSteps = [
   }
 ];
 
-const bellecourSteps = [
-  {
-    showAt: 2,
-    question: 'Using chain bellecour',
-    answer: '',
-    showTyping: false,
-    isComplete: true
-  },
-  {
-    showAt: 3,
-    question: 'Using saved walletPrivateKey (from iapp.config.json)',
-    answer: '',
-    showTyping: false,
-    isComplete: true
-  },
-  {
-    showAt: 4,
-    completeAt: 6,
-    question: 'What is your username on DockerHub? (It will be used to properly tag the Docker image)',
-    answer: 'bob',
-    showTyping: true,
-    isComplete: false
-  },
-  {
-    showAt: 6,
-    completeAt: 8,
-    question: 'What is your DockerHub access token?',
-    answer: '**********************',
-    showTyping: true,
-    isComplete: false
-  },
-  {
-    showAt: 8,
-    completeAt: 10,
-    question: 'What is the version of your iApp?',
-    answer: '0.0.1',
-    showTyping: true,
-    isComplete: false
-  },
-  {
-    showAt: 10,
-    question: 'Docker image built (sha256:a53fc4c480f482c384a13266ea2cb6cc5572733c866c44a5f604f4bfab3a744a) and tagged bob/hello-world:0.0.1',
-    answer: '',
-    showTyping: false,
-    isComplete: true
-  },
-  {
-    showAt: 11,
-    question: 'Pushed image bob/hello-world:0.0.1 on dockerhub',
-    answer: '',
-    showTyping: false,
-    isComplete: true
-  },
-  {
-    showAt: 12,
-    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7 on dockerhub',
-    answer: '',
-    showTyping: false,
-    isComplete: true
-  },
-  {
-    showAt: 13,
-    question: 'TEE app deployed',
-    answer: '',
-    showTyping: false,
-    isComplete: true
-  }
-];
-
 const arbitrumCompletionItems = [
-  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7',
-  '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
-];
-
-const bellecourCompletionItems = [
-  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7',
+  '└ Docker image: bob/hello-world:0.0.1-tee-tdx-1.0.0',
   '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
 ];
 
@@ -445,98 +343,7 @@ const arbitrumRunSteps = [
   }
 ];
 
-const bellecourRunSteps = [
-  {
-    showAt: 2,
-    question: 'Using chain bellecour',
-    answer: '',
-    showTyping: false,
-    isComplete: true
-  },
-  {
-    showAt: 3,
-    question: 'Using saved walletPrivateKey (from iapp.config.json)',
-    answer: '',
-    showTyping: false,
-    isComplete: true
-  },
-  {
-    showAt: 4,
-    question: 'Workerpool order fetched',
-    answer: '',
-    showTyping: false,
-    isComplete: true
-  },
-  {
-    showAt: 5,
-    question: 'AppOrder created',
-    answer: '',
-    showTyping: false,
-    isComplete: true
-  },
-  {
-    showAt: 6,
-    question: 'RequestOrder created',
-    answer: '',
-    showTyping: false,
-    isComplete: true
-  },
-  {
-    showAt: 7,
-    question: 'Deal created successfully',
-    answer: '',
-    showTyping: false,
-    isComplete: true
-  },
-  {
-    showAt: 8,
-    question: 'Task finalized',
-    answer: '',
-    showTyping: false,
-    isComplete: true
-  },
-  {
-    showAt: 9,
-    completeAt: 11,
-    question:'Would you like to download the result ?',
-    answer: 'Yes',
-    options: [
-      { label: 'Yes', selected: true },
-      { label: 'no', selected: false }
-    ],
-    highlighted: false,
-    showTyping: false,
-    isComplete: false
-  },
-  {
-    showAt: 11,
-    question: 'Result downloaded to output',
-    answer: '',
-    showTyping: false,
-    isComplete: true
-  },
-  {
-    showAt: 12,
-    completeAt: 14,
-    question:'Would you like to see the result ?',
-    answer: 'Yes',
-    options: [
-      { label: 'Yes', selected: true },
-      { label: 'no', selected: false }
-    ],
-    highlighted: false,
-    showTyping: false,
-    isComplete: false
-  }
-];
-
 const arbitrumRunCompletionItems = [
-  '└ Deal: 0x26d758de1be51697c33fa606cd0c5243082a6e675a4463b106d71fde2893280f',
-  '└ Task: 0x1a58dd6018b30b022eb35be53ad9374eb630925458d14643a1dfd9c686b964d8',
-  '└ Result: Downloaded to output directory'
-];
-
-const bellecourRunCompletionItems = [
   '└ Deal: 0x26d758de1be51697c33fa606cd0c5243082a6e675a4463b106d71fde2893280f',
   '└ Task: 0x1a58dd6018b30b022eb35be53ad9374eb630925458d14643a1dfd9c686b964d8',
   '└ Result: Downloaded to output directory'
@@ -609,7 +416,7 @@ const arbitrumSepoliaSteps = [
   },
   {
     showAt: 13,
-    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7 on dockerhub',
+    question: 'Pushed TEE image bob/hello-world:0.0.1-tee-tdx-1.0.0 on dockerhub',
     answer: '',
     showTyping: false,
     isComplete: true
@@ -624,7 +431,7 @@ const arbitrumSepoliaSteps = [
 ];
 
 const arbitrumSepoliaCompletionItems = [
-  '└ Docker image: bob/hello-world:0.0.1-tee-scone-5.9.1-v16-ce3a01d9c5d7',
+  '└ Docker image: bob/hello-world:0.0.1-tee-tdx-1.0.0',
   '└ iApp address: 0x1f80DCebc2EAAff0Db7156413C43B7e88D189923'
 ];
 

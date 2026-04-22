@@ -2,8 +2,7 @@
 title: The Graph Explorer
 description:
   Explore and query blockchain data using The Graph's decentralized indexing
-  protocol. Access iExec subgraphs on Arbitrum, Arbitrum Sepolia, and Bellecour
-  networks.
+  protocol. Access iExec subgraphs on Arbitrum and Arbitrum Sepolia networks.
 ---
 
 # The Graph Explorer
@@ -90,28 +89,6 @@ protocol.
   status-label="Live"
   button-label="Explore Subgraph"
   button-href="https://thegraph.com/explorer/subgraphs/5YjRPLtjS6GH6bB4yY55Qg4HzwtRGQ8TaHtGf9UBWWd?view=Query&chain=arbitrum-one"
-  button-rel="noreferrer"
-/>
-
-<ProjectCard
-  title="iExec PoCo - Bellecour"
-  description="Indexes Proof of Contribution (PoCo) data on Bellecour mainnet, including apps, deals, tasks and workerpools"
-  :icon-image="iexecLogoIcon"
-  status="available"
-  status-label="Live"
-  button-label="Explore Subgraph"
-  button-href="https://thegraph.bellecour.iex.ec/subgraphs/name/bellecour/poco-v5/graphql?query=query+MyQuery+%7B%0A++apps+%7B%0A++++name%0A++++id%0A++++owner+%7B%0A++++++id%0A++++%7D%0A++%7D%0A%7D"
-  button-rel="noreferrer"
-/>
-
-<ProjectCard
-  title="iExec DataProtector - Bellecour"
-  description="Comprehensive indexing service for iExec DataProtector on Bellecour, tracking protected data assets, their schemas and owner"
-  :icon-image="iexecLogoIcon"
-  status="available"
-  status-label="Live"
-  button-label="Explore Subgraph"
-  button-href="https://thegraph.iex.ec/subgraphs/name/bellecour/dataProtector-v2/graphql?query=query+MyQuery+%7B%0A++protectedDatas+%7B%0A++++id%0A++++name%0A++++owner+%7B%0A++++++id%0A++++%7D%0A++%7D%0A%7D"
   button-rel="noreferrer"
 />
 
@@ -218,6 +195,5 @@ import ProjectCard from '@/components/ProjectCard.vue';
 import theGraphLogoImage from '@/assets/tooling-&-explorers/the-graph/image-logo.jpg';
 import theGraphProtocolImage from '@/assets/tooling-&-explorers/the-graph/protocol-view.jpg';
 import arbitrumIcon from '@/assets/icons/arbitrum.svg';
-import iexecLogoIcon from '@/assets/icons/iexec-logo.png';
 import graphqlExplorerImage from '@/assets/tooling-&-explorers/the-graph/graphql-explorer.png';
 </script>

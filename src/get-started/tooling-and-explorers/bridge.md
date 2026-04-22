@@ -2,7 +2,7 @@
 title: iExec RLC Bridge
 description:
   Bridge RLC tokens between networks to interact with the iExec protocol.
-  Transfer RLC to Bellecour (xRLC) and Arbitrum networks using dedicated bridges
+  Transfer RLC to Arbitrum networks using the Stargate Bridge
 ---
 
 # RLC Bridge
@@ -11,8 +11,8 @@ description:
 whether you're executing tasks, accessing protected data, or participating in
 the iExec confidential computing network.
 
-This guide helps you bridge RLC tokens to **Bellecour** (becoming xRLC) and
-**Arbitrum** networks using the Bellecour Bridge and Stargate Bridge.
+This guide helps you bridge RLC tokens to **Arbitrum** using the Stargate
+Bridge.
 
 ::: tip 🧪 Testing on Arbitrum Sepolia
 
@@ -30,18 +30,6 @@ iExec provides officially supported bridges for seamless token transfer across
 networks:
 
 <CardGrid>
-  <ProjectCard
-    title="Bellecour Bridge"
-    description="Bridge RLC tokens between Ethereum mainnet and Bellecour sidechain"
-    :icon-image="iexecLogoIcon"
-    status="available"
-    status-label="Live"
-    button-label="Access Bridge"
-    button-icon="mdi:bridge"
-    button-href="https://bridge-bellecour.iex.ec/"
-    button-rel="noreferrer"
-  />
-  
   <ProjectCard
     title="Stargate Bridge"
     description="Bridge RLC tokens between Ethereum and Arbitrum using LayerZero protocol"
@@ -76,42 +64,6 @@ RLC tokens between Ethereum and Arbitrum mainnet in both directions.
   image-alt="Stargate Bridge Interface"
   link-url="https://stargate.finance/bridge"
 />
-
-## Bellecour Bridge
-
-The **Bellecour Bridge** enables seamless transfer of RLC tokens between
-Ethereum mainnet and the Bellecour sidechain in both directions. When bridged to
-Bellecour, RLC becomes xRLC, the native asset of the Bellecour network.
-
-### Ethereum <> Bellecour (RLC <> xRLC)
-
-1. **Connect Wallet**: Visit
-   [Bellecour Bridge UI](https://bridge-bellecour.iex.ec/) and connect your
-   wallet
-2. **Select Source Network**: The bridge automatically detects your current
-   network and available tokens (RLC on Ethereum or xRLC on Bellecour)
-3. **Choose Destination**: The bridge will show the opposite network as
-   destination automatically
-4. **Select Amount**: Choose the amount of tokens you want to bridge
-5. **Confirm Transaction**: Approve the bridge transaction and wait for
-   confirmation
-6. **Receive Tokens**: Your tokens will be available on the destination network
-
-<ImageViewer
-  :image-url-dark="bellecourBridgeImage"
-  image-alt="Bellecour Bridge Process"
-  link-url="https://bridge-bellecour.iex.ec/"
-/>
-
-::: tip 🔄 Bidirectional Bridge
-
-The bridge interface automatically detects your wallet's network and available
-tokens. The process is similar in both directions - simply switch to the
-appropriate network (source chain) in your wallet and refresh the page to update
-the bridge direction, then the bridge will handle the conversion between RLC and
-xRLC seamlessly.
-
-:::
 
 ## Security & Audits
 
@@ -152,9 +104,7 @@ import CardGrid from '@/components/CardGrid.vue';
 import ProjectCard from '@/components/ProjectCard.vue';
 
 // Assets
-import iexecLogoIcon from '@/assets/icons/iexec-logo.png';
 import arbitrumLogoIcon from '@/assets/icons/arbitrum.svg';
-import bellecourBridgeImage from '@/assets/tooling-&-explorers/bridge/bellecour-bridge.png';
 import stargateBridgeImage from '@/assets/tooling-&-explorers/bridge/stargate-bridge.png';
 import halbornLogoIcon from '@/assets/icons/halborn.svg';
 </script>

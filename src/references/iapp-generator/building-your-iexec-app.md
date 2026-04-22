@@ -150,7 +150,7 @@ templates through interactive prompts.
 **Options**:
 
 - `--chain <string>` – Specify the blockchain network for deployment (e.g.,
-  `arbitrum-mainnet`, `arbitrum-sepolia-testnet`, `bellecour`)
+  `arbitrum-mainnet`, `arbitrum-sepolia-testnet`)
 
 ### `iapp run <iAppAddress>`
 
@@ -170,7 +170,7 @@ templates through interactive prompts.
 - `--requesterSecret <array>` – Key-value requester secrets (`index=value`)
   available inside the iApp at `$IEXEC_REQUESTER_SECRET_*`
 - `--chain <string>` – Specify the blockchain network to run the iApp on (e.g.,
-  `arbitrum-mainnet`, `arbitrum-sepolia-testnet`, `bellecour`)
+  `arbitrum-mainnet`, `arbitrum-sepolia-testnet`)
 
 ### `iapp debug <taskId>`
 
@@ -183,7 +183,7 @@ templates through interactive prompts.
 **Options**:
 
 - `--chain <string>` – Specify the blockchain network of the task (e.g.,
-  `arbitrum-mainnet`, `arbitrum-sepolia-testnet`, `bellecour`)
+  `arbitrum-mainnet`, `arbitrum-sepolia-testnet`)
 
 ### `iapp mock <inputType>`
 
@@ -202,32 +202,19 @@ templates through interactive prompts.
 - `<action>` – Import a new wallet or select one from the keystore [choices:
   "import", "select"]
 
-## Advanced Options <ChainNotSupportedBadge />
+## TDX Configuration
 
 ### `EXPERIMENTAL_TDX_APP=true`
 
-**Purpose**: Enable experimental Intel TDX support  
+**Purpose**: Enable Intel [TDX](/protocol/tee/intel-tdx) support  
 **Usage**: Set as environment variable before running commands  
-**Example**: `EXPERIMENTAL_TDX_APP=true iapp test`
+**Example**: `EXPERIMENTAL_TDX_APP=true iapp deploy`
 
 **Available with**:
 
 - `iapp test`
 - `iapp deploy`
 - `iapp run <app-address>`
-
-::: info TDX <ChainNotSupportedBadge />
-
-🧪 While **TEE** iApp are based on **intel SGX** technology by default, iApp has
-an experimental support for **intel TDX** applications.
-
-TDX mode is enabled by setting the environment variable
-`EXPERIMENTAL_TDX_APP=true`.
-
-⚠️ Keep in mind: TDX mode is experimental and can be subject to instabilities or
-discontinuity.
-
-:::
 
 ## Next Steps
 
@@ -238,5 +225,4 @@ Once your application is **stable** and **functional**, you can learn how to
 
 <script setup>
 import CLIDemo from '@/components/CLIDemo.vue';
-import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>

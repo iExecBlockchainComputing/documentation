@@ -10,18 +10,18 @@ description:
 ::: warning
 
 Before going any further, make sure you managed to
-[Build your first iApp with Scone framework](build-your-first-sgx-iapp.md).
+[Build your first TDX iApp](build-your-first-tdx-iapp.md).
 
 :::
 
 ## Secret Management Service (SMS)
 
 You can use confidential assets on iExec thanks to the _iExec Secret Management
-Service_. This service verifies that the enclave asking for secrets is
+Service_. This service verifies that the Trust Domain requesting secrets is
 authorized to do so. Any user - as a confidential asset provider - declares on
-the blockchain which enclaves are authorized to access it. For each task, the
-SMS will query the blockchain to determine if the enclave requesting secrets is
-indeed whitelisted for it.
+the blockchain which Trust Domains are authorized to access it. For each task,
+the SMS will query the blockchain to determine if the Trust Domain requesting
+secrets is indeed whitelisted for it.
 
 The SMS currently supports 3 types of secrets:
 

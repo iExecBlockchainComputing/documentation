@@ -1,7 +1,5 @@
 import { arbitrum, arbitrumSepolia } from 'viem/chains';
-import { bellecour } from './wagmiNetworks';
 import arbitrumLogo from '@/assets/icons/arbitrum.svg';
-import iexecLogo from '@/assets/icons/iexec-logo.png';
 
 export interface Chain {
   id: number;
@@ -44,12 +42,12 @@ export function getSupportedChains(): Chain[] {
       blockExplorers: arbitrum.blockExplorers,
       chainName: 'arbitrum-mainnet',
       iexecExplorerUrl: 'https://explorer.iex.ec/arbitrum-mainnet',
-      workerpoolAddress: '0x2C06263943180Cc024dAFfeEe15612DB6e5fD248',
+      workerpoolAddress: '0x8ef2ec3ef9535d4b4349bfec7d8b31a580e60244',
       ipfsGateway: 'https://ipfs-gateway.arbitrum-mainnet.iex.ec',
       web3MailAddress: '0xe7945ddc8241A877c6e59F50a61e91eBb57AfD84',
-      web3MailAppWhitelist: '0xD5054a18565c4a9E5c1aa3cEB53258bd59d4c78C',
+      web3MailAppWhitelist: '0xfa9cceff9431ee0e2a3fe58911073f1357f24e31',
       web3TelegramAddress: '0xa201D2C9F3464c55639589d25FA6A3ec49C9f238',
-      web3TelegramAppWhitelist: '0x53AFc09a647e7D5Fa9BDC784Eb3623385C45eF89',
+      web3TelegramAppWhitelist: '0xa7101cf61d4602d55a715be4f2b9e1bc71d22301',
     },
     {
       id: arbitrumSepolia.id,
@@ -58,37 +56,14 @@ export function getSupportedChains(): Chain[] {
       nativeCurrency: arbitrumSepolia.nativeCurrency,
       rpcUrls: arbitrumSepolia.rpcUrls,
       blockExplorers: arbitrumSepolia.blockExplorers,
-      chainName: 'arbitrum-sepolia',
+      chainName: 'arbitrum-sepolia-testnet',
       iexecExplorerUrl: 'https://explorer.iex.ec/arbitrum-sepolia-testnet',
-      workerpoolAddress: '0xB967057a21dc6A66A29721d96b8Aa7454B7c383F',
+      workerpoolAddress: '0x2956f0cb779904795a5f30d3b3ea88b714c3123f',
       ipfsGateway: 'https://ipfs-gateway.arbitrum-sepolia-testnet.iex.ec',
       web3MailAddress: '0x97792094EDf25a3AA607ed198aa22c32D7B33b62',
-      web3MailAppWhitelist: '0x8d46d40840f1Aa2264F96184Ffadf04e5D573B9B',
+      web3MailAppWhitelist: '0x09d59e1b696d0cb69f46bf762412636e8652ab58',
       web3TelegramAddress: '0x3476685f4166d4a639c85feca00e2897afd807c6',
-      web3TelegramAppWhitelist: '0x7291ff96100DA6CF97933C225B86124ef95aEc9b',
-    },
-    {
-      id: Number(bellecour.id),
-      name: bellecour.name,
-      icon: iexecLogo,
-      nativeCurrency: bellecour.nativeCurrency,
-      rpcUrls: bellecour.rpcUrls,
-      blockExplorers: {
-        default: {
-          name: bellecour.blockExplorers?.default?.name || 'Blockscout',
-          url:
-            bellecour.blockExplorers?.default?.url ||
-            'https://blockscout-bellecour.iex.ec',
-        },
-      },
-      chainName: 'bellecour',
-      iexecExplorerUrl: 'https://explorer.iex.ec/bellecour',
-      workerpoolAddress: 'prod-v8-bellecour.main.pools.iexec.eth',
-      ipfsGateway: 'https://ipfs-gateway.v8-bellecour.iex.ec',
-      web3MailAddress: 'web3mail.apps.iexec.eth',
-      web3MailAppWhitelist: '0x781482C39CcE25546583EaC4957Fb7Bf04C277D2',
-      web3TelegramAddress: 'web3telegram.apps.iexec.eth',
-      web3TelegramAppWhitelist: '0x192C6f5AccE52c81Fcc2670f10611a3665AAA98F',
+      web3TelegramAppWhitelist: '0x7f67e78a4b0a98c50333b8b72851952c396601a1',
     },
   ];
 }

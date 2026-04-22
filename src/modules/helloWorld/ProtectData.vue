@@ -5,7 +5,7 @@
     >
       Connect Your Wallet
       <a
-        :href="`https://chainlist.org/chain/${userStore.getCurrentChainId() || 134}`"
+        :href="`https://chainlist.org/chain/${userStore.getCurrentChainId() || 421614}`"
         target="_blank"
       >
         ({{ networkName }})
@@ -77,9 +77,7 @@
           {{
             userStore.getCurrentChainId() === 42161
               ? 'the Arbitrum explorer'
-              : userStore.getCurrentChainId() === 421614
-                ? 'the Arbitrum Sepolia explorer'
-                : 'the iExec explorer'
+              : 'the Arbitrum Sepolia explorer'
           }}
         </a>
       </p>
@@ -129,12 +127,8 @@ const protectError = ref(null);
 // Computed property for explorer URL based on selected chain
 const explorerUrl = computed(() => {
   const currentChainId = userStore.getCurrentChainId();
-  let networkPath = 'bellecour';
-  if (currentChainId === 42161) {
-    networkPath = 'arbitrum-mainnet';
-  } else if (currentChainId === 421614) {
-    networkPath = 'arbitrum-sepolia-testnet';
-  }
+  const networkPath =
+    currentChainId === 42161 ? 'arbitrum-mainnet' : 'arbitrum-sepolia-testnet';
   return `https://explorer.iex.ec/${networkPath}/dataset/${protectedDataAddress.value}`;
 });
 

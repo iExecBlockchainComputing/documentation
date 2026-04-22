@@ -1,25 +1,15 @@
 ---
-title: Build Intel TDX iApp (Experimental)
+title: Build Intel TDX iApp
 description:
   Learn how to build and run Confidential Computing applications with Intel TDX
   technology using both traditional deployment and the iApp Generator
 ---
 
-# Build Intel TDX iApp <ChainNotSupportedBadge/>
+# Build Intel TDX iApp
 
 In this tutorial, you will learn how to build and run a Confidential Computing
 application with Intel TDX technology using both traditional deployment and the
 iApp Generator.
-
-::: info **Experimental Feature**
-
-TDX support is currently in experimental phase:
-
-- Stability and confidentiality features are still being tested and refined.
-- Features may evolve based on user feedback, please share your experience on
-  [Discord](https://discord.com/invite/5TewNUnJHN).
-
-:::
 
 Before implementing TDX, make sure you understand the foundational concepts and
 differences between TEE technologies. Check out our
@@ -46,13 +36,12 @@ This tutorial covers two methods for building TDX applications:
 
 Thanks to **Intel TDX**, neither the source code or the binaries of your
 application need to be changed in order to run securely in a TEE. Only two files
-need to be changed compared to the usual SGX workflow: `chain.json` and
-`iexec.json`.
+need to be configured: `chain.json` and `iexec.json`.
 
 iApp using Intel TDX technology follow the same format as non-TEE applications;
 follow the instructions on
-[Build your first application](/guides/build-iapp/advanced/build-your-first-sgx-iapp)
-to create and Dockerize your iApp.
+[Build and deploy your first iApp](/guides/build-iapp/deploy-&-run) to create
+and Dockerize your iApp.
 
 After this step, the Docker image of your iApp should be published on Docker Hub
 (e.g. `<docker-hub-user>/hello-world:1.0.0`).
@@ -61,16 +50,31 @@ After this step, the Docker image of your iApp should be published on Docker Hub
 
 Modify your `chain.json` as follows to reference the TDX Workerpool:
 
-```json
+::: code-group
+
+```json [Arbitrum Sepolia (testnet)]
 {
-  "default": "bellecour",
+  "default": "arbitrum-sepolia-testnet",
   "chains": {
-    "bellecour": {
+    "arbitrum-sepolia-testnet": {
       "sms": { "tdx": "https://sms.labs.iex.ec" }
     }
   }
 }
 ```
+
+```json [Arbitrum Mainnet]
+{
+  "default": "arbitrum-mainnet",
+  "chains": {
+    "arbitrum-mainnet": {
+      "sms": { "tdx": "https://sms.arbitrum-mainnet.iex.ec" }
+    }
+  }
+}
+```
+
+:::
 
 ### Update `iexec.json`
 
@@ -88,7 +92,7 @@ Your `iexec.json` should now look like this example:
   ...
   "app": {
     "owner": "<your-wallet-address>", // starts with 0x
-    "name": "tee-scone-hello-world", // application name
+    "name": "tee-tdx-hello-world", // application name
     "type": "DOCKER",
     "multiaddr": "<docker-hub-user>/hello-world:1.0.0", // app image
     "checksum": "<checksum>", // starts with 0x, update it with your own image digest
@@ -116,11 +120,19 @@ iexec app deploy
 ```
 
 To execute the iApp in TDX, add `--tag tee,tdx` to the `iexec app run` and
-select the TDX workerpool (`tdx-labs.pools.iexec.eth`).
+select the TDX workerpool for your target network.
 
-```bash
-iexec app run --tag tee,tdx --workerpool tdx-labs.pools.iexec.eth --watch
+::: code-group
+
+```bash [Arbitrum Sepolia (testnet)]
+iexec app run --tag tee,tdx --workerpool 0x2956f0cb779904795a5f30d3b3ea88b714c3123f --watch
 ```
+
+```bash [Arbitrum Mainnet]
+iexec app run --tag tee,tdx --workerpool 0x8ef2ec3ef9535d4b4349bfec7d8b31a580e60244 --watch
+```
+
+:::
 
 ::: info
 
@@ -187,7 +199,9 @@ iexec app show <app-address>
 ⚠️ **To use** the iExec DataProtector SDK with TDX support, you must configure
 the SDK with the right SMS endpoint.
 
-```jsx
+::: code-group
+
+```jsx [Arbitrum Sepolia (testnet)]
 const dataProtector = new IExecDataProtector(web3Provider, {
   iexecOptions: {
     smsURL: 'https://sms.labs.iex.ec',
@@ -195,16 +209,38 @@ const dataProtector = new IExecDataProtector(web3Provider, {
 });
 ```
 
-⚠️**You need** to change the default worker pool in your protected Data
-declaration
+```jsx [Arbitrum Mainnet]
+const dataProtector = new IExecDataProtector(web3Provider, {
+  iexecOptions: {
+    smsURL: 'https://sms.arbitrum-mainnet.iex.ec',
+  },
+});
+```
 
-```jsx
+:::
+
+⚠️**You need** to specify the TDX workerpool in your `processProtectedData`
+call.
+
+::: code-group
+
+```jsx [Arbitrum Sepolia (testnet)]
 await dataProtector.core.processProtectedData({
   protectedData: protectedData.address,
-  workerpool: 'tdx-labs.pools.iexec.eth',
+  workerpool: '0x2956f0cb779904795a5f30d3b3ea88b714c3123f',
   app: '0x456def...',
 });
 ```
+
+```jsx [Arbitrum Mainnet]
+await dataProtector.core.processProtectedData({
+  protectedData: protectedData.address,
+  workerpool: '0x8ef2ec3ef9535d4b4349bfec7d8b31a580e60244',
+  app: '0x456def...',
+});
+```
+
+:::
 
 ### Protected Data Compatibility
 
@@ -275,21 +311,8 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
 
 - **[Intel TDX Technology](/protocol/tee/intel-tdx)** - Comprehensive guide to
   TDX technology and benefits
-- **[SGX vs TDX Comparison](/protocol/tee/sgx-vs-tdx)** - Understand the
-  differences between TEE technologies
 - **[Introduction to TEE Technologies](/protocol/tee/introduction)** -
   Foundation concepts of TEE technologies
-
-### **Production Considerations**
-
-**For production applications**:
-
-- **⚠️ TDX is experimental**: Consider using
-  **[Intel SGX Technology](/protocol/tee/intel-sgx)** for production
-- **[Create Your First SGX iApp](/guides/build-iapp/advanced/build-your-first-sgx-iapp)** -
-  Build production-ready SGX applications
-- **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Standard iApp deployment
-  guide
 
 ### **Related Resources**
 
@@ -301,7 +324,3 @@ EXPERIMENTAL_TDX_APP=true iapp run <app-address>
   in TDX
 - **[Advanced iApp Building](/guides/build-iapp/advanced/quick-start)** -
   Advanced development techniques
-
-<script setup>
-import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
-</script>

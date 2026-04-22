@@ -8,26 +8,17 @@ description:
 # Protect the result
 
 Previous tutorials showed how to build
-[Confidential Computing applications](/protocol/tee/intel-sgx) that run securely
-inside enclaves and combine them with confidential assets to get the most out of
-confidential computing advantages. This chapter pushes things further to protect
-the workflow in an end to end mode. That means the next step would be encrypting
-results.
-
-::: warning
-
-Before going any further, make sure you managed to
-[Build your first application with Scone framework](/guides/build-iapp/advanced/build-your-first-sgx-iapp.md).
-
-:::
+[Confidential Computing applications](/protocol/tee/intel-tdx) that run securely
+inside Trust Domains and combine them with confidential assets to get the most
+out of confidential computing advantages. This chapter pushes things further to
+protect the workflow in an end to end mode. That means the next step would be
+encrypting results.
 
 ::: tip Prerequisites:
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and
   client.
 - [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
-- Familiarity with the basic concepts of [Intel® SGX](/protocol/tee/intel-sgx)
-  and [SCONE](https://scontain.com) framework.
 
 :::
 
@@ -39,17 +30,17 @@ feature.
 :::
 
 Assuming your application is deployed (if not please check how to do it
-[with Scone](/guides/build-iapp/advanced/build-your-first-sgx-iapp.md#deploy-the-tee-app-on-iexec)),
+[with the TDX guide](/guides/build-iapp/advanced/build-your-first-tdx-iapp.md)),
 before triggering an execution you need to generate an RSA key-pair, then push
-the public key to the [Secret Management Service](/protocol/tee/intel-sgx). The
-latter, in turn, will provide it, at runtime, to the enclave running your
+the public key to the [Secret Management Service](/protocol/tee/intel-tdx). The
+latter, in turn, will provide it, at runtime, to the Trust Domain running your
 Confidential Computing application.
 
 To generate the key-pair, go to `~/iexec-projects` and use the following SDK
 command:
 
 Make sure your
-[`chain.json`](/guides/build-iapp/advanced/build-your-first-sgx-iapp.md#update-chain-json)
+[`chain.json`](/guides/build-iapp/advanced/build-your-first-tdx-iapp.md#update-chain-json)
 content is correct.
 
 ```bash
@@ -70,13 +61,13 @@ private key in the file `<0x-your-wallet-address>_key`.
 Now, push the public key to the SMS:
 
 ```bash twoslash
-iexec result push-encryption-key --tee-framework --chain {{chainName}} scone
+iexec result push-encryption-key --tee-framework --chain {{chainName}}
 ```
 
 And check it using:
 
 ```bash twoslash
-iexec result check-encryption-key --tee-framework --chain {{chainName}} scone
+iexec result check-encryption-key --tee-framework --chain {{chainName}}
 ```
 
 Now to see that in action, you'd need to trigger a task and specify yourself as
@@ -86,7 +77,7 @@ the beneficiary in the command:
 iexec app run <0x-your-app-address> \
     --chain {{chainName}}
     --workerpool {{workerpoolAddress}} \
-    --tag tee,scone \
+    --tag tee,tdx \
     --encrypt-result \
     --watch
 ```

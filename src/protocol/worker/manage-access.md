@@ -41,28 +41,27 @@ iexec order init --workerpool
 Edit the `workerpoolorder` part in `iexec.json` to set the conditions to use
 your workerpool:
 
-| key                 | description                                                                          |
-| ------------------- | ------------------------------------------------------------------------------------ |
-| `workerpool`        | workerpool address                                                                   |
-| `workerpoolprice`   | price to charge the requester for each execution of the app (in nano RLC)            |
-| `volume`            | number of authorized uses, each use decreases this number                            |
-| `tag`               | restrict usage to a specific runtime such as **Scone** or **Gramine** TEE frameworks |
-| `category`          | Order category, will define the deal `workClockTimeRef` and its deadlines            |
-| `trust`             | Trust level of the execution, impacts the number of replicates                       |
-| `apprestrict`       | restrict the workerpool usage to a specific app (1)                                  |
-| `datasetrestrict`   | restrict the workerpool usage to a specific dataset (1)                              |
-| `requesterrestrict` | restrict the workerpool usage to a specific requester (1)                            |
+| key                 | description                                                                                       |
+| ------------------- | ------------------------------------------------------------------------------------------------- |
+| `workerpool`        | workerpool address                                                                                |
+| `workerpoolprice`   | price to charge the requester for each execution of the app (in nano RLC)                         |
+| `volume`            | number of authorized uses, each use decreases this number                                         |
+| `tag`               | restrict usage to a specific runtime such as the **[TDX](/protocol/tee/intel-tdx)** TEE framework |
+| `category`          | Order category, will define the deal `workClockTimeRef` and its deadlines                         |
+| `trust`             | Trust level of the execution, impacts the number of replicates                                    |
+| `apprestrict`       | restrict the workerpool usage to a specific app (1)                                               |
+| `datasetrestrict`   | restrict the workerpool usage to a specific dataset (1)                                           |
+| `requesterrestrict` | restrict the workerpool usage to a specific requester (1)                                         |
 
 1. the restriction is disabled by default with
    0x0000000000000000000000000000000000000000.
 
 The supported tags for workerpool orders are:
 
-| Tag value                                                            | Description                                                                               |
-| -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `0x0000000000000000000000000000000000000000000000000000000000000000` | Order for the execution of a standard task                                                |
-| `0x0000000000000000000000000000000000000000000000000000000000000003` | Order for the execution of a TEE task with Scone framework                                |
-| `0x0000000000000000000000000000000000000000000000000000000000000005` | Order for the execution of a TEE task with Gramine framework (reserved value, do not use) |
+| Tag value                                                            | Description                                    |
+| -------------------------------------------------------------------- | ---------------------------------------------- |
+| `0x0000000000000000000000000000000000000000000000000000000000000000` | Order for the execution of a standard task     |
+| `0x0000000000000000000000000000000000000000000000000000000000000009` | Order for the execution of a TEE task with TDX |
 
 ::: warning
 
@@ -70,10 +69,8 @@ The supported tags for workerpool orders are:
    Such an order could produce undesirable and unpredictable behaviors. The
    [iExec SDK](/references/sdk) implements all required preflight checks to
    avoid erroneous orders publishing.
-2. Currently, TEE workflow do not support tasks replication on several workers.
+2. Currently, TEE workflow does not support task replication on several workers.
    TEE workerpool orders must be published with `trust` value equal to `1`.
-3. TEE tasks with Gramine TEE framework are not supported yet. Do not publish
-   orders with both `tee` and `gramine` tag bits enabled.
 
 :::
 

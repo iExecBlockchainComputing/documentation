@@ -24,9 +24,10 @@ developers build privacy-preserving apps.
 
 ### Step 2: Create a Deal
 
-**Requester** submits a computation request. The **PoCo smart contract**
-automatically matches and brings together all required resources: the iApp,
-protected data, and available workerpool.
+**Requester** submits a computation request. The
+**[PoCo](/protocol/proof-of-contribution) (Proof of Contribution) smart
+contract** automatically matches and brings together all required resources: the
+iApp, protected data, and available workerpool.
 
 → **Guides**:
 [Run iApp with ProtectedData](/guides/use-iapp/run-iapp-with-ProtectedData),
@@ -35,12 +36,15 @@ protected data, and available workerpool.
 ### Step 3: Execute in TEE
 
 **Workers** from the selected workerpool download the iApp and execute it inside
-**secure enclaves** (TEEs). Your data is processed confidentially - workers can
-run computations but never access raw data outside the TEE.
+**[TDX](/protocol/tee/intel-tdx) Trust Domains** — hardware-isolated
+[TEEs](/protocol/tee/introduction) (Trusted Execution Environments). Your data
+is processed confidentially: workers can run computations but never access raw
+data outside the Trust Domain.
 
 ### Step 4: Deliver Results & Pay
 
-Results are encrypted and delivered back to the requester. **RLC tokens** are
+Results are encrypted and delivered back to the requester.
+**[RLC](/get-started/overview/rlc) tokens** (the protocol's native currency) are
 automatically distributed to all participants (app provider, data provider,
 workerpool) based on their contribution.
 
@@ -56,11 +60,12 @@ these purposes."
 Your code, packaged to run on workers. Can be AI models, data processing
 scripts, any computation.
 
-### **Workers (Secure Enclaves)**
+### **Workers ([TDX](/protocol/tee/intel-tdx) Trust Domains)**
 
-Computers that process your data inside privacy-safe TEE environments. They can
-access your data to work with it, but the TEE ensures it stays confidential and
-tamper-proof.
+Computers that process your data inside hardware-isolated
+[TEE](/protocol/tee/introduction) environments (Trusted Execution Environments).
+They can access your data to work with it, but the TEE ensures it stays
+confidential and tamper-proof.
 
 ### **Deals**
 
@@ -76,7 +81,7 @@ protocol takes care of worker allocation and secure coordination.
 2. **Deploy**: AI company packages their model → becomes iApp
 3. **Execute**: Someone submits Task → "Train model on this data"
 4. **Result**: Model gets trained, researcher gets insights, raw data never
-   leaves enclave
+   leaves the Trust Domain
 
 **Web3 Email**
 
