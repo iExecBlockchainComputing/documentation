@@ -158,6 +158,10 @@ export function getSidebar() {
                 link: '/guides/build-iapp/advanced/quick-start',
               },
               {
+                text: 'Build Intel TDX app',
+                link: '/guides/build-iapp/advanced/build-your-first-tdx-iapp',
+              },
+              {
                 text: 'End-to-end Encryption',
                 link: '/guides/build-iapp/advanced/protect-the-result',
               },
@@ -168,11 +172,7 @@ export function getSidebar() {
               {
                 text: 'Access Confidential Assets',
                 link: '/guides/build-iapp/advanced/access-confidential-assets',
-              },
-              {
-                text: 'Build Intel TDX app',
-                link: '/guides/build-iapp/advanced/build-your-first-tdx-iapp',
-              },
+              },              
             ],
           },
         ],
