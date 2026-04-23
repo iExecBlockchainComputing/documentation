@@ -2,46 +2,257 @@
 title: Build Intel TDX iApp
 description:
   Learn how to build and run Confidential Computing applications with Intel TDX
-  technology using both traditional deployment and the iApp Generator
+  on iExec, from a Docker image to deployment and the marketplace
 ---
 
-# Build Intel TDX iApp
+# Build your first TDX iApp
 
 In this tutorial, you will learn how to build and run a Confidential Computing
-application with Intel TDX technology using both traditional deployment and the
-iApp Generator.
+app with **Intel TDX (Trust Domain Extensions)** on the iExec protocol.
 
-Before implementing TDX, make sure you understand the foundational concepts and
-differences between TEE technologies. Check out our
-**[Intel TDX Technology](/protocol/tee/intel-tdx)** guide for comprehensive
-explanations of TDX technology and its benefits.
+::: tip Prerequisites
 
-## Choose Your Approach
+- [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and
+  client.
+- [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
+- Familiarity with the basics of [Intel TDX](/protocol/tee/intel-tdx) and the
+  iExec workflow described in
+  [Deploy and run an iApp](/guides/build-iapp/deploy-&-run).
 
-This tutorial covers two methods for building TDX applications:
+:::
 
-1. **[Traditional Deployment](#build-your-application)** - Manual configuration
-   with `chain.json` and `iexec.json`
-2. **[iApp Generator](#using-iapp-generator)** - Simplified deployment using the
-   iApp Generator tool
+Unlike the legacy SGX/SCONE flow, **TDX does not require** a separate
+sconification step: you build a **standard** `linux/amd64` OCI image, push it to
+a registry, and configure the iExec app for the TDX framework (see
+**[Intel TDX Technology](/protocol/tee/intel-tdx)** for what TDX provides).
 
-## Build your application
+## Prepare your app
 
-Thanks to **Intel TDX**, neither the source code or the binaries of your
-application need to be changed in order to run securely in a TEE. Only two files
-need to be configured: `chain.json` and `iexec.json`.
+For this tutorial, create a new directory tree. Execute the following commands
+in `~/iexec-projects/`:
 
-iApp using Intel TDX technology follow the same format as non-TEE applications;
-follow the instructions on
-[Build and deploy your first iApp](/guides/build-iapp/deploy-&-run) to create
-and Dockerize your iApp.
+```bash
+cd ~/iexec-projects
+mkdir tee-hello-world-tdx && cd tee-hello-world-tdx
+iexec init --skip-wallet
+mkdir src
+touch Dockerfile
+```
 
-After this step, the Docker image of your iApp should be published on Docker Hub
-(e.g. `<docker-hub-user>/hello-world:1.0.0`).
+### Write the iApp logic
 
-### Update `chain.json`
+Develop your code logic as below. The following examples use JavaScript and
+Python for brevity; any workload that fits in a Docker image can be used on
+iExec.
 
-Modify your `chain.json` as follows to reference the TDX Workerpool:
+**Copy the following content** in `src/`.
+
+::: code-group
+
+```javascript [src/app.js]
+const fsPromises = require('fs').promises;
+
+(async () => {
+  try {
+    const iexecOut = process.env.IEXEC_OUT;
+    // Do whatever you want (let's write hello world here)
+    const message = process.argv.length > 2 ? process.argv[2] : 'World';
+
+    const text = `Hello, ${message}!`;
+    console.log(text);
+    // Append some results in /iexec_out/
+    await fsPromises.writeFile(`${iexecOut}/result.txt`, text);
+    // Declare everything is computed
+    const computedJsonObj = {
+      'deterministic-output-path': `${iexecOut}/result.txt`,
+    };
+    await fsPromises.writeFile(
+      `${iexecOut}/computed.json`,
+      JSON.stringify(computedJsonObj)
+    );
+  } catch (e) {
+    console.log(e);
+    process.exit(1);
+  }
+})();
+```
+
+```python [src/app.py]
+import os
+import sys
+import json
+
+iexec_out = os.environ['IEXEC_OUT']
+
+# Do whatever you want (let's write hello world here)
+text = 'Hello, {}!'.format(sys.argv[1] if len(sys.argv) > 1 else "World")
+print(text)
+
+# Append some results in /iexec_out/
+with open(iexec_out + '/result.txt', 'w+') as fout:
+    fout.write(text)
+
+# Declare everything is computed
+with open(iexec_out + '/computed.json', 'w+') as f:
+    json.dump({ "deterministic-output-path" : iexec_out + '/result.txt' }, f)
+```
+
+:::
+
+::: warning
+
+As a developer, make it a rule to never log sensitive information in your
+application. Execution logs are accessible by:
+
+- worker(s) involved in the task
+- the workerpool manager
+- the requester of the task
+
+:::
+
+### Dockerize your iApp
+
+**Copy the following content** in `Dockerfile`.
+
+::: code-group
+
+```bash [Dockerfile for JavaScript]
+FROM node:22-alpine3.21
+### install your dependencies if you have some
+RUN mkdir /app && cd /app
+COPY ./src /app
+ENTRYPOINT [ "node", "/app/app.js"]
+```
+
+```bash [Dockerfile for Python]
+FROM python:3.13.3-alpine3.21
+### install python dependencies if you have some
+COPY ./src /app
+ENTRYPOINT ["python3", "/app/app.py"]
+```
+
+:::
+
+Build the docker image.
+
+::: warning
+
+iExec expects your Docker container to be built for the `linux/amd64` platform.
+On a **Mac** with an **Apple Silicon** chip, the default platform is
+`linux/arm64`. Use buildx to produce the image for `linux/amd64`.
+
+```bash
+brew install buildkit
+# ARM64 variant for local testing only
+docker buildx build --platform linux/arm64 --tag <docker-hub-user>/hello-world .
+# AMD64 variant to deploy on iExec
+docker buildx build --platform linux/amd64 --tag <docker-hub-user>/hello-world:1.0.0 --load .
+```
+
+:::
+
+```bash
+docker build --tag <docker-hub-user>/hello-world:1.0.0 .
+```
+
+::: tip
+
+`docker build` produces an image id; using `--tag <name>:<version>` is a
+convenient way to name the image for the next steps.
+
+:::
+
+## Test your iApp locally
+
+### Basic test
+
+Create local volumes to simulate input and output directories.
+
+```bash
+mkdir -p ./tmp/iexec_in
+mkdir -p ./tmp/iexec_out
+```
+
+Run your application locally (container volumes bound with local volumes).
+
+```bash
+docker run --rm \
+    -v ./tmp/iexec_in:/iexec_in \
+    -v ./tmp/iexec_out:/iexec_out \
+    -e IEXEC_IN=/iexec_in \
+    -e IEXEC_OUT=/iexec_out \
+    <docker-hub-user>/hello-world:1.0.0 arg1 arg2 arg3
+```
+
+::: tip Docker run [options] image [args]
+
+**docker run usage:**
+
+`docker run [OPTIONS] IMAGE [COMMAND] [ARGS...]`
+
+Use `[COMMAND]` and `[ARGS...]` to simulate the requester arguments.
+
+**Useful options for iExec:**
+
+`-v` : Bind mount a volume. Use it to bind input and output directories
+(`/iexec_in` and `/iexec_out`)
+
+`-e`: Set environment variable. Use it to simulate iExec runtime variables
+
+:::
+
+### Test with input files
+
+Starting with the basic test, you can simulate input files.
+
+For each input file:
+
+- Copy it in the local volume bound to `/iexec_in`.
+- Add `-e IEXEC_INPUT_FILE_NAME_x=NAME` to docker run options (`x` is the index
+  of the file starting at 1 and `NAME` is the name of the file)
+
+Add `-e IEXEC_INPUT_FILES_NUMBER=n` to docker run options (`n` is the total
+number of input files).
+
+Example with two input files:
+
+```bash
+touch ./tmp/iexec_in/file1 && \
+touch ./tmp/iexec_in/file2 && \
+docker run \
+    -v ./tmp/iexec_in:/iexec_in \
+    -v ./tmp/iexec_out:/iexec_out \
+    -e IEXEC_IN=/iexec_in \
+    -e IEXEC_OUT=/iexec_out \
+    -e IEXEC_INPUT_FILE_NAME_1=file1 \
+    -e IEXEC_INPUT_FILE_NAME_2=file2 \
+    -e IEXEC_INPUT_FILES_NUMBER=2 \
+    <docker-hub-user>/hello-world:1.0.0 \
+    arg1 arg2 arg3
+```
+
+## Build and push your Docker image for TDX
+
+For **TDX**, you use the **same** image you built and tested: there is no
+enclave packaging step. Ensure the image is built for `linux/amd64`, then push
+it to Docker Hub (or another registry you reference in `iexec.json`).
+
+```bash
+docker login
+docker push <docker-hub-user>/hello-world:1.0.0
+```
+
+You are now ready to register and run this image as a TDX iApp on iExec.
+
+## Test your iApp on iExec
+
+At this stage, your app is ready to be tested on iExec. The process is similar
+to testing a non-TEE app, with TDX-specific settings below.
+
+### Update `chain.json` {#update-chain-json}
+
+Point the iExec client to the **TDX** Secret Management Service (SMS) for your
+target network. Edit `chain.json` as follows (or create it if missing):
 
 ::: code-group
 
@@ -69,29 +280,29 @@ Modify your `chain.json` as follows to reference the TDX Workerpool:
 
 :::
 
-### Update `iexec.json`
+### Deploy the TEE iApp on iExec
 
-TEE applications need a few more keys in the `iexec.json` file; run this to add
-them automatically:
+TEE apps require additional fields during deployment. Prepare the TEE app
+template and select the **TDX** framework:
 
 ```bash
 iexec app init --tee-framework tdx
 ```
 
-Your `iexec.json` should now look like this example:
+Edit `iexec.json` and fill in the standard keys and the TDX `mrenclave` object:
 
 ```json
 {
   ...
   "app": {
     "owner": "<your-wallet-address>", // starts with 0x
-    "name": "tee-tdx-hello-world", // application name
+    "name": "tee-tdx-hello-world", // app name
     "type": "DOCKER",
-    "multiaddr": "<docker-hub-user>/hello-world:1.0.0", // app image
-    "checksum": "<checksum>", // starts with 0x, update it with your own image digest
+    "multiaddr": "docker.io/<docker-hub-user>/hello-world:1.0.0", // app image
+    "checksum": "<checksum>", // starts with 0x, update with your image digest
     "mrenclave": {
-      "framework": "TDX", // TEE framework (keep default value)
-   }
+      "framework": "TDX" // TEE framework (keep default value)
+    }
   },
   ...
 }
@@ -99,98 +310,209 @@ Your `iexec.json` should now look like this example:
 
 ::: info
 
-See [Deploy your iApp on iExec](/guides/build-iapp/deploy-&-run.md) to retrieve
-your image `<checksum>`.
+See [Deploy your iApp on iExec](/guides/build-iapp/deploy-&-run.md) to obtain
+your image `<checksum>` (digest).
 
 :::
 
-### Deploy and run the TEE iApp
+Deploy the iApp:
 
-Deploy the iApp with the standard command:
-
-```bash
-iexec app deploy
+```bash twoslash
+iexec app deploy --chain {{chainName}}
 ```
 
-To execute the iApp in TDX, add `--tag tee,tdx` to the `iexec app run` and
-select the TDX workerpool for your target network.
+List your last deployed app:
+
+```bash twoslash
+iexec app show --chain {{chainName}}
+```
+
+## Run the iApp
+
+iExec runs applications on decentralized infrastructure; execution is paid in
+**RLC** on Arbitrum networks.
+
+::: info
+
+To run an application you must have enough RLC staked on your iExec account to
+pay for the computing resources.
+
+When you request an execution, the task cost is reserved from your account’s
+stake, then distributed to workers (see
+[Proof of Contribution](/protocol/proof-of-contribution)).
+
+At any time you can:
+
+- view your balance
+
+```bash twoslash
+iexec account show --chain {{chainName}}
+```
+
+- deposit RLC from your wallet to your iExec account
+
+```bash twoslash
+iexec account deposit --chain {{chainName}} <amount>
+```
+
+- withdraw RLC from your iExec account to your wallet (only stake can be
+  withdrawn)
+
+```bash twoslash
+iexec account withdraw --chain {{chainName}} <amount>
+```
+
+:::
+
+To run a **TDX** iApp, use the TEE **tee** and **tdx** tags and a **TDX
+workerpool** for the target network.
+
+```bash twoslash
+iexec app run --chain {{chainName}} --tag tee,tdx --workerpool {{workerpoolAddress}} --watch
+```
 
 ::: code-group
 
 ```bash [Arbitrum Sepolia (testnet)]
-iexec app run --tag tee,tdx --workerpool 0x2956f0cb779904795a5f30d3b3ea88b714c3123f --watch
+iexec app run --chain arbitrum-sepolia-testnet --tag tee,tdx --workerpool 0x2956f0cb779904795a5f30d3b3ea88b714c3123f --watch
 ```
 
 ```bash [Arbitrum Mainnet]
-iexec app run --tag tee,tdx --workerpool 0x8ef2ec3ef9535d4b4349bfec7d8b31a580e60244 --watch
+iexec app run --chain arbitrum-mainnet --tag tee,tdx --workerpool 0x8ef2ec3ef9535d4b4349bfec7d8b31a580e60244 --watch
 ```
 
 :::
 
+Task execution on iExec is asynchronous.
+
+```mermaid
+graph TD
+    Requester["Requester (or anyone)"] --> |"1 . Match compatible orders \n(request, application, dataset & workerpool orders) \n & Wait result" | Blockchain
+    Blockchain --> |2 . Notify new deal with tasks to compute| Scheduler
+    Worker --> |3 . Request new task to compute| Scheduler
+    Worker --> |4 . Run application| Application[Application image]
+    Worker --> |5.a. Push result| ResultStorage["Result Storage"]
+    Worker --> |5.b. Commit result proof| Blockchain
+    Workerpool --> |6 . Publish result link or callback| Blockchain
+
+    subgraph Workerpool
+        Scheduler
+        Worker
+        Application
+    end
+```
+
+Guarantees about completion times (fast/slow) are described in the
+[category section](/protocol/pay-per-task): maximum deal/task time, maximum
+computing time, etc.
+
+When the task completes, copy the `taskid` from the `iexec app run` output (a
+32-byte hex string).
+
+Download the result:
+
+```bash twoslash
+iexec task show --chain {{chainName}} <taskid> --download my-result
+```
+
+You can get the `taskid` for a `dealid` with:
+
+```bash twoslash
+iexec deal show --chain {{chainName}} <dealid>
+```
+
 ::: info
 
-Remember, you can access task and iApp logs by following the instructions on
-page [Debug your tasks](/guides/build-iapp/debugging).
+A task result is a zip file containing the application output files.
 
 :::
 
+For this hello-world app, the output includes `result.txt`. Unpack and read it:
+
+```bash
+unzip my-result.zip -d my-result
+cat my-result/result.txt
+```
+
+Congratulations! You have executed your application on iExec in a TDX Trust
+Domain.
+
+## Publish your app on the iExec Marketplace
+
+Your app is deployed and you have completed an execution. To let others run it,
+publish an **apporder** (see
+[iApp access and pricing](/guides/build-iapp/manage-access) for how orders
+work).
+
+```bash twoslash
+iexec app publish --chain {{chainName}}
+```
+
+::: info
+
+`iexec app publish` allows custom access rules (`iexec app publish --help`).
+
+:::
+
+Check published app orders:
+
+```bash twoslash
+iexec orderbook app --chain {{chainName}} <your app address>
+```
+
+## Next steps
+
+In this tutorial you used **Intel TDX** on iExec to run a confidential workload.
+To go further with confidential data and result protection:
+
+- [Access confidential assets from your iApp](/guides/build-iapp/advanced/access-confidential-assets)
+- [Protect the result](/guides/build-iapp/advanced/protect-the-result)
+
+Deeper TEE context:
+
+- [Intel TDX Technology](/protocol/tee/intel-tdx)
+- [Introduction to TEE technologies](/protocol/tee/introduction)
+
 ## Using iApp Generator
 
-The iApp Generator provides a simplified way to deploy and run TDX applications
-with minimal configuration.
+The [iApp Generator](/references/iapp-generator) can deploy and run **TDX** apps
+with less manual `iexec.json` editing.
 
 ### Enabling TDX in iApp Generator
 
-#### Environment Variable Method
-
-**Enable TDX for deployment and execution**:
+**Enable TDX for deployment and execution:**
 
 ```bash
-# Set the experimental flag
 export EXPERIMENTAL_TDX_APP=true
-
-# Deploy and run with TDX
 iapp deploy
 iapp run <app-address>
 ```
 
-:::warning Environment Variable Declaration
-
-The syntax for setting environment variables differs between operating systems:
+::: warning Environment variable declaration
 
 - **Mac/Linux**: `export EXPERIMENTAL_TDX_APP=true`
 - **Windows**: `set EXPERIMENTAL_TDX_APP=true`
 
 :::
 
-#### Per-Command Method
-
-**Enable TDX for specific commands**:
+**Per command:**
 
 ```bash
-# Deploy TDX-enabled iApp
 EXPERIMENTAL_TDX_APP=true iapp deploy
-
-# Run with TDX
 EXPERIMENTAL_TDX_APP=true iapp run <app-address>
-
-# Debug TDX execution
 EXPERIMENTAL_TDX_APP=true iapp debug <taskId>
 ```
 
-#### Verification
-
-**Check if TDX is enabled**:
+**Verify TEE tags on the app:**
 
 ```bash
-# Your deployed iApp should show TDX-related tags
 iexec app show <app-address>
 ```
 
-### DataProtector SDK Configuration
+### DataProtector SDK with TDX
 
-⚠️ **To use** the iExec DataProtector SDK with TDX support, you must configure
-the SDK with the right SMS endpoint.
+To use **DataProtector** with TDX, point the SDK at the TDX SMS (same hosts as
+in [Update `chain.json`](#update-chain-json) above).
 
 ::: code-group
 
@@ -212,8 +534,7 @@ const dataProtector = new IExecDataProtector(web3Provider, {
 
 :::
 
-⚠️**You need** to specify the TDX workerpool in your `processProtectedData`
-call.
+Pass the TDX **workerpool** in `processProtectedData`:
 
 ::: code-group
 
@@ -235,85 +556,41 @@ await dataProtector.core.processProtectedData({
 
 :::
 
-### Protected Data Compatibility
+TDX iApps may require **TDX-compatible** protected data. Check the latest
+[DataProtector](/references/dataProtector) documentation for requirements.
 
-:::warning Protected Data Requirements
-
-**TDX iApp may require TDX-compatible protected data.** Check compatibility
-before using protected data with TDX iApp.
-
-:::
-
-**Important**: The exact process for creating TDX-compatible protected data may
-differ from standard protected data creation. Consult the latest DataProtector
-documentation for TDX-specific requirements.
-
-### Development Workflow
-
-#### 1. **Local Testing**
+**Local test (same as non-TEE):**
 
 ```bash
-# Test locally (same as regular iApp)
 iapp test --protectedData "mock_name"
-
-# TDX only affects remote deployment/execution
 ```
 
-#### 2. **Deployment**
+## Current limitations (experimental TDX / iApp Generator)
 
-```bash
-# Deploy TDX iApp
-EXPERIMENTAL_TDX_APP=true iapp deploy
-```
+::: danger Production warnings
 
-#### 3. **Execution**
-
-```bash
-# Run with TDX
-EXPERIMENTAL_TDX_APP=true iapp run <app-address>
-```
-
-## Current Limitations
-
-:::danger Production Warnings
-
-- **🚫 NOT for production use**
-- **🚫 Limited worker availability**
-- **🚫 Unstable execution** environment
-- **🚫 Breaking changes** without notice
+- **Not** intended for production use without your own review
+- **Worker availability** and behavior may change
+- **Breaking changes** possible in experimental flags and endpoints
 
 :::
 
-## What's Next?
+### Related resources
 
-### **Continue with TDX Development**
+- [iApp Generator reference](/references/iapp-generator)
+- [Debugging your iApp](/guides/build-iapp/debugging)
+- [Inputs](/guides/build-iapp/inputs) / [Outputs](/guides/build-iapp/outputs)
+- [iApp access and pricing](/guides/build-iapp/manage-access)
 
-**Enhance your TDX application**:
+<script setup>
+import { computed } from 'vue';
+import useUserStore  from '@/stores/useUser.store';
+import {getChainById} from '@/utils/chain.utils';
 
-- **[Debugging Your iApp](/guides/build-iapp/debugging)** - Troubleshoot
-  execution issues and TDX-specific problems
-- **[Inputs](/guides/build-iapp/inputs)** - Handle data inputs
-- **[Outputs](/guides/build-iapp/outputs)** - Handle data outputs in TEE
-  environment with TDX
-- **[iApp Access Control and Pricing](/guides/build-iapp/manage-access)** -
-  Configure access control for your TDX applications
+const userStore = useUserStore();
+const selectedChain = computed(() => userStore.getCurrentChainId());
 
-### **Learn More About TEE Technologies**
-
-**Deepen your understanding**:
-
-- **[Intel TDX Technology](/protocol/tee/intel-tdx)** - Comprehensive guide to
-  TDX technology and benefits
-- **[Introduction to TEE Technologies](/protocol/tee/introduction)** -
-  Foundation concepts of TEE technologies
-
-### **Related Resources**
-
-**Explore the iExec ecosystem**:
-
-- **[iApp Generator Reference](/references/iapp-generator)** - Complete iApp
-  Generator documentation
-- **[DataProtector SDK](/references/dataProtector)** - Work with protected data
-  in TDX
-- **[Advanced iApp Building](/guides/build-iapp/advanced/quick-start)** -
-  Advanced development techniques
+const chainData = computed(() => getChainById(selectedChain.value));
+const chainName = computed(() => chainData.value?.chainName ?? 'arbitrum-sepolia-testnet');
+const workerpoolAddress = computed(() => chainData.value?.workerpoolAddress ?? '0x2956f0cb779904795a5f30d3b3ea88b714c3123f');
+</script>

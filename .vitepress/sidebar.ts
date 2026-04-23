@@ -425,10 +425,6 @@ export function getSidebar() {
                 text: 'Intel TDX Technology',
                 link: '/protocol/tee/intel-tdx',
               },
-              {
-                text: 'Why Intel TDX?',
-                link: '/protocol/tee/sgx-vs-tdx',
-              },
             ],
           },
           {
