@@ -300,9 +300,6 @@ Edit `iexec.json` and fill in the standard keys and the TDX `mrenclave` object:
     "type": "DOCKER",
     "multiaddr": "docker.io/<docker-hub-user>/hello-world:1.0.0", // app image
     "checksum": "<checksum>", // starts with 0x, update with your image digest
-    "mrenclave": {
-      "framework": "TDX" // TEE framework (keep default value)
-    }
   },
   ...
 }
