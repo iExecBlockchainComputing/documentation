@@ -14,7 +14,7 @@ app with **Intel TDX (Trust Domain Extensions)** on the iExec protocol.
 
 - [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and
   client.
-- [iExec SDK](https://www.npmjs.com/package/iexec) 8.0.0 or higher.
+- [iExec SDK](https://www.npmjs.com/package/iexec) 8.24.0 or higher.
 - Familiarity with the basics of [Intel TDX](/protocol/tee/intel-tdx) and the
   iExec workflow described in
   [Deploy and run an iApp](/guides/build-iapp/deploy-&-run).
