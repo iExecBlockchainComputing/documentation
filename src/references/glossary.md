@@ -251,12 +251,6 @@ Data feeds that connect the off-chain world to blockchain products. Oracles act
 as a link between data that exists in traditional web2 and blockchain smart
 contracts, and are used to query data in smart contracts.
 
-### Oracle Factory
-
-The iExec developer interface which allows users to create custom oracles. This
-interface permits users to create oracles for any type of data, without
-requiring coding experience, in a few minutes directly from their browser.
-
 ## P
 
 ### PoCo (Proof of Contribution)
