@@ -172,7 +172,7 @@ export function getSidebar() {
               {
                 text: 'Access Confidential Assets',
                 link: '/guides/build-iapp/advanced/access-confidential-assets',
-              },              
+              },
             ],
           },
         ],
