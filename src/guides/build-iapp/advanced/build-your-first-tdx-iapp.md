@@ -480,24 +480,16 @@ with less manual `iexec.json` editing.
 **Enable TDX for deployment and execution:**
 
 ```bash
-export EXPERIMENTAL_TDX_APP=true
 iapp deploy
 iapp run <app-address>
 ```
 
-::: warning Environment variable declaration
-
-- **Mac/Linux**: `export EXPERIMENTAL_TDX_APP=true`
-- **Windows**: `set EXPERIMENTAL_TDX_APP=true`
-
-:::
-
 **Per command:**
 
 ```bash
-EXPERIMENTAL_TDX_APP=true iapp deploy
-EXPERIMENTAL_TDX_APP=true iapp run <app-address>
-EXPERIMENTAL_TDX_APP=true iapp debug <taskId>
+iapp deploy
+iapp run <app-address>
+iapp debug <taskId>
 ```
 
 **Verify TEE tags on the app:**
