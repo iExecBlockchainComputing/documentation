@@ -554,16 +554,6 @@ TDX iApps may require **TDX-compatible** protected data. Check the latest
 iapp test --protectedData "mock_name"
 ```
 
-## Current limitations (experimental TDX / iApp Generator)
-
-::: danger Production warnings
-
-- **Not** intended for production use without your own review
-- **Worker availability** and behavior may change
-- **Breaking changes** possible in experimental flags and endpoints
-
-:::
-
 ### Related resources
 
 - [iApp Generator reference](/references/iapp-generator)
