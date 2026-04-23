@@ -16,13 +16,6 @@ differences between TEE technologies. Check out our
 **[Intel TDX Technology](/protocol/tee/intel-tdx)** guide for comprehensive
 explanations of TDX technology and its benefits.
 
-## Prerequisites
-
-- [Docker](https://docs.docker.com/install/) 17.05 or higher on the daemon and
-  client.
-- [iExec SDK 8.13.0-tdx](https://github.com/aimen-djari/iexec-sdk/tree/feature/tdx).
-  Contact us to have this special release.
-
 ## Choose Your Approach
 
 This tutorial covers two methods for building TDX applications:
