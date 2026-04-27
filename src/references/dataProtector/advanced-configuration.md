@@ -117,12 +117,9 @@ const dataProtector = new IExecDataProtector(web3Provider, {
 
 ::: info
 
-🧪 While protected data are processed in **TEE** by **intel SGX** technology by
-default, `@iexec/dataprotector` can be configured to create and process
-protected data in the experimental **intel TDX** environment.
-
-TDX mode is enabled by setting connecting the TDX SMS and using the TDX
-workerpool.
+`@iexec/dataprotector` uses Intel [TDX](/protocol/tee/intel-tdx) to process
+protected data. Connect to the TDX SMS and use the TDX workerpool to configure
+the SDK:
 
 ```ts twoslash [Browser]
 declare global {
@@ -141,8 +138,5 @@ const dataProtector = new IExecDataProtector(web3Provider, {
   },
 });
 ```
-
-⚠️ Keep in mind: TDX mode is experimental and can be subject to instabilities or
-discontinuity.
 
 :::

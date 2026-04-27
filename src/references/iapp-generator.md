@@ -15,7 +15,8 @@ confidential computing setup.
 ## What is iApp Generator?
 
 **iApp Generator** builds confidential applications. Your code runs in Intel
-SGX/TDX secure enclaves where data stays private during processing.
+[TDX](/protocol/tee/intel-tdx) Trust Domains where data stays private during
+processing.
 
 ### What iApp Generator Provides
 
@@ -53,8 +54,8 @@ Once you've built your first iApp, level up with these practical guides:
 
 Ready for production? Dive into specialized topics:
 
-- **[Build Intel TDX iApp (Experimental)](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
-  Next-gen TEE with traditional deployment and iApp Generator technology
+- **[Build Intel TDX iApp](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
+  TDX with traditional deployment and iApp Generator technology
 - **[Complete Guides Overview](/guides/build-iapp/build-&-test)** - All
   development guides in one place
 
@@ -62,8 +63,8 @@ Ready for production? Dive into specialized topics:
 
 ### Privacy without infrastructure overhead
 
-Your code runs in Intel SGX/TDX enclaves. Even the worker running your app can't
-see what's happening inside.
+Your code runs in Intel TDX Trust Domains. Even the worker running your app
+can't see what's happening inside.
 
 ### You build, iExec handles the TEE complexity
 

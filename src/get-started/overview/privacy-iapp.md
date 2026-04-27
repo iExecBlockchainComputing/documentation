@@ -47,7 +47,7 @@ Privacy iApp, they will.**
 <CardWithBorder>
 
 ✅ **True Privacy:** Users never expose their raw data. Your app processes it
-privately inside secure enclaves.
+privately inside hardware-isolated Trust Domains.
 
 ✅ **Trusted Execution:** iExec ensures your code runs inside a Trusted
 Execution Environment (TEE), guaranteeing only the specified Docker image
@@ -64,10 +64,12 @@ operating system during execution.
 
 ## How it Works
 
-Your code runs in a Trusted Execution Environment (TEE). This secure area exists
-inside specific processors (Intel Software Guard Extensions (SGX) or Trust
-Domain Extensions (TDX) chipsets). Everything stays private and protected there,
-even from the operating system.
+Your code runs in a Trusted Execution Environment (TEE) powered by **Intel Trust
+Domain Extensions ([TDX](/protocol/tee/intel-tdx))**. TDX is a hardware-based
+confidential computing technology built into Intel processors. It isolates
+entire virtual machines — called **Trust Domains** — from the host hypervisor,
+the cloud provider, and the operating system itself. Everything inside a Trust
+Domain stays private and protected, even from infrastructure administrators.
 
 Authorized users trigger an iApp that processes protected data inside this
 private environment. Your iApp uses the data but never exposes it, not even to
@@ -163,7 +165,7 @@ see what you can build!
 
 - **Docker**: Your application must be containerized
 - **Input/Output**: Define clear input and output schemas
-- **TEE Compatibility**: Ensure your code runs in secure enclaves
+- **TEE Compatibility**: Ensure your code runs inside a TDX Trust Domain
 - **Network Access**: Configure any external API calls or dependencies
 
 ## Next Steps

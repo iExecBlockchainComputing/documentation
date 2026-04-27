@@ -1,8 +1,8 @@
 ---
 title: Blockchain Explorers
 description:
-  Explore iExec smart contracts on verified blockchain explorers for both
-  Arbitrum mainnet and Bellecour network.
+  Explore iExec smart contracts on verified blockchain explorers for Arbitrum
+  mainnet and Arbitrum Sepolia testnet.
 ---
 
 # Blockchain Explorers
@@ -36,16 +36,6 @@ publicly auditable.
     demo-label="Visit Arbiscan"
   />
   
-  <UseCaseCard
-    title="⚡ Bellecour"
-    description="iExec's dedicated sidechain for optimized performance with native integration and enhanced protocol analytics."
-    :image-url="bellecourExplorerImage"
-    image-alt="Bellecour Explorer"
-    :features="['Verified Contracts', 'Transaction History', 'Token Tracking', 'Contract Interactions']"
-    demo-url="https://blockscout-bellecour.iex.ec/"
-    demo-icon="mdi:eye"
-    demo-label="Visit Blockscout"
-  />
 </div>
 
 ::: tip 💡 Dev Tip
@@ -60,5 +50,4 @@ import UseCaseCard from '@/components/UseCaseCard.vue';
 
 // Assets
 import arbitrumExplorerImage from '@/assets/tooling-&-explorers/blockchain-explorer/arbitrum-explorer.png';
-import bellecourExplorerImage from '@/assets/tooling-&-explorers/blockchain-explorer/bellecour-explorer.png';
 </script>

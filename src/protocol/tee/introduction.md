@@ -67,7 +67,7 @@ graph TB
 graph TB
     OS2[Operating System<br/>Cannot see inside TEE]
     App2[Regular Application Parts]
-    TEE[🔒 TEE Enclave<br/>Protected]
+    TEE[🔒 TDX Trust Domain<br/>Protected]
     Data2[Sensitive Code & Data<br/>Encrypted]
     OS2 --> App2
     App2 --> TEE
@@ -88,38 +88,27 @@ graph TB
 4. **Integrity Verification**: The system can prove it's running the correct
    code
 
-## TEE Technology Evolution
+## TEE Technology on iExec
 
-TEE technologies have evolved to address different use cases:
-
-### First Generation: Application-Level Protection (Intel SGX)
-
-- **Focus**: Protecting specific parts of applications
-- **Memory**: Limited secure memory
-- **Use Cases**: Lightweight applications
-- **iExec Support**: ✅ Production-ready
-
-### Second Generation: Virtual Machine-Level Protection (Intel TDX)
+iExec uses Intel TDX (Trust Domain Extensions) as its TEE technology. TDX
+provides VM-level protection — entire virtual machines run inside secure,
+isolated Trust Domains:
 
 - **Focus**: Protecting entire virtual machines
-- **Memory**: Large secure memory space
-- **Use Cases**: Complex applications, AI workloads
-- **iExec Support**: 🔬 Experimental
+- **Memory**: Large secure memory space (multi-GB+)
+- **Use Cases**: Complex applications, AI workloads, legacy system migration
+- **iExec Support**: ✅ Production-ready
 
 ## What's Next?
 
-**Learn about specific TEE technologies**:
+**Learn about TDX**:
 
-- **[Intel SGX Technology](/protocol/tee/intel-sgx)** - First-generation
-  application-level TEE
-- **[Intel TDX Technology](/protocol/tee/intel-tdx)** - Next-generation VM-level
-  TEE
-- **[SGX vs TDX Comparison](/protocol/tee/sgx-vs-tdx)** - Side-by-side
-  technology comparison
+- **[Intel TDX Technology](/protocol/tee/intel-tdx)** - Deep dive into TDX
+  technology and its benefits
 
 **Ready to build with TEE?** Check out the practical guides:
 
-- **[Build Intel TDX iApp (Experimental)](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
+- **[Build Intel TDX iApp](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
   Build TDX applications with traditional deployment and iApp Generator
 - **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Create your first TEE
   application

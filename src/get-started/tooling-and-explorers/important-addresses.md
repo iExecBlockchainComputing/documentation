@@ -8,8 +8,8 @@ description:
 # Important Addresses
 
 Quick reference guide to all important iExec protocol addresses. Find RLC token
-addresses, PoCo smart contracts, and application addresses for Ethereum,
-Arbitrum, and Bellecour networks.
+addresses, PoCo smart contracts, and application addresses for Ethereum and
+Arbitrum networks.
 
 ::: tip 💡 Quick Access
 
@@ -28,14 +28,6 @@ these addresses to interact with RLC tokens on each network.
 | **Ethereum Mainnet** | 1        | `0x607F4C5BB672230e8672085532f7e901544a7375` |
 | **Arbitrum Mainnet** | 42161    | `0xe649e6a1F2afc63ca268C2363691ceCAF75CF47C` |
 | **Arbitrum Sepolia** | 421614   | `0x9923eD3cbd90CD78b910c475f9A731A6e0b8C963` |
-| **Bellecour**        | 134      | `xRLC` (Native token)                        |
-
-::: info
-
-On **Bellecour**, RLC tokens are bridged from Ethereum and become **xRLC**
-(native token). No contract address is needed as it's the native currency.
-
-:::
 
 ## PoCo Smart Contracts
 
@@ -69,15 +61,6 @@ decentralized computing marketplace.
 | **DatasetRegistry**    | `0x07Cc4E1EA30dD02796795876509A3BfC5053128D` |
 | **WorkerpoolRegistry** | `0xe3c13bb4A5068601c6A08041Cb50887B07B5F398` |
 
-### Bellecour
-
-| Contract               | Address                                      |
-| ---------------------- | -------------------------------------------- |
-| **Diamond Proxy**      | `0x3eca1B216A7DF1C7689aEb259fFB83ADFB894E7f` |
-| **AppRegistry**        | `0xB1C52075b276f87b1834919167312221d50c9D16` |
-| **DatasetRegistry**    | `0x799DAa22654128d0C64d5b79eac9283008158730` |
-| **WorkerpoolRegistry** | `0xC76A18c78B7e530A165c5683CB1aB134E21938B4` |
-
 ## Data Protector Contracts
 
 Smart contracts for managing protected data and access control.
@@ -107,9 +90,8 @@ features.
 
 | Network              | Whitelist Address                            |
 | -------------------- | -------------------------------------------- |
-| **Arbitrum Mainnet** | `0xD5054a18565c4a9E5c1aa3cEB53258bd59d4c78C` |
-| **Arbitrum Sepolia** | `0x8d46d40840f1Aa2264F96184Ffadf04e5D573B9B` |
-| **Bellecour**        | `0x781482C39CcE25546583EaC4957Fb7Bf04C277D2` |
+| **Arbitrum Mainnet** | `0xfa9cceff9431ee0e2a3fe58911073f1357f24e31` |
+| **Arbitrum Sepolia** | `0x09d59e1b696d0cb69f46bf762412636e8652ab58` |
 
 ### Web3Telegram
 
@@ -117,9 +99,8 @@ Web3Telegram enables decentralized Telegram messaging with Web3 integration.
 
 | Network              | Whitelist Address                            |
 | -------------------- | -------------------------------------------- |
-| **Arbitrum Mainnet** | `0x53AFc09a647e7D5Fa9BDC784Eb3623385C45eF89` |
-| **Arbitrum Sepolia** | `0x7291ff96100DA6CF97933C225B86124ef95aEc9b` |
-| **Bellecour**        | `0x192C6f5AccE52c81Fcc2670f10611a3665AAA98F` |
+| **Arbitrum Mainnet** | `0xa7101cf61d4602d55a715be4f2b9e1bc71d22301` |
+| **Arbitrum Sepolia** | `0x7f67e78a4b0a98c50333b8b72851952c396601a1` |
 
 ## Workerpool Addresses
 
@@ -127,9 +108,8 @@ Default workerpool addresses for each network.
 
 | Network              | Workerpool Address                           |
 | -------------------- | -------------------------------------------- |
-| **Arbitrum Mainnet** | `0x2C06263943180Cc024dAFfeEe15612DB6e5fD248` |
-| **Arbitrum Sepolia** | `0xB967057a21dc6A66A29721d96b8Aa7454B7c383F` |
-| **Bellecour**        | `prod-v8-bellecour.main.pools.iexec.eth`     |
+| **Arbitrum Mainnet** | `0x8ef2ec3ef9535d4b4349bfec7d8b31a580e60244` |
+| **Arbitrum Sepolia** | `0x2956f0cb779904795a5f30d3b3ea88b714c3123f` |
 
 ::: tip
 

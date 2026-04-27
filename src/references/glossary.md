@@ -33,14 +33,6 @@ facility is legitimate and hasn't been tampered with before allowing access.
 
 ## B
 
-### Bellecour Sidechain
-
-iExec's product sidechain. It is linked to Ethereum Mainnet with a bridge
-allowing for the transfer of assets between networks. It allows iExec to be used
-without paying Ethereum gas fees.
-
-See [Sidechain](#sidechain) and [xRLC](#xrlc) for more information.
-
 ### Beneficiary
 
 An entity indicated by the requester that benefits from the result of a
@@ -97,22 +89,6 @@ marketplace and recorded in the PoCo smart contract.
 
 ## E
 
-### Enclave
-
-In confidential computing jargon, an "enclave" is the special memory zone
-protected by the CPU. For simplicity's sake, you can refer to private regions of
-memory defined by Intel® SGX application as "enclaves".
-
-**Key Points**:
-
-- **Protected Memory**: Secure area where sensitive code and data run
-- **Hardware Protection**: Protected by CPU security features
-- **Isolation**: Completely isolated from the rest of the system
-- **SGX Specific**: Term primarily used with Intel SGX technology
-
-**Analogy**: An enclave is like a secure room within a building that only
-authorized people can enter and where everything inside is protected.
-
 ### Explorer (iExec Explorer)
 
 Tracks and displays all transactions occurring on iExec’s platform. It provides
@@ -161,27 +137,11 @@ succeed so that the presale tokens gain in value.
 iExec's content aggregator where people can find content related to the project,
 including articles, demos, documentation, and tutorials.
 
-### Intel SGX (Software Guard Extensions)
-
-Intel's first-generation TEE technology that protects individual applications or
-parts of applications. SGX creates small, secure memory areas called "enclaves"
-where sensitive code and data can run safely.
-
-**Characteristics**:
-
-- **Scope**: App-level protection
-- **Memory**: Limited secure memory (like a small safe)
-- **Code Changes**: Requires significant modifications
-- **Best For**: Focused, lightweight applications
-
-**Analogy**: SGX is like installing a small, specialized safe inside your office
-for specific valuable items.
-
 ### Intel TDX (Trust Domain Extensions)
 
-Intel's next-generation TEE technology that protects entire virtual machines.
-TDX provides larger secure memory spaces and requires minimal code changes
-compared to SGX.
+Intel's TEE technology that protects entire virtual machines.
+[TDX](/protocol/tee/intel-tdx) provides large secure memory spaces and requires
+minimal code changes — applications run with a "lift and shift" approach.
 
 **Characteristics**:
 
@@ -223,12 +183,6 @@ This process to add NFTs to a blockchain allows creators to sell their photos,
 videos, and digital 3D objects.
 
 See [ERC-721](#erc-721) for more information.
-
-### MREnclave
-
-The MREnclave is a hash value that identifies every enclave. It is obtained from
-the content of memory pages and access rights. The MREnclave is available after
-the TEE application is built.
 
 ## N
 
@@ -275,14 +229,12 @@ payments are always fair and timely.
 
 ### Remote attestation
 
-As explained by
-[Intel](https://software.intel.com/en-us/sgx/attestation-services), the remote
-attestation is the process that happens before any exchange between a remote
-provider and an enclave. It allows the provider to verify that the expected
-software is running in an Intel® SGX-protected way, as well as getting other
+Remote attestation is the process that happens before any exchange between a
+remote provider and a Trust Domain. It allows the provider to verify that the
+expected software is running in a TEE-protected way, as well as getting other
 details about the application being attested. If the attestation is successful,
-a secure communication channel is established between the provider and the
-enclave, and secrets can safely land in the latter.
+a secure communication channel is established between the provider and the Trust
+Domain, and secrets can safely land in the latter.
 
 ### Requester
 
@@ -306,23 +258,6 @@ on ongoing projects and the future work. It is available here
 
 Organizes the work distribution for workers in a worker pool.
 
-### Scone Framework
-
-A high-level framework that simplifies the development of Intel SGX
-applications. Scone provides tools and libraries to make SGX development easier
-and more accessible.
-
-**Key Points**:
-
-- **SGX Simplification**: Makes SGX development easier and more accessible
-- **iExec Integration**: Used by iExec to simplify SGX application development
-- **High-Level Tools**: Provides libraries and tools for SGX development
-- **Production Ready**: Used in production iExec SGX applications
-
-**Analogy**: Scone is like having a toolkit that makes it easier to build secure
-applications, similar to how a construction toolkit makes building houses
-easier.
-
 ### SDK (Software Development Kit)
 
 A set of tools for interaction with smart contracts and the iExec's marketplace.
@@ -332,8 +267,7 @@ It is available as a CLI and JS library. Access SDK here:
 ### Sidechain
 
 A controlled blockchain deployed over a data center and linked to Ethereum
-Mainnet with a bridge permitting to transfer assets between the two. iExec's
-sidechain "Bellecour" is iExec's mainnet bridged to ethereum mainnet.
+Mainnet with a bridge permitting to transfer assets between the two.
 
 ### Smart Contracts
 
@@ -448,5 +382,4 @@ The bridge helps maintain the parity between the main chain and the external
 chain. For example, one xRLC on the sidechain has the same value as 1 RLC on the
 mainchain.
 
-See [Sidechain](#sidechain), [Bellecour Sidechain](#bellecour-sidechain) or
-[Minting](#minting) for more information.
+See [Sidechain](#sidechain) or [Minting](#minting) for more information.

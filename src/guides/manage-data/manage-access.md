@@ -11,7 +11,8 @@ applications?**
 
 DataProtector lets you encrypt data and control access through orders -
 specifying who can use it, how many times, and at what price. Protected data is
-only accessible in secure enclaves (TEEs) by authorized users and iApp.
+only accessible in [TDX](/protocol/tee/intel-tdx) Trust Domains (TEEs) by
+authorized users and iApp.
 
 ## Prerequisites
 
@@ -126,7 +127,7 @@ you created it). **You must own this data** to grant access.
 **Type:** `AddressOrENS`
 
 **What it is**: The iApp address that's allowed to process your data inside the
-secure enclave.
+TDX Trust Domain.
 
 **Why needed**: This ensures only specific, audited applications can access your
 data. No random code can touch it.

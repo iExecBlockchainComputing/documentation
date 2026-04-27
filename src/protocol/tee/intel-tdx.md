@@ -7,11 +7,10 @@ description:
 
 # Intel TDX Technology
 
-**Intel TDX (Trust Domain Extensions)** is Intel's next-generation confidential
-computing technology, representing the evolution from application-level to
-virtual machine-level protection. On the iExec platform, TDX is an
-**experimental technology** that offers advanced capabilities for
-memory-intensive workloads and legacy application migration.
+**Intel TDX (Trust Domain Extensions)** is Intel's confidential computing
+technology that provides VM-level protection. On the iExec platform, TDX is the
+**standard technology** for confidential computing, offering advanced
+capabilities for memory-intensive workloads and legacy application migration.
 
 ## What is Intel TDX?
 
@@ -64,32 +63,32 @@ graph TB
 
 ### How TDX works
 
-1. **Trust Domain Creation**: TDX creates secure virtual machines called "trust
-   domains"
+1. **Trust Domain Creation**: TDX creates secure virtual machines called "Trust
+   Domains"
 2. **VM-Level Isolation**: Entire virtual machines run in isolated, secure
    environments
-3. **Large Memory Support**: Significantly larger secure memory space compared
-   to SGX
+3. **Large Memory Support**: Multi-GB+ secure memory space for demanding
+   workloads
 4. **Legacy Compatibility**: Existing applications can run with minimal
    modifications
 
 ### TDX Advantages
 
-- **Larger Memory**: Multi-GB+ secure memory space vs limited SGX memory
+- **Large Memory**: Multi-GB+ secure memory space for memory-intensive workloads
 - **Easier Migration**: "Lift and shift" approach for existing applications
 - **Better Performance**: Optimized for complex, memory-intensive workloads
 - **VM-Level Security**: Protects entire virtual machines, not just applications
 
 ## TDX with iExec
 
-iExec is actively exploring TDX technology to expand the platform's capabilities
-and prepare for the future of confidential computing.
+iExec uses TDX as the standard technology for confidential computing on the
+platform.
 
 ### iExec's TDX Infrastructure
 
-iExec provides experimental TDX support through:
+iExec provides full TDX support through:
 
-- **🔬 Experimental Worker Pools**: Limited TDX-enabled workers for testing
+- **⚙️ TDX Worker Pools**: TDX-enabled workers for confidential execution
 - **📦 TDX Technology Support**: Integration with Intel TDX technology
 - **🔐 Secret Management Service**: SMS support for TDX applications
 - **📋 Task Verification**: Proof of contribution for TDX executions
@@ -128,21 +127,10 @@ graph TD
 
 ## What's Next?
 
-**Learn about the foundation**:
+**Ready to build with TDX?** Check out the practical guides:
 
-- **[Intel SGX Technology](/protocol/tee/intel-sgx)** - First-generation
-  application-level TEE technology
-- **[SGX vs TDX Comparison](/protocol/tee/sgx-vs-tdx)** - Detailed comparison of
-  both technologies
-
-**Ready to experiment with TDX?** Check out the practical guides:
-
-- **[Build Intel TDX iApp (Experimental)](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
+- **[Build Intel TDX iApp](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
   Build TDX applications with traditional deployment and iApp Generator
-- **[Build Your First TDX iApp](/guides/build-iapp/advanced/build-your-first-tdx-iapp)** -
-  Build TDX applications
-
-**For production applications, use SGX**:
-
-- **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Create production-ready
-  SGX applications
+- **[Deploy & Run](/guides/build-iapp/deploy-&-run)** - Deploy and run your iApp
+- **[Introduction to TEE Technologies](/protocol/tee/introduction)** -
+  Understanding TEE foundations

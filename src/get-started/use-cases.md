@@ -50,7 +50,7 @@ AI framework, you can:
 
 <UseCaseCard
     title="AI Agent"
-    description="Execute ElizaOS AI agents with full confidentiality in iExec TDX Trusted Execution Environments (TEEs)"
+    description="Execute ElizaOS AI agents with full confidentiality in iExec [TDX](/protocol/tee/intel-tdx) Trusted Execution Environments (TEEs)"
     :imageUrl="elizaosImage"
     imageAlt="AI Applications Demo Screenshot"
     :features="['AI Agents', 'TDX TEE', 'Confidential Computing']"

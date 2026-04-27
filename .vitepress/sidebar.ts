@@ -158,8 +158,8 @@ export function getSidebar() {
                 link: '/guides/build-iapp/advanced/quick-start',
               },
               {
-                text: 'Build your first SGX app',
-                link: '/guides/build-iapp/advanced/build-your-first-sgx-iapp',
+                text: 'Build Intel TDX app',
+                link: '/guides/build-iapp/advanced/build-your-first-tdx-iapp',
               },
               {
                 text: 'End-to-end Encryption',
@@ -172,10 +172,6 @@ export function getSidebar() {
               {
                 text: 'Access Confidential Assets',
                 link: '/guides/build-iapp/advanced/access-confidential-assets',
-              },
-              {
-                text: 'Build Intel TDX app',
-                link: '/guides/build-iapp/advanced/build-your-first-tdx-iapp',
               },
             ],
           },
@@ -426,16 +422,8 @@ export function getSidebar() {
                 link: '/protocol/tee/introduction',
               },
               {
-                text: 'Intel SGX Technology',
-                link: '/protocol/tee/intel-sgx',
-              },
-              {
                 text: 'Intel TDX Technology',
                 link: '/protocol/tee/intel-tdx',
-              },
-              {
-                text: 'SGX vs TDX Comparison',
-                link: '/protocol/tee/sgx-vs-tdx',
               },
             ],
           },

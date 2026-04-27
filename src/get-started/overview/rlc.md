@@ -119,7 +119,6 @@ You can acquire RLC tokens through several methods:
   <FeatureCard
     title="Cross-Chain Bridging"
     :features="[
-      { text: 'Bellecour Bridge', link: 'https://bridge-bellecour.iex.ec/' },
       { text: 'Stargate Bridge (Arbitrum)', link: 'https://stargate.finance/bridge' }
     ]"
   />

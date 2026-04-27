@@ -307,14 +307,10 @@ confidential computations on the iExec platform.
 
 :::
 
-::: info TDX <ChainNotSupportedBadge/>
+::: info TDX
 
-🧪 While protected data are processed in **TEE** by **intel SGX** technology by
-default, `@iexec/dataprotector` can be configured to create and process
-protected data in the experimental **intel TDX** environment.
-
-TDX mode is enabled by setting connecting the **TDX SMS** and using the **TDX
-workerpool**.
+`@iexec/dataprotector` uses Intel [TDX](/protocol/tee/intel-tdx) to process
+protected data. Connect to the **TDX SMS** and use the **TDX workerpool**:
 
 ```ts twoslash [Browser]
 declare global {
@@ -337,12 +333,9 @@ const processProtectedDataResponse =
   await dataProtectorCore.processProtectedData({
     protectedData: '0x123abc...',
     app: '0x456def...',
-    workerpool: 'tdx-labs.pools.iexec.eth', // [!code focus]
+    workerpool: '0x2956f0cb779904795a5f30d3b3ea88b714c3123f', // [!code focus]
   });
 ```
-
-⚠️ Keep in mind: TDX mode is experimental and can be subject to instabilities or
-discontinuity.
 
 :::
 

@@ -111,21 +111,6 @@ const dataProtectorCore = dataProtector.core;
 To add optional parameters, see
 [advanced configuration](/references/dataProtector/advanced-configuration).
 
-::: info
-
-🧪 While protected data are processed in **TEE** by **intel SGX** technology by
-default, `@iexec/dataprotector` can be configured to create and process
-protected data in the experimental **intel TDX** environment.
-
-For more details see:
-
-- [process TDX protected data](/references/dataProtector/methods/processProtectedData#workerpool)
-
-⚠️ Keep in mind: TDX mode is experimental and can be subject to instabilities or
-discontinuity.
-
-:::
-
 ## Sandbox
 
 <CardGrid>

@@ -123,16 +123,14 @@ algorithms and data processing here.
 
 ### `iapp init`
 
-**Purpose**: Initialize a new iApp project  
-**Usage**: `iapp init`  
-**What it does**: Creates project structure, configuration files, and basic
-templates through interactive prompts.
+**Purpose**: Initialize a new iApp project **Usage**: `iapp init` **What it
+does**: Creates project structure, configuration files, and basic templates
+through interactive prompts.
 
 ### `iapp test`
 
-**Purpose**: Test your iApp locally before deployment  
-**Usage**: `iapp test [options]`  
-**Options**:
+**Purpose**: Test your iApp locally before deployment **Usage**:
+`iapp test [options]` **Options**:
 
 - `-v, --version` [boolean] – Show version number
 - `--args <string>` – Arguments accessible inside the iApp (use quotes to group)
@@ -145,18 +143,16 @@ templates through interactive prompts.
 
 ### `iapp deploy`
 
-**Purpose**: Deploy your iApp to the iExec network  
-**Usage**: `iapp deploy [options]`  
-**Options**:
+**Purpose**: Deploy your iApp to the iExec network **Usage**:
+`iapp deploy [options]` **Options**:
 
 - `--chain <string>` – Specify the blockchain network for deployment (e.g.,
-  `arbitrum-mainnet`, `arbitrum-sepolia-testnet`, `bellecour`)
+  `arbitrum-mainnet`, `arbitrum-sepolia-testnet`)
 
 ### `iapp run <iAppAddress>`
 
-**Purpose**: Execute your deployed iApp on a worker node  
-**Usage**: `iapp run <iAppAddress> [options]`  
-**Positional arguments**:
+**Purpose**: Execute your deployed iApp on a worker node **Usage**:
+`iapp run <iAppAddress> [options]` **Positional arguments**:
 
 - `<iAppAddress>` – Address of the deployed iApp to run
 
@@ -170,64 +166,34 @@ templates through interactive prompts.
 - `--requesterSecret <array>` – Key-value requester secrets (`index=value`)
   available inside the iApp at `$IEXEC_REQUESTER_SECRET_*`
 - `--chain <string>` – Specify the blockchain network to run the iApp on (e.g.,
-  `arbitrum-mainnet`, `arbitrum-sepolia-testnet`, `bellecour`)
+  `arbitrum-mainnet`, `arbitrum-sepolia-testnet`)
 
 ### `iapp debug <taskId>`
 
-**Purpose**: Retrieve detailed execution logs from worker nodes  
-**Usage**: `iapp debug <taskId> [options]`  
-**Positional arguments**:
+**Purpose**: Retrieve detailed execution logs from worker nodes **Usage**:
+`iapp debug <taskId> [options]` **Positional arguments**:
 
 - `<taskId>` – The ID of the task to debug
 
 **Options**:
 
 - `--chain <string>` – Specify the blockchain network of the task (e.g.,
-  `arbitrum-mainnet`, `arbitrum-sepolia-testnet`, `bellecour`)
+  `arbitrum-mainnet`, `arbitrum-sepolia-testnet`)
 
 ### `iapp mock <inputType>`
 
-**Purpose**: Create a mocked input for testing  
-**Usage**: `iapp mock <inputType> [options]`  
-**Positional arguments**:
+**Purpose**: Create a mocked input for testing **Usage**:
+`iapp mock <inputType> [options]` **Positional arguments**:
 
 - `<inputType>` – Type of input to mock [choices: "protectedData"]
 
 ### `iapp wallet <action>`
 
-**Purpose**: Manage wallet-related operations  
-**Usage**: `iapp wallet <action> [options]`  
-**Positional arguments**:
+**Purpose**: Manage wallet-related operations **Usage**:
+`iapp wallet <action> [options]` **Positional arguments**:
 
 - `<action>` – Import a new wallet or select one from the keystore [choices:
   "import", "select"]
-
-## Advanced Options <ChainNotSupportedBadge />
-
-### `EXPERIMENTAL_TDX_APP=true`
-
-**Purpose**: Enable experimental Intel TDX support  
-**Usage**: Set as environment variable before running commands  
-**Example**: `EXPERIMENTAL_TDX_APP=true iapp test`
-
-**Available with**:
-
-- `iapp test`
-- `iapp deploy`
-- `iapp run <app-address>`
-
-::: info TDX <ChainNotSupportedBadge />
-
-🧪 While **TEE** iApp are based on **intel SGX** technology by default, iApp has
-an experimental support for **intel TDX** applications.
-
-TDX mode is enabled by setting the environment variable
-`EXPERIMENTAL_TDX_APP=true`.
-
-⚠️ Keep in mind: TDX mode is experimental and can be subject to instabilities or
-discontinuity.
-
-:::
 
 ## Next Steps
 
@@ -238,5 +204,4 @@ Once your application is **stable** and **functional**, you can learn how to
 
 <script setup>
 import CLIDemo from '@/components/CLIDemo.vue';
-import ChainNotSupportedBadge from '@/components/ChainNotSupportedBadge.vue'
 </script>
