@@ -131,9 +131,9 @@ const requestorderToSign = await iexec.order.createRequestorder({
 const requestOrder = await iexec.order.signRequestorder(requestorderToSign);
 
 // Fetch app orders
-const appOrders = await iexec.orderbook.fetchAppOrderbook(
-  '0x456def...' // Filter by specific app
-);
+const appOrders = await iexec.orderbook.fetchAppOrderbook({
+  app: '0x456def...', // Filter by specific app
+});
 if (appOrders.orders.length === 0) {
   throw new Error('No app orders found for the specified app');
 }
