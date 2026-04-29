@@ -11,7 +11,7 @@
     "format": "prettier --ignore-path .gitignore --write ."
   },
   "dependencies": {
-    "@iexec/dataprotector": "^2.0.0-beta.23",
+    "@iexec/dataprotector": "^2.0.0-beta.27",
     "@iexec/dataprotector-deserializer": "^0.1.1",
     "@iexec/web3mail": "^1.7.1",
     "@iexec/web3telegram": "^0.1.0-alpha.9",
