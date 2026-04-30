@@ -55,7 +55,7 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
 ```ts twoslash [NodeJS]
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 
 // Fetch contacts with bulk access
@@ -184,14 +184,14 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
 });
 ```
 
-### workerpoolAddressOrEns <OptionalBadge />
+### workerpoolAddress <OptionalBadge />
 
-**Type:** `AddressOrENS | undefined`
+**Type:** `Address | undefined`
 
 **Default:** Default workerpool from chain configuration
 
-The workerpool address or ENS name that will execute the bulk campaign tasks.
-You can specify this during preparation or when sending the campaign.
+The address of the workerpool that will execute the bulk campaign tasks. You can
+specify this during preparation or when sending the campaign.
 
 ```ts twoslash
 import { IExecWeb3mail, type GrantedAccess } from '@iexec/web3mail';
@@ -203,7 +203,7 @@ const emailCampaign = await web3mail.prepareEmailCampaign({
   grantedAccesses: grantedAccessArray,
   emailSubject: 'My email subject',
   emailContent: 'My email content',
-  workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
+  workerpoolAddress: '0xa5de76...', // [!code focus]
 });
 ```
 

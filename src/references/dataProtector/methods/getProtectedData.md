@@ -45,7 +45,7 @@ import { type GetProtectedDataParams } from '@iexec/dataprotector';
 
 ### protectedDataAddress <OptionalBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
 Returns the protected data associated with this address.  
 Returns an empty array if the protected data is not found.
@@ -104,7 +104,7 @@ Available types are listed
 
 ### owner <OptionalBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
 Provides a list of protected data objects owned by the user with this ETH
 address.

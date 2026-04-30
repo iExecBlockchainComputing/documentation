@@ -58,7 +58,7 @@ const telegramCampaign = await web3telegram.prepareTelegramCampaign({
 const { tasks }: SendTelegramCampaignResponse =
   await web3telegram.sendTelegramCampaign({
     campaignRequest: telegramCampaign.campaignRequest,
-    workerpoolAddressOrEns: '0xa5de76...',
+    workerpoolAddress: '0xa5de76...',
   });
 ```
 
@@ -66,7 +66,7 @@ const { tasks }: SendTelegramCampaignResponse =
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 import { type SendTelegramCampaignResponse } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 
 // Step 1: Fetch contacts and prepare the campaign
@@ -83,7 +83,7 @@ const telegramCampaign = await web3telegram.prepareTelegramCampaign({
 const result: SendTelegramCampaignResponse =
   await web3telegram.sendTelegramCampaign({
     campaignRequest: telegramCampaign.campaignRequest,
-    workerpoolAddressOrEns: '0xa5de76...',
+    workerpoolAddress: '0xa5de76...',
   });
 ```
 
@@ -117,13 +117,13 @@ const { tasks } = await web3telegram.sendTelegramCampaign({
 });
 ```
 
-### workerpoolAddressOrEns <OptionalBadge />
+### workerpoolAddress <OptionalBadge />
 
 **Type:** `string | undefined`
 
 **Default:** Default workerpool from chain configuration
 
-The workerpool address or ENS name that will execute the bulk campaign tasks.
+The address of the workerpool that will execute the bulk campaign tasks.
 
 ```ts twoslash
 import {
@@ -136,7 +136,7 @@ const telegramCampaign = {} as PrepareTelegramCampaignResponse;
 // @errors: 2304 7034 7005
 const { tasks } = await web3telegram.sendTelegramCampaign({
   campaignRequest: telegramCampaign.campaignRequest,
-  workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
+  workerpoolAddress: '0xa5de76...', // [!code focus]
 });
 ```
 

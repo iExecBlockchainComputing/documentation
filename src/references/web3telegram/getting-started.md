@@ -70,7 +70,7 @@ const web3telegram = new IExecWeb3telegram(web3Provider);
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
 // get web3 provider from a private key
-const web3Provider = getWeb3Provider('YOUR_PRIVATE_KEY');
+const web3Provider = getWeb3Provider('YOUR_PRIVATE_KEY', 'RPC_URL');
 // instantiate
 const web3telegram = new IExecWeb3telegram(web3Provider);
 ```

@@ -40,7 +40,7 @@ the documentation under
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 // ---cut---
 const sendEmail = await web3mail.sendEmail({
@@ -65,7 +65,7 @@ The address of the `protectedData` holding the contact's email address.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 // ---cut---
 const sendEmail = await web3mail.sendEmail({
@@ -86,7 +86,7 @@ characters. Any characters beyond that limited are truncated.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 // ---cut---
 const sendEmail = await web3mail.sendEmail({
@@ -110,7 +110,7 @@ size. Email content will be encrypted and stored in IPFS.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 // ---cut---
 const sendEmail = await web3mail.sendEmail({
@@ -131,7 +131,7 @@ to `text/html` to enable rich HTML content in your email.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 // ---cut---
 const sendEmail = await web3mail.sendEmail({
@@ -158,7 +158,7 @@ the Web3Mail tool sets this to a value of `Web3Mail`.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 // ---cut---
 const sendEmail = await web3mail.sendEmail({
@@ -179,7 +179,7 @@ Allows adding a custom public label. The Web3Mail tool writes this onchain as
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 // ---cut---
 const sendEmail = await web3mail.sendEmail({
@@ -190,9 +190,9 @@ const sendEmail = await web3mail.sendEmail({
 });
 ```
 
-### workerpoolAddressOrEns <OptionalBadge />
+### workerpoolAddress <OptionalBadge />
 
-**Type:** `workerpoolAddressOrEns`  
+**Type:** `workerpoolAddress`  
 **Default:** `{{workerpoolAddress}}` (iExec's workerpool)
 
 Allows specifying the workerpool that will run the Web3Mail application.
@@ -200,14 +200,14 @@ Allows specifying the workerpool that will run the Web3Mail application.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 // ---cut---
 const sendEmail = await web3mail.sendEmail({
   protectedData: '0x123abc...',
   emailSubject: 'My email subject',
   emailContent: 'My email content',
-  workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
+  workerpoolAddress: '0xa5de76...', // [!code focus]
 });
 ```
 
@@ -223,7 +223,7 @@ receives this as a payment for sharing their data.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 // ---cut---
 const sendEmail = await web3mail.sendEmail({
@@ -245,7 +245,7 @@ Web3Mail app provider (iExec) for using the Web3Mail application.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 // ---cut---
 const sendEmail = await web3mail.sendEmail({
@@ -267,7 +267,7 @@ using their infrastructure to run the web3mail app in nRLC.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 // ---cut---
 const sendEmail = await web3mail.sendEmail({

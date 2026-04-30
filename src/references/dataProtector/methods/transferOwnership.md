@@ -41,7 +41,7 @@ import { type TransferParams } from '@iexec/dataprotector';
 
 ### protectedData <RequiredBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
 ETH address of the `protectedData` owned by you which is to be transferred to a
 new owner.
@@ -60,7 +60,7 @@ const transferResponse = await dataProtectorCore.transferOwnership({
 
 ### newOwner <RequiredBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
 ETH address for the new owner for the `protectedData`.
 
@@ -93,7 +93,7 @@ The ETH address of the `protectedData` you transferred.
 
 ### to
 
-`AddressOrENS`
+`Address`
 
 The ETH address of the new owner of the `protectedData`.
 

@@ -17,7 +17,7 @@ address for the `protectedData` containing their email address.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 // ---cut---
 const contactsList = await web3mail.fetchUserContacts({
@@ -40,7 +40,7 @@ The user for which you wish to obtain the list of contacts.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 // ---cut---
 const contactsList = await web3mail.fetchUserContacts({
@@ -65,7 +65,7 @@ wallet) or to any user (`0x0000000000000000000000000000000000000000`).
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 // ---cut---
 const contactsList = await web3mail.fetchUserContacts({
@@ -97,7 +97,7 @@ the Data Protector SDK.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 // ---cut---
 // Fetch contacts with bulk access for a specific user

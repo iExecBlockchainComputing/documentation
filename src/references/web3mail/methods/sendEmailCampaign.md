@@ -59,7 +59,7 @@ const emailCampaign: PrepareEmailCampaignResponse =
 // Step 2: Send the campaign
 const { tasks }: SendEmailCampaignResponse = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
-  workerpoolAddressOrEns: '0xa5de76...',
+  workerpoolAddress: '0xa5de76...',
 });
 ```
 
@@ -68,7 +68,7 @@ import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 import { type PrepareEmailCampaignResponse } from '@iexec/web3mail';
 import { type SendEmailCampaignResponse } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 
 // Step 1: Fetch contacts and prepare the campaign
@@ -85,7 +85,7 @@ const emailCampaign: PrepareEmailCampaignResponse =
 // Step 2: Send the campaign
 const { tasks }: SendEmailCampaignResponse = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
-  workerpoolAddressOrEns: '0xa5de76...',
+  workerpoolAddress: '0xa5de76...',
 });
 ```
 
@@ -119,13 +119,13 @@ const { tasks } = await web3mail.sendEmailCampaign({
 });
 ```
 
-### workerpoolAddressOrEns <OptionalBadge />
+### workerpoolAddress <OptionalBadge />
 
-**Type:** `AddressOrENS | undefined`
+**Type:** `Address | undefined`
 
 **Default:** Default workerpool from chain configuration
 
-The workerpool address or ENS name that will execute the bulk campaign tasks.
+The address of the workerpool that will execute the bulk campaign tasks.
 
 ```ts twoslash
 import {
@@ -138,7 +138,7 @@ const emailCampaign = {} as PrepareEmailCampaignResponse;
 // @errors: 2304 7034 7005
 const { tasks } = await web3mail.sendEmailCampaign({
   campaignRequest: emailCampaign.campaignRequest,
-  workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
+  workerpoolAddress: '0xa5de76...', // [!code focus]
 });
 ```
 

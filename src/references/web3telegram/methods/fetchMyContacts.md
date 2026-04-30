@@ -17,7 +17,7 @@ contains the contact's ETH address as well as the ETH address for the
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 const contactsList = await web3telegram.fetchMyContacts();
@@ -46,7 +46,7 @@ user (a wallet) or to any user (`0x0000000000000000000000000000000000000000`).
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 const contactsList = await web3telegram.fetchMyContacts({
@@ -71,7 +71,7 @@ for bulk campaigns.
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 const contactsList = await web3telegram.fetchMyContacts({

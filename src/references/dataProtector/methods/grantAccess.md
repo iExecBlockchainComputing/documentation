@@ -43,7 +43,7 @@ import { type GrantAccessParams } from '@iexec/dataprotector';
 
 ### protectedData <RequiredBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
 The ethereum address of the protected data supplied by the user (returned when
 you created it). **You must own this data** to grant access.
@@ -63,7 +63,7 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 
 ### authorizedApp <RequiredBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
 The address of the application you wish to authorize to process the
 `protectedData` within a secure execution environment. You may specify either a
@@ -104,7 +104,7 @@ access once. The ETH address for this whitelist is **{{web3MailAppWhitelist}}**.
 
 ### authorizedUser <RequiredBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
 The address of the user you wish to authorize to use the `protectedData`. Note
 that these users may not view or manipulate the data. This only grants

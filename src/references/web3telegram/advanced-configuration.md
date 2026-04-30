@@ -18,21 +18,19 @@ of `@iexec/web3telegram`.
 import { type Web3TelegramConfigOptions } from '@iexec/web3telegram';
 ```
 
-### dappAddressOrENS
+### dappAddress
 
-The Ethereum contract address or ENS (Ethereum Name Service) for the
-web3telegram iApp.
+The Ethereum contract address for the web3telegram iApp.
 
-If not provided, the default ENS web3telegram iApp provided by iExec will be
-used.
+If not provided, the default web3telegram iApp provided by iExec will be used.
 
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 // ---cut---
 const web3telegram = new IExecWeb3telegram(web3Provider, {
-  dappAddressOrENS: '0x456def...', // [!code focus]
+  dappAddress: '0x456def...', // [!code focus]
 });
 ```
 
@@ -48,7 +46,7 @@ will be used.
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 // ---cut---
 const web3telegram = new IExecWeb3telegram(web3Provider, {
   dappWhitelistAddress: '0x456def...', // [!code focus]
@@ -65,7 +63,7 @@ used.
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 // ---cut---
 const web3telegram = new IExecWeb3telegram(web3Provider, {
   dataProtectorSubgraph: 'subgraph-url', // [!code focus]
@@ -82,7 +80,7 @@ If not provided, the default IPFS node provided by iExec will be used.
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 // ---cut---
 const web3telegram = new IExecWeb3telegram(web3Provider, {
   ipfsNode: 'ipfs-node-url', // [!code focus]
@@ -100,7 +98,7 @@ If not provided, the default IPFS gateway provided by iExec will be used.
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 // ---cut---
 const web3telegram = new IExecWeb3telegram(web3Provider, {
   ipfsGateway: 'ipfs-gateway-url', // [!code focus]
