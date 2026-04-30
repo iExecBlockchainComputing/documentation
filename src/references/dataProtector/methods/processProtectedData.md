@@ -46,10 +46,9 @@ import { type ProcessProtectedDataParams } from '@iexec/dataprotector';
 
 ### protectedData <RequiredBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
-The ETH address or Ethereum Name Service (ENS) reference for the protected data
-you wish the `app` to process.
+The ETH address for the protected data you wish the `app` to process.
 
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
@@ -66,10 +65,9 @@ const processProtectedDataResponse =
 
 ### app <RequiredBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
-The ETH address or Ethereum Name Service (ENS) address for the iExec application
-to process the protected data.
+The ETH address for the iExec application to process the protected data.
 
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
@@ -294,7 +292,7 @@ const processProtectedDataResponse = await dataProtectorCore.processProtectedDat
 
 ### workerpool <OptionalBadge />
 
-**Type:** `AddressOrENS | 'any'`  
+**Type:** `Address | 'any'`  
 **Default:** `{{ workerpoolAddress }}`
 
 It's the confidential computer on which the iExec application will run.

@@ -119,7 +119,7 @@ const { tasks } = await dataProtectorCore.processBulkRequest({
 
 ### workerpool <OptionalBadge />
 
-**Type:** `AddressOrENS | 'any'`  
+**Type:** `Address | 'any'`  
 **Default:** `{{ workerpoolAddress }}`
 
 It's the confidential computer on which the iExec application will run.

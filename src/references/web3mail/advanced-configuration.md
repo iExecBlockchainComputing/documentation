@@ -18,18 +18,17 @@ options are very specific, you won't need to use them for a standard usage of
 import { type Web3MailConfigOptions } from '@iexec/web3mail';
 ```
 
-### dappAddressOrENS
+### dappAddress
 
-The Ethereum contract address or ENS (Ethereum Name Service) for the web3mail
-iApp.
+The Ethereum contract address for the web3mail iApp.
 
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 // ---cut---
 const web3mail = new IExecWeb3mail(web3Provider, {
-  dappAddressOrENS: '0x456def...', // [!code focus]
+  dappAddress: '0x456def...', // [!code focus]
 });
 ```
 
@@ -45,7 +44,7 @@ will be used.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 // ---cut---
 const web3mail = new IExecWeb3mail(web3Provider, {
   dappWhitelistAddress: '0x456def...', // [!code focus]
@@ -62,7 +61,7 @@ used.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 // ---cut---
 const web3mail = new IExecWeb3mail(web3Provider, {
   dataProtectorSubgraph: 'subgraph-url', // [!code focus]
@@ -79,7 +78,7 @@ If not provided, the default IPFS node provided by iExec will be used.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 // ---cut---
 const web3mail = new IExecWeb3mail(web3Provider, {
   ipfsNode: 'ipfs-node-url', // [!code focus]
@@ -97,7 +96,7 @@ If not provided, the default IPFS gateway provided by iExec will be used.
 ```ts twoslash
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 // ---cut---
 const web3mail = new IExecWeb3mail(web3Provider, {
   ipfsGateway: 'ipfs-gateway-url', // [!code focus]

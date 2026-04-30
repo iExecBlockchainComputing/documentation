@@ -120,7 +120,7 @@ Send a message to a single recipient:
 ```ts twoslash [Web3Mail - Single]
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3mail = new IExecWeb3mail(web3Provider);
 
 const sendEmail = await web3mail.sendEmail({
@@ -133,7 +133,7 @@ const sendEmail = await web3mail.sendEmail({
 ```ts twoslash [Web3Telegram - Single]
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 
 const sendTelegram = await web3telegram.sendTelegram({

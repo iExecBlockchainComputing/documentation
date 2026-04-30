@@ -25,11 +25,10 @@ import { type DataProtectorConfigOptions } from '@iexec/dataprotector';
 
 ### dataprotectorContractAddress
 
-`AddressOrENS`
+`Address`
 
-The Ethereum contract address or ENS (Ethereum Name Service) for dataProtector
-smart contract. If not provided, the default dataProtector contract address will
-be used.
+The Ethereum contract address for dataProtector smart contract. If not provided,
+the default dataProtector contract address will be used.
 
 ```ts twoslash
 import { IExecDataProtector, getWeb3Provider } from '@iexec/dataprotector';

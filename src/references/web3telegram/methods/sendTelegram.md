@@ -41,7 +41,7 @@ in the documentation under
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 
@@ -71,7 +71,7 @@ The address of the `protectedData` holding the contact's telegram chat ID.
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 
@@ -91,7 +91,7 @@ The name of the telegram message sender.
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 
@@ -112,7 +112,7 @@ The telegram message content that needs to be sent. The content is limited to
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 
@@ -133,7 +133,7 @@ as `iexec_args` in the deal params.
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 
@@ -145,9 +145,9 @@ const sendTelegram = await web3telegram.sendTelegram({
 });
 ```
 
-### workerpoolAddressOrEns
+### workerpoolAddress
 
-**Type:** `workerpoolAddressOrEns | undefined`
+**Type:** `workerpoolAddress | undefined`
 
 **Default:** `{{workerpoolAddress}}` (iExec's workerpool)
 
@@ -156,7 +156,7 @@ Allows specifying the workerpool that will run the Web3Telegram application.
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 
@@ -164,7 +164,7 @@ const sendTelegram = await web3telegram.sendTelegram({
   protectedData: '0x123abc...',
   senderName: 'Arthur',
   telegramContent: 'My telegram message content',
-  workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
+  workerpoolAddress: '0xa5de76...', // [!code focus]
 });
 ```
 
@@ -181,7 +181,7 @@ receives this as a payment for sharing their data.
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 
@@ -205,7 +205,7 @@ Web3telegram app provider (iExec) for using the Web3telegram application.
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 
@@ -229,7 +229,7 @@ using their infrastructure to run the web3telegram app in nRLC.
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 

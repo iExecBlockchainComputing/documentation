@@ -72,7 +72,7 @@ const web3mail = new IExecWeb3mail(web3Provider);
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
 // get web3 provider from a private key
-const web3Provider = getWeb3Provider('YOUR_PRIVATE_KEY');
+const web3Provider = getWeb3Provider('YOUR_PRIVATE_KEY', 'RPC_URL');
 // instantiate
 const web3mail = new IExecWeb3mail(web3Provider);
 ```
@@ -90,14 +90,14 @@ without a Web3 provider.
 import { IExecWeb3mail } from '@iexec/web3mail';
 
 // instantiate
-const web3mail = new IExecWeb3mail();
+const web3mail = new IExecWeb3mail('RPC_URL');
 ```
 
 ```ts twoslash [NodeJS]
 import { IExecWeb3mail, getWeb3Provider } from '@iexec/web3mail';
 
 // instantiate
-const web3mail = new IExecWeb3mail();
+const web3mail = new IExecWeb3mail('RPC_URL');
 ```
 
 :::

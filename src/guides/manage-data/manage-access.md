@@ -117,14 +117,14 @@ import { type GrantAccessParams } from '@iexec/dataprotector';
 
 #### protectedData <RequiredBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
 The ethereum address of the protected data supplied by the user (returned when
 you created it). **You must own this data** to grant access.
 
 #### authorizedApp <RequiredBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
 **What it is**: The iApp address that's allowed to process your data inside the
 TDX Trust Domain.
@@ -147,7 +147,7 @@ authorizedApp: {{web3MailAppWhitelist}}; // Web3Mail whitelist
 
 #### authorizedUser <RequiredBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
 **What it is**: The wallet address of the user that is allowed to process this
 data.

@@ -15,8 +15,7 @@ user, an authorized app, or both.
 ## Usage
 
 The request object is a JSON `GetGrantedAccessParams` object. Each address in
-the object is a string representation of an ethereum address or ENS name
-(Ethereum Name Service) reference.
+the object is a string representation of an ethereum address.
 
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
@@ -41,12 +40,11 @@ import { type GetGrantedAccessParams } from '@iexec/dataprotector';
 
 ### protectedData <OptionalBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
 Address of the protected data object for which you are querying access
-authorization grants. It's a representation of ethereum address or ENS name
-(Ethereum Name Service). If no address is specified, it will return all granted
-access for any protected data.
+authorization grants. It's a string representation of an ethereum address. If no
+address is specified, it will return all granted access for any protected data.
 
 **Usage example:**
 
@@ -63,12 +61,11 @@ const listGrantedAccess = await dataProtectorCore.getGrantedAccess({
 
 ### authorizedApp <OptionalBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
 Optional filter to restrict the results to include only authorizations for the
-specified application. It's a representation of ethereum address or ENS name
-(Ethereum Name Service). If no address is specified, it will return all granted
-access for any application.
+specified application. It's a string representation of an ethereum address. If
+no address is specified, it will return all granted access for any application.
 
 **Usage example:**
 
@@ -97,12 +94,11 @@ results unless you _also_ explicitly granted access to that application address.
 
 ### authorizedUser <OptionalBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
 Optional filter to restrict the results to include only authorizations for the
-specified user. It's a string representation of ethereum address or ENS name
-(Ethereum Name Service). If no address is specified, it will return all granted
-access for any user.
+specified user. It's a string representation of an ethereum address. If no
+address is specified, it will return all granted access for any user.
 
 **Usage example:**
 

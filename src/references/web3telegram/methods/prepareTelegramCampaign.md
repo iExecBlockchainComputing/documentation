@@ -56,7 +56,7 @@ const telegramCampaign = await web3telegram.prepareTelegramCampaign({
 ```ts twoslash [NodeJS]
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 
 // Fetch contacts with bulk access
@@ -162,14 +162,14 @@ const telegramCampaign = await web3telegram.prepareTelegramCampaign({
 });
 ```
 
-### workerpoolAddressOrEns <OptionalBadge />
+### workerpoolAddress <OptionalBadge />
 
-**Type:** `AddressOrENS | undefined`
+**Type:** `Address | undefined`
 
 **Default:** Default workerpool from chain configuration
 
-The workerpool address or ENS name that will execute the bulk campaign tasks.
-You can specify this during preparation or when sending the campaign.
+The address of the workerpool that will execute the bulk campaign tasks. You can
+specify this during preparation or when sending the campaign.
 
 ```ts twoslash
 import { IExecWeb3telegram, type GrantedAccess } from '@iexec/web3telegram';
@@ -181,7 +181,7 @@ const telegramCampaign = await web3telegram.prepareTelegramCampaign({
   grantedAccesses: grantedAccessArray,
   telegramContent: 'My telegram message content',
   senderName: 'Awesome project team',
-  workerpoolAddressOrEns: '0xa5de76...', // [!code focus]
+  workerpoolAddress: '0xa5de76...', // [!code focus]
 });
 ```
 

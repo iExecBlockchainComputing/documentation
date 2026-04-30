@@ -17,7 +17,7 @@ address for the `protectedData` containing their telegram chat ID.
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 const contactsList = await web3telegram.fetchUserContacts({
@@ -40,7 +40,7 @@ The entity for which you wish to obtain the list of contacts.
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 const contactsList = await web3telegram.fetchUserContacts({
@@ -65,7 +65,7 @@ wallet) or to any user (`0x0000000000000000000000000000000000000000`).
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 const contactsList = await web3telegram.fetchUserContacts({
@@ -91,7 +91,7 @@ for bulk campaigns.
 ```ts twoslash
 import { IExecWeb3telegram, getWeb3Provider } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const web3telegram = new IExecWeb3telegram(web3Provider);
 // ---cut---
 const contactsList = await web3telegram.fetchUserContacts({

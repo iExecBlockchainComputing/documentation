@@ -109,10 +109,10 @@ const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
 
 ### app <RequiredBadge />
 
-**Type:** `AddressOrENS`
+**Type:** `Address`
 
-The ETH address or Ethereum Name Service (ENS) address for the iExec application
-that will process the protected data items in the bulk request.
+The ETH address for the iExec application that will process the protected data
+items in the bulk request.
 
 ```ts twoslash
 import {
@@ -156,7 +156,7 @@ const { bulkRequest } = await dataProtectorCore.prepareBulkRequest({
 
 ### workerpool <OptionalBadge />
 
-**Type:** `AddressOrENS | 'any'`  
+**Type:** `Address | 'any'`  
 **Default:** `{{ workerpoolAddress }}`
 
 It's the confidential computer on which the iExec application will run.
