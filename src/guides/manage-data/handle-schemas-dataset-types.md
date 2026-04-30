@@ -30,7 +30,7 @@ it's all handled for you.
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 const protectedData = await dataProtectorCore.protectData({
@@ -124,7 +124,7 @@ Users can find relevant protected data without seeing the actual content:
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 const listProtectedData = await dataProtectorCore.getProtectedData({
@@ -145,7 +145,7 @@ are used in production environments.
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 const userData = await dataProtectorCore.protectData({
@@ -172,7 +172,7 @@ const userData = await dataProtectorCore.protectData({
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 const contactData = await dataProtectorCore.protectData({
@@ -225,7 +225,7 @@ function createArrayBufferFromFile(file: File): Promise<ArrayBuffer> {
 // Get file from input element
 const file = new File([''], 'example.jpg', { type: 'image/jpeg' });
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 const fileBuffer = await createArrayBufferFromFile(file);

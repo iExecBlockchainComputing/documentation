@@ -25,7 +25,7 @@ parameter. This object is retrieved from the
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 const revokeAccess = await dataProtectorCore.revokeOneAccess({
@@ -58,7 +58,7 @@ This is the complete `granted access` object retrieved from an invocation of
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 const revokeAccess = await dataProtectorCore.revokeOneAccess({

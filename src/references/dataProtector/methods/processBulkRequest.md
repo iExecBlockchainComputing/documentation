@@ -65,7 +65,7 @@ const { tasks } = await dataProtectorCore.processBulkRequest({
 ```ts twoslash [NodeJS]
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 
 // Get granted accesses with bulk capability
@@ -108,7 +108,7 @@ import {
   getWeb3Provider,
   type BulkRequest,
 } from '@iexec/dataprotector';
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 const bulkRequest = {} as BulkRequest;
 // ---cut---

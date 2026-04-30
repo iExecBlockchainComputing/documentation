@@ -26,7 +26,7 @@ An email address, for example, may be submitted as:
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 const protectedData = await dataProtectorCore.protectData({
@@ -42,7 +42,7 @@ illustrates protection of multiple categories of data within one object:
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 const protectedData = await dataProtectorCore.protectData({
@@ -109,7 +109,7 @@ any number of custom keys. The data is encrypted and stored as an NFT.
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 const protectedData = await dataProtectorCore.protectData({
@@ -144,7 +144,7 @@ implemented in this example.
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 const reduceArray = (array: Array<any>): Record<string, any> =>
@@ -190,7 +190,7 @@ public metadata, describing the protected data.
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 const protectedData = await dataProtectorCore.protectData({
@@ -218,7 +218,7 @@ hosting.
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 const protectedData = await dataProtectorCore.protectData({
@@ -240,7 +240,7 @@ Callback function to be notified at intermediate steps.
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 const protectedData = await dataProtectorCore.protectData({

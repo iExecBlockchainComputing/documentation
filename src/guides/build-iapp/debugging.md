@@ -39,7 +39,7 @@ Track your tasks at [iExec Explorer](https://explorer.iex.ec):
 ```ts twoslash
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 const response = await dataProtectorCore.processProtectedData({

@@ -47,7 +47,7 @@ Protect the email address or Chat ID using DataProtector Core.
 
 ```ts twoslash [Web3Mail]
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 
 const protectedData = await dataProtectorCore.protectData({
@@ -59,7 +59,7 @@ const protectedData = await dataProtectorCore.protectData({
 
 ```ts twoslash [Web3Telegram]
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 
 const protectedData = await dataProtectorCore.protectData({
@@ -81,7 +81,7 @@ based on your use case: use **Single Message** mode for individual messages, or
 
 ```ts twoslash [Single Message]
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 
 const grantedAccess = await dataProtectorCore.grantAccess({
@@ -95,7 +95,7 @@ const grantedAccess = await dataProtectorCore.grantAccess({
 
 ```ts twoslash [Bulk Campaigns]
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 // ---cut---
 // allowBulk: true automatically sets pricePerAccess to 0 and numberOfAccess to unlimited
@@ -175,7 +175,7 @@ Before using bulk processing, ensure that recipients have granted access with
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 import { IExecWeb3mail } from '@iexec/web3mail';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 const web3mail = new IExecWeb3mail(web3Provider);
 
@@ -218,7 +218,7 @@ const { tasks } = await web3mail.sendEmailCampaign({
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 import { IExecWeb3telegram } from '@iexec/web3telegram';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 const web3telegram = new IExecWeb3telegram(web3Provider);
 

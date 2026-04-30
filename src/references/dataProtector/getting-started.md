@@ -72,7 +72,7 @@ const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
 import { IExecDataProtectorCore, getWeb3Provider } from '@iexec/dataprotector';
 
 // Get Web3 provider from a private key
-const web3Provider = getWeb3Provider('YOUR_PRIVATE_KEY');
+const web3Provider = getWeb3Provider('YOUR_PRIVATE_KEY', 'RPC_URL');
 
 // Instantiate the Core module
 const dataProtectorCore = new IExecDataProtectorCore(web3Provider);
@@ -91,14 +91,14 @@ without a Web3 provider.
 import { IExecDataProtectorCore } from '@iexec/dataprotector';
 
 // Instantiate only the Core module for read-only core methods
-const dataProtectorCore = new IExecDataProtectorCore();
+const dataProtectorCore = new IExecDataProtectorCore('RPC_URL');
 ```
 
 ```ts twoslash [Umbrella Module]
 import { IExecDataProtector } from '@iexec/dataprotector';
 
 // Instantiate using the umbrella module for read-only functions
-const dataProtector = new IExecDataProtector();
+const dataProtector = new IExecDataProtector('RPC_URL');
 
 // Access to read-only core methods
 const dataProtectorCore = dataProtector.core;

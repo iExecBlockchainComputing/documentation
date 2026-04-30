@@ -34,7 +34,7 @@ be used.
 ```ts twoslash
 import { IExecDataProtector, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 // ---cut---
 const dataProtector = new IExecDataProtector(web3Provider, {
   dataprotectorContractAddress: '0x123abc...', // [!code focus]
@@ -53,7 +53,7 @@ used.
 ```ts twoslash
 import { IExecDataProtector, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 // ---cut---
 const dataProtector = new IExecDataProtector(web3Provider, {
   subgraphUrl: 'subgraph-url', // [!code focus]
@@ -72,7 +72,7 @@ If not provided, the default IPFS node provided by iExec will be used.
 ```ts twoslash
 import { IExecDataProtector, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 // ---cut---
 const dataProtector = new IExecDataProtector(web3Provider, {
   ipfsNode: 'ipfs-node-url', // [!code focus]
@@ -92,7 +92,7 @@ If not provided, the default IPFS gateway provided by iExec will be used.
 ```ts twoslash
 import { IExecDataProtector, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 // ---cut---
 const dataProtector = new IExecDataProtector(web3Provider, {
   ipfsGateway: 'ipfs-gateway-url', // [!code focus]
@@ -108,7 +108,7 @@ for more details.
 ```ts twoslash
 import { IExecDataProtector, getWeb3Provider } from '@iexec/dataprotector';
 
-const web3Provider = getWeb3Provider('PRIVATE_KEY');
+const web3Provider = getWeb3Provider('PRIVATE_KEY', 'RPC_URL');
 // ---cut---
 const dataProtector = new IExecDataProtector(web3Provider, {
   iexecOptions: { smsURL: 'sms-url' }, // [!code focus]
