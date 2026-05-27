@@ -3,17 +3,17 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".vitepress/dist",
   "cleanUrls": true,
-  "rewrites": [
-    {
-      "source": "/nox-protocol",
-      "destination": "https://documentation-yi1w.vercel.app/nox-protocol/"
-    },
+  "redirects": [
     {
       "source": "/nox-protocol/:path+",
-      "destination": "https://documentation-yi1w.vercel.app/nox-protocol/:path+"
-    }
-  ],
-  "redirects": [
+      "destination": "https://docs.noxprotocol.io/:path+",
+      "permanent": true
+    },
+    {
+      "source": "/nox-protocol",
+      "destination": "https://docs.noxprotocol.io/",
+      "permanent": true
+    },
     {
       "source": "/robots.txt",
       "destination": "/robots-prod.txt",
