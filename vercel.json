@@ -5,8 +5,8 @@
   "cleanUrls": true,
   "redirects": [
     {
-      "source": "/nox-protocol/:path+",
-      "destination": "https://docs.noxprotocol.io/:path+",
+      "source": "/nox-protocol/:path*",
+      "destination": "https://docs.noxprotocol.io/:path*",
       "permanent": true
     },
     {
