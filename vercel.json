@@ -3,6 +3,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": ".vitepress/dist",
   "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/nox-protocol/:path*",
