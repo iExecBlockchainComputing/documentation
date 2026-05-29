@@ -11,12 +11,12 @@ import govIcon from '@/assets/icons/gov.svg';
 
 const router = useRouter();
 
-function isNoxLink(link: string) {
-  return link.startsWith('/nox-protocol');
+function isExternalLink(link: string) {
+  return link.startsWith('https://');
 }
 
 function handleCardClick(link: string) {
-  if (isNoxLink(link)) {
+  if (isExternalLink(link)) {
     window.location.href = link;
   } else {
     router.go(link);
@@ -32,8 +32,8 @@ const protocolCards = [
       "I'm a Solidity developer and I want to build a confidential smart contract.",
     description:
       'Nox is a privacy layer that empowers smart contracts with confidential computation. Encrypted types are executed inside Trusted Execution Environments (TEE), composable with DeFi, without ever exposing plaintext on-chain.',
-    link: '/nox-protocol/getting-started/welcome',
-    external: false,
+    link: 'https://docs.noxprotocol.io/',
+    external: true,
   },
   {
     icon: pocoIcon,
@@ -53,19 +53,19 @@ const financialFeatures = [
     icon: ctokenIcon,
     title: 'Confidential Token',
     description: 'Transform any ERC-20 into a confidential asset.',
-    link: '/nox-protocol/guides/build-confidential-tokens/intro',
+    link: 'https://docs.noxprotocol.io/guides/build-confidential-tokens/intro',
   },
   {
     icon: smartContractsIcon,
     title: 'Confidential Smart Contracts',
     description: 'Write standard Solidity contracts using the Nox Library.',
-    link: '/nox-protocol/guides/build-confidential-smart-contracts/intro',
+    link: 'https://docs.noxprotocol.io/guides/build-confidential-smart-contracts/intro',
   },
   {
     icon: helloWorldIcon,
     title: 'Nox Hello World',
     description: 'Learn how to build on Nox with the Hello World guide.',
-    link: '/nox-protocol/getting-started/hello-world',
+    link: 'https://docs.noxprotocol.io/getting-started/hello-world',
   },
 ];
 
@@ -127,7 +127,7 @@ const dappFeatures = [
         <a
           v-for="card in protocolCards"
           :key="card.title"
-          :href="isNoxLink(card.link) ? undefined : card.link"
+          :href="isExternalLink(card.link) ? undefined : card.link"
           class="protocol-card"
           @click.stop.prevent="handleCardClick(card.link)"
         >
@@ -154,7 +154,7 @@ const dappFeatures = [
           <a
             v-for="feature in financialFeatures"
             :key="feature.title"
-            :href="isNoxLink(feature.link) ? undefined : feature.link"
+            :href="isExternalLink(feature.link) ? undefined : feature.link"
             class="feature-card"
             @click.stop.prevent="handleCardClick(feature.link)"
           >
@@ -180,7 +180,7 @@ const dappFeatures = [
           <a
             v-for="feature in dappFeatures"
             :key="feature.title"
-            :href="isNoxLink(feature.link) ? undefined : feature.link"
+            :href="isExternalLink(feature.link) ? undefined : feature.link"
             class="feature-card"
             @click.stop.prevent="handleCardClick(feature.link)"
           >
