@@ -6,22 +6,36 @@ description:
   email communication.
 ---
 
-# Getting Started
+# 📧 Getting Started
 
 [![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/iExecBlockchainComputing/web3mail-sdk?color=green)](https://github.com/iExecBlockchainComputing/web3mail-sdk)
 
-## Overview
+## 🕕 Prerequisites
 
-### Prerequisites
+Before using Web3Mail, make sure you have:
 
-Before getting started, ensure that you have the following installed on your
-system:
+<div class="flex flex-col gap-2 my-4 pl-0">
+  <div class="flex items-center gap-4 text-left">
+    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
+      📦 Node.js v18+ (required)
+    </div>
+    <a target="_blank" href="https://nodejs.org/en/" class="no-underline! text-sm ml-auto hover:underline!">Download →</a>
+  </div>
+   <div class="flex items-center gap-4 text-left">
+    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
+      📦 NPM (Node.js package manager)
+    </div>
+    <a target="_blank" href="https://docs.npmjs.com/" class="no-underline! text-sm ml-auto hover:underline!">Learn More →</a>
+  </div>
+   <div class="flex items-center gap-4 text-left">
+    <div class="flex items-center gap-1 flex-1 text-sm font-medium">
+      💰 RLC Tokens (for email operations)
+    </div>
+    <a href="/get-started/overview/rlc" class="no-underline! text-sm ml-auto hover:underline!">Learn More →</a>
+  </div>
+</div>
 
-\- [**Node.js**](https://nodejs.org/en/) version 18 or higher
-
-\- [**NPM**](https://docs.npmjs.com/) (Node.js package manager)
-
-### Installation
+### 📦 Installation
 
 ::: code-group
 
