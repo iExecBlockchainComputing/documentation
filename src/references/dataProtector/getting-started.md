@@ -110,26 +110,3 @@ const dataProtectorCore = dataProtector.core;
 
 To add optional parameters, see
 [advanced configuration](/references/dataProtector/advanced-configuration).
-
-## Sandbox
-
-<CardGrid>
-
-<ProjectCard
-  title="DataProtector Core"
-  description="Essential data protection features including encryption, access control, and secure storage."
-  icon="mdi:shield-lock"
-  status="interactive"
-  statusLabel="Interactive"
-  buttonLabel="Open Sandbox"
-  buttonHref="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main"
-  githubUrl="https://github.com/iExecBlockchainComputing/dataprotector-sandbox"
-  githubLabel="Sandbox Github"
-/>
-
-</CardGrid>
-
-<script setup>
-import CardGrid from '@/components/CardGrid.vue';
-import ProjectCard from '@/components/ProjectCard.vue';
-</script>

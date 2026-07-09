@@ -89,12 +89,6 @@ The CLI documentation is available
 The library documentation is available
 [here](https://github.com/iExecBlockchainComputing/iexec-sdk/blob/master/docs/README.md)
 
-### Browser integration
-
-<a href="https://codesandbox.io/p/github/iExecBlockchainComputing/iexec-sdk-sandbox-buy-computation/main?file=%2Fsrc%2Findex.js&moduleview=1&theme=dark" target="_blank" rel="noreferrer" class="link-as-block" style="margin-top: 16px">
-  ⚡ &nbsp;Code Sandbox
-</a>
-
 ### NodeJS integration
 
 <a href="https://codesandbox.io/p/sandbox/iexec-sdk-nodejs-hu6n6v?file=%2Findex.js" target="_blank" rel="noreferrer" class="link-as-block" style="margin-top: 16px">
