@@ -86,9 +86,6 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
 });
 ```
 
-For this tutorial, you can try out the code directly in our interactive
-CodeSandbox demo
-[try the interactive DataProtector sandbox](https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main?file=%2Fsrc%2FApp.tsx&preventWorkspaceRedirect=true).
 Here's a quick overview of what happened when you clicked the **Protect Data**
 button:
 
@@ -179,14 +176,6 @@ const { address: protectedDataAddress } = await dataProtectorCore.protectData({
   },
 });
 ```
-
-::: tip <i></i>
-
-Check out our
-<a target="_blank" href="https://codesandbox.io/p/github/iExecBlockchainComputing/dataprotector-sandbox/main?file=%2Fsrc%2Fmain.tsx%3A18%2C7">code
-sandbox</a> for ready-to-use examples!
-
-:::
 
 ## 🎯 Key Takeaways
 

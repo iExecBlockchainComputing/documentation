@@ -101,15 +101,3 @@ const web3mail = new IExecWeb3mail('RPC_URL');
 ```
 
 :::
-
-## Sandbox
-
-<a href="https://codesandbox.io/p/github/iExecBlockchainComputing/web3mail-sandbox/main" target="_blank" rel="noreferrer" class="link-as-block">
-  ⚡ &nbsp;Code Sandbox
-</a>
-
-Corresponding GitHub repository:
-
-<a href="https://github.com/iExecBlockchainComputing/web3Mail-sandbox" target="_blank" rel="noreferrer" class="link-as-block">
-  🔎 &nbsp;GitHub repository sandbox
-</a>
