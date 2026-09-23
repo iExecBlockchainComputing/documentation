@@ -11,7 +11,6 @@ import { WagmiPlugin } from '@wagmi/vue';
 import { createPinia } from 'pinia';
 import { wagmiAdapter } from '@/utils/wagmiConfig';
 import ChainSelector from '@/components/ChainSelector.vue';
-import HomeNavLinks from '@/components/HomeNavLinks.vue';
 import './style.css';
 
 declare global {
@@ -39,7 +38,6 @@ export default {
     app.use(WagmiPlugin, { config: wagmiAdapter.wagmiConfig });
 
     app.component('ChainSelector', ChainSelector);
-    app.component('HomeNavLinks', HomeNavLinks);
 
     if (typeof window !== 'undefined') {
       // Ensure dataLayer exists
