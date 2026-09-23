@@ -6,13 +6,18 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "destination": "/get-started/welcome",
+      "permanent": false
+    },
+    {
       "source": "/nox-protocol/:path*",
-      "destination": "https://docs.noxprotocol.io/:path*",
+      "destination": "/get-started/welcome",
       "permanent": true
     },
     {
       "source": "/nox-protocol",
-      "destination": "https://docs.noxprotocol.io/",
+      "destination": "/get-started/welcome",
       "permanent": true
     },
     {
@@ -26,57 +31,57 @@
     },
     {
       "source": "/tools/:path*",
-      "destination": "/",
+      "destination": "/get-started/welcome",
       "permanent": true
     },
     {
       "source": "/overview/what-we-do",
-      "destination": "/",
+      "destination": "/get-started/welcome",
       "permanent": true
     },
     {
       "source": "/overview/helloWorld",
-      "destination": "/",
+      "destination": "/get-started/welcome",
       "permanent": true
     },
     {
       "source": "/overview/helloWorld/:path*",
-      "destination": "/",
+      "destination": "/get-started/welcome",
       "permanent": true
     },
     {
       "source": "/overview/use-case-demo",
-      "destination": "/",
+      "destination": "/get-started/welcome",
       "permanent": true
     },
     {
       "source": "/overview/use-case-demo/:path*",
-      "destination": "/",
+      "destination": "/get-started/welcome",
       "permanent": true
     },
     {
       "source": "/for-developers/:path*",
-      "destination": "/",
+      "destination": "/get-started/welcome",
       "permanent": true
     },
     {
       "source": "/for-workers/:path*",
-      "destination": "/",
+      "destination": "/get-started/welcome",
       "permanent": true
     },
     {
       "source": "/key-concepts/:path*",
-      "destination": "/",
+      "destination": "/get-started/welcome",
       "permanent": true
     },
     {
       "source": "/use-cases/:path*",
-      "destination": "/",
+      "destination": "/get-started/welcome",
       "permanent": true
     },
     {
       "source": "/help/:path*",
-      "destination": "/",
+      "destination": "/get-started/welcome",
       "permanent": true
     },
     {

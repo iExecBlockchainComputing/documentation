@@ -103,9 +103,6 @@ export default withMermaid(
       // https://vitepress.dev/reference/default-theme-config
       nav: [
         {
-          component: 'HomeNavLinks',
-        },
-        {
           text: 'Get Started',
           link: '/get-started/welcome',
           activeMatch: '^/get-started/',
@@ -158,6 +155,8 @@ export default withMermaid(
       },
 
       siteTitle: false,
+
+      logoLink: '/get-started/welcome',
 
       logo: {
         light: '/Logo-RLC-Yellow.png',
