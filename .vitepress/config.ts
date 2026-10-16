@@ -51,38 +51,12 @@ export default withMermaid(
       ['link', { rel: 'icon', href: '/Logo-RLC-Yellow.png' }],
       // Open Graph / Social metadata
       ['meta', { property: 'og:image', content: `${siteUrl}/og-image.png` }],
-      // Google Tag Manager
-      [
-        'script',
-        {},
-        `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://metrics.iex.ec/bs7fgjd8lvy4l31.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-P7KSD4T');`,
-      ],
       [
         'link',
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap',
         },
-      ],
-      [
-        'script',
-        {},
-        `
-      window.axeptioSettings = {
-        clientId: "6413111857e4d2a6342cd5c6",
-        cookiesVersion: "iexec-en",
-      };
-
-      (function(d, s) {
-        var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
-        e.async = true; e.src = "//static.axept.io/sdk.js";
-        t.parentNode.insertBefore(e, t);
-      })(document, "script");
-      `,
       ],
       // Mava widget
       [

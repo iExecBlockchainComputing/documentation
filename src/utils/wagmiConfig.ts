@@ -90,6 +90,7 @@ createAppKit({
   projectId,
   featuredWalletIds,
   features: {
+    analytics: false,
     socials: false,
     email: false,
   },
