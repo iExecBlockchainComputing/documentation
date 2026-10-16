@@ -1,7 +1,7 @@
 import { createAppKit } from '@reown/appkit/vue';
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
 import { http, CreateConnectorFn } from '@wagmi/vue';
-import { injected } from '@wagmi/vue/connectors';
+import { baseAccount, injected } from '@wagmi/vue/connectors';
 import wagmiNetworks from '@/utils/wagmiNetworks';
 import { InjectedWalletProvider } from '@/utils/injected-wallet-provider/injected-wallet-provider';
 import { EIP6963ProviderDetail } from '@/utils/injected-wallet-provider/types';
@@ -15,7 +15,11 @@ if (!projectId) {
 }
 
 // Connectors initialization
-const connectors: CreateConnectorFn[] = [];
+// Base Account is declared here so that Reown does not add its own instance,
+// which loads Coinbase telemetry (cca-lite.coinbase.com) on page load
+const connectors: CreateConnectorFn[] = [
+  baseAccount({ preference: { telemetry: false } }),
+];
 
 // Injected wallet provider management
 const injectedWalletProvider = new InjectedWalletProvider();
@@ -90,6 +94,7 @@ createAppKit({
   projectId,
   featuredWalletIds,
   features: {
+    analytics: false,
     socials: false,
     email: false,
   },

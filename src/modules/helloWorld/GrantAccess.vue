@@ -27,7 +27,6 @@
       <Button
         :disabled="!isWalletConnected || isLoadingGrant"
         @click="grantAccess"
-        data-track="grantAccess"
       >
         {{ isLoadingGrant ? 'Processing...' : 'Grant Access' }}
       </Button>

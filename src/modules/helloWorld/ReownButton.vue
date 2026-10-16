@@ -1,11 +1,6 @@
 <template>
   <div class="flex items-center">
-    <Button
-      v-if="!walletAddress"
-      @click="login"
-      :disabled="isConnected"
-      data-track="connectWallet"
-    >
+    <Button v-if="!walletAddress" @click="login" :disabled="isConnected">
       {{ isConnected ? 'Wallet Connected' : 'Connect Wallet' }}
     </Button>
     <div v-else="walletAddress" class="flex items-center gap-2 text-sm">
