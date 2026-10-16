@@ -58,19 +58,6 @@ export default withMermaid(
           href: 'https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap',
         },
       ],
-      // Mava widget
-      [
-        'script',
-        {
-          defer: '',
-          src: 'https://widget.mava.app',
-          'widget-version': 'v2',
-          id: 'MavaWebChat',
-          'enable-sdk': 'false',
-          'data-token':
-            '8e4e10aad5750451e8726768e8c639dae54f461beeb176f5ebd687371c9390f2',
-        },
-      ],
     ],
 
     themeConfig: {
